@@ -47,8 +47,8 @@
             this.label_hwid = new System.Windows.Forms.Label();
             this.textBox_hwid = new System.Windows.Forms.TextBox();
             this.tabPage_about = new System.Windows.Forms.TabPage();
-            this.label_about = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.richTextBox_about = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage_Request.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -232,7 +232,7 @@
             // 
             // tabPage_about
             // 
-            this.tabPage_about.Controls.Add(this.label_about);
+            this.tabPage_about.Controls.Add(this.richTextBox_about);
             this.tabPage_about.Location = new System.Drawing.Point(4, 25);
             this.tabPage_about.Name = "tabPage_about";
             this.tabPage_about.Padding = new System.Windows.Forms.Padding(3);
@@ -241,19 +241,19 @@
             this.tabPage_about.Text = "О программе";
             this.tabPage_about.UseVisualStyleBackColor = true;
             // 
-            // label_about
-            // 
-            this.label_about.AutoSize = true;
-            this.label_about.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_about.Location = new System.Drawing.Point(3, 3);
-            this.label_about.Name = "label_about";
-            this.label_about.Size = new System.Drawing.Size(0, 17);
-            this.label_about.TabIndex = 0;
-            // 
             // folderBrowserDialog1
             // 
             this.folderBrowserDialog1.Description = "Укажите путь к папке с программерами";
             this.folderBrowserDialog1.ShowNewFolderButton = false;
+            // 
+            // richTextBox_about
+            // 
+            this.richTextBox_about.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox_about.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox_about.Name = "richTextBox_about";
+            this.richTextBox_about.Size = new System.Drawing.Size(786, 415);
+            this.richTextBox_about.TabIndex = 1;
+            this.richTextBox_about.Text = "";
             // 
             // Formfhf
             // 
@@ -271,7 +271,6 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.tabPage_about.ResumeLayout(false);
-            this.tabPage_about.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -297,7 +296,7 @@
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar_filescompleted;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_filescompleted;
         private System.Windows.Forms.Label label_ind;
-        private System.Windows.Forms.Label label_about;
+        private System.Windows.Forms.RichTextBox richTextBox_about;
     }
 }
 

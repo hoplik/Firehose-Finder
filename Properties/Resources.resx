@@ -118,7 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="String_about" xml:space="preserve">
-    <value>Тут можно написать всякую ню, типа ссылки на тему 4PDA.</value>
-    <comment>Всякое разное "О программе"</comment>
+    <value>Однокнопочная программа с GUI для подбора программеров (firehose) для телефонов на базе процессоров от Qualcomm.</value>
+    <comment>"О программе"</comment>
+  </data>
+  <data name="String_help" xml:space="preserve">
+    <value>https://github.com/hoplik/Firehose-Finder</value>
+    <comment>Поддержка</comment>
+  </data>
+  <data name="String_theme_link" xml:space="preserve">
+    <value>http://4pda.ru/forum/index.php?showtopic=643084</value>
+    <comment>Ссылка на базовую тему "Общие принципы восстановления загрузчиков на Qualcomm | HS-USB QDLoader 9008, HS-USB Diagnostics 9006, QHUSB_DLOAD и т.д."</comment>
   </data>
 </root>

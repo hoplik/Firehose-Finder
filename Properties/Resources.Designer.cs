@@ -61,11 +61,29 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Тут можно написать всякую ню, типа ссылки на тему 4PDA..
+        ///   Ищет локализованную строку, похожую на Однокнопочная программа с GUI для подбора программеров (firehose) для телефонов на базе процессоров от Qualcomm..
         /// </summary>
         internal static string String_about {
             get {
                 return ResourceManager.GetString("String_about", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на https://github.com/hoplik/Firehose-Finder.
+        /// </summary>
+        internal static string String_help {
+            get {
+                return ResourceManager.GetString("String_help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на http://4pda.ru/forum/index.php?showtopic=643084.
+        /// </summary>
+        internal static string String_theme_link {
+            get {
+                return ResourceManager.GetString("String_theme_link", resourceCulture);
             }
         }
     }

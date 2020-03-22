@@ -103,8 +103,12 @@ namespace FirehoseFinder
 
         private void Formfhf_Load(object sender, EventArgs e)
         {
-            label_about.Text = FirehoseFinder.Properties.Resources.String_about + Environment.NewLine
-                + "Версия сборки: " + Assembly.GetExecutingAssembly().GetName().Version;
+            richTextBox_about.Text= FirehoseFinder.Properties.Resources.String_about + Environment.NewLine
+                + "Ссылка на базовую тему <<Общие принципы восстановления загрузчиков на Qualcomm | HS - USB QDLoader 9008, HS - USB Diagnostics 9006, QHUSB_DLOAD и т.д.>>: " + FirehoseFinder.Properties.Resources.String_theme_link + Environment.NewLine
+                + Environment.NewLine
+                + "Версия сборки: " + Assembly.GetExecutingAssembly().GetName().Version + Environment.NewLine
+                + Environment.NewLine
+                + "По вопросам поддержки, пожалуйста, обращайтесь: " + FirehoseFinder.Properties.Resources.String_help;
         }
     }
 }
