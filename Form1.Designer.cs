@@ -31,10 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfhf));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_Request = new System.Windows.Forms.TabPage();
-            this.label_ind = new System.Windows.Forms.Label();
+            this.dataGridView_final = new System.Windows.Forms.DataGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripProgressBar_filescompleted = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel_filescompleted = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar_filescompleted = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabel_vol = new System.Windows.Forms.ToolStripStatusLabel();
             this.button_startscan = new System.Windows.Forms.Button();
             this.button_path = new System.Windows.Forms.Button();
             this.label_path = new System.Windows.Forms.Label();
@@ -47,10 +48,15 @@
             this.label_hwid = new System.Windows.Forms.Label();
             this.textBox_hwid = new System.Windows.Forms.TextBox();
             this.tabPage_about = new System.Windows.Forms.TabPage();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.richTextBox_about = new System.Windows.Forms.RichTextBox();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.Column_Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage_Request.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_final)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.tabPage_about.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +74,7 @@
             // 
             // tabPage_Request
             // 
-            this.tabPage_Request.Controls.Add(this.label_ind);
+            this.tabPage_Request.Controls.Add(this.dataGridView_final);
             this.tabPage_Request.Controls.Add(this.statusStrip1);
             this.tabPage_Request.Controls.Add(this.button_startscan);
             this.tabPage_Request.Controls.Add(this.button_path);
@@ -89,31 +95,38 @@
             this.tabPage_Request.Text = "Запрос";
             this.tabPage_Request.UseVisualStyleBackColor = true;
             // 
-            // label_ind
+            // dataGridView_final
             // 
-            this.label_ind.AutoSize = true;
-            this.label_ind.Location = new System.Drawing.Point(145, 375);
-            this.label_ind.Name = "label_ind";
-            this.label_ind.Size = new System.Drawing.Size(0, 17);
-            this.label_ind.TabIndex = 13;
+            this.dataGridView_final.AllowUserToAddRows = false;
+            this.dataGridView_final.AllowUserToDeleteRows = false;
+            this.dataGridView_final.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_final.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column_Sel,
+            this.Column_Name,
+            this.Column_id,
+            this.Column_rate});
+            this.dataGridView_final.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dataGridView_final.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView_final.Location = new System.Drawing.Point(3, 153);
+            this.dataGridView_final.Name = "dataGridView_final";
+            this.dataGridView_final.RowHeadersWidth = 51;
+            this.dataGridView_final.RowTemplate.Height = 24;
+            this.dataGridView_final.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_final.Size = new System.Drawing.Size(786, 239);
+            this.dataGridView_final.TabIndex = 15;
             // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel_filescompleted,
             this.toolStripProgressBar_filescompleted,
-            this.toolStripStatusLabel_filescompleted});
+            this.toolStripStatusLabel_vol});
             this.statusStrip1.Location = new System.Drawing.Point(3, 392);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(786, 26);
             this.statusStrip1.TabIndex = 12;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripProgressBar_filescompleted
-            // 
-            this.toolStripProgressBar_filescompleted.AutoToolTip = true;
-            this.toolStripProgressBar_filescompleted.Name = "toolStripProgressBar_filescompleted";
-            this.toolStripProgressBar_filescompleted.Size = new System.Drawing.Size(400, 18);
             // 
             // toolStripStatusLabel_filescompleted
             // 
@@ -121,11 +134,22 @@
             this.toolStripStatusLabel_filescompleted.Size = new System.Drawing.Size(199, 20);
             this.toolStripStatusLabel_filescompleted.Text = "Обработано файлов: 0 из 0";
             // 
+            // toolStripProgressBar_filescompleted
+            // 
+            this.toolStripProgressBar_filescompleted.AutoToolTip = true;
+            this.toolStripProgressBar_filescompleted.Name = "toolStripProgressBar_filescompleted";
+            this.toolStripProgressBar_filescompleted.Size = new System.Drawing.Size(400, 18);
+            // 
+            // toolStripStatusLabel_vol
+            // 
+            this.toolStripStatusLabel_vol.Name = "toolStripStatusLabel_vol";
+            this.toolStripStatusLabel_vol.Size = new System.Drawing.Size(0, 20);
+            // 
             // button_startscan
             // 
             this.button_startscan.Location = new System.Drawing.Point(329, 107);
             this.button_startscan.Name = "button_startscan";
-            this.button_startscan.Size = new System.Drawing.Size(328, 23);
+            this.button_startscan.Size = new System.Drawing.Size(324, 23);
             this.button_startscan.TabIndex = 10;
             this.button_startscan.Text = "Запустить сканирование";
             this.button_startscan.UseVisualStyleBackColor = true;
@@ -167,8 +191,9 @@
             this.textBox_oemhash.Location = new System.Drawing.Point(94, 38);
             this.textBox_oemhash.MaxLength = 64;
             this.textBox_oemhash.Name = "textBox_oemhash";
-            this.textBox_oemhash.Size = new System.Drawing.Size(563, 22);
+            this.textBox_oemhash.Size = new System.Drawing.Size(559, 22);
             this.textBox_oemhash.TabIndex = 6;
+            this.textBox_oemhash.Text = "7C6DCA9BF5674291AA39DD55760C0D4B65C7A4223097AAB1DB791E2192002DDF";
             // 
             // label_oemid
             // 
@@ -188,7 +213,7 @@
             this.textBox_oemid.Name = "textBox_oemid";
             this.textBox_oemid.Size = new System.Drawing.Size(43, 22);
             this.textBox_oemid.TabIndex = 4;
-            this.textBox_oemid.Text = "0000";
+            this.textBox_oemid.Text = "0043";
             // 
             // label_modelid
             // 
@@ -228,7 +253,7 @@
             this.textBox_hwid.Name = "textBox_hwid";
             this.textBox_hwid.Size = new System.Drawing.Size(73, 22);
             this.textBox_hwid.TabIndex = 0;
-            this.textBox_hwid.Text = "00000000";
+            this.textBox_hwid.Text = "0009A0E1";
             // 
             // tabPage_about
             // 
@@ -241,11 +266,6 @@
             this.tabPage_about.Text = "О программе";
             this.tabPage_about.UseVisualStyleBackColor = true;
             // 
-            // folderBrowserDialog1
-            // 
-            this.folderBrowserDialog1.Description = "Укажите путь к папке с программерами";
-            this.folderBrowserDialog1.ShowNewFolderButton = false;
-            // 
             // richTextBox_about
             // 
             this.richTextBox_about.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -254,6 +274,42 @@
             this.richTextBox_about.Size = new System.Drawing.Size(786, 415);
             this.richTextBox_about.TabIndex = 1;
             this.richTextBox_about.Text = "";
+            // 
+            // folderBrowserDialog1
+            // 
+            this.folderBrowserDialog1.Description = "Укажите путь к папке с программерами";
+            this.folderBrowserDialog1.ShowNewFolderButton = false;
+            // 
+            // Column_Sel
+            // 
+            this.Column_Sel.HeaderText = "Sel";
+            this.Column_Sel.MinimumWidth = 6;
+            this.Column_Sel.Name = "Column_Sel";
+            this.Column_Sel.Width = 30;
+            // 
+            // Column_Name
+            // 
+            this.Column_Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column_Name.HeaderText = "Файл";
+            this.Column_Name.MinimumWidth = 6;
+            this.Column_Name.Name = "Column_Name";
+            this.Column_Name.Width = 74;
+            // 
+            // Column_id
+            // 
+            this.Column_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column_id.HeaderText = "HW-OEM-MODEL-HASH";
+            this.Column_id.MinimumWidth = 6;
+            this.Column_id.Name = "Column_id";
+            this.Column_id.Width = 193;
+            // 
+            // Column_rate
+            // 
+            this.Column_rate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column_rate.HeaderText = "Rating";
+            this.Column_rate.MinimumWidth = 6;
+            this.Column_rate.Name = "Column_rate";
+            this.Column_rate.Width = 78;
             // 
             // Formfhf
             // 
@@ -268,6 +324,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage_Request.ResumeLayout(false);
             this.tabPage_Request.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_final)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.tabPage_about.ResumeLayout(false);
@@ -295,8 +352,13 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar_filescompleted;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_filescompleted;
-        private System.Windows.Forms.Label label_ind;
         private System.Windows.Forms.RichTextBox richTextBox_about;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_vol;
+        private System.Windows.Forms.DataGridView dataGridView_final;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column_Sel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_rate;
     }
 }
 
