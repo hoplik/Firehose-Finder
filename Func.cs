@@ -51,7 +51,7 @@ namespace FirehoseFinder
 
         public string ElfReader(string Filepath)
         {
-            int len = 12288;
+            int len = 12288;// Нас интересуют байты с 0 по 4 (признак эльфа) и с 0х1000 по 0х3000 (три сертификата)
             StringBuilder dumptext = new StringBuilder(len);
             byte[] chunk = new byte[len];
             using (var stream = File.OpenRead(Filepath))
@@ -65,22 +65,27 @@ namespace FirehoseFinder
             return dumptext.ToString();
         }
 
-        public string HWID()
+        public string HWID(string Filepath)
         {
-            string str = "00000000";
-            return str;
+            string str = ElfReader(Filepath);
+            string[] certarray = new string[3];
+            for (int i = 0; i < certarray.Length; i++)
+            {
+                certarray[i] = str.Substring(0, 8);
+            }
+            return certarray[0];
         }
-        public string OEMID()
+        public string OEMID(string Filepath)
         {
             string str = "0000";
             return str;
         }
-        public string MODELID()
+        public string MODELID(string Filepath)
         {
             string str = "0000";
             return str;
         }
-        public string HASH()
+        public string HASH(string Filepath)
         {
             string str = "00000000";
             return str;
