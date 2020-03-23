@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Windows.Forms;
-using System.IO;
-using System.Linq;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using System.Windows.Forms;
 
 namespace FirehoseFinder
 {
@@ -41,28 +40,31 @@ namespace FirehoseFinder
             //Тест 1 - Файл должен быть больше 0х3000 байт
             if (fi.Length >= 12288)// Это 0х3000 в хекс
             {
-                byte[] chunk = new byte[4];
-                using (var stream = File.OpenRead(Filepath))
+                // Тест 2 - Файл должен быть ELF
+                if (ElfReader(Filepath).StartsWith("7F454C46"))
                 {
-                    int byteschunk = stream.Read(chunk, 0, 4);
-                    // Тест 2 - Файл должен быть ELF
-                    if (DBytes(chunk, byteschunk).StartsWith("7F454C46"))
-                    {
-                        Rat++;
-                    }
+                    Rat++;
                 }
             }
             return Rat;
         }
-        public static string DBytes(byte[] bdata, int len)
+
+        public string ElfReader(string Filepath)
         {
+            int len = 12288;
             StringBuilder dumptext = new StringBuilder(len);
-            for (int i = 0; i < len; i++)
+            byte[] chunk = new byte[len];
+            using (var stream = File.OpenRead(Filepath))
             {
-                dumptext.Insert(i * 2, String.Format("{0:X2}", (int)bdata[i]));
+                int byteschunk = stream.Read(chunk, 0, len);
+                for (int i = 0; i < byteschunk; i++)
+                {
+                    dumptext.Insert(i * 2, String.Format("{0:X2}", (int)chunk[i]));
+                }
             }
             return dumptext.ToString();
         }
+
         public string HWID()
         {
             string str = "00000000";
