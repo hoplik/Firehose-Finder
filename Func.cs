@@ -79,16 +79,41 @@ namespace FirehoseFinder
                 switch (i)
                 {
                     case 0:
-                        certarray[i] = HWID.Substring(0, 16);
+                        // Вытягиваем процессор
+                        string[] HStr = new string[8];
+                        int counth = 0;
+                        for (int j = 0; j < 16; j = j + 2)
+                        {
+                            HStr[counth] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
+                            counth++;
+                        }
+                        certarray[i] = String.Join("", HStr);
                         break;
                     case 1:
-                        certarray[i] = HWID.Substring(0, 8);
+                        // Вытягиваем производителя
+                        string[] OStr = new string[4];
+                        int counto = 0;
+                        for (int j = 16; j < 24; j = j + 2)
+                        {
+                            OStr[counto] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
+                            counto++;
+                        }
+                        certarray[i] = String.Join("", OStr);
                         break;
                     case 2:
-                        certarray[i] = HWID.Substring(0, 8);
+                        // Вытягиваем номер модели
+                        string[] MStr = new string[4];
+                        int countm = 0;
+                        for (int j = 24; j < 32; j = j + 2)
+                        {
+                            MStr[countm] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
+                            countm++;
+                        }
+                        certarray[i] = String.Join("", MStr);
                         break;
                     case 3:
-                        certarray[i] = HWID.Substring(0, 16);
+                        // Расчитываем хеш
+                        certarray[i] = "В разработке";
                         break;
                     case 4:
                         //  Формируем версию софтвера

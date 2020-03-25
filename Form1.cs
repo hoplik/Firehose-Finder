@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
@@ -44,12 +45,36 @@ namespace FirehoseFinder
                 int currrating = func.Rating(countfiles.Key);
                 dataGridView_final.Rows.Add();
                 dataGridView_final.Rows[Currnum].Cells[1].Value = Path.GetFileName(countfiles.Key);
-                dataGridView_final.Rows[Currnum].Cells[3].Value = currrating;
                 if (currrating != 0)
                 {
                     string[] id = func.IDs(countfiles.Key);
                     dataGridView_final.Rows[Currnum].Cells[2].Value = id[0] + "-" + id[1] + "-" + id[2] + "-" + id[3] + "-" + id[4];
+                    if (String.Compare(textBox_hwid.Text, id[0]) == 0) // Процессор такой же
+                    {
+                        textBox_hwid.BackColor = Color.LawnGreen;
+                        currrating = currrating + 2;
+                    }
+                    if (String.Compare(textBox_oemid.Text, id[1]) == 0) // Производитель один и тот же
+                    {
+                        textBox_oemid.BackColor = Color.LawnGreen;
+                        currrating = currrating + 2;
+                    }
+                    if (String.Compare(textBox_modelid.Text, id[2]) == 0) // Модели равны
+                    {
+                        textBox_modelid.BackColor = Color.LawnGreen;
+                        currrating++;
+                    }
+                    if (String.Compare(textBox_oemhash.Text, id[3]) == 0) // Хеши равны
+                    {
+                        textBox_oemhash.BackColor = Color.LawnGreen;
+                        currrating = currrating + 2;
+                    }
+                    if (id[4].StartsWith("3")) // SWID начинается с 3
+                    {
+                        currrating++;
+                    }
                 }
+                dataGridView_final.Rows[Currnum].Cells[3].Value = currrating;
                 Currnum++;
                 Currvol += countfiles.Value;
                 toolStripStatusLabel_filescompleted.Text = "Обработано " + Currnum.ToString() + " файлов из " + numFiles.ToString();
