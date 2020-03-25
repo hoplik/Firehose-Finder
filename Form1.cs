@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Windows.Forms;
-using System.Reflection;
 using System.ComponentModel;
+using System.IO;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace FirehoseFinder
 {
@@ -48,12 +47,8 @@ namespace FirehoseFinder
                 dataGridView_final.Rows[Currnum].Cells[3].Value = currrating;
                 if (currrating != 0)
                 {
-                    string id1 = func.HWID(countfiles.Key);
-                    string id2 = func.OEMID(countfiles.Key);
-                    string id3 = func.MODELID(countfiles.Key);
-                    string id4 = func.HASH(countfiles.Key);
-                    dataGridView_final.Rows[Currnum].Cells[2].Value = id1 + "-" + id2 + "-" + id3 + "-" + id4;
-                    //Tests(countfiles.Key);
+                    string[] id = func.IDs(countfiles.Key);
+                    dataGridView_final.Rows[Currnum].Cells[2].Value = id[0] + "-" + id[1] + "-" + id[2] + "-" + id[3] + "-" + id[4];
                 }
                 Currnum++;
                 Currvol += countfiles.Value;

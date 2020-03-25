@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -49,7 +50,7 @@ namespace FirehoseFinder
             return Rat;
         }
 
-        public string ElfReader(string Filepath)
+        public static string ElfReader(string Filepath)
         {
             int len = 12288;// Нас интересуют байты с 0 по 4 (признак эльфа) и с 0х1000 по 0х3000 (три сертификата)
             StringBuilder dumptext = new StringBuilder(len);
@@ -65,31 +66,70 @@ namespace FirehoseFinder
             return dumptext.ToString();
         }
 
-        public string HWID(string Filepath)
+        public string[] IDs(string Filepath)
         {
             string str = ElfReader(Filepath);
-            string[] certarray = new string[3];
+            string[] certarray = new string[5];
+            int HWIDstrInd = str.IndexOf("2048575F4944"); // HW_ID
+            int SWIDstrInd = str.IndexOf("2053575F4944"); // SW_ID
+            string HWID = str.Substring(HWIDstrInd - 32, 32);
+            string SWID = str.Substring(SWIDstrInd - 32, 32);
             for (int i = 0; i < certarray.Length; i++)
             {
-                certarray[i] = str.Substring(0, 8);
+                switch (i)
+                {
+                    case 0:
+                        certarray[i] = HWID.Substring(0, 16);
+                        break;
+                    case 1:
+                        certarray[i] = HWID.Substring(0, 8);
+                        break;
+                    case 2:
+                        certarray[i] = HWID.Substring(0, 8);
+                        break;
+                    case 3:
+                        certarray[i] = HWID.Substring(0, 16);
+                        break;
+                    case 4:
+                        //  Формируем версию софтвера
+                        string[] SWStr = new string[8];
+                        int countv = 0;
+                        for (int j = 0; j < 16; j = j + 2)
+                        {
+                            SWStr[countv] = Convert.ToString((char)int.Parse(SWID.Substring(j, 2), NumberStyles.HexNumber));
+                            countv++;
+                        }
+                        string verstr = String.Join("", SWStr);
+                        string verend = string.Empty;
+                        if (String.Compare("00000000", verstr) != 0)
+                        {
+                            verend = "(" + verstr.TrimStart('0') + ")";
+                        }
+                        // Формируем номер софтвера
+                        string[] SNStr = new string[8];
+                        int countn = 0;
+                        for (int j = 16; j < 32; j = j + 2)
+                        {
+                            SNStr[countn] = Convert.ToString((char)int.Parse(SWID.Substring(j, 2), NumberStyles.HexNumber));
+                            countn++;
+                        }
+                        string nstr = String.Join("", SNStr);
+                        string nend = string.Empty;
+                        if (String.Compare("00000000", nstr) != 0)
+                        {
+                            nend = nstr.TrimStart('0');
+                        }
+                        else
+                        {
+                            nend = "0";
+                        }
+                        certarray[i] = nend + verend;
+                        break;
+                    default:
+                        break;
+                }
             }
-            return certarray[0];
+            return certarray;
         }
-        public string OEMID(string Filepath)
-        {
-            string str = "0000";
-            return str;
-        }
-        public string MODELID(string Filepath)
-        {
-            string str = "0000";
-            return str;
-        }
-        public string HASH(string Filepath)
-        {
-            string str = "00000000";
-            return str;
-        }
-
     }
 }

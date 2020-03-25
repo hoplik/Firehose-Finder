@@ -67,9 +67,10 @@
             this.tabControl1.Controls.Add(this.tabPage_about);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 450);
+            this.tabControl1.Size = new System.Drawing.Size(600, 366);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage_Request
@@ -87,10 +88,11 @@
             this.tabPage_Request.Controls.Add(this.textBox_modelid);
             this.tabPage_Request.Controls.Add(this.label_hwid);
             this.tabPage_Request.Controls.Add(this.textBox_hwid);
-            this.tabPage_Request.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_Request.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_Request.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage_Request.Name = "tabPage_Request";
-            this.tabPage_Request.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_Request.Size = new System.Drawing.Size(792, 421);
+            this.tabPage_Request.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage_Request.Size = new System.Drawing.Size(592, 340);
             this.tabPage_Request.TabIndex = 0;
             this.tabPage_Request.Text = "Запрос";
             this.tabPage_Request.UseVisualStyleBackColor = true;
@@ -107,12 +109,13 @@
             this.Column_rate});
             this.dataGridView_final.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridView_final.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView_final.Location = new System.Drawing.Point(3, 153);
+            this.dataGridView_final.Location = new System.Drawing.Point(2, 122);
+            this.dataGridView_final.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView_final.Name = "dataGridView_final";
             this.dataGridView_final.RowHeadersWidth = 51;
             this.dataGridView_final.RowTemplate.Height = 24;
             this.dataGridView_final.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_final.Size = new System.Drawing.Size(786, 239);
+            this.dataGridView_final.Size = new System.Drawing.Size(588, 194);
             this.dataGridView_final.TabIndex = 15;
             // 
             // statusStrip1
@@ -122,34 +125,36 @@
             this.toolStripStatusLabel_filescompleted,
             this.toolStripProgressBar_filescompleted,
             this.toolStripStatusLabel_vol});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 392);
+            this.statusStrip1.Location = new System.Drawing.Point(2, 316);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(786, 26);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(588, 22);
             this.statusStrip1.TabIndex = 12;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel_filescompleted
             // 
             this.toolStripStatusLabel_filescompleted.Name = "toolStripStatusLabel_filescompleted";
-            this.toolStripStatusLabel_filescompleted.Size = new System.Drawing.Size(199, 20);
+            this.toolStripStatusLabel_filescompleted.Size = new System.Drawing.Size(156, 17);
             this.toolStripStatusLabel_filescompleted.Text = "Обработано файлов: 0 из 0";
             // 
             // toolStripProgressBar_filescompleted
             // 
             this.toolStripProgressBar_filescompleted.AutoToolTip = true;
             this.toolStripProgressBar_filescompleted.Name = "toolStripProgressBar_filescompleted";
-            this.toolStripProgressBar_filescompleted.Size = new System.Drawing.Size(400, 18);
+            this.toolStripProgressBar_filescompleted.Size = new System.Drawing.Size(300, 16);
             // 
             // toolStripStatusLabel_vol
             // 
             this.toolStripStatusLabel_vol.Name = "toolStripStatusLabel_vol";
-            this.toolStripStatusLabel_vol.Size = new System.Drawing.Size(0, 20);
+            this.toolStripStatusLabel_vol.Size = new System.Drawing.Size(0, 17);
             // 
             // button_startscan
             // 
-            this.button_startscan.Location = new System.Drawing.Point(329, 107);
+            this.button_startscan.Location = new System.Drawing.Point(247, 87);
+            this.button_startscan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_startscan.Name = "button_startscan";
-            this.button_startscan.Size = new System.Drawing.Size(324, 23);
+            this.button_startscan.Size = new System.Drawing.Size(243, 19);
             this.button_startscan.TabIndex = 10;
             this.button_startscan.Text = "Запустить сканирование";
             this.button_startscan.UseVisualStyleBackColor = true;
@@ -158,9 +163,10 @@
             // 
             // button_path
             // 
-            this.button_path.Location = new System.Drawing.Point(9, 108);
+            this.button_path.Location = new System.Drawing.Point(7, 88);
+            this.button_path.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button_path.Name = "button_path";
-            this.button_path.Size = new System.Drawing.Size(274, 23);
+            this.button_path.Size = new System.Drawing.Size(206, 19);
             this.button_path.TabIndex = 9;
             this.button_path.Text = "~Рабочий стол";
             this.button_path.UseVisualStyleBackColor = true;
@@ -169,18 +175,20 @@
             // label_path
             // 
             this.label_path.AutoSize = true;
-            this.label_path.Location = new System.Drawing.Point(27, 87);
+            this.label_path.Location = new System.Drawing.Point(20, 71);
+            this.label_path.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_path.Name = "label_path";
-            this.label_path.Size = new System.Drawing.Size(237, 17);
+            this.label_path.Size = new System.Drawing.Size(183, 13);
             this.label_path.TabIndex = 8;
             this.label_path.Text = "Укажите путь к коллекции firehose";
             // 
             // label_oemhash
             // 
             this.label_oemhash.AutoSize = true;
-            this.label_oemhash.Location = new System.Drawing.Point(3, 40);
+            this.label_oemhash.Location = new System.Drawing.Point(2, 32);
+            this.label_oemhash.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_oemhash.Name = "label_oemhash";
-            this.label_oemhash.Size = new System.Drawing.Size(85, 17);
+            this.label_oemhash.Size = new System.Drawing.Size(67, 13);
             this.label_oemhash.TabIndex = 7;
             this.label_oemhash.Text = "OEM_HASH";
             // 
@@ -188,19 +196,21 @@
             // 
             this.textBox_oemhash.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_oemhash.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_oemhash.Location = new System.Drawing.Point(94, 38);
+            this.textBox_oemhash.Location = new System.Drawing.Point(70, 31);
+            this.textBox_oemhash.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_oemhash.MaxLength = 64;
             this.textBox_oemhash.Name = "textBox_oemhash";
-            this.textBox_oemhash.Size = new System.Drawing.Size(559, 22);
+            this.textBox_oemhash.Size = new System.Drawing.Size(420, 20);
             this.textBox_oemhash.TabIndex = 6;
             this.textBox_oemhash.Text = "7C6DCA9BF5674291AA39DD55760C0D4B65C7A4223097AAB1DB791E2192002DDF";
             // 
             // label_oemid
             // 
             this.label_oemid.AutoSize = true;
-            this.label_oemid.Location = new System.Drawing.Point(157, 7);
+            this.label_oemid.Location = new System.Drawing.Point(118, 6);
+            this.label_oemid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_oemid.Name = "label_oemid";
-            this.label_oemid.Size = new System.Drawing.Size(78, 17);
+            this.label_oemid.Size = new System.Drawing.Size(62, 13);
             this.label_oemid.TabIndex = 5;
             this.label_oemid.Text = "OEM_ID 0x";
             // 
@@ -208,19 +218,21 @@
             // 
             this.textBox_oemid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_oemid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_oemid.Location = new System.Drawing.Point(240, 6);
+            this.textBox_oemid.Location = new System.Drawing.Point(180, 5);
+            this.textBox_oemid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_oemid.MaxLength = 4;
             this.textBox_oemid.Name = "textBox_oemid";
-            this.textBox_oemid.Size = new System.Drawing.Size(43, 22);
+            this.textBox_oemid.Size = new System.Drawing.Size(33, 20);
             this.textBox_oemid.TabIndex = 4;
             this.textBox_oemid.Text = "0043";
             // 
             // label_modelid
             // 
             this.label_modelid.AutoSize = true;
-            this.label_modelid.Location = new System.Drawing.Point(286, 10);
+            this.label_modelid.Location = new System.Drawing.Point(214, 8);
+            this.label_modelid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_modelid.Name = "label_modelid";
-            this.label_modelid.Size = new System.Drawing.Size(96, 17);
+            this.label_modelid.Size = new System.Drawing.Size(76, 13);
             this.label_modelid.TabIndex = 3;
             this.label_modelid.Text = "MODEL_ID 0x";
             // 
@@ -228,19 +240,21 @@
             // 
             this.textBox_modelid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_modelid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_modelid.Location = new System.Drawing.Point(387, 8);
+            this.textBox_modelid.Location = new System.Drawing.Point(290, 6);
+            this.textBox_modelid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_modelid.MaxLength = 4;
             this.textBox_modelid.Name = "textBox_modelid";
-            this.textBox_modelid.Size = new System.Drawing.Size(43, 22);
+            this.textBox_modelid.Size = new System.Drawing.Size(33, 20);
             this.textBox_modelid.TabIndex = 2;
             this.textBox_modelid.Text = "0000";
             // 
             // label_hwid
             // 
             this.label_hwid.AutoSize = true;
-            this.label_hwid.Location = new System.Drawing.Point(3, 7);
+            this.label_hwid.Location = new System.Drawing.Point(2, 6);
+            this.label_hwid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_hwid.Name = "label_hwid";
-            this.label_hwid.Size = new System.Drawing.Size(70, 17);
+            this.label_hwid.Size = new System.Drawing.Size(57, 13);
             this.label_hwid.TabIndex = 1;
             this.label_hwid.Text = "HW_ID 0x";
             // 
@@ -248,20 +262,22 @@
             // 
             this.textBox_hwid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_hwid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_hwid.Location = new System.Drawing.Point(79, 5);
+            this.textBox_hwid.Location = new System.Drawing.Point(59, 4);
+            this.textBox_hwid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_hwid.MaxLength = 8;
             this.textBox_hwid.Name = "textBox_hwid";
-            this.textBox_hwid.Size = new System.Drawing.Size(73, 22);
+            this.textBox_hwid.Size = new System.Drawing.Size(55, 20);
             this.textBox_hwid.TabIndex = 0;
             this.textBox_hwid.Text = "0009A0E1";
             // 
             // tabPage_about
             // 
             this.tabPage_about.Controls.Add(this.richTextBox_about);
-            this.tabPage_about.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_about.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_about.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage_about.Name = "tabPage_about";
-            this.tabPage_about.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_about.Size = new System.Drawing.Size(792, 421);
+            this.tabPage_about.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage_about.Size = new System.Drawing.Size(592, 340);
             this.tabPage_about.TabIndex = 1;
             this.tabPage_about.Text = "О программе";
             this.tabPage_about.UseVisualStyleBackColor = true;
@@ -269,9 +285,10 @@
             // richTextBox_about
             // 
             this.richTextBox_about.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox_about.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox_about.Location = new System.Drawing.Point(2, 2);
+            this.richTextBox_about.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox_about.Name = "richTextBox_about";
-            this.richTextBox_about.Size = new System.Drawing.Size(786, 415);
+            this.richTextBox_about.Size = new System.Drawing.Size(588, 336);
             this.richTextBox_about.TabIndex = 1;
             this.richTextBox_about.Text = "";
             // 
@@ -293,15 +310,15 @@
             this.Column_Name.HeaderText = "Файл";
             this.Column_Name.MinimumWidth = 6;
             this.Column_Name.Name = "Column_Name";
-            this.Column_Name.Width = 74;
+            this.Column_Name.Width = 61;
             // 
             // Column_id
             // 
             this.Column_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column_id.HeaderText = "HW-OEM-MODEL-HASH";
+            this.Column_id.HeaderText = "HW-OEM-MODEL-HASH-SW";
             this.Column_id.MinimumWidth = 6;
             this.Column_id.Name = "Column_id";
-            this.Column_id.Width = 193;
+            this.Column_id.Width = 173;
             // 
             // Column_rate
             // 
@@ -309,15 +326,16 @@
             this.Column_rate.HeaderText = "Rating";
             this.Column_rate.MinimumWidth = 6;
             this.Column_rate.Name = "Column_rate";
-            this.Column_rate.Width = 78;
+            this.Column_rate.Width = 63;
             // 
             // Formfhf
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Formfhf";
             this.Text = "Firehose Finder";
             this.Load += new System.EventHandler(this.Formfhf_Load);
