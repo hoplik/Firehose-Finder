@@ -21,12 +21,11 @@ namespace FirehoseFinder
             if (result == DialogResult.OK)
             {
                 button_path.Text = folderBrowserDialog1.SelectedPath;
-                button_startscan.Visible = true;
+                Algoritm();
             }
         }
-        private void Button_startscan_Click(object sender, EventArgs e)
+        private void Algoritm()
         {
-            button_startscan.Visible = false;
             Func func = new Func();
             _ = new Dictionary<string, long>();
             int volFiles = 0;
@@ -52,12 +51,12 @@ namespace FirehoseFinder
                     if (String.Compare(textBox_hwid.Text, id[0]) == 0) // Процессор такой же
                     {
                         textBox_hwid.BackColor = Color.LawnGreen;
-                        currrating = currrating + 2;
+                        currrating += 2;
                     }
                     if (String.Compare(textBox_oemid.Text, id[1]) == 0) // Производитель один и тот же
                     {
                         textBox_oemid.BackColor = Color.LawnGreen;
-                        currrating = currrating + 2;
+                        currrating += 2;
                     }
                     if (String.Compare(textBox_modelid.Text, id[2]) == 0) // Модели равны
                     {
@@ -67,12 +66,17 @@ namespace FirehoseFinder
                     if (String.Compare(textBox_oemhash.Text, id[3]) == 0) // Хеши равны
                     {
                         textBox_oemhash.BackColor = Color.LawnGreen;
-                        currrating = currrating + 2;
+                        currrating += 2;
                     }
                     if (id[4].StartsWith("3")) // SWID начинается с 3
                     {
                         currrating++;
                     }
+                }
+                else
+                {
+                    dataGridView_final.Rows[Currnum].ReadOnly = true; // Рейтинг 0 не обрабатываем
+                    dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.LightGray;
                 }
                 dataGridView_final.Rows[Currnum].Cells[3].Value = currrating;
                 Currnum++;
@@ -83,65 +87,12 @@ namespace FirehoseFinder
                 toolStripStatusLabel_vol.Text = Currvol.ToString() + " байт";
             }
             dataGridView_final.Sort(dataGridViewColumn: Column_rate, ListSortDirection.Descending);
+
         }
-        /*
-                /// <summary>
-                /// Запуск подпрограммы обработки файла. Чтение байт в хекс.
-                /// </summary>
-                /// <param name="fullpathfile">Полный путь к текущему файлу для обработки</param>
-                private void Tests(string fullpathfile)
-                {
-                    byte[] chunk = new byte[64];
-                    using (var stream = File.OpenRead(fullpathfile))
-                    {
-                        int byteschunk = stream.Read(chunk, 0, 64);
-                        DumpBytes(chunk, byteschunk);
-                    }
-                }
-                /// <summary>
-                /// Временная команда отображения хекс-байт для каждого из файлов. После будет заменена на анализ.
-                /// </summary>
-                /// <param name="bdata">Массив байт для анализа</param>
-                /// <param name="len">Размер массива байт</param>
-                public static void DumpBytes(byte[] bdata, int len)
-                {
-                    int i;
-                    int j = 0;
-                    char dchar;
-                    if (bdata != null)
-                    {
-                        // 3 * 16 знаков для хекс отображения (00 ) в начале, 8 знаков - пробелы в середине и 16 знаков на текст
-                        StringBuilder dumptext = new StringBuilder("        ", 16 * 4 + 8);
-                        for (i = 0; i < len; i++)
-                        {
-                            dumptext.Insert(j * 3, String.Format("{0:X2} ", (int)bdata[i]));
-                            dchar = (char)bdata[i];
-                            // заменяем непечатные символы точкой
-                            if (Char.IsWhiteSpace(dchar) || Char.IsControl(dchar))
-                            {
-                                dchar = '.';
-                            }
-                            dumptext.Append(dchar);
-                            j++;
-                            if (j == 16)
-                            {
-                                MessageBox.Show("Обработано " + (i + 1).ToString() + " записей" + Environment.NewLine + dumptext.ToString());
-                                dumptext.Length = 0;
-                                dumptext.Append("        ");
-                                j = 0;
-                            }
-                        }
-                        // добиваем до 16 символов пробелами последнюю неполную строку
-                        if (j > 0)
-                        {
-                            for (i = j; i < 16; i++)
-                            {
-                                dumptext.Insert(j * 3, "   ");
-                            }
-                            MessageBox.Show("Это последняя неполная строка" + Environment.NewLine + dumptext.ToString());
-                        }
-                    }
-                }*/
+        private void Button_startscan_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Пока ещё не придумал.");
+        }
         /// <summary>
         /// Выполнение инструкций при загрузке формы
         /// </summary>
@@ -155,6 +106,34 @@ namespace FirehoseFinder
                 + "Версия сборки: " + Assembly.GetExecutingAssembly().GetName().Version + Environment.NewLine
                 + Environment.NewLine
                 + "По вопросам поддержки, пожалуйста, обращайтесь: " + FirehoseFinder.Properties.Resources.String_help;
+        }
+
+        private void DataGridView_final_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (!dataGridView_final.Rows[e.RowIndex].ReadOnly)
+                {
+                    if (Convert.ToBoolean(dataGridView_final.Rows[e.RowIndex].Cells[0].Value))
+                    {
+                        dataGridView_final.Rows[e.RowIndex].Cells[0].Value = false;
+                        button_startscan.Visible = false;
+                    }
+                    else
+                    {
+                        for (int i = 0; i < dataGridView_final.Rows.Count; i++)
+                        {
+                            dataGridView_final.Rows[i].Cells[0].Value = false;
+                        }
+                        dataGridView_final.Rows[e.RowIndex].Cells[0].Value = true;
+                        button_startscan.Visible = true;
+                    }
+                }
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show("Стоит сначала выбрать рабочую директорию" + Environment.NewLine + ex.Message);
+            }
         }
     }
 }

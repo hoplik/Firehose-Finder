@@ -69,89 +69,92 @@ namespace FirehoseFinder
         public string[] IDs(string Filepath)
         {
             string str = ElfReader(Filepath);
-            string[] certarray = new string[5];
+            string[] certarray = new string[5] { "-", "-", "-", "-", "-" };
             int HWIDstrInd = str.IndexOf("2048575F4944"); // HW_ID
             int SWIDstrInd = str.IndexOf("2053575F4944"); // SW_ID
-            string HWID = str.Substring(HWIDstrInd - 32, 32);
-            string SWID = str.Substring(SWIDstrInd - 32, 32);
-            for (int i = 0; i < certarray.Length; i++)
+            if (HWIDstrInd >= 32 && SWIDstrInd >= 32)
             {
-                switch (i)
+                string HWID = str.Substring(HWIDstrInd - 32, 32);
+                string SWID = str.Substring(SWIDstrInd - 32, 32);
+                for (int i = 0; i < certarray.Length; i++)
                 {
-                    case 0:
-                        // Вытягиваем процессор
-                        string[] HStr = new string[8];
-                        int counth = 0;
-                        for (int j = 0; j < 16; j = j + 2)
-                        {
-                            HStr[counth] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
-                            counth++;
-                        }
-                        certarray[i] = String.Join("", HStr);
-                        break;
-                    case 1:
-                        // Вытягиваем производителя
-                        string[] OStr = new string[4];
-                        int counto = 0;
-                        for (int j = 16; j < 24; j = j + 2)
-                        {
-                            OStr[counto] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
-                            counto++;
-                        }
-                        certarray[i] = String.Join("", OStr);
-                        break;
-                    case 2:
-                        // Вытягиваем номер модели
-                        string[] MStr = new string[4];
-                        int countm = 0;
-                        for (int j = 24; j < 32; j = j + 2)
-                        {
-                            MStr[countm] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
-                            countm++;
-                        }
-                        certarray[i] = String.Join("", MStr);
-                        break;
-                    case 3:
-                        // Расчитываем хеш
-                        certarray[i] = "В разработке";
-                        break;
-                    case 4:
-                        //  Формируем версию софтвера
-                        string[] SWStr = new string[8];
-                        int countv = 0;
-                        for (int j = 0; j < 16; j = j + 2)
-                        {
-                            SWStr[countv] = Convert.ToString((char)int.Parse(SWID.Substring(j, 2), NumberStyles.HexNumber));
-                            countv++;
-                        }
-                        string verstr = String.Join("", SWStr);
-                        string verend = string.Empty;
-                        if (String.Compare("00000000", verstr) != 0)
-                        {
-                            verend = "(" + verstr.TrimStart('0') + ")";
-                        }
-                        // Формируем номер софтвера
-                        string[] SNStr = new string[8];
-                        int countn = 0;
-                        for (int j = 16; j < 32; j = j + 2)
-                        {
-                            SNStr[countn] = Convert.ToString((char)int.Parse(SWID.Substring(j, 2), NumberStyles.HexNumber));
-                            countn++;
-                        }
-                        string nstr = String.Join("", SNStr);
-                        string nend = string.Empty;
-                        if (String.Compare("00000000", nstr) != 0)
-                        {
-                            nend = nstr.TrimStart('0');
-                        }
-                        else
-                        {
-                            nend = "0";
-                        }
-                        certarray[i] = nend + verend;
-                        break;
-                    default:
-                        break;
+                    switch (i)
+                    {
+                        case 0:
+                            // Вытягиваем процессор
+                            string[] HStr = new string[8];
+                            int counth = 0;
+                            for (int j = 0; j < 16; j += 2)
+                            {
+                                HStr[counth] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
+                                counth++;
+                            }
+                            certarray[i] = String.Join("", HStr);
+                            break;
+                        case 1:
+                            // Вытягиваем производителя
+                            string[] OStr = new string[4];
+                            int counto = 0;
+                            for (int j = 16; j < 24; j += 2)
+                            {
+                                OStr[counto] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
+                                counto++;
+                            }
+                            certarray[i] = String.Join("", OStr);
+                            break;
+                        case 2:
+                            // Вытягиваем номер модели
+                            string[] MStr = new string[4];
+                            int countm = 0;
+                            for (int j = 24; j < 32; j += 2)
+                            {
+                                MStr[countm] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
+                                countm++;
+                            }
+                            certarray[i] = String.Join("", MStr);
+                            break;
+                        case 3:
+                            // Расчитываем хеш
+                            certarray[i] = "В разработке";
+                            break;
+                        case 4:
+                            //  Формируем версию софтвера
+                            string[] SWStr = new string[8];
+                            int countv = 0;
+                            for (int j = 0; j < 16; j += 2)
+                            {
+                                SWStr[countv] = Convert.ToString((char)int.Parse(SWID.Substring(j, 2), NumberStyles.HexNumber));
+                                countv++;
+                            }
+                            string verstr = String.Join("", SWStr);
+                            string verend = string.Empty;
+                            if (String.Compare("00000000", verstr) != 0)
+                            {
+                                verend = "(" + verstr.TrimStart('0') + ")";
+                            }
+                            // Формируем номер софтвера
+                            string[] SNStr = new string[8];
+                            int countn = 0;
+                            for (int j = 16; j < 32; j += 2)
+                            {
+                                SNStr[countn] = Convert.ToString((char)int.Parse(SWID.Substring(j, 2), NumberStyles.HexNumber));
+                                countn++;
+                            }
+                            string nstr = String.Join("", SNStr);
+                            string nend;
+                            if (String.Compare("00000000", nstr) != 0)
+                            {
+                                nend = nstr.TrimStart('0');
+                            }
+                            else
+                            {
+                                nend = "0";
+                            }
+                            certarray[i] = nend + verend;
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
             return certarray;
