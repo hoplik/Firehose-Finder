@@ -6,6 +6,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Security.Cryptography;
+using System.Linq;
 
 namespace FirehoseFinder
 {
@@ -123,7 +124,7 @@ namespace FirehoseFinder
                             break;
                         case 3:
                             // Расчитываем хеш
-                            certarray[i] = CertExtr(str);
+                            certarray[i] = CertExtr(str, Filepath);
                             break;
                         case 4:
                             //  Формируем версию софтвера
@@ -167,18 +168,19 @@ namespace FirehoseFinder
             }
             return certarray;
         }
-        private static string CertExtr(string SFDump)
+        private static string CertExtr(string SFDump, string file)
         {
             string pattern = "(3082.{4}3082)";
             MatchCollection matchs = Regex.Matches(SFDump, pattern);
             Dictionary<int, string> certs = new Dictionary<int, string>();
             int countcert = 1;
             StringBuilder SHAstr = new StringBuilder();
+            FileInfo fi = new FileInfo(file);
             foreach (Match match in matchs)
             {
                 if (countcert > 3)
                 {
-                    MessageBox.Show("В текущем файле более 3 сертификатов." + Environment.NewLine + "Будут обработаны первые 3.");
+                    MessageBox.Show("В текущем файле " + fi.Name + " более 3 сертификатов." + Environment.NewLine + "Будут обработаны первые 3.");
                     break;
                 }
                 string certl = SFDump.Substring(match.Index + 4, 4); // Получили длину сертификата в строке хекс
@@ -186,13 +188,13 @@ namespace FirehoseFinder
                 certs.Add(countcert, match.Value + SFDump.Substring(match.Index + 12, certlen * 2 - 4));
                 countcert++;
             }
-            /*SHA256 mysha256 = SHA256.Create();
-            byte[] certbytes;
-            for (int i = 0; i < certs[3].Length; i += 2)
+            SHA256 mysha256 = SHA256.Create();
+            if (certs.ContainsKey(3))
             {
-                certbytes[(i / 2)] = Convert.ToByte((char)int.Parse(certs[3].Substring(i, 2), NumberStyles.HexNumber));
+                byte[] hashbytes = mysha256.ComputeHash(StringToByteArray(certs[3]));
+                SHAstr.Append(BitConverter.ToString(hashbytes));
+                SHAstr.Replace("-", "");
             }
-            SHAstr.Insert(0, mysha256.ComputeHash(certbytes));*/
             if (SHAstr.Length < 64)
             {
                 int morechar = 64 - SHAstr.Length;
@@ -202,7 +204,14 @@ namespace FirehoseFinder
             {
                 SHAstr.Append("(SHA256)");
             }
-            return SHAstr.ToString().Substring(56);
+            return SHAstr.ToString();
+        }
+        public static byte[] StringToByteArray(string hex)
+        {
+            return Enumerable.Range(0, hex.Length)
+                             .Where(x => x % 2 == 0)
+                             .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
+                             .ToArray();
         }
     }
 }

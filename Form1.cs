@@ -51,7 +51,16 @@ namespace FirehoseFinder
                 if (currrating != 0)
                 {
                     string[] id = func.IDs(countfiles.Key);
-                    dataGridView_final.Rows[Currnum].Cells[2].Value = id[0] + "-" + id[1] + "-" + id[2] + "-" + id[3] + "-" + id[4];
+                    string oemhash = string.Empty;
+                    if (id[3].Length < 64)
+                    {
+                        oemhash = id[3];
+                    }
+                    else
+                    {
+                        oemhash = id[3].Substring(56);
+                    }
+                    dataGridView_final.Rows[Currnum].Cells[2].Value = id[0] + "-" + id[1] + "-" + id[2] + "-" + oemhash + "-" + id[4];
                     if (String.Compare(textBox_hwid.Text, id[0]) == 0) // Процессор такой же
                     {
                         textBox_hwid.BackColor = Color.LawnGreen;
@@ -67,10 +76,13 @@ namespace FirehoseFinder
                         textBox_modelid.BackColor = Color.LawnGreen;
                         currrating++;
                     }
-                    if (String.Compare(textBox_oemhash.Text, id[3]) == 0) // Хеши равны
+                    if (id[3].Length >= 64)
                     {
-                        textBox_oemhash.BackColor = Color.LawnGreen;
-                        currrating += 2;
+                        if (String.Compare(textBox_oemhash.Text, id[3].Substring(0, 64)) == 0) // Хеши равны
+                        {
+                            textBox_oemhash.BackColor = Color.LawnGreen;
+                            currrating += 2;
+                        }
                     }
                     if (id[4].StartsWith("3")) // SWID начинается с 3
                     {
@@ -109,7 +121,9 @@ namespace FirehoseFinder
                 + Environment.NewLine
                 + "Версия сборки: " + Assembly.GetExecutingAssembly().GetName().Version + Environment.NewLine
                 + Environment.NewLine
-                + "По вопросам поддержки, пожалуйста, обращайтесь: " + FirehoseFinder.Properties.Resources.String_help;
+                + "По вопросам поддержки, пожалуйста, обращайтесь: " + FirehoseFinder.Properties.Resources.String_help + Environment.NewLine
+                + Environment.NewLine
+                + "Часто задаваемые вопросы: " + FirehoseFinder.Properties.Resources.String_faq;
         }
 
         private void DataGridView_final_CellClick(object sender, DataGridViewCellEventArgs e)
