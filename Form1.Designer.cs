@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfhf));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_Request = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView_final = new System.Windows.Forms.DataGridView();
             this.Column_Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,11 +71,12 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 450);
+            this.tabControl1.Size = new System.Drawing.Size(1064, 456);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage_Request
             // 
+            this.tabPage_Request.Controls.Add(this.label1);
             this.tabPage_Request.Controls.Add(this.dataGridView_final);
             this.tabPage_Request.Controls.Add(this.statusStrip1);
             this.tabPage_Request.Controls.Add(this.button_startscan);
@@ -92,10 +94,19 @@
             this.tabPage_Request.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage_Request.Name = "tabPage_Request";
             this.tabPage_Request.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage_Request.Size = new System.Drawing.Size(792, 421);
+            this.tabPage_Request.Size = new System.Drawing.Size(1056, 427);
             this.tabPage_Request.TabIndex = 0;
             this.tabPage_Request.Text = "Запрос";
             this.tabPage_Request.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(658, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(131, 17);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Алгоритм SHA-256";
             // 
             // dataGridView_final
             // 
@@ -109,13 +120,13 @@
             this.Column_rate});
             this.dataGridView_final.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridView_final.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView_final.Location = new System.Drawing.Point(3, 150);
+            this.dataGridView_final.Location = new System.Drawing.Point(3, 156);
             this.dataGridView_final.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView_final.Name = "dataGridView_final";
             this.dataGridView_final.RowHeadersWidth = 51;
             this.dataGridView_final.RowTemplate.Height = 24;
             this.dataGridView_final.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_final.Size = new System.Drawing.Size(786, 239);
+            this.dataGridView_final.Size = new System.Drawing.Size(1050, 239);
             this.dataGridView_final.TabIndex = 15;
             this.dataGridView_final.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellClick);
             // 
@@ -157,10 +168,10 @@
             this.toolStripStatusLabel_filescompleted,
             this.toolStripProgressBar_filescompleted,
             this.toolStripStatusLabel_vol});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 389);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 395);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(786, 30);
+            this.statusStrip1.Size = new System.Drawing.Size(1050, 30);
             this.statusStrip1.TabIndex = 12;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -328,7 +339,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1064, 456);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -373,6 +384,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_rate;
+        private System.Windows.Forms.Label label1;
     }
 }
 

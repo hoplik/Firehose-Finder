@@ -17,6 +17,10 @@ namespace FirehoseFinder
 
         private void Button_path_Click(object sender, EventArgs e)
         {
+            textBox_hwid.BackColor = Color.Empty;
+            textBox_oemid.BackColor = Color.Empty;
+            textBox_modelid.BackColor = Color.Empty;
+            textBox_oemhash.BackColor = Color.Empty;
             DialogResult result = folderBrowserDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {

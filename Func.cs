@@ -4,6 +4,8 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
+using System.Security.Cryptography;
 
 namespace FirehoseFinder
 {
@@ -46,13 +48,19 @@ namespace FirehoseFinder
                 {
                     Rat++;
                 }
+                // Тест 3 - у программера есть fh@0x%08, у xbl этого нет.
+                if (ElfReader(Filepath).Contains("6668403078253038"))
+                {
+                    Rat++;
+                }
             }
             return Rat;
         }
 
         public static string ElfReader(string Filepath)
         {
-            int len = 12288;// Нас интересуют байты с 0 по 4 (признак эльфа) и с 0х1000 по 0х3000 (три сертификата)
+            FileInfo exfile = new FileInfo(Filepath);
+            int len = Convert.ToInt32(exfile.Length);
             StringBuilder dumptext = new StringBuilder(len);
             byte[] chunk = new byte[len];
             using (var stream = File.OpenRead(Filepath))
@@ -115,7 +123,7 @@ namespace FirehoseFinder
                             break;
                         case 3:
                             // Расчитываем хеш
-                            certarray[i] = "В разработке";
+                            certarray[i] = CertExtr(str);
                             break;
                         case 4:
                             //  Формируем версию софтвера
@@ -158,6 +166,43 @@ namespace FirehoseFinder
                 }
             }
             return certarray;
+        }
+        private static string CertExtr(string SFDump)
+        {
+            string pattern = "(3082.{4}3082)";
+            MatchCollection matchs = Regex.Matches(SFDump, pattern);
+            Dictionary<int, string> certs = new Dictionary<int, string>();
+            int countcert = 1;
+            StringBuilder SHAstr = new StringBuilder();
+            foreach (Match match in matchs)
+            {
+                if (countcert > 3)
+                {
+                    MessageBox.Show("В текущем файле более 3 сертификатов." + Environment.NewLine + "Будут обработаны первые 3.");
+                    break;
+                }
+                string certl = SFDump.Substring(match.Index + 4, 4); // Получили длину сертификата в строке хекс
+                int certlen = Int32.Parse(certl, NumberStyles.HexNumber); // Перевели её в 10 инт
+                certs.Add(countcert, match.Value + SFDump.Substring(match.Index + 12, certlen * 2 - 4));
+                countcert++;
+            }
+            /*SHA256 mysha256 = SHA256.Create();
+            byte[] certbytes;
+            for (int i = 0; i < certs[3].Length; i += 2)
+            {
+                certbytes[(i / 2)] = Convert.ToByte((char)int.Parse(certs[3].Substring(i, 2), NumberStyles.HexNumber));
+            }
+            SHAstr.Insert(0, mysha256.ComputeHash(certbytes));*/
+            if (SHAstr.Length < 64)
+            {
+                int morechar = 64 - SHAstr.Length;
+                SHAstr.Insert(0, "0", morechar);
+            }
+            if (certs[1].Contains("534841323536")) // SHA256
+            {
+                SHAstr.Append("(SHA256)");
+            }
+            return SHAstr.ToString().Substring(56);
         }
     }
 }
