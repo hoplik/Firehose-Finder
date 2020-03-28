@@ -1,12 +1,14 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Text;
-using System.Windows.Forms;
-using System.Text.RegularExpressions;
-using System.Security.Cryptography;
+using System.IO.Ports;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace FirehoseFinder
 {
@@ -213,5 +215,79 @@ namespace FirehoseFinder
                              .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
                              .ToArray();
         }
+
+        /// <summary>
+        /// Список папок реестра, которые необходимо проверить на подключаемые в параллельные порты устройства
+        /// </summary>
+        [Flags]
+        public enum RegistryDevices
+        {
+            USB
+        }
+
+        internal Dictionary<string, string> allUSBDev = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Готовим листинг всех устройств, прописанных в реестре на USB порту и отмечаем доступные
+        /// </summary>
+        /// <returns>Возвращает массив устройств (название, порт), которые были подключены к системе.</returns>
+        internal void ListingUSBDic()
+        {
+            try
+            {
+                RegistryKey rk = Registry.LocalMachine; // Зашли в локал машин
+                for (int i = 0; i < Enum.GetValues(typeof(RegistryDevices)).Length; i++)
+                {
+                    string currentFolder = Enum.GetName(typeof(RegistryDevices), i);
+                    RegistryKey openRK = rk.OpenSubKey("SYSTEM\\CurrentControlSet\\Enum\\" + currentFolder); // Открыли на чтение папку USB устройств
+                    string[] USBDevices = openRK.GetSubKeyNames();  // Получили имена всех, когда-либо подключаемых устройств
+                    foreach (string stepOne in USBDevices)  // Для каждого производителя устройства проверяем подпапки, т.к. бывает несколько устройств на одном ВИД/ПИД
+                    {
+                        RegistryKey stepOneReg = openRK.OpenSubKey(stepOne);    // Открываем каждого производителя на чтение
+                        string[] stepTwo = stepOneReg.GetSubKeyNames(); // Получили список всех устройств для каждого производителя
+                        foreach (string friendName in stepTwo)
+                        {
+                            RegistryKey friendRegName = stepOneReg.OpenSubKey(friendName);
+                            string[] fn = friendRegName.GetValueNames();
+                            foreach (string currentName in fn)
+                            {
+                                if (currentName == "FriendlyName")
+                                {
+                                    object frn = friendRegName.GetValue("FriendlyName");
+                                    RegistryKey devPar = friendRegName.OpenSubKey("Device Parameters");
+                                    object dp = devPar.GetValue("PortName");
+                                    allUSBDev.Add((string)frn, (string)dp);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string err = ex.Message;
+                allUSBDev.Add("Внимание! Ошибка!", (string)err);
+            }
+        }
+
+        /// <summary>
+        /// Проверка доступности указанного порта
+        /// </summary>
+        /// <param name="checkPort">Строковая переменная. Имя порта для проверки.</param>
+        /// <returns>Если указанный порт присутвует в системе - true, иначе - false.</returns>
+        internal bool AvailablePort(string checkPort)
+        {
+            string[] ports = SerialPort.GetPortNames();
+            foreach (string port in ports)
+            {
+                if (checkPort == port)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 }
+

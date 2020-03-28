@@ -155,4 +155,124 @@ namespace FirehoseFinder
         }
     }
 }
+/* Разобрать!!
+         * fn.ListingUSBDic(); // Однократный запрос всех USB устройств для записи в глобальную переменную
+            ArduinoSerialPort.BaudRate = Convert.ToInt32(ArduComboBoxBaud.Text);
+            ArduDevDic(AutoConnectArduTextBox.Text);
+            EnablePorts();  // Если после автоподключения в листвью есть доступные устройства, то пробуем открыть порты
+        }
+        /// <summary>
+        /// Отлавливаем подключение/отключение USB устройств. Перезапускаем программу
+        /// </summary>
+        /// <param name="m"></param>
+        protected override void WndProc(ref Message m)
+        {
+            try
+            {
+                base.WndProc(ref m);
+            }
+            catch (TargetInvocationException)
+            {
+
+            }
+
+            switch (m.WParam.ToInt32())
+            {
+                case 0x8000://новое usb подключено
+                    Application.Restart();
+                    break;
+                case 0x8004: // usb отключено
+                    Application.Restart();
+                    break;
+                case 0x0007: // Любое изменение конфигурации оборудования
+                    Application.Restart();
+                    break;
+                default:
+                    break;
+            }
+        }
+        /// <summary>
+        /// Открываем для чтения отмеченные доступные порты
+        /// </summary>
+        private void EnablePorts()
+        {
+            if (ArduListView.Items.Count != 0)
+            {
+                for (int Item = 0; Item < GPSListView.Items.Count; Item++)
+                {
+                    if (GPSListView.Items[Item].Checked)
+                    {
+                        try
+                        {
+                            if (GPSSerialPort.IsOpen)
+                            {
+                                gpsportclosed = true;
+                                GPSSerialPort.Close();
+                                GPSSerialPort.Dispose();
+                            }
+                            GPSSerialPort.PortName = GPSListView.Items[Item].Text;
+                            GPSSerialPort.Open();
+                            gpsportclosed = false;
+                            GPSSerialPort.DiscardInBuffer();
+                        }
+                        catch (Exception)
+                        {
+                        }
+
+                    }
+                    if (ArduListView.Items[Item].Checked)
+                    {
+                        if (ArduinoSerialPort.IsOpen)
+                        {
+                            ArduinoSerialPort.Close();
+                            ArduinoSerialPort.Dispose();
+                            if (PreFlightListView.Items[(int)Functions.CHECKLIST.AUTOPILOTISON].Checked)
+                            {
+                                PreFlightListView.Items[(int)Functions.CHECKLIST.AUTOPILOTISON].Checked = false;
+                            }
+                            PreFlightListView.Items[(int)Functions.CHECKLIST.AUTOPILOTISON].BackColor = Color.LightCoral;
+                        }
+                        ArduinoSerialPort.PortName = ArduListView.Items[Item].Text;
+                        ArduinoSerialPort.Open();
+                        if (!PreFlightListView.Items[(int)Functions.CHECKLIST.ARDUINOENABLE].Checked)
+                        {
+                            PreFlightListView.Items[(int)Functions.CHECKLIST.ARDUINOENABLE].Checked = true;
+                        }
+                        PreFlightListView.Items[(int)Functions.CHECKLIST.ARDUINOENABLE].BackColor = Color.Lime;
+                    }
+                }
+            }
+        }
+
+        private void Button_Send_to_port_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox_Send_to_port.Text))
+            {
+                MessageBox.Show("Нечего отправлять");
+            }
+            else
+            {
+                textBox_Port_Sniffer.Text = textBox_Port_Sniffer.Text + textBox_Send_to_port.Text + Environment.NewLine;
+                textBox_Send_to_port.Text = String.Empty;
+            }
+        }
+
+        private void Button_Save_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox_Port_Sniffer.Text))
+            {
+                MessageBox.Show("Нечего сохранять");
+            }
+            else
+            {
+                MessageBox.Show("Сохранили в файл");
+            }
+        }
+
+        private void Button_Clean_Click(object sender, EventArgs e)
+        {
+            textBox_Port_Sniffer.Text = String.Empty;
+        }
+    }
+*/
 
