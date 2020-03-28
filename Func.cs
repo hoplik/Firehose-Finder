@@ -215,7 +215,6 @@ namespace FirehoseFinder
                              .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
                              .ToArray();
         }
-
         /// <summary>
         /// Список папок реестра, которые необходимо проверить на подключаемые в параллельные порты устройства
         /// </summary>
@@ -224,15 +223,14 @@ namespace FirehoseFinder
         {
             USB
         }
-
         internal Dictionary<string, string> allUSBDev = new Dictionary<string, string>();
-
         /// <summary>
         /// Готовим листинг всех устройств, прописанных в реестре на USB порту и отмечаем доступные
         /// </summary>
         /// <returns>Возвращает массив устройств (название, порт), которые были подключены к системе.</returns>
         internal void ListingUSBDic()
         {
+            allUSBDev.Clear();
             try
             {
                 RegistryKey rk = Registry.LocalMachine; // Зашли в локал машин
@@ -258,18 +256,24 @@ namespace FirehoseFinder
                                     object dp = devPar.GetValue("PortName");
                                     allUSBDev.Add((string)frn, (string)dp);
                                 }
+                                if (currentName == "LowerFilters")
+                                {
+                                    object frn = friendRegName.GetValue("LowerFilters");
+                                    RegistryKey devPar = friendRegName.OpenSubKey("Device Parameters");
+                                    object dp = devPar.GetValue("Label");
+                                    var str = String.Join(string.Empty, dp);
+                                    allUSBDev.Add(str, "Подключённое устройство");
+                                }
                             }
                         }
                     }
                 }
             }
-            catch (Exception ex)
+            catch (ArgumentException ex)
             {
-                string err = ex.Message;
-                allUSBDev.Add("Внимание! Ошибка!", (string)err);
+                MessageBox.Show(ex.Message);
             }
         }
-
         /// <summary>
         /// Проверка доступности указанного порта
         /// </summary>
@@ -287,7 +291,6 @@ namespace FirehoseFinder
             }
             return false;
         }
-
     }
 }
 

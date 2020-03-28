@@ -28,9 +28,9 @@ namespace FirehoseFinder
                 Algoritm();
             }
         }
+        Func func = new Func();
         private void Algoritm()
         {
-            Func func = new Func();
             _ = new Dictionary<string, long>();
             int volFiles = 0;
             Dictionary<string, long> Resfiles = func.WFiles(button_path.Text);
@@ -116,6 +116,8 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Formfhf_Load(object sender, EventArgs e)
         {
+            func.ListingUSBDic(); // Однократный запрос всех USB устройств для записи в глобальную переменную
+            EnablePorts();  // Если после автоподключения в листвью есть доступные устройства, то пробуем открыть порты
             richTextBox_about.Text = FirehoseFinder.Properties.Resources.String_about + Environment.NewLine
                 + "Ссылка на базовую тему <<Общие принципы восстановления загрузчиков на Qualcomm | HS - USB QDLoader 9008, HS - USB Diagnostics 9006, QHUSB_DLOAD и т.д.>>: " + FirehoseFinder.Properties.Resources.String_theme_link + Environment.NewLine
                 + Environment.NewLine
@@ -125,7 +127,11 @@ namespace FirehoseFinder
                 + Environment.NewLine
                 + "Часто задаваемые вопросы: " + FirehoseFinder.Properties.Resources.String_faq;
         }
-
+        /// <summary>
+        /// Обработка выбранной строки с программером
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DataGridView_final_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -153,126 +159,65 @@ namespace FirehoseFinder
                 MessageBox.Show("Стоит сначала выбрать рабочую директорию" + Environment.NewLine + ex.Message);
             }
         }
-    }
-}
-/* Разобрать!!
-         * fn.ListingUSBDic(); // Однократный запрос всех USB устройств для записи в глобальную переменную
-            ArduinoSerialPort.BaudRate = Convert.ToInt32(ArduComboBoxBaud.Text);
-            ArduDevDic(AutoConnectArduTextBox.Text);
-            EnablePorts();  // Если после автоподключения в листвью есть доступные устройства, то пробуем открыть порты
-        }
         /// <summary>
-        /// Отлавливаем подключение/отключение USB устройств. Перезапускаем программу
+        /// Отлавливаем подключение/отключение USB устройств. Открываем закладку Настройки
         /// </summary>
         /// <param name="m"></param>
         protected override void WndProc(ref Message m)
         {
-            try
-            {
-                base.WndProc(ref m);
-            }
-            catch (TargetInvocationException)
-            {
-
-            }
+            try { base.WndProc(ref m); }
+            catch (TargetInvocationException) { }
 
             switch (m.WParam.ToInt32())
             {
                 case 0x8000://новое usb подключено
-                    Application.Restart();
+                    tabControl1.SelectedTab = tabPage_settings;
+                    EnablePorts();  // Если после автоподключения в листвью есть доступные устройства, то пробуем открыть порты
+
                     break;
                 case 0x8004: // usb отключено
-                    Application.Restart();
+                    tabControl1.SelectedTab = tabPage_settings;
+                    EnablePorts();  // Если после автоподключения в листвью есть доступные устройства, то пробуем открыть порты
+
                     break;
                 case 0x0007: // Любое изменение конфигурации оборудования
-                    Application.Restart();
+                    tabControl1.SelectedTab = tabPage_settings;
+                    func.ListingUSBDic(); // Однократный запрос всех USB устройств для записи в глобальную переменную
+                    EnablePorts();  // Если после автоподключения в листвью есть доступные устройства, то пробуем открыть порты
+
                     break;
                 default:
                     break;
             }
         }
         /// <summary>
-        /// Открываем для чтения отмеченные доступные порты
+        /// Проверяем все доступные порты
         /// </summary>
         private void EnablePorts()
         {
-            if (ArduListView.Items.Count != 0)
+            comboBox_phone_connect.Items.Clear();
+            foreach (KeyValuePair<string, string> device in func.allUSBDev)
             {
-                for (int Item = 0; Item < GPSListView.Items.Count; Item++)
+                if (device.Value != null) // Убираем не ком и устройства
                 {
-                    if (GPSListView.Items[Item].Checked)
+                    comboBox_phone_connect.Items.Add(device.Key);
+                    if (device.Value.Contains("COM"))
                     {
-                        try
+                        if (func.AvailablePort(device.Value)) // Зарегистрированы ли в системе ком
                         {
-                            if (GPSSerialPort.IsOpen)
-                            {
-                                gpsportclosed = true;
-                                GPSSerialPort.Close();
-                                GPSSerialPort.Dispose();
-                            }
-                            GPSSerialPort.PortName = GPSListView.Items[Item].Text;
-                            GPSSerialPort.Open();
-                            gpsportclosed = false;
-                            GPSSerialPort.DiscardInBuffer();
+                            comboBox_phone_connect.Text = device.Key;
+                            serialPort_phone.PortName = device.Value;
                         }
-                        catch (Exception)
+                        else
                         {
+                            comboBox_phone_connect.Text = "Автовыбор при подключении";
                         }
-
                     }
-                    if (ArduListView.Items[Item].Checked)
-                    {
-                        if (ArduinoSerialPort.IsOpen)
-                        {
-                            ArduinoSerialPort.Close();
-                            ArduinoSerialPort.Dispose();
-                            if (PreFlightListView.Items[(int)Functions.CHECKLIST.AUTOPILOTISON].Checked)
-                            {
-                                PreFlightListView.Items[(int)Functions.CHECKLIST.AUTOPILOTISON].Checked = false;
-                            }
-                            PreFlightListView.Items[(int)Functions.CHECKLIST.AUTOPILOTISON].BackColor = Color.LightCoral;
-                        }
-                        ArduinoSerialPort.PortName = ArduListView.Items[Item].Text;
-                        ArduinoSerialPort.Open();
-                        if (!PreFlightListView.Items[(int)Functions.CHECKLIST.ARDUINOENABLE].Checked)
-                        {
-                            PreFlightListView.Items[(int)Functions.CHECKLIST.ARDUINOENABLE].Checked = true;
-                        }
-                        PreFlightListView.Items[(int)Functions.CHECKLIST.ARDUINOENABLE].BackColor = Color.Lime;
-                    }
+                    // Тут потом надо будет сделать проверку подключённого USB устройства, но не на ком-порт
                 }
             }
         }
-
-        private void Button_Send_to_port_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(textBox_Send_to_port.Text))
-            {
-                MessageBox.Show("Нечего отправлять");
-            }
-            else
-            {
-                textBox_Port_Sniffer.Text = textBox_Port_Sniffer.Text + textBox_Send_to_port.Text + Environment.NewLine;
-                textBox_Send_to_port.Text = String.Empty;
-            }
-        }
-
-        private void Button_Save_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(textBox_Port_Sniffer.Text))
-            {
-                MessageBox.Show("Нечего сохранять");
-            }
-            else
-            {
-                MessageBox.Show("Сохранили в файл");
-            }
-        }
-
-        private void Button_Clean_Click(object sender, EventArgs e)
-        {
-            textBox_Port_Sniffer.Text = String.Empty;
-        }
     }
-*/
+}
+
 
