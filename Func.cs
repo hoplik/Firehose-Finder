@@ -274,23 +274,6 @@ namespace FirehoseFinder
                 MessageBox.Show(ex.Message);
             }
         }
-        /// <summary>
-        /// Проверка доступности указанного порта
-        /// </summary>
-        /// <param name="checkPort">Строковая переменная. Имя порта для проверки.</param>
-        /// <returns>Если указанный порт присутвует в системе - true, иначе - false.</returns>
-        internal bool AvailablePort(string checkPort)
-        {
-            string[] ports = SerialPort.GetPortNames();
-            foreach (string port in ports)
-            {
-                if (checkPort == port)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
     }
 }
 

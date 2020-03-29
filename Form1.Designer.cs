@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfhf));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage_Request = new System.Windows.Forms.TabPage();
+            this.tabPage_firehose = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView_final = new System.Windows.Forms.DataGridView();
             this.Column_Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusStrip_firehose = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel_filescompleted = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar_filescompleted = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel_vol = new System.Windows.Forms.ToolStripStatusLabel();
@@ -53,25 +53,30 @@
             this.textBox_modelid = new System.Windows.Forms.TextBox();
             this.label_hwid = new System.Windows.Forms.Label();
             this.textBox_hwid = new System.Windows.Forms.TextBox();
+            this.tabPage_phone = new System.Windows.Forms.TabPage();
+            this.statusStrip_phone = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel_phone = new System.Windows.Forms.ToolStripStatusLabel();
+            this.textBox_phone = new System.Windows.Forms.TextBox();
+            this.label_phone_connect = new System.Windows.Forms.Label();
+            this.comboBox_phone_connect = new System.Windows.Forms.ComboBox();
             this.tabPage_about = new System.Windows.Forms.TabPage();
             this.richTextBox_about = new System.Windows.Forms.RichTextBox();
-            this.tabPage_settings = new System.Windows.Forms.TabPage();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.serialPort_phone = new System.IO.Ports.SerialPort(this.components);
-            this.comboBox_phone_connect = new System.Windows.Forms.ComboBox();
-            this.label_phone_connect = new System.Windows.Forms.Label();
+            this.checkBox_ava_ports = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
-            this.tabPage_Request.SuspendLayout();
+            this.tabPage_firehose.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_final)).BeginInit();
-            this.statusStrip1.SuspendLayout();
+            this.statusStrip_firehose.SuspendLayout();
+            this.tabPage_phone.SuspendLayout();
+            this.statusStrip_phone.SuspendLayout();
             this.tabPage_about.SuspendLayout();
-            this.tabPage_settings.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage_Request);
-            this.tabControl1.Controls.Add(this.tabPage_settings);
+            this.tabControl1.Controls.Add(this.tabPage_firehose);
+            this.tabControl1.Controls.Add(this.tabPage_phone);
             this.tabControl1.Controls.Add(this.tabPage_about);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -81,30 +86,30 @@
             this.tabControl1.Size = new System.Drawing.Size(1064, 455);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage_Request
+            // tabPage_firehose
             // 
-            this.tabPage_Request.Controls.Add(this.label1);
-            this.tabPage_Request.Controls.Add(this.dataGridView_final);
-            this.tabPage_Request.Controls.Add(this.statusStrip1);
-            this.tabPage_Request.Controls.Add(this.button_startscan);
-            this.tabPage_Request.Controls.Add(this.button_path);
-            this.tabPage_Request.Controls.Add(this.label_path);
-            this.tabPage_Request.Controls.Add(this.label_oemhash);
-            this.tabPage_Request.Controls.Add(this.textBox_oemhash);
-            this.tabPage_Request.Controls.Add(this.label_oemid);
-            this.tabPage_Request.Controls.Add(this.textBox_oemid);
-            this.tabPage_Request.Controls.Add(this.label_modelid);
-            this.tabPage_Request.Controls.Add(this.textBox_modelid);
-            this.tabPage_Request.Controls.Add(this.label_hwid);
-            this.tabPage_Request.Controls.Add(this.textBox_hwid);
-            this.tabPage_Request.Location = new System.Drawing.Point(4, 25);
-            this.tabPage_Request.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage_Request.Name = "tabPage_Request";
-            this.tabPage_Request.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage_Request.Size = new System.Drawing.Size(1056, 426);
-            this.tabPage_Request.TabIndex = 0;
-            this.tabPage_Request.Text = "Запрос";
-            this.tabPage_Request.UseVisualStyleBackColor = true;
+            this.tabPage_firehose.Controls.Add(this.label1);
+            this.tabPage_firehose.Controls.Add(this.dataGridView_final);
+            this.tabPage_firehose.Controls.Add(this.statusStrip_firehose);
+            this.tabPage_firehose.Controls.Add(this.button_startscan);
+            this.tabPage_firehose.Controls.Add(this.button_path);
+            this.tabPage_firehose.Controls.Add(this.label_path);
+            this.tabPage_firehose.Controls.Add(this.label_oemhash);
+            this.tabPage_firehose.Controls.Add(this.textBox_oemhash);
+            this.tabPage_firehose.Controls.Add(this.label_oemid);
+            this.tabPage_firehose.Controls.Add(this.textBox_oemid);
+            this.tabPage_firehose.Controls.Add(this.label_modelid);
+            this.tabPage_firehose.Controls.Add(this.textBox_modelid);
+            this.tabPage_firehose.Controls.Add(this.label_hwid);
+            this.tabPage_firehose.Controls.Add(this.textBox_hwid);
+            this.tabPage_firehose.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_firehose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage_firehose.Name = "tabPage_firehose";
+            this.tabPage_firehose.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage_firehose.Size = new System.Drawing.Size(1056, 426);
+            this.tabPage_firehose.TabIndex = 0;
+            this.tabPage_firehose.Text = "Firehose";
+            this.tabPage_firehose.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -168,19 +173,19 @@
             this.Column_rate.Name = "Column_rate";
             this.Column_rate.Width = 78;
             // 
-            // statusStrip1
+            // statusStrip_firehose
             // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusStrip_firehose.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip_firehose.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel_filescompleted,
             this.toolStripProgressBar_filescompleted,
             this.toolStripStatusLabel_vol});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 394);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1050, 30);
-            this.statusStrip1.TabIndex = 12;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip_firehose.Location = new System.Drawing.Point(3, 394);
+            this.statusStrip_firehose.Name = "statusStrip_firehose";
+            this.statusStrip_firehose.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
+            this.statusStrip_firehose.Size = new System.Drawing.Size(1050, 30);
+            this.statusStrip_firehose.TabIndex = 12;
+            this.statusStrip_firehose.Text = "statusStrip1";
             // 
             // toolStripStatusLabel_filescompleted
             // 
@@ -315,6 +320,67 @@
             this.textBox_hwid.TabIndex = 0;
             this.textBox_hwid.Text = "0009A0E1";
             // 
+            // tabPage_phone
+            // 
+            this.tabPage_phone.Controls.Add(this.checkBox_ava_ports);
+            this.tabPage_phone.Controls.Add(this.statusStrip_phone);
+            this.tabPage_phone.Controls.Add(this.textBox_phone);
+            this.tabPage_phone.Controls.Add(this.label_phone_connect);
+            this.tabPage_phone.Controls.Add(this.comboBox_phone_connect);
+            this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_phone.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage_phone.Name = "tabPage_phone";
+            this.tabPage_phone.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage_phone.Size = new System.Drawing.Size(1056, 426);
+            this.tabPage_phone.TabIndex = 2;
+            this.tabPage_phone.Text = "Phone";
+            this.tabPage_phone.UseVisualStyleBackColor = true;
+            // 
+            // statusStrip_phone
+            // 
+            this.statusStrip_phone.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip_phone.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel_phone});
+            this.statusStrip_phone.Location = new System.Drawing.Point(4, 396);
+            this.statusStrip_phone.Name = "statusStrip_phone";
+            this.statusStrip_phone.Size = new System.Drawing.Size(1048, 26);
+            this.statusStrip_phone.TabIndex = 3;
+            this.statusStrip_phone.Text = "statusStrip2";
+            // 
+            // toolStripStatusLabel_phone
+            // 
+            this.toolStripStatusLabel_phone.Name = "toolStripStatusLabel_phone";
+            this.toolStripStatusLabel_phone.Size = new System.Drawing.Size(154, 20);
+            this.toolStripStatusLabel_phone.Text = "Читаем новости тут...";
+            // 
+            // textBox_phone
+            // 
+            this.textBox_phone.Location = new System.Drawing.Point(6, 117);
+            this.textBox_phone.Multiline = true;
+            this.textBox_phone.Name = "textBox_phone";
+            this.textBox_phone.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox_phone.Size = new System.Drawing.Size(426, 274);
+            this.textBox_phone.TabIndex = 2;
+            // 
+            // label_phone_connect
+            // 
+            this.label_phone_connect.AutoSize = true;
+            this.label_phone_connect.Location = new System.Drawing.Point(3, 10);
+            this.label_phone_connect.Name = "label_phone_connect";
+            this.label_phone_connect.Size = new System.Drawing.Size(145, 17);
+            this.label_phone_connect.TabIndex = 1;
+            this.label_phone_connect.Text = "Телефон подключён";
+            // 
+            // comboBox_phone_connect
+            // 
+            this.comboBox_phone_connect.FormattingEnabled = true;
+            this.comboBox_phone_connect.Location = new System.Drawing.Point(154, 7);
+            this.comboBox_phone_connect.Name = "comboBox_phone_connect";
+            this.comboBox_phone_connect.Size = new System.Drawing.Size(430, 24);
+            this.comboBox_phone_connect.TabIndex = 0;
+            this.comboBox_phone_connect.Text = "Автовыбор при подключении";
+            this.comboBox_phone_connect.SelectedIndexChanged += new System.EventHandler(this.ComboBox_phone_connect_SelectedIndexChanged);
+            // 
             // tabPage_about
             // 
             this.tabPage_about.Controls.Add(this.richTextBox_about);
@@ -337,41 +403,21 @@
             this.richTextBox_about.TabIndex = 1;
             this.richTextBox_about.Text = "";
             // 
-            // tabPage_settings
-            // 
-            this.tabPage_settings.Controls.Add(this.label_phone_connect);
-            this.tabPage_settings.Controls.Add(this.comboBox_phone_connect);
-            this.tabPage_settings.Location = new System.Drawing.Point(4, 25);
-            this.tabPage_settings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage_settings.Name = "tabPage_settings";
-            this.tabPage_settings.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage_settings.Size = new System.Drawing.Size(1056, 426);
-            this.tabPage_settings.TabIndex = 2;
-            this.tabPage_settings.Text = "Настройки";
-            this.tabPage_settings.UseVisualStyleBackColor = true;
-            // 
             // folderBrowserDialog1
             // 
             this.folderBrowserDialog1.Description = "Укажите путь к папке с программерами";
             this.folderBrowserDialog1.ShowNewFolderButton = false;
             // 
-            // comboBox_phone_connect
+            // checkBox_ava_ports
             // 
-            this.comboBox_phone_connect.FormattingEnabled = true;
-            this.comboBox_phone_connect.Location = new System.Drawing.Point(154, 7);
-            this.comboBox_phone_connect.Name = "comboBox_phone_connect";
-            this.comboBox_phone_connect.Size = new System.Drawing.Size(430, 24);
-            this.comboBox_phone_connect.TabIndex = 0;
-            this.comboBox_phone_connect.Text = "Автовыбор при подключении";
-            // 
-            // label_phone_connect
-            // 
-            this.label_phone_connect.AutoSize = true;
-            this.label_phone_connect.Location = new System.Drawing.Point(3, 10);
-            this.label_phone_connect.Name = "label_phone_connect";
-            this.label_phone_connect.Size = new System.Drawing.Size(145, 17);
-            this.label_phone_connect.TabIndex = 1;
-            this.label_phone_connect.Text = "Телефон подключён";
+            this.checkBox_ava_ports.AutoSize = true;
+            this.checkBox_ava_ports.Location = new System.Drawing.Point(605, 10);
+            this.checkBox_ava_ports.Name = "checkBox_ava_ports";
+            this.checkBox_ava_ports.Size = new System.Drawing.Size(238, 21);
+            this.checkBox_ava_ports.TabIndex = 4;
+            this.checkBox_ava_ports.Text = "Показать все доступные порты";
+            this.checkBox_ava_ports.UseVisualStyleBackColor = true;
+            this.checkBox_ava_ports.CheckedChanged += new System.EventHandler(this.CheckBox_ava_ports_CheckedChanged);
             // 
             // Formfhf
             // 
@@ -385,14 +431,16 @@
             this.Text = "Firehose Finder";
             this.Load += new System.EventHandler(this.Formfhf_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage_Request.ResumeLayout(false);
-            this.tabPage_Request.PerformLayout();
+            this.tabPage_firehose.ResumeLayout(false);
+            this.tabPage_firehose.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_final)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.statusStrip_firehose.ResumeLayout(false);
+            this.statusStrip_firehose.PerformLayout();
+            this.tabPage_phone.ResumeLayout(false);
+            this.tabPage_phone.PerformLayout();
+            this.statusStrip_phone.ResumeLayout(false);
+            this.statusStrip_phone.PerformLayout();
             this.tabPage_about.ResumeLayout(false);
-            this.tabPage_settings.ResumeLayout(false);
-            this.tabPage_settings.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -400,7 +448,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage_Request;
+        private System.Windows.Forms.TabPage tabPage_firehose;
         private System.Windows.Forms.TabPage tabPage_about;
         private System.Windows.Forms.Label label_oemhash;
         private System.Windows.Forms.TextBox textBox_oemhash;
@@ -414,7 +462,7 @@
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Button button_path;
         private System.Windows.Forms.Button button_startscan;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusStrip_firehose;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar_filescompleted;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_filescompleted;
         private System.Windows.Forms.RichTextBox richTextBox_about;
@@ -425,10 +473,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_rate;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabPage_settings;
+        private System.Windows.Forms.TabPage tabPage_phone;
         private System.IO.Ports.SerialPort serialPort_phone;
         private System.Windows.Forms.Label label_phone_connect;
         private System.Windows.Forms.ComboBox comboBox_phone_connect;
+        private System.Windows.Forms.StatusStrip statusStrip_phone;
+        private System.Windows.Forms.TextBox textBox_phone;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_phone;
+        private System.Windows.Forms.CheckBox checkBox_ava_ports;
     }
 }
 
