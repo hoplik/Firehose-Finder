@@ -38,6 +38,7 @@
             this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip_firehose = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel_filescompleted = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar_filescompleted = new System.Windows.Forms.ToolStripProgressBar();
@@ -54,6 +55,7 @@
             this.label_hwid = new System.Windows.Forms.Label();
             this.textBox_hwid = new System.Windows.Forms.TextBox();
             this.tabPage_phone = new System.Windows.Forms.TabPage();
+            this.checkBox_ava_ports = new System.Windows.Forms.CheckBox();
             this.statusStrip_phone = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel_phone = new System.Windows.Forms.ToolStripStatusLabel();
             this.textBox_phone = new System.Windows.Forms.TextBox();
@@ -63,7 +65,7 @@
             this.richTextBox_about = new System.Windows.Forms.RichTextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.serialPort_phone = new System.IO.Ports.SerialPort(this.components);
-            this.checkBox_ava_ports = new System.Windows.Forms.CheckBox();
+            this.button_disconnect = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage_firehose.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_final)).BeginInit();
@@ -129,7 +131,8 @@
             this.Column_Sel,
             this.Column_Name,
             this.Column_id,
-            this.Column_rate});
+            this.Column_rate,
+            this.Column_Full});
             this.dataGridView_final.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridView_final.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView_final.Location = new System.Drawing.Point(3, 155);
@@ -141,6 +144,7 @@
             this.dataGridView_final.Size = new System.Drawing.Size(1050, 239);
             this.dataGridView_final.TabIndex = 15;
             this.dataGridView_final.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellClick);
+            this.dataGridView_final.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellDoubleClick);
             // 
             // Column_Sel
             // 
@@ -172,6 +176,14 @@
             this.Column_rate.MinimumWidth = 6;
             this.Column_rate.Name = "Column_rate";
             this.Column_rate.Width = 78;
+            // 
+            // Column_Full
+            // 
+            this.Column_Full.HeaderText = "Full Ids";
+            this.Column_Full.MinimumWidth = 6;
+            this.Column_Full.Name = "Column_Full";
+            this.Column_Full.Visible = false;
+            this.Column_Full.Width = 125;
             // 
             // statusStrip_firehose
             // 
@@ -322,6 +334,7 @@
             // 
             // tabPage_phone
             // 
+            this.tabPage_phone.Controls.Add(this.button_disconnect);
             this.tabPage_phone.Controls.Add(this.checkBox_ava_ports);
             this.tabPage_phone.Controls.Add(this.statusStrip_phone);
             this.tabPage_phone.Controls.Add(this.textBox_phone);
@@ -335,6 +348,17 @@
             this.tabPage_phone.TabIndex = 2;
             this.tabPage_phone.Text = "Phone";
             this.tabPage_phone.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_ava_ports
+            // 
+            this.checkBox_ava_ports.AutoSize = true;
+            this.checkBox_ava_ports.Location = new System.Drawing.Point(605, 10);
+            this.checkBox_ava_ports.Name = "checkBox_ava_ports";
+            this.checkBox_ava_ports.Size = new System.Drawing.Size(238, 21);
+            this.checkBox_ava_ports.TabIndex = 4;
+            this.checkBox_ava_ports.Text = "Показать все доступные порты";
+            this.checkBox_ava_ports.UseVisualStyleBackColor = true;
+            this.checkBox_ava_ports.CheckedChanged += new System.EventHandler(this.CheckBox_ava_ports_CheckedChanged);
             // 
             // statusStrip_phone
             // 
@@ -408,16 +432,16 @@
             this.folderBrowserDialog1.Description = "Укажите путь к папке с программерами";
             this.folderBrowserDialog1.ShowNewFolderButton = false;
             // 
-            // checkBox_ava_ports
+            // button_disconnect
             // 
-            this.checkBox_ava_ports.AutoSize = true;
-            this.checkBox_ava_ports.Location = new System.Drawing.Point(605, 10);
-            this.checkBox_ava_ports.Name = "checkBox_ava_ports";
-            this.checkBox_ava_ports.Size = new System.Drawing.Size(238, 21);
-            this.checkBox_ava_ports.TabIndex = 4;
-            this.checkBox_ava_ports.Text = "Показать все доступные порты";
-            this.checkBox_ava_ports.UseVisualStyleBackColor = true;
-            this.checkBox_ava_ports.CheckedChanged += new System.EventHandler(this.CheckBox_ava_ports_CheckedChanged);
+            this.button_disconnect.Location = new System.Drawing.Point(9, 31);
+            this.button_disconnect.Name = "button_disconnect";
+            this.button_disconnect.Size = new System.Drawing.Size(139, 27);
+            this.button_disconnect.TabIndex = 5;
+            this.button_disconnect.Text = "Отключить";
+            this.button_disconnect.UseVisualStyleBackColor = true;
+            this.button_disconnect.Visible = false;
+            this.button_disconnect.Click += new System.EventHandler(this.Button_disconnect_Click);
             // 
             // Formfhf
             // 
@@ -468,10 +492,6 @@
         private System.Windows.Forms.RichTextBox richTextBox_about;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_vol;
         private System.Windows.Forms.DataGridView dataGridView_final;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column_Sel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_rate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage_phone;
         private System.IO.Ports.SerialPort serialPort_phone;
@@ -481,6 +501,12 @@
         private System.Windows.Forms.TextBox textBox_phone;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_phone;
         private System.Windows.Forms.CheckBox checkBox_ava_ports;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column_Sel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_rate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Full;
+        private System.Windows.Forms.Button button_disconnect;
     }
 }
 

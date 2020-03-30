@@ -63,6 +63,9 @@ namespace FirehoseFinder
                         oemhash = id[3].Substring(56);
                     }
                     dataGridView_final.Rows[Currnum].Cells[2].Value = id[0] + "-" + id[1] + "-" + id[2] + "-" + oemhash + "-" + id[4];
+                    dataGridView_final.Rows[Currnum].Cells[4].Value = "HW_ID (процессор) - " + id[0] + Environment.NewLine +
+                        "OEM_ID (производитель) - " + id[1] + Environment.NewLine + "MODEL_ID (модель) - " + id[2] + Environment.NewLine +
+                        "OEM_HASH (хеш корневого сертификата) - " + id[3] + Environment.NewLine + "SW_ID (возможность прошивки) - " + id[4];
                     if (String.Compare(textBox_hwid.Text, id[0]) == 0) // Процессор такой же
                     {
                         textBox_hwid.BackColor = Color.LawnGreen;
@@ -175,9 +178,8 @@ namespace FirehoseFinder
                     tabControl1.SelectedTab = tabPage_phone;
                     EnablePorts();  // Если после автоподключения в листвью есть доступные устройства, то пробуем открыть порты
                     break;
-                case 0x8004: // usb отключено
-                    tabControl1.SelectedTab = tabPage_phone;
-                    EnablePorts();  // Если после автоподключения в листвью есть доступные устройства, то пробуем открыть порты
+                case 0x8004: // usb отключено - перезапуск программы
+                    Application.Restart();
                     break;
                 case 0x0007: // Любое изменение конфигурации оборудования
                     tabControl1.SelectedTab = tabPage_phone;
@@ -220,7 +222,6 @@ namespace FirehoseFinder
                     }
                 }
             }
-            if (serialPort_phone.IsOpen) serialPort_phone.Close();
             switch (activports.Count)
             {
                 case 0:
@@ -231,13 +232,19 @@ namespace FirehoseFinder
                     foreach (KeyValuePair<string, string> ap in activports)
                     {
                         comboBox_phone_connect.Text = ap.Key;
+                        if (serialPort_phone.IsOpen) serialPort_phone.Close();
                         serialPort_phone.PortName = ap.Value;
-                        if (TryToOpenPort())
+                        try
                         {
                             serialPort_phone.Open();
+                            button_disconnect.Visible = true;
                             toolStripStatusLabel_phone.Text = "Порт открыт.";
                         }
-                        else toolStripStatusLabel_phone.Text = "Не удалось открыть порт.";
+                        catch (Exception ex)
+                        {
+                            serialPort_phone.Close();
+                            toolStripStatusLabel_phone.Text = ex.Message;
+                        }
                     }
                     break;
                 default:
@@ -255,45 +262,31 @@ namespace FirehoseFinder
         {
             if (comboBox_phone_connect.Text.Contains("COM"))
             {
-                if (serialPort_phone.IsOpen) serialPort_phone.Close();
                 if (func.allUSBDev.TryGetValue(comboBox_phone_connect.Text, out string comportnew))
                 {
-                    serialPort_phone.PortName = comportnew;
-                    if (TryToOpenPort())
+                    if (serialPort_phone.IsOpen) serialPort_phone.Close();
+                    try
                     {
+                        serialPort_phone.PortName = comportnew;
                         serialPort_phone.Open();
+                        button_disconnect.Visible = true;
                         toolStripStatusLabel_phone.Text = "Порт изменён и открыт.";
                     }
-                    else toolStripStatusLabel_phone.Text = "Не удалось изменить порт.";
+                    catch (Exception ex)
+                    {
+                        serialPort_phone.Close();
+                        toolStripStatusLabel_phone.Text = "---" + ex.Message + "---";
+                    }
                 }
                 else toolStripStatusLabel_phone.Text = "Не удалось изменить порт. Попробуйте выбрать другой порт из списка.";
             }
             else toolStripStatusLabel_phone.Text = "Этот выбор не подразумевает изменение порта.";
         }
         /// <summary>
-        /// Пробуем открыть выбранный порт
+        /// Выводим полный или сокращённый список портов в зависимости от галки
         /// </summary>
-        /// <param name="comport"></param>
-        private bool TryToOpenPort()
-        {
-            if (serialPort_phone.IsOpen)
-            {
-                serialPort_phone.Dispose();
-                return true;
-            }
-            try
-            {
-                serialPort_phone.Open();
-                serialPort_phone.Dispose();
-                return true;
-            }
-            catch (IOException ex)
-            {
-                toolStripStatusLabel_phone.Text = "Ошибка открытия порта. " + ex.Message;
-            }
-            return false;
-        }
-
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CheckBox_ava_ports_CheckedChanged(object sender, EventArgs e)
         {
             comboBox_phone_connect.Items.Clear();
@@ -308,6 +301,27 @@ namespace FirehoseFinder
                 }
             }
             else EnablePorts();
+        }
+        /// <summary>
+        /// Выводим подробную информацию в отдельное окно с копированием в буфер обмена
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGridView_final_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show(dataGridView_final.Rows[e.RowIndex].Cells[4].Value.ToString(), "Сохранить данные в буфер обмена?", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            if (dr == DialogResult.OK)
+            {
+                Clipboard.Clear();
+                Clipboard.SetText(dataGridView_final.Rows[e.RowIndex].Cells[4].Value.ToString());
+            }
+        }
+
+        private void Button_disconnect_Click(object sender, EventArgs e)
+        {
+            serialPort_phone.Close();
+            button_disconnect.Visible = false;
+            toolStripStatusLabel_phone.Text = "Устройство отключено.";
         }
     }
 }
