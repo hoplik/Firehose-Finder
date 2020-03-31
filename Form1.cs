@@ -144,10 +144,6 @@ namespace FirehoseFinder
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TextBox_tx_Enter(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(textBox_tx.Text)) button_tx.Visible = true;
-        }
 
         /// <summary>
         /// Отправка строки в порт мышкой на кнопке
@@ -168,6 +164,7 @@ namespace FirehoseFinder
         private void TextBox_tx_KeyDown(object sender, KeyEventArgs e)
         {
             if ((e.KeyCode == Keys.Enter) && (!string.IsNullOrEmpty(textBox_tx.Text))) Tx(textBox_tx.Text);
+            if (String.IsNullOrEmpty(textBox_tx.Text)) button_tx.Visible = true;
         }
 
         /// <summary>
@@ -245,7 +242,7 @@ namespace FirehoseFinder
                 toolStripStatusLabel_filescompleted.Text = "Обработано " + Currnum.ToString() + " файлов из " + numFiles.ToString();
                 toolStripProgressBar_filescompleted.Maximum = Convert.ToInt32(volFiles);
                 toolStripProgressBar_filescompleted.Value = Convert.ToInt32(Currvol);
-                toolStripStatusLabel_vol.Text = Currvol.ToString() + " байт";
+                toolStripStatusLabel_vol.Text = Currvol.ToString("### ### ### ###") + " байт";
             }
             dataGridView_final.Sort(dataGridViewColumn: Column_rate, ListSortDirection.Descending);
 
@@ -397,10 +394,6 @@ namespace FirehoseFinder
                         }
                         catch (Exception ex)
                         {
-                            sp_closed = true;
-                            serialPort_phone.DiscardInBuffer();
-                            serialPort_phone.DiscardOutBuffer();
-                            serialPort_phone.Close();
                             toolStripStatusLabel_phone.Text = "--" + ex.Message + "--";
                         }
                     }
