@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.IO.Ports;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -12,14 +11,34 @@ using System.Windows.Forms;
 
 namespace FirehoseFinder
 {
+    public class USBPort
+    {
+        public string USBPortNumber { get; set; }
+        public string USBName { get; set; }
+        public override string ToString()
+        {
+            return USBName + "<>" + USBPortNumber;
+        }
+    }
     class Func
     {
+        // Глобальная переменная все USB устройства системы
+        internal List<USBPort> AllUSB = new List<USBPort>();
+
+        /// <summary>
+        /// Список папок реестра, которые необходимо проверить на подключаемые в параллельные порты устройства
+        /// </summary>
+        enum RegistryDevices
+        {
+            USB
+        }
+
         /// <summary>
         /// Создаём список файлов с размером из указанной директории
         /// </summary>
-        private readonly Dictionary<string, long> WorkFiles = new Dictionary<string, long>();
         public Dictionary<string, long> WFiles(string WorkDir)
         {
+            Dictionary<string, long> WorkFiles = new Dictionary<string, long>();
             var workF = new DirectoryInfo(WorkDir).EnumerateFiles("*.*", SearchOption.TopDirectoryOnly);
             try
             {
@@ -30,10 +49,11 @@ namespace FirehoseFinder
             }
             catch (ArgumentException e)
             {
-                MessageBox.Show(e.Message + Environment.NewLine + "Попались дубли файлов, но это не страшно");
+                MessageBox.Show(e.Message + Environment.NewLine + "Ошибка в функции WFiles");
             }
             return WorkFiles;
         }
+
         /// <summary>
         /// Список проверок для формирования рейтинга программера
         /// </summary>
@@ -60,6 +80,11 @@ namespace FirehoseFinder
             return Rat;
         }
 
+        /// <summary>
+        /// Побайтово считали файл
+        /// </summary>
+        /// <param name="Filepath">Полный путь к файлу</param>
+        /// <returns>Строка символов. Знаки байт.</returns>
         public static string ElfReader(string Filepath)
         {
             FileInfo exfile = new FileInfo(Filepath);
@@ -77,6 +102,11 @@ namespace FirehoseFinder
             return dumptext.ToString();
         }
 
+        /// <summary>
+        /// Вытаскиваем идентификаторы из считанного файла
+        /// </summary>
+        /// <param name="Filepath">Полный путь к файлу</param>
+        /// <returns>Массив идентификаторов в строках</returns>
         public string[] IDs(string Filepath)
         {
             string str = ElfReader(Filepath);
@@ -91,8 +121,7 @@ namespace FirehoseFinder
                 {
                     switch (i)
                     {
-                        case 0:
-                            // Вытягиваем процессор
+                        case 0: // Вытягиваем процессор
                             string[] HStr = new string[8];
                             int counth = 0;
                             for (int j = 0; j < 16; j += 2)
@@ -100,10 +129,9 @@ namespace FirehoseFinder
                                 HStr[counth] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
                                 counth++;
                             }
-                            certarray[i] = String.Join("", HStr);
+                            certarray[i] = String.Join(string.Empty, HStr);
                             break;
-                        case 1:
-                            // Вытягиваем производителя
+                        case 1: // Вытягиваем производителя
                             string[] OStr = new string[4];
                             int counto = 0;
                             for (int j = 16; j < 24; j += 2)
@@ -111,10 +139,9 @@ namespace FirehoseFinder
                                 OStr[counto] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
                                 counto++;
                             }
-                            certarray[i] = String.Join("", OStr);
+                            certarray[i] = String.Join(string.Empty, OStr);
                             break;
-                        case 2:
-                            // Вытягиваем номер модели
+                        case 2: // Вытягиваем номер модели
                             string[] MStr = new string[4];
                             int countm = 0;
                             for (int j = 24; j < 32; j += 2)
@@ -122,14 +149,12 @@ namespace FirehoseFinder
                                 MStr[countm] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
                                 countm++;
                             }
-                            certarray[i] = String.Join("", MStr);
+                            certarray[i] = String.Join(string.Empty, MStr);
                             break;
-                        case 3:
-                            // Расчитываем хеш
+                        case 3: // Расчитываем хеш
                             certarray[i] = CertExtr(str, Filepath);
                             break;
-                        case 4:
-                            //  Формируем версию софтвера
+                        case 4: //  Формируем версию софтвера
                             string[] SWStr = new string[8];
                             int countv = 0;
                             for (int j = 0; j < 16; j += 2)
@@ -137,12 +162,9 @@ namespace FirehoseFinder
                                 SWStr[countv] = Convert.ToString((char)int.Parse(SWID.Substring(j, 2), NumberStyles.HexNumber));
                                 countv++;
                             }
-                            string verstr = String.Join("", SWStr);
+                            string verstr = String.Join(string.Empty, SWStr);
                             string verend = string.Empty;
-                            if (String.Compare("00000000", verstr) != 0)
-                            {
-                                verend = "(" + verstr.TrimStart('0') + ")";
-                            }
+                            if (String.Compare("00000000", verstr) != 0) verend = "(" + verstr.TrimStart('0') + ")";
                             // Формируем номер софтвера
                             string[] SNStr = new string[8];
                             int countn = 0;
@@ -153,14 +175,8 @@ namespace FirehoseFinder
                             }
                             string nstr = String.Join("", SNStr);
                             string nend;
-                            if (String.Compare("00000000", nstr) != 0)
-                            {
-                                nend = nstr.TrimStart('0');
-                            }
-                            else
-                            {
-                                nend = "0";
-                            }
+                            if (String.Compare("00000000", nstr) != 0) nend = nstr.TrimStart('0');
+                            else nend = "0";
                             certarray[i] = nend + verend;
                             break;
                         default:
@@ -170,6 +186,13 @@ namespace FirehoseFinder
             }
             return certarray;
         }
+
+        /// <summary>
+        /// Рассчитываем хеш корневого сертификата
+        /// </summary>
+        /// <param name="SFDump">Считанная строка</param>
+        /// <param name="file">Полный путь к файлу</param>
+        /// <returns>Строка хеша</returns>
         private static string CertExtr(string SFDump, string file)
         {
             string pattern = "(3082.{4}3082)";
@@ -195,7 +218,7 @@ namespace FirehoseFinder
             {
                 byte[] hashbytes = mysha256.ComputeHash(StringToByteArray(certs[3]));
                 SHAstr.Append(BitConverter.ToString(hashbytes));
-                SHAstr.Replace("-", "");
+                SHAstr.Replace("-", string.Empty);
             }
             if (SHAstr.Length < 64)
             {
@@ -208,6 +231,12 @@ namespace FirehoseFinder
             }
             return SHAstr.ToString();
         }
+
+        /// <summary>
+        /// Переводим строку хекс символов в байты
+        /// </summary>
+        /// <param name="hex">Строка хекс символов</param>
+        /// <returns>Массив байт</returns>
         public static byte[] StringToByteArray(string hex)
         {
             return Enumerable.Range(0, hex.Length)
@@ -215,22 +244,14 @@ namespace FirehoseFinder
                              .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
                              .ToArray();
         }
+
         /// <summary>
-        /// Список папок реестра, которые необходимо проверить на подключаемые в параллельные порты устройства
-        /// </summary>
-        [Flags]
-        public enum RegistryDevices
-        {
-            USB
-        }
-        internal Dictionary<string, string> allUSBDev = new Dictionary<string, string>();
-        /// <summary>
-        /// Готовим листинг всех устройств, прописанных в реестре на USB порту и отмечаем доступные
+        /// Готовим листинг всех устройств, прописанных в реестре на USB порту
         /// </summary>
         /// <returns>Возвращает массив устройств (название, порт), которые были подключены к системе.</returns>
         internal void ListingUSBDic()
         {
-            allUSBDev.Clear();
+            AllUSB.Clear(); // Очищаем все элементы массива списка устройств
             try
             {
                 RegistryKey rk = Registry.LocalMachine; // Зашли в локал машин
@@ -254,15 +275,14 @@ namespace FirehoseFinder
                                     object frn = friendRegName.GetValue("FriendlyName");
                                     RegistryKey devPar = friendRegName.OpenSubKey("Device Parameters");
                                     object dp = devPar.GetValue("PortName");
-                                    allUSBDev.Add((string)frn, (string)dp);
+                                    AllUSB.Add(new USBPort() { USBName = (string)frn, USBPortNumber = (string)dp });
                                 }
                                 if (currentName == "LowerFilters")
                                 {
                                     object frn = friendRegName.GetValue("LowerFilters");
                                     RegistryKey devPar = friendRegName.OpenSubKey("Device Parameters");
                                     object dp = devPar.GetValue("Label");
-                                    var str = String.Join(string.Empty, dp);
-                                    allUSBDev.Add(str, "Подключённое устройство");
+                                    AllUSB.Add( new USBPort() { USBName = (string)dp, USBPortNumber = "Подключённое устройство" });
                                 }
                             }
                         }
@@ -271,7 +291,7 @@ namespace FirehoseFinder
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message + Environment.NewLine + "Ошибка в функции ListingUSBDic");
             }
         }
     }
