@@ -1,5 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -11,28 +10,8 @@ using System.Windows.Forms;
 
 namespace FirehoseFinder
 {
-    public class USBPort
-    {
-        public string USBPortNumber { get; set; }
-        public string USBName { get; set; }
-        public override string ToString()
-        {
-            return USBName + "<>" + USBPortNumber;
-        }
-    }
     class Func
     {
-        // Глобальная переменная все USB устройства системы
-        internal List<USBPort> AllUSB = new List<USBPort>();
-
-        /// <summary>
-        /// Список папок реестра, которые необходимо проверить на подключаемые в параллельные порты устройства
-        /// </summary>
-        enum RegistryDevices
-        {
-            USB
-        }
-
         /// <summary>
         /// Создаём список файлов с размером из указанной директории
         /// </summary>
@@ -243,56 +222,6 @@ namespace FirehoseFinder
                              .Where(x => x % 2 == 0)
                              .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
                              .ToArray();
-        }
-
-        /// <summary>
-        /// Готовим листинг всех устройств, прописанных в реестре на USB порту
-        /// </summary>
-        /// <returns>Возвращает массив устройств (название, порт), которые были подключены к системе.</returns>
-        internal void ListingUSBDic()
-        {
-            AllUSB.Clear(); // Очищаем все элементы массива списка устройств
-            try
-            {
-                RegistryKey rk = Registry.LocalMachine; // Зашли в локал машин
-                for (int i = 0; i < Enum.GetValues(typeof(RegistryDevices)).Length; i++)
-                {
-                    string currentFolder = Enum.GetName(typeof(RegistryDevices), i);
-                    RegistryKey openRK = rk.OpenSubKey("SYSTEM\\CurrentControlSet\\Enum\\" + currentFolder); // Открыли на чтение папку USB устройств
-                    string[] USBDevices = openRK.GetSubKeyNames();  // Получили имена всех, когда-либо подключаемых устройств
-                    foreach (string stepOne in USBDevices)  // Для каждого производителя устройства проверяем подпапки, т.к. бывает несколько устройств на одном ВИД/ПИД
-                    {
-                        RegistryKey stepOneReg = openRK.OpenSubKey(stepOne);    // Открываем каждого производителя на чтение
-                        string[] stepTwo = stepOneReg.GetSubKeyNames(); // Получили список всех устройств для каждого производителя
-                        foreach (string friendName in stepTwo)
-                        {
-                            RegistryKey friendRegName = stepOneReg.OpenSubKey(friendName);
-                            string[] fn = friendRegName.GetValueNames();
-                            foreach (string currentName in fn)
-                            {
-                                if (currentName == "FriendlyName")
-                                {
-                                    object frn = friendRegName.GetValue("FriendlyName");
-                                    RegistryKey devPar = friendRegName.OpenSubKey("Device Parameters");
-                                    object dp = devPar.GetValue("PortName");
-                                    AllUSB.Add(new USBPort() { USBName = (string)frn, USBPortNumber = (string)dp });
-                                }
-                                if (currentName == "LowerFilters")
-                                {
-                                    object frn = friendRegName.GetValue("LowerFilters");
-                                    RegistryKey devPar = friendRegName.OpenSubKey("Device Parameters");
-                                    object dp = devPar.GetValue("Label");
-                                    AllUSB.Add( new USBPort() { USBName = (string)dp, USBPortNumber = "Подключённое устройство" });
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show(ex.Message + Environment.NewLine + "Ошибка в функции ListingUSBDic");
-            }
         }
     }
 }
