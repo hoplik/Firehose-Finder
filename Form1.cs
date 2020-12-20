@@ -11,7 +11,7 @@ namespace FirehoseFinder
     public partial class Formfhf : Form
     {
         Func func = new Func(); // Подключили функции
-
+        Guide guide = new Guide();
         /// <summary>
         /// Инициализация компонентов
         /// </summary>
@@ -50,6 +50,11 @@ namespace FirehoseFinder
             textBox_oemid.BackColor = Color.Empty;
             textBox_modelid.BackColor = Color.Empty;
             textBox_oemhash.BackColor = Color.Empty;
+            dataGridView_final.Rows.Clear();
+            button_startscan.Visible = false;
+            toolStripStatusLabel_filescompleted.Text = string.Empty;
+            toolStripStatusLabel_vol.Text = string.Empty;
+            toolStripProgressBar_filescompleted.Value = 0;
             DialogResult result = folderBrowserDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -157,7 +162,10 @@ namespace FirehoseFinder
                     dataGridView_final.Rows[Currnum].Cells[2].Value = id[0] + "-" + id[1] + "-" + id[2] + "-" + oemhash + "-" + id[4];
                     dataGridView_final.Rows[Currnum].Cells[4].Value = "HW_ID (процессор) - " + id[0] + Environment.NewLine +
                         "OEM_ID (производитель) - " + id[1] + Environment.NewLine + "MODEL_ID (модель) - " + id[2] + Environment.NewLine +
-                        "OEM_HASH (хеш корневого сертификата) - " + id[3] + Environment.NewLine + "SW_ID (возможность прошивки) - " + id[4];
+                        "OEM_HASH (хеш корневого сертификата) - " + id[3] + Environment.NewLine + "SW_ID (тип программы (версия)) - " + id[4];
+                   
+                    if (guide.SW_ID_type.ContainsKey(id[4])) dataGridView_final.Rows[Currnum].Cells[5].Value = guide.SW_ID_type[id[4]];
+
                     if (String.Compare(textBox_hwid.Text, id[0]) == 0) // Процессор такой же
                     {
                         textBox_hwid.BackColor = Color.LawnGreen;

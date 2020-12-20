@@ -45,8 +45,8 @@ namespace FirehoseFinder
             //Тест 1 - Файл должен быть больше 0х3000 байт
             if (fi.Length >= 12288)// Это 0х3000 в хекс
             {
-                // Тест 2 - Файл должен быть ELF
-                if (ElfReader(Filepath).StartsWith("7F454C46"))
+                // Тест 2 - Файл должен быть ELF, иногда попадается ELE c 45 на конце
+                if (ElfReader(Filepath).StartsWith("7F454C4"))
                 {
                     Rat++;
                 }
@@ -67,18 +67,26 @@ namespace FirehoseFinder
         public static string ElfReader(string Filepath)
         {
             FileInfo exfile = new FileInfo(Filepath);
-            int len = Convert.ToInt32(exfile.Length);
-            StringBuilder dumptext = new StringBuilder(len);
-            byte[] chunk = new byte[len];
-            using (var stream = File.OpenRead(Filepath))
+            try
             {
-                int byteschunk = stream.Read(chunk, 0, len);
-                for (int i = 0; i < byteschunk; i++)
+                int len = Convert.ToInt32(exfile.Length);
+                StringBuilder dumptext = new StringBuilder(len);
+                byte[] chunk = new byte[len];
+                using (var stream = File.OpenRead(Filepath))
                 {
-                    dumptext.Insert(i * 2, String.Format("{0:X2}", (int)chunk[i]));
+                    int byteschunk = stream.Read(chunk, 0, len);
+                    for (int i = 0; i < byteschunk; i++)
+                    {
+                        dumptext.Insert(i * 2, String.Format("{0:X2}", (int)chunk[i]));
+                    }
                 }
+                return dumptext.ToString();
             }
-            return dumptext.ToString();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка в функции побайтового чтения файла" + Environment.NewLine + ex.Message);
+                return string.Empty;
+            }
         }
 
         /// <summary>
