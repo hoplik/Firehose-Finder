@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace FirehoseFinder
 {
@@ -123,7 +124,6 @@ namespace FirehoseFinder
                 }
             }
         }
-
         #endregion
 
         #region Функции самостоятельных команд
@@ -145,11 +145,13 @@ namespace FirehoseFinder
             foreach (KeyValuePair<string, long> countfiles in Resfiles)
             {
                 int currrating = func.Rating(countfiles.Key);
+                string shortfilename = Path.GetFileName(countfiles.Key);
+                toolStripStatusLabel_vol.Text = "Сейчас обрабатывается файл - " + shortfilename;
                 dataGridView_final.Rows.Add();
-                dataGridView_final.Rows[Currnum].Cells[1].Value = Path.GetFileName(countfiles.Key);
+                dataGridView_final.Rows[Currnum].Cells[1].Value = shortfilename;
                 if (currrating != 0)
                 {
-                    if (Func.ElfReader(button_path.Text + "\\" + dataGridView_final.Rows[Currnum].Cells[1].Value, 8).StartsWith("7F454C45"))
+                    if (Func.ElfReader(countfiles.Key, 8).StartsWith("7F454C45"))
                     {
                         dataGridView_final.Rows[Currnum].Cells[1].Style.BackColor = Color.Yellow;
                         dataGridView_final.Rows[Currnum].Cells[1].ToolTipText = "Файл не является ELF!";
@@ -165,12 +167,14 @@ namespace FirehoseFinder
                         oemhash = id[3].Substring(56);
                     }
                     dataGridView_final.Rows[Currnum].Cells[2].Value = id[0] + "-" + id[1] + "-" + id[2] + "-" + oemhash + "-" + id[4] + id[5];
+                    string sw_type = string.Empty;
+                    if (guide.SW_ID_type.ContainsKey(id[4])) sw_type = guide.SW_ID_type[id[4]];
+                    dataGridView_final.Rows[Currnum].Cells[5].Value = sw_type;
                     dataGridView_final.Rows[Currnum].Cells[4].Value = "HW_ID (процессор) - " + id[0] + Environment.NewLine +
-                        "OEM_ID (производитель) - " + id[1] + Environment.NewLine + "MODEL_ID (модель) - " + id[2] + Environment.NewLine +
-                        "OEM_HASH (хеш корневого сертификата) - " + id[3] + Environment.NewLine + "SW_ID (тип программы (версия)) - " + id[4] + id[5];
-
-                    if (guide.SW_ID_type.ContainsKey(id[4])) dataGridView_final.Rows[Currnum].Cells[5].Value = guide.SW_ID_type[id[4]];
-
+                        "OEM_ID (производитель) - " + id[1] + Environment.NewLine +
+                        "MODEL_ID (модель) - " + id[2] + Environment.NewLine +
+                        "OEM_HASH (хеш корневого сертификата) - " + id[3] + Environment.NewLine +
+                        "SW_ID (тип программы (версия)) - " + id[4] + id[5] + " - " + sw_type;
                     if (String.Compare(textBox_hwid.Text, id[0]) == 0) // Процессор такой же
                     {
                         textBox_hwid.BackColor = Color.LawnGreen;
@@ -209,14 +213,22 @@ namespace FirehoseFinder
                 Currnum++;
                 Currvol += Convert.ToUInt64(countfiles.Value);
                 toolStripStatusLabel_filescompleted.Text = "Обработано " + Currnum.ToString() + " файлов из " + numFiles.ToString();
-                toolStripProgressBar_filescompleted.Maximum = Convert.ToInt32(volFiles);
-                toolStripProgressBar_filescompleted.Value = Convert.ToInt32(Currvol);
-                toolStripStatusLabel_vol.Text = Currvol.ToString("### ### ### ###") + " байт";
+                toolStripProgressBar_filescompleted.Value = Convert.ToInt32(Currvol * 100.0 / volFiles);
             }
             dataGridView_final.Sort(dataGridViewColumn: Column_rate, ListSortDirection.Descending);
+            toolStripStatusLabel_vol.Text = string.Empty;
+            toolStripProgressBar_filescompleted.Value = 0;
+        }
+
+        /// <summary>
+        /// Выполнение длительной операции в параллельном потоке
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
         }
         #endregion
     }
 }
-
-
