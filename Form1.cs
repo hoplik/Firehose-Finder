@@ -149,6 +149,11 @@ namespace FirehoseFinder
                 dataGridView_final.Rows[Currnum].Cells[1].Value = Path.GetFileName(countfiles.Key);
                 if (currrating != 0)
                 {
+                    if (Func.ElfReader(button_path.Text + "\\" + dataGridView_final.Rows[Currnum].Cells[1].Value, 8).StartsWith("7F454C45"))
+                    {
+                        dataGridView_final.Rows[Currnum].Cells[1].Style.BackColor = Color.Yellow;
+                        dataGridView_final.Rows[Currnum].Cells[1].ToolTipText = "Файл не является ELF!";
+                    }
                     string[] id = func.IDs(countfiles.Key);
                     string oemhash = string.Empty;
                     if (id[3].Length < 64)
@@ -159,11 +164,11 @@ namespace FirehoseFinder
                     {
                         oemhash = id[3].Substring(56);
                     }
-                    dataGridView_final.Rows[Currnum].Cells[2].Value = id[0] + "-" + id[1] + "-" + id[2] + "-" + oemhash + "-" + id[4];
+                    dataGridView_final.Rows[Currnum].Cells[2].Value = id[0] + "-" + id[1] + "-" + id[2] + "-" + oemhash + "-" + id[4] + id[5];
                     dataGridView_final.Rows[Currnum].Cells[4].Value = "HW_ID (процессор) - " + id[0] + Environment.NewLine +
                         "OEM_ID (производитель) - " + id[1] + Environment.NewLine + "MODEL_ID (модель) - " + id[2] + Environment.NewLine +
-                        "OEM_HASH (хеш корневого сертификата) - " + id[3] + Environment.NewLine + "SW_ID (тип программы (версия)) - " + id[4];
-                   
+                        "OEM_HASH (хеш корневого сертификата) - " + id[3] + Environment.NewLine + "SW_ID (тип программы (версия)) - " + id[4] + id[5];
+
                     if (guide.SW_ID_type.ContainsKey(id[4])) dataGridView_final.Rows[Currnum].Cells[5].Value = guide.SW_ID_type[id[4]];
 
                     if (String.Compare(textBox_hwid.Text, id[0]) == 0) // Процессор такой же
@@ -200,6 +205,7 @@ namespace FirehoseFinder
                     dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.LightGray;
                 }
                 dataGridView_final.Rows[Currnum].Cells[3].Value = currrating;
+                dataGridView_final.Rows[Currnum].Cells[3].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 Currnum++;
                 Currvol += Convert.ToUInt64(countfiles.Value);
                 toolStripStatusLabel_filescompleted.Text = "Обработано " + Currnum.ToString() + " файлов из " + numFiles.ToString();
@@ -208,7 +214,6 @@ namespace FirehoseFinder
                 toolStripStatusLabel_vol.Text = Currvol.ToString("### ### ### ###") + " байт";
             }
             dataGridView_final.Sort(dataGridViewColumn: Column_rate, ListSortDirection.Descending);
-
         }
         #endregion
     }

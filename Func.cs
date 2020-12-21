@@ -46,12 +46,12 @@ namespace FirehoseFinder
             if (fi.Length >= 12288)// Это 0х3000 в хекс
             {
                 // Тест 2 - Файл должен быть ELF, иногда попадается ELE c 45 на конце
-                if (ElfReader(Filepath).StartsWith("7F454C4"))
+                if (ElfReader(Filepath, 8).StartsWith("7F454C4"))
                 {
                     Rat++;
                 }
                 // Тест 3 - у программера есть fh@0x%08, у xbl этого нет.
-                if (ElfReader(Filepath).Contains("6668403078253038"))
+                if (ElfReader(Filepath, -1).Contains("6668403078253038"))
                 {
                     Rat++;
                 }
@@ -63,13 +63,16 @@ namespace FirehoseFinder
         /// Побайтово считали файл
         /// </summary>
         /// <param name="Filepath">Полный путь к файлу</param>
+        /// <param name="readbytes">Количество байт для чтения. Если -1, то читаем весь файл полностью</param>
         /// <returns>Строка символов. Знаки байт.</returns>
-        public static string ElfReader(string Filepath)
+        public static string ElfReader(string Filepath, int readbytes)
         {
             FileInfo exfile = new FileInfo(Filepath);
+            int len = readbytes;
+            if (readbytes == -1) len = Convert.ToInt32(exfile.Length);//Читаем весь файл полностью
+            if (len > 20000000) len = 20000000; //Если файл очень большой, ограничиваемся 20мБ
             try
             {
-                int len = Convert.ToInt32(exfile.Length);
                 StringBuilder dumptext = new StringBuilder(len);
                 byte[] chunk = new byte[len];
                 using (var stream = File.OpenRead(Filepath))
@@ -82,11 +85,7 @@ namespace FirehoseFinder
                 }
                 return dumptext.ToString();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка в функции побайтового чтения файла" + Environment.NewLine + ex.Message);
-                return string.Empty;
-            }
+            catch (OutOfMemoryException) { return string.Empty; }
         }
 
         /// <summary>
@@ -96,8 +95,8 @@ namespace FirehoseFinder
         /// <returns>Массив идентификаторов в строках</returns>
         public string[] IDs(string Filepath)
         {
-            string str = ElfReader(Filepath);
-            string[] certarray = new string[5] { "-", "-", "-", "-", "-" };
+            string str = ElfReader(Filepath, -1);
+            string[] certarray = new string[6] { "-", "-", "-", "-", "-", "-" };
             int HWIDstrInd = str.IndexOf("2048575F4944"); // HW_ID
             int SWIDstrInd = str.IndexOf("2053575F4944"); // SW_ID
             if (HWIDstrInd >= 32 && SWIDstrInd >= 32)
@@ -141,18 +140,7 @@ namespace FirehoseFinder
                         case 3: // Расчитываем хеш
                             certarray[i] = CertExtr(str, Filepath);
                             break;
-                        case 4: //  Формируем версию софтвера
-                            string[] SWStr = new string[8];
-                            int countv = 0;
-                            for (int j = 0; j < 16; j += 2)
-                            {
-                                SWStr[countv] = Convert.ToString((char)int.Parse(SWID.Substring(j, 2), NumberStyles.HexNumber));
-                                countv++;
-                            }
-                            string verstr = String.Join(string.Empty, SWStr);
-                            string verend = string.Empty;
-                            if (String.Compare("00000000", verstr) != 0) verend = "(" + verstr.TrimStart('0') + ")";
-                            // Формируем номер софтвера
+                        case 4: // Формируем тип софтвера
                             string[] SNStr = new string[8];
                             int countn = 0;
                             for (int j = 16; j < 32; j += 2)
@@ -164,7 +152,20 @@ namespace FirehoseFinder
                             string nend;
                             if (String.Compare("00000000", nstr) != 0) nend = nstr.TrimStart('0');
                             else nend = "0";
-                            certarray[i] = nend + verend;
+                            certarray[i] = nend;
+                            break;
+                        case 5: //  Формируем версию софтвера
+                            string[] SWStr = new string[8];
+                            int countv = 0;
+                            for (int j = 0; j < 16; j += 2)
+                            {
+                                SWStr[countv] = Convert.ToString((char)int.Parse(SWID.Substring(j, 2), NumberStyles.HexNumber));
+                                countv++;
+                            }
+                            string verstr = String.Join(string.Empty, SWStr);
+                            string verend = string.Empty;
+                            if (String.Compare("00000000", verstr) != 0) verend = "(" + verstr.TrimStart('0') + ")";
+                            certarray[i] = verend;
                             break;
                         default:
                             break;
