@@ -60,7 +60,7 @@ namespace FirehoseFinder
             if (result == DialogResult.OK)
             {
                 button_path.Text = folderBrowserDialog1.SelectedPath;
-                Algoritm();
+                Check_Unread_Files();
             }
         }
 
@@ -124,9 +124,86 @@ namespace FirehoseFinder
                 }
             }
         }
+
+        /// <summary>
+        /// Побайтное чтение файла в параллельном потоке
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BackgroundWorker_Read_File_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            for (int J = 0; J < 5; J++)
+            {
+                for (int i = 0; i < Convert.ToInt32(e.Argument); i++)
+                {
+                    //Просто заглушка
+                    worker.ReportProgress(i * 100 / Convert.ToInt32(e.Argument));
+                    Thread.Sleep(50);
+                }
+            }
+            e.Result = "Готово!";
+        }
+
+        /// <summary>
+        /// Отрисовка прогрессбара при длительной операции в параллельном потоке
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">Значение от 1 до 100, как процент выполнения задачи чтения файла</param>
+        private void BackgroundWorker_Read_File_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            toolStripProgressBar_filescompleted.Value = e.ProgressPercentage;
+        }
+
+        /// <summary>
+        /// Всё, что нужно доделать после завершения длительной операции
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BackgroundWorker_Read_File_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            Check_Unread_Files();
+        }
+
+        /// <summary>
+        /// Отмена длительной операции в параллельном потоке
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripSplitButton_Cancel_Background_Click(object sender, EventArgs e)
+        {
+            if (backgroundWorker_Read_File.IsBusy) backgroundWorker_Read_File.CancelAsync();
+            button_path.Enabled = true;
+            toolStripSplitButton_Cancel_Background.Visible = false;
+        }
         #endregion
 
         #region Функции самостоятельных команд
+        /// <summary>
+        /// Проверка заполнения грида прочтёнными файлами и запуск параллельного потока для непрочтённых
+        /// </summary>
+        private void Check_Unread_Files()
+        {
+            //Для стандартной реализации
+            //Algoritm();
+
+            //Новый функционал
+            button_path.Enabled = false;
+            toolStripSplitButton_Cancel_Background.Visible = true;
+            ulong volFiles = 0;
+            Dictionary<string, long> Resfiles = func.WFiles(button_path.Text); //Полный путь с именем файла и его объём для каждого файла в выбраной папке
+            foreach (KeyValuePair<string, long> WL in Resfiles)
+            {
+                volFiles += Convert.ToUInt64(WL.Value); // суммарный объём файлов для анализа
+            }
+
+
+
+
+            MessageBox.Show("Количество файлов в папке для обработки - " + Resfiles.Count.ToString() + Environment.NewLine +
+                "Количество файлов в гриде - " + 0); //Тестовое окно
+        }
+
         /// <summary>
         /// Алгоритм расчёта количества файлов в папке и их суммарный размер
         /// </summary>
@@ -158,14 +235,8 @@ namespace FirehoseFinder
                     }
                     string[] id = func.IDs(countfiles.Key);
                     string oemhash = string.Empty;
-                    if (id[3].Length < 64)
-                    {
-                        oemhash = id[3];
-                    }
-                    else
-                    {
-                        oemhash = id[3].Substring(56);
-                    }
+                    if (id[3].Length < 64) oemhash = id[3];
+                    else oemhash = id[3].Substring(56);
                     dataGridView_final.Rows[Currnum].Cells[2].Value = id[0] + "-" + id[1] + "-" + id[2] + "-" + oemhash + "-" + id[4] + id[5];
                     string sw_type = string.Empty;
                     if (guide.SW_ID_type.ContainsKey(id[4])) sw_type = guide.SW_ID_type[id[4]];
@@ -198,10 +269,7 @@ namespace FirehoseFinder
                             currrating += 2;
                         }
                     }
-                    if (id[4].StartsWith("3")) // SWID начинается с 3
-                    {
-                        currrating++;
-                    }
+                    if (id[4].StartsWith("3")) currrating++; // SWID начинается с 3
                 }
                 else
                 {
@@ -218,16 +286,6 @@ namespace FirehoseFinder
             dataGridView_final.Sort(dataGridViewColumn: Column_rate, ListSortDirection.Descending);
             toolStripStatusLabel_vol.Text = string.Empty;
             toolStripProgressBar_filescompleted.Value = 0;
-        }
-
-        /// <summary>
-        /// Выполнение длительной операции в параллельном потоке
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-
         }
         #endregion
     }
