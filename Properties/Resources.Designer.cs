@@ -19,7 +19,7 @@ namespace FirehoseFinder.Properties {
     // с помощью такого средства, как ResGen или Visual Studio.
     // Чтобы добавить или удалить член, измените файл .ResX и снова запустите ResGen
     // с параметром /str или перестройте свой проект VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -70,7 +70,7 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на 1. q. Как формируется рейтинг файла в папке с программерами? a. Если файл размером меньше 12кБ - рейтинг 0, он не обрабатывается (у него просто не хватает байт для программирования). Рейтинг 1 у файла, начинающегося на ELF. Это могут быть любые эльф-файлы (программеры, xbl и т.п.). Рейтинг увеличивается до 2, если в файле есть подпись программера (fh@0x%08). К рейтингу добавляется 1, если SWID (идентификатор программного обеспечения) начинается с 3 (разрешение на запись в память), ещё +1 балл к рейтингу есл [остаток строки не уместился]&quot;;.
+        ///   Ищет локализованную строку, похожую на 1. q. Как формируется рейтинг файла в папке с программерами? a. Если файл размером меньше 12кБ - рейтинг 0, он не обрабатывается (у него просто не хватает байт для программирования). Рейтинг 1 у файла, начинающегося на ELF (ELE). Это могут быть любые эльф-файлы (программеры, xbl и т.п.). Рейтинг увеличивается до 2, если в файле есть подпись программера (fh@0x%08). К рейтингу добавляется 1, если SWID (идентификатор программного обеспечения) начинается с 3 (загрузчик для аварийного режима), ещё +1 балл к рейт [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string String_faq1 {
             get {
@@ -84,6 +84,15 @@ namespace FirehoseFinder.Properties {
         internal static string String_faq2 {
             get {
                 return ResourceManager.GetString("String_faq2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на 2. q. Почему некоторые файлы в отчёте выделены жёлтым цветом и имеют подсказку &quot;Файл не является ELF!&quot;? а. Большинство программеров имеют в начале файла код, определяющий принадлежность файла. При этом попадаются программеры, у которых, по разным причинам, в шапке измененён один байт, и такой файл системой не идентифицируется как ELF. Цветом и подсказкой такие файлы выделяются для последующей их обработки перед использованием..
+        /// </summary>
+        internal static string String_faq3 {
+            get {
+                return ResourceManager.GetString("String_faq3", resourceCulture);
             }
         }
         

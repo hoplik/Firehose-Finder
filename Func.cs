@@ -33,6 +33,12 @@ namespace FirehoseFinder
             return WorkFiles;
         }
 
+        public int RatFile(string FullFileName)
+        {
+            int Rat = Convert.ToInt32(FullFileName) - 1;
+            return Rat;
+        }
+
         /// <summary>
         /// Список проверок для формирования рейтинга программера
         /// </summary>
