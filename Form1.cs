@@ -133,14 +133,15 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void BackgroundWorker_Read_File_DoWork(object sender, DoWorkEventArgs e)
         {
+            //Считывание файла надо переписать!
             BackgroundWorker worker = sender as BackgroundWorker;
-            for (int i = 0; i < Convert.ToInt32(e.Argument); i++)
+            for (int i = 0; i < 100; i++)
             {
                 //Просто заглушка
-                worker.ReportProgress(i * 100 / Convert.ToInt32(e.Argument));
+                worker.ReportProgress(i);
                 Thread.Sleep(10);
             }
-            e.Result = "Готово!";
+            e.Result = "Это мы передали в качестве аргумента в параллельный поток" + Environment.NewLine + e.Argument.ToString();
         }
 
         /// <summary>
@@ -170,7 +171,18 @@ namespace FirehoseFinder
             }
             else
             {
-                toolStripStatusLabel_filescompleted.Text = e.Result.ToString();
+                //Расчёт рейтинга для считанного файла надо переписать!
+                int Currnum = dataGridView_final.Rows.Count - 1; // текущий номер строки грида
+                int curfilerating = func.RatFile(Currnum.ToString());
+                dataGridView_final.Rows[Currnum].Cells[3].Value = curfilerating;
+                dataGridView_final.Rows[Currnum].Cells[3].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                if (curfilerating == 0) // Рейтинг 0 не обрабатываем
+                {
+                    dataGridView_final.Rows[Currnum].ReadOnly = true;
+                    dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.LightGray;
+                }
+                dataGridView_final.Sort(dataGridViewColumn: Column_rate, ListSortDirection.Descending);
+                //MessageBox.Show(e.Result.ToString());
                 Check_Unread_Files();
             }
         }
@@ -202,37 +214,33 @@ namespace FirehoseFinder
             toolStripSplitButton_Cancel_Background.Visible = true;
             Dictionary<string, long> Resfiles = func.WFiles(button_path.Text); //Полный путь с именем файла и его объём для каждого файла в выбраной папке
             toolStripStatusLabel_filescompleted.Text = "Обработано " + dataGridView_final.Rows.Count.ToString() + " файлов из " + Resfiles.Count.ToString();
+            //Чтение всех файлов закончено, в грид всё добавлено - уходим
             if (dataGridView_final.Rows.Count == Resfiles.Count)
             {
-                //Чтение всех файлов закончено, в грид всё добавлено
                 button_path.Enabled = true;
                 toolStripSplitButton_Cancel_Background.Visible = false;
                 toolStripStatusLabel_vol.Text = string.Empty;
                 toolStripProgressBar_filescompleted.Value = 0;
                 return;
             }
+            //Есть необработанные файлы - обрабатываем первый отсутствующий в цикле
+            List<string> ReadedFiles = new List<string>(); //Создаём массив под список уже обработанных файлов
+            for (int i = 0; i < dataGridView_final.Rows.Count; i++) //Заполняем массив короткими именами файлов из грида (если они есть)
+            {
+                ReadedFiles.Add(dataGridView_final["Column_Name", i].Value.ToString().Trim());
+            }
             dataGridView_final.Rows.Add();
-            int Currnum = dataGridView_final.Rows.Count - 1; // текущий номер строки грида
-
-            backgroundWorker_Read_File.RunWorkerAsync(100); //Запускаем цикл обработки отдельно каждого необработанного файла в папке
-            /*foreach (KeyValuePair<string, long> unreadfiles in Resfiles)
-                        {
-                                string shortfilename = Path.GetFileName(unreadfiles.Key); //Получили название файла
-                                toolStripStatusLabel_vol.Text = "Сейчас обрабатывается файл - " + shortfilename;
-                                dataGridView_final.Rows[Currnum].Cells[1].Value = shortfilename;
-                                //Считывание файла надо переписать!
-                                //Расчёт рейтинга для считанного файла надо дописать!
-                                int curfilerating = func.RatFile(Currnum.ToString());
-                                dataGridView_final.Rows[Currnum].Cells[3].Value = curfilerating;
-                                dataGridView_final.Rows[Currnum].Cells[3].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                                if (curfilerating == 0) // Рейтинг 0 не обрабатываем
-                                {
-                                    dataGridView_final.Rows[Currnum].ReadOnly = true;
-                                    dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.LightGray;
-                                }
-
-                            dataGridView_final.Sort(dataGridViewColumn: Column_rate, ListSortDirection.Descending);
-                        }*/
+            foreach (KeyValuePair<string, long> unreadfiles in Resfiles)
+            {
+                string shortfilename = Path.GetFileName(unreadfiles.Key); //Получили название файла
+                if (!ReadedFiles.Contains(shortfilename))
+                {
+                    toolStripStatusLabel_vol.Text = "Сейчас обрабатывается файл - " + shortfilename;
+                    dataGridView_final.Rows[dataGridView_final.Rows.Count - 1].Cells[1].Value = shortfilename;
+                    backgroundWorker_Read_File.RunWorkerAsync(unreadfiles); //Запускаем цикл обработки отдельно каждого необработанного файла в папке
+                    break;
+                }
+            }
         }
 
         /// <summary>
