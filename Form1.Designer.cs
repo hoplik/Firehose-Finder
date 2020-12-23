@@ -60,7 +60,6 @@
             this.richTextBox_about = new System.Windows.Forms.RichTextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
-            this.toolStripSplitButton_Cancel_Background = new System.Windows.Forms.ToolStripSplitButton();
             this.tabControl1.SuspendLayout();
             this.tabPage_firehose.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -329,8 +328,7 @@
             this.statusStrip_firehose.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel_filescompleted,
             this.toolStripProgressBar_filescompleted,
-            this.toolStripStatusLabel_vol,
-            this.toolStripSplitButton_Cancel_Background});
+            this.toolStripStatusLabel_vol});
             this.statusStrip_firehose.Location = new System.Drawing.Point(3, 552);
             this.statusStrip_firehose.Name = "statusStrip_firehose";
             this.statusStrip_firehose.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
@@ -386,22 +384,8 @@
             // 
             // backgroundWorker_Read_File
             // 
-            this.backgroundWorker_Read_File.WorkerReportsProgress = true;
-            this.backgroundWorker_Read_File.WorkerSupportsCancellation = true;
             this.backgroundWorker_Read_File.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_Read_File_DoWork);
-            this.backgroundWorker_Read_File.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_Read_File_ProgressChanged);
             this.backgroundWorker_Read_File.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_Read_File_RunWorkerCompleted);
-            // 
-            // toolStripSplitButton_Cancel_Background
-            // 
-            this.toolStripSplitButton_Cancel_Background.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripSplitButton_Cancel_Background.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton_Cancel_Background.Image")));
-            this.toolStripSplitButton_Cancel_Background.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton_Cancel_Background.Name = "toolStripSplitButton_Cancel_Background";
-            this.toolStripSplitButton_Cancel_Background.Size = new System.Drawing.Size(239, 28);
-            this.toolStripSplitButton_Cancel_Background.Text = "Прекратите это немедленно ...";
-            this.toolStripSplitButton_Cancel_Background.Visible = false;
-            this.toolStripSplitButton_Cancel_Background.Click += new System.EventHandler(this.ToolStripSplitButton_Cancel_Background_Click);
             // 
             // Formfhf
             // 
@@ -461,7 +445,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Full;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_SW_type;
         private System.ComponentModel.BackgroundWorker backgroundWorker_Read_File;
-        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton_Cancel_Background;
     }
 }
 

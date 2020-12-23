@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Text;
 using System.Threading;
 
 namespace FirehoseFinder
@@ -133,25 +134,22 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void BackgroundWorker_Read_File_DoWork(object sender, DoWorkEventArgs e)
         {
-            //Считывание файла надо переписать!
-            BackgroundWorker worker = sender as BackgroundWorker;
-            for (int i = 0; i < 100; i++)
+            //BackgroundWorker worker = sender as BackgroundWorker;
+            KeyValuePair<string, long> FileToRead = (KeyValuePair<string, long>)e.Argument;
+            MessageBox.Show(e.Argument.ToString());
+            int len = Convert.ToInt32(FileToRead.Value);
+            if (len > 12288) len = 12288; //Нам нужно только до 0х3000, где есть сертификаты
+            StringBuilder dumptext = new StringBuilder(len);
+            byte[] chunk = new byte[len];
+            using (var stream = File.OpenRead(FileToRead.Key))
             {
-                //Просто заглушка
-                worker.ReportProgress(i);
-                Thread.Sleep(10);
+                int byteschunk = stream.Read(chunk, 0, len);
+                for (int i = 0; i < byteschunk; i++)
+                {
+                    dumptext.Insert(i * 2, String.Format("{0:X2}", (int)chunk[i]));
+                }
             }
-            e.Result = "Это мы передали в качестве аргумента в параллельный поток" + Environment.NewLine + e.Argument.ToString();
-        }
-
-        /// <summary>
-        /// Отрисовка прогрессбара при длительной операции в параллельном потоке
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e">Значение от 1 до 100, как процент выполнения задачи чтения файла</param>
-        private void BackgroundWorker_Read_File_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            toolStripProgressBar_filescompleted.Value = e.ProgressPercentage;
+            e.Result = dumptext.ToString();
         }
 
         /// <summary>
@@ -161,16 +159,10 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void BackgroundWorker_Read_File_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (e.Error != null)
-            {
-                MessageBox.Show(e.Error.Message);
-            }
-            else if (e.Cancelled)
-            {
-                toolStripStatusLabel_filescompleted.Text = "Задание отменено пользователем!";
-            }
+            if (e.Error != null) MessageBox.Show(e.Error.Message);
             else
             {
+                /*
                 //Расчёт рейтинга для считанного файла надо переписать!
                 int Currnum = dataGridView_final.Rows.Count - 1; // текущий номер строки грида
                 int curfilerating = func.RatFile(Currnum.ToString());
@@ -181,22 +173,10 @@ namespace FirehoseFinder
                     dataGridView_final.Rows[Currnum].ReadOnly = true;
                     dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.LightGray;
                 }
-                dataGridView_final.Sort(dataGridViewColumn: Column_rate, ListSortDirection.Descending);
-                //MessageBox.Show(e.Result.ToString());
+                dataGridView_final["Column_id", Currnum].Value = e.Result.ToString();
+                dataGridView_final.Sort(dataGridViewColumn: Column_rate, ListSortDirection.Descending);*/
                 Check_Unread_Files();
             }
-        }
-
-        /// <summary>
-        /// Отмена длительной операции в параллельном потоке
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ToolStripSplitButton_Cancel_Background_Click(object sender, EventArgs e)
-        {
-            if (backgroundWorker_Read_File.IsBusy) backgroundWorker_Read_File.CancelAsync();
-            button_path.Enabled = true;
-            toolStripSplitButton_Cancel_Background.Visible = false;
         }
         #endregion
 
@@ -206,19 +186,13 @@ namespace FirehoseFinder
         /// </summary>
         private void Check_Unread_Files()
         {
-            //Для стандартной реализации
-            //Algoritm();
-
-            //Новый функционал
             button_path.Enabled = false;
-            toolStripSplitButton_Cancel_Background.Visible = true;
             Dictionary<string, long> Resfiles = func.WFiles(button_path.Text); //Полный путь с именем файла и его объём для каждого файла в выбраной папке
             toolStripStatusLabel_filescompleted.Text = "Обработано " + dataGridView_final.Rows.Count.ToString() + " файлов из " + Resfiles.Count.ToString();
             //Чтение всех файлов закончено, в грид всё добавлено - уходим
             if (dataGridView_final.Rows.Count == Resfiles.Count)
             {
                 button_path.Enabled = true;
-                toolStripSplitButton_Cancel_Background.Visible = false;
                 toolStripStatusLabel_vol.Text = string.Empty;
                 toolStripProgressBar_filescompleted.Value = 0;
                 return;
