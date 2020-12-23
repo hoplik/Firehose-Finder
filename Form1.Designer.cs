@@ -384,7 +384,9 @@
             // 
             // backgroundWorker_Read_File
             // 
+            this.backgroundWorker_Read_File.WorkerReportsProgress = true;
             this.backgroundWorker_Read_File.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_Read_File_DoWork);
+            this.backgroundWorker_Read_File.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_Read_File_ProgressChanged);
             this.backgroundWorker_Read_File.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_Read_File_RunWorkerCompleted);
             // 
             // Formfhf

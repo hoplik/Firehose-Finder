@@ -134,9 +134,8 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void BackgroundWorker_Read_File_DoWork(object sender, DoWorkEventArgs e)
         {
-            //BackgroundWorker worker = sender as BackgroundWorker;
+            BackgroundWorker worker = sender as BackgroundWorker;
             KeyValuePair<string, long> FileToRead = (KeyValuePair<string, long>)e.Argument;
-            MessageBox.Show(e.Argument.ToString());
             int len = Convert.ToInt32(FileToRead.Value);
             if (len > 12288) len = 12288; //Нам нужно только до 0х3000, где есть сертификаты
             StringBuilder dumptext = new StringBuilder(len);
@@ -147,9 +146,11 @@ namespace FirehoseFinder
                 for (int i = 0; i < byteschunk; i++)
                 {
                     dumptext.Insert(i * 2, String.Format("{0:X2}", (int)chunk[i]));
+                    worker.ReportProgress(i * 100 / byteschunk);
                 }
             }
             e.Result = dumptext.ToString();
+            Thread.Sleep(500);
         }
 
         /// <summary>
@@ -162,7 +163,6 @@ namespace FirehoseFinder
             if (e.Error != null) MessageBox.Show(e.Error.Message);
             else
             {
-                /*
                 //Расчёт рейтинга для считанного файла надо переписать!
                 int Currnum = dataGridView_final.Rows.Count - 1; // текущий номер строки грида
                 int curfilerating = func.RatFile(Currnum.ToString());
@@ -174,9 +174,19 @@ namespace FirehoseFinder
                     dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.LightGray;
                 }
                 dataGridView_final["Column_id", Currnum].Value = e.Result.ToString();
-                dataGridView_final.Sort(dataGridViewColumn: Column_rate, ListSortDirection.Descending);*/
+                dataGridView_final.Sort(dataGridViewColumn: Column_rate, ListSortDirection.Descending);
                 Check_Unread_Files();
             }
+        }
+
+        /// <summary>
+        /// Промежуточный результат операции в параллельном потоке
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void backgroundWorker_Read_File_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            toolStripProgressBar_filescompleted.Value = e.ProgressPercentage;
         }
         #endregion
 
