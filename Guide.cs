@@ -38,7 +38,7 @@ namespace FirehoseFinder
             { "1C", "Reserved" },
             { "200","Debug Policy"}
         };
-
+        //Проба справочника
         public readonly struct HW_IDs
         {
             public HW_IDs(string Id, string Name)

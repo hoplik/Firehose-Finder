@@ -126,33 +126,29 @@ namespace FirehoseFinder
         /// <returns>Строка хеша</returns>
         private static string CertExtr(string SFDump)
         {
-            string pattern = "(3082.{4}3082)"; //Признак сертификата с его длиной в середине 4 байта
+            byte rootcert = 3; //Расположение корневого сертификата в файле (третий)
+            string pattern = "(3082.{4}3082)"; //Бинарный признак сертификата с его длиной в середине (4-4-4 знака)
             MatchCollection matchs = Regex.Matches(SFDump, pattern);
-            Dictionary<int, string> certs = new Dictionary<int, string>();
-            int countcert = 1;
-            StringBuilder SHAstr = new StringBuilder();
-            foreach (Match match in matchs)
-            {
-                string certl = SFDump.Substring(match.Index + 4, 4); // Получили длину сертификата в строке хекс
-                int certlen = Int32.Parse(certl, NumberStyles.HexNumber); // Перевели её в 10 инт
-                certs.Add(countcert, match.Value + SFDump.Substring(match.Index + 12, certlen * 2 - 4));
-                countcert++;
-            }
+            List<string> certs = new List<string>(rootcert);
+            StringBuilder SHAstr = new StringBuilder(string.Empty);
             SHA256 mysha256 = SHA256.Create();
-            if (certs.ContainsKey(3))
+            if (matchs.Count >= rootcert)
             {
-                byte[] hashbytes = mysha256.ComputeHash(StringToByteArray(certs[3]));
+                for (int i = 0; i < rootcert; i++)
+                {
+                    string certl = SFDump.Substring(matchs[i].Index + 4, 4); // Получили длину сертификата в строке хекс
+                    int certlen = Int32.Parse(certl, NumberStyles.HexNumber); // Перевели её в 10 инт
+                    certs.Insert(i, matchs[i].Value + SFDump.Substring(matchs[i].Index + 12, certlen * 2 - 4));
+                }
+                byte[] hashbytes = mysha256.ComputeHash(StringToByteArray(certs[2]));
                 SHAstr.Append(BitConverter.ToString(hashbytes));
                 SHAstr.Replace("-", string.Empty);
-            }
-            if (SHAstr.Length < 64)
-            {
-                int morechar = 64 - SHAstr.Length;
-                SHAstr.Insert(0, "0", morechar);
-            }
-            if (certs[1].Contains("534841323536")) // SHA256
-            {
-                SHAstr.Append("(SHA256)");
+                while (SHAstr.Length < 64) SHAstr.Insert(0, "0");
+                //И так понятно
+                //if (certs[1].Contains("534841323536")) // SHA256
+                //{
+                //    SHAstr.Append("(SHA256)");
+                //}
             }
             return SHAstr.ToString();
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfhf));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_firehose = new System.Windows.Forms.TabPage();
@@ -35,8 +36,7 @@
             this.dataGridView_final = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_hwid = new System.Windows.Forms.Label();
-            this.button_startscan = new System.Windows.Forms.Button();
-            this.label_path = new System.Windows.Forms.Label();
+            this.button_rename_fhf = new System.Windows.Forms.Button();
             this.textBox_oemid = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label_modelid = new System.Windows.Forms.Label();
@@ -54,12 +54,17 @@
             this.richTextBox_about = new System.Windows.Forms.RichTextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.Column_Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage_phone = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tabPage_guide = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage_firehose.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -67,11 +72,15 @@
             this.panel1.SuspendLayout();
             this.statusStrip_firehose.SuspendLayout();
             this.tabPage_about.SuspendLayout();
+            this.tabPage_phone.SuspendLayout();
+            this.tabPage_guide.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage_firehose);
+            this.tabControl1.Controls.Add(this.tabPage_phone);
+            this.tabControl1.Controls.Add(this.tabPage_guide);
             this.tabControl1.Controls.Add(this.tabPage_about);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -92,16 +101,16 @@
             this.tabPage_firehose.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage_firehose.Size = new System.Drawing.Size(1242, 584);
             this.tabPage_firehose.TabIndex = 0;
-            this.tabPage_firehose.Text = "Firehose";
+            this.tabPage_firehose.Text = "Работа с файлами";
             this.tabPage_firehose.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView_final);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 164);
+            this.panel2.Location = new System.Drawing.Point(3, 103);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1236, 388);
+            this.panel2.Size = new System.Drawing.Size(1236, 449);
             this.panel2.TabIndex = 18;
             // 
             // dataGridView_final
@@ -124,7 +133,7 @@
             this.dataGridView_final.RowHeadersWidth = 51;
             this.dataGridView_final.RowTemplate.Height = 24;
             this.dataGridView_final.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_final.Size = new System.Drawing.Size(1236, 388);
+            this.dataGridView_final.Size = new System.Drawing.Size(1236, 449);
             this.dataGridView_final.TabIndex = 15;
             this.dataGridView_final.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellClick);
             this.dataGridView_final.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellDoubleClick);
@@ -132,8 +141,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label_hwid);
-            this.panel1.Controls.Add(this.button_startscan);
-            this.panel1.Controls.Add(this.label_path);
+            this.panel1.Controls.Add(this.button_rename_fhf);
             this.panel1.Controls.Add(this.textBox_oemid);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label_modelid);
@@ -146,7 +154,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1236, 162);
+            this.panel1.Size = new System.Drawing.Size(1236, 101);
             this.panel1.TabIndex = 17;
             // 
             // label_hwid
@@ -158,26 +166,17 @@
             this.label_hwid.TabIndex = 1;
             this.label_hwid.Text = "HW_ID 0x";
             // 
-            // button_startscan
+            // button_rename_fhf
             // 
-            this.button_startscan.Location = new System.Drawing.Point(331, 111);
-            this.button_startscan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button_startscan.Name = "button_startscan";
-            this.button_startscan.Size = new System.Drawing.Size(324, 23);
-            this.button_startscan.TabIndex = 10;
-            this.button_startscan.Text = "Использовать выбранный программер";
-            this.button_startscan.UseVisualStyleBackColor = true;
-            this.button_startscan.Visible = false;
-            this.button_startscan.Click += new System.EventHandler(this.Button_startscan_Click);
-            // 
-            // label_path
-            // 
-            this.label_path.AutoSize = true;
-            this.label_path.Location = new System.Drawing.Point(29, 91);
-            this.label_path.Name = "label_path";
-            this.label_path.Size = new System.Drawing.Size(237, 17);
-            this.label_path.TabIndex = 8;
-            this.label_path.Text = "Укажите путь к коллекции firehose";
+            this.button_rename_fhf.Location = new System.Drawing.Point(290, 68);
+            this.button_rename_fhf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button_rename_fhf.Name = "button_rename_fhf";
+            this.button_rename_fhf.Size = new System.Drawing.Size(324, 23);
+            this.button_rename_fhf.TabIndex = 10;
+            this.button_rename_fhf.Text = "Переименовать файл по идентификаторам";
+            this.button_rename_fhf.UseVisualStyleBackColor = true;
+            this.button_rename_fhf.Visible = false;
+            this.button_rename_fhf.Click += new System.EventHandler(this.Button__rename_fhf_Click);
             // 
             // textBox_oemid
             // 
@@ -232,7 +231,7 @@
             // 
             // button_path
             // 
-            this.button_path.Location = new System.Drawing.Point(11, 112);
+            this.button_path.Location = new System.Drawing.Point(5, 68);
             this.button_path.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_path.Name = "button_path";
             this.button_path.Size = new System.Drawing.Size(275, 23);
@@ -291,8 +290,7 @@
             // toolStripStatusLabel_filescompleted
             // 
             this.toolStripStatusLabel_filescompleted.Name = "toolStripStatusLabel_filescompleted";
-            this.toolStripStatusLabel_filescompleted.Size = new System.Drawing.Size(199, 24);
-            this.toolStripStatusLabel_filescompleted.Text = "Обработано файлов: 0 из 0";
+            this.toolStripStatusLabel_filescompleted.Size = new System.Drawing.Size(0, 24);
             // 
             // toolStripProgressBar_filescompleted
             // 
@@ -304,8 +302,7 @@
             // toolStripStatusLabel_vol
             // 
             this.toolStripStatusLabel_vol.Name = "toolStripStatusLabel_vol";
-            this.toolStripStatusLabel_vol.Size = new System.Drawing.Size(186, 24);
-            this.toolStripStatusLabel_vol.Text = "Сейчас обрабатывается -";
+            this.toolStripStatusLabel_vol.Size = new System.Drawing.Size(0, 24);
             // 
             // tabPage_about
             // 
@@ -338,6 +335,10 @@
             // 
             this.backgroundWorker_Read_File.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_Read_File_DoWork);
             this.backgroundWorker_Read_File.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_Read_File_RunWorkerCompleted);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.Tag = "";
             // 
             // Column_Sel
             // 
@@ -387,6 +388,48 @@
             this.Column_SW_type.Name = "Column_SW_type";
             this.Column_SW_type.Width = 62;
             // 
+            // tabPage_phone
+            // 
+            this.tabPage_phone.Controls.Add(this.label2);
+            this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_phone.Name = "tabPage_phone";
+            this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_phone.Size = new System.Drawing.Size(1242, 584);
+            this.tabPage_phone.TabIndex = 2;
+            this.tabPage_phone.Text = "Работа с устройством";
+            this.tabPage_phone.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(938, 34);
+            this.label2.TabIndex = 0;
+            this.label2.Text = resources.GetString("label2.Text");
+            // 
+            // tabPage_guide
+            // 
+            this.tabPage_guide.Controls.Add(this.label3);
+            this.tabPage_guide.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_guide.Name = "tabPage_guide";
+            this.tabPage_guide.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_guide.Size = new System.Drawing.Size(1242, 584);
+            this.tabPage_guide.TabIndex = 3;
+            this.tabPage_guide.Text = "Справочник ID";
+            this.tabPage_guide.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(741, 34);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Тут планируется разместить справочник идентификаторов с фильтрами и сортировкой.\r" +
+    "\nДля удобства пользования информация будет иметь приоритет в зависимости от подк" +
+    "лючённого устройства.";
+            // 
             // Formfhf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -408,6 +451,10 @@
             this.statusStrip_firehose.ResumeLayout(false);
             this.statusStrip_firehose.PerformLayout();
             this.tabPage_about.ResumeLayout(false);
+            this.tabPage_phone.ResumeLayout(false);
+            this.tabPage_phone.PerformLayout();
+            this.tabPage_guide.ResumeLayout(false);
+            this.tabPage_guide.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -427,8 +474,7 @@
         private System.Windows.Forms.DataGridView dataGridView_final;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_hwid;
-        private System.Windows.Forms.Button button_startscan;
-        private System.Windows.Forms.Label label_path;
+        private System.Windows.Forms.Button button_rename_fhf;
         private System.Windows.Forms.TextBox textBox_oemid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_modelid;
@@ -439,12 +485,17 @@
         private System.Windows.Forms.Label label_oemhash;
         private System.Windows.Forms.TextBox textBox_modelid;
         private System.ComponentModel.BackgroundWorker backgroundWorker_Read_File;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column_Sel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_rate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Full;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_SW_type;
+        private System.Windows.Forms.TabPage tabPage_phone;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabPage tabPage_guide;
+        private System.Windows.Forms.Label label3;
     }
 }
 

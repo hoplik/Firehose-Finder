@@ -40,6 +40,8 @@ namespace FirehoseFinder
                 + "Часто задаваемые вопросы: " + Environment.NewLine + FirehoseFinder.Properties.Resources.String_faq1
                 + Environment.NewLine + FirehoseFinder.Properties.Resources.String_faq2
                 + Environment.NewLine + FirehoseFinder.Properties.Resources.String_faq3;
+            toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
+            toolTip1.SetToolTip(button_rename_fhf, "При нажатии произойдёт переименование выбранного файла по идентификаторам, указанным в таблице");
         }
 
         /// <summary>
@@ -54,7 +56,7 @@ namespace FirehoseFinder
             textBox_modelid.BackColor = Color.Empty;
             textBox_oemhash.BackColor = Color.Empty;
             dataGridView_final.Rows.Clear();
-            button_startscan.Visible = false;
+            button_rename_fhf.Visible = false;
             toolStripStatusLabel_filescompleted.Text = string.Empty;
             toolStripStatusLabel_vol.Text = string.Empty;
             toolStripProgressBar_filescompleted.Value = 0;
@@ -71,9 +73,9 @@ namespace FirehoseFinder
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button_startscan_Click(object sender, EventArgs e)
+        private void Button__rename_fhf_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Пока ещё не придумал.");
+            MessageBox.Show("Скоро это действие будет вызывать операцию переименования выбранного файла (группы файлов) по идентификаторам из их сертификатов.", "Пока не работает");
         }
 
         /// <summary>
@@ -90,7 +92,7 @@ namespace FirehoseFinder
                     if (Convert.ToBoolean(dataGridView_final["Column_Sel", e.RowIndex].Value))
                     {
                         dataGridView_final["Column_Sel", e.RowIndex].Value = false;
-                        button_startscan.Visible = false;
+                        button_rename_fhf.Visible = false;
                     }
                     else
                     {
@@ -99,7 +101,7 @@ namespace FirehoseFinder
                             dataGridView_final["Column_Sel", i].Value = false;
                         }
                         dataGridView_final["Column_Sel", e.RowIndex].Value = true;
-                        button_startscan.Visible = true;
+                        button_rename_fhf.Visible = true;
                     }
                 }
             }
