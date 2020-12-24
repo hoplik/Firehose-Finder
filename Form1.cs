@@ -6,7 +6,6 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 using System.Text;
-using System.Threading;
 
 namespace FirehoseFinder
 {
@@ -23,6 +22,7 @@ namespace FirehoseFinder
         }
 
         #region Функции контролов формы
+
         /// <summary>
         /// Выполнение инструкций при загрузке формы
         /// </summary>
@@ -87,18 +87,18 @@ namespace FirehoseFinder
             {
                 if (!dataGridView_final.Rows[e.RowIndex].ReadOnly)
                 {
-                    if (Convert.ToBoolean(dataGridView_final.Rows[e.RowIndex].Cells[0].Value))
+                    if (Convert.ToBoolean(dataGridView_final["Column_Sel", e.RowIndex].Value))
                     {
-                        dataGridView_final.Rows[e.RowIndex].Cells[0].Value = false;
+                        dataGridView_final["Column_Sel", e.RowIndex].Value = false;
                         button_startscan.Visible = false;
                     }
                     else
                     {
                         for (int i = 0; i < dataGridView_final.Rows.Count; i++)
                         {
-                            dataGridView_final.Rows[i].Cells[0].Value = false;
+                            dataGridView_final["Column_Sel", i].Value = false;
                         }
-                        dataGridView_final.Rows[e.RowIndex].Cells[0].Value = true;
+                        dataGridView_final["Column_Sel", e.RowIndex].Value = true;
                         button_startscan.Visible = true;
                     }
                 }
@@ -118,11 +118,11 @@ namespace FirehoseFinder
         {
             if (!dataGridView_final.Rows[e.RowIndex].ReadOnly)
             {
-                DialogResult dr = MessageBox.Show(dataGridView_final.Rows[e.RowIndex].Cells[4].Value.ToString(), "Сохранить данные в буфер обмена?", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                DialogResult dr = MessageBox.Show(dataGridView_final["Column_Full", e.RowIndex].Value.ToString(), "Сохранить данные в буфер обмена?", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 if (dr == DialogResult.OK)
                 {
                     Clipboard.Clear();
-                    Clipboard.SetText(dataGridView_final.Rows[e.RowIndex].Cells[4].Value.ToString());
+                    Clipboard.SetText(dataGridView_final["Column_Full", e.RowIndex].Value.ToString());
                 }
             }
         }
@@ -134,23 +134,17 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void BackgroundWorker_Read_File_DoWork(object sender, DoWorkEventArgs e)
         {
-            BackgroundWorker worker = sender as BackgroundWorker;
             KeyValuePair<string, long> FileToRead = (KeyValuePair<string, long>)e.Argument;
             int len = Convert.ToInt32(FileToRead.Value);
-            if (len > 12288) len = 12288; //Нам нужно только до 0х3000, где есть сертификаты
+            if (len > 12288) len = 12288; //Нам нужно только до 0х3000, где есть первые три сертификата
             StringBuilder dumptext = new StringBuilder(len);
             byte[] chunk = new byte[len];
             using (var stream = File.OpenRead(FileToRead.Key))
             {
                 int byteschunk = stream.Read(chunk, 0, len);
-                for (int i = 0; i < byteschunk; i++)
-                {
-                    dumptext.Insert(i * 2, String.Format("{0:X2}", (int)chunk[i]));
-                    worker.ReportProgress(i * 100 / byteschunk);
-                }
+                for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, String.Format("{0:X2}", (int)chunk[i]));
             }
             e.Result = dumptext.ToString();
-            Thread.Sleep(500);
         }
 
         /// <summary>
@@ -163,30 +157,35 @@ namespace FirehoseFinder
             if (e.Error != null) MessageBox.Show(e.Error.Message);
             else
             {
-                //Расчёт рейтинга для считанного файла надо переписать!
-                int Currnum = dataGridView_final.Rows.Count - 1; // текущий номер строки грида
-                int curfilerating = func.RatFile(Currnum.ToString());
-                dataGridView_final.Rows[Currnum].Cells[3].Value = curfilerating;
-                dataGridView_final.Rows[Currnum].Cells[3].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                if (curfilerating == 0) // Рейтинг 0 не обрабатываем
+                string dumpfile = e.Result.ToString();
+                byte curfilerating = 0;
+                int Currnum = dataGridView_final.Rows.Count - 1; //Номер последней, "пустой" строки грида
+                switch (dumpfile.Substring(0, 8))
+                {
+                    case "7F454C46": //ELF
+                        curfilerating++;
+                        break;
+                    case "7F454C45": //не совсем ELF
+                        curfilerating++;
+                        dataGridView_final["Column_Name", Currnum].Style.BackColor = Color.Yellow;
+                        dataGridView_final["Column_Name", Currnum].ToolTipText = "Файл не является ELF!";
+                        break;
+                    default: //совсем не ELF
+                        break;
+                }
+                if (curfilerating != 0) //Увеличиваем рейтинг совпадениями поиска файла
+                {
+                    dataGridView_final["Column_rate", Currnum].Value = curfilerating + Rating(dumpfile, Currnum);
+                    dataGridView_final["Column_rate", Currnum].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                }
+                else //Рейтинг 0 не обрабатываем
                 {
                     dataGridView_final.Rows[Currnum].ReadOnly = true;
                     dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.LightGray;
                 }
-                dataGridView_final["Column_id", Currnum].Value = e.Result.ToString();
                 dataGridView_final.Sort(dataGridViewColumn: Column_rate, ListSortDirection.Descending);
-                Check_Unread_Files();
+                Check_Unread_Files(); //Проверяем, не осталось ли необработанных файлов
             }
-        }
-
-        /// <summary>
-        /// Промежуточный результат операции в параллельном потоке
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void backgroundWorker_Read_File_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            toolStripProgressBar_filescompleted.Value = e.ProgressPercentage;
         }
         #endregion
 
@@ -198,9 +197,11 @@ namespace FirehoseFinder
         {
             button_path.Enabled = false;
             Dictionary<string, long> Resfiles = func.WFiles(button_path.Text); //Полный путь с именем файла и его объём для каждого файла в выбраной папке
-            toolStripStatusLabel_filescompleted.Text = "Обработано " + dataGridView_final.Rows.Count.ToString() + " файлов из " + Resfiles.Count.ToString();
-            //Чтение всех файлов закончено, в грид всё добавлено - уходим
-            if (dataGridView_final.Rows.Count == Resfiles.Count)
+            int currreadfiles = dataGridView_final.Rows.Count;
+            int totalreadfiles = Resfiles.Count;
+            toolStripStatusLabel_filescompleted.Text = "Обработано " + currreadfiles.ToString() + " файлов из " + totalreadfiles.ToString();
+            //Либо 0, либо чтение всех файлов закончено, в грид всё добавлено - уходим
+            if (currreadfiles == totalreadfiles)
             {
                 button_path.Enabled = true;
                 toolStripStatusLabel_vol.Text = string.Empty;
@@ -209,10 +210,9 @@ namespace FirehoseFinder
             }
             //Есть необработанные файлы - обрабатываем первый отсутствующий в цикле
             List<string> ReadedFiles = new List<string>(); //Создаём массив под список уже обработанных файлов
-            for (int i = 0; i < dataGridView_final.Rows.Count; i++) //Заполняем массив короткими именами файлов из грида (если они есть)
-            {
-                ReadedFiles.Add(dataGridView_final["Column_Name", i].Value.ToString().Trim());
-            }
+            //Заполняем массив короткими именами файлов из грида (если они есть)
+            for (int i = 0; i < currreadfiles; i++) ReadedFiles.Add(dataGridView_final["Column_Name", i].Value.ToString().Trim());
+            toolStripProgressBar_filescompleted.Value = currreadfiles * 100 / totalreadfiles; //Количество обработанных файлов в прогрессбаре
             dataGridView_final.Rows.Add();
             foreach (KeyValuePair<string, long> unreadfiles in Resfiles)
             {
@@ -220,7 +220,8 @@ namespace FirehoseFinder
                 if (!ReadedFiles.Contains(shortfilename))
                 {
                     toolStripStatusLabel_vol.Text = "Сейчас обрабатывается файл - " + shortfilename;
-                    dataGridView_final.Rows[dataGridView_final.Rows.Count - 1].Cells[1].Value = shortfilename;
+                    statusStrip_firehose.Refresh();
+                    dataGridView_final[1, currreadfiles].Value = shortfilename;
                     backgroundWorker_Read_File.RunWorkerAsync(unreadfiles); //Запускаем цикл обработки отдельно каждого необработанного файла в папке
                     break;
                 }
@@ -228,87 +229,51 @@ namespace FirehoseFinder
         }
 
         /// <summary>
-        /// Алгоритм расчёта количества файлов в папке и их суммарный размер
+        /// Список проверок для увеличения рейтинга файла и заполнения грида идентификаторами
         /// </summary>
-        private void Algoritm()
+        /// <param name="dumpfile">Строковый массив байт обрабатываемого файла</param>
+        /// <param name="Currnum">Номер текущей строки грида для добавления идентификаторов</param>
+        private byte Rating(string dumpfile, int Currnum)
         {
-            ulong volFiles = 0;
-            Dictionary<string, long> Resfiles = func.WFiles(button_path.Text);
-            foreach (KeyValuePair<string, long> WL in Resfiles)
+            byte gross = 0;
+            string[] id = func.IDs(dumpfile);
+            string oemhash;
+            string sw_type = string.Empty;
+            if (id[3].Length < 64) oemhash = id[3];
+            else oemhash = id[3].Substring(56);
+            dataGridView_final["Column_id", Currnum].Value = id[0] + "-" + id[1] + "-" + id[2] + "-" + oemhash + "-" + id[4] + id[5];
+            if (guide.SW_ID_type.ContainsKey(id[4])) sw_type = guide.SW_ID_type[id[4]];
+            dataGridView_final["Column_SW_type", Currnum].Value = sw_type;
+            dataGridView_final["Column_Full", Currnum].Value = "HW_ID (процессор) - " + id[0] + Environment.NewLine +
+                "OEM_ID (производитель) - " + id[1] + Environment.NewLine +
+                "MODEL_ID (модель) - " + id[2] + Environment.NewLine +
+                "OEM_HASH (хеш корневого сертификата) - " + id[3] + Environment.NewLine +
+                "SW_ID (тип программы (версия)) - " + id[4] + id[5] + " - " + sw_type;
+            if (textBox_hwid.Text.Equals(id[0])) //Процессор такой же
             {
-                volFiles += Convert.ToUInt64(WL.Value); // суммарный объём файлов для анализа
+                textBox_hwid.BackColor = Color.LawnGreen;
+                gross += 2;
             }
-            int numFiles = Resfiles.Count; // количество файлов для обработки
-            int Currnum = 0; // текущий номер файла
-            ulong Currvol = 0; // текущий объём
-            dataGridView_final.Rows.Clear();
-            foreach (KeyValuePair<string, long> countfiles in Resfiles)
+            if (textBox_oemid.Text.Equals(id[1])) // Производитель один и тот же
             {
-                int currrating = func.Rating(countfiles.Key);
-                string shortfilename = Path.GetFileName(countfiles.Key);
-                toolStripStatusLabel_vol.Text = "Сейчас обрабатывается файл - " + shortfilename;
-                dataGridView_final.Rows.Add();
-                dataGridView_final.Rows[Currnum].Cells[1].Value = shortfilename;
-                if (currrating != 0)
-                {
-                    if (Func.ElfReader(countfiles.Key, 8).StartsWith("7F454C45"))
-                    {
-                        dataGridView_final.Rows[Currnum].Cells[1].Style.BackColor = Color.Yellow;
-                        dataGridView_final.Rows[Currnum].Cells[1].ToolTipText = "Файл не является ELF!";
-                    }
-                    string[] id = func.IDs(countfiles.Key);
-                    string oemhash = string.Empty;
-                    if (id[3].Length < 64) oemhash = id[3];
-                    else oemhash = id[3].Substring(56);
-                    dataGridView_final.Rows[Currnum].Cells[2].Value = id[0] + "-" + id[1] + "-" + id[2] + "-" + oemhash + "-" + id[4] + id[5];
-                    string sw_type = string.Empty;
-                    if (guide.SW_ID_type.ContainsKey(id[4])) sw_type = guide.SW_ID_type[id[4]];
-                    dataGridView_final.Rows[Currnum].Cells[5].Value = sw_type;
-                    dataGridView_final.Rows[Currnum].Cells[4].Value = "HW_ID (процессор) - " + id[0] + Environment.NewLine +
-                        "OEM_ID (производитель) - " + id[1] + Environment.NewLine +
-                        "MODEL_ID (модель) - " + id[2] + Environment.NewLine +
-                        "OEM_HASH (хеш корневого сертификата) - " + id[3] + Environment.NewLine +
-                        "SW_ID (тип программы (версия)) - " + id[4] + id[5] + " - " + sw_type;
-                    if (String.Compare(textBox_hwid.Text, id[0]) == 0) // Процессор такой же
-                    {
-                        textBox_hwid.BackColor = Color.LawnGreen;
-                        currrating += 2;
-                    }
-                    if (String.Compare(textBox_oemid.Text, id[1]) == 0) // Производитель один и тот же
-                    {
-                        textBox_oemid.BackColor = Color.LawnGreen;
-                        currrating += 2;
-                    }
-                    if (String.Compare(textBox_modelid.Text, id[2]) == 0) // Модели равны
-                    {
-                        textBox_modelid.BackColor = Color.LawnGreen;
-                        currrating++;
-                    }
-                    if (id[3].Length >= 64)
-                    {
-                        if (String.Compare(textBox_oemhash.Text, id[3].Substring(0, 64)) == 0) // Хеши равны
-                        {
-                            textBox_oemhash.BackColor = Color.LawnGreen;
-                            currrating += 2;
-                        }
-                    }
-                    if (id[4].StartsWith("3")) currrating++; // SWID начинается с 3
-                }
-                else
-                {
-                    dataGridView_final.Rows[Currnum].ReadOnly = true; // Рейтинг 0 не обрабатываем
-                    dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.LightGray;
-                }
-                dataGridView_final.Rows[Currnum].Cells[3].Value = currrating;
-                dataGridView_final.Rows[Currnum].Cells[3].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                Currnum++;
-                Currvol += Convert.ToUInt64(countfiles.Value);
-                toolStripStatusLabel_filescompleted.Text = "Обработано " + Currnum.ToString() + " файлов из " + numFiles.ToString();
-                toolStripProgressBar_filescompleted.Value = Convert.ToInt32(Currvol * 100.0 / volFiles);
+                textBox_oemid.BackColor = Color.LawnGreen;
+                gross += 2;
             }
-            dataGridView_final.Sort(dataGridViewColumn: Column_rate, ListSortDirection.Descending);
-            toolStripStatusLabel_vol.Text = string.Empty;
-            toolStripProgressBar_filescompleted.Value = 0;
+            if (textBox_modelid.Text.Equals(id[2])) // Модели равны
+            {
+                textBox_modelid.BackColor = Color.LawnGreen;
+                gross++;
+            }
+            if (id[3].Length >= 64)
+            {
+                if (textBox_oemhash.Text.Equals(id[3].Substring(0, 64))) // Хеши равны
+                {
+                    textBox_oemhash.BackColor = Color.LawnGreen;
+                    gross += 2;
+                }
+            }
+            if (id[4].Equals("3")) gross += 2; // SWID начинается с 3 (альтернативная проверка: есть fh@0x%08 - Contains("6668403078253038"))
+            return gross;
         }
         #endregion
     }

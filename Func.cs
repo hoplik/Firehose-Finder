@@ -33,82 +33,20 @@ namespace FirehoseFinder
             return WorkFiles;
         }
 
-        public int RatFile(string FullFileName)
-        {
-            int Rat = Convert.ToInt32(FullFileName) - 1;
-            return Rat;
-        }
-
-        /// <summary>
-        /// Список проверок для формирования рейтинга программера
-        /// </summary>
-        /// <param name="Filepath">Ссылка на файл программера</param>
-        /// <returns>Увеличивает рейтинг на 1 при удачном прохождении теста</returns>
-        public int Rating(string Filepath)
-        {
-            FileInfo fi = new FileInfo(Filepath);
-            int Rat = 0;
-            //Тест 1 - Файл должен быть больше 0х3000 байт
-            if (fi.Length >= 12288)// Это 0х3000 в хекс
-            {
-                // Тест 2 - Файл должен быть ELF, иногда попадается ELE c 45 на конце
-                if (ElfReader(Filepath, 8).StartsWith("7F454C4"))
-                {
-                    Rat++;
-                }
-                // Тест 3 - у программера есть fh@0x%08, у xbl этого нет.
-                if (ElfReader(Filepath, -1).Contains("6668403078253038"))
-                {
-                    Rat++;
-                }
-            }
-            return Rat;
-        }
-
-        /// <summary>
-        /// Побайтово считали файл
-        /// </summary>
-        /// <param name="Filepath">Полный путь к файлу</param>
-        /// <param name="readbytes">Количество байт для чтения. Если -1, то читаем весь файл полностью</param>
-        /// <returns>Строка символов. Знаки байт.</returns>
-        public static string ElfReader(string Filepath, int readbytes)
-        {
-            FileInfo exfile = new FileInfo(Filepath);
-            int len = readbytes;
-            if (readbytes == -1) len = Convert.ToInt32(exfile.Length);//Читаем весь файл полностью
-            if (len > 20000000) len = 20000000; //Если файл очень большой, ограничиваемся 20мБ
-            try
-            {
-                StringBuilder dumptext = new StringBuilder(len);
-                byte[] chunk = new byte[len];
-                using (var stream = File.OpenRead(Filepath))
-                {
-                    int byteschunk = stream.Read(chunk, 0, len);
-                    for (int i = 0; i < byteschunk; i++)
-                    {
-                        dumptext.Insert(i * 2, String.Format("{0:X2}", (int)chunk[i]));
-                    }
-                }
-                return dumptext.ToString();
-            }
-            catch (OutOfMemoryException) { return string.Empty; }
-        }
-
         /// <summary>
         /// Вытаскиваем идентификаторы из считанного файла
         /// </summary>
-        /// <param name="Filepath">Полный путь к файлу</param>
+        /// <param name="dumpfile">Полный путь к файлу</param>
         /// <returns>Массив идентификаторов в строках</returns>
-        public string[] IDs(string Filepath)
+        public string[] IDs(string dumpfile)
         {
-            string str = ElfReader(Filepath, -1);
             string[] certarray = new string[6] { "-", "-", "-", "-", "-", "-" };
-            int HWIDstrInd = str.IndexOf("2048575F4944"); // HW_ID
-            int SWIDstrInd = str.IndexOf("2053575F4944"); // SW_ID
+            int HWIDstrInd = dumpfile.IndexOf("2048575F4944"); // HW_ID
+            int SWIDstrInd = dumpfile.IndexOf("2053575F4944"); // SW_ID
             if (HWIDstrInd >= 32 && SWIDstrInd >= 32)
             {
-                string HWID = str.Substring(HWIDstrInd - 32, 32);
-                string SWID = str.Substring(SWIDstrInd - 32, 32);
+                string HWID = dumpfile.Substring(HWIDstrInd - 32, 32);
+                string SWID = dumpfile.Substring(SWIDstrInd - 32, 32);
                 for (int i = 0; i < certarray.Length; i++)
                 {
                     switch (i)
@@ -144,7 +82,7 @@ namespace FirehoseFinder
                             certarray[i] = String.Join(string.Empty, MStr);
                             break;
                         case 3: // Расчитываем хеш
-                            certarray[i] = CertExtr(str, Filepath);
+                            certarray[i] = CertExtr(dumpfile);
                             break;
                         case 4: // Формируем тип софтвера
                             string[] SNStr = new string[8];
@@ -185,23 +123,16 @@ namespace FirehoseFinder
         /// Рассчитываем хеш корневого сертификата
         /// </summary>
         /// <param name="SFDump">Считанная строка</param>
-        /// <param name="file">Полный путь к файлу</param>
         /// <returns>Строка хеша</returns>
-        private static string CertExtr(string SFDump, string file)
+        private static string CertExtr(string SFDump)
         {
-            string pattern = "(3082.{4}3082)";
+            string pattern = "(3082.{4}3082)"; //Признак сертификата с его длиной в середине 4 байта
             MatchCollection matchs = Regex.Matches(SFDump, pattern);
             Dictionary<int, string> certs = new Dictionary<int, string>();
             int countcert = 1;
             StringBuilder SHAstr = new StringBuilder();
-            FileInfo fi = new FileInfo(file);
             foreach (Match match in matchs)
             {
-                if (countcert > 3)
-                {
-                    MessageBox.Show("В текущем файле " + fi.Name + " более 3 сертификатов." + Environment.NewLine + "Будут обработаны первые 3.");
-                    break;
-                }
                 string certl = SFDump.Substring(match.Index + 4, 4); // Получили длину сертификата в строке хекс
                 int certlen = Int32.Parse(certl, NumberStyles.HexNumber); // Перевели её в 10 инт
                 certs.Add(countcert, match.Value + SFDump.Substring(match.Index + 12, certlen * 2 - 4));

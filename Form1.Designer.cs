@@ -33,12 +33,6 @@
             this.tabPage_firehose = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView_final = new System.Windows.Forms.DataGridView();
-            this.Column_Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_hwid = new System.Windows.Forms.Label();
             this.button_startscan = new System.Windows.Forms.Button();
@@ -60,6 +54,12 @@
             this.richTextBox_about = new System.Windows.Forms.RichTextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
+            this.Column_Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage_firehose.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -128,54 +128,6 @@
             this.dataGridView_final.TabIndex = 15;
             this.dataGridView_final.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellClick);
             this.dataGridView_final.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellDoubleClick);
-            // 
-            // Column_Sel
-            // 
-            this.Column_Sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column_Sel.HeaderText = "Выбор";
-            this.Column_Sel.MinimumWidth = 6;
-            this.Column_Sel.Name = "Column_Sel";
-            this.Column_Sel.Width = 57;
-            // 
-            // Column_Name
-            // 
-            this.Column_Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column_Name.HeaderText = "Файл";
-            this.Column_Name.MinimumWidth = 6;
-            this.Column_Name.Name = "Column_Name";
-            this.Column_Name.Width = 74;
-            // 
-            // Column_id
-            // 
-            this.Column_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column_id.HeaderText = "HW-OEM-MODEL-HASH-SW(Ver)";
-            this.Column_id.MinimumWidth = 6;
-            this.Column_id.Name = "Column_id";
-            this.Column_id.Width = 252;
-            // 
-            // Column_rate
-            // 
-            this.Column_rate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column_rate.HeaderText = "Рейтинг";
-            this.Column_rate.MinimumWidth = 6;
-            this.Column_rate.Name = "Column_rate";
-            this.Column_rate.Width = 90;
-            // 
-            // Column_Full
-            // 
-            this.Column_Full.HeaderText = "Full Ids";
-            this.Column_Full.MinimumWidth = 6;
-            this.Column_Full.Name = "Column_Full";
-            this.Column_Full.Visible = false;
-            this.Column_Full.Width = 125;
-            // 
-            // Column_SW_type
-            // 
-            this.Column_SW_type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column_SW_type.HeaderText = "Тип ПО";
-            this.Column_SW_type.MinimumWidth = 6;
-            this.Column_SW_type.Name = "Column_SW_type";
-            this.Column_SW_type.Width = 87;
             // 
             // panel1
             // 
@@ -384,10 +336,56 @@
             // 
             // backgroundWorker_Read_File
             // 
-            this.backgroundWorker_Read_File.WorkerReportsProgress = true;
             this.backgroundWorker_Read_File.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_Read_File_DoWork);
-            this.backgroundWorker_Read_File.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_Read_File_ProgressChanged);
             this.backgroundWorker_Read_File.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_Read_File_RunWorkerCompleted);
+            // 
+            // Column_Sel
+            // 
+            this.Column_Sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column_Sel.HeaderText = "Выбор";
+            this.Column_Sel.MinimumWidth = 6;
+            this.Column_Sel.Name = "Column_Sel";
+            this.Column_Sel.Width = 57;
+            // 
+            // Column_Name
+            // 
+            this.Column_Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column_Name.HeaderText = "Файл";
+            this.Column_Name.MinimumWidth = 6;
+            this.Column_Name.Name = "Column_Name";
+            this.Column_Name.Width = 74;
+            // 
+            // Column_id
+            // 
+            this.Column_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column_id.HeaderText = "HW-OEM-MODEL-HASH-SW(Ver)";
+            this.Column_id.MinimumWidth = 6;
+            this.Column_id.Name = "Column_id";
+            this.Column_id.Width = 252;
+            // 
+            // Column_rate
+            // 
+            this.Column_rate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column_rate.HeaderText = "Рейтинг (max10)";
+            this.Column_rate.MinimumWidth = 6;
+            this.Column_rate.Name = "Column_rate";
+            this.Column_rate.Width = 133;
+            // 
+            // Column_Full
+            // 
+            this.Column_Full.HeaderText = "Full Ids";
+            this.Column_Full.MinimumWidth = 6;
+            this.Column_Full.Name = "Column_Full";
+            this.Column_Full.Visible = false;
+            this.Column_Full.Width = 125;
+            // 
+            // Column_SW_type
+            // 
+            this.Column_SW_type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column_SW_type.HeaderText = "Тип ПО";
+            this.Column_SW_type.MinimumWidth = 6;
+            this.Column_SW_type.Name = "Column_SW_type";
+            this.Column_SW_type.Width = 62;
             // 
             // Formfhf
             // 
@@ -440,13 +438,13 @@
         private System.Windows.Forms.TextBox textBox_oemhash;
         private System.Windows.Forms.Label label_oemhash;
         private System.Windows.Forms.TextBox textBox_modelid;
+        private System.ComponentModel.BackgroundWorker backgroundWorker_Read_File;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column_Sel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_rate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Full;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_SW_type;
-        private System.ComponentModel.BackgroundWorker backgroundWorker_Read_File;
     }
 }
 

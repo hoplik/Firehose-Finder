@@ -38,5 +38,18 @@ namespace FirehoseFinder
             { "1C", "Reserved" },
             { "200","Debug Policy"}
         };
+
+        public readonly struct HW_IDs
+        {
+            public HW_IDs(string Id, string Name)
+            {
+                ID = Id;
+                NAME = Name;
+            }
+            private string ID { get; }
+            private string NAME { get; }
+
+            public override string ToString() => ID + " - " + NAME;
+        }
     }
 }
