@@ -6,6 +6,8 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 using System.Text;
+using FirehoseFinder.Properties;
+using System.Diagnostics;
 
 namespace FirehoseFinder
 {
@@ -30,16 +32,16 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Formfhf_Load(object sender, EventArgs e)
         {
-            richTextBox_about.Text = FirehoseFinder.Properties.Resources.String_about + Environment.NewLine
-                + "Ссылка на базовую тему <<Общие принципы восстановления загрузчиков на Qualcomm | HS - USB QDLoader 9008, HS - USB Diagnostics 9006, QHUSB_DLOAD и т.д.>>: " + FirehoseFinder.Properties.Resources.String_theme_link + Environment.NewLine
-                + Environment.NewLine
-                + "Версия сборки: " + Assembly.GetExecutingAssembly().GetName().Version + Environment.NewLine
-                + Environment.NewLine
-                + "По вопросам поддержки, пожалуйста, обращайтесь: " + FirehoseFinder.Properties.Resources.String_help + Environment.NewLine
-                + Environment.NewLine
-                + "Часто задаваемые вопросы: " + Environment.NewLine + FirehoseFinder.Properties.Resources.String_faq1
-                + Environment.NewLine + FirehoseFinder.Properties.Resources.String_faq2
-                + Environment.NewLine + FirehoseFinder.Properties.Resources.String_faq3;
+            richTextBox_about.Text = Resources.String_about + Environment.NewLine +
+                "Ссылка на базовую тему <<Общие принципы восстановления загрузчиков на Qualcomm | HS - USB QDLoader 9008, HS - USB Diagnostics 9006, QHUSB_DLOAD и т.д.>>: " +
+                Resources.String_theme_link + Environment.NewLine
+                + Environment.NewLine +
+                "Версия сборки: " + Assembly.GetExecutingAssembly().GetName().Version + Environment.NewLine
+                + Environment.NewLine +
+                "Часто задаваемые вопросы: " + Environment.NewLine + Resources.String_faq1 + Environment.NewLine +
+                Resources.String_faq2 + Environment.NewLine + Resources.String_faq3 + Environment.NewLine
+                + Environment.NewLine +
+                "Есть вопросы, предложения, замечания? Открывайте ишью (вопрос) на Гитхабе: " + Resources.String_issues;
             toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
             toolTip1.SetToolTip(button_rename_fhf, "При нажатии произойдёт переименование выбранного файла по идентификаторам, указанным в таблице");
         }
@@ -276,6 +278,18 @@ namespace FirehoseFinder
             }
             if (id[4].Equals("3")) gross += 2; // SWID начинается с 3 (альтернативная проверка: есть fh@0x%08 - Contains("6668403078253038"))
             return gross;
+        }
+        #endregion
+        #region Команды контролов закладки Справочник
+
+        /// <summary>
+        /// Переход на сайт для открытия нового вопроса по добавлению устройства в Справочник
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LinkLabel_issues_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/hoplik/Firehose-Finder/issues");
         }
         #endregion
     }

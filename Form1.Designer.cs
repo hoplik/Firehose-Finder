@@ -34,6 +34,12 @@
             this.tabPage_firehose = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView_final = new System.Windows.Forms.DataGridView();
+            this.Column_Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_hwid = new System.Windows.Forms.Label();
             this.button_rename_fhf = new System.Windows.Forms.Button();
@@ -50,30 +56,25 @@
             this.toolStripStatusLabel_filescompleted = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar_filescompleted = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel_vol = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tabPage_phone = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tabPage_guide = new System.Windows.Forms.TabPage();
+            this.linkLabel_issues = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabPage_about = new System.Windows.Forms.TabPage();
             this.richTextBox_about = new System.Windows.Forms.RichTextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.Column_Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage_phone = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tabPage_guide = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage_firehose.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_final)).BeginInit();
             this.panel1.SuspendLayout();
             this.statusStrip_firehose.SuspendLayout();
-            this.tabPage_about.SuspendLayout();
             this.tabPage_phone.SuspendLayout();
             this.tabPage_guide.SuspendLayout();
+            this.tabPage_about.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -137,6 +138,54 @@
             this.dataGridView_final.TabIndex = 15;
             this.dataGridView_final.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellClick);
             this.dataGridView_final.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellDoubleClick);
+            // 
+            // Column_Sel
+            // 
+            this.Column_Sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column_Sel.HeaderText = "Выбор";
+            this.Column_Sel.MinimumWidth = 6;
+            this.Column_Sel.Name = "Column_Sel";
+            this.Column_Sel.Width = 57;
+            // 
+            // Column_Name
+            // 
+            this.Column_Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column_Name.HeaderText = "Файл";
+            this.Column_Name.MinimumWidth = 6;
+            this.Column_Name.Name = "Column_Name";
+            this.Column_Name.Width = 74;
+            // 
+            // Column_id
+            // 
+            this.Column_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column_id.HeaderText = "HW-OEM-MODEL-HASH-SW(Ver)";
+            this.Column_id.MinimumWidth = 6;
+            this.Column_id.Name = "Column_id";
+            this.Column_id.Width = 252;
+            // 
+            // Column_rate
+            // 
+            this.Column_rate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column_rate.HeaderText = "Рейтинг (max10)";
+            this.Column_rate.MinimumWidth = 6;
+            this.Column_rate.Name = "Column_rate";
+            this.Column_rate.Width = 133;
+            // 
+            // Column_Full
+            // 
+            this.Column_Full.HeaderText = "Full Ids";
+            this.Column_Full.MinimumWidth = 6;
+            this.Column_Full.Name = "Column_Full";
+            this.Column_Full.Visible = false;
+            this.Column_Full.Width = 125;
+            // 
+            // Column_SW_type
+            // 
+            this.Column_SW_type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column_SW_type.HeaderText = "Тип ПО";
+            this.Column_SW_type.MinimumWidth = 6;
+            this.Column_SW_type.Name = "Column_SW_type";
+            this.Column_SW_type.Width = 62;
             // 
             // panel1
             // 
@@ -304,6 +353,63 @@
             this.toolStripStatusLabel_vol.Name = "toolStripStatusLabel_vol";
             this.toolStripStatusLabel_vol.Size = new System.Drawing.Size(0, 24);
             // 
+            // tabPage_phone
+            // 
+            this.tabPage_phone.Controls.Add(this.label2);
+            this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_phone.Name = "tabPage_phone";
+            this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_phone.Size = new System.Drawing.Size(1242, 584);
+            this.tabPage_phone.TabIndex = 2;
+            this.tabPage_phone.Text = "Работа с устройством";
+            this.tabPage_phone.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(938, 34);
+            this.label2.TabIndex = 0;
+            this.label2.Text = resources.GetString("label2.Text");
+            // 
+            // tabPage_guide
+            // 
+            this.tabPage_guide.Controls.Add(this.linkLabel_issues);
+            this.tabPage_guide.Controls.Add(this.label3);
+            this.tabPage_guide.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_guide.Name = "tabPage_guide";
+            this.tabPage_guide.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_guide.Size = new System.Drawing.Size(1242, 584);
+            this.tabPage_guide.TabIndex = 3;
+            this.tabPage_guide.Text = "Справочник ID";
+            this.tabPage_guide.UseVisualStyleBackColor = true;
+            // 
+            // linkLabel_issues
+            // 
+            this.linkLabel_issues.AutoSize = true;
+            this.linkLabel_issues.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.linkLabel_issues.LinkArea = new System.Windows.Forms.LinkArea(291, 50);
+            this.linkLabel_issues.Location = new System.Drawing.Point(3, 532);
+            this.linkLabel_issues.Name = "linkLabel_issues";
+            this.linkLabel_issues.Size = new System.Drawing.Size(1063, 49);
+            this.linkLabel_issues.TabIndex = 1;
+            this.linkLabel_issues.TabStop = true;
+            this.linkLabel_issues.Text = resources.GetString("linkLabel_issues.Text");
+            this.linkLabel_issues.UseCompatibleTextRendering = true;
+            this.linkLabel_issues.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel_issues_LinkClicked);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(741, 34);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Тут планируется разместить справочник идентификаторов с фильтрами и сортировкой.\r" +
+    "\nДля удобства пользования информация будет иметь приоритет в зависимости от подк" +
+    "лючённого устройства.";
+            // 
             // tabPage_about
             // 
             this.tabPage_about.Controls.Add(this.richTextBox_about);
@@ -340,96 +446,6 @@
             // 
             this.toolTip1.Tag = "";
             // 
-            // Column_Sel
-            // 
-            this.Column_Sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column_Sel.HeaderText = "Выбор";
-            this.Column_Sel.MinimumWidth = 6;
-            this.Column_Sel.Name = "Column_Sel";
-            this.Column_Sel.Width = 57;
-            // 
-            // Column_Name
-            // 
-            this.Column_Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column_Name.HeaderText = "Файл";
-            this.Column_Name.MinimumWidth = 6;
-            this.Column_Name.Name = "Column_Name";
-            this.Column_Name.Width = 74;
-            // 
-            // Column_id
-            // 
-            this.Column_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column_id.HeaderText = "HW-OEM-MODEL-HASH-SW(Ver)";
-            this.Column_id.MinimumWidth = 6;
-            this.Column_id.Name = "Column_id";
-            this.Column_id.Width = 252;
-            // 
-            // Column_rate
-            // 
-            this.Column_rate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column_rate.HeaderText = "Рейтинг (max10)";
-            this.Column_rate.MinimumWidth = 6;
-            this.Column_rate.Name = "Column_rate";
-            this.Column_rate.Width = 133;
-            // 
-            // Column_Full
-            // 
-            this.Column_Full.HeaderText = "Full Ids";
-            this.Column_Full.MinimumWidth = 6;
-            this.Column_Full.Name = "Column_Full";
-            this.Column_Full.Visible = false;
-            this.Column_Full.Width = 125;
-            // 
-            // Column_SW_type
-            // 
-            this.Column_SW_type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column_SW_type.HeaderText = "Тип ПО";
-            this.Column_SW_type.MinimumWidth = 6;
-            this.Column_SW_type.Name = "Column_SW_type";
-            this.Column_SW_type.Width = 62;
-            // 
-            // tabPage_phone
-            // 
-            this.tabPage_phone.Controls.Add(this.label2);
-            this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
-            this.tabPage_phone.Name = "tabPage_phone";
-            this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_phone.Size = new System.Drawing.Size(1242, 584);
-            this.tabPage_phone.TabIndex = 2;
-            this.tabPage_phone.Text = "Работа с устройством";
-            this.tabPage_phone.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(938, 34);
-            this.label2.TabIndex = 0;
-            this.label2.Text = resources.GetString("label2.Text");
-            // 
-            // tabPage_guide
-            // 
-            this.tabPage_guide.Controls.Add(this.label3);
-            this.tabPage_guide.Location = new System.Drawing.Point(4, 25);
-            this.tabPage_guide.Name = "tabPage_guide";
-            this.tabPage_guide.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_guide.Size = new System.Drawing.Size(1242, 584);
-            this.tabPage_guide.TabIndex = 3;
-            this.tabPage_guide.Text = "Справочник ID";
-            this.tabPage_guide.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(741, 34);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Тут планируется разместить справочник идентификаторов с фильтрами и сортировкой.\r" +
-    "\nДля удобства пользования информация будет иметь приоритет в зависимости от подк" +
-    "лючённого устройства.";
-            // 
             // Formfhf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -450,11 +466,11 @@
             this.panel1.PerformLayout();
             this.statusStrip_firehose.ResumeLayout(false);
             this.statusStrip_firehose.PerformLayout();
-            this.tabPage_about.ResumeLayout(false);
             this.tabPage_phone.ResumeLayout(false);
             this.tabPage_phone.PerformLayout();
             this.tabPage_guide.ResumeLayout(false);
             this.tabPage_guide.PerformLayout();
+            this.tabPage_about.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -496,6 +512,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage_guide;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel linkLabel_issues;
     }
 }
 

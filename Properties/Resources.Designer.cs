@@ -97,11 +97,11 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на https://github.com/hoplik/Firehose-Finder.
+        ///   Ищет локализованную строку, похожую на https://github.com/hoplik/Firehose-Finder/issues.
         /// </summary>
-        internal static string String_help {
+        internal static string String_issues {
             get {
-                return ResourceManager.GetString("String_help", resourceCulture);
+                return ResourceManager.GetString("String_issues", resourceCulture);
             }
         }
         
