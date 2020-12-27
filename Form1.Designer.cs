@@ -57,7 +57,11 @@
             this.toolStripProgressBar_filescompleted = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel_vol = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabPage_phone = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
+            this.button_ADB_comstart = new System.Windows.Forms.Button();
+            this.comboBox_ADB_commands = new System.Windows.Forms.ComboBox();
+            this.button_ADB_clear = new System.Windows.Forms.Button();
+            this.button_ADB_start = new System.Windows.Forms.Button();
+            this.textBox_ADB = new System.Windows.Forms.TextBox();
             this.tabPage_guide = new System.Windows.Forms.TabPage();
             this.linkLabel_issues = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
@@ -355,7 +359,11 @@
             // 
             // tabPage_phone
             // 
-            this.tabPage_phone.Controls.Add(this.label2);
+            this.tabPage_phone.Controls.Add(this.button_ADB_comstart);
+            this.tabPage_phone.Controls.Add(this.comboBox_ADB_commands);
+            this.tabPage_phone.Controls.Add(this.button_ADB_clear);
+            this.tabPage_phone.Controls.Add(this.button_ADB_start);
+            this.tabPage_phone.Controls.Add(this.textBox_ADB);
             this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
             this.tabPage_phone.Name = "tabPage_phone";
             this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
@@ -364,14 +372,59 @@
             this.tabPage_phone.Text = "Работа с устройством";
             this.tabPage_phone.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // button_ADB_comstart
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(938, 34);
-            this.label2.TabIndex = 0;
-            this.label2.Text = resources.GetString("label2.Text");
+            this.button_ADB_comstart.Enabled = false;
+            this.button_ADB_comstart.Location = new System.Drawing.Point(9, 479);
+            this.button_ADB_comstart.Name = "button_ADB_comstart";
+            this.button_ADB_comstart.Size = new System.Drawing.Size(213, 23);
+            this.button_ADB_comstart.TabIndex = 5;
+            this.button_ADB_comstart.Text = "Выполнить команду";
+            this.button_ADB_comstart.UseVisualStyleBackColor = true;
+            this.button_ADB_comstart.Click += new System.EventHandler(this.Button_ADB_comstart_Click);
+            // 
+            // comboBox_ADB_commands
+            // 
+            this.comboBox_ADB_commands.Enabled = false;
+            this.comboBox_ADB_commands.FormattingEnabled = true;
+            this.comboBox_ADB_commands.Items.AddRange(new object[] {
+            "Перегрузить устройство в аварийный режим",
+            "Получить список параметров устройства"});
+            this.comboBox_ADB_commands.Location = new System.Drawing.Point(9, 449);
+            this.comboBox_ADB_commands.Name = "comboBox_ADB_commands";
+            this.comboBox_ADB_commands.Size = new System.Drawing.Size(425, 24);
+            this.comboBox_ADB_commands.TabIndex = 4;
+            this.comboBox_ADB_commands.Text = "Выберите команду";
+            this.comboBox_ADB_commands.SelectedIndexChanged += new System.EventHandler(this.ComboBox_ADB_commands_SelectedIndexChanged);
+            // 
+            // button_ADB_clear
+            // 
+            this.button_ADB_clear.Location = new System.Drawing.Point(228, 420);
+            this.button_ADB_clear.Name = "button_ADB_clear";
+            this.button_ADB_clear.Size = new System.Drawing.Size(206, 23);
+            this.button_ADB_clear.TabIndex = 3;
+            this.button_ADB_clear.Text = "Очистить и закрыть ADB";
+            this.button_ADB_clear.UseVisualStyleBackColor = true;
+            this.button_ADB_clear.Click += new System.EventHandler(this.Button_ADB_clear_Click);
+            // 
+            // button_ADB_start
+            // 
+            this.button_ADB_start.Location = new System.Drawing.Point(9, 420);
+            this.button_ADB_start.Name = "button_ADB_start";
+            this.button_ADB_start.Size = new System.Drawing.Size(213, 23);
+            this.button_ADB_start.TabIndex = 2;
+            this.button_ADB_start.Text = "Подключить ADB";
+            this.button_ADB_start.UseVisualStyleBackColor = true;
+            this.button_ADB_start.Click += new System.EventHandler(this.Button_ADB_start_Click);
+            // 
+            // textBox_ADB
+            // 
+            this.textBox_ADB.Location = new System.Drawing.Point(9, 7);
+            this.textBox_ADB.Multiline = true;
+            this.textBox_ADB.Name = "textBox_ADB";
+            this.textBox_ADB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox_ADB.Size = new System.Drawing.Size(425, 407);
+            this.textBox_ADB.TabIndex = 1;
             // 
             // tabPage_guide
             // 
@@ -509,10 +562,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Full;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_SW_type;
         private System.Windows.Forms.TabPage tabPage_phone;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage_guide;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel linkLabel_issues;
+        private System.Windows.Forms.Button button_ADB_start;
+        private System.Windows.Forms.TextBox textBox_ADB;
+        private System.Windows.Forms.Button button_ADB_clear;
+        private System.Windows.Forms.ComboBox comboBox_ADB_commands;
+        private System.Windows.Forms.Button button_ADB_comstart;
     }
 }
 

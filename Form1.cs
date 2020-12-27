@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using System.Text;
 using FirehoseFinder.Properties;
 using System.Diagnostics;
+using SharpAdbClient;
+using System.Threading;
 
 namespace FirehoseFinder
 {
@@ -23,7 +25,7 @@ namespace FirehoseFinder
             InitializeComponent();
         }
 
-        #region Функции контролов формы
+        #region Функции команд контролов закладки Работа с файлами
 
         /// <summary>
         /// Выполнение инструкций при загрузке формы
@@ -193,7 +195,7 @@ namespace FirehoseFinder
         }
         #endregion
 
-        #region Функции самостоятельных команд
+        #region Функции самостоятельных команд закладки Работа с файлами
         /// <summary>
         /// Проверка заполнения грида прочтёнными файлами и запуск параллельного потока для непрочтённых
         /// </summary>
@@ -280,7 +282,106 @@ namespace FirehoseFinder
             return gross;
         }
         #endregion
-        #region Команды контролов закладки Справочник
+
+        #region Функции команд контролов закладки Работа с устройством
+
+        private void Button_ADB_start_Click(object sender, EventArgs e)
+        {
+            //Создаём ADB из ресурсов в рабочую папку, если его там ещё нет
+            if (!File.Exists("adb.exe"))
+            {
+                byte[] LocalADB = Resources.adb;
+                FileStream fs = new FileStream("adb.exe", FileMode.Create);
+                fs.Write(LocalADB, 0, LocalADB.Length);
+                fs.Close();
+            }
+            //Стартуем сервер
+            AdbServer server = new AdbServer();
+            var result = server.StartServer("adb.exe", restartServerIfNewer: false);
+            //Подключаем клиента (устройства)
+            AdbClient client = new AdbClient();
+            List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
+            textBox_ADB.AppendText(result.ToString() + Environment.NewLine);
+            foreach (var device in devices) textBox_ADB.AppendText("Подключено устройство: " + device + Environment.NewLine);
+            if (devices.Count > 1) textBox_ADB.AppendText("Подключено более одного андройд-устройства. Пожалуйста, оставьте подключённым только то устройство, с которым планируется дальнейшая работа." + Environment.NewLine);
+            else if (devices.Count == 0) textBox_ADB.AppendText("Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли \"Отладка по USB\" в разделе \"Система\" - \"Для разработчиков\"" + Environment.NewLine);
+            else comboBox_ADB_commands.Enabled = true;
+            button_ADB_start.Enabled = false;
+        }
+
+        /// <summary>
+        /// Останавливаем сервер ADB, всё очищаем
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_ADB_clear_Click(object sender, EventArgs e)
+        {
+            StopAdb();
+        }
+
+        /// <summary>
+        /// При выборе команды на исполнение делаем доступным кнопку старта выполнения
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ComboBox_ADB_commands_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button_ADB_comstart.Enabled = true;
+        }
+
+        /// <summary>
+        /// Запуск на выполнение выбранной в комбобоксе команды
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_ADB_comstart_Click(object sender, EventArgs e)
+        {
+            AdbClient client = new AdbClient();
+            var receiver = new ConsoleOutputReceiver();
+            List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
+            var device = devices[0];
+            try
+            {
+            switch (comboBox_ADB_commands.SelectedIndex)
+            {
+                case 0:
+                    textBox_ADB.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
+                    client.Reboot("edl", device);
+                    Thread.Sleep(1000);
+                    StopAdb();
+                    break;
+                case 1:
+                    client.ExecuteRemoteCommand("getprop", device, receiver);
+                    textBox_ADB.AppendText(receiver.ToString() + Environment.NewLine);
+                    break;
+                default:
+                    break;
+            }
+            }
+            catch (SharpAdbClient.Exceptions.AdbException ex)
+            {
+                textBox_ADB.AppendText(ex.AdbError + Environment.NewLine);
+            }
+            button_ADB_comstart.Enabled = false;
+        }
+        #endregion
+
+        #region Функции самостоятельных команд закладки Работа с устройством
+
+        /// <summary>
+        /// Останавливаем сервер, очищаем поле, восстанавливаем доступы к контролам
+        /// </summary>
+        private void StopAdb()
+        {
+            textBox_ADB.Text = "Сеанс ADB завершён" + Environment.NewLine;
+            AdbClient client = new AdbClient();
+            client.KillAdb();
+            button_ADB_start.Enabled = true;
+            comboBox_ADB_commands.Enabled = false;
+            button_ADB_comstart.Enabled = false;
+        }
+        #endregion
+        #region Функции команд контролов закладки Справочник
 
         /// <summary>
         /// Переход на сайт для открытия нового вопроса по добавлению устройства в Справочник
@@ -292,5 +393,6 @@ namespace FirehoseFinder
             Process.Start("https://github.com/hoplik/Firehose-Finder/issues");
         }
         #endregion
+
     }
 }
