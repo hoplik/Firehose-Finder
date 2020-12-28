@@ -57,6 +57,7 @@
             this.toolStripProgressBar_filescompleted = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel_vol = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabPage_phone = new System.Windows.Forms.TabPage();
+            this.textBox_ADB_commandstring = new System.Windows.Forms.TextBox();
             this.button_ADB_comstart = new System.Windows.Forms.Button();
             this.comboBox_ADB_commands = new System.Windows.Forms.ComboBox();
             this.button_ADB_clear = new System.Windows.Forms.Button();
@@ -359,6 +360,7 @@
             // 
             // tabPage_phone
             // 
+            this.tabPage_phone.Controls.Add(this.textBox_ADB_commandstring);
             this.tabPage_phone.Controls.Add(this.button_ADB_comstart);
             this.tabPage_phone.Controls.Add(this.comboBox_ADB_commands);
             this.tabPage_phone.Controls.Add(this.button_ADB_clear);
@@ -372,12 +374,21 @@
             this.tabPage_phone.Text = "Работа с устройством";
             this.tabPage_phone.UseVisualStyleBackColor = true;
             // 
+            // textBox_ADB_commandstring
+            // 
+            this.textBox_ADB_commandstring.Location = new System.Drawing.Point(9, 479);
+            this.textBox_ADB_commandstring.Name = "textBox_ADB_commandstring";
+            this.textBox_ADB_commandstring.Size = new System.Drawing.Size(213, 22);
+            this.textBox_ADB_commandstring.TabIndex = 6;
+            this.textBox_ADB_commandstring.Visible = false;
+            this.textBox_ADB_commandstring.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBox_ADB_commandstring_KeyUp);
+            // 
             // button_ADB_comstart
             // 
             this.button_ADB_comstart.Enabled = false;
-            this.button_ADB_comstart.Location = new System.Drawing.Point(9, 479);
+            this.button_ADB_comstart.Location = new System.Drawing.Point(228, 479);
             this.button_ADB_comstart.Name = "button_ADB_comstart";
-            this.button_ADB_comstart.Size = new System.Drawing.Size(213, 23);
+            this.button_ADB_comstart.Size = new System.Drawing.Size(206, 23);
             this.button_ADB_comstart.TabIndex = 5;
             this.button_ADB_comstart.Text = "Выполнить команду";
             this.button_ADB_comstart.UseVisualStyleBackColor = true;
@@ -389,7 +400,8 @@
             this.comboBox_ADB_commands.FormattingEnabled = true;
             this.comboBox_ADB_commands.Items.AddRange(new object[] {
             "Перегрузить устройство в аварийный режим",
-            "Получить список параметров устройства"});
+            "Получить список параметров устройства",
+            "Командная строка (ADB Shell)"});
             this.comboBox_ADB_commands.Location = new System.Drawing.Point(9, 449);
             this.comboBox_ADB_commands.Name = "comboBox_ADB_commands";
             this.comboBox_ADB_commands.Size = new System.Drawing.Size(425, 24);
@@ -509,6 +521,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Formfhf";
             this.Text = "Firehose Finder";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Formfhf_FormClosing);
             this.Load += new System.EventHandler(this.Formfhf_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage_firehose.ResumeLayout(false);
@@ -570,6 +583,7 @@
         private System.Windows.Forms.Button button_ADB_clear;
         private System.Windows.Forms.ComboBox comboBox_ADB_commands;
         private System.Windows.Forms.Button button_ADB_comstart;
+        private System.Windows.Forms.TextBox textBox_ADB_commandstring;
     }
 }
 

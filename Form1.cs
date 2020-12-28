@@ -17,6 +17,7 @@ namespace FirehoseFinder
     {
         Func func = new Func(); // Подключили функции
         Guide guide = new Guide();
+
         /// <summary>
         /// Инициализация компонентов
         /// </summary>
@@ -24,8 +25,6 @@ namespace FirehoseFinder
         {
             InitializeComponent();
         }
-
-        #region Функции команд контролов закладки Работа с файлами
 
         /// <summary>
         /// Выполнение инструкций при загрузке формы
@@ -47,6 +46,18 @@ namespace FirehoseFinder
             toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
             toolTip1.SetToolTip(button_rename_fhf, "При нажатии произойдёт переименование выбранного файла по идентификаторам, указанным в таблице");
         }
+
+        /// <summary>
+        /// При закрытии приложения подчищаем за собой
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Formfhf_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (File.Exists("adb.exe")) File.Delete("adb.exe");
+        }
+
+        #region Функции команд контролов закладки Работа с файлами
 
         /// <summary>
         /// Выбираем директорию для работы с программерами.
@@ -327,6 +338,8 @@ namespace FirehoseFinder
         private void ComboBox_ADB_commands_SelectedIndexChanged(object sender, EventArgs e)
         {
             button_ADB_comstart.Enabled = true;
+            if (comboBox_ADB_commands.SelectedIndex == 2) textBox_ADB_commandstring.Visible = true;
+            else textBox_ADB_commandstring.Visible = false;
         }
 
         /// <summary>
@@ -340,29 +353,67 @@ namespace FirehoseFinder
             var receiver = new ConsoleOutputReceiver();
             List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
             var device = devices[0];
+            string Com_String = textBox_ADB_commandstring.Text;
             try
             {
-            switch (comboBox_ADB_commands.SelectedIndex)
-            {
-                case 0:
-                    textBox_ADB.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
-                    client.Reboot("edl", device);
-                    Thread.Sleep(1000);
-                    StopAdb();
-                    break;
-                case 1:
-                    client.ExecuteRemoteCommand("getprop", device, receiver);
-                    textBox_ADB.AppendText(receiver.ToString() + Environment.NewLine);
-                    break;
-                default:
-                    break;
-            }
+                switch (comboBox_ADB_commands.SelectedIndex)
+                {
+                    case 0:
+                        textBox_ADB.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
+                        client.Reboot("edl", device);
+                        Thread.Sleep(1000);
+                        StopAdb();
+                        break;
+                    case 1:
+                        client.ExecuteRemoteCommand("getprop", device, receiver);
+                        textBox_ADB.AppendText(receiver.ToString() + Environment.NewLine);
+                        break;
+                    case 2:
+                        if (!string.IsNullOrEmpty(Com_String)) Adb_Comm_String(Com_String);
+                        break;
+                    default:
+                        break;
+                }
             }
             catch (SharpAdbClient.Exceptions.AdbException ex)
             {
                 textBox_ADB.AppendText(ex.AdbError + Environment.NewLine);
             }
             button_ADB_comstart.Enabled = false;
+        }
+
+        /// <summary>
+        /// Запуск выполнения команды по нажатию клавиши Ввод
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_ADB_commandstring_KeyUp(object sender, KeyEventArgs e)
+        {
+            string Com_String = textBox_ADB_commandstring.Text;
+            if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(Com_String)) Adb_Comm_String(Com_String);
+        }
+
+        /// <summary>
+        /// Выполнение ADB команды из командной строки
+        /// </summary>
+        /// <param name="Com_String"></param>
+        private void Adb_Comm_String(string Com_String)
+        {
+            AdbClient client = new AdbClient();
+            var receiver = new ConsoleOutputReceiver();
+            List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
+            var device = devices[0];
+            textBox_ADB.AppendText(Com_String + Environment.NewLine);
+            textBox_ADB_commandstring.Text = string.Empty;
+            try
+            {
+                client.ExecuteRemoteCommand(Com_String, device, receiver);
+                textBox_ADB.AppendText(receiver.ToString() + Environment.NewLine);
+            }
+            catch (SharpAdbClient.Exceptions.AdbException ex)
+            {
+                textBox_ADB.AppendText(ex.AdbError + Environment.NewLine);
+            }
         }
         #endregion
 
@@ -381,6 +432,7 @@ namespace FirehoseFinder
             button_ADB_comstart.Enabled = false;
         }
         #endregion
+
         #region Функции команд контролов закладки Справочник
 
         /// <summary>
@@ -393,6 +445,5 @@ namespace FirehoseFinder
             Process.Start("https://github.com/hoplik/Firehose-Finder/issues");
         }
         #endregion
-
     }
 }
