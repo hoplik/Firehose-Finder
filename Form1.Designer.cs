@@ -71,6 +71,13 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.listView_comport = new System.Windows.Forms.ListView();
+            this.columnHeader_portnum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_portname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage_firehose.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,6 +87,12 @@
             this.tabPage_phone.SuspendLayout();
             this.tabPage_guide.SuspendLayout();
             this.tabPage_about.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -360,12 +373,7 @@
             // 
             // tabPage_phone
             // 
-            this.tabPage_phone.Controls.Add(this.textBox_ADB_commandstring);
-            this.tabPage_phone.Controls.Add(this.button_ADB_comstart);
-            this.tabPage_phone.Controls.Add(this.comboBox_ADB_commands);
-            this.tabPage_phone.Controls.Add(this.button_ADB_clear);
-            this.tabPage_phone.Controls.Add(this.button_ADB_start);
-            this.tabPage_phone.Controls.Add(this.textBox_ADB);
+            this.tabPage_phone.Controls.Add(this.splitContainer1);
             this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
             this.tabPage_phone.Name = "tabPage_phone";
             this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
@@ -376,7 +384,7 @@
             // 
             // textBox_ADB_commandstring
             // 
-            this.textBox_ADB_commandstring.Location = new System.Drawing.Point(9, 479);
+            this.textBox_ADB_commandstring.Location = new System.Drawing.Point(-3, 550);
             this.textBox_ADB_commandstring.Name = "textBox_ADB_commandstring";
             this.textBox_ADB_commandstring.Size = new System.Drawing.Size(213, 22);
             this.textBox_ADB_commandstring.TabIndex = 6;
@@ -386,7 +394,7 @@
             // button_ADB_comstart
             // 
             this.button_ADB_comstart.Enabled = false;
-            this.button_ADB_comstart.Location = new System.Drawing.Point(228, 479);
+            this.button_ADB_comstart.Location = new System.Drawing.Point(256, 549);
             this.button_ADB_comstart.Name = "button_ADB_comstart";
             this.button_ADB_comstart.Size = new System.Drawing.Size(206, 23);
             this.button_ADB_comstart.TabIndex = 5;
@@ -402,16 +410,16 @@
             "Перегрузить устройство в аварийный режим",
             "Получить список параметров устройства",
             "Командная строка (ADB Shell)"});
-            this.comboBox_ADB_commands.Location = new System.Drawing.Point(9, 449);
+            this.comboBox_ADB_commands.Location = new System.Drawing.Point(0, 519);
             this.comboBox_ADB_commands.Name = "comboBox_ADB_commands";
-            this.comboBox_ADB_commands.Size = new System.Drawing.Size(425, 24);
+            this.comboBox_ADB_commands.Size = new System.Drawing.Size(462, 24);
             this.comboBox_ADB_commands.TabIndex = 4;
             this.comboBox_ADB_commands.Text = "Выберите команду";
             this.comboBox_ADB_commands.SelectedIndexChanged += new System.EventHandler(this.ComboBox_ADB_commands_SelectedIndexChanged);
             // 
             // button_ADB_clear
             // 
-            this.button_ADB_clear.Location = new System.Drawing.Point(228, 420);
+            this.button_ADB_clear.Location = new System.Drawing.Point(256, 490);
             this.button_ADB_clear.Name = "button_ADB_clear";
             this.button_ADB_clear.Size = new System.Drawing.Size(206, 23);
             this.button_ADB_clear.TabIndex = 3;
@@ -421,7 +429,7 @@
             // 
             // button_ADB_start
             // 
-            this.button_ADB_start.Location = new System.Drawing.Point(9, 420);
+            this.button_ADB_start.Location = new System.Drawing.Point(0, 490);
             this.button_ADB_start.Name = "button_ADB_start";
             this.button_ADB_start.Size = new System.Drawing.Size(213, 23);
             this.button_ADB_start.TabIndex = 2;
@@ -431,11 +439,12 @@
             // 
             // textBox_ADB
             // 
-            this.textBox_ADB.Location = new System.Drawing.Point(9, 7);
+            this.textBox_ADB.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox_ADB.Location = new System.Drawing.Point(3, 18);
             this.textBox_ADB.Multiline = true;
             this.textBox_ADB.Name = "textBox_ADB";
             this.textBox_ADB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_ADB.Size = new System.Drawing.Size(425, 407);
+            this.textBox_ADB.Size = new System.Drawing.Size(456, 463);
             this.textBox_ADB.TabIndex = 1;
             // 
             // tabPage_guide
@@ -511,6 +520,78 @@
             // 
             this.toolTip1.Tag = "";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox_ADB);
+            this.groupBox1.Controls.Add(this.button_ADB_comstart);
+            this.groupBox1.Controls.Add(this.comboBox_ADB_commands);
+            this.groupBox1.Controls.Add(this.button_ADB_start);
+            this.groupBox1.Controls.Add(this.button_ADB_clear);
+            this.groupBox1.Controls.Add(this.textBox_ADB_commandstring);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(462, 578);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Android Debug Bridge";
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainer1.Size = new System.Drawing.Size(1236, 578);
+            this.splitContainer1.SplitterDistance = 462;
+            this.splitContainer1.TabIndex = 8;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.listView_comport);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(770, 578);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Sahara";
+            // 
+            // listView_comport
+            // 
+            this.listView_comport.CheckBoxes = true;
+            this.listView_comport.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader_portnum,
+            this.columnHeader_portname});
+            this.listView_comport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.listView_comport.HideSelection = false;
+            this.listView_comport.Location = new System.Drawing.Point(3, 18);
+            this.listView_comport.Name = "listView_comport";
+            this.listView_comport.Size = new System.Drawing.Size(764, 70);
+            this.listView_comport.TabIndex = 0;
+            this.listView_comport.UseCompatibleStateImageBehavior = false;
+            this.listView_comport.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader_portnum
+            // 
+            this.columnHeader_portnum.Text = "Порт";
+            // 
+            // columnHeader_portname
+            // 
+            this.columnHeader_portname.Text = "Наименование com-порта";
+            this.columnHeader_portname.Width = 300;
+            // 
+            // serialPort1
+            // 
+            this.serialPort1.BaudRate = 115200;
+            // 
             // Formfhf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -533,10 +614,16 @@
             this.statusStrip_firehose.ResumeLayout(false);
             this.statusStrip_firehose.PerformLayout();
             this.tabPage_phone.ResumeLayout(false);
-            this.tabPage_phone.PerformLayout();
             this.tabPage_guide.ResumeLayout(false);
             this.tabPage_guide.PerformLayout();
             this.tabPage_about.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -584,6 +671,13 @@
         private System.Windows.Forms.ComboBox comboBox_ADB_commands;
         private System.Windows.Forms.Button button_ADB_comstart;
         private System.Windows.Forms.TextBox textBox_ADB_commandstring;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ListView listView_comport;
+        private System.Windows.Forms.ColumnHeader columnHeader_portnum;
+        private System.Windows.Forms.ColumnHeader columnHeader_portname;
+        private System.IO.Ports.SerialPort serialPort1;
     }
 }
 

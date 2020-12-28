@@ -27,6 +27,38 @@ namespace FirehoseFinder
         }
 
         /// <summary>
+        /// Отлавливаем подключение USB устройств. Перезапускаем скан доступных портов
+        /// </summary>
+        /// <param name="m"></param>
+        protected override void WndProc(ref Message m)
+        {
+            try
+            {
+                base.WndProc(ref m);
+            }
+            catch (TargetInvocationException)
+            {
+            }
+            try
+            {
+                switch (m.WParam.ToInt32())
+                {
+                    case 0x8000://новое usb подключено
+                        CheckListPorts();
+                        break;
+                    case 0x0007: // Любое изменение конфигурации оборудования
+                        CheckListPorts();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (OverflowException)
+            {
+            }
+        }
+
+        /// <summary>
         /// Выполнение инструкций при загрузке формы
         /// </summary>
         /// <param name="sender"></param>
@@ -45,6 +77,7 @@ namespace FirehoseFinder
                 "Есть вопросы, предложения, замечания? Открывайте ишью (вопрос) на Гитхабе: " + Resources.String_issues;
             toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
             toolTip1.SetToolTip(button_rename_fhf, "При нажатии произойдёт переименование выбранного файла по идентификаторам, указанным в таблице");
+            CheckListPorts(); //Вносим в листвью список активных портов
         }
 
         /// <summary>
@@ -392,6 +425,22 @@ namespace FirehoseFinder
             string Com_String = textBox_ADB_commandstring.Text;
             if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(Com_String)) Adb_Comm_String(Com_String);
         }
+        #endregion
+
+        #region Функции самостоятельных команд закладки Работа с устройством
+
+        /// <summary>
+        /// Останавливаем сервер, очищаем поле, восстанавливаем доступы к контролам
+        /// </summary>
+        private void StopAdb()
+        {
+            textBox_ADB.Text = "Сеанс ADB завершён" + Environment.NewLine;
+            AdbClient client = new AdbClient();
+            client.KillAdb();
+            button_ADB_start.Enabled = true;
+            comboBox_ADB_commands.Enabled = false;
+            button_ADB_comstart.Enabled = false;
+        }
 
         /// <summary>
         /// Выполнение ADB команды из командной строки
@@ -415,21 +464,21 @@ namespace FirehoseFinder
                 textBox_ADB.AppendText(ex.AdbError + Environment.NewLine);
             }
         }
-        #endregion
 
-        #region Функции самостоятельных команд закладки Работа с устройством
-
-        /// <summary>
-        /// Останавливаем сервер, очищаем поле, восстанавливаем доступы к контролам
-        /// </summary>
-        private void StopAdb()
+        private void CheckListPorts()
         {
-            textBox_ADB.Text = "Сеанс ADB завершён" + Environment.NewLine;
-            AdbClient client = new AdbClient();
-            client.KillAdb();
-            button_ADB_start.Enabled = true;
-            comboBox_ADB_commands.Enabled = false;
-            button_ADB_comstart.Enabled = false;
+            string[] ports = System.IO.Ports.SerialPort.GetPortNames();
+            ListViewItem Lwitem = new ListViewItem(ports);
+            if (listView_comport.Items.Count > 0) listView_comport.Items.Clear();
+            if (ports.Length > 0)
+            {
+                for (int item = 0; item < ports.Length; item++)
+                {
+                    //Запросили расширенное имя порта и присвоили его субитему
+                    //listView_comport.Items[item].SubItems.Add();
+                }
+            }
+            listView_comport.Items.Add(Lwitem);
         }
         #endregion
 
