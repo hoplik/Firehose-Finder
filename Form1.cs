@@ -10,6 +10,7 @@ using FirehoseFinder.Properties;
 using System.Diagnostics;
 using SharpAdbClient;
 using System.Threading;
+using Microsoft.Win32;
 
 namespace FirehoseFinder
 {
@@ -17,7 +18,7 @@ namespace FirehoseFinder
     {
         Func func = new Func(); // Подключили функции
         Guide guide = new Guide();
-
+        bool SaharaPortClosed = true; //Статус порта для закрытия из-за чтения в параллельном потоке
         /// <summary>
         /// Инициализация компонентов
         /// </summary>
@@ -76,7 +77,7 @@ namespace FirehoseFinder
                 + Environment.NewLine +
                 "Есть вопросы, предложения, замечания? Открывайте ишью (вопрос) на Гитхабе: " + Resources.String_issues;
             toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
-            toolTip1.SetToolTip(button_rename_fhf, "При нажатии произойдёт переименование выбранного файла по идентификаторам, указанным в таблице");
+            toolTip1.SetToolTip(button_useSahara_fhf, "При нажатии произойдёт переименование выбранного файла по идентификаторам, указанным в таблице");
             CheckListPorts(); //Вносим в листвью список активных портов
         }
 
@@ -88,6 +89,8 @@ namespace FirehoseFinder
         private void Formfhf_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (File.Exists("adb.exe")) File.Delete("adb.exe");
+            if (File.Exists("QSaharaServer.exe")) File.Delete("QSaharaServer.exe");
+            SaharaPortClosed = true;
         }
 
         #region Функции команд контролов закладки Работа с файлами
@@ -104,7 +107,7 @@ namespace FirehoseFinder
             textBox_modelid.BackColor = Color.Empty;
             textBox_oemhash.BackColor = Color.Empty;
             dataGridView_final.Rows.Clear();
-            button_rename_fhf.Visible = false;
+            button_useSahara_fhf.Visible = false;
             toolStripStatusLabel_filescompleted.Text = string.Empty;
             toolStripStatusLabel_vol.Text = string.Empty;
             toolStripProgressBar_filescompleted.Value = 0;
@@ -117,13 +120,14 @@ namespace FirehoseFinder
         }
 
         /// <summary>
-        /// Заглушка
+        /// Выбираем программер для работы с устройством
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button__rename_fhf_Click(object sender, EventArgs e)
+        private void Button__useSahara_fhf_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Скоро это действие будет вызывать операцию переименования выбранного файла (группы файлов) по идентификаторам из их сертификатов.", "Пока не работает");
+            label_Sahara_fhf.Text = button_path.Text + "\\" + dataGridView_final.SelectedRows[0].Cells[1].Value.ToString();
+            tabControl1.SelectedTab = tabPage_phone;
         }
 
         /// <summary>
@@ -140,7 +144,7 @@ namespace FirehoseFinder
                     if (Convert.ToBoolean(dataGridView_final["Column_Sel", e.RowIndex].Value))
                     {
                         dataGridView_final["Column_Sel", e.RowIndex].Value = false;
-                        button_rename_fhf.Visible = false;
+                        button_useSahara_fhf.Visible = false;
                     }
                     else
                     {
@@ -149,7 +153,7 @@ namespace FirehoseFinder
                             dataGridView_final["Column_Sel", i].Value = false;
                         }
                         dataGridView_final["Column_Sel", e.RowIndex].Value = true;
-                        button_rename_fhf.Visible = true;
+                        button_useSahara_fhf.Visible = true;
                     }
                 }
             }
@@ -340,6 +344,7 @@ namespace FirehoseFinder
                 fs.Close();
             }
             //Стартуем сервер
+            textBox_ADB.AppendText("Запускаем сервер ADB ..." + Environment.NewLine);
             AdbServer server = new AdbServer();
             var result = server.StartServer("adb.exe", restartServerIfNewer: false);
             //Подключаем клиента (устройства)
@@ -425,6 +430,68 @@ namespace FirehoseFinder
             string Com_String = textBox_ADB_commandstring.Text;
             if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(Com_String)) Adb_Comm_String(Com_String);
         }
+
+        /// <summary>
+        /// При наличии порта с аварийным устройством активируем кнопку запроса идентификаторов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListView_comport_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            if (e.Item.Checked)
+            {
+                serialPort1.PortName = e.Item.Text;
+                button_Sahara_Ids.Enabled = true;
+            }
+            else
+            {
+                button_Sahara_Ids.Enabled = false;
+            }
+        }
+
+        /// <summary>
+        /// Получаем идентификаторы устройства, переносим их на вкладку Работа с файлами
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Sahara_Ids_Click(object sender, EventArgs e)
+        {
+            //Создаём SaharaServer из ресурсов в рабочую папку, если его там ещё нет
+            if (!File.Exists("QSaharaServer.exe"))
+            {
+                byte[] LocalQSS = Resources.QSaharaServer;
+                FileStream fs = new FileStream("QSaharaServer.exe", FileMode.Create);
+                fs.Write(LocalQSS, 0, LocalQSS.Length);
+                fs.Close();
+            }
+            //Выполняем запрос HWID-OEMID (command02)
+            Process process = new Process();
+            process.StartInfo.FileName = "QSaharaServer.exe";
+            process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 02 -c 03 -c 07";
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.Start();
+
+            StreamReader reader = process.StandardOutput;
+            string output = reader.ReadToEnd();
+
+            textBox_ADB.AppendText(output);
+
+            process.WaitForExit();
+            process.Close();
+            //Обрабатываем запрос HWID-OEMID (command02)
+            textBox_hwid.Text = "";
+            textBox_oemid.Text = "";
+            textBox_modelid.Text = "";
+            //Выполняем запрос OEM_HASH (command03)
+            //Обрабатываем запрос OEM_HASH (command03)
+            textBox_oemhash.Text = "";
+            //Выполняем запрос SWID_Version (command07)
+            //Обрабатываем запрос SWID_Version (command07)
+            label_SW_Ver.Text = "";
+            //Переходим на вкладку Работа с файлами
+            //tabControl1.SelectedTab = tabPage_firehose;
+        }
         #endregion
 
         #region Функции самостоятельных команд закладки Работа с устройством
@@ -470,15 +537,42 @@ namespace FirehoseFinder
             string[] ports = System.IO.Ports.SerialPort.GetPortNames();
             ListViewItem Lwitem = new ListViewItem(ports);
             if (listView_comport.Items.Count > 0) listView_comport.Items.Clear();
-            if (ports.Length > 0)
+            if (ports.Length == 0) return;
+            listView_comport.Items.Add(Lwitem);
+            for (int item = 0; item < ports.Length; item++)
             {
-                for (int item = 0; item < ports.Length; item++)
+                try
                 {
-                    //Запросили расширенное имя порта и присвоили его субитему
-                    //listView_comport.Items[item].SubItems.Add();
+                    RegistryKey rk = Registry.LocalMachine; // Зашли в локал машин
+                    RegistryKey openRK = rk.OpenSubKey("SYSTEM\\CurrentControlSet\\Enum\\USB"); // Открыли на чтение папку USB устройств
+                    string[] USBDevices = openRK.GetSubKeyNames();  // Получили имена всех, когда-либо подключаемых устройств
+                    foreach (string stepOne in USBDevices)  // Для каждого производителя устройства проверяем подпапки, т.к. бывает несколько устройств на одном ВИД/ПИД
+                    {
+                        RegistryKey stepOneReg = openRK.OpenSubKey(stepOne);    // Открываем каждого производителя на чтение
+                        string[] stepTwo = stepOneReg.GetSubKeyNames(); // Получили список всех устройств для каждого производителя
+                        foreach (string friendName in stepTwo)
+                        {
+                            RegistryKey friendRegName = stepOneReg.OpenSubKey(friendName);
+                            string[] fn = friendRegName.GetValueNames();
+                            foreach (string currentName in fn)
+                            {
+                                if (currentName == "FriendlyName")
+                                {
+                                    object frn = friendRegName.GetValue("FriendlyName");
+                                    RegistryKey devPar = friendRegName.OpenSubKey("Device Parameters");
+                                    object dp = devPar.GetValue("PortName");
+                                    if (dp != null && listView_comport.Items[item].Text.Equals(dp.ToString())) listView_comport.Items[item].SubItems.Add(frn.ToString());
+                                    if (stepOne.Equals("VID_05C6&PID_9008")) listView_comport.Items[item].Checked = true;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    listView_comport.Items[item].SubItems.Add("Внимание! Ошибка!" + ex.Message);
                 }
             }
-            listView_comport.Items.Add(Lwitem);
         }
         #endregion
 

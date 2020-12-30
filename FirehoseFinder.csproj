@@ -165,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="fh.ico" />
+    <None Include="Resources\QSaharaServer.exe" />
     <None Include="Resources\adb.exe" />
   </ItemGroup>
   <ItemGroup />

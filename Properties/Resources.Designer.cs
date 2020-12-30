@@ -71,6 +71,16 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] QSaharaServer {
+            get {
+                object obj = ResourceManager.GetObject("QSaharaServer", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Однокнопочная программа с GUI для подбора программеров (firehose) для телефонов на базе процессоров от Qualcomm..
         /// </summary>
         internal static string String_about {
