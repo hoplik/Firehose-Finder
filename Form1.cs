@@ -18,7 +18,6 @@ namespace FirehoseFinder
     {
         Func func = new Func(); // Подключили функции
         Guide guide = new Guide();
-        bool SaharaPortClosed = true; //Статус порта для закрытия из-за чтения в параллельном потоке
         /// <summary>
         /// Инициализация компонентов
         /// </summary>
@@ -90,7 +89,9 @@ namespace FirehoseFinder
         {
             if (File.Exists("adb.exe")) File.Delete("adb.exe");
             if (File.Exists("QSaharaServer.exe")) File.Delete("QSaharaServer.exe");
-            SaharaPortClosed = true;
+            if (File.Exists("commandop02.bin")) File.Delete("commandop02.bin");
+            if (File.Exists("commandop03.bin")) File.Delete("commandop03.bin");
+            if (File.Exists("commandop07.bin")) File.Delete("commandop07.bin");
         }
 
         #region Функции команд контролов закладки Работа с файлами
@@ -467,7 +468,7 @@ namespace FirehoseFinder
             //Выполняем запрос HWID-OEMID (command02)
             Process process = new Process();
             process.StartInfo.FileName = "QSaharaServer.exe";
-            process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 02 -c 03 -c 07";
+            process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 2 -c 3 -c 7";
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
             process.Start();
@@ -535,12 +536,12 @@ namespace FirehoseFinder
         private void CheckListPorts()
         {
             string[] ports = System.IO.Ports.SerialPort.GetPortNames();
-            ListViewItem Lwitem = new ListViewItem(ports);
+            ListViewItem Lwitem = new ListViewItem();
             if (listView_comport.Items.Count > 0) listView_comport.Items.Clear();
             if (ports.Length == 0) return;
-            listView_comport.Items.Add(Lwitem);
             for (int item = 0; item < ports.Length; item++)
             {
+                listView_comport.Items.Add(ports[item]);
                 try
                 {
                     RegistryKey rk = Registry.LocalMachine; // Зашли в локал машин
@@ -561,8 +562,11 @@ namespace FirehoseFinder
                                     object frn = friendRegName.GetValue("FriendlyName");
                                     RegistryKey devPar = friendRegName.OpenSubKey("Device Parameters");
                                     object dp = devPar.GetValue("PortName");
-                                    if (dp != null && listView_comport.Items[item].Text.Equals(dp.ToString())) listView_comport.Items[item].SubItems.Add(frn.ToString());
-                                    if (stepOne.Equals("VID_05C6&PID_9008")) listView_comport.Items[item].Checked = true;
+                                    if (dp != null && listView_comport.Items[item].Text.Equals(dp.ToString()))
+                                    {
+                                        listView_comport.Items[item].SubItems.Add(frn.ToString());
+                                        if (stepOne.Equals("VID_05C6&PID_9008")) listView_comport.Items[item].Checked = true;
+                                    }
                                 }
                             }
                         }
@@ -570,7 +574,7 @@ namespace FirehoseFinder
                 }
                 catch (Exception ex)
                 {
-                    listView_comport.Items[item].SubItems.Add("Внимание! Ошибка!" + ex.Message);
+                    MessageBox.Show(ex.Message, "Внимание! Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
