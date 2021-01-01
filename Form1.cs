@@ -93,6 +93,7 @@ namespace FirehoseFinder
             if (File.Exists("commandop02.bin")) File.Delete("commandop02.bin");
             if (File.Exists("commandop03.bin")) File.Delete("commandop03.bin");
             if (File.Exists("commandop07.bin")) File.Delete("commandop07.bin");
+            if (File.Exists("port_trace.txt")) File.Delete("port_trace.txt");
         }
 
         #region Функции команд контролов закладки Работа с файлами
@@ -496,46 +497,45 @@ namespace FirehoseFinder
             //tabControl1.SelectedTab = tabPage_firehose;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            //Создаём SaharaServer из ресурсов в рабочую папку, если его там ещё нет
-            if (!File.Exists("QSaharaServer.exe"))
-            {
-                byte[] LocalQSS = Resources.QSaharaServer;
-                FileStream fs = new FileStream("QSaharaServer.exe", FileMode.Create);
-                fs.Write(LocalQSS, 0, LocalQSS.Length);
-                fs.Close();
-            }
-            if (!File.Exists("fh_loader.exe"))
-            {
-                byte[] LocalFHL = Resources.fh_loader;
-                FileStream fs = new FileStream("fh_loader.exe", FileMode.Create);
-                fs.Write(LocalFHL, 0, LocalFHL.Length);
-                fs.Close();
-            }
-            //Выполняем запрос HWID-OEMID (command02)
             Process process = new Process();
-            process.StartInfo.FileName = "QSaharaServer.exe";
-            process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -s 13:" + label_Sahara_fhf.Text;
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
-            //process.StartInfo.CreateNoWindow = true;
-            process.Start();
-            StreamReader reader = process.StandardOutput;
-            textBox_ADB.AppendText(reader.ReadToEnd());
-            process.WaitForExit();
-            //process.Close();
-            //Process procFHL = new Process();
-            process.StartInfo.FileName = "fh_loader.exe";
-            process.StartInfo.Arguments = "--port=\\\\.\\" + serialPort1.PortName + " --reset";
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            //process.StartInfo.CreateNoWindow = true;
-            process.Start();
-            //StreamReader streamReader = procFHL.StandardOutput;
-            //string fhlstr = streamReader.ReadToEnd();
-            textBox_ADB.AppendText(reader.ReadToEnd());
-            process.WaitForExit();
+            for (int i = 0; i < 2; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        if (!File.Exists("QSaharaServer.exe"))
+                        {
+                            byte[] LocalQSS = Resources.QSaharaServer;
+                            FileStream fs = new FileStream("QSaharaServer.exe", FileMode.Create);
+                            fs.Write(LocalQSS, 0, LocalQSS.Length);
+                            fs.Close();
+                        }
+                        process.StartInfo.FileName = "QSaharaServer.exe";
+                        process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -s 13:" + label_Sahara_fhf.Text;
+                        break;
+                    case 1:
+                        if (!File.Exists("fh_loader.exe"))
+                        {
+                            byte[] LocalFHL = Resources.fh_loader;
+                            FileStream fs = new FileStream("fh_loader.exe", FileMode.Create);
+                            fs.Write(LocalFHL, 0, LocalFHL.Length);
+                            fs.Close();
+                        }
+                        process.StartInfo.FileName = "powershell";
+                        process.StartInfo.Arguments = ".\\fh_loader --port=\\\\.\\" + serialPort1.PortName + " --loglevel=0 --dontsorttags --reset";
+                        break;
+                    default:
+                        break;
+                }
+                process.Start();
+                StreamReader reader = process.StandardOutput;
+                textBox_ADB.AppendText(reader.ReadToEnd());
+                process.WaitForExit();
+            }
             process.Close();
         }
         #endregion
