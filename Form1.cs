@@ -89,6 +89,7 @@ namespace FirehoseFinder
         {
             if (File.Exists("adb.exe")) File.Delete("adb.exe");
             if (File.Exists("QSaharaServer.exe")) File.Delete("QSaharaServer.exe");
+            if (File.Exists("fh_loader.exe")) File.Delete("fh_loader.exe");
             if (File.Exists("commandop02.bin")) File.Delete("commandop02.bin");
             if (File.Exists("commandop03.bin")) File.Delete("commandop03.bin");
             if (File.Exists("commandop07.bin")) File.Delete("commandop07.bin");
@@ -470,6 +471,7 @@ namespace FirehoseFinder
             process.StartInfo.FileName = "QSaharaServer.exe";
             process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 2 -c 3 -c 7";
             process.StartInfo.UseShellExecute = false;
+            process.StartInfo.CreateNoWindow = true;
             process.StartInfo.RedirectStandardOutput = true;
             process.Start();
 
@@ -492,6 +494,49 @@ namespace FirehoseFinder
             label_SW_Ver.Text = "";
             //Переходим на вкладку Работа с файлами
             //tabControl1.SelectedTab = tabPage_firehose;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Создаём SaharaServer из ресурсов в рабочую папку, если его там ещё нет
+            if (!File.Exists("QSaharaServer.exe"))
+            {
+                byte[] LocalQSS = Resources.QSaharaServer;
+                FileStream fs = new FileStream("QSaharaServer.exe", FileMode.Create);
+                fs.Write(LocalQSS, 0, LocalQSS.Length);
+                fs.Close();
+            }
+            if (!File.Exists("fh_loader.exe"))
+            {
+                byte[] LocalFHL = Resources.fh_loader;
+                FileStream fs = new FileStream("fh_loader.exe", FileMode.Create);
+                fs.Write(LocalFHL, 0, LocalFHL.Length);
+                fs.Close();
+            }
+            //Выполняем запрос HWID-OEMID (command02)
+            Process process = new Process();
+            process.StartInfo.FileName = "QSaharaServer.exe";
+            process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -s 13:" + label_Sahara_fhf.Text;
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            //process.StartInfo.CreateNoWindow = true;
+            process.Start();
+            StreamReader reader = process.StandardOutput;
+            textBox_ADB.AppendText(reader.ReadToEnd());
+            process.WaitForExit();
+            //process.Close();
+            //Process procFHL = new Process();
+            process.StartInfo.FileName = "fh_loader.exe";
+            process.StartInfo.Arguments = "--port=\\\\.\\" + serialPort1.PortName + " --reset";
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            //process.StartInfo.CreateNoWindow = true;
+            process.Start();
+            //StreamReader streamReader = procFHL.StandardOutput;
+            //string fhlstr = streamReader.ReadToEnd();
+            textBox_ADB.AppendText(reader.ReadToEnd());
+            process.WaitForExit();
+            process.Close();
         }
         #endregion
 
@@ -536,7 +581,6 @@ namespace FirehoseFinder
         private void CheckListPorts()
         {
             string[] ports = System.IO.Ports.SerialPort.GetPortNames();
-            ListViewItem Lwitem = new ListViewItem();
             if (listView_comport.Items.Count > 0) listView_comport.Items.Clear();
             if (ports.Length == 0) return;
             for (int item = 0; item < ports.Length; item++)

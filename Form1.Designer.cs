@@ -41,6 +41,8 @@
             this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label_SW_Ver = new System.Windows.Forms.Label();
+            this.label_swid = new System.Windows.Forms.Label();
             this.label_hwid = new System.Windows.Forms.Label();
             this.button_useSahara_fhf = new System.Windows.Forms.Button();
             this.textBox_oemid = new System.Windows.Forms.TextBox();
@@ -81,8 +83,7 @@
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.label_swid = new System.Windows.Forms.Label();
-            this.label_SW_Ver = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage_firehose.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -231,6 +232,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1236, 101);
             this.panel1.TabIndex = 17;
+            // 
+            // label_SW_Ver
+            // 
+            this.label_SW_Ver.AutoSize = true;
+            this.label_SW_Ver.Location = new System.Drawing.Point(589, 12);
+            this.label_SW_Ver.Name = "label_SW_Ver";
+            this.label_SW_Ver.Size = new System.Drawing.Size(72, 17);
+            this.label_SW_Ver.TabIndex = 19;
+            this.label_SW_Ver.Text = "00000000";
+            // 
+            // label_swid
+            // 
+            this.label_swid.AutoSize = true;
+            this.label_swid.Location = new System.Drawing.Point(438, 12);
+            this.label_swid.Name = "label_swid";
+            this.label_swid.Size = new System.Drawing.Size(153, 17);
+            this.label_swid.TabIndex = 18;
+            this.label_swid.Text = "SBL SWID (Version) 0x";
             // 
             // label_hwid
             // 
@@ -490,6 +509,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.button_Sahara_Ids);
             this.groupBox2.Controls.Add(this.label_Sahara_fhf);
             this.groupBox2.Controls.Add(this.label2);
@@ -633,23 +653,15 @@
             // 
             this.serialPort1.BaudRate = 115200;
             // 
-            // label_swid
+            // button1
             // 
-            this.label_swid.AutoSize = true;
-            this.label_swid.Location = new System.Drawing.Point(438, 12);
-            this.label_swid.Name = "label_swid";
-            this.label_swid.Size = new System.Drawing.Size(153, 17);
-            this.label_swid.TabIndex = 18;
-            this.label_swid.Text = "SBL SWID (Version) 0x";
-            // 
-            // label_SW_Ver
-            // 
-            this.label_SW_Ver.AutoSize = true;
-            this.label_SW_Ver.Location = new System.Drawing.Point(589, 12);
-            this.label_SW_Ver.Name = "label_SW_Ver";
-            this.label_SW_Ver.Size = new System.Drawing.Size(72, 17);
-            this.label_SW_Ver.TabIndex = 19;
-            this.label_SW_Ver.Text = "00000000";
+            this.button1.Location = new System.Drawing.Point(457, 116);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(307, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Перегрузить устройство";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Formfhf
             // 
@@ -743,6 +755,7 @@
         private System.Windows.Forms.Button button_Sahara_Ids;
         private System.Windows.Forms.Label label_SW_Ver;
         private System.Windows.Forms.Label label_swid;
+        private System.Windows.Forms.Button button1;
     }
 }
 

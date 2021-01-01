@@ -73,6 +73,16 @@ namespace FirehoseFinder.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        internal static byte[] fh_loader {
+            get {
+                object obj = ResourceManager.GetObject("fh_loader", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         internal static byte[] QSaharaServer {
             get {
                 object obj = ResourceManager.GetObject("QSaharaServer", resourceCulture);
