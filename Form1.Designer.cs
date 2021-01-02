@@ -78,7 +78,6 @@
             this.columnHeader_portname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage_guide = new System.Windows.Forms.TabPage();
             this.linkLabel_issues = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
             this.tabPage_about = new System.Windows.Forms.TabPage();
             this.richTextBox_about = new System.Windows.Forms.RichTextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
@@ -110,7 +109,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1313, 676);
+            this.tabControl1.Size = new System.Drawing.Size(1313, 604);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage_firehose
@@ -593,11 +592,10 @@
             // tabPage_guide
             // 
             this.tabPage_guide.Controls.Add(this.linkLabel_issues);
-            this.tabPage_guide.Controls.Add(this.label3);
             this.tabPage_guide.Location = new System.Drawing.Point(4, 25);
             this.tabPage_guide.Name = "tabPage_guide";
             this.tabPage_guide.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_guide.Size = new System.Drawing.Size(1260, 580);
+            this.tabPage_guide.Size = new System.Drawing.Size(1305, 575);
             this.tabPage_guide.TabIndex = 3;
             this.tabPage_guide.Text = "Справочник ID";
             this.tabPage_guide.UseVisualStyleBackColor = true;
@@ -607,7 +605,7 @@
             this.linkLabel_issues.AutoSize = true;
             this.linkLabel_issues.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.linkLabel_issues.LinkArea = new System.Windows.Forms.LinkArea(291, 50);
-            this.linkLabel_issues.Location = new System.Drawing.Point(3, 528);
+            this.linkLabel_issues.Location = new System.Drawing.Point(3, 523);
             this.linkLabel_issues.Name = "linkLabel_issues";
             this.linkLabel_issues.Size = new System.Drawing.Size(1063, 49);
             this.linkLabel_issues.TabIndex = 1;
@@ -615,17 +613,6 @@
             this.linkLabel_issues.Text = resources.GetString("linkLabel_issues.Text");
             this.linkLabel_issues.UseCompatibleTextRendering = true;
             this.linkLabel_issues.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel_issues_LinkClicked);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(741, 34);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Тут планируется разместить справочник идентификаторов с фильтрами и сортировкой.\r" +
-    "\nДля удобства пользования информация будет иметь приоритет в зависимости от подк" +
-    "лючённого устройства.";
             // 
             // tabPage_about
             // 
@@ -671,7 +658,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1313, 676);
+            this.ClientSize = new System.Drawing.Size(1313, 604);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -737,7 +724,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_SW_type;
         private System.Windows.Forms.TabPage tabPage_phone;
         private System.Windows.Forms.TabPage tabPage_guide;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel linkLabel_issues;
         private System.Windows.Forms.Button button_ADB_start;
         private System.Windows.Forms.TextBox textBox_ADB;
