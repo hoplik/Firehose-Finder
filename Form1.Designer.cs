@@ -59,15 +59,16 @@
             this.toolStripProgressBar_filescompleted = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel_vol = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabPage_phone = new System.Windows.Forms.TabPage();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox_ADB = new System.Windows.Forms.TextBox();
-            this.button_ADB_comstart = new System.Windows.Forms.Button();
-            this.comboBox_ADB_commands = new System.Windows.Forms.ComboBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button_ADB_start = new System.Windows.Forms.Button();
+            this.button_ADB_comstart = new System.Windows.Forms.Button();
             this.button_ADB_clear = new System.Windows.Forms.Button();
             this.textBox_ADB_commandstring = new System.Windows.Forms.TextBox();
+            this.comboBox_ADB_commands = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.button_Sahara_Reset = new System.Windows.Forms.Button();
             this.button_Sahara_Ids = new System.Windows.Forms.Button();
             this.label_Sahara_fhf = new System.Windows.Forms.Label();
@@ -91,11 +92,8 @@
             this.panel1.SuspendLayout();
             this.statusStrip_firehose.SuspendLayout();
             this.tabPage_phone.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage_guide.SuspendLayout();
             this.tabPage_about.SuspendLayout();
@@ -112,7 +110,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1250, 613);
+            this.tabControl1.Size = new System.Drawing.Size(1313, 676);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage_firehose
@@ -124,7 +122,7 @@
             this.tabPage_firehose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage_firehose.Name = "tabPage_firehose";
             this.tabPage_firehose.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage_firehose.Size = new System.Drawing.Size(1242, 584);
+            this.tabPage_firehose.Size = new System.Drawing.Size(1260, 580);
             this.tabPage_firehose.TabIndex = 0;
             this.tabPage_firehose.Text = "Работа с файлами";
             this.tabPage_firehose.UseVisualStyleBackColor = true;
@@ -135,7 +133,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 103);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1236, 449);
+            this.panel2.Size = new System.Drawing.Size(1254, 445);
             this.panel2.TabIndex = 18;
             // 
             // dataGridView_final
@@ -159,7 +157,7 @@
             this.dataGridView_final.RowHeadersWidth = 51;
             this.dataGridView_final.RowTemplate.Height = 24;
             this.dataGridView_final.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_final.Size = new System.Drawing.Size(1236, 449);
+            this.dataGridView_final.Size = new System.Drawing.Size(1254, 445);
             this.dataGridView_final.TabIndex = 15;
             this.dataGridView_final.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellClick);
             this.dataGridView_final.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellDoubleClick);
@@ -230,7 +228,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1236, 101);
+            this.panel1.Size = new System.Drawing.Size(1254, 101);
             this.panel1.TabIndex = 17;
             // 
             // label_SW_Ver
@@ -373,10 +371,10 @@
             this.toolStripStatusLabel_filescompleted,
             this.toolStripProgressBar_filescompleted,
             this.toolStripStatusLabel_vol});
-            this.statusStrip_firehose.Location = new System.Drawing.Point(3, 552);
+            this.statusStrip_firehose.Location = new System.Drawing.Point(3, 548);
             this.statusStrip_firehose.Name = "statusStrip_firehose";
             this.statusStrip_firehose.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
-            this.statusStrip_firehose.Size = new System.Drawing.Size(1236, 30);
+            this.statusStrip_firehose.Size = new System.Drawing.Size(1254, 30);
             this.statusStrip_firehose.TabIndex = 12;
             this.statusStrip_firehose.Text = "statusStrip1";
             // 
@@ -399,87 +397,56 @@
             // 
             // tabPage_phone
             // 
-            this.tabPage_phone.Controls.Add(this.splitContainer1);
+            this.tabPage_phone.Controls.Add(this.groupBox2);
+            this.tabPage_phone.Controls.Add(this.groupBox3);
+            this.tabPage_phone.Controls.Add(this.groupBox1);
             this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
             this.tabPage_phone.Name = "tabPage_phone";
             this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_phone.Size = new System.Drawing.Size(1242, 584);
+            this.tabPage_phone.Size = new System.Drawing.Size(1305, 647);
             this.tabPage_phone.TabIndex = 2;
             this.tabPage_phone.Text = "Работа с устройством";
             this.tabPage_phone.UseVisualStyleBackColor = true;
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer1.Size = new System.Drawing.Size(1236, 578);
-            this.splitContainer1.SplitterDistance = 462;
-            this.splitContainer1.TabIndex = 8;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox_ADB);
-            this.groupBox1.Controls.Add(this.button_ADB_comstart);
-            this.groupBox1.Controls.Add(this.comboBox_ADB_commands);
-            this.groupBox1.Controls.Add(this.button_ADB_start);
-            this.groupBox1.Controls.Add(this.button_ADB_clear);
-            this.groupBox1.Controls.Add(this.textBox_ADB_commandstring);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(462, 578);
+            this.groupBox1.Size = new System.Drawing.Size(478, 641);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Android Debug Bridge";
+            this.groupBox1.Text = "Terminal";
             // 
             // textBox_ADB
             // 
-            this.textBox_ADB.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox_ADB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox_ADB.Location = new System.Drawing.Point(3, 18);
             this.textBox_ADB.Multiline = true;
             this.textBox_ADB.Name = "textBox_ADB";
             this.textBox_ADB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_ADB.Size = new System.Drawing.Size(456, 463);
+            this.textBox_ADB.Size = new System.Drawing.Size(472, 620);
             this.textBox_ADB.TabIndex = 1;
             // 
-            // button_ADB_comstart
+            // groupBox3
             // 
-            this.button_ADB_comstart.Enabled = false;
-            this.button_ADB_comstart.Location = new System.Drawing.Point(256, 549);
-            this.button_ADB_comstart.Name = "button_ADB_comstart";
-            this.button_ADB_comstart.Size = new System.Drawing.Size(206, 23);
-            this.button_ADB_comstart.TabIndex = 5;
-            this.button_ADB_comstart.Text = "Выполнить команду";
-            this.button_ADB_comstart.UseVisualStyleBackColor = true;
-            this.button_ADB_comstart.Click += new System.EventHandler(this.Button_ADB_comstart_Click);
-            // 
-            // comboBox_ADB_commands
-            // 
-            this.comboBox_ADB_commands.Enabled = false;
-            this.comboBox_ADB_commands.FormattingEnabled = true;
-            this.comboBox_ADB_commands.Items.AddRange(new object[] {
-            "Перегрузить устройство в аварийный режим",
-            "Получить список параметров устройства",
-            "Командная строка (ADB Shell)"});
-            this.comboBox_ADB_commands.Location = new System.Drawing.Point(0, 519);
-            this.comboBox_ADB_commands.Name = "comboBox_ADB_commands";
-            this.comboBox_ADB_commands.Size = new System.Drawing.Size(462, 24);
-            this.comboBox_ADB_commands.TabIndex = 4;
-            this.comboBox_ADB_commands.Text = "Выберите команду";
-            this.comboBox_ADB_commands.SelectedIndexChanged += new System.EventHandler(this.ComboBox_ADB_commands_SelectedIndexChanged);
+            this.groupBox3.Controls.Add(this.button_ADB_start);
+            this.groupBox3.Controls.Add(this.button_ADB_comstart);
+            this.groupBox3.Controls.Add(this.button_ADB_clear);
+            this.groupBox3.Controls.Add(this.textBox_ADB_commandstring);
+            this.groupBox3.Controls.Add(this.comboBox_ADB_commands);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox3.Location = new System.Drawing.Point(481, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(821, 185);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Android Debug Bridge";
             // 
             // button_ADB_start
             // 
-            this.button_ADB_start.Location = new System.Drawing.Point(0, 490);
+            this.button_ADB_start.Location = new System.Drawing.Point(6, 21);
             this.button_ADB_start.Name = "button_ADB_start";
             this.button_ADB_start.Size = new System.Drawing.Size(213, 23);
             this.button_ADB_start.TabIndex = 2;
@@ -487,9 +454,20 @@
             this.button_ADB_start.UseVisualStyleBackColor = true;
             this.button_ADB_start.Click += new System.EventHandler(this.Button_ADB_start_Click);
             // 
+            // button_ADB_comstart
+            // 
+            this.button_ADB_comstart.Enabled = false;
+            this.button_ADB_comstart.Location = new System.Drawing.Point(225, 93);
+            this.button_ADB_comstart.Name = "button_ADB_comstart";
+            this.button_ADB_comstart.Size = new System.Drawing.Size(206, 23);
+            this.button_ADB_comstart.TabIndex = 5;
+            this.button_ADB_comstart.Text = "Выполнить команду";
+            this.button_ADB_comstart.UseVisualStyleBackColor = true;
+            this.button_ADB_comstart.Click += new System.EventHandler(this.Button_ADB_comstart_Click);
+            // 
             // button_ADB_clear
             // 
-            this.button_ADB_clear.Location = new System.Drawing.Point(256, 490);
+            this.button_ADB_clear.Location = new System.Drawing.Point(225, 21);
             this.button_ADB_clear.Name = "button_ADB_clear";
             this.button_ADB_clear.Size = new System.Drawing.Size(206, 23);
             this.button_ADB_clear.TabIndex = 3;
@@ -499,42 +477,68 @@
             // 
             // textBox_ADB_commandstring
             // 
-            this.textBox_ADB_commandstring.Location = new System.Drawing.Point(-3, 550);
+            this.textBox_ADB_commandstring.Location = new System.Drawing.Point(6, 93);
             this.textBox_ADB_commandstring.Name = "textBox_ADB_commandstring";
             this.textBox_ADB_commandstring.Size = new System.Drawing.Size(213, 22);
             this.textBox_ADB_commandstring.TabIndex = 6;
             this.textBox_ADB_commandstring.Visible = false;
             this.textBox_ADB_commandstring.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBox_ADB_commandstring_KeyUp);
             // 
+            // comboBox_ADB_commands
+            // 
+            this.comboBox_ADB_commands.Enabled = false;
+            this.comboBox_ADB_commands.FormattingEnabled = true;
+            this.comboBox_ADB_commands.Items.AddRange(new object[] {
+            "Перегрузить устройство в аварийный режим",
+            "Получить список параметров устройства",
+            "Командная строка (ADB Shell)"});
+            this.comboBox_ADB_commands.Location = new System.Drawing.Point(6, 63);
+            this.comboBox_ADB_commands.Name = "comboBox_ADB_commands";
+            this.comboBox_ADB_commands.Size = new System.Drawing.Size(462, 24);
+            this.comboBox_ADB_commands.TabIndex = 4;
+            this.comboBox_ADB_commands.Text = "Выберите команду";
+            this.comboBox_ADB_commands.SelectedIndexChanged += new System.EventHandler(this.ComboBox_ADB_commands_SelectedIndexChanged);
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.button_Sahara_Reset);
             this.groupBox2.Controls.Add(this.button_Sahara_Ids);
             this.groupBox2.Controls.Add(this.label_Sahara_fhf);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.listView_comport);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox2.Location = new System.Drawing.Point(481, 431);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(770, 578);
+            this.groupBox2.Size = new System.Drawing.Size(821, 213);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sahara";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(2, 113);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(278, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Для этой команды программер не нужен";
+            // 
             // button_Sahara_Reset
             // 
-            this.button_Sahara_Reset.Location = new System.Drawing.Point(7, 181);
+            this.button_Sahara_Reset.Enabled = false;
+            this.button_Sahara_Reset.Location = new System.Drawing.Point(6, 179);
             this.button_Sahara_Reset.Name = "button_Sahara_Reset";
-            this.button_Sahara_Reset.Size = new System.Drawing.Size(307, 23);
+            this.button_Sahara_Reset.Size = new System.Drawing.Size(348, 23);
             this.button_Sahara_Reset.TabIndex = 4;
-            this.button_Sahara_Reset.Text = "Перегрузить устройство";
+            this.button_Sahara_Reset.Text = "Перегрузить устройство в нормальный режим";
             this.button_Sahara_Reset.UseVisualStyleBackColor = true;
             this.button_Sahara_Reset.Click += new System.EventHandler(this.Button_Sahara_Reset_Click);
             // 
             // button_Sahara_Ids
             // 
             this.button_Sahara_Ids.Enabled = false;
-            this.button_Sahara_Ids.Location = new System.Drawing.Point(7, 116);
+            this.button_Sahara_Ids.Location = new System.Drawing.Point(6, 133);
             this.button_Sahara_Ids.Name = "button_Sahara_Ids";
             this.button_Sahara_Ids.Size = new System.Drawing.Size(307, 23);
             this.button_Sahara_Ids.TabIndex = 3;
@@ -545,16 +549,17 @@
             // label_Sahara_fhf
             // 
             this.label_Sahara_fhf.AutoSize = true;
-            this.label_Sahara_fhf.Location = new System.Drawing.Point(322, 152);
+            this.label_Sahara_fhf.Location = new System.Drawing.Point(317, 159);
             this.label_Sahara_fhf.Name = "label_Sahara_fhf";
             this.label_Sahara_fhf.Size = new System.Drawing.Size(382, 17);
             this.label_Sahara_fhf.TabIndex = 2;
             this.label_Sahara_fhf.Text = "Пожалуйста, выберете на закладке \"Работа с файлами\"";
+            this.label_Sahara_fhf.TextChanged += new System.EventHandler(this.Label_Sahara_fhf_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 152);
+            this.label2.Location = new System.Drawing.Point(2, 159);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(309, 17);
             this.label2.TabIndex = 1;
@@ -570,7 +575,7 @@
             this.listView_comport.HideSelection = false;
             this.listView_comport.Location = new System.Drawing.Point(3, 18);
             this.listView_comport.Name = "listView_comport";
-            this.listView_comport.Size = new System.Drawing.Size(764, 92);
+            this.listView_comport.Size = new System.Drawing.Size(815, 92);
             this.listView_comport.TabIndex = 0;
             this.listView_comport.UseCompatibleStateImageBehavior = false;
             this.listView_comport.View = System.Windows.Forms.View.Details;
@@ -592,7 +597,7 @@
             this.tabPage_guide.Location = new System.Drawing.Point(4, 25);
             this.tabPage_guide.Name = "tabPage_guide";
             this.tabPage_guide.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_guide.Size = new System.Drawing.Size(1242, 584);
+            this.tabPage_guide.Size = new System.Drawing.Size(1260, 580);
             this.tabPage_guide.TabIndex = 3;
             this.tabPage_guide.Text = "Справочник ID";
             this.tabPage_guide.UseVisualStyleBackColor = true;
@@ -602,7 +607,7 @@
             this.linkLabel_issues.AutoSize = true;
             this.linkLabel_issues.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.linkLabel_issues.LinkArea = new System.Windows.Forms.LinkArea(291, 50);
-            this.linkLabel_issues.Location = new System.Drawing.Point(3, 532);
+            this.linkLabel_issues.Location = new System.Drawing.Point(3, 528);
             this.linkLabel_issues.Name = "linkLabel_issues";
             this.linkLabel_issues.Size = new System.Drawing.Size(1063, 49);
             this.linkLabel_issues.TabIndex = 1;
@@ -629,7 +634,7 @@
             this.tabPage_about.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage_about.Name = "tabPage_about";
             this.tabPage_about.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage_about.Size = new System.Drawing.Size(1242, 584);
+            this.tabPage_about.Size = new System.Drawing.Size(1260, 580);
             this.tabPage_about.TabIndex = 1;
             this.tabPage_about.Text = "О программе";
             this.tabPage_about.UseVisualStyleBackColor = true;
@@ -640,7 +645,7 @@
             this.richTextBox_about.Location = new System.Drawing.Point(3, 2);
             this.richTextBox_about.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox_about.Name = "richTextBox_about";
-            this.richTextBox_about.Size = new System.Drawing.Size(1236, 580);
+            this.richTextBox_about.Size = new System.Drawing.Size(1254, 576);
             this.richTextBox_about.TabIndex = 1;
             this.richTextBox_about.Text = "";
             // 
@@ -666,7 +671,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1250, 613);
+            this.ClientSize = new System.Drawing.Size(1313, 676);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -684,12 +689,10 @@
             this.statusStrip_firehose.ResumeLayout(false);
             this.statusStrip_firehose.PerformLayout();
             this.tabPage_phone.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage_guide.ResumeLayout(false);
@@ -742,7 +745,6 @@
         private System.Windows.Forms.ComboBox comboBox_ADB_commands;
         private System.Windows.Forms.Button button_ADB_comstart;
         private System.Windows.Forms.TextBox textBox_ADB_commandstring;
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView listView_comport;
@@ -755,6 +757,8 @@
         private System.Windows.Forms.Label label_SW_Ver;
         private System.Windows.Forms.Label label_swid;
         private System.Windows.Forms.Button button_Sahara_Reset;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

@@ -77,6 +77,7 @@ namespace FirehoseFinder
                 "Есть вопросы, предложения, замечания? Открывайте ишью (вопрос) на Гитхабе: " + Resources.String_issues;
             toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
             toolTip1.SetToolTip(button_useSahara_fhf, "При нажатии произойдёт переименование выбранного файла по идентификаторам, указанным в таблице");
+            tabControl1.SelectedTab = tabPage_phone;
             CheckListPorts(); //Вносим в листвью список активных портов
         }
 
@@ -459,6 +460,7 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button_Sahara_Ids_Click(object sender, EventArgs e)
         {
+            button_Sahara_Ids.Enabled = false;
             //Создаём SaharaServer из ресурсов в рабочую папку, если его там ещё нет
             if (!File.Exists("QSaharaServer.exe"))
             {
@@ -494,6 +496,11 @@ namespace FirehoseFinder
             tabControl1.SelectedTab = tabPage_firehose;
         }
 
+        /// <summary>
+        /// Перегружаем устройство из режима 9008 в нормальное состояние при помощи команды программера reset
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Sahara_Reset_Click(object sender, EventArgs e)
         {
             Process process = new Process();
@@ -534,6 +541,16 @@ namespace FirehoseFinder
                 process.WaitForExit();
             }
             process.Close();
+        }
+
+        /// <summary>
+        /// Выбрали программер - активировали перезагрузку устройства
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Label_Sahara_fhf_TextChanged(object sender, EventArgs e)
+        {
+            //button_Sahara_Reset.Enabled = true;
         }
         #endregion
 
