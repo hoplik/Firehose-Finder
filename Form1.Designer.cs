@@ -68,6 +68,7 @@
             this.button_ADB_clear = new System.Windows.Forms.Button();
             this.textBox_ADB_commandstring = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button_Sahara_Reset = new System.Windows.Forms.Button();
             this.button_Sahara_Ids = new System.Windows.Forms.Button();
             this.label_Sahara_fhf = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -83,7 +84,6 @@
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage_firehose.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -282,7 +282,7 @@
             this.textBox_oemid.Name = "textBox_oemid";
             this.textBox_oemid.Size = new System.Drawing.Size(43, 22);
             this.textBox_oemid.TabIndex = 4;
-            this.textBox_oemid.Text = "0043";
+            this.textBox_oemid.Text = "0000";
             // 
             // label1
             // 
@@ -306,13 +306,13 @@
             // 
             this.textBox_hwid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_hwid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_hwid.Location = new System.Drawing.Point(78, 9);
+            this.textBox_hwid.Location = new System.Drawing.Point(80, 9);
             this.textBox_hwid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_hwid.MaxLength = 8;
             this.textBox_hwid.Name = "textBox_hwid";
             this.textBox_hwid.Size = new System.Drawing.Size(73, 22);
             this.textBox_hwid.TabIndex = 0;
-            this.textBox_hwid.Text = "0009A0E1";
+            this.textBox_hwid.Text = "00000000";
             // 
             // label_oemid
             // 
@@ -344,7 +344,6 @@
             this.textBox_oemhash.Name = "textBox_oemhash";
             this.textBox_oemhash.Size = new System.Drawing.Size(559, 22);
             this.textBox_oemhash.TabIndex = 6;
-            this.textBox_oemhash.Text = "7C6DCA9BF5674291AA39DD55760C0D4B65C7A4223097AAB1DB791E2192002DDF";
             // 
             // label_oemhash
             // 
@@ -359,7 +358,7 @@
             // 
             this.textBox_modelid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_modelid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_modelid.Location = new System.Drawing.Point(386, 11);
+            this.textBox_modelid.Location = new System.Drawing.Point(388, 11);
             this.textBox_modelid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_modelid.MaxLength = 4;
             this.textBox_modelid.Name = "textBox_modelid";
@@ -509,7 +508,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.button_Sahara_Reset);
             this.groupBox2.Controls.Add(this.button_Sahara_Ids);
             this.groupBox2.Controls.Add(this.label_Sahara_fhf);
             this.groupBox2.Controls.Add(this.label2);
@@ -521,6 +520,16 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sahara";
+            // 
+            // button_Sahara_Reset
+            // 
+            this.button_Sahara_Reset.Location = new System.Drawing.Point(7, 181);
+            this.button_Sahara_Reset.Name = "button_Sahara_Reset";
+            this.button_Sahara_Reset.Size = new System.Drawing.Size(307, 23);
+            this.button_Sahara_Reset.TabIndex = 4;
+            this.button_Sahara_Reset.Text = "Перегрузить устройство";
+            this.button_Sahara_Reset.UseVisualStyleBackColor = true;
+            this.button_Sahara_Reset.Click += new System.EventHandler(this.Button_Sahara_Reset_Click);
             // 
             // button_Sahara_Ids
             // 
@@ -536,7 +545,7 @@
             // label_Sahara_fhf
             // 
             this.label_Sahara_fhf.AutoSize = true;
-            this.label_Sahara_fhf.Location = new System.Drawing.Point(201, 95);
+            this.label_Sahara_fhf.Location = new System.Drawing.Point(322, 152);
             this.label_Sahara_fhf.Name = "label_Sahara_fhf";
             this.label_Sahara_fhf.Size = new System.Drawing.Size(382, 17);
             this.label_Sahara_fhf.TabIndex = 2;
@@ -545,11 +554,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 95);
+            this.label2.Location = new System.Drawing.Point(7, 152);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 17);
+            this.label2.Size = new System.Drawing.Size(309, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Используется программер: ";
+            this.label2.Text = "Для команд ниже используется программер: ";
             // 
             // listView_comport
             // 
@@ -561,7 +570,7 @@
             this.listView_comport.HideSelection = false;
             this.listView_comport.Location = new System.Drawing.Point(3, 18);
             this.listView_comport.Name = "listView_comport";
-            this.listView_comport.Size = new System.Drawing.Size(764, 70);
+            this.listView_comport.Size = new System.Drawing.Size(764, 92);
             this.listView_comport.TabIndex = 0;
             this.listView_comport.UseCompatibleStateImageBehavior = false;
             this.listView_comport.View = System.Windows.Forms.View.Details;
@@ -652,16 +661,6 @@
             // serialPort1
             // 
             this.serialPort1.BaudRate = 115200;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(457, 116);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(307, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Перегрузить устройство";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Formfhf
             // 
@@ -755,7 +754,7 @@
         private System.Windows.Forms.Button button_Sahara_Ids;
         private System.Windows.Forms.Label label_SW_Ver;
         private System.Windows.Forms.Label label_swid;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_Sahara_Reset;
     }
 }
 

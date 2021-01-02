@@ -475,29 +475,26 @@ namespace FirehoseFinder
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.RedirectStandardOutput = true;
             process.Start();
-
             StreamReader reader = process.StandardOutput;
             string output = reader.ReadToEnd();
-
             textBox_ADB.AppendText(output);
-
             process.WaitForExit();
             process.Close();
-            //Обрабатываем запрос HWID-OEMID (command02)
-            textBox_hwid.Text = "";
-            textBox_oemid.Text = "";
-            textBox_modelid.Text = "";
-            //Выполняем запрос OEM_HASH (command03)
-            //Обрабатываем запрос OEM_HASH (command03)
-            textBox_oemhash.Text = "";
-            //Выполняем запрос SWID_Version (command07)
-            //Обрабатываем запрос SWID_Version (command07)
-            label_SW_Ver.Text = "";
+            //Обрабатываем запрос идентификаторов
+            string HWOEMIDs = func.SaharaCommand2();
+            if (HWOEMIDs.Length == 16)
+            {
+                textBox_hwid.Text = HWOEMIDs.Substring(0, 8);
+                textBox_oemid.Text = HWOEMIDs.Substring(8, 4);
+                textBox_modelid.Text = HWOEMIDs.Substring(12, 4);
+            }
+            textBox_oemhash.Text = func.SaharaCommand3();
+            label_SW_Ver.Text = func.SaharaCommand7();
             //Переходим на вкладку Работа с файлами
-            //tabControl1.SelectedTab = tabPage_firehose;
+            tabControl1.SelectedTab = tabPage_firehose;
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void Button_Sahara_Reset_Click(object sender, EventArgs e)
         {
             Process process = new Process();
             process.StartInfo.UseShellExecute = false;

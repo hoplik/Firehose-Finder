@@ -165,6 +165,65 @@ namespace FirehoseFinder
                              .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
                              .ToArray();
         }
+
+        /// <summary>
+        /// Парсинг результата работы команды Сахары 02
+        /// </summary>
+        /// <returns>Проверенная строка идентификаторов HWID_OEMID_MODELID</returns>
+        internal string SaharaCommand2()
+        {
+            StringBuilder SC2 = new StringBuilder();
+            byte[] comfilebytes = { };
+            string[] compareresult = { string.Empty, string.Empty, string.Empty };
+            if (File.Exists("commandop02.bin"))
+            {
+                comfilebytes = File.ReadAllBytes("commandop02.bin");
+                File.Delete("commandop02.bin");
+            }
+            string backstr = BitConverter.ToString(comfilebytes).Replace("-", "");
+            for (int i = backstr.Length - 1; i > 0; i -= 2)
+            {
+                SC2.Append(backstr.Substring(i - 1, 2));
+            }
+            int strlen = SC2.Length / 3;
+            for (int i = 0; i < 3; i++) compareresult[i] = SC2.ToString().Substring(i * strlen, strlen);
+            if (compareresult[0].Equals(compareresult[1]) && compareresult[1].Equals(compareresult[2])) return compareresult[0];
+            else return SC2.ToString();
+        }
+
+        /// <summary>
+        /// Парсинг результата работы команды Сахары 03
+        /// </summary>
+        /// <returns>Проверенная строка идентификатора OEM_HASH</returns>
+        internal string SaharaCommand3()
+        {
+            StringBuilder SC3 = new StringBuilder();
+            string[] compareresult = { string.Empty, string.Empty, string.Empty };
+            if (File.Exists("commandop03.bin"))
+            {
+                SC3.Append(BitConverter.ToString(File.ReadAllBytes("commandop03.bin")).Replace("-", ""));
+                File.Delete("commandop03.bin");
+            }
+            int strlen = SC3.Length / 3;
+            for (int i = 0; i < 3; i++) compareresult[i] = SC3.ToString().Substring(i * strlen, strlen);
+            if (compareresult[0].Equals(compareresult[1]) && compareresult[1].Equals(compareresult[2])) return compareresult[0];
+            else return SC3.ToString();
+        }
+
+        /// <summary>
+        /// Парсинг результата работы команды Сахары 07
+        /// </summary>
+        /// <returns>Строка идентификатора SW SBL1</returns>
+        internal string SaharaCommand7()
+        {
+            StringBuilder SC7 = new StringBuilder();
+            if (File.Exists("commandop07.bin"))
+            {
+                SC7.Append(BitConverter.ToString(File.ReadAllBytes("commandop07.bin")).Replace("-", ""));
+                File.Delete("commandop07.bin");
+            }
+            return SC7.ToString();
+        }
     }
 }
 
