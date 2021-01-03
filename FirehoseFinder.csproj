@@ -102,6 +102,8 @@
     <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Drawing.Common.5.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -123,10 +125,10 @@
     <Compile Include="Guide.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vendors_Dataset.Designer.cs">
+    <Compile Include="Vendors_DatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Vendors_Dataset.xsd</DependentUpon>
+      <DependentUpon>Vendors_DatabaseDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -152,16 +154,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Vendors_Dataset.xsc">
-      <DependentUpon>Vendors_Dataset.xsd</DependentUpon>
+    <None Include="Vendors_DatabaseDataSet.xsc">
+      <DependentUpon>Vendors_DatabaseDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Vendors_Dataset.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Vendors_DatabaseDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Vendors_Dataset.Designer.cs</LastGenOutput>
+      <LastGenOutput>Vendors_DatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
-    <None Include="Vendors_Dataset.xss">
-      <DependentUpon>Vendors_Dataset.xsd</DependentUpon>
+    <None Include="Vendors_DatabaseDataSet.xss">
+      <DependentUpon>Vendors_DatabaseDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +183,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="fh.ico" />
+    <Content Include="Vendors_Database.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Vendors_Database_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Vendors_Database.mdf</DependentUpon>
+    </Content>
     <None Include="Resources\fh_loader.exe" />
     <None Include="Resources\QSaharaServer.exe" />
     <None Include="Resources\adb.exe" />

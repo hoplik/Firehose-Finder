@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Vendors_DatabaseDataSet" targetNamespace="http://tempuri.org/Vendors_DatabaseDataSet.xsd" xmlns:mstns="http://tempuri.org/Vendors_DatabaseDataSet.xsd" xmlns="http://tempuri.org/Vendors_DatabaseDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Vendors_DatabaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Vendors_DatabaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FirehoseFinder.Properties.Settings.GlobalReference.Default.Vendors_DatabaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Vendors_DatabaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Vendors_DatabaseDataSet" msprop:Generator_UserDSName="Vendors_DatabaseDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Vendors" msprop:Generator_TableClassName="VendorsDataTable" msprop:Generator_TableVarName="tableVendors" msprop:Generator_TablePropName="Vendors" msprop:Generator_RowDeletingName="VendorsRowDeleting" msprop:Generator_RowChangingName="VendorsRowChanging" msprop:Generator_RowEvHandlerName="VendorsRowChangeEventHandler" msprop:Generator_RowDeletedName="VendorsRowDeleted" msprop:Generator_UserTableName="Vendors" msprop:Generator_RowChangedName="VendorsRowChanged" msprop:Generator_RowEvArgName="VendorsRowChangeEvent" msprop:Generator_RowClassName="VendorsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="V_Names" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnV_Names" msprop:Generator_ColumnPropNameInRow="V_Names" msprop:Generator_ColumnPropNameInTable="V_NamesColumn" msprop:Generator_UserColumnName="V_Names" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OEM_IDs" msprop:Generator_TableClassName="OEM_IDsDataTable" msprop:Generator_TableVarName="tableOEM_IDs" msprop:Generator_TablePropName="OEM_IDs" msprop:Generator_RowDeletingName="OEM_IDsRowDeleting" msprop:Generator_RowChangingName="OEM_IDsRowChanging" msprop:Generator_RowEvHandlerName="OEM_IDsRowChangeEventHandler" msprop:Generator_RowDeletedName="OEM_IDsRowDeleted" msprop:Generator_UserTableName="OEM_IDs" msprop:Generator_RowChangedName="OEM_IDsRowChanged" msprop:Generator_RowEvArgName="OEM_IDsRowChangeEvent" msprop:Generator_RowClassName="OEM_IDsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VIDs" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVIDs" msprop:Generator_ColumnPropNameInRow="VIDs" msprop:Generator_ColumnPropNameInTable="VIDsColumn" msprop:Generator_UserColumnName="VIDs" type="xs:string" minOccurs="0" />
+              <xs:element name="VNames" msprop:Generator_ColumnVarNameInTable="columnVNames" msprop:Generator_ColumnPropNameInRow="VNames" msprop:Generator_ColumnPropNameInTable="VNamesColumn" msprop:Generator_UserColumnName="VNames" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:Vendors" />
+      <xs:field xpath="mstns:V_Names" />
+    </xs:unique>
+    <xs:unique name="OEM_IDs_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:OEM_IDs" />
+      <xs:field xpath="mstns:VIDs" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

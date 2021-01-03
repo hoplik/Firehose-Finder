@@ -65,6 +65,7 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Formfhf_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "vendorsDataSet.OEM_IDs". При необходимости она может быть перемещена или удалена.
             richTextBox_about.Text = Resources.String_about + Environment.NewLine +
                 "Ссылка на базовую тему <<Общие принципы восстановления загрузчиков на Qualcomm | HS - USB QDLoader 9008, HS - USB Diagnostics 9006, QHUSB_DLOAD и т.д.>>: " +
                 Resources.String_theme_link + Environment.NewLine
