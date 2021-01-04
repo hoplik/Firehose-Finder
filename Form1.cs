@@ -18,12 +18,22 @@ namespace FirehoseFinder
     {
         Func func = new Func(); // Подключили функции
         Guide guide = new Guide();
+
+        public class PhoneId
+        {
+            public string Manuf { get; set; }
+            public string Product { get; set; }
+        }
+
+
+
         /// <summary>
         /// Инициализация компонентов
         /// </summary>
         public Formfhf()
         {
             InitializeComponent();
+            _ = new List<PhoneId>() { new PhoneId { Manuf = "ghljh", Product = "123" }, new PhoneId { Manuf = "adfhkj", Product = "456" } };
         }
 
         /// <summary>
