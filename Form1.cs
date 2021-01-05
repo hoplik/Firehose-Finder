@@ -19,21 +19,12 @@ namespace FirehoseFinder
         Func func = new Func(); // Подключили функции
         Guide guide = new Guide();
 
-        public class PhoneId
-        {
-            public string Manuf { get; set; }
-            public string Product { get; set; }
-        }
-
-
-
         /// <summary>
         /// Инициализация компонентов
         /// </summary>
         public Formfhf()
         {
             InitializeComponent();
-            _ = new List<PhoneId>() { new PhoneId { Manuf = "ghljh", Product = "123" }, new PhoneId { Manuf = "adfhkj", Product = "456" } };
         }
 
         /// <summary>
@@ -75,20 +66,21 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Formfhf_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "vendorsDataSet.OEM_IDs". При необходимости она может быть перемещена или удалена.
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "qcom_phonesDataSet.Для_фильтра". При необходимости она может быть перемещена или удалена.
+            this.для_фильтраTableAdapter.Fill(this.qcom_phonesDataSet.Для_фильтра);
             richTextBox_about.Text = Resources.String_about + Environment.NewLine +
                 "Ссылка на базовую тему <<Общие принципы восстановления загрузчиков на Qualcomm | HS - USB QDLoader 9008, HS - USB Diagnostics 9006, QHUSB_DLOAD и т.д.>>: " +
                 Resources.String_theme_link + Environment.NewLine
                 + Environment.NewLine +
                 "Версия сборки: " + Assembly.GetExecutingAssembly().GetName().Version + Environment.NewLine
                 + Environment.NewLine +
-                "Часто задаваемые вопросы: " + Environment.NewLine + Resources.String_faq1 + Environment.NewLine +
-                Resources.String_faq2 + Environment.NewLine + Resources.String_faq3 + Environment.NewLine
-                + Environment.NewLine +
+                "Часто задаваемые вопросы: " + Environment.NewLine + Resources.String_faq1 +
+                Environment.NewLine + Environment.NewLine + Resources.String_faq2 + 
+                Environment.NewLine + Environment.NewLine + Resources.String_faq3 + 
+                Environment.NewLine + Environment.NewLine +
                 "Есть вопросы, предложения, замечания? Открывайте ишью (вопрос) на Гитхабе: " + Resources.String_issues;
             toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
             toolTip1.SetToolTip(button_useSahara_fhf, "При нажатии произойдёт переименование выбранного файла по идентификаторам, указанным в таблице");
-            tabControl1.SelectedTab = tabPage_phone;
             CheckListPorts(); //Вносим в листвью список активных портов
         }
 
