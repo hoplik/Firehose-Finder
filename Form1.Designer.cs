@@ -32,14 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfhf));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_guide = new System.Windows.Forms.TabPage();
-            this.для_фильтраDataGridView = new System.Windows.Forms.DataGridView();
+            this.forFilterDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.для_фильтраBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.forFilterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qcom_phonesDataSet = new FirehoseFinder.qcom_phonesDataSet();
             this.linkLabel_copyrights = new System.Windows.Forms.LinkLabel();
             this.radioButton_manualfilter = new System.Windows.Forms.RadioButton();
@@ -49,12 +51,6 @@
             this.tabPage_firehose = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView_final = new System.Windows.Forms.DataGridView();
-            this.Column_Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_tm_model = new System.Windows.Forms.Label();
             this.label_SW_Ver = new System.Windows.Forms.Label();
@@ -98,12 +94,18 @@
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.для_фильтраTableAdapter = new FirehoseFinder.qcom_phonesDataSetTableAdapters.Для_фильтраTableAdapter();
             this.tableAdapterManager = new FirehoseFinder.qcom_phonesDataSetTableAdapters.TableAdapterManager();
+            this.forFilterTableAdapter = new FirehoseFinder.qcom_phonesDataSetTableAdapters.ForFilterTableAdapter();
+            this.Column_Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage_guide.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.для_фильтраDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.для_фильтраBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.forFilterDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.forFilterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qcom_phonesDataSet)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.tabPage_firehose.SuspendLayout();
@@ -134,7 +136,7 @@
             // 
             // tabPage_guide
             // 
-            this.tabPage_guide.Controls.Add(this.для_фильтраDataGridView);
+            this.tabPage_guide.Controls.Add(this.forFilterDataGridView);
             this.tabPage_guide.Controls.Add(this.linkLabel_copyrights);
             this.tabPage_guide.Controls.Add(this.radioButton_manualfilter);
             this.tabPage_guide.Controls.Add(this.radioButton_autofilter);
@@ -147,37 +149,38 @@
             this.tabPage_guide.Text = "Справочник ID";
             this.tabPage_guide.UseVisualStyleBackColor = true;
             // 
-            // для_фильтраDataGridView
+            // forFilterDataGridView
             // 
-            this.для_фильтраDataGridView.AllowUserToAddRows = false;
-            this.для_фильтраDataGridView.AllowUserToDeleteRows = false;
-            this.для_фильтраDataGridView.AllowUserToOrderColumns = true;
-            this.для_фильтраDataGridView.AutoGenerateColumns = false;
-            this.для_фильтраDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.для_фильтраDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.для_фильтраDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.для_фильтраDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.forFilterDataGridView.AllowUserToAddRows = false;
+            this.forFilterDataGridView.AllowUserToDeleteRows = false;
+            this.forFilterDataGridView.AutoGenerateColumns = false;
+            this.forFilterDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.forFilterDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.forFilterDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.для_фильтраDataGridView.DataSource = this.для_фильтраBindingSource;
-            this.для_фильтраDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.для_фильтраDataGridView.Enabled = false;
-            this.для_фильтраDataGridView.Location = new System.Drawing.Point(3, 209);
-            this.для_фильтраDataGridView.MultiSelect = false;
-            this.для_фильтраDataGridView.Name = "для_фильтраDataGridView";
-            this.для_фильтраDataGridView.ReadOnly = true;
-            this.для_фильтраDataGridView.RowHeadersWidth = 51;
-            this.для_фильтраDataGridView.RowTemplate.Height = 24;
-            this.для_фильтраDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.для_фильтраDataGridView.Size = new System.Drawing.Size(1299, 321);
-            this.для_фильтраDataGridView.TabIndex = 2;
-            this.для_фильтраDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Для_фильтраDataGridView_CellDoubleClick);
-            this.для_фильтраDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Для_фильтраDataGridView_CellMouseClick);
-            this.для_фильтраDataGridView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Для_фильтраDataGridView_ColumnHeaderMouseClick);
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.forFilterDataGridView.DataSource = this.forFilterBindingSource;
+            this.forFilterDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.forFilterDataGridView.Enabled = false;
+            this.forFilterDataGridView.Location = new System.Drawing.Point(3, 161);
+            this.forFilterDataGridView.MultiSelect = false;
+            this.forFilterDataGridView.Name = "forFilterDataGridView";
+            this.forFilterDataGridView.ReadOnly = true;
+            this.forFilterDataGridView.RowHeadersVisible = false;
+            this.forFilterDataGridView.RowHeadersWidth = 51;
+            this.forFilterDataGridView.RowTemplate.Height = 24;
+            this.forFilterDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.forFilterDataGridView.Size = new System.Drawing.Size(1299, 369);
+            this.forFilterDataGridView.TabIndex = 4;
+            this.forFilterDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ForFilterDataGridView_CellDoubleClick);
+            this.forFilterDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ForFilterDataGridView_CellMouseClick);
+            this.forFilterDataGridView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ForFilterDataGridView_ColumnHeaderMouseClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -190,53 +193,71 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "OEMID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "OEMID";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "FullName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "FullName";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 81;
+            this.dataGridViewTextBoxColumn2.Width = 96;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "MODELID";
-            this.dataGridViewTextBoxColumn3.HeaderText = "MODELID";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "OEMID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "OEMID";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 99;
+            this.dataGridViewTextBoxColumn3.Width = 81;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "HASHID";
-            this.dataGridViewTextBoxColumn4.HeaderText = "HASHID";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Names";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Names";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 88;
+            this.dataGridViewTextBoxColumn4.Width = 81;
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Trademark";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Trademark";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "MODELID";
+            this.dataGridViewTextBoxColumn5.HeaderText = "MODELID";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 106;
+            this.dataGridViewTextBoxColumn5.Width = 99;
             // 
             // dataGridViewTextBoxColumn6
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Model";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Model";
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "HASHID";
+            this.dataGridViewTextBoxColumn6.HeaderText = "HASHID";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 75;
+            this.dataGridViewTextBoxColumn6.Width = 88;
             // 
-            // для_фильтраBindingSource
+            // dataGridViewTextBoxColumn7
             // 
-            this.для_фильтраBindingSource.DataMember = "Для фильтра";
-            this.для_фильтраBindingSource.DataSource = this.qcom_phonesDataSet;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Trademark";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Trademark";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 106;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Model";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Model";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 75;
+            // 
+            // forFilterBindingSource
+            // 
+            this.forFilterBindingSource.DataMember = "ForFilter";
+            this.forFilterBindingSource.DataSource = this.qcom_phonesDataSet;
             // 
             // qcom_phonesDataSet
             // 
@@ -327,6 +348,7 @@
             // 
             this.dataGridView_final.AllowUserToAddRows = false;
             this.dataGridView_final.AllowUserToDeleteRows = false;
+            this.dataGridView_final.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView_final.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_final.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column_Sel,
@@ -341,6 +363,7 @@
             this.dataGridView_final.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView_final.MultiSelect = false;
             this.dataGridView_final.Name = "dataGridView_final";
+            this.dataGridView_final.RowHeadersVisible = false;
             this.dataGridView_final.RowHeadersWidth = 51;
             this.dataGridView_final.RowTemplate.Height = 24;
             this.dataGridView_final.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -348,54 +371,6 @@
             this.dataGridView_final.TabIndex = 15;
             this.dataGridView_final.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellClick);
             this.dataGridView_final.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellDoubleClick);
-            // 
-            // Column_Sel
-            // 
-            this.Column_Sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column_Sel.HeaderText = "Выбор";
-            this.Column_Sel.MinimumWidth = 6;
-            this.Column_Sel.Name = "Column_Sel";
-            this.Column_Sel.Width = 57;
-            // 
-            // Column_Name
-            // 
-            this.Column_Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column_Name.HeaderText = "Файл";
-            this.Column_Name.MinimumWidth = 6;
-            this.Column_Name.Name = "Column_Name";
-            this.Column_Name.Width = 74;
-            // 
-            // Column_id
-            // 
-            this.Column_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column_id.HeaderText = "HW-OEM-MODEL-HASH-SW(Ver)";
-            this.Column_id.MinimumWidth = 6;
-            this.Column_id.Name = "Column_id";
-            this.Column_id.Width = 252;
-            // 
-            // Column_rate
-            // 
-            this.Column_rate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column_rate.HeaderText = "Рейтинг (max10)";
-            this.Column_rate.MinimumWidth = 6;
-            this.Column_rate.Name = "Column_rate";
-            this.Column_rate.Width = 133;
-            // 
-            // Column_Full
-            // 
-            this.Column_Full.HeaderText = "Full Ids";
-            this.Column_Full.MinimumWidth = 6;
-            this.Column_Full.Name = "Column_Full";
-            this.Column_Full.Visible = false;
-            this.Column_Full.Width = 125;
-            // 
-            // Column_SW_type
-            // 
-            this.Column_SW_type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column_SW_type.HeaderText = "Тип ПО";
-            this.Column_SW_type.MinimumWidth = 6;
-            this.Column_SW_type.Name = "Column_SW_type";
-            this.Column_SW_type.Width = 62;
             // 
             // panel1
             // 
@@ -827,10 +802,6 @@
             // 
             this.serialPort1.BaudRate = 115200;
             // 
-            // для_фильтраTableAdapter
-            // 
-            this.для_фильтраTableAdapter.ClearBeforeFill = true;
-            // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -844,6 +815,54 @@
             this.tableAdapterManager.SellersTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = FirehoseFinder.qcom_phonesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VendorsTableAdapter = null;
+            // 
+            // forFilterTableAdapter
+            // 
+            this.forFilterTableAdapter.ClearBeforeFill = true;
+            // 
+            // Column_Sel
+            // 
+            this.Column_Sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column_Sel.HeaderText = "Выбор";
+            this.Column_Sel.MinimumWidth = 6;
+            this.Column_Sel.Name = "Column_Sel";
+            this.Column_Sel.Width = 57;
+            // 
+            // Column_Name
+            // 
+            this.Column_Name.HeaderText = "Файл";
+            this.Column_Name.MinimumWidth = 6;
+            this.Column_Name.Name = "Column_Name";
+            this.Column_Name.Width = 74;
+            // 
+            // Column_id
+            // 
+            this.Column_id.HeaderText = "HW-OEM-MODEL-HASH-SW(Ver)";
+            this.Column_id.MinimumWidth = 6;
+            this.Column_id.Name = "Column_id";
+            this.Column_id.Width = 252;
+            // 
+            // Column_rate
+            // 
+            this.Column_rate.HeaderText = "Рейтинг (max10)";
+            this.Column_rate.MinimumWidth = 6;
+            this.Column_rate.Name = "Column_rate";
+            this.Column_rate.Width = 133;
+            // 
+            // Column_Full
+            // 
+            this.Column_Full.HeaderText = "Full Ids";
+            this.Column_Full.MinimumWidth = 6;
+            this.Column_Full.Name = "Column_Full";
+            this.Column_Full.Visible = false;
+            this.Column_Full.Width = 6;
+            // 
+            // Column_SW_type
+            // 
+            this.Column_SW_type.HeaderText = "Тип ПО";
+            this.Column_SW_type.MinimumWidth = 6;
+            this.Column_SW_type.Name = "Column_SW_type";
+            this.Column_SW_type.Width = 62;
             // 
             // Formfhf
             // 
@@ -860,8 +879,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage_guide.ResumeLayout(false);
             this.tabPage_guide.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.для_фильтраDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.для_фильтраBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.forFilterDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.forFilterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qcom_phonesDataSet)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -912,12 +931,6 @@
         private System.Windows.Forms.TextBox textBox_modelid;
         private System.ComponentModel.BackgroundWorker backgroundWorker_Read_File;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column_Sel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_rate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Full;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_SW_type;
         private System.Windows.Forms.TabPage tabPage_phone;
         private System.Windows.Forms.TabPage tabPage_guide;
         private System.Windows.Forms.Button button_ADB_start;
@@ -943,20 +956,28 @@
         private System.Windows.Forms.RadioButton radioButton_manualfilter;
         private System.Windows.Forms.RadioButton radioButton_autofilter;
         private qcom_phonesDataSet qcom_phonesDataSet;
-        private System.Windows.Forms.BindingSource для_фильтраBindingSource;
-        private qcom_phonesDataSetTableAdapters.Для_фильтраTableAdapter для_фильтраTableAdapter;
         private qcom_phonesDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView для_фильтраDataGridView;
         private System.Windows.Forms.LinkLabel linkLabel_copyrights;
+        private System.Windows.Forms.Label label_tm_model;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_guide;
+        private System.Windows.Forms.BindingSource forFilterBindingSource;
+        private qcom_phonesDataSetTableAdapters.ForFilterTableAdapter forFilterTableAdapter;
+        private System.Windows.Forms.DataGridView forFilterDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.Label label_tm_model;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_guide;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column_Sel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_rate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Full;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_SW_type;
     }
 }
 

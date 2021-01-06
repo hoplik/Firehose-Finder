@@ -66,8 +66,7 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Formfhf_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "qcom_phonesDataSet.Для_фильтра". При необходимости она может быть перемещена или удалена.
-            this.для_фильтраTableAdapter.Fill(this.qcom_phonesDataSet.Для_фильтра);
+            this.forFilterTableAdapter.Fill(this.qcom_phonesDataSet.ForFilter);
             richTextBox_about.Text = Resources.String_about + Environment.NewLine +
                 "Ссылка на базовую тему <<Общие принципы восстановления загрузчиков на Qualcomm | HS - USB QDLoader 9008, HS - USB Diagnostics 9006, QHUSB_DLOAD и т.д.>>: " +
                 Resources.String_theme_link + Environment.NewLine
@@ -310,6 +309,7 @@ namespace FirehoseFinder
                 "MODEL_ID (модель) - " + id[2] + Environment.NewLine +
                 "OEM_HASH (хеш корневого сертификата) - " + id[3] + Environment.NewLine +
                 "SW_ID (тип программы (версия)) - " + id[4] + id[5] + " - " + sw_type;
+            //!!!!Добавить проверку на все процессоры, в т.ч. и переходные по единому ID!!!!
             if (textBox_hwid.Text.Equals(id[0])) //Процессор такой же
             {
                 textBox_hwid.BackColor = Color.LawnGreen;
@@ -658,14 +658,14 @@ namespace FirehoseFinder
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Для_фильтраDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void ForFilterDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //Заполняем контролы для поиска шланга
-            textBox_hwid.Text = для_фильтраDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            textBox_oemid.Text = для_фильтраDataGridView.SelectedRows[0].Cells[1].Value.ToString();
-            textBox_modelid.Text = для_фильтраDataGridView.SelectedRows[0].Cells[2].Value.ToString();
-            textBox_oemhash.Text = для_фильтраDataGridView.SelectedRows[0].Cells[3].Value.ToString();
-            label_tm_model.Text = "Для устройства: " + для_фильтраDataGridView.SelectedRows[0].Cells[4].Value.ToString() + " " + для_фильтраDataGridView.SelectedRows[0].Cells[5].Value.ToString();
+            textBox_hwid.Text = forFilterDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+            textBox_oemid.Text = forFilterDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+            textBox_modelid.Text = forFilterDataGridView.SelectedRows[0].Cells[4].Value.ToString();
+            textBox_oemhash.Text = forFilterDataGridView.SelectedRows[0].Cells[5].Value.ToString();
+            label_tm_model.Text = "Для устройства: " + forFilterDataGridView.SelectedRows[0].Cells[6].Value.ToString() + " " + forFilterDataGridView.SelectedRows[0].Cells[7].Value.ToString();
             toolStripStatusLabel_guide.Text = string.Empty;
             //Переходим на вкладку поиска
             dataGridView_final.Rows.Clear();
@@ -681,7 +681,7 @@ namespace FirehoseFinder
         {
             if (radioButton_manualfilter.Checked)
             {
-                для_фильтраDataGridView.Enabled = true;
+                forFilterDataGridView.Enabled = true;
             }
         }
 
@@ -694,7 +694,7 @@ namespace FirehoseFinder
         {
             if (radioButton_autofilter.Checked)
             {
-                для_фильтраDataGridView.Enabled = false;
+                forFilterDataGridView.Enabled = false;
             }
         }
 
@@ -703,15 +703,15 @@ namespace FirehoseFinder
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Для_фильтраDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void ForFilterDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
                 //Меняем название столбца на значение ячейки для применения фильтра
                 try
                 {
-                    для_фильтраDataGridView.Columns[e.ColumnIndex].HeaderText = для_фильтраDataGridView[e.ColumnIndex, e.RowIndex].Value.ToString();
-                    для_фильтраDataGridView.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.GreenYellow;
+                    forFilterDataGridView.Columns[e.ColumnIndex].HeaderText = forFilterDataGridView[e.ColumnIndex, e.RowIndex].Value.ToString();
+                    forFilterDataGridView.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.GreenYellow;
                     toolStripStatusLabel_guide.Text = "Отобрано " + MakeFilter().ToString() + " записей";
                 }
                 catch (ArgumentOutOfRangeException)
@@ -726,13 +726,13 @@ namespace FirehoseFinder
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Для_фильтраDataGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void ForFilterDataGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
                 //Меняем название столбца на значение ячейки для применения фильтра 
-                для_фильтраDataGridView.Columns[e.ColumnIndex].HeaderText = для_фильтраDataGridView.Columns[e.ColumnIndex].DataPropertyName;
-                для_фильтраDataGridView.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.Empty;
+                forFilterDataGridView.Columns[e.ColumnIndex].HeaderText = forFilterDataGridView.Columns[e.ColumnIndex].DataPropertyName;
+                forFilterDataGridView.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.Empty;
                 toolStripStatusLabel_guide.Text = "Отобрано " + MakeFilter().ToString() + " записей";
             }
         }
@@ -748,18 +748,18 @@ namespace FirehoseFinder
         {
             StringBuilder fullfilter = new StringBuilder(string.Empty);
             int countfilters = 0;
-            foreach (DataGridViewColumn ColoumnHeaderText in для_фильтраDataGridView.Columns)
+            foreach (DataGridViewColumn ColoumnHeaderText in forFilterDataGridView.Columns)
             {
-                if (countfilters > 0) fullfilter.Append(" AND ");
                 if (ColoumnHeaderText.HeaderText != ColoumnHeaderText.DataPropertyName)
                 {
                     //Применяем фильтр
+                    if (countfilters > 0) fullfilter.Append(" AND ");
+                    fullfilter.Append(string.Format("{0} LIKE '{1}'", ColoumnHeaderText.DataPropertyName, ColoumnHeaderText.HeaderText));
                     countfilters++;
-                    fullfilter.Append("[" + ColoumnHeaderText.Name + "] LIKE '" + ColoumnHeaderText.HeaderText + "'");
                 }
             }
-            для_фильтраBindingSource.Filter = fullfilter.ToString();
-            return для_фильтраDataGridView.Rows.Count;
+            forFilterBindingSource.Filter = fullfilter.ToString();
+            return forFilterDataGridView.Rows.Count;
         }
 
         #endregion

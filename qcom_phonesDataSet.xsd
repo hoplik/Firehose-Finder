@@ -422,12 +422,12 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Для фильтраTableAdapter" GeneratorDataComponentClassName="Для_фильтраTableAdapter" Name="Для фильтра" UserDataComponentName="Для фильтраTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ForFilterTableAdapter" GeneratorDataComponentClassName="ForFilterTableAdapter" Name="ForFilter" UserDataComponentName="ForFilterTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="qcom_phonesConnectionString (Settings)" DbObjectName="Для фильтра" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="qcom_phonesConnectionString (Settings)" DbObjectName="ForFilter" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT HWID, OEMID, MODELID, HASHID, Trademark, Model FROM [Для фильтра]</CommandText>
+                    <CommandText>SELECT HWID, FullName, OEMID, [Names], MODELID, HASHID, Trademark, Model FROM ForFilter</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -435,7 +435,9 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="HWID" DataSetColumn="HWID" />
+              <Mapping SourceColumn="FullName" DataSetColumn="FullName" />
               <Mapping SourceColumn="OEMID" DataSetColumn="OEMID" />
+              <Mapping SourceColumn="Names" DataSetColumn="Names" />
               <Mapping SourceColumn="MODELID" DataSetColumn="MODELID" />
               <Mapping SourceColumn="HASHID" DataSetColumn="HASHID" />
               <Mapping SourceColumn="Trademark" DataSetColumn="Trademark" />
@@ -513,7 +515,7 @@
               <xs:element name="HASHID" msprop:Generator_ColumnVarNameInTable="columnHASHID" msprop:Generator_ColumnPropNameInRow="HASHID" msprop:Generator_ColumnPropNameInTable="HASHIDColumn" msprop:Generator_UserColumnName="HASHID">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
+                    <xs:maxLength value="64" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -541,7 +543,7 @@
               <xs:element name="HWID" msprop:Generator_ColumnVarNameInTable="columnHWID" msprop:Generator_ColumnPropNameInRow="HWID" msprop:Generator_ColumnPropNameInTable="HWIDColumn" msprop:Generator_UserColumnName="HWID">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
+                    <xs:maxLength value="8" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -561,7 +563,7 @@
               <xs:element name="IDs" msprop:Generator_ColumnVarNameInTable="columnIDs" msprop:Generator_ColumnPropNameInRow="IDs" msprop:Generator_ColumnPropNameInTable="IDsColumn" msprop:Generator_UserColumnName="IDs">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
+                    <xs:maxLength value="4" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -622,10 +624,17 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Для_x0020_фильтра" msprop:Generator_TableClassName="Для_фильтраDataTable" msprop:Generator_TableVarName="tableДля_фильтра" msprop:Generator_TablePropName="Для_фильтра" msprop:Generator_RowDeletingName="Для_фильтраRowDeleting" msprop:Generator_RowChangingName="Для_фильтраRowChanging" msprop:Generator_RowEvHandlerName="Для_фильтраRowChangeEventHandler" msprop:Generator_RowDeletedName="Для_фильтраRowDeleted" msprop:Generator_UserTableName="Для фильтра" msprop:Generator_RowChangedName="Для_фильтраRowChanged" msprop:Generator_RowEvArgName="Для_фильтраRowChangeEvent" msprop:Generator_RowClassName="Для_фильтраRow">
+        <xs:element name="ForFilter" msprop:Generator_TableClassName="ForFilterDataTable" msprop:Generator_TableVarName="tableForFilter" msprop:Generator_TablePropName="ForFilter" msprop:Generator_RowDeletingName="ForFilterRowDeleting" msprop:Generator_RowChangingName="ForFilterRowChanging" msprop:Generator_RowEvHandlerName="ForFilterRowChangeEventHandler" msprop:Generator_RowDeletedName="ForFilterRowDeleted" msprop:Generator_UserTableName="ForFilter" msprop:Generator_RowChangedName="ForFilterRowChanged" msprop:Generator_RowEvArgName="ForFilterRowChangeEvent" msprop:Generator_RowClassName="ForFilterRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="HWID" msprop:Generator_ColumnVarNameInTable="columnHWID" msprop:Generator_ColumnPropNameInRow="HWID" msprop:Generator_ColumnPropNameInTable="HWIDColumn" msprop:Generator_UserColumnName="HWID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FullName" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_UserColumnName="FullName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -635,6 +644,13 @@
               <xs:element name="OEMID" msprop:Generator_ColumnVarNameInTable="columnOEMID" msprop:Generator_ColumnPropNameInRow="OEMID" msprop:Generator_ColumnPropNameInTable="OEMIDColumn" msprop:Generator_UserColumnName="OEMID" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Names" msprop:Generator_ColumnVarNameInTable="columnNames" msprop:Generator_ColumnPropNameInRow="Names" msprop:Generator_ColumnPropNameInTable="NamesColumn" msprop:Generator_UserColumnName="Names" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
@@ -642,14 +658,14 @@
               <xs:element name="MODELID" msprop:Generator_ColumnVarNameInTable="columnMODELID" msprop:Generator_ColumnPropNameInRow="MODELID" msprop:Generator_ColumnPropNameInTable="MODELIDColumn" msprop:Generator_UserColumnName="MODELID" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
+                    <xs:maxLength value="4" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="HASHID" msprop:Generator_ColumnVarNameInTable="columnHASHID" msprop:Generator_ColumnPropNameInRow="HASHID" msprop:Generator_ColumnPropNameInTable="HASHIDColumn" msprop:Generator_UserColumnName="HASHID" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
+                    <xs:maxLength value="64" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
