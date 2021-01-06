@@ -75,8 +75,8 @@ namespace FirehoseFinder
                 "Версия сборки: " + Assembly.GetExecutingAssembly().GetName().Version + Environment.NewLine
                 + Environment.NewLine +
                 "Часто задаваемые вопросы: " + Environment.NewLine + Resources.String_faq1 +
-                Environment.NewLine + Environment.NewLine + Resources.String_faq2 + 
-                Environment.NewLine + Environment.NewLine + Resources.String_faq3 + 
+                Environment.NewLine + Environment.NewLine + Resources.String_faq2 +
+                Environment.NewLine + Environment.NewLine + Resources.String_faq3 +
                 Environment.NewLine + Environment.NewLine +
                 "Есть вопросы, предложения, замечания? Открывайте ишью (вопрос) на Гитхабе: " + Resources.String_issues;
             toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
@@ -644,14 +644,124 @@ namespace FirehoseFinder
         #region Функции команд контролов закладки Справочник
 
         /// <summary>
-        /// Переход на сайт для открытия нового вопроса по добавлению устройства в Справочник
+        /// Права на идею Справочника
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void LinkLabel_issues_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabel_copyrights_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://github.com/hoplik/Firehose-Finder/issues");
+            Process.Start("https://4pda.ru/forum/index.php?showuser=4712700");
         }
+
+        /// <summary>
+        /// Пользователь вручную выбрал устройство из Справочника для поиска по идентификаторам
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Для_фильтраDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Заполняем контролы для поиска шланга
+            textBox_hwid.Text = для_фильтраDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+            textBox_oemid.Text = для_фильтраDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+            textBox_modelid.Text = для_фильтраDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+            textBox_oemhash.Text = для_фильтраDataGridView.SelectedRows[0].Cells[3].Value.ToString();
+            label_tm_model.Text = "Для устройства: " + для_фильтраDataGridView.SelectedRows[0].Cells[4].Value.ToString() + " " + для_фильтраDataGridView.SelectedRows[0].Cells[5].Value.ToString();
+            toolStripStatusLabel_guide.Text = string.Empty;
+            //Переходим на вкладку поиска
+            dataGridView_final.Rows.Clear();
+            tabControl1.SelectedTab = tabPage_firehose;
+        }
+
+        /// <summary>
+        /// Включаем возможность выбора данных из Справочника
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RadioButton_manualfilter_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_manualfilter.Checked)
+            {
+                для_фильтраDataGridView.Enabled = true;
+            }
+        }
+
+        /// <summary>
+        /// Отключаем Справочник
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RadioButton_autofilter_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_autofilter.Checked)
+            {
+                для_фильтраDataGridView.Enabled = false;
+            }
+        }
+
+        /// <summary>
+        /// Набираем данные для фильтра
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Для_фильтраDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                //Меняем название столбца на значение ячейки для применения фильтра
+                try
+                {
+                    для_фильтраDataGridView.Columns[e.ColumnIndex].HeaderText = для_фильтраDataGridView[e.ColumnIndex, e.RowIndex].Value.ToString();
+                    для_фильтраDataGridView.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.GreenYellow;
+                    toolStripStatusLabel_guide.Text = "Отобрано " + MakeFilter().ToString() + " записей";
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    toolStripStatusLabel_guide.Text = "Кликнули вне области таблицы";
+                }
+            }
+        }
+
+        /// <summary>
+        /// Сбрасываем фильтр с названия столбца
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Для_фильтраDataGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                //Меняем название столбца на значение ячейки для применения фильтра 
+                для_фильтраDataGridView.Columns[e.ColumnIndex].HeaderText = для_фильтраDataGridView.Columns[e.ColumnIndex].DataPropertyName;
+                для_фильтраDataGridView.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.Empty;
+                toolStripStatusLabel_guide.Text = "Отобрано " + MakeFilter().ToString() + " записей";
+            }
+        }
+
+        #endregion
+
+        #region Функции самостоятельных команд Справочника
+
+        /// <summary>
+        /// Подготавливаем фильтр для грида Справочника
+        /// </summary>
+        private int MakeFilter()
+        {
+            StringBuilder fullfilter = new StringBuilder(string.Empty);
+            int countfilters = 0;
+            foreach (DataGridViewColumn ColoumnHeaderText in для_фильтраDataGridView.Columns)
+            {
+                if (countfilters > 0) fullfilter.Append(" AND ");
+                if (ColoumnHeaderText.HeaderText != ColoumnHeaderText.DataPropertyName)
+                {
+                    //Применяем фильтр
+                    countfilters++;
+                    fullfilter.Append("[" + ColoumnHeaderText.Name + "] LIKE '" + ColoumnHeaderText.HeaderText + "'");
+                }
+            }
+            для_фильтраBindingSource.Filter = fullfilter.ToString();
+            return для_фильтраDataGridView.Rows.Count;
+        }
+
         #endregion
     }
 }
