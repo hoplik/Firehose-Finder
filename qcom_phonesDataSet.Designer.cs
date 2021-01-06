@@ -2910,11 +2910,7 @@ namespace FirehoseFinder {
             
             private global::System.Data.DataColumn columnHWID;
             
-            private global::System.Data.DataColumn columnFullName;
-            
             private global::System.Data.DataColumn columnOEMID;
-            
-            private global::System.Data.DataColumn columnNames;
             
             private global::System.Data.DataColumn columnMODELID;
             
@@ -2923,6 +2919,10 @@ namespace FirehoseFinder {
             private global::System.Data.DataColumn columnTrademark;
             
             private global::System.Data.DataColumn columnModel;
+            
+            private global::System.Data.DataColumn columnCPU;
+            
+            private global::System.Data.DataColumn columnVendor;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2967,25 +2967,9 @@ namespace FirehoseFinder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn FullNameColumn {
-                get {
-                    return this.columnFullName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn OEMIDColumn {
                 get {
                     return this.columnOEMID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NamesColumn {
-                get {
-                    return this.columnNames;
                 }
             }
             
@@ -3018,6 +3002,22 @@ namespace FirehoseFinder {
             public global::System.Data.DataColumn ModelColumn {
                 get {
                     return this.columnModel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CPUColumn {
+                get {
+                    return this.columnCPU;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn VendorColumn {
+                get {
+                    return this.columnVendor;
                 }
             }
             
@@ -3058,17 +3058,17 @@ namespace FirehoseFinder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ForFilterRow AddForFilterRow(string HWID, string FullName, string OEMID, string Names, string MODELID, string HASHID, string Trademark, string Model) {
+            public ForFilterRow AddForFilterRow(string HWID, string OEMID, string MODELID, string HASHID, string Trademark, string Model, string CPU, string Vendor) {
                 ForFilterRow rowForFilterRow = ((ForFilterRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         HWID,
-                        FullName,
                         OEMID,
-                        Names,
                         MODELID,
                         HASHID,
                         Trademark,
-                        Model};
+                        Model,
+                        CPU,
+                        Vendor};
                 rowForFilterRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowForFilterRow);
                 return rowForFilterRow;
@@ -3092,13 +3092,13 @@ namespace FirehoseFinder {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnHWID = base.Columns["HWID"];
-                this.columnFullName = base.Columns["FullName"];
                 this.columnOEMID = base.Columns["OEMID"];
-                this.columnNames = base.Columns["Names"];
                 this.columnMODELID = base.Columns["MODELID"];
                 this.columnHASHID = base.Columns["HASHID"];
                 this.columnTrademark = base.Columns["Trademark"];
                 this.columnModel = base.Columns["Model"];
+                this.columnCPU = base.Columns["CPU"];
+                this.columnVendor = base.Columns["Vendor"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3106,12 +3106,8 @@ namespace FirehoseFinder {
             private void InitClass() {
                 this.columnHWID = new global::System.Data.DataColumn("HWID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHWID);
-                this.columnFullName = new global::System.Data.DataColumn("FullName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFullName);
                 this.columnOEMID = new global::System.Data.DataColumn("OEMID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOEMID);
-                this.columnNames = new global::System.Data.DataColumn("Names", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNames);
                 this.columnMODELID = new global::System.Data.DataColumn("MODELID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMODELID);
                 this.columnHASHID = new global::System.Data.DataColumn("HASHID", typeof(string), null, global::System.Data.MappingType.Element);
@@ -3120,14 +3116,18 @@ namespace FirehoseFinder {
                 base.Columns.Add(this.columnTrademark);
                 this.columnModel = new global::System.Data.DataColumn("Model", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnModel);
+                this.columnCPU = new global::System.Data.DataColumn("CPU", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCPU);
+                this.columnVendor = new global::System.Data.DataColumn("Vendor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVendor);
                 this.columnHWID.MaxLength = 8;
-                this.columnFullName.MaxLength = 255;
                 this.columnOEMID.MaxLength = 4;
-                this.columnNames.MaxLength = 255;
                 this.columnMODELID.MaxLength = 4;
                 this.columnHASHID.MaxLength = 64;
                 this.columnTrademark.MaxLength = 255;
                 this.columnModel.MaxLength = 255;
+                this.columnCPU.MaxLength = 255;
+                this.columnVendor.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4034,22 +4034,6 @@ namespace FirehoseFinder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string FullName {
-                get {
-                    try {
-                        return ((string)(this[this.tableForFilter.FullNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'FullName\' в таблице \'ForFilter\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableForFilter.FullNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string OEMID {
                 get {
                     try {
@@ -4061,22 +4045,6 @@ namespace FirehoseFinder {
                 }
                 set {
                     this[this.tableForFilter.OEMIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Names {
-                get {
-                    try {
-                        return ((string)(this[this.tableForFilter.NamesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Names\' в таблице \'ForFilter\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableForFilter.NamesColumn] = value;
                 }
             }
             
@@ -4146,6 +4114,38 @@ namespace FirehoseFinder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CPU {
+                get {
+                    try {
+                        return ((string)(this[this.tableForFilter.CPUColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'CPU\' в таблице \'ForFilter\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableForFilter.CPUColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Vendor {
+                get {
+                    try {
+                        return ((string)(this[this.tableForFilter.VendorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Vendor\' в таблице \'ForFilter\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableForFilter.VendorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsHWIDNull() {
                 return this.IsNull(this.tableForFilter.HWIDColumn);
             }
@@ -4158,18 +4158,6 @@ namespace FirehoseFinder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsFullNameNull() {
-                return this.IsNull(this.tableForFilter.FullNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetFullNameNull() {
-                this[this.tableForFilter.FullNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsOEMIDNull() {
                 return this.IsNull(this.tableForFilter.OEMIDColumn);
             }
@@ -4178,18 +4166,6 @@ namespace FirehoseFinder {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetOEMIDNull() {
                 this[this.tableForFilter.OEMIDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNamesNull() {
-                return this.IsNull(this.tableForFilter.NamesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNamesNull() {
-                this[this.tableForFilter.NamesColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4238,6 +4214,30 @@ namespace FirehoseFinder {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetModelNull() {
                 this[this.tableForFilter.ModelColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCPUNull() {
+                return this.IsNull(this.tableForFilter.CPUColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCPUNull() {
+                this[this.tableForFilter.CPUColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsVendorNull() {
+                return this.IsNull(this.tableForFilter.VendorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetVendorNull() {
+                this[this.tableForFilter.VendorColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7529,13 +7529,13 @@ namespace FirehoseFinder.qcom_phonesDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ForFilter";
             tableMapping.ColumnMappings.Add("HWID", "HWID");
-            tableMapping.ColumnMappings.Add("FullName", "FullName");
             tableMapping.ColumnMappings.Add("OEMID", "OEMID");
-            tableMapping.ColumnMappings.Add("Names", "Names");
             tableMapping.ColumnMappings.Add("MODELID", "MODELID");
             tableMapping.ColumnMappings.Add("HASHID", "HASHID");
             tableMapping.ColumnMappings.Add("Trademark", "Trademark");
             tableMapping.ColumnMappings.Add("Model", "Model");
+            tableMapping.ColumnMappings.Add("CPU", "CPU");
+            tableMapping.ColumnMappings.Add("Vendor", "Vendor");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -7552,8 +7552,8 @@ namespace FirehoseFinder.qcom_phonesDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT HWID, FullName, OEMID, [Names], MODELID, HASHID, Trademark, Model FROM For" +
-                "Filter";
+            this._commandCollection[0].CommandText = "SELECT HWID, FullName AS CPU, OEMID, [Names] AS Vendor, MODELID, HASHID, Trademar" +
+                "k, Model\r\nFROM     ForFilter";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

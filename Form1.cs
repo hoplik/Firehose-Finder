@@ -18,7 +18,8 @@ namespace FirehoseFinder
     {
         Func func = new Func(); // Подключили функции
         Guide guide = new Guide();
-
+        bool sent_issue = false; //Отправлять на Гитхаб сообщение об изменении Справочника
+        bool waitSahara = false; //Ждём ли мы автоперезагрузку с получением ID Sahara
         /// <summary>
         /// Инициализация компонентов
         /// </summary>
@@ -97,6 +98,7 @@ namespace FirehoseFinder
             if (File.Exists("commandop03.bin")) File.Delete("commandop03.bin");
             if (File.Exists("commandop07.bin")) File.Delete("commandop07.bin");
             if (File.Exists("port_trace.txt")) File.Delete("port_trace.txt");
+            if (sent_issue) Sent_Issue();
         }
 
         #region Функции команд контролов закладки Работа с файлами
@@ -340,29 +342,14 @@ namespace FirehoseFinder
 
         #region Функции команд контролов закладки Работа с устройством
 
+        /// <summary>
+        /// Стартуем сервер ADB
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_ADB_start_Click(object sender, EventArgs e)
         {
-            //Создаём ADB из ресурсов в рабочую папку, если его там ещё нет
-            if (!File.Exists("adb.exe"))
-            {
-                byte[] LocalADB = Resources.adb;
-                FileStream fs = new FileStream("adb.exe", FileMode.Create);
-                fs.Write(LocalADB, 0, LocalADB.Length);
-                fs.Close();
-            }
-            //Стартуем сервер
-            textBox_ADB.AppendText("Запускаем сервер ADB ..." + Environment.NewLine);
-            AdbServer server = new AdbServer();
-            var result = server.StartServer("adb.exe", restartServerIfNewer: false);
-            //Подключаем клиента (устройства)
-            AdbClient client = new AdbClient();
-            List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
-            textBox_ADB.AppendText(result.ToString() + Environment.NewLine);
-            foreach (var device in devices) textBox_ADB.AppendText("Подключено устройство: " + device + Environment.NewLine);
-            if (devices.Count > 1) textBox_ADB.AppendText("Подключено более одного андройд-устройства. Пожалуйста, оставьте подключённым только то устройство, с которым планируется дальнейшая работа." + Environment.NewLine);
-            else if (devices.Count == 0) textBox_ADB.AppendText("Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли \"Отладка по USB\" в разделе \"Система\" - \"Для разработчиков\"" + Environment.NewLine);
-            else comboBox_ADB_commands.Enabled = true;
-            button_ADB_start.Enabled = false;
+            ADB_Check();
         }
 
         /// <summary>
@@ -449,6 +436,11 @@ namespace FirehoseFinder
             {
                 serialPort1.PortName = e.Item.Text;
                 button_Sahara_Ids.Enabled = true;
+                if (waitSahara)
+                {
+                    GetSaharaIDs();
+                    button_Sahara_Ids.Enabled = false;
+                }
             }
             else
             {
@@ -464,39 +456,7 @@ namespace FirehoseFinder
         private void Button_Sahara_Ids_Click(object sender, EventArgs e)
         {
             button_Sahara_Ids.Enabled = false;
-            //Создаём SaharaServer из ресурсов в рабочую папку, если его там ещё нет
-            if (!File.Exists("QSaharaServer.exe"))
-            {
-                byte[] LocalQSS = Resources.QSaharaServer;
-                FileStream fs = new FileStream("QSaharaServer.exe", FileMode.Create);
-                fs.Write(LocalQSS, 0, LocalQSS.Length);
-                fs.Close();
-            }
-            //Выполняем запрос HWID-OEMID (command02)
-            Process process = new Process();
-            process.StartInfo.FileName = "QSaharaServer.exe";
-            process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 2 -c 3 -c 7";
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.Start();
-            StreamReader reader = process.StandardOutput;
-            string output = reader.ReadToEnd();
-            textBox_ADB.AppendText(output);
-            process.WaitForExit();
-            process.Close();
-            //Обрабатываем запрос идентификаторов
-            string HWOEMIDs = func.SaharaCommand2();
-            if (HWOEMIDs.Length == 16)
-            {
-                textBox_hwid.Text = HWOEMIDs.Substring(0, 8);
-                textBox_oemid.Text = HWOEMIDs.Substring(8, 4);
-                textBox_modelid.Text = HWOEMIDs.Substring(12, 4);
-            }
-            textBox_oemhash.Text = func.SaharaCommand3();
-            label_SW_Ver.Text = func.SaharaCommand7();
-            //Переходим на вкладку Работа с файлами
-            tabControl1.SelectedTab = tabPage_firehose;
+            GetSaharaIDs();
         }
 
         /// <summary>
@@ -665,7 +625,8 @@ namespace FirehoseFinder
             textBox_oemid.Text = forFilterDataGridView.SelectedRows[0].Cells[2].Value.ToString();
             textBox_modelid.Text = forFilterDataGridView.SelectedRows[0].Cells[4].Value.ToString();
             textBox_oemhash.Text = forFilterDataGridView.SelectedRows[0].Cells[5].Value.ToString();
-            label_tm_model.Text = "Для устройства: " + forFilterDataGridView.SelectedRows[0].Cells[6].Value.ToString() + " " + forFilterDataGridView.SelectedRows[0].Cells[7].Value.ToString();
+            label_tm.Text = forFilterDataGridView.SelectedRows[0].Cells[6].Value.ToString();
+            label_model.Text = forFilterDataGridView.SelectedRows[0].Cells[7].Value.ToString();
             toolStripStatusLabel_guide.Text = string.Empty;
             //Переходим на вкладку поиска
             dataGridView_final.Rows.Clear();
@@ -682,6 +643,7 @@ namespace FirehoseFinder
             if (radioButton_manualfilter.Checked)
             {
                 forFilterDataGridView.Enabled = true;
+                button_findIDs.Enabled = false;
             }
         }
 
@@ -695,6 +657,7 @@ namespace FirehoseFinder
             if (radioButton_autofilter.Checked)
             {
                 forFilterDataGridView.Enabled = false;
+                button_findIDs.Enabled = true;
             }
         }
 
@@ -737,6 +700,28 @@ namespace FirehoseFinder
             }
         }
 
+        /// <summary>
+        /// Автозапуск получения идентификаторов и сверки их со Справочником
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_findIDs_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Нажимая \"Ок\", вы соглашаетесь с автоматическим получением программой идентификаторов устройства." + Environment.NewLine +
+                "Никакая другая (персональная) информация с аппарата скопирована не будет. Аппарат будет автоматически перегружен в аварийный режим при условии, что он поддерживает такой функционал на программном уровне." + Environment.NewLine +
+                "После получения идентификаторов данные будут сверены со Справочником ID. Если полученные в автоматическом режиме данные будут отсутствовать или отличаться от данных Справочника, то разработчикам будет отправлено сообщение о включении/редактировании Справочника после завершения работы программы.",
+                "Обратите внимание!", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (dr == DialogResult.OK)
+            {
+                tabControl1.SelectedTab = tabPage_phone;
+                if (!ADB_Check()) return;
+                GetADBIDs();
+                waitSahara = true; //Ждём подключения в аварийном режиме
+                sent_issue = true; //Отправляем данные, если их нет в Справочнике
+            }
+            else radioButton_manualfilter.Checked = true;
+        }
+
         #endregion
 
         #region Функции самостоятельных команд Справочника
@@ -760,6 +745,148 @@ namespace FirehoseFinder
             }
             forFilterBindingSource.Filter = fullfilter.ToString();
             return forFilterDataGridView.Rows.Count;
+        }
+
+        /// <summary>
+        /// Проверяем корректность подключения устройства через запуск ADB
+        /// </summary>
+        /// <returns>true - всё хорошо, false - есть ошибки</returns>
+        private bool ADB_Check()
+        {
+            //Создаём ADB из ресурсов в рабочую папку, если его там ещё нет
+            if (!File.Exists("adb.exe"))
+            {
+                byte[] LocalADB = Resources.adb;
+                FileStream fs = new FileStream("adb.exe", FileMode.Create);
+                fs.Write(LocalADB, 0, LocalADB.Length);
+                fs.Close();
+            }
+            //Стартуем сервер
+            textBox_ADB.AppendText("Запускаем сервер ADB ..." + Environment.NewLine);
+            AdbServer server = new AdbServer();
+            var result = server.StartServer("adb.exe", restartServerIfNewer: false);
+            //Подключаем клиента (устройства)
+            AdbClient client = new AdbClient();
+            List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
+            textBox_ADB.AppendText(result.ToString() + Environment.NewLine);
+            button_ADB_start.Enabled = false;
+            foreach (var device in devices) textBox_ADB.AppendText("Подключено устройство: " + device + Environment.NewLine);
+            if (devices.Count > 1)
+            {
+                textBox_ADB.AppendText("Подключено более одного андройд-устройства. Пожалуйста, оставьте подключённым только то устройство, с которым планируется дальнейшая работа." + Environment.NewLine);
+                return false;
+            }
+            else if (devices.Count == 0)
+            {
+                textBox_ADB.AppendText("Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли \"Отладка по USB\" в разделе \"Система\" - \"Для разработчиков\"" + Environment.NewLine);
+                return false;
+            }
+            else
+            {
+                comboBox_ADB_commands.Enabled = true;
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// Получаем пакетно идентификаторы и сверяем их со справочником
+        /// </summary>
+        private void GetADBIDs()
+        {
+            AdbClient client = new AdbClient();
+            var receiver = new ConsoleOutputReceiver();
+            List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
+            var device = devices[0];
+            try
+            {
+                client.ExecuteRemoteCommand("getprop | grep ro.product.manufacturer", device, receiver);
+                label_tm.Text = receiver.ToString();
+                client.ExecuteRemoteCommand("getprop | grep ro.product.model", device, receiver);
+                label_model.Text = receiver.ToString();
+                textBox_ADB.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
+                client.Reboot("edl", device);
+            }
+            catch (SharpAdbClient.Exceptions.AdbException ex)
+            {
+                textBox_ADB.AppendText(ex.AdbError + Environment.NewLine);
+            }
+            Thread.Sleep(1000);
+            StopAdb();
+        }
+
+        /// <summary>
+        /// Получаем идентификаторы из Сахары
+        /// </summary>
+        private void GetSaharaIDs()
+        {
+            //Создаём SaharaServer из ресурсов в рабочую папку, если его там ещё нет
+            if (!File.Exists("QSaharaServer.exe"))
+            {
+                byte[] LocalQSS = Resources.QSaharaServer;
+                FileStream fs = new FileStream("QSaharaServer.exe", FileMode.Create);
+                fs.Write(LocalQSS, 0, LocalQSS.Length);
+                fs.Close();
+            }
+            //Выполняем запрос HWID-OEMID (command02)
+            Process process = new Process();
+            process.StartInfo.FileName = "QSaharaServer.exe";
+            process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 2 -c 3 -c 7";
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.Start();
+            StreamReader reader = process.StandardOutput;
+            string output = reader.ReadToEnd();
+            textBox_ADB.AppendText(output);
+            process.WaitForExit();
+            process.Close();
+            //Обрабатываем запрос идентификаторов
+            string HWOEMIDs = func.SaharaCommand2();
+            if (HWOEMIDs.Length == 16)
+            {
+                textBox_hwid.Text = HWOEMIDs.Substring(0, 8);
+                textBox_oemid.Text = HWOEMIDs.Substring(8, 4);
+                textBox_modelid.Text = HWOEMIDs.Substring(12, 4);
+            }
+            textBox_oemhash.Text = func.SaharaCommand3();
+            label_SW_Ver.Text = func.SaharaCommand7();
+            //Переходим на вкладку Работа с файлами
+            tabControl1.SelectedTab = tabPage_firehose;
+            toolStripStatusLabel_filescompleted.Text = "Все идентификаторы получены, устройство можно отключить и перезагрузить";
+            if (waitSahara) CheckIDs();
+            waitSahara = false;
+        }
+
+        /// <summary>
+        /// Проверяем все идентификаторы на наличие в Справочнике.
+        /// </summary>
+        private void CheckIDs()
+        {
+            //Проводим две проверки: 1. Все четыре идентификатора Сахары совпадают (жёсткое совпадение) 2. ТМ и Модель совпадают
+            //Отсюда два различных сообщения (Добавить устройство - совпадений 1 не найдено)
+            //(Исправить/добавить название/модель если 1 совпадает, а 2 нет
+            
+            //Если данные со Справочником совпадают, то отменяем отправку
+            sent_issue = false;
+            //Если данные со справочником не совпадают, то готовим пакет для отправки при завершении работы приложения
+            if (sent_issue) Sent_Issue(false);
+            //Или
+            if (sent_issue) Sent_Issue(true);
+        }
+
+
+        // Пакет идентификаторов для отправки на Гитхаб (создания ишью)
+
+        private void Sent_Issue(bool SaharaIDs)
+        {
+            if (SaharaIDs)
+            {
+                MessageBox.Show("Отправляем ишью! Исправить/добавить название/модель если 1 совпадает, а 2 нет");
+            }
+            else
+            {
+                MessageBox.Show("Отправляем ишью! Добавить устройство - совпадений ID не найдено");
+            }
         }
 
         #endregion

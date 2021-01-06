@@ -424,10 +424,11 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ForFilterTableAdapter" GeneratorDataComponentClassName="ForFilterTableAdapter" Name="ForFilter" UserDataComponentName="ForFilterTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="qcom_phonesConnectionString (Settings)" DbObjectName="ForFilter" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="qcom_phonesConnectionString (Settings)" DbObjectName="ForFilter" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT HWID, FullName, OEMID, [Names], MODELID, HASHID, Trademark, Model FROM ForFilter</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT HWID, FullName AS CPU, OEMID, [Names] AS Vendor, MODELID, HASHID, Trademark, Model
+FROM     ForFilter</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -435,13 +436,13 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="HWID" DataSetColumn="HWID" />
-              <Mapping SourceColumn="FullName" DataSetColumn="FullName" />
               <Mapping SourceColumn="OEMID" DataSetColumn="OEMID" />
-              <Mapping SourceColumn="Names" DataSetColumn="Names" />
               <Mapping SourceColumn="MODELID" DataSetColumn="MODELID" />
               <Mapping SourceColumn="HASHID" DataSetColumn="HASHID" />
               <Mapping SourceColumn="Trademark" DataSetColumn="Trademark" />
               <Mapping SourceColumn="Model" DataSetColumn="Model" />
+              <Mapping SourceColumn="CPU" DataSetColumn="CPU" />
+              <Mapping SourceColumn="Vendor" DataSetColumn="Vendor" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -634,24 +635,10 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="FullName" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_UserColumnName="FullName" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="OEMID" msprop:Generator_ColumnVarNameInTable="columnOEMID" msprop:Generator_ColumnPropNameInRow="OEMID" msprop:Generator_ColumnPropNameInTable="OEMIDColumn" msprop:Generator_UserColumnName="OEMID" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="4" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Names" msprop:Generator_ColumnVarNameInTable="columnNames" msprop:Generator_ColumnPropNameInRow="Names" msprop:Generator_ColumnPropNameInTable="NamesColumn" msprop:Generator_UserColumnName="Names" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -677,6 +664,20 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Model" msprop:Generator_ColumnVarNameInTable="columnModel" msprop:Generator_ColumnPropNameInRow="Model" msprop:Generator_ColumnPropNameInTable="ModelColumn" msprop:Generator_UserColumnName="Model" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CPU" msprop:Generator_ColumnVarNameInTable="columnCPU" msprop:Generator_ColumnPropNameInRow="CPU" msprop:Generator_ColumnPropNameInTable="CPUColumn" msprop:Generator_UserColumnName="CPU" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Vendor" msprop:Generator_ColumnVarNameInTable="columnVendor" msprop:Generator_ColumnPropNameInRow="Vendor" msprop:Generator_ColumnPropNameInTable="VendorColumn" msprop:Generator_UserColumnName="Vendor" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
