@@ -713,7 +713,7 @@ namespace FirehoseFinder
             DialogResult dr = MessageBox.Show("Нажимая \"Ок\", вы соглашаетесь с автоматическим получением программой идентификаторов устройства." + Environment.NewLine +
                 "Никакая другая (персональная) информация с аппарата скопирована не будет. Аппарат будет автоматически перегружен в аварийный режим при условии, что он поддерживает такой функционал на программном уровне." + Environment.NewLine +
                 "После получения идентификаторов данные будут сверены со Справочником ID. Если полученные в автоматическом режиме данные будут отсутствовать или отличаться от данных Справочника, то разработчикам будет отправлено сообщение о включении/редактировании Справочника после завершения работы программы.",
-                "Обратите внимание!", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                "Подключите устройство в обычном режиме (в режиме зарядки)!", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if (dr == DialogResult.OK)
             {
                 tabControl1.SelectedTab = tabPage_phone;
@@ -896,16 +896,16 @@ namespace FirehoseFinder
             toolStripStatusLabel_filescompleted.Text = "Все идентификаторы получены, устройство можно отключить и перезагрузить";
             if (waitSahara)
             {
-                sent_issue = textBox_hwid.Text + "-" + textBox_oemid.Text + "-" + textBox_modelid + "-" + textBox_oemhash.Text + "-" + label_tm.Text + "-" + label_model.Text;
+                sent_issue = textBox_hwid.Text + "-" + textBox_oemid.Text + "-" + textBox_modelid.Text + "-" + textBox_oemhash.Text + "-" + label_tm.Text + "-" + label_model.Text;
                 if (checkBox_Log.Checked)
                 {
                     try
                     {
-                        using (StreamWriter sw = new StreamWriter(label_log + "\\CPU_Info.log", false)) sw.Write(sent_issue);
+                        using (StreamWriter sw = new StreamWriter(label_log.Text + "\\CPU_Info.log", false)) sw.Write(sent_issue);
                     }
                     catch (Exception ex)
                     {
-                        toolStripStatusLabel_filescompleted.Text = "Ошибка записи лог-файла" + ex.Message;
+                        toolStripStatusLabel_filescompleted.Text = "Ошибка записи лог-файла " + ex.Message;
                     }
 
                 }
@@ -919,13 +919,11 @@ namespace FirehoseFinder
         /// </summary>
         private void CheckIDs()
         {
-            MessageBox.Show(sent_issue);
-
             //Проводим две проверки: 
             //Все четыре идентификатора Сахары совпадают 
             forFilterBindingSource.Filter = string.Format(
                 "HWID LIKE '{0}' AND OEMID LIKE '{1}' AND MODELID LIKE '{2}' AND HASHID LIKE '{3}'",
-                textBox_hwid.Text, textBox_oemid.Text, textBox_modelid, textBox_oemhash.Text);
+                textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text, textBox_oemhash.Text);
             if (forFilterDataGridView.Rows.Count > 0) //Есть устройство с такими идентификаторами
             {
                 for (int i = 0; i < forFilterDataGridView.Rows.Count; i++)
@@ -966,7 +964,7 @@ namespace FirehoseFinder
                     MessageBox.Show("Это автоматически сгенерированное сообщение. " + SaharaIDs, "Пожалуйста, добавьте или исправьте в Справочнике назвнаие/модель устройства");
                     break;
                 default:
-                    MessageBox.Show("Некорректно составлена строка отправки");
+                    MessageBox.Show(SaharaIDs, "Некорректно составлена строка отправки");
                     break;
             }
         }
