@@ -21,6 +21,7 @@ namespace FirehoseFinder
         Guide guide = new Guide();
         string sent_issue = string.Empty; //Отправлять на Гитхаб сообщение об изменении Справочника
         bool waitSahara = false; //Ждём ли мы автоперезагрузку с получением ID Sahara
+
         /// <summary>
         /// Инициализация компонентов
         /// </summary>
@@ -99,7 +100,7 @@ namespace FirehoseFinder
             if (File.Exists("commandop03.bin")) File.Delete("commandop03.bin");
             if (File.Exists("commandop07.bin")) File.Delete("commandop07.bin");
             if (File.Exists("port_trace.txt")) File.Delete("port_trace.txt");
-            if (!string.IsNullOrEmpty(sent_issue)) Sent_IssueAsync(sent_issue);
+            if (!string.IsNullOrEmpty(sent_issue)) Sent_Issue(sent_issue);
 
         }
 
@@ -716,11 +717,34 @@ namespace FirehoseFinder
             if (dr == DialogResult.OK)
             {
                 tabControl1.SelectedTab = tabPage_phone;
+                if (listView_comport.CheckedItems.Count > 0)
+                {
+                    GetSaharaIDs();
+                    return;
+                }
                 if (!ADB_Check()) return;
                 GetADBIDs();
                 waitSahara = true; //Ждём подключения в аварийном режиме
             }
             else radioButton_manualfilter.Checked = true;
+        }
+
+        /// <summary>
+        /// Если нужно сохранить лог работы автоопределения идентификаторов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckBox_Log_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_Log.Checked)
+            {
+                DialogResult result = folderBrowserDialog1.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    label_log.Text = folderBrowserDialog1.SelectedPath;
+                }
+            }
+            else label_log.Text = string.Empty;
         }
 
         #endregion
@@ -798,12 +822,28 @@ namespace FirehoseFinder
             var receiver = new ConsoleOutputReceiver();
             List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
             var device = devices[0];
+            List<string> adbcommands = new List<string>() {
+                "getprop | grep ro.product.manufacturer",
+                "getprop | grep ro.product.model"};
+            string[] results = new string[adbcommands.Count];
             try
             {
-                client.ExecuteRemoteCommand("getprop | grep ro.product.manufacturer", device, receiver);
-                label_tm.Text = receiver.ToString();
-                client.ExecuteRemoteCommand("getprop | grep ro.product.model", device, receiver);
-                label_model.Text = receiver.ToString();
+                for (int i = 0; i < adbcommands.Count; i++)
+                {
+                    client.ExecuteRemoteCommand(adbcommands[i], device, receiver);
+                    string[] adbstr = receiver.ToString().Split('[');
+                    foreach (string item in adbstr)
+                    {
+                        if (!item.StartsWith("ro.product.m"))
+                        {
+                            if (item.Contains("]")) results[i] = item.Remove(item.IndexOf(']'));
+                        }
+                    }
+                    if (results[i] == null) results[i] = string.Empty;
+                    receiver.Flush();
+                }
+                label_tm.Text = results[0];
+                label_model.Text = results[1];
                 textBox_ADB.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
                 client.Reboot("edl", device);
             }
@@ -854,7 +894,23 @@ namespace FirehoseFinder
             //Переходим на вкладку Работа с файлами
             tabControl1.SelectedTab = tabPage_firehose;
             toolStripStatusLabel_filescompleted.Text = "Все идентификаторы получены, устройство можно отключить и перезагрузить";
-            if (waitSahara) CheckIDs();
+            if (waitSahara)
+            {
+                sent_issue = textBox_hwid.Text + "-" + textBox_oemid.Text + "-" + textBox_modelid + "-" + textBox_oemhash.Text + "-" + label_tm.Text + "-" + label_model.Text;
+                if (checkBox_Log.Checked)
+                {
+                    try
+                    {
+                        using (StreamWriter sw = new StreamWriter(label_log + "\\CPU_Info.log", false)) sw.Write(sent_issue);
+                    }
+                    catch (Exception ex)
+                    {
+                        toolStripStatusLabel_filescompleted.Text = "Ошибка записи лог-файла" + ex.Message;
+                    }
+
+                }
+                CheckIDs();
+            }
             waitSahara = false;
         }
 
@@ -863,22 +919,32 @@ namespace FirehoseFinder
         /// </summary>
         private void CheckIDs()
         {
-            //Проводим две проверки: 
-            //1. Все четыре идентификатора Сахары совпадают (жёсткое совпадение) 
-            //Отсюда два различных сообщения (Добавить устройство - совпадений 1 не найдено)
+            MessageBox.Show(sent_issue);
 
-            //2. ТМ и Модель совпадают
-            sent_issue.Insert(0, "1-");
-            //(Исправить/добавить название/модель если 1 совпадает, а 2 нет
-            sent_issue.Insert(0, "2-");
-            sent_issue += textBox_hwid.Text + "-" + textBox_oemid.Text + "-" + textBox_modelid + "-" + textBox_oemhash.Text + "-" +
-                label_tm.Text + "-" + label_model.Text;
+            //Проводим две проверки: 
+            //Все четыре идентификатора Сахары совпадают 
+            forFilterBindingSource.Filter = string.Format(
+                "HWID LIKE '{0}' AND OEMID LIKE '{1}' AND MODELID LIKE '{2}' AND HASHID LIKE '{3}'",
+                textBox_hwid.Text, textBox_oemid.Text, textBox_modelid, textBox_oemhash.Text);
+            if (forFilterDataGridView.Rows.Count > 0) //Есть устройство с такими идентификаторами
+            {
+                for (int i = 0; i < forFilterDataGridView.Rows.Count; i++)
+                {
+                    if (forFilterDataGridView[6, i].Value.ToString().Equals(label_tm.Text) && forFilterDataGridView[7, i].Value.ToString().Equals(label_model.Text)) //Проверяем ТМ и модель на наличие
+                    {
+                        sent_issue = string.Empty;
+                        return;
+                    }
+                }
+                sent_issue.Insert(0, "2-"); //Исправить/добавить название/модель если 1 совпадает, а 2 нет
+            }
+            else sent_issue.Insert(0, "1-"); //Устройства нет, надо добавить в автосообщение
         }
 
 
         // Пакет идентификаторов для отправки на Гитхаб (создания ишью)
 
-        private void Sent_IssueAsync(string SaharaIDs)
+        private void Sent_Issue(string SaharaIDs)
         {
             //var client = new GitHubClient("https://github.com/hoplik/Firehose-Finder/issues"); // More on GitHubClient can be found in "Getting Started"
             switch (SaharaIDs.Substring(0, 2))

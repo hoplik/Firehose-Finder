@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfhf));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_guide = new System.Windows.Forms.TabPage();
+            this.label_log = new System.Windows.Forms.Label();
+            this.checkBox_Log = new System.Windows.Forms.CheckBox();
             this.button_findIDs = new System.Windows.Forms.Button();
             this.forFilterDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -139,6 +141,8 @@
             // 
             // tabPage_guide
             // 
+            this.tabPage_guide.Controls.Add(this.label_log);
+            this.tabPage_guide.Controls.Add(this.checkBox_Log);
             this.tabPage_guide.Controls.Add(this.button_findIDs);
             this.tabPage_guide.Controls.Add(this.forFilterDataGridView);
             this.tabPage_guide.Controls.Add(this.linkLabel_copyrights);
@@ -152,6 +156,26 @@
             this.tabPage_guide.TabIndex = 3;
             this.tabPage_guide.Text = "Справочник ID";
             this.tabPage_guide.UseVisualStyleBackColor = true;
+            // 
+            // label_log
+            // 
+            this.label_log.AutoSize = true;
+            this.label_log.Location = new System.Drawing.Point(951, 50);
+            this.label_log.Name = "label_log";
+            this.label_log.Size = new System.Drawing.Size(0, 17);
+            this.label_log.TabIndex = 7;
+            // 
+            // checkBox_Log
+            // 
+            this.checkBox_Log.AutoSize = true;
+            this.checkBox_Log.Location = new System.Drawing.Point(954, 9);
+            this.checkBox_Log.Name = "checkBox_Log";
+            this.checkBox_Log.Size = new System.Drawing.Size(345, 38);
+            this.checkBox_Log.TabIndex = 6;
+            this.checkBox_Log.Text = "Сохранить идентификаторы устройства в файл\r\n(потребуется указать папку для сохран" +
+    "ения)";
+            this.checkBox_Log.UseVisualStyleBackColor = true;
+            this.checkBox_Log.CheckedChanged += new System.EventHandler(this.CheckBox_Log_CheckedChanged);
             // 
             // button_findIDs
             // 
@@ -182,7 +206,7 @@
             this.forFilterDataGridView.DataSource = this.forFilterBindingSource;
             this.forFilterDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.forFilterDataGridView.Enabled = false;
-            this.forFilterDataGridView.Location = new System.Drawing.Point(3, 76);
+            this.forFilterDataGridView.Location = new System.Drawing.Point(3, 84);
             this.forFilterDataGridView.MultiSelect = false;
             this.forFilterDataGridView.Name = "forFilterDataGridView";
             this.forFilterDataGridView.ReadOnly = true;
@@ -190,7 +214,7 @@
             this.forFilterDataGridView.RowHeadersWidth = 51;
             this.forFilterDataGridView.RowTemplate.Height = 24;
             this.forFilterDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.forFilterDataGridView.Size = new System.Drawing.Size(1299, 454);
+            this.forFilterDataGridView.Size = new System.Drawing.Size(1299, 442);
             this.forFilterDataGridView.TabIndex = 4;
             this.forFilterDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ForFilterDataGridView_CellDoubleClick);
             this.forFilterDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ForFilterDataGridView_CellMouseClick);
@@ -283,7 +307,7 @@
             this.linkLabel_copyrights.AutoSize = true;
             this.linkLabel_copyrights.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.linkLabel_copyrights.LinkArea = new System.Windows.Forms.LinkArea(95, 10);
-            this.linkLabel_copyrights.Location = new System.Drawing.Point(3, 530);
+            this.linkLabel_copyrights.Location = new System.Drawing.Point(3, 526);
             this.linkLabel_copyrights.Name = "linkLabel_copyrights";
             this.linkLabel_copyrights.Size = new System.Drawing.Size(1054, 20);
             this.linkLabel_copyrights.TabIndex = 3;
@@ -298,10 +322,10 @@
             this.radioButton_manualfilter.AutoSize = true;
             this.radioButton_manualfilter.Location = new System.Drawing.Point(6, 37);
             this.radioButton_manualfilter.Name = "radioButton_manualfilter";
-            this.radioButton_manualfilter.Size = new System.Drawing.Size(710, 21);
+            this.radioButton_manualfilter.Size = new System.Drawing.Size(727, 21);
             this.radioButton_manualfilter.TabIndex = 1;
-            this.radioButton_manualfilter.Text = "Вручную применить фильтр (правой кнопкой мыши) для выбора идентификаторов модели " +
-    "устройства";
+            this.radioButton_manualfilter.Text = "Выбрать вручную (двойной клик), применяя фильтр (правая кнопка мыши), идентификат" +
+    "оры устройства";
             this.radioButton_manualfilter.UseVisualStyleBackColor = true;
             this.radioButton_manualfilter.CheckedChanged += new System.EventHandler(this.RadioButton_manualfilter_CheckedChanged);
             // 
@@ -324,16 +348,17 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel_guide});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 550);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 546);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1299, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1299, 26);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel_guide
             // 
             this.toolStripStatusLabel_guide.Name = "toolStripStatusLabel_guide";
-            this.toolStripStatusLabel_guide.Size = new System.Drawing.Size(0, 16);
+            this.toolStripStatusLabel_guide.Size = new System.Drawing.Size(27, 20);
+            this.toolStripStatusLabel_guide.Text = "---";
             // 
             // tabPage_firehose
             // 
@@ -862,11 +887,6 @@
             this.richTextBox_about.TabIndex = 1;
             this.richTextBox_about.Text = "";
             // 
-            // folderBrowserDialog1
-            // 
-            this.folderBrowserDialog1.Description = "Укажите путь к папке с программерами";
-            this.folderBrowserDialog1.ShowNewFolderButton = false;
-            // 
             // backgroundWorker_Read_File
             // 
             this.backgroundWorker_Read_File.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_Read_File_DoWork);
@@ -1015,6 +1035,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.CheckBox checkBox_Log;
+        private System.Windows.Forms.Label label_log;
     }
 }
 
