@@ -11,6 +11,7 @@ using System.Diagnostics;
 using SharpAdbClient;
 using System.Threading;
 using Microsoft.Win32;
+using Octokit;
 
 namespace FirehoseFinder
 {
@@ -18,7 +19,7 @@ namespace FirehoseFinder
     {
         Func func = new Func(); // Подключили функции
         Guide guide = new Guide();
-        bool sent_issue = false; //Отправлять на Гитхаб сообщение об изменении Справочника
+        string sent_issue = string.Empty; //Отправлять на Гитхаб сообщение об изменении Справочника
         bool waitSahara = false; //Ждём ли мы автоперезагрузку с получением ID Sahara
         /// <summary>
         /// Инициализация компонентов
@@ -98,7 +99,8 @@ namespace FirehoseFinder
             if (File.Exists("commandop03.bin")) File.Delete("commandop03.bin");
             if (File.Exists("commandop07.bin")) File.Delete("commandop07.bin");
             if (File.Exists("port_trace.txt")) File.Delete("port_trace.txt");
-            if (sent_issue) Sent_Issue();
+            if (!string.IsNullOrEmpty(sent_issue)) Sent_IssueAsync(sent_issue);
+
         }
 
         #region Функции команд контролов закладки Работа с файлами
@@ -477,7 +479,7 @@ namespace FirehoseFinder
                         if (!File.Exists("QSaharaServer.exe"))
                         {
                             byte[] LocalQSS = Resources.QSaharaServer;
-                            FileStream fs = new FileStream("QSaharaServer.exe", FileMode.Create);
+                            FileStream fs = new FileStream("QSaharaServer.exe", System.IO.FileMode.Create);
                             fs.Write(LocalQSS, 0, LocalQSS.Length);
                             fs.Close();
                         }
@@ -488,7 +490,7 @@ namespace FirehoseFinder
                         if (!File.Exists("fh_loader.exe"))
                         {
                             byte[] LocalFHL = Resources.fh_loader;
-                            FileStream fs = new FileStream("fh_loader.exe", FileMode.Create);
+                            FileStream fs = new FileStream("fh_loader.exe", System.IO.FileMode.Create);
                             fs.Write(LocalFHL, 0, LocalFHL.Length);
                             fs.Close();
                         }
@@ -717,7 +719,6 @@ namespace FirehoseFinder
                 if (!ADB_Check()) return;
                 GetADBIDs();
                 waitSahara = true; //Ждём подключения в аварийном режиме
-                sent_issue = true; //Отправляем данные, если их нет в Справочнике
             }
             else radioButton_manualfilter.Checked = true;
         }
@@ -757,7 +758,7 @@ namespace FirehoseFinder
             if (!File.Exists("adb.exe"))
             {
                 byte[] LocalADB = Resources.adb;
-                FileStream fs = new FileStream("adb.exe", FileMode.Create);
+                FileStream fs = new FileStream("adb.exe", System.IO.FileMode.Create);
                 fs.Write(LocalADB, 0, LocalADB.Length);
                 fs.Close();
             }
@@ -823,7 +824,7 @@ namespace FirehoseFinder
             if (!File.Exists("QSaharaServer.exe"))
             {
                 byte[] LocalQSS = Resources.QSaharaServer;
-                FileStream fs = new FileStream("QSaharaServer.exe", FileMode.Create);
+                FileStream fs = new FileStream("QSaharaServer.exe", System.IO.FileMode.Create);
                 fs.Write(LocalQSS, 0, LocalQSS.Length);
                 fs.Close();
             }
@@ -862,30 +863,45 @@ namespace FirehoseFinder
         /// </summary>
         private void CheckIDs()
         {
-            //Проводим две проверки: 1. Все четыре идентификатора Сахары совпадают (жёсткое совпадение) 2. ТМ и Модель совпадают
+            //Проводим две проверки: 
+            //1. Все четыре идентификатора Сахары совпадают (жёсткое совпадение) 
             //Отсюда два различных сообщения (Добавить устройство - совпадений 1 не найдено)
+
+            //2. ТМ и Модель совпадают
+            sent_issue.Insert(0, "1-");
             //(Исправить/добавить название/модель если 1 совпадает, а 2 нет
-            
-            //Если данные со Справочником совпадают, то отменяем отправку
-            sent_issue = false;
-            //Если данные со справочником не совпадают, то готовим пакет для отправки при завершении работы приложения
-            if (sent_issue) Sent_Issue(false);
-            //Или
-            if (sent_issue) Sent_Issue(true);
+            sent_issue.Insert(0, "2-");
+            sent_issue += textBox_hwid.Text + "-" + textBox_oemid.Text + "-" + textBox_modelid + "-" + textBox_oemhash.Text + "-" +
+                label_tm.Text + "-" + label_model.Text;
         }
 
 
         // Пакет идентификаторов для отправки на Гитхаб (создания ишью)
 
-        private void Sent_Issue(bool SaharaIDs)
+        private void Sent_IssueAsync(string SaharaIDs)
         {
-            if (SaharaIDs)
+            //var client = new GitHubClient("https://github.com/hoplik/Firehose-Finder/issues"); // More on GitHubClient can be found in "Getting Started"
+            switch (SaharaIDs.Substring(0, 2))
             {
-                MessageBox.Show("Отправляем ишью! Исправить/добавить название/модель если 1 совпадает, а 2 нет");
-            }
-            else
-            {
-                MessageBox.Show("Отправляем ишью! Добавить устройство - совпадений ID не найдено");
+                case "1-":
+                    var createIssue1 = new NewIssue("Пожалуйста, добавьте в Справочник устройство")
+                    {
+                        Body = "Это автоматически сгенерированное сообщение. " + SaharaIDs
+                    };
+                    //var issue1 = await client.Issue.Create("Firehose-Finder", "Autogen", createIssue1);
+                    MessageBox.Show("Это автоматически сгенерированное сообщение. " + SaharaIDs, "Пожалуйста, добавьте в Справочник устройство");
+                    break;
+                case "2-":
+                    var createIssue2 = new NewIssue("Пожалуйста, добавьте или исправьте в Справочнике назвнаие/модель устройства")
+                    {
+                        Body = "Это автоматически сгенерированное сообщение. " + SaharaIDs
+                    };
+                    //var issue2 = await client.Issue.Create("Firehose-Finder", "Autogen", createIssue2);
+                    MessageBox.Show("Это автоматически сгенерированное сообщение. " + SaharaIDs, "Пожалуйста, добавьте или исправьте в Справочнике назвнаие/модель устройства");
+                    break;
+                default:
+                    MessageBox.Show("Некорректно составлена строка отправки");
+                    break;
             }
         }
 
