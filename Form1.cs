@@ -19,7 +19,7 @@ namespace FirehoseFinder
     {
         Func func = new Func(); // Подключили функции
         Guide guide = new Guide();
-        string sent_issue = string.Empty; //Отправлять на Гитхаб сообщение об изменении Справочника
+        StringBuilder sent_issue = new StringBuilder(string.Empty); //Отправлять на Гитхаб сообщение об изменении Справочника
         bool waitSahara = false; //Ждём ли мы автоперезагрузку с получением ID Sahara
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace FirehoseFinder
             if (File.Exists("commandop03.bin")) File.Delete("commandop03.bin");
             if (File.Exists("commandop07.bin")) File.Delete("commandop07.bin");
             if (File.Exists("port_trace.txt")) File.Delete("port_trace.txt");
-            if (!string.IsNullOrEmpty(sent_issue)) Sent_Issue(sent_issue);
+            if (!string.IsNullOrEmpty(sent_issue.ToString())) Sent_Issue(sent_issue.ToString());
 
         }
 
@@ -894,21 +894,21 @@ namespace FirehoseFinder
             //Переходим на вкладку Работа с файлами
             tabControl1.SelectedTab = tabPage_firehose;
             toolStripStatusLabel_filescompleted.Text = "Все идентификаторы получены, устройство можно отключить и перезагрузить";
+            string logstr = textBox_hwid.Text + "-" + textBox_oemid.Text + "-" + textBox_modelid.Text + "-" + textBox_oemhash.Text + "-" + label_tm.Text + "-" + label_model.Text;
+            if (checkBox_Log.Checked)
+            {
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter(label_log.Text + "\\CPU_Info.log", false)) sw.Write(logstr);
+                }
+                catch (Exception ex)
+                {
+                    toolStripStatusLabel_filescompleted.Text = "Ошибка записи лог-файла " + ex.Message;
+                }
+            }
             if (waitSahara)
             {
-                sent_issue = textBox_hwid.Text + "-" + textBox_oemid.Text + "-" + textBox_modelid.Text + "-" + textBox_oemhash.Text + "-" + label_tm.Text + "-" + label_model.Text;
-                if (checkBox_Log.Checked)
-                {
-                    try
-                    {
-                        using (StreamWriter sw = new StreamWriter(label_log.Text + "\\CPU_Info.log", false)) sw.Write(sent_issue);
-                    }
-                    catch (Exception ex)
-                    {
-                        toolStripStatusLabel_filescompleted.Text = "Ошибка записи лог-файла " + ex.Message;
-                    }
-
-                }
+                sent_issue.Append(logstr);
                 CheckIDs();
             }
             waitSahara = false;
@@ -930,7 +930,7 @@ namespace FirehoseFinder
                 {
                     if (forFilterDataGridView[6, i].Value.ToString().Equals(label_tm.Text) && forFilterDataGridView[7, i].Value.ToString().Equals(label_model.Text)) //Проверяем ТМ и модель на наличие
                     {
-                        sent_issue = string.Empty;
+                        sent_issue.Clear();
                         return;
                     }
                 }
