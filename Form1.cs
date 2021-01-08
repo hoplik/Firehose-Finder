@@ -12,6 +12,7 @@ using SharpAdbClient;
 using System.Threading;
 using Microsoft.Win32;
 using Octokit;
+using System.Threading.Tasks;
 
 namespace FirehoseFinder
 {
@@ -970,5 +971,28 @@ namespace FirehoseFinder
         }
 
         #endregion
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            _ = CreateGitHubIssue("1-Отправляем какой-то текст");
+        }
+
+        async static Task CreateGitHubIssue(string sent_issue)
+        {
+            try
+            {
+                var client = new GitHubClient(new ProductHeaderValue("FirehoseFinder"));
+                var createIssue = new NewIssue("Пожалуйста, добавьте в Справочник устройство")
+                {
+                    Body = "Это автоматически сгенерированное сообщение. " + Environment.NewLine + sent_issue
+                };
+                Issue ti = await client.Issue.Create(owner: "hoplik", name: "Firehose-Finder", newIssue: createIssue);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Типа отправили");
+        }
     }
 }
