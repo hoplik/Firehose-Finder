@@ -966,9 +966,9 @@ namespace FirehoseFinder
         /// <returns></returns>
         async static Task BotSendMes(string send_message)
         {
-            var bot = new TelegramBotClient("1577249282:AAGaiqdzIYGHLZRY2dFY1oXbdt-oXEa-Ig4");
+            var mybot = new TelegramBotClient(bot.user);
             string chat = "@firehosefinder";
-            _ = await bot.SendTextMessageAsync(chat, send_message);
+            _ = await mybot.SendTextMessageAsync(chat, send_message);
         }
         #endregion
     }
