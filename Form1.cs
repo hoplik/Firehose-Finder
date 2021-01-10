@@ -966,22 +966,9 @@ namespace FirehoseFinder
         /// <returns></returns>
         async static Task BotSendMes(string send_message)
         {
-            try
-            {
-                using (StreamReader sr = new StreamReader(Resources.bot))
-                {
-                    char[] bot_token = new Char[(int)sr.BaseStream.Length];
-                    await sr.ReadAsync(bot_token, 0, (int)sr.BaseStream.Length);
-
-                    var mybot = new TelegramBotClient(new String(bot_token));
-                    string chat = "@firehosefinder";
-                    _ = await mybot.SendTextMessageAsync(chat, send_message);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            var mybot = new TelegramBotClient(Resources.bot);
+            string chat = "@firehosefinder";
+            _ = await mybot.SendTextMessageAsync(chat, send_message);
         }
         #endregion
 
