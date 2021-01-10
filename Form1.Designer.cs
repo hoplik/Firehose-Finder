@@ -107,7 +107,6 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.tableAdapterManager = new FirehoseFinder.qcom_phonesDataSetTableAdapters.TableAdapterManager();
             this.forFilterTableAdapter = new FirehoseFinder.qcom_phonesDataSetTableAdapters.ForFilterTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage_guide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.forFilterDataGridView)).BeginInit();
@@ -673,7 +672,6 @@
             // 
             // tabPage_phone
             // 
-            this.tabPage_phone.Controls.Add(this.button1);
             this.tabPage_phone.Controls.Add(this.groupBox2);
             this.tabPage_phone.Controls.Add(this.groupBox3);
             this.tabPage_phone.Controls.Add(this.groupBox1);
@@ -920,16 +918,6 @@
             // 
             this.forFilterTableAdapter.ClearBeforeFill = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(554, 248);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(207, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Тестим отправку ишью";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // Formfhf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1049,7 +1037,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.CheckBox checkBox_Log;
         private System.Windows.Forms.Label label_log;
-        private System.Windows.Forms.Button button1;
     }
 }
 

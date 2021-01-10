@@ -11,7 +11,7 @@ using System.Diagnostics;
 using SharpAdbClient;
 using System.Threading;
 using Microsoft.Win32;
-using Octokit;
+using Telegram.Bot;
 using System.Threading.Tasks;
 
 namespace FirehoseFinder
@@ -102,7 +102,6 @@ namespace FirehoseFinder
             if (File.Exists("commandop07.bin")) File.Delete("commandop07.bin");
             if (File.Exists("port_trace.txt")) File.Delete("port_trace.txt");
             if (!string.IsNullOrEmpty(sent_issue.ToString())) Sent_Issue(sent_issue.ToString());
-
         }
 
         #region Функции команд контролов закладки Работа с файлами
@@ -940,59 +939,37 @@ namespace FirehoseFinder
             else sent_issue.Insert(0, "1-"); //Устройства нет, надо добавить в автосообщение
         }
 
-
-        // Пакет идентификаторов для отправки на Гитхаб (создания ишью)
-
+        /// <summary>
+        /// Пакет идентификаторов для отправки в Телеграмм
+        /// </summary>
+        /// <param name="SaharaIDs">Текст для отправки</param>
         private void Sent_Issue(string SaharaIDs)
         {
-            //var client = new GitHubClient("https://github.com/hoplik/Firehose-Finder/issues"); // More on GitHubClient can be found in "Getting Started"
             switch (SaharaIDs.Substring(0, 2))
             {
                 case "1-":
-                    var createIssue1 = new NewIssue("Пожалуйста, добавьте в Справочник устройство")
-                    {
-                        Body = "Это автоматически сгенерированное сообщение. " + SaharaIDs
-                    };
-                    //var issue1 = await client.Issue.Create("Firehose-Finder", "Autogen", createIssue1);
-                    MessageBox.Show("Это автоматически сгенерированное сообщение. " + SaharaIDs, "Пожалуйста, добавьте в Справочник устройство");
+                    _ = BotSendMes("Пожалуйста, добавьте в Справочник устройство" + Environment.NewLine + SaharaIDs);
                     break;
                 case "2-":
-                    var createIssue2 = new NewIssue("Пожалуйста, добавьте или исправьте в Справочнике назвнаие/модель устройства")
-                    {
-                        Body = "Это автоматически сгенерированное сообщение. " + SaharaIDs
-                    };
-                    //var issue2 = await client.Issue.Create("Firehose-Finder", "Autogen", createIssue2);
-                    MessageBox.Show("Это автоматически сгенерированное сообщение. " + SaharaIDs, "Пожалуйста, добавьте или исправьте в Справочнике назвнаие/модель устройства");
+                    _ = BotSendMes("Пожалуйста, добавьте или исправьте в Справочнике название/модель устройства" + Environment.NewLine + SaharaIDs);
                     break;
                 default:
-                    MessageBox.Show(SaharaIDs, "Некорректно составлена строка отправки");
+                    _ = BotSendMes("Некорректно составлена строка отправки" + Environment.NewLine + SaharaIDs);
                     break;
             }
         }
 
+        /// <summary>
+        /// Асинхронная операция отправки сообщения боту телеграма
+        /// </summary>
+        /// <param name="send_message"></param>
+        /// <returns></returns>
+        async static Task BotSendMes(string send_message)
+        {
+            var bot = new TelegramBotClient("1577249282:AAGaiqdzIYGHLZRY2dFY1oXbdt-oXEa-Ig4");
+            string chat = "@firehosefinder";
+            _ = await bot.SendTextMessageAsync(chat, send_message);
+        }
         #endregion
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            _ = CreateGitHubIssue("1-Отправляем какой-то текст");
-        }
-
-        async static Task CreateGitHubIssue(string sent_issue)
-        {
-            try
-            {
-                var client = new GitHubClient(new ProductHeaderValue("FirehoseFinder"));
-                var createIssue = new NewIssue("Пожалуйста, добавьте в Справочник устройство")
-                {
-                    Body = "Это автоматически сгенерированное сообщение. " + Environment.NewLine + sent_issue
-                };
-                Issue ti = await client.Issue.Create(owner: "hoplik", name: "Firehose-Finder", newIssue: createIssue);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            MessageBox.Show("Типа отправили");
-        }
     }
 }
