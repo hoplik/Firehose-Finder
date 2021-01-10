@@ -71,6 +71,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на 1577249282:AAGaiqdzIYGHLZRY2dFY1oXbdt-oXEa-Ig4.
+        /// </summary>
+        internal static string bot {
+            get {
+                return ResourceManager.GetString("bot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
         internal static byte[] fh_loader {

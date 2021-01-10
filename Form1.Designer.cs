@@ -82,6 +82,7 @@
             this.toolStripProgressBar_filescompleted = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel_vol = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabPage_phone = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button_Sahara_Reset = new System.Windows.Forms.Button();
@@ -672,6 +673,7 @@
             // 
             // tabPage_phone
             // 
+            this.tabPage_phone.Controls.Add(this.button1);
             this.tabPage_phone.Controls.Add(this.groupBox2);
             this.tabPage_phone.Controls.Add(this.groupBox3);
             this.tabPage_phone.Controls.Add(this.groupBox1);
@@ -682,6 +684,16 @@
             this.tabPage_phone.TabIndex = 2;
             this.tabPage_phone.Text = "Работа с устройством";
             this.tabPage_phone.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(565, 260);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox2
             // 
@@ -1037,6 +1049,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.CheckBox checkBox_Log;
         private System.Windows.Forms.Label label_log;
+        private System.Windows.Forms.Button button1;
     }
 }
 

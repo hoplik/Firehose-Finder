@@ -121,6 +121,9 @@
   <data name="adb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adb.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="bot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bot.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
   <data name="fh_loader" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fh_loader.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

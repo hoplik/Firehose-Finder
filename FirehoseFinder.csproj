@@ -121,7 +121,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bot.user" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +181,7 @@
     <Content Include="qcom_phones.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\bot.txt" />
     <None Include="qcom_phonesDataSet.xsc">
       <DependentUpon>qcom_phonesDataSet.xsd</DependentUpon>
     </None>
