@@ -181,7 +181,7 @@
     <Content Include="qcom_phones.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <EmbeddedResource Include="Resources\bot.txt" />
+    <None Include="Resources\bot.txt" />
     <None Include="qcom_phonesDataSet.xsc">
       <DependentUpon>qcom_phonesDataSet.xsd</DependentUpon>
     </None>

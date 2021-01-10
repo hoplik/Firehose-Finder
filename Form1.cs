@@ -1,18 +1,18 @@
-﻿using System;
+﻿using FirehoseFinder.Properties;
+using Microsoft.Win32;
+using SharpAdbClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
-using System.Windows.Forms;
 using System.Text;
-using FirehoseFinder.Properties;
-using System.Diagnostics;
-using SharpAdbClient;
 using System.Threading;
-using Microsoft.Win32;
-using Telegram.Bot;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using Telegram.Bot;
 
 namespace FirehoseFinder
 {
@@ -20,7 +20,6 @@ namespace FirehoseFinder
     {
         Func func = new Func(); // Подключили функции
         Guide guide = new Guide();
-        StringBuilder sent_issue = new StringBuilder(string.Empty); //Отправлять на Гитхаб сообщение об изменении Справочника
         bool waitSahara = false; //Ждём ли мы автоперезагрузку с получением ID Sahara
 
         /// <summary>
@@ -101,7 +100,6 @@ namespace FirehoseFinder
             if (File.Exists("commandop03.bin")) File.Delete("commandop03.bin");
             if (File.Exists("commandop07.bin")) File.Delete("commandop07.bin");
             if (File.Exists("port_trace.txt")) File.Delete("port_trace.txt");
-            if (!string.IsNullOrEmpty(sent_issue.ToString())) Sent_Issue(sent_issue.ToString());
         }
 
         #region Функции команд контролов закладки Работа с файлами
@@ -906,18 +904,14 @@ namespace FirehoseFinder
                     toolStripStatusLabel_filescompleted.Text = "Ошибка записи лог-файла " + ex.Message;
                 }
             }
-            if (waitSahara)
-            {
-                sent_issue.Append(logstr);
-                CheckIDs();
-            }
+            if (waitSahara) _ = CheckIDs(logstr);
             waitSahara = false;
         }
 
         /// <summary>
         /// Проверяем все идентификаторы на наличие в Справочнике.
         /// </summary>
-        private void CheckIDs()
+        async Task CheckIDs(string send_string)
         {
             //Проводим две проверки: 
             //Все четыре идентификатора Сахары совпадают 
@@ -930,33 +924,14 @@ namespace FirehoseFinder
                 {
                     if (forFilterDataGridView[6, i].Value.ToString().Equals(label_tm.Text) && forFilterDataGridView[7, i].Value.ToString().Equals(label_model.Text)) //Проверяем ТМ и модель на наличие
                     {
-                        sent_issue.Clear();
                         return;
                     }
                 }
-                sent_issue.Insert(0, "2-"); //Исправить/добавить название/модель если 1 совпадает, а 2 нет
+                //Исправить/добавить название/модель если 1 совпадает, а 2 нет
+               await BotSendMes("Пожалуйста, добавьте или исправьте в Справочнике название/модель устройства" + Environment.NewLine + send_string);
             }
-            else sent_issue.Insert(0, "1-"); //Устройства нет, надо добавить в автосообщение
-        }
-
-        /// <summary>
-        /// Пакет идентификаторов для отправки в Телеграмм
-        /// </summary>
-        /// <param name="SaharaIDs">Текст для отправки</param>
-        private void Sent_Issue(string SaharaIDs)
-        {
-            switch (SaharaIDs.Substring(0, 2))
-            {
-                case "1-":
-                    _ = BotSendMes("Пожалуйста, добавьте в Справочник устройство" + Environment.NewLine + SaharaIDs);
-                    break;
-                case "2-":
-                    _ = BotSendMes("Пожалуйста, добавьте или исправьте в Справочнике название/модель устройства" + Environment.NewLine + SaharaIDs);
-                    break;
-                default:
-                    _ = BotSendMes("Некорректно составлена строка отправки" + Environment.NewLine + SaharaIDs);
-                    break;
-            }
+            //Устройства нет, надо добавить в автосообщение
+            else await BotSendMes("Пожалуйста, добавьте в Справочник устройство" + Environment.NewLine + send_string);
         }
 
         /// <summary>
@@ -966,15 +941,17 @@ namespace FirehoseFinder
         /// <returns></returns>
         async static Task BotSendMes(string send_message)
         {
-            var mybot = new TelegramBotClient(Resources.bot);
-            string chat = "@firehosefinder";
-            _ = await mybot.SendTextMessageAsync(chat, send_message);
+            try
+            {
+                var mybot = new TelegramBotClient(Resources.bot);
+                string chat = "@firehosefinder";
+                _ = await mybot.SendTextMessageAsync(chat, send_message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         #endregion
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            _ = BotSendMes("Еще разок попробуем");
-        }
     }
 }
