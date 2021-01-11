@@ -70,17 +70,12 @@ namespace FirehoseFinder
         private void Formfhf_Load(object sender, EventArgs e)
         {
             this.forFilterTableAdapter.Fill(this.qcom_phonesDataSet.ForFilter);
-            richTextBox_about.Text = Resources.String_about + Environment.NewLine +
-                "Ссылка на базовую тему <<Общие принципы восстановления загрузчиков на Qualcomm | HS - USB QDLoader 9008, HS - USB Diagnostics 9006, QHUSB_DLOAD и т.д.>>: " +
-                Resources.String_theme_link + Environment.NewLine
-                + Environment.NewLine +
-                "Версия сборки: " + Assembly.GetExecutingAssembly().GetName().Version + Environment.NewLine
+            richTextBox_about.Text = "Версия сборки: " + Assembly.GetExecutingAssembly().GetName().Version + Environment.NewLine
                 + Environment.NewLine +
                 "Часто задаваемые вопросы: " + Environment.NewLine + Resources.String_faq1 +
                 Environment.NewLine + Environment.NewLine + Resources.String_faq2 +
-                Environment.NewLine + Environment.NewLine + Resources.String_faq3 +
-                Environment.NewLine + Environment.NewLine +
-                "Есть вопросы, предложения, замечания? Открывайте ишью (вопрос) на Гитхабе: " + Resources.String_issues;
+                Environment.NewLine + Environment.NewLine + Resources.String_faq3;
+            toolTip1.SetToolTip(button_findIDs, "Выберите папку для сохранения лог-файла с идентификаторами устройства");
             toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
             toolTip1.SetToolTip(button_useSahara_fhf, "При нажатии произойдёт переименование выбранного файла по идентификаторам, указанным в таблице");
             CheckListPorts(); //Вносим в листвью список активных портов
@@ -101,6 +96,358 @@ namespace FirehoseFinder
             if (File.Exists("commandop07.bin")) File.Delete("commandop07.bin");
             if (File.Exists("port_trace.txt")) File.Delete("port_trace.txt");
         }
+
+        #region Функции команд контролов закладки Справочник
+
+        /// <summary>
+        /// Права на идею Справочника
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LinkLabel_copyrights_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://4pda.ru/forum/index.php?showuser=4712700");
+        }
+
+        /// <summary>
+        /// Пользователь вручную выбрал устройство из Справочника для поиска по идентификаторам
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ForFilterDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Заполняем контролы для поиска шланга
+            textBox_hwid.Text = forFilterDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+            textBox_oemid.Text = forFilterDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+            textBox_modelid.Text = forFilterDataGridView.SelectedRows[0].Cells[4].Value.ToString();
+            textBox_oemhash.Text = forFilterDataGridView.SelectedRows[0].Cells[5].Value.ToString();
+            label_tm.Text = forFilterDataGridView.SelectedRows[0].Cells[6].Value.ToString();
+            label_model.Text = forFilterDataGridView.SelectedRows[0].Cells[7].Value.ToString();
+            toolStripStatusLabel_guide.Text = string.Empty;
+            //Переходим на вкладку поиска
+            dataGridView_final.Rows.Clear();
+            tabControl1.SelectedTab = tabPage_firehose;
+        }
+
+        /// <summary>
+        /// Включаем возможность выбора данных из Справочника
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RadioButton_manualfilter_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_manualfilter.Checked)
+            {
+                forFilterDataGridView.Enabled = true;
+                button_findIDs.Enabled = false;
+            }
+        }
+
+        /// <summary>
+        /// Отключаем Справочник
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RadioButton_autofilter_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_autofilter.Checked)
+            {
+                forFilterDataGridView.Enabled = false;
+                button_findIDs.Enabled = true;
+            }
+        }
+
+        /// <summary>
+        /// Набираем данные для фильтра
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ForFilterDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                //Меняем название столбца на значение ячейки для применения фильтра
+                try
+                {
+                    forFilterDataGridView.Columns[e.ColumnIndex].HeaderText = forFilterDataGridView[e.ColumnIndex, e.RowIndex].Value.ToString();
+                    forFilterDataGridView.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.GreenYellow;
+                    toolStripStatusLabel_guide.Text = "Отобрано " + MakeFilter().ToString() + " записей";
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    toolStripStatusLabel_guide.Text = "Кликнули вне области таблицы";
+                }
+            }
+        }
+
+        /// <summary>
+        /// Сбрасываем фильтр с названия столбца
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ForFilterDataGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                //Меняем название столбца на значение ячейки для применения фильтра 
+                forFilterDataGridView.Columns[e.ColumnIndex].HeaderText = forFilterDataGridView.Columns[e.ColumnIndex].DataPropertyName;
+                forFilterDataGridView.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.Empty;
+                toolStripStatusLabel_guide.Text = "Отобрано " + MakeFilter().ToString() + " записей";
+            }
+        }
+
+        /// <summary>
+        /// Автозапуск получения идентификаторов и сверки их со Справочником
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_findIDs_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Нажимая \"Ок\", вы соглашаетесь с автоматическим получением программой идентификаторов устройства." + Environment.NewLine +
+                "Никакая другая (персональная) информация с аппарата скопирована не будет. Аппарат будет автоматически перегружен в аварийный режим при условии, что он поддерживает такой функционал на программном уровне." + Environment.NewLine +
+                "После получения идентификаторов данные будут сверены со Справочником ID. Если полученные в автоматическом режиме данные будут отсутствовать или отличаться от данных Справочника, то разработчикам будет отправлено сообщение о включении/редактировании Справочника после завершения работы программы.",
+                "Подключите устройство в обычном режиме (в режиме зарядки)!", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (dr == DialogResult.OK)
+            {
+                tabControl1.SelectedTab = tabPage_phone;
+                if (listView_comport.CheckedItems.Count > 0)
+                {
+                    GetSaharaIDs();
+                    return;
+                }
+                if (!ADB_Check()) return;
+                GetADBIDs();
+                waitSahara = true; //Ждём подключения в аварийном режиме
+            }
+            else radioButton_manualfilter.Checked = true;
+        }
+
+        /// <summary>
+        /// Если нужно сохранить лог работы автоопределения идентификаторов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckBox_Log_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_Log.Checked)
+            {
+                DialogResult result = folderBrowserDialog1.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    label_log.Text = folderBrowserDialog1.SelectedPath;
+                }
+            }
+            else label_log.Text = string.Empty;
+        }
+
+        #endregion
+
+        #region Функции самостоятельных команд Справочника
+
+        /// <summary>
+        /// Подготавливаем фильтр для грида Справочника
+        /// </summary>
+        private int MakeFilter()
+        {
+            StringBuilder fullfilter = new StringBuilder(string.Empty);
+            int countfilters = 0;
+            foreach (DataGridViewColumn ColoumnHeaderText in forFilterDataGridView.Columns)
+            {
+                if (ColoumnHeaderText.HeaderText != ColoumnHeaderText.DataPropertyName)
+                {
+                    //Применяем фильтр
+                    if (countfilters > 0) fullfilter.Append(" AND ");
+                    fullfilter.Append(string.Format("{0} LIKE '{1}'", ColoumnHeaderText.DataPropertyName, ColoumnHeaderText.HeaderText));
+                    countfilters++;
+                }
+            }
+            forFilterBindingSource.Filter = fullfilter.ToString();
+            return forFilterDataGridView.Rows.Count;
+        }
+
+        /// <summary>
+        /// Проверяем корректность подключения устройства через запуск ADB
+        /// </summary>
+        /// <returns>true - всё хорошо, false - есть ошибки</returns>
+        private bool ADB_Check()
+        {
+            //Создаём ADB из ресурсов в рабочую папку, если его там ещё нет
+            if (!File.Exists("adb.exe"))
+            {
+                byte[] LocalADB = Resources.adb;
+                FileStream fs = new FileStream("adb.exe", System.IO.FileMode.Create);
+                fs.Write(LocalADB, 0, LocalADB.Length);
+                fs.Close();
+            }
+            //Стартуем сервер
+            textBox_ADB.AppendText("Запускаем сервер ADB ..." + Environment.NewLine);
+            AdbServer server = new AdbServer();
+            var result = server.StartServer("adb.exe", restartServerIfNewer: false);
+            //Подключаем клиента (устройства)
+            AdbClient client = new AdbClient();
+            List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
+            textBox_ADB.AppendText(result.ToString() + Environment.NewLine);
+            button_ADB_start.Enabled = false;
+            foreach (var device in devices) textBox_ADB.AppendText("Подключено устройство: " + device + Environment.NewLine);
+            if (devices.Count > 1)
+            {
+                textBox_ADB.AppendText("Подключено более одного андройд-устройства. Пожалуйста, оставьте подключённым только то устройство, с которым планируется дальнейшая работа." + Environment.NewLine);
+                return false;
+            }
+            else if (devices.Count == 0)
+            {
+                textBox_ADB.AppendText("Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли \"Отладка по USB\" в разделе \"Система\" - \"Для разработчиков\"" + Environment.NewLine);
+                return false;
+            }
+            else
+            {
+                comboBox_ADB_commands.Enabled = true;
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// Получаем пакетно идентификаторы и сверяем их со справочником
+        /// </summary>
+        private void GetADBIDs()
+        {
+            AdbClient client = new AdbClient();
+            var receiver = new ConsoleOutputReceiver();
+            List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
+            var device = devices[0];
+            List<string> adbcommands = new List<string>() {
+                "getprop | grep ro.product.manufacturer",
+                "getprop | grep ro.product.model"};
+            string[] results = new string[adbcommands.Count];
+            try
+            {
+                for (int i = 0; i < adbcommands.Count; i++)
+                {
+                    client.ExecuteRemoteCommand(adbcommands[i], device, receiver);
+                    string[] adbstr = receiver.ToString().Split('[');
+                    foreach (string item in adbstr)
+                    {
+                        if (!item.StartsWith("ro.product.m"))
+                        {
+                            if (item.Contains("]")) results[i] = item.Remove(item.IndexOf(']'));
+                        }
+                    }
+                    if (results[i] == null) results[i] = string.Empty;
+                    receiver.Flush();
+                }
+                label_tm.Text = results[0];
+                label_model.Text = results[1];
+                textBox_ADB.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
+                client.Reboot("edl", device);
+            }
+            catch (SharpAdbClient.Exceptions.AdbException ex)
+            {
+                textBox_ADB.AppendText(ex.AdbError + Environment.NewLine);
+            }
+            Thread.Sleep(1000);
+            StopAdb();
+        }
+
+        /// <summary>
+        /// Получаем идентификаторы из Сахары
+        /// </summary>
+        private void GetSaharaIDs()
+        {
+            //Создаём SaharaServer из ресурсов в рабочую папку, если его там ещё нет
+            if (!File.Exists("QSaharaServer.exe"))
+            {
+                byte[] LocalQSS = Resources.QSaharaServer;
+                FileStream fs = new FileStream("QSaharaServer.exe", System.IO.FileMode.Create);
+                fs.Write(LocalQSS, 0, LocalQSS.Length);
+                fs.Close();
+            }
+            //Выполняем запрос HWID-OEMID (command02)
+            Process process = new Process();
+            process.StartInfo.FileName = "QSaharaServer.exe";
+            process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 2 -c 3 -c 7";
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.Start();
+            StreamReader reader = process.StandardOutput;
+            string output = reader.ReadToEnd();
+            textBox_ADB.AppendText(output);
+            process.WaitForExit();
+            process.Close();
+            //Обрабатываем запрос идентификаторов
+            string HWOEMIDs = func.SaharaCommand2();
+            if (HWOEMIDs.Length == 16)
+            {
+                textBox_hwid.Text = HWOEMIDs.Substring(0, 8);
+                textBox_oemid.Text = HWOEMIDs.Substring(8, 4);
+                textBox_modelid.Text = HWOEMIDs.Substring(12, 4);
+            }
+            textBox_oemhash.Text = func.SaharaCommand3();
+            label_SW_Ver.Text = func.SaharaCommand7();
+            //Переходим на вкладку Работа с файлами
+            tabControl1.SelectedTab = tabPage_firehose;
+            toolStripStatusLabel_filescompleted.Text = "Все идентификаторы получены, устройство можно отключить и перезагрузить";
+            string logstr = textBox_hwid.Text + "-" + textBox_oemid.Text + "-" + textBox_modelid.Text + "-" + textBox_oemhash.Text + "-" + label_tm.Text + "-" + label_model.Text;
+            if (checkBox_Log.Checked)
+            {
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter(label_log.Text + "\\CPU_Info.log", false)) sw.Write(logstr);
+                }
+                catch (Exception ex)
+                {
+                    toolStripStatusLabel_filescompleted.Text = "Ошибка записи лог-файла " + ex.Message;
+                }
+            }
+            if (waitSahara) _ = CheckIDs(logstr);
+            waitSahara = false;
+        }
+
+        /// <summary>
+        /// Проверяем все идентификаторы на наличие в Справочнике.
+        /// </summary>
+        async Task CheckIDs(string send_string)
+        {
+            //Проводим две проверки: 
+            //Все четыре идентификатора Сахары совпадают 
+            forFilterBindingSource.Filter = string.Format(
+                "HWID LIKE '{0}' AND OEMID LIKE '{1}' AND MODELID LIKE '{2}' AND HASHID LIKE '{3}'",
+                textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text, textBox_oemhash.Text);
+            if (forFilterDataGridView.Rows.Count > 0) //Есть устройство с такими идентификаторами
+            {
+                for (int i = 0; i < forFilterDataGridView.Rows.Count; i++)
+                {
+                    if (forFilterDataGridView[6, i].Value.ToString().Equals(label_tm.Text) && forFilterDataGridView[7, i].Value.ToString().Equals(label_model.Text)) //Проверяем ТМ и модель на наличие
+                    {
+                        return;
+                    }
+                }
+                //Исправить/добавить название/модель если 1 совпадает, а 2 нет
+                await BotSendMes("Пожалуйста, добавьте или исправьте в Справочнике название/модель устройства" + Environment.NewLine + send_string);
+            }
+            //Устройства нет, надо добавить в автосообщение
+            else await BotSendMes("Пожалуйста, добавьте в Справочник устройство" + Environment.NewLine + send_string);
+        }
+
+        /// <summary>
+        /// Асинхронная операция отправки сообщения боту телеграма
+        /// </summary>
+        /// <param name="send_message"></param>
+        /// <returns></returns>
+        async static Task BotSendMes(string send_message)
+        {
+            try
+            {
+                var mybot = new TelegramBotClient(Resources.bot);
+                string chat = "@firehosefinder";
+                _ = await mybot.SendTextMessageAsync(chat, send_message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
 
         #region Функции команд контролов закладки Работа с файлами
 
@@ -602,355 +949,26 @@ namespace FirehoseFinder
         }
         #endregion
 
-        #region Функции команд контролов закладки Справочник
+        #region Функции команд контролов закладки О программе
 
         /// <summary>
-        /// Права на идею Справочника
+        /// Переход по ссылке на 4PDA
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void LinkLabel_copyrights_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabel_about_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://4pda.ru/forum/index.php?showuser=4712700");
+            Process.Start("http://4pda.ru/forum/index.php?showtopic=643084");
         }
 
         /// <summary>
-        /// Пользователь вручную выбрал устройство из Справочника для поиска по идентификаторам
+        /// Переход по ссылке в Телеграмм-канал (либо открытие приложения)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ForFilterDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void LinkLabel_telega_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //Заполняем контролы для поиска шланга
-            textBox_hwid.Text = forFilterDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            textBox_oemid.Text = forFilterDataGridView.SelectedRows[0].Cells[2].Value.ToString();
-            textBox_modelid.Text = forFilterDataGridView.SelectedRows[0].Cells[4].Value.ToString();
-            textBox_oemhash.Text = forFilterDataGridView.SelectedRows[0].Cells[5].Value.ToString();
-            label_tm.Text = forFilterDataGridView.SelectedRows[0].Cells[6].Value.ToString();
-            label_model.Text = forFilterDataGridView.SelectedRows[0].Cells[7].Value.ToString();
-            toolStripStatusLabel_guide.Text = string.Empty;
-            //Переходим на вкладку поиска
-            dataGridView_final.Rows.Clear();
-            tabControl1.SelectedTab = tabPage_firehose;
-        }
-
-        /// <summary>
-        /// Включаем возможность выбора данных из Справочника
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void RadioButton_manualfilter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton_manualfilter.Checked)
-            {
-                forFilterDataGridView.Enabled = true;
-                button_findIDs.Enabled = false;
-            }
-        }
-
-        /// <summary>
-        /// Отключаем Справочник
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void RadioButton_autofilter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton_autofilter.Checked)
-            {
-                forFilterDataGridView.Enabled = false;
-                button_findIDs.Enabled = true;
-            }
-        }
-
-        /// <summary>
-        /// Набираем данные для фильтра
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ForFilterDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                //Меняем название столбца на значение ячейки для применения фильтра
-                try
-                {
-                    forFilterDataGridView.Columns[e.ColumnIndex].HeaderText = forFilterDataGridView[e.ColumnIndex, e.RowIndex].Value.ToString();
-                    forFilterDataGridView.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.GreenYellow;
-                    toolStripStatusLabel_guide.Text = "Отобрано " + MakeFilter().ToString() + " записей";
-                }
-                catch (ArgumentOutOfRangeException)
-                {
-                    toolStripStatusLabel_guide.Text = "Кликнули вне области таблицы";
-                }
-            }
-        }
-
-        /// <summary>
-        /// Сбрасываем фильтр с названия столбца
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ForFilterDataGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                //Меняем название столбца на значение ячейки для применения фильтра 
-                forFilterDataGridView.Columns[e.ColumnIndex].HeaderText = forFilterDataGridView.Columns[e.ColumnIndex].DataPropertyName;
-                forFilterDataGridView.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.Empty;
-                toolStripStatusLabel_guide.Text = "Отобрано " + MakeFilter().ToString() + " записей";
-            }
-        }
-
-        /// <summary>
-        /// Автозапуск получения идентификаторов и сверки их со Справочником
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Button_findIDs_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Нажимая \"Ок\", вы соглашаетесь с автоматическим получением программой идентификаторов устройства." + Environment.NewLine +
-                "Никакая другая (персональная) информация с аппарата скопирована не будет. Аппарат будет автоматически перегружен в аварийный режим при условии, что он поддерживает такой функционал на программном уровне." + Environment.NewLine +
-                "После получения идентификаторов данные будут сверены со Справочником ID. Если полученные в автоматическом режиме данные будут отсутствовать или отличаться от данных Справочника, то разработчикам будет отправлено сообщение о включении/редактировании Справочника после завершения работы программы.",
-                "Подключите устройство в обычном режиме (в режиме зарядки)!", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-            if (dr == DialogResult.OK)
-            {
-                tabControl1.SelectedTab = tabPage_phone;
-                if (listView_comport.CheckedItems.Count > 0)
-                {
-                    GetSaharaIDs();
-                    return;
-                }
-                if (!ADB_Check()) return;
-                GetADBIDs();
-                waitSahara = true; //Ждём подключения в аварийном режиме
-            }
-            else radioButton_manualfilter.Checked = true;
-        }
-
-        /// <summary>
-        /// Если нужно сохранить лог работы автоопределения идентификаторов
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CheckBox_Log_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox_Log.Checked)
-            {
-                DialogResult result = folderBrowserDialog1.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    label_log.Text = folderBrowserDialog1.SelectedPath;
-                }
-            }
-            else label_log.Text = string.Empty;
-        }
-
-        #endregion
-
-        #region Функции самостоятельных команд Справочника
-
-        /// <summary>
-        /// Подготавливаем фильтр для грида Справочника
-        /// </summary>
-        private int MakeFilter()
-        {
-            StringBuilder fullfilter = new StringBuilder(string.Empty);
-            int countfilters = 0;
-            foreach (DataGridViewColumn ColoumnHeaderText in forFilterDataGridView.Columns)
-            {
-                if (ColoumnHeaderText.HeaderText != ColoumnHeaderText.DataPropertyName)
-                {
-                    //Применяем фильтр
-                    if (countfilters > 0) fullfilter.Append(" AND ");
-                    fullfilter.Append(string.Format("{0} LIKE '{1}'", ColoumnHeaderText.DataPropertyName, ColoumnHeaderText.HeaderText));
-                    countfilters++;
-                }
-            }
-            forFilterBindingSource.Filter = fullfilter.ToString();
-            return forFilterDataGridView.Rows.Count;
-        }
-
-        /// <summary>
-        /// Проверяем корректность подключения устройства через запуск ADB
-        /// </summary>
-        /// <returns>true - всё хорошо, false - есть ошибки</returns>
-        private bool ADB_Check()
-        {
-            //Создаём ADB из ресурсов в рабочую папку, если его там ещё нет
-            if (!File.Exists("adb.exe"))
-            {
-                byte[] LocalADB = Resources.adb;
-                FileStream fs = new FileStream("adb.exe", System.IO.FileMode.Create);
-                fs.Write(LocalADB, 0, LocalADB.Length);
-                fs.Close();
-            }
-            //Стартуем сервер
-            textBox_ADB.AppendText("Запускаем сервер ADB ..." + Environment.NewLine);
-            AdbServer server = new AdbServer();
-            var result = server.StartServer("adb.exe", restartServerIfNewer: false);
-            //Подключаем клиента (устройства)
-            AdbClient client = new AdbClient();
-            List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
-            textBox_ADB.AppendText(result.ToString() + Environment.NewLine);
-            button_ADB_start.Enabled = false;
-            foreach (var device in devices) textBox_ADB.AppendText("Подключено устройство: " + device + Environment.NewLine);
-            if (devices.Count > 1)
-            {
-                textBox_ADB.AppendText("Подключено более одного андройд-устройства. Пожалуйста, оставьте подключённым только то устройство, с которым планируется дальнейшая работа." + Environment.NewLine);
-                return false;
-            }
-            else if (devices.Count == 0)
-            {
-                textBox_ADB.AppendText("Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли \"Отладка по USB\" в разделе \"Система\" - \"Для разработчиков\"" + Environment.NewLine);
-                return false;
-            }
-            else
-            {
-                comboBox_ADB_commands.Enabled = true;
-                return true;
-            }
-        }
-
-        /// <summary>
-        /// Получаем пакетно идентификаторы и сверяем их со справочником
-        /// </summary>
-        private void GetADBIDs()
-        {
-            AdbClient client = new AdbClient();
-            var receiver = new ConsoleOutputReceiver();
-            List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
-            var device = devices[0];
-            List<string> adbcommands = new List<string>() {
-                "getprop | grep ro.product.manufacturer",
-                "getprop | grep ro.product.model"};
-            string[] results = new string[adbcommands.Count];
-            try
-            {
-                for (int i = 0; i < adbcommands.Count; i++)
-                {
-                    client.ExecuteRemoteCommand(adbcommands[i], device, receiver);
-                    string[] adbstr = receiver.ToString().Split('[');
-                    foreach (string item in adbstr)
-                    {
-                        if (!item.StartsWith("ro.product.m"))
-                        {
-                            if (item.Contains("]")) results[i] = item.Remove(item.IndexOf(']'));
-                        }
-                    }
-                    if (results[i] == null) results[i] = string.Empty;
-                    receiver.Flush();
-                }
-                label_tm.Text = results[0];
-                label_model.Text = results[1];
-                textBox_ADB.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
-                client.Reboot("edl", device);
-            }
-            catch (SharpAdbClient.Exceptions.AdbException ex)
-            {
-                textBox_ADB.AppendText(ex.AdbError + Environment.NewLine);
-            }
-            Thread.Sleep(1000);
-            StopAdb();
-        }
-
-        /// <summary>
-        /// Получаем идентификаторы из Сахары
-        /// </summary>
-        private void GetSaharaIDs()
-        {
-            //Создаём SaharaServer из ресурсов в рабочую папку, если его там ещё нет
-            if (!File.Exists("QSaharaServer.exe"))
-            {
-                byte[] LocalQSS = Resources.QSaharaServer;
-                FileStream fs = new FileStream("QSaharaServer.exe", System.IO.FileMode.Create);
-                fs.Write(LocalQSS, 0, LocalQSS.Length);
-                fs.Close();
-            }
-            //Выполняем запрос HWID-OEMID (command02)
-            Process process = new Process();
-            process.StartInfo.FileName = "QSaharaServer.exe";
-            process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 2 -c 3 -c 7";
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.Start();
-            StreamReader reader = process.StandardOutput;
-            string output = reader.ReadToEnd();
-            textBox_ADB.AppendText(output);
-            process.WaitForExit();
-            process.Close();
-            //Обрабатываем запрос идентификаторов
-            string HWOEMIDs = func.SaharaCommand2();
-            if (HWOEMIDs.Length == 16)
-            {
-                textBox_hwid.Text = HWOEMIDs.Substring(0, 8);
-                textBox_oemid.Text = HWOEMIDs.Substring(8, 4);
-                textBox_modelid.Text = HWOEMIDs.Substring(12, 4);
-            }
-            textBox_oemhash.Text = func.SaharaCommand3();
-            label_SW_Ver.Text = func.SaharaCommand7();
-            //Переходим на вкладку Работа с файлами
-            tabControl1.SelectedTab = tabPage_firehose;
-            toolStripStatusLabel_filescompleted.Text = "Все идентификаторы получены, устройство можно отключить и перезагрузить";
-            string logstr = textBox_hwid.Text + "-" + textBox_oemid.Text + "-" + textBox_modelid.Text + "-" + textBox_oemhash.Text + "-" + label_tm.Text + "-" + label_model.Text;
-            if (checkBox_Log.Checked)
-            {
-                try
-                {
-                    using (StreamWriter sw = new StreamWriter(label_log.Text + "\\CPU_Info.log", false)) sw.Write(logstr);
-                }
-                catch (Exception ex)
-                {
-                    toolStripStatusLabel_filescompleted.Text = "Ошибка записи лог-файла " + ex.Message;
-                }
-            }
-            if (waitSahara) _ = CheckIDs(logstr);
-            waitSahara = false;
-        }
-
-        /// <summary>
-        /// Проверяем все идентификаторы на наличие в Справочнике.
-        /// </summary>
-        async Task CheckIDs(string send_string)
-        {
-            //Проводим две проверки: 
-            //Все четыре идентификатора Сахары совпадают 
-            forFilterBindingSource.Filter = string.Format(
-                "HWID LIKE '{0}' AND OEMID LIKE '{1}' AND MODELID LIKE '{2}' AND HASHID LIKE '{3}'",
-                textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text, textBox_oemhash.Text);
-            if (forFilterDataGridView.Rows.Count > 0) //Есть устройство с такими идентификаторами
-            {
-                for (int i = 0; i < forFilterDataGridView.Rows.Count; i++)
-                {
-                    if (forFilterDataGridView[6, i].Value.ToString().Equals(label_tm.Text) && forFilterDataGridView[7, i].Value.ToString().Equals(label_model.Text)) //Проверяем ТМ и модель на наличие
-                    {
-                        return;
-                    }
-                }
-                //Исправить/добавить название/модель если 1 совпадает, а 2 нет
-               await BotSendMes("Пожалуйста, добавьте или исправьте в Справочнике название/модель устройства" + Environment.NewLine + send_string);
-            }
-            //Устройства нет, надо добавить в автосообщение
-            else await BotSendMes("Пожалуйста, добавьте в Справочник устройство" + Environment.NewLine + send_string);
-        }
-
-        /// <summary>
-        /// Асинхронная операция отправки сообщения боту телеграма
-        /// </summary>
-        /// <param name="send_message"></param>
-        /// <returns></returns>
-        async static Task BotSendMes(string send_message)
-        {
-            try
-            {
-                var mybot = new TelegramBotClient(Resources.bot);
-                string chat = "@firehosefinder";
-                _ = await mybot.SendTextMessageAsync(chat, send_message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            Process.Start("https://t.me/firehosefinder");
         }
         #endregion
     }

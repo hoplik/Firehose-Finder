@@ -101,6 +101,8 @@
             this.textBox_ADB = new System.Windows.Forms.TextBox();
             this.tabPage_about = new System.Windows.Forms.TabPage();
             this.richTextBox_about = new System.Windows.Forms.RichTextBox();
+            this.linkLabel_telega = new System.Windows.Forms.LinkLabel();
+            this.linkLabel_about = new System.Windows.Forms.LinkLabel();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -868,6 +870,8 @@
             // tabPage_about
             // 
             this.tabPage_about.Controls.Add(this.richTextBox_about);
+            this.tabPage_about.Controls.Add(this.linkLabel_telega);
+            this.tabPage_about.Controls.Add(this.linkLabel_about);
             this.tabPage_about.Location = new System.Drawing.Point(4, 25);
             this.tabPage_about.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage_about.Name = "tabPage_about";
@@ -880,12 +884,41 @@
             // richTextBox_about
             // 
             this.richTextBox_about.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox_about.Location = new System.Drawing.Point(3, 2);
+            this.richTextBox_about.Location = new System.Drawing.Point(3, 51);
             this.richTextBox_about.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox_about.Name = "richTextBox_about";
-            this.richTextBox_about.Size = new System.Drawing.Size(1299, 571);
+            this.richTextBox_about.Size = new System.Drawing.Size(1299, 487);
             this.richTextBox_about.TabIndex = 1;
             this.richTextBox_about.Text = "";
+            // 
+            // linkLabel_telega
+            // 
+            this.linkLabel_telega.AutoSize = true;
+            this.linkLabel_telega.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.linkLabel_telega.LinkArea = new System.Windows.Forms.LinkArea(89, 28);
+            this.linkLabel_telega.Location = new System.Drawing.Point(3, 538);
+            this.linkLabel_telega.Name = "linkLabel_telega";
+            this.linkLabel_telega.Size = new System.Drawing.Size(603, 35);
+            this.linkLabel_telega.TabIndex = 3;
+            this.linkLabel_telega.TabStop = true;
+            this.linkLabel_telega.Text = "Есть вопросы, предложения, замечания? Пишите в Телеграмм-канал \"Firehose-Finder i" +
+    "ssues\":\r\nhttps://t.me/firehosefinder";
+            this.linkLabel_telega.UseCompatibleTextRendering = true;
+            this.linkLabel_telega.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel_telega_LinkClicked);
+            // 
+            // linkLabel_about
+            // 
+            this.linkLabel_about.AutoSize = true;
+            this.linkLabel_about.Dock = System.Windows.Forms.DockStyle.Top;
+            this.linkLabel_about.LinkArea = new System.Windows.Forms.LinkArea(245, 48);
+            this.linkLabel_about.Location = new System.Drawing.Point(3, 2);
+            this.linkLabel_about.Name = "linkLabel_about";
+            this.linkLabel_about.Size = new System.Drawing.Size(1070, 49);
+            this.linkLabel_about.TabIndex = 2;
+            this.linkLabel_about.TabStop = true;
+            this.linkLabel_about.Text = resources.GetString("linkLabel_about.Text");
+            this.linkLabel_about.UseCompatibleTextRendering = true;
+            this.linkLabel_about.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel_about_LinkClicked);
             // 
             // backgroundWorker_Read_File
             // 
@@ -954,6 +987,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage_about.ResumeLayout(false);
+            this.tabPage_about.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1037,6 +1071,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.CheckBox checkBox_Log;
         private System.Windows.Forms.Label label_log;
+        private System.Windows.Forms.LinkLabel linkLabel_about;
+        private System.Windows.Forms.LinkLabel linkLabel_telega;
     }
 }
 

@@ -100,15 +100,6 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Однокнопочная программа с GUI для подбора программеров (firehose) для телефонов на базе процессоров от Qualcomm..
-        /// </summary>
-        internal static string String_about {
-            get {
-                return ResourceManager.GetString("String_about", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на 1. q. Как формируется рейтинг файла в папке с программерами? a. Файлы с рейтингом 0 не являются ELF файлами и в них не осуществляется поиск сертификатов. Рейтинг 1 у файла ELF (ELE). Это могут быть любые эльф-файлы (программеры, xbl и т.п.). К рейтингу добавляется 2, если SWID (идентификатор программного обеспечения) начинается с 3 (загрузчик для аварийного режима), ещё +1 балл к рейтингу, если совпадают идентификаторы у модели телефона, указанного в поле поиска, и в сертификате программера. Также к рейтинг [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string String_faq1 {
@@ -132,24 +123,6 @@ namespace FirehoseFinder.Properties {
         internal static string String_faq3 {
             get {
                 return ResourceManager.GetString("String_faq3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на https://github.com/hoplik/Firehose-Finder/issues.
-        /// </summary>
-        internal static string String_issues {
-            get {
-                return ResourceManager.GetString("String_issues", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на http://4pda.ru/forum/index.php?showtopic=643084.
-        /// </summary>
-        internal static string String_theme_link {
-            get {
-                return ResourceManager.GetString("String_theme_link", resourceCulture);
             }
         }
     }
