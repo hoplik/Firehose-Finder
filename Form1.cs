@@ -88,13 +88,19 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Formfhf_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (File.Exists("adb.exe")) File.Delete("adb.exe");
-            if (File.Exists("QSaharaServer.exe")) File.Delete("QSaharaServer.exe");
-            if (File.Exists("fh_loader.exe")) File.Delete("fh_loader.exe");
-            if (File.Exists("commandop02.bin")) File.Delete("commandop02.bin");
-            if (File.Exists("commandop03.bin")) File.Delete("commandop03.bin");
-            if (File.Exists("commandop07.bin")) File.Delete("commandop07.bin");
-            if (File.Exists("port_trace.txt")) File.Delete("port_trace.txt");
+            try
+            {
+                if (File.Exists("adb.exe")) File.Delete("adb.exe");
+                if (File.Exists("QSaharaServer.exe")) File.Delete("QSaharaServer.exe");
+                if (File.Exists("fh_loader.exe")) File.Delete("fh_loader.exe");
+                if (File.Exists("commandop02.bin")) File.Delete("commandop02.bin");
+                if (File.Exists("commandop03.bin")) File.Delete("commandop03.bin");
+                if (File.Exists("commandop07.bin")) File.Delete("commandop07.bin");
+                if (File.Exists("port_trace.txt")) File.Delete("port_trace.txt");
+            }
+            catch (Exception)
+            {
+            }
         }
 
         #region Функции команд контролов закладки Справочник

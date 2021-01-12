@@ -31,8 +31,8 @@
     <ProductName>Firehose-Finder</ProductName>
     <PublisherName>hoplik</PublisherName>
     <MinimumRequiredVersion>1.0.1.0</MinimumRequiredVersion>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>2.0.2.2</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>2.0.3.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -182,6 +182,9 @@
     <Content Include="qcom_phones.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\fh_loader.exe" />
+    <None Include="Resources\QSaharaServer.exe" />
+    <None Include="Resources\adb.exe" />
     <None Include="Resources\bot.txt" />
     <None Include="qcom_phonesDataSet.xsc">
       <DependentUpon>qcom_phonesDataSet.xsd</DependentUpon>
@@ -194,9 +197,6 @@
     <None Include="qcom_phonesDataSet.xss">
       <DependentUpon>qcom_phonesDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Resources\fh_loader.exe" />
-    <None Include="Resources\QSaharaServer.exe" />
-    <None Include="Resources\adb.exe" />
   </ItemGroup>
   <ItemGroup>
     <PublishFile Include="qcom_phones.accdb">
