@@ -46,7 +46,6 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.forFilterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qcom_phonesDataSet = new FirehoseFinder.qcom_phonesDataSet();
-            this.linkLabel_copyrights = new System.Windows.Forms.LinkLabel();
             this.radioButton_manualfilter = new System.Windows.Forms.RadioButton();
             this.radioButton_autofilter = new System.Windows.Forms.RadioButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -147,7 +146,6 @@
             this.tabPage_guide.Controls.Add(this.checkBox_Log);
             this.tabPage_guide.Controls.Add(this.button_findIDs);
             this.tabPage_guide.Controls.Add(this.forFilterDataGridView);
-            this.tabPage_guide.Controls.Add(this.linkLabel_copyrights);
             this.tabPage_guide.Controls.Add(this.radioButton_manualfilter);
             this.tabPage_guide.Controls.Add(this.radioButton_autofilter);
             this.tabPage_guide.Controls.Add(this.statusStrip1);
@@ -208,7 +206,7 @@
             this.forFilterDataGridView.DataSource = this.forFilterBindingSource;
             this.forFilterDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.forFilterDataGridView.Enabled = false;
-            this.forFilterDataGridView.Location = new System.Drawing.Point(3, 84);
+            this.forFilterDataGridView.Location = new System.Drawing.Point(3, 104);
             this.forFilterDataGridView.MultiSelect = false;
             this.forFilterDataGridView.Name = "forFilterDataGridView";
             this.forFilterDataGridView.ReadOnly = true;
@@ -303,21 +301,6 @@
             // 
             this.qcom_phonesDataSet.DataSetName = "qcom_phonesDataSet";
             this.qcom_phonesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // linkLabel_copyrights
-            // 
-            this.linkLabel_copyrights.AutoSize = true;
-            this.linkLabel_copyrights.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.linkLabel_copyrights.LinkArea = new System.Windows.Forms.LinkArea(95, 10);
-            this.linkLabel_copyrights.Location = new System.Drawing.Point(3, 526);
-            this.linkLabel_copyrights.Name = "linkLabel_copyrights";
-            this.linkLabel_copyrights.Size = new System.Drawing.Size(1054, 20);
-            this.linkLabel_copyrights.TabIndex = 3;
-            this.linkLabel_copyrights.TabStop = true;
-            this.linkLabel_copyrights.Text = "(с) Данные по идентификаторам для Справочника любезно предоставлены пользователем" +
-    " форума 4PDA \"Саша Серый\". Благодарность за помощь = \"+\" к репутации.";
-            this.linkLabel_copyrights.UseCompatibleTextRendering = true;
-            this.linkLabel_copyrights.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel_copyrights_LinkClicked);
             // 
             // radioButton_manualfilter
             // 
@@ -1045,7 +1028,6 @@
         private System.Windows.Forms.RadioButton radioButton_autofilter;
         private qcom_phonesDataSet qcom_phonesDataSet;
         private qcom_phonesDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.LinkLabel linkLabel_copyrights;
         private System.Windows.Forms.Label label_tm_model;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_guide;
