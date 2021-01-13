@@ -446,6 +446,24 @@ FROM     ForFilter</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DoubleCPUTableAdapter" GeneratorDataComponentClassName="DoubleCPUTableAdapter" Name="DoubleCPU" UserDataComponentName="DoubleCPUTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="qcom_phonesConnectionString (Settings)" DbObjectName="DoubleCPU" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DoubleCPU.*
+FROM     DoubleCPU</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ShortName" DataSetColumn="ShortName" />
+              <Mapping SourceColumn="HWID" DataSetColumn="HWID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -454,7 +472,7 @@ FROM     ForFilter</CommandText>
   <xs:element name="qcom_phonesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="qcom_phonesDataSet" msprop:Generator_UserDSName="qcom_phonesDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="CPUs" msprop:Generator_TableClassName="CPUsDataTable" msprop:Generator_TableVarName="tableCPUs" msprop:Generator_TablePropName="CPUs" msprop:Generator_RowDeletingName="CPUsRowDeleting" msprop:Generator_RowChangingName="CPUsRowChanging" msprop:Generator_RowEvHandlerName="CPUsRowChangeEventHandler" msprop:Generator_RowDeletedName="CPUsRowDeleted" msprop:Generator_UserTableName="CPUs" msprop:Generator_RowChangedName="CPUsRowChanged" msprop:Generator_RowEvArgName="CPUsRowChangeEvent" msprop:Generator_RowClassName="CPUsRow">
+        <xs:element name="CPUs" msprop:Generator_TableClassName="CPUsDataTable" msprop:Generator_TableVarName="tableCPUs" msprop:Generator_RowChangedName="CPUsRowChanged" msprop:Generator_TablePropName="CPUs" msprop:Generator_RowDeletingName="CPUsRowDeleting" msprop:Generator_RowChangingName="CPUsRowChanging" msprop:Generator_RowEvHandlerName="CPUsRowChangeEventHandler" msprop:Generator_RowDeletedName="CPUsRowDeleted" msprop:Generator_RowClassName="CPUsRow" msprop:Generator_UserTableName="CPUs" msprop:Generator_RowEvArgName="CPUsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ShortName" msprop:Generator_ColumnVarNameInTable="columnShortName" msprop:Generator_ColumnPropNameInRow="ShortName" msprop:Generator_ColumnPropNameInTable="ShortNameColumn" msprop:Generator_UserColumnName="ShortName">
@@ -474,7 +492,7 @@ FROM     ForFilter</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="FullDB" msprop:Generator_TableClassName="FullDBDataTable" msprop:Generator_TableVarName="tableFullDB" msprop:Generator_TablePropName="FullDB" msprop:Generator_RowDeletingName="FullDBRowDeleting" msprop:Generator_RowChangingName="FullDBRowChanging" msprop:Generator_RowEvHandlerName="FullDBRowChangeEventHandler" msprop:Generator_RowDeletedName="FullDBRowDeleted" msprop:Generator_UserTableName="FullDB" msprop:Generator_RowChangedName="FullDBRowChanged" msprop:Generator_RowEvArgName="FullDBRowChangeEvent" msprop:Generator_RowClassName="FullDBRow">
+        <xs:element name="FullDB" msprop:Generator_TableClassName="FullDBDataTable" msprop:Generator_TableVarName="tableFullDB" msprop:Generator_RowChangedName="FullDBRowChanged" msprop:Generator_TablePropName="FullDB" msprop:Generator_RowDeletingName="FullDBRowDeleting" msprop:Generator_RowChangingName="FullDBRowChanging" msprop:Generator_RowEvHandlerName="FullDBRowChangeEventHandler" msprop:Generator_RowDeletedName="FullDBRowDeleted" msprop:Generator_RowClassName="FullDBRow" msprop:Generator_UserTableName="FullDB" msprop:Generator_RowEvArgName="FullDBRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Код" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод" msprop:Generator_ColumnPropNameInRow="Код" msprop:Generator_ColumnPropNameInTable="КодColumn" msprop:Generator_UserColumnName="Код" type="xs:int" />
@@ -510,7 +528,7 @@ FROM     ForFilter</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="HASH_IDs" msprop:Generator_TableClassName="HASH_IDsDataTable" msprop:Generator_TableVarName="tableHASH_IDs" msprop:Generator_TablePropName="HASH_IDs" msprop:Generator_RowDeletingName="HASH_IDsRowDeleting" msprop:Generator_RowChangingName="HASH_IDsRowChanging" msprop:Generator_RowEvHandlerName="HASH_IDsRowChangeEventHandler" msprop:Generator_RowDeletedName="HASH_IDsRowDeleted" msprop:Generator_UserTableName="HASH_IDs" msprop:Generator_RowChangedName="HASH_IDsRowChanged" msprop:Generator_RowEvArgName="HASH_IDsRowChangeEvent" msprop:Generator_RowClassName="HASH_IDsRow">
+        <xs:element name="HASH_IDs" msprop:Generator_TableClassName="HASH_IDsDataTable" msprop:Generator_TableVarName="tableHASH_IDs" msprop:Generator_RowChangedName="HASH_IDsRowChanged" msprop:Generator_TablePropName="HASH_IDs" msprop:Generator_RowDeletingName="HASH_IDsRowDeleting" msprop:Generator_RowChangingName="HASH_IDsRowChanging" msprop:Generator_RowEvHandlerName="HASH_IDsRowChangeEventHandler" msprop:Generator_RowDeletedName="HASH_IDsRowDeleted" msprop:Generator_RowClassName="HASH_IDsRow" msprop:Generator_UserTableName="HASH_IDs" msprop:Generator_RowEvArgName="HASH_IDsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="HASHID" msprop:Generator_ColumnVarNameInTable="columnHASHID" msprop:Generator_ColumnPropNameInRow="HASHID" msprop:Generator_ColumnPropNameInTable="HASHIDColumn" msprop:Generator_UserColumnName="HASHID">
@@ -538,7 +556,7 @@ FROM     ForFilter</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="HW_IDs" msprop:Generator_TableClassName="HW_IDsDataTable" msprop:Generator_TableVarName="tableHW_IDs" msprop:Generator_TablePropName="HW_IDs" msprop:Generator_RowDeletingName="HW_IDsRowDeleting" msprop:Generator_RowChangingName="HW_IDsRowChanging" msprop:Generator_RowEvHandlerName="HW_IDsRowChangeEventHandler" msprop:Generator_RowDeletedName="HW_IDsRowDeleted" msprop:Generator_UserTableName="HW_IDs" msprop:Generator_RowChangedName="HW_IDsRowChanged" msprop:Generator_RowEvArgName="HW_IDsRowChangeEvent" msprop:Generator_RowClassName="HW_IDsRow">
+        <xs:element name="HW_IDs" msprop:Generator_TableClassName="HW_IDsDataTable" msprop:Generator_TableVarName="tableHW_IDs" msprop:Generator_RowChangedName="HW_IDsRowChanged" msprop:Generator_TablePropName="HW_IDs" msprop:Generator_RowDeletingName="HW_IDsRowDeleting" msprop:Generator_RowChangingName="HW_IDsRowChanging" msprop:Generator_RowEvHandlerName="HW_IDsRowChangeEventHandler" msprop:Generator_RowDeletedName="HW_IDsRowDeleted" msprop:Generator_RowClassName="HW_IDsRow" msprop:Generator_UserTableName="HW_IDs" msprop:Generator_RowEvArgName="HW_IDsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="HWID" msprop:Generator_ColumnVarNameInTable="columnHWID" msprop:Generator_ColumnPropNameInRow="HWID" msprop:Generator_ColumnPropNameInTable="HWIDColumn" msprop:Generator_UserColumnName="HWID">
@@ -558,7 +576,7 @@ FROM     ForFilter</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="OEM_IDs" msprop:Generator_TableClassName="OEM_IDsDataTable" msprop:Generator_TableVarName="tableOEM_IDs" msprop:Generator_TablePropName="OEM_IDs" msprop:Generator_RowDeletingName="OEM_IDsRowDeleting" msprop:Generator_RowChangingName="OEM_IDsRowChanging" msprop:Generator_RowEvHandlerName="OEM_IDsRowChangeEventHandler" msprop:Generator_RowDeletedName="OEM_IDsRowDeleted" msprop:Generator_UserTableName="OEM_IDs" msprop:Generator_RowChangedName="OEM_IDsRowChanged" msprop:Generator_RowEvArgName="OEM_IDsRowChangeEvent" msprop:Generator_RowClassName="OEM_IDsRow">
+        <xs:element name="OEM_IDs" msprop:Generator_TableClassName="OEM_IDsDataTable" msprop:Generator_TableVarName="tableOEM_IDs" msprop:Generator_RowChangedName="OEM_IDsRowChanged" msprop:Generator_TablePropName="OEM_IDs" msprop:Generator_RowDeletingName="OEM_IDsRowDeleting" msprop:Generator_RowChangingName="OEM_IDsRowChanging" msprop:Generator_RowEvHandlerName="OEM_IDsRowChangeEventHandler" msprop:Generator_RowDeletedName="OEM_IDsRowDeleted" msprop:Generator_RowClassName="OEM_IDsRow" msprop:Generator_UserTableName="OEM_IDs" msprop:Generator_RowEvArgName="OEM_IDsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDs" msprop:Generator_ColumnVarNameInTable="columnIDs" msprop:Generator_ColumnPropNameInRow="IDs" msprop:Generator_ColumnPropNameInTable="IDsColumn" msprop:Generator_UserColumnName="IDs">
@@ -578,7 +596,7 @@ FROM     ForFilter</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Phone_Models" msprop:Generator_TableClassName="Phone_ModelsDataTable" msprop:Generator_TableVarName="tablePhone_Models" msprop:Generator_TablePropName="Phone_Models" msprop:Generator_RowDeletingName="Phone_ModelsRowDeleting" msprop:Generator_RowChangingName="Phone_ModelsRowChanging" msprop:Generator_RowEvHandlerName="Phone_ModelsRowChangeEventHandler" msprop:Generator_RowDeletedName="Phone_ModelsRowDeleted" msprop:Generator_UserTableName="Phone_Models" msprop:Generator_RowChangedName="Phone_ModelsRowChanged" msprop:Generator_RowEvArgName="Phone_ModelsRowChangeEvent" msprop:Generator_RowClassName="Phone_ModelsRow">
+        <xs:element name="Phone_Models" msprop:Generator_TableClassName="Phone_ModelsDataTable" msprop:Generator_TableVarName="tablePhone_Models" msprop:Generator_RowChangedName="Phone_ModelsRowChanged" msprop:Generator_TablePropName="Phone_Models" msprop:Generator_RowDeletingName="Phone_ModelsRowDeleting" msprop:Generator_RowChangingName="Phone_ModelsRowChanging" msprop:Generator_RowEvHandlerName="Phone_ModelsRowChangeEventHandler" msprop:Generator_RowDeletedName="Phone_ModelsRowDeleted" msprop:Generator_RowClassName="Phone_ModelsRow" msprop:Generator_UserTableName="Phone_Models" msprop:Generator_RowEvArgName="Phone_ModelsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Код" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnКод" msprop:Generator_ColumnPropNameInRow="Код" msprop:Generator_ColumnPropNameInTable="КодColumn" msprop:Generator_UserColumnName="Код" type="xs:int" />
@@ -599,7 +617,7 @@ FROM     ForFilter</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Sellers" msprop:Generator_TableClassName="SellersDataTable" msprop:Generator_TableVarName="tableSellers" msprop:Generator_TablePropName="Sellers" msprop:Generator_RowDeletingName="SellersRowDeleting" msprop:Generator_RowChangingName="SellersRowChanging" msprop:Generator_RowEvHandlerName="SellersRowChangeEventHandler" msprop:Generator_RowDeletedName="SellersRowDeleted" msprop:Generator_UserTableName="Sellers" msprop:Generator_RowChangedName="SellersRowChanged" msprop:Generator_RowEvArgName="SellersRowChangeEvent" msprop:Generator_RowClassName="SellersRow">
+        <xs:element name="Sellers" msprop:Generator_TableClassName="SellersDataTable" msprop:Generator_TableVarName="tableSellers" msprop:Generator_RowChangedName="SellersRowChanged" msprop:Generator_TablePropName="Sellers" msprop:Generator_RowDeletingName="SellersRowDeleting" msprop:Generator_RowChangingName="SellersRowChanging" msprop:Generator_RowEvHandlerName="SellersRowChangeEventHandler" msprop:Generator_RowDeletedName="SellersRowDeleted" msprop:Generator_RowClassName="SellersRow" msprop:Generator_UserTableName="Sellers" msprop:Generator_RowEvArgName="SellersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Trademark" msprop:Generator_ColumnVarNameInTable="columnTrademark" msprop:Generator_ColumnPropNameInRow="Trademark" msprop:Generator_ColumnPropNameInTable="TrademarkColumn" msprop:Generator_UserColumnName="Trademark">
@@ -612,7 +630,7 @@ FROM     ForFilter</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vendors" msprop:Generator_TableClassName="VendorsDataTable" msprop:Generator_TableVarName="tableVendors" msprop:Generator_TablePropName="Vendors" msprop:Generator_RowDeletingName="VendorsRowDeleting" msprop:Generator_RowChangingName="VendorsRowChanging" msprop:Generator_RowEvHandlerName="VendorsRowChangeEventHandler" msprop:Generator_RowDeletedName="VendorsRowDeleted" msprop:Generator_UserTableName="Vendors" msprop:Generator_RowChangedName="VendorsRowChanged" msprop:Generator_RowEvArgName="VendorsRowChangeEvent" msprop:Generator_RowClassName="VendorsRow">
+        <xs:element name="Vendors" msprop:Generator_TableClassName="VendorsDataTable" msprop:Generator_TableVarName="tableVendors" msprop:Generator_RowChangedName="VendorsRowChanged" msprop:Generator_TablePropName="Vendors" msprop:Generator_RowDeletingName="VendorsRowDeleting" msprop:Generator_RowChangingName="VendorsRowChanging" msprop:Generator_RowEvHandlerName="VendorsRowChangeEventHandler" msprop:Generator_RowDeletedName="VendorsRowDeleted" msprop:Generator_RowClassName="VendorsRow" msprop:Generator_UserTableName="Vendors" msprop:Generator_RowEvArgName="VendorsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Names" msprop:Generator_ColumnVarNameInTable="columnNames" msprop:Generator_ColumnPropNameInRow="Names" msprop:Generator_ColumnPropNameInTable="NamesColumn" msprop:Generator_UserColumnName="Names">
@@ -625,7 +643,7 @@ FROM     ForFilter</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ForFilter" msprop:Generator_TableClassName="ForFilterDataTable" msprop:Generator_TableVarName="tableForFilter" msprop:Generator_TablePropName="ForFilter" msprop:Generator_RowDeletingName="ForFilterRowDeleting" msprop:Generator_RowChangingName="ForFilterRowChanging" msprop:Generator_RowEvHandlerName="ForFilterRowChangeEventHandler" msprop:Generator_RowDeletedName="ForFilterRowDeleted" msprop:Generator_UserTableName="ForFilter" msprop:Generator_RowChangedName="ForFilterRowChanged" msprop:Generator_RowEvArgName="ForFilterRowChangeEvent" msprop:Generator_RowClassName="ForFilterRow">
+        <xs:element name="ForFilter" msprop:Generator_TableClassName="ForFilterDataTable" msprop:Generator_TableVarName="tableForFilter" msprop:Generator_RowChangedName="ForFilterRowChanged" msprop:Generator_TablePropName="ForFilter" msprop:Generator_RowDeletingName="ForFilterRowDeleting" msprop:Generator_RowChangingName="ForFilterRowChanging" msprop:Generator_RowEvHandlerName="ForFilterRowChangeEventHandler" msprop:Generator_RowDeletedName="ForFilterRowDeleted" msprop:Generator_RowClassName="ForFilterRow" msprop:Generator_UserTableName="ForFilter" msprop:Generator_RowEvArgName="ForFilterRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="HWID" msprop:Generator_ColumnVarNameInTable="columnHWID" msprop:Generator_ColumnPropNameInRow="HWID" msprop:Generator_ColumnPropNameInTable="HWIDColumn" msprop:Generator_UserColumnName="HWID" minOccurs="0">
@@ -687,6 +705,26 @@ FROM     ForFilter</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DoubleCPU" msprop:Generator_TableClassName="DoubleCPUDataTable" msprop:Generator_TableVarName="tableDoubleCPU" msprop:Generator_TablePropName="DoubleCPU" msprop:Generator_RowDeletingName="DoubleCPURowDeleting" msprop:Generator_RowChangingName="DoubleCPURowChanging" msprop:Generator_RowEvHandlerName="DoubleCPURowChangeEventHandler" msprop:Generator_RowDeletedName="DoubleCPURowDeleted" msprop:Generator_UserTableName="DoubleCPU" msprop:Generator_RowChangedName="DoubleCPURowChanged" msprop:Generator_RowEvArgName="DoubleCPURowChangeEvent" msprop:Generator_RowClassName="DoubleCPURow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ShortName" msprop:Generator_ColumnVarNameInTable="columnShortName" msprop:Generator_ColumnPropNameInRow="ShortName" msprop:Generator_ColumnPropNameInTable="ShortNameColumn" msprop:Generator_UserColumnName="ShortName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HWID" msprop:Generator_ColumnVarNameInTable="columnHWID" msprop:Generator_ColumnPropNameInRow="HWID" msprop:Generator_ColumnPropNameInTable="HWIDColumn" msprop:Generator_UserColumnName="HWID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -721,17 +759,21 @@ FROM     ForFilter</CommandText>
       <xs:selector xpath=".//mstns:Vendors" />
       <xs:field xpath="mstns:Names" />
     </xs:unique>
+    <xs:unique name="DoubleCPU_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DoubleCPU" />
+      <xs:field xpath="mstns:HWID" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="HASH_IDsFullDB" msdata:parent="HASH_IDs" msdata:child="FullDB" msdata:parentkey="HASHID" msdata:childkey="HASHID" msprop:Generator_UserChildTable="FullDB" msprop:Generator_ChildPropName="GetFullDBRows" msprop:Generator_UserRelationName="HASH_IDsFullDB" msprop:Generator_RelationVarName="relationHASH_IDsFullDB" msprop:Generator_UserParentTable="HASH_IDs" msprop:Generator_ParentPropName="HASH_IDsRow" />
-      <msdata:Relationship name="HW_IDsFullDB" msdata:parent="HW_IDs" msdata:child="FullDB" msdata:parentkey="HWID" msdata:childkey="HWID" msprop:Generator_UserChildTable="FullDB" msprop:Generator_ChildPropName="GetFullDBRows" msprop:Generator_UserRelationName="HW_IDsFullDB" msprop:Generator_RelationVarName="relationHW_IDsFullDB" msprop:Generator_UserParentTable="HW_IDs" msprop:Generator_ParentPropName="HW_IDsRow" />
-      <msdata:Relationship name="OEM_IDsFullDB" msdata:parent="OEM_IDs" msdata:child="FullDB" msdata:parentkey="IDs" msdata:childkey="OEMID" msprop:Generator_UserChildTable="FullDB" msprop:Generator_ChildPropName="GetFullDBRows" msprop:Generator_UserRelationName="OEM_IDsFullDB" msprop:Generator_RelationVarName="relationOEM_IDsFullDB" msprop:Generator_UserParentTable="OEM_IDs" msprop:Generator_ParentPropName="OEM_IDsRow" />
-      <msdata:Relationship name="Phone_ModelsFullDB" msdata:parent="Phone_Models" msdata:child="FullDB" msdata:parentkey="Код" msdata:childkey="PHONEID" msprop:Generator_UserChildTable="FullDB" msprop:Generator_ChildPropName="GetFullDBRows" msprop:Generator_UserRelationName="Phone_ModelsFullDB" msprop:Generator_RelationVarName="relationPhone_ModelsFullDB" msprop:Generator_UserParentTable="Phone_Models" msprop:Generator_ParentPropName="Phone_ModelsRow" />
-      <msdata:Relationship name="VendorsHASH_IDs" msdata:parent="Vendors" msdata:child="HASH_IDs" msdata:parentkey="Names" msdata:childkey="V_Name" msprop:Generator_UserChildTable="HASH_IDs" msprop:Generator_ChildPropName="GetHASH_IDsRows" msprop:Generator_UserRelationName="VendorsHASH_IDs" msprop:Generator_RelationVarName="relationVendorsHASH_IDs" msprop:Generator_UserParentTable="Vendors" msprop:Generator_ParentPropName="VendorsRow" />
-      <msdata:Relationship name="CPUsHW_IDs" msdata:parent="CPUs" msdata:child="HW_IDs" msdata:parentkey="ShortName" msdata:childkey="ShortName" msprop:Generator_UserChildTable="HW_IDs" msprop:Generator_ChildPropName="GetHW_IDsRows" msprop:Generator_UserRelationName="CPUsHW_IDs" msprop:Generator_ParentPropName="CPUsRow" msprop:Generator_RelationVarName="relationCPUsHW_IDs" msprop:Generator_UserParentTable="CPUs" />
-      <msdata:Relationship name="VendorsOEM_IDs" msdata:parent="Vendors" msdata:child="OEM_IDs" msdata:parentkey="Names" msdata:childkey="Names" msprop:Generator_UserChildTable="OEM_IDs" msprop:Generator_ChildPropName="GetOEM_IDsRows" msprop:Generator_UserRelationName="VendorsOEM_IDs" msprop:Generator_RelationVarName="relationVendorsOEM_IDs" msprop:Generator_UserParentTable="Vendors" msprop:Generator_ParentPropName="VendorsRow" />
-      <msdata:Relationship name="SellersPhone_Models" msdata:parent="Sellers" msdata:child="Phone_Models" msdata:parentkey="Trademark" msdata:childkey="Trademark" msprop:Generator_UserChildTable="Phone_Models" msprop:Generator_ChildPropName="GetPhone_ModelsRows" msprop:Generator_UserRelationName="SellersPhone_Models" msprop:Generator_RelationVarName="relationSellersPhone_Models" msprop:Generator_UserParentTable="Sellers" msprop:Generator_ParentPropName="SellersRow" />
+      <msdata:Relationship name="HASH_IDsFullDB" msdata:parent="HASH_IDs" msdata:child="FullDB" msdata:parentkey="HASHID" msdata:childkey="HASHID" msprop:Generator_UserChildTable="FullDB" msprop:Generator_ChildPropName="GetFullDBRows" msprop:Generator_UserRelationName="HASH_IDsFullDB" msprop:Generator_ParentPropName="HASH_IDsRow" msprop:Generator_RelationVarName="relationHASH_IDsFullDB" msprop:Generator_UserParentTable="HASH_IDs" />
+      <msdata:Relationship name="HW_IDsFullDB" msdata:parent="HW_IDs" msdata:child="FullDB" msdata:parentkey="HWID" msdata:childkey="HWID" msprop:Generator_UserChildTable="FullDB" msprop:Generator_ChildPropName="GetFullDBRows" msprop:Generator_UserRelationName="HW_IDsFullDB" msprop:Generator_ParentPropName="HW_IDsRow" msprop:Generator_RelationVarName="relationHW_IDsFullDB" msprop:Generator_UserParentTable="HW_IDs" />
+      <msdata:Relationship name="OEM_IDsFullDB" msdata:parent="OEM_IDs" msdata:child="FullDB" msdata:parentkey="IDs" msdata:childkey="OEMID" msprop:Generator_UserChildTable="FullDB" msprop:Generator_ChildPropName="GetFullDBRows" msprop:Generator_UserRelationName="OEM_IDsFullDB" msprop:Generator_ParentPropName="OEM_IDsRow" msprop:Generator_RelationVarName="relationOEM_IDsFullDB" msprop:Generator_UserParentTable="OEM_IDs" />
+      <msdata:Relationship name="Phone_ModelsFullDB" msdata:parent="Phone_Models" msdata:child="FullDB" msdata:parentkey="Код" msdata:childkey="PHONEID" msprop:Generator_UserChildTable="FullDB" msprop:Generator_ChildPropName="GetFullDBRows" msprop:Generator_UserRelationName="Phone_ModelsFullDB" msprop:Generator_ParentPropName="Phone_ModelsRow" msprop:Generator_RelationVarName="relationPhone_ModelsFullDB" msprop:Generator_UserParentTable="Phone_Models" />
+      <msdata:Relationship name="VendorsHASH_IDs" msdata:parent="Vendors" msdata:child="HASH_IDs" msdata:parentkey="Names" msdata:childkey="V_Name" msprop:Generator_UserChildTable="HASH_IDs" msprop:Generator_ChildPropName="GetHASH_IDsRows" msprop:Generator_UserRelationName="VendorsHASH_IDs" msprop:Generator_ParentPropName="VendorsRow" msprop:Generator_RelationVarName="relationVendorsHASH_IDs" msprop:Generator_UserParentTable="Vendors" />
+      <msdata:Relationship name="CPUsHW_IDs" msdata:parent="CPUs" msdata:child="HW_IDs" msdata:parentkey="ShortName" msdata:childkey="ShortName" msprop:Generator_UserChildTable="HW_IDs" msprop:Generator_ChildPropName="GetHW_IDsRows" msprop:Generator_UserRelationName="CPUsHW_IDs" msprop:Generator_RelationVarName="relationCPUsHW_IDs" msprop:Generator_UserParentTable="CPUs" msprop:Generator_ParentPropName="CPUsRow" />
+      <msdata:Relationship name="VendorsOEM_IDs" msdata:parent="Vendors" msdata:child="OEM_IDs" msdata:parentkey="Names" msdata:childkey="Names" msprop:Generator_UserChildTable="OEM_IDs" msprop:Generator_ChildPropName="GetOEM_IDsRows" msprop:Generator_UserRelationName="VendorsOEM_IDs" msprop:Generator_ParentPropName="VendorsRow" msprop:Generator_RelationVarName="relationVendorsOEM_IDs" msprop:Generator_UserParentTable="Vendors" />
+      <msdata:Relationship name="SellersPhone_Models" msdata:parent="Sellers" msdata:child="Phone_Models" msdata:parentkey="Trademark" msdata:childkey="Trademark" msprop:Generator_UserChildTable="Phone_Models" msprop:Generator_ChildPropName="GetPhone_ModelsRows" msprop:Generator_UserRelationName="SellersPhone_Models" msprop:Generator_ParentPropName="SellersRow" msprop:Generator_RelationVarName="relationSellersPhone_Models" msprop:Generator_UserParentTable="Sellers" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
