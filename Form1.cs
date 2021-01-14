@@ -119,6 +119,7 @@ namespace FirehoseFinder
             textBox_oemhash.Text = forFilterDataGridView.SelectedRows[0].Cells[5].Value.ToString();
             label_tm.Text = forFilterDataGridView.SelectedRows[0].Cells[6].Value.ToString();
             label_model.Text = forFilterDataGridView.SelectedRows[0].Cells[7].Value.ToString();
+            label_altname.Text = forFilterDataGridView.SelectedRows[0].Cells[8].Value.ToString();
             toolStripStatusLabel_guide.Text = string.Empty;
             //Переходим на вкладку поиска
             dataGridView_final.Rows.Clear();

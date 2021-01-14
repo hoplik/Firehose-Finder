@@ -2959,6 +2959,8 @@ namespace FirehoseFinder {
             
             private global::System.Data.DataColumn columnVendor;
             
+            private global::System.Data.DataColumn columnAltName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ForFilterDataTable() {
@@ -3058,6 +3060,14 @@ namespace FirehoseFinder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AltNameColumn {
+                get {
+                    return this.columnAltName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3093,7 +3103,7 @@ namespace FirehoseFinder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ForFilterRow AddForFilterRow(string HWID, string OEMID, string MODELID, string HASHID, string Trademark, string Model, string CPU, string Vendor) {
+            public ForFilterRow AddForFilterRow(string HWID, string OEMID, string MODELID, string HASHID, string Trademark, string Model, string CPU, string Vendor, string AltName) {
                 ForFilterRow rowForFilterRow = ((ForFilterRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         HWID,
@@ -3103,7 +3113,8 @@ namespace FirehoseFinder {
                         Trademark,
                         Model,
                         CPU,
-                        Vendor};
+                        Vendor,
+                        AltName};
                 rowForFilterRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowForFilterRow);
                 return rowForFilterRow;
@@ -3134,6 +3145,7 @@ namespace FirehoseFinder {
                 this.columnModel = base.Columns["Model"];
                 this.columnCPU = base.Columns["CPU"];
                 this.columnVendor = base.Columns["Vendor"];
+                this.columnAltName = base.Columns["AltName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3155,6 +3167,8 @@ namespace FirehoseFinder {
                 base.Columns.Add(this.columnCPU);
                 this.columnVendor = new global::System.Data.DataColumn("Vendor", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVendor);
+                this.columnAltName = new global::System.Data.DataColumn("AltName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAltName);
                 this.columnHWID.MaxLength = 8;
                 this.columnOEMID.MaxLength = 4;
                 this.columnMODELID.MaxLength = 4;
@@ -3163,6 +3177,7 @@ namespace FirehoseFinder {
                 this.columnModel.MaxLength = 255;
                 this.columnCPU.MaxLength = 255;
                 this.columnVendor.MaxLength = 255;
+                this.columnAltName.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4455,6 +4470,22 @@ namespace FirehoseFinder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string AltName {
+                get {
+                    try {
+                        return ((string)(this[this.tableForFilter.AltNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'AltName\' в таблице \'ForFilter\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableForFilter.AltNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsHWIDNull() {
                 return this.IsNull(this.tableForFilter.HWIDColumn);
             }
@@ -4547,6 +4578,18 @@ namespace FirehoseFinder {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetVendorNull() {
                 this[this.tableForFilter.VendorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAltNameNull() {
+                return this.IsNull(this.tableForFilter.AltNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAltNameNull() {
+                this[this.tableForFilter.AltNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7933,6 +7976,7 @@ namespace FirehoseFinder.qcom_phonesDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Model", "Model");
             tableMapping.ColumnMappings.Add("CPU", "CPU");
             tableMapping.ColumnMappings.Add("Vendor", "Vendor");
+            tableMapping.ColumnMappings.Add("AltName", "AltName");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -7950,7 +7994,7 @@ namespace FirehoseFinder.qcom_phonesDataSetTableAdapters {
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT HWID, FullName AS CPU, OEMID, [Names] AS Vendor, MODELID, HASHID, Trademar" +
-                "k, Model\r\nFROM     ForFilter";
+                "k, Model, AltName\r\nFROM     ForFilter";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
