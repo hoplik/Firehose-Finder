@@ -414,7 +414,7 @@ namespace FirehoseFinder
             {
                 for (int i = 0; i < forFilterDataGridView.Rows.Count; i++)
                 {
-                    if (forFilterDataGridView[6, i].Value.ToString().Equals(label_tm.Text) && forFilterDataGridView[7, i].Value.ToString().Equals(label_model.Text)) //Проверяем ТМ и модель на наличие
+                    if (forFilterDataGridView[7, i].Value.ToString().Equals(label_model.Text)) //Проверяем модель на наличие
                     {
                         return;
                     }
