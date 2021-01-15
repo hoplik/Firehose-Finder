@@ -384,7 +384,7 @@ namespace FirehoseFinder
             //Переходим на вкладку Работа с файлами
             tabControl1.SelectedTab = tabPage_firehose;
             toolStripStatusLabel_filescompleted.Text = "Все идентификаторы получены, устройство можно отключить и перезагрузить";
-            string logstr = textBox_hwid.Text + "-" + textBox_oemid.Text + "-" + textBox_modelid.Text + "-" + textBox_oemhash.Text + "-" + label_tm.Text + "-" + label_model.Text;
+            string logstr = textBox_hwid.Text + textBox_oemid.Text + textBox_modelid.Text + "-" + textBox_oemhash.Text + "-" + label_tm.Text + "-" + label_model.Text;
             if (checkBox_Log.Checked)
             {
                 try
