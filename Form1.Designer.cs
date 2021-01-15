@@ -139,7 +139,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1313, 604);
+            this.tabControl1.Size = new System.Drawing.Size(1338, 604);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage_guide
@@ -685,7 +685,7 @@
             this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
             this.tabPage_phone.Name = "tabPage_phone";
             this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_phone.Size = new System.Drawing.Size(1305, 575);
+            this.tabPage_phone.Size = new System.Drawing.Size(1330, 575);
             this.tabPage_phone.TabIndex = 2;
             this.tabPage_phone.Text = "Работа с устройством";
             this.tabPage_phone.UseVisualStyleBackColor = true;
@@ -699,9 +699,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.listView_comport);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(481, 359);
+            this.groupBox2.Location = new System.Drawing.Point(481, 222);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(821, 213);
+            this.groupBox2.Size = new System.Drawing.Size(846, 350);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sahara";
@@ -718,11 +718,11 @@
             // button_Sahara_Reset
             // 
             this.button_Sahara_Reset.Enabled = false;
-            this.button_Sahara_Reset.Location = new System.Drawing.Point(6, 179);
+            this.button_Sahara_Reset.Location = new System.Drawing.Point(6, 248);
             this.button_Sahara_Reset.Name = "button_Sahara_Reset";
             this.button_Sahara_Reset.Size = new System.Drawing.Size(348, 23);
             this.button_Sahara_Reset.TabIndex = 4;
-            this.button_Sahara_Reset.Text = "Перегрузить устройство в нормальный режим";
+            this.button_Sahara_Reset.Text = "Получить разметку + перегрузить устройство";
             this.button_Sahara_Reset.UseVisualStyleBackColor = true;
             this.button_Sahara_Reset.Click += new System.EventHandler(this.Button_Sahara_Reset_Click);
             // 
@@ -740,21 +740,21 @@
             // label_Sahara_fhf
             // 
             this.label_Sahara_fhf.AutoSize = true;
-            this.label_Sahara_fhf.Location = new System.Drawing.Point(317, 159);
+            this.label_Sahara_fhf.Location = new System.Drawing.Point(3, 223);
             this.label_Sahara_fhf.Name = "label_Sahara_fhf";
-            this.label_Sahara_fhf.Size = new System.Drawing.Size(382, 17);
+            this.label_Sahara_fhf.Size = new System.Drawing.Size(379, 17);
             this.label_Sahara_fhf.TabIndex = 2;
-            this.label_Sahara_fhf.Text = "Пожалуйста, выберете на закладке \"Работа с файлами\"";
+            this.label_Sahara_fhf.Text = "Выберете программер на закладке \"Работа с файлами\"";
             this.label_Sahara_fhf.TextChanged += new System.EventHandler(this.Label_Sahara_fhf_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(2, 159);
+            this.label2.Location = new System.Drawing.Point(2, 177);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(309, 17);
+            this.label2.Size = new System.Drawing.Size(821, 34);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Для команд ниже используется программер: ";
+            this.label2.Text = resources.GetString("label2.Text");
             // 
             // listView_comport
             // 
@@ -766,7 +766,7 @@
             this.listView_comport.HideSelection = false;
             this.listView_comport.Location = new System.Drawing.Point(3, 18);
             this.listView_comport.Name = "listView_comport";
-            this.listView_comport.Size = new System.Drawing.Size(815, 92);
+            this.listView_comport.Size = new System.Drawing.Size(840, 92);
             this.listView_comport.TabIndex = 0;
             this.listView_comport.UseCompatibleStateImageBehavior = false;
             this.listView_comport.View = System.Windows.Forms.View.Details;
@@ -791,7 +791,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(481, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(821, 185);
+            this.groupBox3.Size = new System.Drawing.Size(846, 185);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Android Debug Bridge";
@@ -960,7 +960,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1313, 604);
+            this.ClientSize = new System.Drawing.Size(1338, 604);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
