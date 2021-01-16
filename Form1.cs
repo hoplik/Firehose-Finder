@@ -809,7 +809,7 @@ namespace FirehoseFinder
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Button_Sahara_Reset_Click(object sender, EventArgs e)
+        private void Button_Sahara_CommandStart_Click(object sender, EventArgs e)
         {
             Process process = new Process();
             process.StartInfo.UseShellExecute = false;
