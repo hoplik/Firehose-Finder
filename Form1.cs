@@ -137,6 +137,8 @@ namespace FirehoseFinder
             {
                 forFilterDataGridView.Enabled = true;
                 button_findIDs.Enabled = false;
+                textBox_find.Enabled = true;
+                toolStripStatusLabel_guide.Text = "К Справочнику может быть применена сортировка, поиск и фильтр";
             }
         }
 
@@ -151,6 +153,9 @@ namespace FirehoseFinder
             {
                 forFilterDataGridView.Enabled = false;
                 button_findIDs.Enabled = true;
+                textBox_find.Enabled = false;
+                textBox_find.Text = string.Empty;
+                toolStripStatusLabel_guide.Text = "Работаем в автоматическом режиме";
             }
         }
 
@@ -213,7 +218,7 @@ namespace FirehoseFinder
                     return;
                 }
                 if (!ADB_Check()) return;
-                GetADBIDs();
+                GetADBIDs(true);
                 waitSahara = true; //Ждём подключения в аварийном режиме
             }
             else radioButton_manualfilter.Checked = true;
@@ -272,7 +277,7 @@ namespace FirehoseFinder
             if (!File.Exists("adb.exe"))
             {
                 byte[] LocalADB = Resources.adb;
-                FileStream fs = new FileStream("adb.exe", System.IO.FileMode.Create);
+                FileStream fs = new FileStream("adb.exe", FileMode.Create);
                 fs.Write(LocalADB, 0, LocalADB.Length);
                 fs.Close();
             }
@@ -304,17 +309,19 @@ namespace FirehoseFinder
         }
 
         /// <summary>
-        /// Получаем пакетно идентификаторы и сверяем их со справочником
+        /// Получаем пакетно идентификаторы и сверяем их со справочником (с последующей перезагрузкой или без)
         /// </summary>
-        private void GetADBIDs()
+        private void GetADBIDs(bool reset)
         {
             AdbClient client = new AdbClient();
             var receiver = new ConsoleOutputReceiver();
             List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
             var device = devices[0];
+            string mem_type = "не определена (возможно UFS)";
             List<string> adbcommands = new List<string>() {
                 "getprop | grep ro.product.manufacturer",
-                "getprop | grep ro.product.model"};
+                "getprop | grep ro.product.model",
+                "getprop | grep ro.emmc_size"};
             string[] results = new string[adbcommands.Count];
             try
             {
@@ -324,7 +331,7 @@ namespace FirehoseFinder
                     string[] adbstr = receiver.ToString().Split('[');
                     foreach (string item in adbstr)
                     {
-                        if (!item.StartsWith("ro.product.m"))
+                        if (!item.StartsWith("ro.product.m") || !item.StartsWith("ro.emmc"))
                         {
                             if (item.Contains("]")) results[i] = item.Remove(item.IndexOf(']'));
                         }
@@ -334,15 +341,27 @@ namespace FirehoseFinder
                 }
                 label_tm.Text = results[0];
                 label_model.Text = results[1];
-                textBox_ADB.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
-                client.Reboot("edl", device);
+                if (!string.IsNullOrEmpty(results[2]))
+                {
+                    mem_type = "eMMC : " + results[2];
+                    comboBox_mem_type.Text = comboBox_mem_type.Items[(int)Guide.MEM_TYPE.eMMC].ToString();
+                    comboBox_mem_type.SelectedIndex = (int)Guide.MEM_TYPE.eMMC;
+                }
+                textBox_ADB.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
+                    "Модель: " + label_model.Text + Environment.NewLine +
+                    "Тип памяти: " + mem_type + Environment.NewLine);
+                if (reset)
+                {
+                    textBox_ADB.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
+                    client.Reboot("edl", device);
+                    Thread.Sleep(1000);
+                    StopAdb();
+                }
             }
             catch (SharpAdbClient.Exceptions.AdbException ex)
             {
                 textBox_ADB.AppendText(ex.AdbError + Environment.NewLine);
             }
-            Thread.Sleep(1000);
-            StopAdb();
         }
 
         /// <summary>
@@ -354,7 +373,7 @@ namespace FirehoseFinder
             if (!File.Exists("QSaharaServer.exe"))
             {
                 byte[] LocalQSS = Resources.QSaharaServer;
-                FileStream fs = new FileStream("QSaharaServer.exe", System.IO.FileMode.Create);
+                FileStream fs = new FileStream("QSaharaServer.exe", FileMode.Create);
                 fs.Write(LocalQSS, 0, LocalQSS.Length);
                 fs.Close();
             }
@@ -389,11 +408,11 @@ namespace FirehoseFinder
             {
                 try
                 {
-                    using (StreamWriter sw = new StreamWriter(label_log.Text + "\\CPU_Info.log", false)) sw.Write(logstr);
+                    using (StreamWriter sw = new StreamWriter(label_log.Text + "\\CPU_Report.txt", false)) sw.Write(logstr);
                 }
                 catch (Exception ex)
                 {
-                    toolStripStatusLabel_filescompleted.Text = "Ошибка записи лог-файла " + ex.Message;
+                    toolStripStatusLabel_filescompleted.Text = "Ошибка записи файла отчёта: " + ex.Message;
                 }
             }
             if (waitSahara) _ = CheckIDs(logstr);
@@ -727,7 +746,6 @@ namespace FirehoseFinder
         private void Button_ADB_comstart_Click(object sender, EventArgs e)
         {
             AdbClient client = new AdbClient();
-            var receiver = new ConsoleOutputReceiver();
             List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
             var device = devices[0];
             string Com_String = textBox_ADB_commandstring.Text;
@@ -742,8 +760,7 @@ namespace FirehoseFinder
                         StopAdb();
                         break;
                     case 1:
-                        client.ExecuteRemoteCommand("getprop", device, receiver);
-                        textBox_ADB.AppendText(receiver.ToString() + Environment.NewLine);
+                        GetADBIDs(false);
                         break;
                     case 2:
                         if (!string.IsNullOrEmpty(Com_String)) Adb_Comm_String(Com_String);
@@ -781,6 +798,7 @@ namespace FirehoseFinder
             {
                 serialPort1.PortName = e.Item.Text;
                 button_Sahara_Ids.Enabled = true;
+                comboBox_fh_command.Enabled = true;
                 if (waitSahara)
                 {
                     GetSaharaIDs();
@@ -805,50 +823,74 @@ namespace FirehoseFinder
         }
 
         /// <summary>
-        /// Перегружаем устройство из режима 9008 в нормальное состояние при помощи команды программера reset
+        /// Выполняем команды программера
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Button_Sahara_CommandStart_Click(object sender, EventArgs e)
         {
-            Process process = new Process();
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            for (int i = 0; i < 2; i++)
+            Process process1 = new Process();
+            process1.StartInfo.UseShellExecute = false;
+            process1.StartInfo.RedirectStandardOutput = true;
+            process1.StartInfo.CreateNoWindow = true;
+            StringBuilder fh_command_args = new StringBuilder("--port =\\\\.\\");
+            if (!File.Exists(label_Sahara_fhf.Text))
             {
-                switch (i)
+                DialogResult dr = MessageBox.Show("Выберете программер на вкладке \"Работа с файлами\"",
+                    "Требуется указать корректный путь к файлу",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                if (dr == DialogResult.OK) tabControl1.SelectedTab = tabPage_firehose;
+                return;
+            }
+            try
+            {
+                if (!File.Exists("QSaharaServer.exe"))
+                {
+                    byte[] LocalQSS = Resources.QSaharaServer;
+                    FileStream fs = new FileStream("QSaharaServer.exe", FileMode.Create);
+                    fs.Write(LocalQSS, 0, LocalQSS.Length);
+                    fs.Close();
+                }
+                if (!File.Exists("fh_loader.exe"))
+                {
+                    byte[] LocalFHL = Resources.fh_loader;
+                    FileStream fs = new FileStream("fh_loader.exe", FileMode.Create);
+                    fs.Write(LocalFHL, 0, LocalFHL.Length);
+                    fs.Close();
+                }
+                process1.StartInfo.FileName = "QSaharaServer.exe";
+                process1.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -s 13:" + label_Sahara_fhf.Text;
+                process1.Start();
+                StreamReader reader = process1.StandardOutput;
+                textBox_ADB.AppendText(reader.ReadToEnd());
+                process1.WaitForExit();
+                process1.Close();
+                //Собираем строку для программера
+                fh_command_args.Append(serialPort1.PortName);
+                if (comboBox_mem_type.SelectedIndex == (int)Guide.MEM_TYPE.eMMC) fh_command_args.Append(" --memoryname=emmc");
+                if (checkBox_reset.Checked) fh_command_args.Append(" --reset");
+                fh_command_args.Append(" --loglevel=1 --dontsorttags --noprompt");//
+                switch (comboBox_fh_command.SelectedIndex)
                 {
                     case 0:
-                        if (!File.Exists("QSaharaServer.exe"))
-                        {
-                            byte[] LocalQSS = Resources.QSaharaServer;
-                            FileStream fs = new FileStream("QSaharaServer.exe", System.IO.FileMode.Create);
-                            fs.Write(LocalQSS, 0, LocalQSS.Length);
-                            fs.Close();
-                        }
-                        process.StartInfo.FileName = "QSaharaServer.exe";
-                        process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -s 13:" + label_Sahara_fhf.Text;
-                        break;
-                    case 1:
-                        if (!File.Exists("fh_loader.exe"))
-                        {
-                            byte[] LocalFHL = Resources.fh_loader;
-                            FileStream fs = new FileStream("fh_loader.exe", System.IO.FileMode.Create);
-                            fs.Write(LocalFHL, 0, LocalFHL.Length);
-                            fs.Close();
-                        }
-                        process.StartInfo.FileName = "powershell";
-                        process.StartInfo.Arguments = ".\\fh_loader --port=\\\\.\\" + serialPort1.PortName + " --loglevel=0 --dontsorttags --reset";
+                        Process process2 = new Process();
+                        process2.StartInfo.UseShellExecute = false;
+                        process2.StartInfo.RedirectStandardOutput = true;
+                        process2.StartInfo.FileName = "fh_loader.exe";
+                        process2.StartInfo.Arguments = fh_command_args.ToString();
+                        process2.Start();
+                        textBox_ADB.AppendText(reader.ReadToEnd());
+                        process2.WaitForExit();
+                        process2.Close();
                         break;
                     default:
                         break;
                 }
-                process.Start();
-                StreamReader reader = process.StandardOutput;
-                textBox_ADB.AppendText(reader.ReadToEnd());
-                process.WaitForExit();
             }
-            process.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         /// <summary>
@@ -968,5 +1010,20 @@ namespace FirehoseFinder
             Process.Start("https://t.me/firehosefinder");
         }
         #endregion
+
+        private void ComboBox_fh_command_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button_Sahara_CommandStart.Enabled = true;
+        }
+
+        private void TextBox_find_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox_find.Text)) forFilterBindingSource.Filter = string.Empty;
+            else
+            {
+                forFilterBindingSource.Filter = string.Format("HWID LIKE '%{0}%' OR CPU LIKE '%{0}%' OR OEMID LIKE '%{0}%' OR Vendor LIKE '%{0}%' OR MODELID LIKE '%{0}%' OR HASHID LIKE '%{0}%' OR Trademark LIKE '%{0}%' OR Model LIKE '%{0}%' OR AltName LIKE '%{0}%'", textBox_find.Text);
+                toolStripStatusLabel_guide.Text = "Отобрано " + forFilterDataGridView.Rows.Count.ToString() + " записей";
+            }
+        }
     }
 }

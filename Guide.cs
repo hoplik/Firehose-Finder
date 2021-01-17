@@ -39,5 +39,11 @@ namespace FirehoseFinder
             { "1C", "Reserved" },
             { "200","Debug Policy"}
         };
+
+        internal enum MEM_TYPE : byte
+        {
+            eMMC = 0,
+            UFS = 1
+        }
     }
 }

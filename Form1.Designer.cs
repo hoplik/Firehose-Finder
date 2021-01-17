@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfhf));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_guide = new System.Windows.Forms.TabPage();
+            this.label_find = new System.Windows.Forms.Label();
+            this.textBox_find = new System.Windows.Forms.TextBox();
             this.label_log = new System.Windows.Forms.Label();
             this.checkBox_Log = new System.Windows.Forms.CheckBox();
             this.button_findIDs = new System.Windows.Forms.Button();
@@ -148,6 +150,8 @@
             // 
             // tabPage_guide
             // 
+            this.tabPage_guide.Controls.Add(this.label_find);
+            this.tabPage_guide.Controls.Add(this.textBox_find);
             this.tabPage_guide.Controls.Add(this.label_log);
             this.tabPage_guide.Controls.Add(this.checkBox_Log);
             this.tabPage_guide.Controls.Add(this.button_findIDs);
@@ -162,6 +166,24 @@
             this.tabPage_guide.TabIndex = 3;
             this.tabPage_guide.Text = "Справочник ID";
             this.tabPage_guide.UseVisualStyleBackColor = true;
+            // 
+            // label_find
+            // 
+            this.label_find.AutoSize = true;
+            this.label_find.Location = new System.Drawing.Point(7, 65);
+            this.label_find.Name = "label_find";
+            this.label_find.Size = new System.Drawing.Size(148, 17);
+            this.label_find.TabIndex = 9;
+            this.label_find.Text = "Поиск по всем полям";
+            // 
+            // textBox_find
+            // 
+            this.textBox_find.Enabled = false;
+            this.textBox_find.Location = new System.Drawing.Point(173, 65);
+            this.textBox_find.Name = "textBox_find";
+            this.textBox_find.Size = new System.Drawing.Size(282, 22);
+            this.textBox_find.TabIndex = 8;
+            this.textBox_find.TextChanged += new System.EventHandler(this.TextBox_find_TextChanged);
             // 
             // label_log
             // 
@@ -745,6 +767,7 @@
             this.comboBox_fh_command.Size = new System.Drawing.Size(462, 24);
             this.comboBox_fh_command.TabIndex = 7;
             this.comboBox_fh_command.Text = "Выберите команду";
+            this.comboBox_fh_command.SelectedIndexChanged += new System.EventHandler(this.ComboBox_fh_command_SelectedIndexChanged);
             // 
             // checkBox_reset
             // 
@@ -794,9 +817,9 @@
             this.label_Sahara_fhf.AutoSize = true;
             this.label_Sahara_fhf.Location = new System.Drawing.Point(3, 289);
             this.label_Sahara_fhf.Name = "label_Sahara_fhf";
-            this.label_Sahara_fhf.Size = new System.Drawing.Size(379, 17);
+            this.label_Sahara_fhf.Size = new System.Drawing.Size(371, 17);
             this.label_Sahara_fhf.TabIndex = 2;
-            this.label_Sahara_fhf.Text = "Выберете программер на закладке \"Работа с файлами\"";
+            this.label_Sahara_fhf.Text = "Выберете программер на вкладке \"Работа с файлами\"";
             this.label_Sahara_fhf.TextChanged += new System.EventHandler(this.Label_Sahara_fhf_TextChanged);
             // 
             // label2
@@ -1135,6 +1158,8 @@
         private System.Windows.Forms.ComboBox comboBox_mem_type;
         private System.Windows.Forms.ComboBox comboBox_fh_command;
         private System.Windows.Forms.CheckBox checkBox_reset;
+        private System.Windows.Forms.Label label_find;
+        private System.Windows.Forms.TextBox textBox_find;
     }
 }
 
