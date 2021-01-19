@@ -116,6 +116,9 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.tableAdapterManager = new FirehoseFinder.qcom_phonesDataSetTableAdapters.TableAdapterManager();
             this.forFilterTableAdapter = new FirehoseFinder.qcom_phonesDataSetTableAdapters.ForFilterTableAdapter();
+            this.groupBox_logs = new System.Windows.Forms.GroupBox();
+            this.radioButton_shortlog = new System.Windows.Forms.RadioButton();
+            this.radioButton_fulllog = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPage_guide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.forFilterDataGridView)).BeginInit();
@@ -132,6 +135,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage_about.SuspendLayout();
+            this.groupBox_logs.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -718,6 +722,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.groupBox_logs);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.comboBox_mem_type);
             this.groupBox2.Controls.Add(this.comboBox_fh_command);
@@ -747,6 +752,7 @@
             // 
             // comboBox_mem_type
             // 
+            this.comboBox_mem_type.Enabled = false;
             this.comboBox_mem_type.FormattingEnabled = true;
             this.comboBox_mem_type.Items.AddRange(new object[] {
             "eMMC",
@@ -761,7 +767,7 @@
             this.comboBox_fh_command.Enabled = false;
             this.comboBox_fh_command.FormattingEnabled = true;
             this.comboBox_fh_command.Items.AddRange(new object[] {
-            "Получить разметку (запрос GPT)"});
+            "Проверка firehose (только перезагрузка устройства)"});
             this.comboBox_fh_command.Location = new System.Drawing.Point(7, 314);
             this.comboBox_fh_command.Name = "comboBox_fh_command";
             this.comboBox_fh_command.Size = new System.Drawing.Size(462, 24);
@@ -774,6 +780,7 @@
             this.checkBox_reset.AutoSize = true;
             this.checkBox_reset.Checked = true;
             this.checkBox_reset.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_reset.Enabled = false;
             this.checkBox_reset.Location = new System.Drawing.Point(7, 344);
             this.checkBox_reset.Name = "checkBox_reset";
             this.checkBox_reset.Size = new System.Drawing.Size(334, 38);
@@ -820,7 +827,6 @@
             this.label_Sahara_fhf.Size = new System.Drawing.Size(371, 17);
             this.label_Sahara_fhf.TabIndex = 2;
             this.label_Sahara_fhf.Text = "Выберете программер на вкладке \"Работа с файлами\"";
-            this.label_Sahara_fhf.TextChanged += new System.EventHandler(this.Label_Sahara_fhf_TextChanged);
             // 
             // label2
             // 
@@ -1031,6 +1037,39 @@
             // 
             this.forFilterTableAdapter.ClearBeforeFill = true;
             // 
+            // groupBox_logs
+            // 
+            this.groupBox_logs.Controls.Add(this.radioButton_fulllog);
+            this.groupBox_logs.Controls.Add(this.radioButton_shortlog);
+            this.groupBox_logs.Location = new System.Drawing.Point(487, 345);
+            this.groupBox_logs.Name = "groupBox_logs";
+            this.groupBox_logs.Size = new System.Drawing.Size(353, 58);
+            this.groupBox_logs.TabIndex = 10;
+            this.groupBox_logs.TabStop = false;
+            this.groupBox_logs.Text = "Вывод логов в терминал";
+            // 
+            // radioButton_shortlog
+            // 
+            this.radioButton_shortlog.AutoSize = true;
+            this.radioButton_shortlog.Checked = true;
+            this.radioButton_shortlog.Location = new System.Drawing.Point(7, 22);
+            this.radioButton_shortlog.Name = "radioButton_shortlog";
+            this.radioButton_shortlog.Size = new System.Drawing.Size(122, 21);
+            this.radioButton_shortlog.TabIndex = 0;
+            this.radioButton_shortlog.TabStop = true;
+            this.radioButton_shortlog.Text = "Сокращённый";
+            this.radioButton_shortlog.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_fulllog
+            // 
+            this.radioButton_fulllog.AutoSize = true;
+            this.radioButton_fulllog.Location = new System.Drawing.Point(139, 22);
+            this.radioButton_fulllog.Name = "radioButton_fulllog";
+            this.radioButton_fulllog.Size = new System.Drawing.Size(105, 21);
+            this.radioButton_fulllog.TabIndex = 1;
+            this.radioButton_fulllog.Text = "Подробный";
+            this.radioButton_fulllog.UseVisualStyleBackColor = true;
+            // 
             // Formfhf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1068,6 +1107,8 @@
             this.groupBox1.PerformLayout();
             this.tabPage_about.ResumeLayout(false);
             this.tabPage_about.PerformLayout();
+            this.groupBox_logs.ResumeLayout(false);
+            this.groupBox_logs.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1160,6 +1201,9 @@
         private System.Windows.Forms.CheckBox checkBox_reset;
         private System.Windows.Forms.Label label_find;
         private System.Windows.Forms.TextBox textBox_find;
+        private System.Windows.Forms.GroupBox groupBox_logs;
+        private System.Windows.Forms.RadioButton radioButton_fulllog;
+        private System.Windows.Forms.RadioButton radioButton_shortlog;
     }
 }
 
