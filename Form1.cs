@@ -69,7 +69,16 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Formfhf_Load(object sender, EventArgs e)
         {
-            this.forFilterTableAdapter.Fill(this.qcom_phonesDataSet.ForFilter);
+            try
+            {
+                forFilterTableAdapter.Fill(qcom_phonesDataSet.ForFilter);
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show("Для загрузки Справочника (базы данных) требуется установка Access Database Engine 2010 версии, совпадающей с установленным пакетом Microsoft Office (x86 или x64)" + Environment.NewLine +
+                    "Ссылка для загрузки:" + Environment.NewLine +
+                   "http://www.microsoft.com/en-us/download/details.aspx?id=13255", "Требуются дополнительные компоненты");
+            }
             richTextBox_about.Text = "Версия сборки: " + Assembly.GetExecutingAssembly().GetName().Version + Environment.NewLine
                 + Environment.NewLine +
                 "Часто задаваемые вопросы: " + Environment.NewLine + Resources.String_faq1 +
