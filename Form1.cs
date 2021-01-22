@@ -4,6 +4,7 @@ using SharpAdbClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -79,8 +80,12 @@ namespace FirehoseFinder
             //        "Ссылка для загрузки:" + Environment.NewLine +
             //       "http://www.microsoft.com/en-us/download/details.aspx?id=13255", "Требуются дополнительные компоненты");
             //}
+            dataSet_phone_collection.ReadXml("ForFilter.xml");
+            //Закрываем специализированные закладки
+            tabControl1.TabPages.Remove(tabPage_collection);
             tabControl1.TabPages.Remove(tabPage_guide);
-            //tabControl1.TabPages.Remove(tabPage_phone);
+            tabControl1.TabPages.Remove(tabPage_phone);
+            tabControl1.TabPages.Remove(tabPage_about);
             richTextBox_about.Text = "Версия сборки: " + Assembly.GetExecutingAssembly().GetName().Version + Environment.NewLine
                 + Environment.NewLine +
                 "Часто задаваемые вопросы: " + Environment.NewLine + Resources.String_faq1 +
@@ -1021,5 +1026,35 @@ namespace FirehoseFinder
         }
         #endregion
 
+        private void СправочникУстройствToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+            if (справочникУстройствToolStripMenuItem.Checked)
+            {
+                tabControl1.TabPages.Insert(1, tabPage_collection);
+                tabControl1.TabPages.Insert(2, tabPage_guide);
+            }
+            else
+            {
+                tabControl1.TabPages.Remove(tabPage_collection);
+                tabControl1.TabPages.Remove(tabPage_guide);
+            }
+        }
+
+        private void РаботаСУстройствомToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+            if (работаСУстройствомToolStripMenuItem.Checked)
+            {
+                tabControl1.TabPages.Insert(tabControl1.TabPages.Count, tabPage_phone);
+            }
+            else
+            {
+                tabControl1.TabPages.Remove(tabPage_phone);
+            }
+        }
+
+        private void ВыходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActiveForm.Close();
+        }
     }
 }

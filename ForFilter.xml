@@ -1,0 +1,3825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:od="urn:schemas-microsoft-com:officedata">
+<xsd:schema>
+<xsd:element name="dataroot">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element ref="ForFilter" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+<xsd:attribute name="generated" type="xsd:dateTime"/>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="ForFilter">
+<xsd:annotation>
+<xsd:appinfo/>
+</xsd:annotation>
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="HWID" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="FullName" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="OEMID" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Names" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="MODELID" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="HASHID" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Trademark" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Model" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="AltName" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="255"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-01-22T15:52:49">
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0001</MODELID>
+<HASHID>C6A7D19EEF8CD62E02205D46298DE2F19E2C4E0CA7AAD7A1E2E66E2D495BA598</HASHID>
+<Trademark>Acer</Trademark>
+<Model>M330</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Acer</Trademark>
+<Model>Z330</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0009A0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 450 mobile platform</FullName>
+<OEMID>0043</OEMID>
+<Names>Hisense</Names>
+<MODELID>0000</MODELID>
+<HASHID>7C6DCA9BF5674291AA39DD55760C0D4B65C7A4223097AAB1DB791E2192002DDF</HASHID>
+<Trademark>AGM</Trademark>
+<Model>AGM A9</Model>
+<AltName>А9</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0042</OEMID>
+<Names>Alcatel</Names>
+<MODELID>0011</MODELID>
+<HASHID>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>5042D</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0042</OEMID>
+<Names>Alcatel</Names>
+<MODELID>0032</MODELID>
+<HASHID>DF561473BCA15451CC489052D4E5FB2FA8FA3B4BB3A9FD9E0E97140FF20DBC58</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>5044R</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 400 processor</FullName>
+<OEMID>0042</OEMID>
+<Names>Alcatel</Names>
+<MODELID>000B</MODELID>
+<HASHID>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>5050X</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>5051D</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>5054X</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>5056D</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>5065D</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008110E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>6014X</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008110E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>6015X</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>6016X</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0072C0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 400 processor</FullName>
+<OEMID>0042</OEMID>
+<Names>Alcatel</Names>
+<MODELID>0007</MODELID>
+<HASHID>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>6035R</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 400 processor</FullName>
+<OEMID>0042</OEMID>
+<Names>Alcatel</Names>
+<MODELID>000B</MODELID>
+<HASHID>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>6036Y</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0042</OEMID>
+<Names>Alcatel</Names>
+<MODELID>0018</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>6039Y</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0042</OEMID>
+<Names>Alcatel</Names>
+<MODELID>0018</MODELID>
+<HASHID>FAF5C7A62884B4DB6EDC3CE226D53492552769004007683913983594441B0608</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>6039Y</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0042</OEMID>
+<Names>Alcatel</Names>
+<MODELID>0011</MODELID>
+<HASHID>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>6045Y</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009840E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 617 processor</FullName>
+<OEMID>0042</OEMID>
+<Names>Alcatel</Names>
+<MODELID>0030</MODELID>
+<HASHID>598FB494403B71C36D1B0DFD0F9E24500D767980EF04E5F0A3A94E28DF1FD901</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>6055K</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0042</OEMID>
+<Names>Alcatel</Names>
+<MODELID>0011</MODELID>
+<HASHID>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>7043K</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0042</OEMID>
+<Names>Alcatel</Names>
+<MODELID>0011</MODELID>
+<HASHID>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>7044X</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 400 processor</FullName>
+<OEMID>0042</OEMID>
+<Names>Alcatel</Names>
+<MODELID>000B</MODELID>
+<HASHID>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>7050Y</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 400 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>P330X</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009900E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
+<OEMID>0042</OEMID>
+<Names>Alcatel</Names>
+<MODELID>0030</MODELID>
+<HASHID>28DCF6543D791D8E476B3D72CCDEB4E7EE744F6015CAE8CB47D8D83E2BCEE87E</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>T-1000</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Ark</Trademark>
+<Model>Benefit A1</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Ark</Trademark>
+<Model>Benefit A3</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>7705</MODELID>
+<HASHID>ADCB7C0B68663755FD192E25C3158C7B13C234483A91460BF81F98219DE35F4D</HASHID>
+<Trademark>Artel</Trademark>
+<Model>U5</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 400 processor</FullName>
+<OEMID>0029</OEMID>
+<Names>Asus</Names>
+<MODELID>0012</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>A500KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009180E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 400 processor</FullName>
+<OEMID>0029</OEMID>
+<Names>Asus</Names>
+<MODELID>0020</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>G550KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007B80E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 801 processor</FullName>
+<OEMID>0029</OEMID>
+<Names>Asus</Names>
+<MODELID>000F</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>PF500KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007B80E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 801 processor</FullName>
+<OEMID>0029</OEMID>
+<Names>Asus</Names>
+<MODELID>000F</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>PF550KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0029</OEMID>
+<Names>Asus</Names>
+<MODELID>0017</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>Z380KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>1234</OEMID>
+<Names>Asus</Names>
+<MODELID>0001</MODELID>
+<HASHID>FBD4DE360136046BBF581DC5EFF178E1F716188E6834DA714E485695230D00F3</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZA550KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>8ECF3EAA03F772E28479FA2F0BBAE2141CCAD6F106B384D1C46263EDB5B02838</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZB450KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>E9993D6F5FEF611657545C3B637934BD7DAA48CC79BFD78197E4BCD8FE788F6B</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZB452KG</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0001</OEMID>
+<Names>Sony/Wingtech</Names>
+<MODELID>0001</MODELID>
+<HASHID>5F62A3F033BF45346C15E1CC7B31D4E1ADFFDF641BDF618B09D44AD075029AD1</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZB500KG</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0001</OEMID>
+<Names>Sony/Wingtech</Names>
+<MODELID>0001</MODELID>
+<HASHID>0B010BCB83A7B520C240A358A00DB87675681FB9C7C703496692AC3154466053</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZB500KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009180E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 400 processor</FullName>
+<OEMID>0029</OEMID>
+<Names>Asus</Names>
+<MODELID>0041</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZB501KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009180E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 400 processor</FullName>
+<OEMID>0029</OEMID>
+<Names>Asus</Names>
+<MODELID>0020</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZB551KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>2016</OEMID>
+<Names>Asus</Names>
+<MODELID>A239</MODELID>
+<HASHID>AD38BEB6615BA7FBA38361DAE6BF2DF14AF5E7AC6AF8E78DB46C3ADD435E4174</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZB553KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430 mobile platform</FullName>
+<OEMID>1234</OEMID>
+<Names>Asus</Names>
+<MODELID>0001</MODELID>
+<HASHID>FBD4DE360136046BBF581DC5EFF178E1F716188E6834DA714E485695230D00F3</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZB555KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000CC0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 636 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>7CD366EF83A08283AFD180486C2DDF0BEF4327ECF6C5DB07CA461A68BC22C6C4</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZB602KL</Model>
+<AltName>ZenFone Max Pro (M1)</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 660 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>54736AEBEAAF4167A56D97D6D0C5F52FA3FCE66E28B2B377B52EDF6E53490B65</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZB631KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>49D087CA08C6E2CA3D209C5697971E85D42A2F632592E68230C7D780F7D5DC1F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZC520KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0029</OEMID>
+<Names>Asus</Names>
+<MODELID>001E</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZC550KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0029</OEMID>
+<Names>Asus</Names>
+<MODELID>001F</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZC550KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430 mobile platform</FullName>
+<OEMID>0001</OEMID>
+<Names>Sony/Wingtech</Names>
+<MODELID>0001</MODELID>
+<HASHID>AD38BEB6615BA7FBA38361DAE6BF2DF14AF5E7AC6AF8E78DB46C3ADD435E4174</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZC553KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>49D087CA08C6E2CA3D209C5697971E85D42A2F632592E68230C7D780F7D5DC1F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZC554KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>1111</OEMID>
+<Names>Asus</Names>
+<MODELID>2222</MODELID>
+<HASHID>F069A87F6D4364EFCDFECFCD34BD5201F4126990D38424FCF7F21724F9EC0BF2</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZD551KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0029</OEMID>
+<Names>Asus</Names>
+<MODELID>0014</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZE500KG</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0029</OEMID>
+<Names>Asus</Names>
+<MODELID>0014</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZE500KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0029</OEMID>
+<Names>Asus</Names>
+<MODELID>0021</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZE520KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>1111</OEMID>
+<Names>Asus</Names>
+<MODELID>2222</MODELID>
+<HASHID>F069A87F6D4364EFCDFECFCD34BD5201F4126990D38424FCF7F21724F9EC0BF2</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZE550KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>1111</OEMID>
+<Names>Asus</Names>
+<MODELID>2222</MODELID>
+<HASHID>F069A87F6D4364EFCDFECFCD34BD5201F4126990D38424FCF7F21724F9EC0BF2</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZE550KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0007E0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 630 mobile platform</FullName>
+<HASHID>B73514537FFC38A0ED1D2CA67B39C87968C402A50F02AC78423F617AE200106D</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZenFone 4</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 845 mobile platform</FullName>
+<OEMID>143A</OEMID>
+<Names>Asus</Names>
+<MODELID>0845</MODELID>
+<HASHID>1E5D0B2A695A7275A88DF56F40FFCE23BA6294EE704FA90F801524184A44BE5F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZS620KL</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>BenQ</Trademark>
+<Model>T47_09</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>BQ</Trademark>
+<Model>Aquaris X Pro</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000CC0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 636 mobile platform</FullName>
+<OEMID>4153</OEMID>
+<Names>BQ</Names>
+<MODELID>4D52</MODELID>
+<HASHID>85ED99A93351924F0F116449D448127F1FD54780BBED4F6AF54199A31CDF7FB9</HASHID>
+<Trademark>BQ</Trademark>
+<Model>Aquaris X2</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009900E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>BQ</Trademark>
+<Model>Aquaris X5 Plus</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>DF989E3C2BE41617A8FF5019AD996BF706BBD5D3EEE0DC4B9A2F048F9224FA54</HASHID>
+<Trademark>Caterpillar</Trademark>
+<Model>Cat S30</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>DF989E3C2BE41617A8FF5019AD996BF706BBD5D3EEE0DC4B9A2F048F9224FA54</HASHID>
+<Trademark>Caterpillar</Trademark>
+<Model>Cat S31</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009840E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 617 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>84E0FA565714285DAC5237CFE602D4BB2B1A4794C75DFC8D1425E8AD55C0E641</HASHID>
+<Trademark>Caterpillar</Trademark>
+<Model>Cat S60</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000AC0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 636 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>EE43AB11D0CA65C9DE6F717134DAF0819B9610FA36C5AD94A484520EB7708836</HASHID>
+<Trademark>Caterpillar</Trademark>
+<Model>Cat S61</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>China Modile</Trademark>
+<Model>A3s</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009900E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0001</MODELID>
+<HASHID>7D8BD4A98B53F2F4B6B9D2ECE63F8C238F4FC7873F89CF02750E2569545E47EF</HASHID>
+<Trademark>Coolpad</Trademark>
+<Model>C103</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009900E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0001</MODELID>
+<HASHID>7D8BD4A98B53F2F4B6B9D2ECE63F8C238F4FC7873F89CF02750E2569545E47EF</HASHID>
+<Trademark>Coolpad</Trademark>
+<Model>C107-9</Model>
+<AltName>C1</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Dexp</Trademark>
+<Model>Ixion P245</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0001</MODELID>
+<HASHID>5B49D99A5282E9847631B8B9B7A942CBF2C3B6FAC436A12B9571BA6EB396D324</HASHID>
+<Trademark>Dexp</Trademark>
+<Model>Ixion W5</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Dexp</Trademark>
+<Model>Ixion Y 5</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Discovery</Trademark>
+<Model>V9 WCDMA</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0005E0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 835 mobile platform</FullName>
+<OEMID>00AB</OEMID>
+<Names>Essential Phone</Names>
+<MODELID>0000</MODELID>
+<HASHID>DE025086886AA0CA5FB043A3E74CD1D46819A1BA379D5E597D8BBF3331BED134</HASHID>
+<Trademark>Essential Phone</Trademark>
+<Model>PH-1</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>General Mobile</Trademark>
+<Model>GM 5</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0006B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 435 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>1A6BA5B80B9E7811D7656C7C9F74E63925A8AB6D2B664595F3DAB1C2E3C4B250</HASHID>
+<Trademark>Gionee</Trademark>
+<Model>GN5007</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009690E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 808 processor</FullName>
+<OEMID>0031</OEMID>
+<Names>LG</Names>
+<MODELID>1006</MODELID>
+<HASHID>B5BACA995AEC012DB32EB9E49CA340F7D4C26153AAA60C5A82A03F99AFC698E3</HASHID>
+<Trademark>Google</Trademark>
+<Model>Nexus 5X</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009400E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 810 processor</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>0020</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Google</Trademark>
+<Model>Nexus 6P</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 845 mobile platform</FullName>
+<OEMID>0042</OEMID>
+<Names>Alcatel</Names>
+<MODELID>0004</MODELID>
+<HASHID>E693A06F0C0E7E610DFF09371F1C8077C5EB1BDE02E7AD1DA99B8C45117F8F32</HASHID>
+<Trademark>Google</Trademark>
+<Model>Pixel 3</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Highscreen</Trademark>
+<Model>Omega Prime S</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Highscreen</Trademark>
+<Model>Spark 2</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 400 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Highscreen</Trademark>
+<Model>Spider</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 660 mobile platform</FullName>
+<OEMID>0043</OEMID>
+<Names>Hisense</Names>
+<MODELID>0000</MODELID>
+<HASHID>06A0604B3069CCA35FD538F8CA5A8FC5D07C90A6E755F8CFACC1426CB9D75D22</HASHID>
+<Trademark>Hisense</Trademark>
+<Model>A6</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>7C6DCA9BF5674291AA39DD55760C0D4B65C7A4223097AAB1DB791E2192002DDF</HASHID>
+<Trademark>Hisense</Trademark>
+<Model>C20S</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<OEMID>004C</OEMID>
+<Names>HP</Names>
+<MODELID>0000</MODELID>
+<HASHID>4570CEE6CB4660C5B3049B5698DD0A9CECAD3A955B87812C2D7EEE9E205FEA47</HASHID>
+<Trademark>HP</Trademark>
+<Model>Elite X3</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>HTC</Trademark>
+<Model>516 DS</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>003A</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>AGS-L09</Model>
+<AltName>Mediapad T3 10</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 660 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>0069</MODELID>
+<HASHID>A1A5C29846C9881B7A6081EC218212B9B7EB1765EE8843798F16619D6FCD3FE0</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>ARS-L22</Model>
+<AltName>Y Max</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>003A</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>ATU-L21</Model>
+<AltName>Y6 2018</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>003A</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>ATU-L31</Model>
+<AltName>Y6 Prime 2018</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>003A</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>ATU-L42</Model>
+<AltName>Y6 Prime 2018</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>0041</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>AUM-L29</Model>
+<AltName>Honor 7A Pro</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>0041</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>AUM-L41</Model>
+<AltName>Honor 7C</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0006B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 435 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>0062</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>BAH-09</Model>
+<AltName>MediaPad M3 Lite 10</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000BA0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 632 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>0067</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>BKK-L21</Model>
+<AltName>Honor 8C</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>0021</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>CAN-L11</Model>
+<AltName>Nova</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0006B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 435 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>0062</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>CPN-L09</Model>
+<AltName>MediaPad M3 Lite 8</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0006B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 435 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>0040</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>DIG-L21</Model>
+<AltName>Honor 6C</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>0042</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>DLI-TL20</Model>
+<AltName>Honor 6A</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0009A0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 450 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>0065</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>DUB-AL00</Model>
+<AltName>Y7 2019</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0009A0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 450 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>0065</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>DUB-LX1</Model>
+<AltName>Y7 2019</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>G630-U20</Model>
+<AltName>Ascend G630</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>G6-U10</Model>
+<AltName>Ascend G6</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>G7-L01</Model>
+<AltName>Ascend G7</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>GR5</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>KIW-L21</Model>
+<AltName>Honor 5X</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>RIO-L01</Model>
+<AltName>G8</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>S8-701u</Model>
+<AltName>MediaPad T1 8</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>SCL-L04</Model>
+<AltName>Y6</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>SCL-L21</Model>
+<AltName>Y6</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>003A</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>SLA-L22</Model>
+<AltName>Nova Lite 2017</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0006B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 435 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>0062</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>TRT-AL00</Model>
+<AltName>Enjoy 7 Plus</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0006B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 435 mobile platform</FullName>
+<OEMID>0015</OEMID>
+<Names>Huawei</Names>
+<MODELID>0062</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>TRT-LX1</Model>
+<AltName>Y7 2017</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>Y635-TL00</Model>
+<AltName>Ascend Y635</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0039</OEMID>
+<Names>Kyocera</Names>
+<MODELID>0020</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Kyocera</Trademark>
+<Model>C6530</Model>
+<AltName>Hydro life</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009180E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 400 processor</FullName>
+<OEMID>0039</OEMID>
+<Names>Kyocera</Names>
+<MODELID>0021</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Kyocera</Trademark>
+<Model>E6560</Model>
+<AltName>DuraForce</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009900E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0001</MODELID>
+<HASHID>7D8BD4A98B53F2F4B6B9D2ECE63F8C238F4FC7873F89CF02750E2569545E47EF</HASHID>
+<Trademark>LeEco</Trademark>
+<Model>C106</Model>
+<AltName>Cool 1</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009900E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0001</MODELID>
+<HASHID>7C24B3BEC0B604392D8F610D812998CF744D0B3E0572C7F2CC184DC3F7DCD46C</HASHID>
+<Trademark>LeEco</Trademark>
+<Model>X520</Model>
+<AltName>Le 2</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009900E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0001</MODELID>
+<HASHID>7C24B3BEC0B604392D8F610D812998CF744D0B3E0572C7F2CC184DC3F7DCD46C</HASHID>
+<Trademark>LeEco</Trademark>
+<Model>X522</Model>
+<AltName>Le S3</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009900E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0001</MODELID>
+<HASHID>7C24B3BEC0B604392D8F610D812998CF744D0B3E0572C7F2CC184DC3F7DCD46C</HASHID>
+<Trademark>LeEco</Trademark>
+<Model>X526</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009900E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0001</MODELID>
+<HASHID>7C24B3BEC0B604392D8F610D812998CF744D0B3E0572C7F2CC184DC3F7DCD46C</HASHID>
+<Trademark>LeEco</Trademark>
+<Model>X527</Model>
+<AltName>Le 2</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0005F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 821 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>B155B8BF19297F47CAF69C342717B45FF0E0DBF25B070ED877BCC0AD2650F94B</HASHID>
+<Trademark>LeEco</Trademark>
+<Model>X720</Model>
+<AltName>Le Pro 3</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>B155B8BF19297F47CAF69C342717B45FF0E0DBF25B070ED877BCC0AD2650F94B</HASHID>
+<Trademark>LeEco</Trademark>
+<Model>X722</Model>
+<AltName>Le Pro 3 Elite</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0005F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 821 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>B155B8BF19297F47CAF69C342717B45FF0E0DBF25B070ED877BCC0AD2650F94B</HASHID>
+<Trademark>LeEco</Trademark>
+<Model>X727</Model>
+<AltName>Le Pro 3</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009400E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 810 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LeEco</Trademark>
+<Model>X800 CN</Model>
+<AltName>Le 1 Pro</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009400E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 810 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>DBBD98BDC71D24CE0636060AB04950BE9609A7A9D588363A24301B070E66CA4A</HASHID>
+<Trademark>LeEco</Trademark>
+<Model>X800 NA</Model>
+<AltName>Le 1 Pro</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0005F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 821 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>E5DA2BCBFE5C9C51D8F01455AF68180D1D0CEE7D14CAB0FBC203061E693C0620</HASHID>
+<Trademark>LeEco</Trademark>
+<Model>X850</Model>
+<AltName>Le Max 3</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009400E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 810 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LeEco</Trademark>
+<Model>X900+</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007B40E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 801 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>K920</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>Lenovo A2020a40</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>Lenovo A6000</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>Lenovo A6010</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0001</OEMID>
+<Names>Sony/Wingtech</Names>
+<MODELID>0001</MODELID>
+<HASHID>FD67AD01B2EDFA79A67E0BBF67D3C613B3FC247BA315D9785A82106C0ED6913</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>Lenovo A6020a46</Model>
+<AltName>K5</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CAB02552DC28F562E8C5BEFA75BC4A97B90AAB1C91A3C186EC51F3D3D7D6A1C7</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>Lenovo L38011</Model>
+<AltName>K5</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0009A0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 450 mobile platform</FullName>
+<OEMID>0040</OEMID>
+<Names>Lenovo</Names>
+<MODELID>0000</MODELID>
+<HASHID>655C40ED0DB5E799224E2B17FBEF4836AACD2B63F41933C48B36F3E64EB5A59F</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>Lenovo L38012</Model>
+<AltName>K5 Note</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000CC0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 636 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>0374637D23C4E2EEDE23DA5D60C1E7ABCD81CCC4CD641045F859B317650F47DF</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>Lenovo L38041</Model>
+<AltName>K5 Pro</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000DB0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 710 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>0374637D23C4E2EEDE23DA5D60C1E7ABCD81CCC4CD641045F859B317650F47DF</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>Lenovo L38111</Model>
+<AltName>Z6 Youth Edition</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000DB0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 710 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>0374637D23C4E2EEDE23DA5D60C1E7ABCD81CCC4CD641045F859B317650F47DF</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>Lenovo L78071</Model>
+<AltName>Z5s</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>99C8C13E374C34D8F9AFB065EA4C733E6B1B21CBC5A78705F041EB24ACDD5FE5</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>P1c72</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>99C8C13E374C34D8F9AFB065EA4C733E6B1B21CBC5A78705F041EB24ACDD5FE5</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>P2c72</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009900E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>99C8C13E374C34D8F9AFB065EA4C733E6B1B21CBC5A78705F041EB24ACDD5FE5</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>PB2-690M</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>S580</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>99C8C13E374C34D8F9AFB065EA4C733E6B1B21CBC5A78705F041EB24ACDD5FE5</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>S60-a</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>S90-a</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>TB2-X30L</Model>
+<AltName>Tab 2 (A10-30)</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>DDB33F2A320B3536FFA2026554DAB19CF903D207BFB0AE9EE1D39847828740C1</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>TB-8504X</Model>
+<AltName>Tab 4</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>986C77A37680EA98EC4A74ADD3D77A6B2AFABE92C2BAC5A0AFC1D94B8310FDF5</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>TB-8703X</Model>
+<AltName>Tab 3 Plus</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009690E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 808 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>99C8C13E374C34D8F9AFB065EA4C733E6B1B21CBC5A78705F041EB24ACDD5FE5</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>X3a40</Model>
+<AltName>Vibe X3</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009690E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 808 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>99C8C13E374C34D8F9AFB065EA4C733E6B1B21CBC5A78705F041EB24ACDD5FE5</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>X3c50</Model>
+<AltName>Vibe X3</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>YT3-850M</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009D00E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 620 mobile platform</FullName>
+<OEMID>0017</OEMID>
+<Names>Lenovo</Names>
+<MODELID>0004</MODELID>
+<HASHID>6DB709FA451D68AE4FBEEC1063A3DF1EA84F159BC9EED10112F3F85F8C79D3A3</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>YT-X703F</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009900E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
+<OEMID>0017</OEMID>
+<Names>Lenovo</Names>
+<MODELID>0004</MODELID>
+<HASHID>6DB709FA451D68AE4FBEEC1063A3DF1EA84F159BC9EED10112F3F85F8C79D3A3</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>YT-X703L/X</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>Z90a40</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008110E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LG</Trademark>
+<Model>D170</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008110E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LG</Trademark>
+<Model>D285</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LG</Trademark>
+<Model>D290</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LG</Trademark>
+<Model>D295</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008110E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LG</Trademark>
+<Model>D325</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008110E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LG</Trademark>
+<Model>D380</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LG</Trademark>
+<Model>D392</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 400 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LG</Trademark>
+<Model>D722</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008000E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 400 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LG</Trademark>
+<Model>D724</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007B40E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 801 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LG</Trademark>
+<Model>D855</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009690E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 808 processor</FullName>
+<OEMID>0031</OEMID>
+<Names>LG</Names>
+<MODELID>0000</MODELID>
+<HASHID>B5BACA995AEC012DB32EB9E49CA340F7D4C26153AAA60C5A82A03F99AFC698E3</HASHID>
+<Trademark>LG</Trademark>
+<Model>F600L</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009690E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 808 processor</FullName>
+<HASHID>73C51DE96B5F6F0EE44E40EEBC671322071BC00D705EEBDD7C60705A1AD11248</HASHID>
+<Trademark>LG</Trademark>
+<Model>G4</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0005F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 821 mobile platform</FullName>
+<OEMID>0031</OEMID>
+<Names>LG</Names>
+<MODELID>0000</MODELID>
+<HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
+<Trademark>LG</Trademark>
+<Model>G600K</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 845 mobile platform</FullName>
+<OEMID>0031</OEMID>
+<Names>LG</Names>
+<MODELID>0000</MODELID>
+<HASHID>1030CD12CE708F29D6914D7529DF75149D8EF91C27DAF0E1F84B90F4B707329A</HASHID>
+<Trademark>LG</Trademark>
+<Model>G710</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LG</Trademark>
+<Model>H650e</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009690E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 808 processor</FullName>
+<OEMID>0031</OEMID>
+<Names>LG</Names>
+<MODELID>0000</MODELID>
+<HASHID>B5BACA995AEC012DB32EB9E49CA340F7D4C26153AAA60C5A82A03F99AFC698E3</HASHID>
+<Trademark>LG</Trademark>
+<Model>H818P</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0031</OEMID>
+<Names>LG</Names>
+<MODELID>0267</MODELID>
+<HASHID>B5BACA995AEC012DB32EB9E49CA340F7D4C26153AAA60C5A82A03F99AFC698E3</HASHID>
+<Trademark>LG</Trademark>
+<Model>K330</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0005F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 821 mobile platform</FullName>
+<OEMID>0031</OEMID>
+<Names>LG</Names>
+<MODELID>0000</MODELID>
+<HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
+<Trademark>LG</Trademark>
+<Model>LMQ850EMW</Model>
+<AltName>G7 Fit</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0031</OEMID>
+<Names>LG</Names>
+<MODELID>1200</MODELID>
+<HASHID>B5BACA995AEC012DB32EB9E49CA340F7D4C26153AAA60C5A82A03F99AFC698E3</HASHID>
+<Trademark>LG</Trademark>
+<Model>LM-X210NMW</Model>
+<AltName>K9</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0031</OEMID>
+<Names>LG</Names>
+<MODELID>0000</MODELID>
+<HASHID>B5BACA995AEC012DB32EB9E49CA340F7D4C26153AAA60C5A82A03F99AFC698E3</HASHID>
+<Trademark>LG</Trademark>
+<Model>LS675</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<OEMID>0031</OEMID>
+<Names>LG</Names>
+<MODELID>0000</MODELID>
+<HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
+<Trademark>LG</Trademark>
+<Model>LS992</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<OEMID>0031</OEMID>
+<Names>LG</Names>
+<MODELID>0000</MODELID>
+<HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
+<Trademark>LG</Trademark>
+<Model>LS997</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0031</OEMID>
+<Names>LG</Names>
+<MODELID>026D</MODELID>
+<HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
+<Trademark>LG</Trademark>
+<Model>TP260</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 400 processor</FullName>
+<OEMID>0031</OEMID>
+<Names>LG</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LG</Trademark>
+<Model>V490</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>2016</OEMID>
+<Names>Asus</Names>
+<MODELID>1721</MODELID>
+<HASHID>802156631E5E856BE68D8CED1751174D8B0F712C1394AB6A924D647CBEDCAB61</HASHID>
+<Trademark>Meizu</Trademark>
+<Model>Meizu M1721</Model>
+<AltName>M6 Note</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>00ED</OEMID>
+<Names>Meizu</Names>
+<MODELID>0002</MODELID>
+<HASHID>02BB7302A2A5ACF2C2C3E2E3938AC2EA50455104BE4503E9DEA1E05952330BBB</HASHID>
+<Trademark>Meizu</Trademark>
+<Model>Meizu M1810</Model>
+<AltName>M8c</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000BA0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 632 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>C451A1168EF5C7C73B87B91090AA11D8B61425E61CC46C94EC311AC0C51FC5CC</HASHID>
+<Trademark>Meizu</Trademark>
+<Model>Meizu M1822</Model>
+<AltName>Note 8</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000DB0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 710 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>160F033421DFAE527BA8E46CF3424568BE38770F5887D2F3608FBB5FD2EF4483</HASHID>
+<Trademark>Meizu</Trademark>
+<Model>Meizu M1852</Model>
+<AltName>X8</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0138</OEMID>
+<Names>Meizu</Names>
+<MODELID>0000</MODELID>
+<HASHID>40E4AEBA3491DADE17EA92D9DCCCB2D20C4DB54D1C34C9695828C5259FCFC995</HASHID>
+<Trademark>Meizu</Trademark>
+<Model>Meizu M1871</Model>
+<AltName>15 lite</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000DB0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 710 mobile platform</FullName>
+<OEMID>0138</OEMID>
+<Names>Meizu</Names>
+<MODELID>0000</MODELID>
+<HASHID>CD55540DCB175CC80762CEBF08FAFD1232C75D13FD06444048AE94BC94A6132D</HASHID>
+<Trademark>Meizu</Trademark>
+<Model>Meizu M1872</Model>
+<AltName>16x</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 660 mobile platform</FullName>
+<OEMID>0138</OEMID>
+<Names>Meizu</Names>
+<MODELID>0000</MODELID>
+<HASHID>FD27E15FF63FDD689A30ECBDD8C5CF4682F1621BF8B43709ED0446B1E64957B2</HASHID>
+<Trademark>Meizu</Trademark>
+<Model>Meizu M1881</Model>
+<AltName>15</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0008B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 845 mobile platform</FullName>
+<OEMID>0138</OEMID>
+<Names>Meizu</Names>
+<MODELID>0000</MODELID>
+<HASHID>315CBF03EBEF8A25FDA46119A40EEE2B6BB263BDBF4D643CCEB50ABBB2BEC594</HASHID>
+<Trademark>Meizu</Trademark>
+<Model>Meizu M1882</Model>
+<AltName>16th</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0008B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 845 mobile platform</FullName>
+<OEMID>0138</OEMID>
+<Names>Meizu</Names>
+<MODELID>0000</MODELID>
+<HASHID>315CBF03EBEF8A25FDA46119A40EEE2B6BB263BDBF4D643CCEB50ABBB2BEC594</HASHID>
+<Trademark>Meizu</Trademark>
+<Model>Meizu M1892</Model>
+<AltName>16th Plus</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000950E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 675 mobile platform</FullName>
+<OEMID>0138</OEMID>
+<Names>Meizu</Names>
+<MODELID>0000</MODELID>
+<HASHID>DA97164EA8C2BE3DFEA6D1429861F0D67E9A33A3C183C4D8F53989328365F589</HASHID>
+<Trademark>Meizu</Trademark>
+<Model>Meizu M1923</Model>
+<AltName>Note 9</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000950E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 675 mobile platform</FullName>
+<OEMID>0138</OEMID>
+<Names>Meizu</Names>
+<MODELID>0000</MODELID>
+<HASHID>DA97164EA8C2BE3DFEA6D1429861F0D67E9A33A3C183C4D8F53989328365F589</HASHID>
+<Trademark>Meizu</Trademark>
+<Model>Meizu M1926</Model>
+<AltName>16Xs</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000A50E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 855 mobile platform</FullName>
+<OEMID>0138</OEMID>
+<Names>Meizu</Names>
+<MODELID>0000</MODELID>
+<HASHID>6CAFD9D069BECB82ADF02062B31D8B270FEA55F0469C25C7882DEB2AA16F867B</HASHID>
+<Trademark>Meizu</Trademark>
+<Model>Meizu M1971</Model>
+<AltName>16s</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Micromax</Trademark>
+<Model>Q401</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Micromax</Trademark>
+<Model>Q415</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Micromax</Trademark>
+<Model>Q4202</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Micromax</Trademark>
+<Model>Q450</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009840E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 617 processor</FullName>
+<HASHID>8D417EF2B7F102A17C2715710ABD76B16CBCE8A8FCEB9E9803733E731030176B</HASHID>
+<Trademark>Motorola</Trademark>
+<Model>G4 Plus</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007B40E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 801 processor</FullName>
+<OEMID>01C8</OEMID>
+<Names>Motorola</Names>
+<MODELID>0000</MODELID>
+<HASHID>8C694C4263AB8FDFF1C385D9A12E406705B22453771910317C63F58E5E675CB8</HASHID>
+<Trademark>Motorola</Trademark>
+<Model>XT1096</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009690E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 808 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>72C0D49BF111F40542838951113321A955D002ED1EF7C3B8152CBD3212583952</HASHID>
+<Trademark>Nextbit</Trademark>
+<Model>Robin (N108)</Model>
+</ForFilter>
+<ForFilter>
+<HASHID>9B3184613D694EA24D3BEEBA6944FDB64196FEA7056C833D38D2EF683FD96E9B</HASHID>
+<Trademark>Nexus</Trademark>
+<Model>6 (shamu)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009400E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 810 processor</FullName>
+<HASHID>30758B3E0D2E47B19EBCAC1F0A66B545960784AD6D428A2FE3C70E3934C29C7A</HASHID>
+<Trademark>Nexus</Trademark>
+<Model>6P (angler)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000940E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 205 mobile platform</FullName>
+<OEMID>0042</OEMID>
+<Names>Alcatel</Names>
+<MODELID>0050</MODELID>
+<HASHID>1357FDAEABB7BECBE49095F000D9D3DADF198885106D98598CAC6D1B9B2EDB3A</HASHID>
+<Trademark>Nokia</Trademark>
+<Model>8110 4g</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430 mobile platform</FullName>
+<HASHID>74F3DE78AB5CD12EC2E77E35B8D96BD8597D6B00C2BA519C68BE72EA40E0EB79</HASHID>
+<Trademark>Nokia</Trademark>
+<Model>d1c</Model>
+<AltName>6</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>F5F4192A33B2830974B400119BAB728CC9FE911011F928625C2AED0DA441AC97</HASHID>
+<Trademark>Nokia</Trademark>
+<Model>TA-1021</Model>
+<AltName>6</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>F5F4192A33B2830974B400119BAB728CC9FE911011F928625C2AED0DA441AC97</HASHID>
+<Trademark>Nokia</Trademark>
+<Model>TA-1029</Model>
+<AltName>2</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000AC0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 636 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>7FE240DDEA200F42252F0F026C801A4737DFF20C416F1292A501BDCEF8792863</HASHID>
+<Trademark>Nokia</Trademark>
+<Model>TA-1043</Model>
+<AltName>6.1</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>F5F4192A33B2830974B400119BAB728CC9FE911011F928625C2AED0DA441AC97</HASHID>
+<Trademark>Nokia</Trademark>
+<Model>TA-1053</Model>
+<AltName>5</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>D18EF172D0D45AACC294212A45FBA91D8A8431CC686B164C6F0E522D476735E9</HASHID>
+<Trademark>Nokia</Trademark>
+<Model>TA-1053</Model>
+<AltName>5</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>F5F4192A33B2830974B400119BAB728CC9FE911011F928625C2AED0DA441AC97</HASHID>
+<Trademark>Nokia</Trademark>
+<Model>TA-1080</Model>
+<AltName>2.1</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000CC0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 636 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>441E29FD115CD9372BC048AF1493F69D27BC896495E467DA76EB7BF917BC59DD</HASHID>
+<Trademark>Nokia</Trademark>
+<Model>TA-1095</Model>
+<AltName>7.1</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 660 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>085F5BE01542E7C28C9CB292A32DF284B659D7B77128935BB65209196E5666EE</HASHID>
+<Trademark>Nokia</Trademark>
+<Model>TA-1196</Model>
+<AltName>7.2</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009400E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 810 processor</FullName>
+<HASHID>63A47E46A664CCD1244A36535D10CA0B97B50B510BD481252F786177197C3C44</HASHID>
+<Trademark>OnePlus</Trademark>
+<Model>2</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<HASHID>C34EC1FDDFAC05D8F63EED3EE90C8E6983FE2B0E4B2837B30D8619A29633649C</HASHID>
+<Trademark>OnePlus</Trademark>
+<Model>3</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<HASHID>97EFF4D4111DD90523F6182E05650298B7AE803F0EC36F69A643C031399D8D13</HASHID>
+<Trademark>OnePlus</Trademark>
+<Model>3</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<HASHID>A1B7EB81C61525D6819916847E02E9AE5031BF163D246895780BD0E3F786C7EE</HASHID>
+<Trademark>OnePlus</Trademark>
+<Model>3T</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<HASHID>EEF93D29E4EDDA26CCE493B859E22161853439DE7B2151A47DAFE3068EE43ABE</HASHID>
+<Trademark>OnePlus</Trademark>
+<Model>3T</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0005F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 821 mobile platform</FullName>
+<OEMID>2A70</OEMID>
+<Names>Oxygen</Names>
+<MODELID>3DB9</MODELID>
+<HASHID>C0C66E278FE81226585252B851370EABF8D4192F0F335576C3028190D49D14D4</HASHID>
+<Trademark>OnePlus</Trademark>
+<Model>3T</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0005E0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 835 mobile platform</FullName>
+<HASHID>02FFDAA49CF25F7FF287CAB82DA0E4F943CABF6E6A4BFE31C3198D1C2CFA1185</HASHID>
+<Trademark>OnePlus</Trademark>
+<Model>5 (cheeseburger)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 845 mobile platform</FullName>
+<OEMID>0051</OEMID>
+<Names>OPPO</Names>
+<MODELID>459B</MODELID>
+<HASHID>DD7C5F2E53176BEE91747B53900CCEC33DD30FA4DED0DFE9BAF9156E6910862F</HASHID>
+<Trademark>OnePlus</Trademark>
+<Model>6T</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0005E0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 835 mobile platform</FullName>
+<OEMID>2A70</OEMID>
+<Names>Oxygen</Names>
+<MODELID>41DB</MODELID>
+<HASHID>DE7A7D5AF049E2A6EBF923C0DBCE2ACB405AE577FAF346EA975C67EAF2EF72EB</HASHID>
+<Trademark>OnePlus</Trademark>
+<Model>A5000</Model>
+<AltName>5</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0005E0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 835 mobile platform</FullName>
+<OEMID>2A70</OEMID>
+<Names>Oxygen</Names>
+<MODELID>41DB</MODELID>
+<HASHID>DE7A7D5AF049E2A6EBF923C0DBCE2ACB405AE577FAF346EA975C67EAF2EF72EB</HASHID>
+<Trademark>OnePlus</Trademark>
+<Model>A5010</Model>
+<AltName>5T</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>007BC0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 801 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>OnePlus</Trademark>
+<Model>E1001</Model>
+<AltName>X</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>007B00E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 800 processor</FullName>
+<HASHID>71C4F97535893BA7A3177320143AC94DB4C6584544C01B61860ACA80A477D4C9</HASHID>
+<Trademark>OnePlus</Trademark>
+<Model>One</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007B00E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 800 processor</FullName>
+<HASHID>964B5C486B200AA6462733A682F9CEAD3EBFAD555CE2FF3622FEA8B279B006EE</HASHID>
+<Trademark>OnePlus</Trademark>
+<Model>X</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0006B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 435 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>77A22B92A1BCD0C4D3AAA10AA9F1B2C36D51C0CA7429B5201D0FD1D5F5B53BBC</HASHID>
+<Trademark>OPPO</Trademark>
+<Model>CPH1701</Model>
+<AltName>A57</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0009A0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 450 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>2ED896C3A8D0B9FBE8A4D55ED77AB4B2EA52D4D8DAF8DB2F37D458C05E4B472D</HASHID>
+<Trademark>OPPO</Trademark>
+<Model>CPH1809</Model>
+<AltName>A5</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 660 mobile platform</FullName>
+<OEMID>0051</OEMID>
+<Names>OPPO</Names>
+<MODELID>0000</MODELID>
+<HASHID>0CF6C9CE73E7368AFF1F442F67F9BC35372162C68561716C0EE2E43C5177553B</HASHID>
+<Trademark>OPPO</Trademark>
+<Model>CPH1893</Model>
+<AltName>RX17 Neo</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0009A0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 450 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>2440693284962AE0DC5F8534D2E131C3252C1C42F8E89019B9F1B4188731CA6F</HASHID>
+<Trademark>OPPO</Trademark>
+<Model>PBAM00</Model>
+<AltName>A5</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000DB0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 710 mobile platform</FullName>
+<OEMID>0051</OEMID>
+<Names>OPPO</Names>
+<MODELID>0000</MODELID>
+<HASHID>91057040B895B1D63F856124589C22ADC2ECE0CE5B15FC1BD925541C683115B9</HASHID>
+<Trademark>OPPO</Trademark>
+<Model>RMX1901</Model>
+<AltName>RealMe X</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>008110E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Phicomm</Trademark>
+<Model>C230</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Phicomm</Trademark>
+<Model>C630</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Prestigio</Trademark>
+<Model>PSP3405 Duo</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>37E6FB104AA363CC06B47DB7AE340A785274642CA5CFA53B42076D4C70216D51</HASHID>
+<Trademark>Protruly</Trademark>
+<Model>Darling V10s</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0005E0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 835 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>9B96CAC35E56A6282276E5C8E128CC2687100186E5A8592A4CBF3DEC66F9CEFB</HASHID>
+<Trademark>Razer</Trademark>
+<Model>Phone (cheryl)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000E60E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 730 mobile platform</FullName>
+<HASHID>32942e378adbc21376abb8b83a681e579bfebf5926c5bdc53b08f35738147041</HASHID>
+<Trademark>Realme</Trademark>
+<Model>X2</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0009A0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 450 mobile platform</FullName>
+<OEMID>0020</OEMID>
+<Names>Samsung</Names>
+<MODELID>0000</MODELID>
+<HASHID>24319AB8CA2D2116C8E9016E23A2C066C60E6A7ACE70C62867070329D330B0B5</HASHID>
+<Trademark>Samsung</Trademark>
+<Model>A6+</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>883B478977BDA8552CEE34FCBE1DA84116B4F99B2BA20C564298E0BA716AA51C</HASHID>
+<Trademark>Santin</Trademark>
+<Model>Ace Pro</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Santin</Trademark>
+<Model>Actoma Ace</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 400 processor</FullName>
+<OEMID>0038</OEMID>
+<Names>Sharp</Names>
+<MODELID>53A5</MODELID>
+<HASHID>8EF51E99C4C1E16BA892980EF5693690775CDA9C2EED3ECB3C4DEB980E6C2F8E</HASHID>
+<Trademark>Sharp</Trademark>
+<Model>305SH</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 660 mobile platform</FullName>
+<OEMID>0038</OEMID>
+<Names>Sharp</Names>
+<MODELID>0000</MODELID>
+<HASHID>07046415532823B0F6E3526FC4501B711E1A42DE51E4FCB68F0B8E62CC08BA2B</HASHID>
+<Trademark>Sharp</Trademark>
+<Model>Aquos S2 (128GB)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0007E0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 630 mobile platform</FullName>
+<OEMID>0038</OEMID>
+<Names>Sharp</Names>
+<MODELID>0000</MODELID>
+<HASHID>07046415532823B0F6E3526FC4501B711E1A42DE51E4FCB68F0B8E62CC08BA2B</HASHID>
+<Trademark>Sharp</Trademark>
+<Model>Aquos S2 (64GB)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000AC0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 636 mobile platform</FullName>
+<OEMID>0038</OEMID>
+<Names>Sharp</Names>
+<MODELID>0000</MODELID>
+<HASHID>07046415532823B0F6E3526FC4501B711E1A42DE51E4FCB68F0B8E62CC08BA2B</HASHID>
+<Trademark>Sharp</Trademark>
+<Model>SS2 (64GB)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 660 mobile platform</FullName>
+<OEMID>0011</OEMID>
+<Names>Smartisan</Names>
+<MODELID>0022</MODELID>
+<HASHID>7E425BCB25364725731899C3F82960AD92B114C0D84840F2C49AE19B7D80E479</HASHID>
+<Trademark>Smartisan</Trademark>
+<Model>U3 Pro (osborn)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Stream</Trademark>
+<Model>B3 Maxi</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>TP-LINK</Trademark>
+<Model>TP601A</Model>
+<AltName>Neffos C5L</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Vertex</Trademark>
+<Model>Impress Grip</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000BF0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 439 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>60BA997FEF6DA9F05885FA11F1DD6D2A90D052A257A09C2075D7246CC73C0D43</HASHID>
+<Trademark>VIVO</Trademark>
+<Model>1807</Model>
+<AltName>Y95</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>60BA997FEF6DA9F05885FA11F1DD6D2A90D052A257A09C2075D7246CC73C0D43</HASHID>
+<Trademark>VIVO</Trademark>
+<Model>PD1628F</Model>
+<AltName>Y53</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000DB0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 710 mobile platform</FullName>
+<OEMID>0073</OEMID>
+<Names>VIVO</Names>
+<MODELID>0003</MODELID>
+<HASHID>2C0A52FFBD8DB687B56F6A98D8840F46597A4DDE6D9DC8D00039873CE6D74F60</HASHID>
+<Trademark>VIVO</Trademark>
+<Model>PD1911F</Model>
+<AltName>Z5x</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0010A0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 765 mobile platform</FullName>
+<OEMID>0073</OEMID>
+<Names>VIVO</Names>
+<MODELID>0003</MODELID>
+<HASHID>A7DF36FFD7AB557C67A6C26675E2795C922CF671308CFD7169BEDB84424C862B</HASHID>
+<Trademark>VIVO</Trademark>
+<Model>PD1945F</Model>
+<AltName>S1 Pro</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>5637CD7EFD4B633C0F2E8D7533B82E7A5A30CDDF76A64A4F87789C91461B6E23</HASHID>
+<Trademark>Wileyfox</Trademark>
+<Model>Storm</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>D36C6073C9C2CB1C36FB4EE0FBB6DF9D5B12A35BD07C0C03A6260022D7C0FCC2</HASHID>
+<Trademark>Wileyfox</Trademark>
+<Model>Swift</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>8008B2CD7B7E36F1BD723381ADA008109F6D434A0780C38CE017C7CA89672D69</HASHID>
+<Trademark>Wileyfox</Trademark>
+<Model>Swift 2</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 845 mobile platform</FullName>
+<OEMID>0144</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>ACB465293769A1C7F33050B6734564ACEF31DB8244C1104C7D3E12647BB5174A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Black Shark</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000A50E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 855 mobile platform</FullName>
+<OEMID>0144</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>8362111A15F700DC4CDA0A4FE33942A67A462F1E293B93E65B12CD505CD0E637</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Black Shark 2</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007B00E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 800 processor</FullName>
+<HASHID>964B5C486B200AA6462733A682F9CEAD3EBFAD555CE2FF3622FEA8B279B006EE</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 3 (cancro)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007B60E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 801 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 3 (cancro)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009690E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 808 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 4c (libra)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 4i (ferrari)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007B60E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 801 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 4w (cancro)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0006C0E1</HWID>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 4w (cancro)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>355D47F912FEA0AF1F46C007C6DC22C43544FB9359E30AA7DB5F4734D18FBD74</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 5 (gemini)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<HASHID>C215AC92B799D755AF0466E14C7F4E4DC53B590F5FBC0D4633AFAFE5CECC41C3</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 5 (gemini)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0005F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 821 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>355D47F912FEA0AF1F46C007C6DC22C43544FB9359E30AA7DB5F4734D18FBD74</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 5s (capricorn)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0005F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 821 mobile platform</FullName>
+<HASHID>2DDE12F09B1217DBBD53860DD9145326A394BF6942131E440C161D9A13DC43DD</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 5s (capricorn)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0005F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 821 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>355D47F912FEA0AF1F46C007C6DC22C43544FB9359E30AA7DB5F4734D18FBD74</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 5s Plus (natrium)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<HASHID>69A6E465C2F1E2CAABB370D398026441B29B45C975778E4682FC5E89283771BD</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 5s Plus (natrium)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 5x (tiffany)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<HASHID>61135CB65671284290A99BD9EDF5C075672E7FEBA2A4A79BA9CFACD70CD2EA50</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 5x (tiffany)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0005E0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 835 mobile platform</FullName>
+<HASHID>67A7EA77C23FDD1046ECCE7628BFD5975E9949F66ADDD55BB3572CAF9FE97AEA</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 6 (sagit)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0005E0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 835 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 6 (sagit)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 660 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 6x (wayne)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 845 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 8 (dipper)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 660 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 8 Lite (platina)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 845 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 8 Pro (equuleus)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000DB0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 710 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 8 SE (sirius)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000DB0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 710 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 9 Lite (pyxis)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>001080E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 712 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 9 SE (grus)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000A50E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 855 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA46</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 9T Pro (raphael)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi A1 (tissot)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<HASHID>A38C6F01272814E0A47E556B4AD17F999769A0FEE6D3C98343B7DE6DE741E79C</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi A1 (tissot)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi A2 lite (daisy)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0010A0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 765 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA46</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi A3 (laurel)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009900E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi Max (helium)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi Max 2 (oxygen)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<HASHID>BB5E36491053118486EBCCD5817C5519A53EAE5EDA9730F1127C22DD6C1B5C2B</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi Max 2 (oxygen)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000CC0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 636 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi Max 3 (nitrogen)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009900E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi Max Prime (helium)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<HASHID>3DB3B7FD2664D98FD16F432E8D8AD821A85B85BD37701422F563079CB64D084C</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi Mix (lithium)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0005E0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 835 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi Mix 2 (chiron)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0005E0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 835 mobile platform</FullName>
+<HASHID>ADEB0034FC38C99C8401DCDBA9008EE5A8525BB66F1FC031EE8F4EFC22C5A1DF</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi Mix 2 (chiron)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 845 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi Mix 2s (polaris)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007B40E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 801 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi Note (virgo)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0005F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 821 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>355D47F912FEA0AF1F46C007C6DC22C43544FB9359E30AA7DB5F4734D18FBD74</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi Note 2 (scorpio)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 660 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi Note 3 (jason)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 660 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi Pad 4 (clover)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 845 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Pocophone F1 (beryllium)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 2 (wt88047)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 3 (ido)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 3s/3x (land)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 4 (prada)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 4 Prime (markw)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<HASHID>7F6CE28D52815A4FAC276F62B99B5ABEB3F73C495F9474EB55204B3B4E6FCE6D</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 4a (rolex)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 4a (rolex)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0006B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 435 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 4x (santoni)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0009A0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 450 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 5 (rosy)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 5 Plus (vince)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 5A (riva)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<HASHID>67D32C753DDB67982E9AEF0C13D49B33DF1B95CC7997A548D23A49C1DD030194</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 5A (riva)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 6 Pro (sakura)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000BA0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 632 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 7 (onclite)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000BF0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 439 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 7a (pine)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000BF0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 439 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 8 (olive)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000BF0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 439 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 8a (olivelite)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Go (tiare)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000A50E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 855 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA46</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi K20 Pro (raphael)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<HASHID>BF4E25AE6108D6F6C8D9218383BD85273993262EC0EBA088F6C58A04FC02903B</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 2 (scorpion)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 660 mobile platform</FullName>
+<HASHID>1D4A7043A8A55A19F7E1C294D42872CD57A71B8F370E3D9551A796415E61B434</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 3 (jason)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009B00E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 650 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 3 Pro (kenzo)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009900E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
+<HASHID>5C9CCCF88B6AB026D8165378D6ADA00275A606B8C4AD724FBCA33E8224695207</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 3 Pro (kenzo)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009B00E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 650 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 3 SE (kate)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<HASHID>5D45ECF8864DBBC741FB7874F878126E8F23EE9448A3EA1EDE8E16FE02F782C0</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 4/4x (mido)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 4/4x (mido)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000CC0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 636 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 5 (whyred)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<HASHID>8483423802d7f01bf1043365c855885b0eea193bf32ed25041a347bc80c32d6b</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 5a (ugglite)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 5a (ugglite)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0006B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 435 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 5a Prime (ugg)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430 mobile platform</FullName>
+<HASHID>5F1C47435A031331B7F6EC33E8F406EF42BAEF9A4E3C6D2F438A8B827DD00075</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 5a Prime (ugg)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000CC0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 636 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 6 Pro (tulip)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 660 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 7 (lavender)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0010A0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 765 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA46</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 8 (ginkgo)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0010A0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 765 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA46</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 8t (willow)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note Prime (gucci)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi S2 (ysl)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000BA0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 632 mobile platform</FullName>
+<OEMID>0072</OEMID>
+<Names>Xiaomi</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Y3 (onc)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>000AC0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 636 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>AA0E1191D83A1EFAEBB921AC74F3382AC6EB4F5127E8AFD9E58E32AFEA1BA049</HASHID>
+<Trademark>Yandex</Trademark>
+<Model>Smartphone (YNDX-000SB)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0007E0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 630 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>AA0E1191D83A1EFAEBB921AC74F3382AC6EB4F5127E8AFD9E58E32AFEA1BA049</HASHID>
+<Trademark>Yandex</Trademark>
+<Model>Smartphone (YNDX-000SB)</Model>
+</ForFilter>
+<ForFilter>
+<HWID>007BC0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 801 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>YotaPhone</Trademark>
+<Model>2</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<HASHID>CB06DECBE7B1C47D10C97AE815D4FB2A06D62983738D383ED69B25630C394DED</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>Axon 7</Model>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>B2016</Model>
+<AltName>Axon Mini</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009720E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0004</MODELID>
+<HASHID>B81B9AA98E43A9EBA9F2F5BC9ACF4E30C22BEA31879945A9949652216A688059</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>B2017G</Model>
+<AltName>Axon 7 Mini</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>N939St</Model>
+<AltName>Blade X9</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>N958St</Model>
+<AltName>Blade V5 Max</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009400E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 810 processor</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>CF275499E5CADB172821B80EFFDFF29205811A55F388213B52EAF415D61A6D7F</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>NX510J</Model>
+<AltName>Nubia Z9 Max</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>02C54B620D695CE2A617324B0A86916E0BA41D9180EFCFAB042D2755E8978412</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>NX512J</Model>
+<AltName>Nubia Z9 max</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009900E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>FDFC20DB73081EA0BB42EBA895F44B4284B0E4C657503B1BCDE6C7832B4DB504</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>NX523J</Model>
+<AltName>Nubia Z11 max</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009840E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 617 processor</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>4232191DA8A45966EB089F421BF2FB8EF4E3F39856195BE23077C39FEEABF250</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>NX529J</Model>
+<AltName>Nubia Z11 mini</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009720E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>4232191DA8A45966EB089F421BF2FB8EF4E3F39856195BE23077C39FEEABF250</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>NX529J</Model>
+<AltName>Nubia Z11 mini</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>6730B8E1D5FA7F85037E9CD44D3724D38E9CB2D7B42E084B2B9BE0F5B40EC6D2</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>NX531J</Model>
+<AltName>Nubia Z11</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>404D181E75AF65A806B01DCF394B82B8A645FB0DE76E3C386FE42092D33500D6</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>NX549J</Model>
+<AltName>Nubia Z11 Mini S</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009900E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>FDFC20DB73081EA0BB42EBA895F44B4284B0E4C657503B1BCDE6C7832B4DB504</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>NX569J</Model>
+<AltName>Nubia Z17 mini</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>30020000</HWID>
+<FullName>Qualcomm® Snapdragon™ 835 mobile platform</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>55DBEB4E905211554182AAC13A8C401C798DD216D300B2222E18EE6426F3C87C</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>NX595J</Model>
+<AltName>Nubia Z17S</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>404D181E75AF65A806B01DCF394B82B8A645FB0DE76E3C386FE42092D33500D6</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>NX608J</Model>
+<AltName>Nubia N3</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>404D181E75AF65A806B01DCF394B82B8A645FB0DE76E3C386FE42092D33500D6</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>NX612J</Model>
+<AltName>Nubia V18</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0008B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 845 mobile platform</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>6C1ED0375298D9A4FCD5C3BDD10776ACDC6A927A3600B1D5DCFD57B9BACFE7C4</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>NX616J</Model>
+<AltName>Nubia X</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0006B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 435 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>EFB43886779A74120F2195109C3883DE59CBF87C60C55662DE65AA2D85D8AEEF</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>NX907J</Model>
+<AltName>Nubia M2 Play</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>3767512BCB320B2B8450BAB3FCC7D891D913702CBA941717D6D13AF81FDADC68</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>P809A20</Model>
+<AltName>Blade T610</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>3767512BCB320B2B8450BAB3FCC7D891D913702CBA941717D6D13AF81FDADC68</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>P809A20</Model>
+<AltName>Blade A460</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>9764995D53559360DC5789643D7424ACE3BF6208DA9433656B7C9DD103F0FE65</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>P809A50</Model>
+<AltName>Blade A310</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>EADAE385D54EC66B830F9F9937E085CDFD92B2C01339C98BCD2F512D492B47A8</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>P809F10</Model>
+<AltName>Blade A520c</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>EADAE385D54EC66B830F9F9937E085CDFD92B2C01339C98BCD2F512D492B47A8</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>P809F12</Model>
+<AltName>Blade A0622</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>EADAE385D54EC66B830F9F9937E085CDFD92B2C01339C98BCD2F512D492B47A8</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>P809F20</Model>
+<AltName>Blade A320</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>EADAE385D54EC66B830F9F9937E085CDFD92B2C01339C98BCD2F512D492B47A8</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>P809F30</Model>
+<AltName>Blade A330</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>9764995D53559360DC5789643D7424ACE3BF6208DA9433656B7C9DD103F0FE65</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>P817E52</Model>
+<AltName>Blade Z10 A512</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>008110E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>P821E10</Model>
+<AltName>Blade V811w</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410 processor</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>EADAE385D54EC66B830F9F9937E085CDFD92B2C01339C98BCD2F512D492B47A8</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>P829A10</Model>
+<AltName>Blade T617</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>EADAE385D54EC66B830F9F9937E085CDFD92B2C01339C98BCD2F512D492B47A8</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>P839F30</Model>
+<AltName>Blade S6 lite</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615 processor</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>EADAE385D54EC66B830F9F9937E085CDFD92B2C01339C98BCD2F512D492B47A8</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>P839F35</Model>
+<AltName>Blade T920</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0006B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 435 mobile platform</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>9764995D53559360DC5789643D7424ACE3BF6208DA9433656B7C9DD103F0FE65</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>P840F01</Model>
+<AltName>Blade V0850</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0006B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 435 mobile platform</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>9764995D53559360DC5789643D7424ACE3BF6208DA9433656B7C9DD103F0FE65</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>P840F03</Model>
+<AltName>Blade V9 Bita V0920</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0006B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 435 mobile platform</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>9764995D53559360DC5789643D7424ACE3BF6208DA9433656B7C9DD103F0FE65</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>P840F10</Model>
+<AltName>Blade V0800</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0006B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 435 mobile platform</FullName>
+<OEMID>0004</OEMID>
+<Names>ZTE</Names>
+<MODELID>0000</MODELID>
+<HASHID>9764995D53559360DC5789643D7424ACE3BF6208DA9433656B7C9DD103F0FE65</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>P840F12</Model>
+<AltName>Blade A6 A0620</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>007B00E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 800 processor</FullName>
+<HASHID>A27232BF1383BB765937AEA1EBDEE8079B8A453F3982B46F5E7096C373D18BB3</HASHID>
+<Trademark>ZUK</Trademark>
+<Model>Z1</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<HASHID>3FDAF99FC506A42FCBC649B7B46D9BB8DD32AEABA4B56C920B45E93A4A7080EA</HASHID>
+<Trademark>ZUK</Trademark>
+<Model>Z2</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
+<HASHID>48741756201674EB88C580DF1FDB06C7B823DC95B3FC89588A84A495E815FBD4</HASHID>
+<Trademark>ZUK</Trademark>
+<Model>Z2</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008110E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Билайн</Trademark>
+<Model>Смарт 2</Model>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Билайн</Trademark>
+<Model>Фаст +</Model>
+</ForFilter>
+<ForFilter>
+<HWID>008110E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 200 processor</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Мегафон</Trademark>
+<Model>Логин 3</Model>
+</ForFilter>
+</dataroot>
+</root>
