@@ -118,17 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="adb" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\adb.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="bot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bot.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
-  </data>
-  <data name="fh_loader" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fh_loader.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="QSaharaServer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\QSaharaServer.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="String_faq1" xml:space="preserve">
     <value>1. q. Как формируется рейтинг файла в папке с программерами? a. Файлы с рейтингом 0 не являются ELF файлами и в них не осуществляется поиск сертификатов. Рейтинг 1 у файла ELF (ELE). Это могут быть любые эльф-файлы (программеры, xbl и т.п.). К рейтингу добавляется 2, если SWID (идентификатор программного обеспечения) начинается с 3 (загрузчик для аварийного режима), ещё +1 балл к рейтингу, если совпадают идентификаторы у модели телефона, указанного в поле поиска, и в сертификате программера. Также к рейтингу добавляется 2, если совпадает производитель и ещё 2, если процессор. Совпадение хеш-суммы корневого сертификата добавляет ещё 2 балла к рейтингу. Чем выше рейтинг файла (программера), тем выше вероятность того, что он подойдёт к телефону, параметры которого введены для поиска. Максимальное значение рейтинга - 10 баллов.</value>

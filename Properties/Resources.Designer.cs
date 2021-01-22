@@ -61,41 +61,11 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] adb {
-            get {
-                object obj = ResourceManager.GetObject("adb", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на 1577249282:AAGaiqdzIYGHLZRY2dFY1oXbdt-oXEa-Ig4.
         /// </summary>
         internal static string bot {
             get {
                 return ResourceManager.GetString("bot", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] fh_loader {
-            get {
-                object obj = ResourceManager.GetObject("fh_loader", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] QSaharaServer {
-            get {
-                object obj = ResourceManager.GetObject("QSaharaServer", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         

@@ -86,6 +86,9 @@
             this.toolStripStatusLabel_vol = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabPage_phone = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox_logs = new System.Windows.Forms.GroupBox();
+            this.radioButton_fulllog = new System.Windows.Forms.RadioButton();
+            this.radioButton_shortlog = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox_mem_type = new System.Windows.Forms.ComboBox();
             this.comboBox_fh_command = new System.Windows.Forms.ComboBox();
@@ -116,9 +119,6 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.tableAdapterManager = new FirehoseFinder.qcom_phonesDataSetTableAdapters.TableAdapterManager();
             this.forFilterTableAdapter = new FirehoseFinder.qcom_phonesDataSetTableAdapters.ForFilterTableAdapter();
-            this.groupBox_logs = new System.Windows.Forms.GroupBox();
-            this.radioButton_shortlog = new System.Windows.Forms.RadioButton();
-            this.radioButton_fulllog = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPage_guide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.forFilterDataGridView)).BeginInit();
@@ -132,16 +132,16 @@
             this.statusStrip_firehose.SuspendLayout();
             this.tabPage_phone.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox_logs.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage_about.SuspendLayout();
-            this.groupBox_logs.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage_guide);
             this.tabControl1.Controls.Add(this.tabPage_firehose);
+            this.tabControl1.Controls.Add(this.tabPage_guide);
             this.tabControl1.Controls.Add(this.tabPage_phone);
             this.tabControl1.Controls.Add(this.tabPage_about);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -741,6 +741,39 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sahara";
             // 
+            // groupBox_logs
+            // 
+            this.groupBox_logs.Controls.Add(this.radioButton_fulllog);
+            this.groupBox_logs.Controls.Add(this.radioButton_shortlog);
+            this.groupBox_logs.Location = new System.Drawing.Point(487, 345);
+            this.groupBox_logs.Name = "groupBox_logs";
+            this.groupBox_logs.Size = new System.Drawing.Size(353, 58);
+            this.groupBox_logs.TabIndex = 10;
+            this.groupBox_logs.TabStop = false;
+            this.groupBox_logs.Text = "Вывод логов в терминал";
+            // 
+            // radioButton_fulllog
+            // 
+            this.radioButton_fulllog.AutoSize = true;
+            this.radioButton_fulllog.Location = new System.Drawing.Point(139, 22);
+            this.radioButton_fulllog.Name = "radioButton_fulllog";
+            this.radioButton_fulllog.Size = new System.Drawing.Size(105, 21);
+            this.radioButton_fulllog.TabIndex = 1;
+            this.radioButton_fulllog.Text = "Подробный";
+            this.radioButton_fulllog.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_shortlog
+            // 
+            this.radioButton_shortlog.AutoSize = true;
+            this.radioButton_shortlog.Checked = true;
+            this.radioButton_shortlog.Location = new System.Drawing.Point(7, 22);
+            this.radioButton_shortlog.Name = "radioButton_shortlog";
+            this.radioButton_shortlog.Size = new System.Drawing.Size(122, 21);
+            this.radioButton_shortlog.TabIndex = 0;
+            this.radioButton_shortlog.TabStop = true;
+            this.radioButton_shortlog.Text = "Сокращённый";
+            this.radioButton_shortlog.UseVisualStyleBackColor = true;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -1037,39 +1070,6 @@
             // 
             this.forFilterTableAdapter.ClearBeforeFill = true;
             // 
-            // groupBox_logs
-            // 
-            this.groupBox_logs.Controls.Add(this.radioButton_fulllog);
-            this.groupBox_logs.Controls.Add(this.radioButton_shortlog);
-            this.groupBox_logs.Location = new System.Drawing.Point(487, 345);
-            this.groupBox_logs.Name = "groupBox_logs";
-            this.groupBox_logs.Size = new System.Drawing.Size(353, 58);
-            this.groupBox_logs.TabIndex = 10;
-            this.groupBox_logs.TabStop = false;
-            this.groupBox_logs.Text = "Вывод логов в терминал";
-            // 
-            // radioButton_shortlog
-            // 
-            this.radioButton_shortlog.AutoSize = true;
-            this.radioButton_shortlog.Checked = true;
-            this.radioButton_shortlog.Location = new System.Drawing.Point(7, 22);
-            this.radioButton_shortlog.Name = "radioButton_shortlog";
-            this.radioButton_shortlog.Size = new System.Drawing.Size(122, 21);
-            this.radioButton_shortlog.TabIndex = 0;
-            this.radioButton_shortlog.TabStop = true;
-            this.radioButton_shortlog.Text = "Сокращённый";
-            this.radioButton_shortlog.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_fulllog
-            // 
-            this.radioButton_fulllog.AutoSize = true;
-            this.radioButton_fulllog.Location = new System.Drawing.Point(139, 22);
-            this.radioButton_fulllog.Name = "radioButton_fulllog";
-            this.radioButton_fulllog.Size = new System.Drawing.Size(105, 21);
-            this.radioButton_fulllog.TabIndex = 1;
-            this.radioButton_fulllog.Text = "Подробный";
-            this.radioButton_fulllog.UseVisualStyleBackColor = true;
-            // 
             // Formfhf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1101,14 +1101,14 @@
             this.tabPage_phone.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox_logs.ResumeLayout(false);
+            this.groupBox_logs.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage_about.ResumeLayout(false);
             this.tabPage_about.PerformLayout();
-            this.groupBox_logs.ResumeLayout(false);
-            this.groupBox_logs.PerformLayout();
             this.ResumeLayout(false);
 
         }

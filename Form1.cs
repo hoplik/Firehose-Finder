@@ -69,16 +69,18 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Formfhf_Load(object sender, EventArgs e)
         {
-            try
-            {
-                forFilterTableAdapter.Fill(qcom_phonesDataSet.ForFilter);
-            }
-            catch (InvalidOperationException)
-            {
-                MessageBox.Show("Для загрузки Справочника (базы данных) требуется установка Access Database Engine 2010 версии, совпадающей с установленным пакетом Microsoft Office (x86 или x64)" + Environment.NewLine +
-                    "Ссылка для загрузки:" + Environment.NewLine +
-                   "http://www.microsoft.com/en-us/download/details.aspx?id=13255", "Требуются дополнительные компоненты");
-            }
+            //try
+            //{
+            //    forFilterTableAdapter.Fill(qcom_phonesDataSet.ForFilter);
+            //}
+            //catch (InvalidOperationException)
+            //{
+            //    MessageBox.Show("Для загрузки Справочника (базы данных) требуется установка Access Database Engine 2010 версии, совпадающей с установленным пакетом Microsoft Office (x86 или x64)" + Environment.NewLine +
+            //        "Ссылка для загрузки:" + Environment.NewLine +
+            //       "http://www.microsoft.com/en-us/download/details.aspx?id=13255", "Требуются дополнительные компоненты");
+            //}
+            tabControl1.TabPages.Remove(tabPage_guide);
+            //tabControl1.TabPages.Remove(tabPage_phone);
             richTextBox_about.Text = "Версия сборки: " + Assembly.GetExecutingAssembly().GetName().Version + Environment.NewLine
                 + Environment.NewLine +
                 "Часто задаваемые вопросы: " + Environment.NewLine + Resources.String_faq1 +
@@ -99,9 +101,7 @@ namespace FirehoseFinder
         {
             try
             {
-                if (File.Exists("adb.exe")) File.Delete("adb.exe");
-                if (File.Exists("QSaharaServer.exe")) File.Delete("QSaharaServer.exe");
-                if (File.Exists("fh_loader.exe")) File.Delete("fh_loader.exe");
+                //if (File.Exists("adb.exe")) File.Delete("adb.exe"); //При закрытии надо убивать процесс, а не удалять файл
                 if (File.Exists("commandop02.bin")) File.Delete("commandop02.bin");
                 if (File.Exists("commandop03.bin")) File.Delete("commandop03.bin");
                 if (File.Exists("commandop07.bin")) File.Delete("commandop07.bin");
@@ -282,14 +282,6 @@ namespace FirehoseFinder
         /// <returns>true - всё хорошо, false - есть ошибки</returns>
         private bool ADB_Check()
         {
-            //Создаём ADB из ресурсов в рабочую папку, если его там ещё нет
-            if (!File.Exists("adb.exe"))
-            {
-                byte[] LocalADB = Resources.adb;
-                FileStream fs = new FileStream("adb.exe", FileMode.Create);
-                fs.Write(LocalADB, 0, LocalADB.Length);
-                fs.Close();
-            }
             //Стартуем сервер
             textBox_ADB.AppendText("Запускаем сервер ADB ..." + Environment.NewLine);
             AdbServer server = new AdbServer();
@@ -378,14 +370,6 @@ namespace FirehoseFinder
         /// </summary>
         private void GetSaharaIDs()
         {
-            //Создаём SaharaServer из ресурсов в рабочую папку, если его там ещё нет
-            if (!File.Exists("QSaharaServer.exe"))
-            {
-                byte[] LocalQSS = Resources.QSaharaServer;
-                FileStream fs = new FileStream("QSaharaServer.exe", FileMode.Create);
-                fs.Write(LocalQSS, 0, LocalQSS.Length);
-                fs.Close();
-            }
             //Выполняем запрос HWID-OEMID (command02)
             Process process = new Process();
             process.StartInfo.FileName = "QSaharaServer.exe";
@@ -860,20 +844,6 @@ namespace FirehoseFinder
             }
             try
             {
-                if (!File.Exists("QSaharaServer.exe"))
-                {
-                    byte[] LocalQSS = Resources.QSaharaServer;
-                    FileStream fs = new FileStream("QSaharaServer.exe", FileMode.Create);
-                    fs.Write(LocalQSS, 0, LocalQSS.Length);
-                    fs.Close();
-                }
-                if (!File.Exists("fh_loader.exe"))
-                {
-                    byte[] LocalFHL = Resources.fh_loader;
-                    FileStream fs = new FileStream("fh_loader.exe", FileMode.Create);
-                    fs.Write(LocalFHL, 0, LocalFHL.Length);
-                    fs.Close();
-                }
                 process1.StartInfo.FileName = "QSaharaServer.exe";
                 process1.StartInfo.Arguments = sahara_command_args.ToString();
                 process1.Start();
