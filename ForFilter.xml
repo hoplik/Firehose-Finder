@@ -78,11 +78,12 @@
 </xsd:restriction>
 </xsd:simpleType>
 </xsd:element>
+<xsd:element name="Proof" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean"/>
 </xsd:sequence>
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-01-22T15:52:49">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-01-22T21:35:24">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
@@ -92,6 +93,7 @@
 <HASHID>C6A7D19EEF8CD62E02205D46298DE2F19E2C4E0CA7AAD7A1E2E66E2D495BA598</HASHID>
 <Trademark>Acer</Trademark>
 <Model>M330</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -102,6 +104,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Acer</Trademark>
 <Model>Z330</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0009A0E1</HWID>
@@ -113,6 +116,7 @@
 <Trademark>AGM</Trademark>
 <Model>AGM A9</Model>
 <AltName>А9</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -123,6 +127,7 @@
 <HASHID>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>5042D</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -133,6 +138,7 @@
 <HASHID>DF561473BCA15451CC489052D4E5FB2FA8FA3B4BB3A9FD9E0E97140FF20DBC58</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>5044R</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008050E1</HWID>
@@ -143,6 +149,7 @@
 <HASHID>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>5050X</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -153,6 +160,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>5051D</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -163,6 +171,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>5054X</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -173,6 +182,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>5056D</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -183,6 +193,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>5065D</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008110E1</HWID>
@@ -193,6 +204,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>6014X</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008110E1</HWID>
@@ -203,6 +215,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>6015X</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -213,6 +226,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>6016X</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0072C0E1</HWID>
@@ -223,6 +237,7 @@
 <HASHID>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>6035R</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008050E1</HWID>
@@ -233,6 +248,7 @@
 <HASHID>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>6036Y</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -243,6 +259,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>6039Y</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -253,6 +270,7 @@
 <HASHID>FAF5C7A62884B4DB6EDC3CE226D53492552769004007683913983594441B0608</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>6039Y</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -263,6 +281,7 @@
 <HASHID>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>6045Y</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009840E1</HWID>
@@ -273,6 +292,7 @@
 <HASHID>598FB494403B71C36D1B0DFD0F9E24500D767980EF04E5F0A3A94E28DF1FD901</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>6055K</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -283,6 +303,7 @@
 <HASHID>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>7043K</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -293,6 +314,7 @@
 <HASHID>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>7044X</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008050E1</HWID>
@@ -303,6 +325,7 @@
 <HASHID>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>7050Y</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008050E1</HWID>
@@ -313,6 +336,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>P330X</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -323,6 +347,7 @@
 <HASHID>28DCF6543D791D8E476B3D72CCDEB4E7EE744F6015CAE8CB47D8D83E2BCEE87E</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>T-1000</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -333,6 +358,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Ark</Trademark>
 <Model>Benefit A1</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -343,6 +369,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Ark</Trademark>
 <Model>Benefit A3</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -353,6 +380,7 @@
 <HASHID>ADCB7C0B68663755FD192E25C3158C7B13C234483A91460BF81F98219DE35F4D</HASHID>
 <Trademark>Artel</Trademark>
 <Model>U5</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008050E1</HWID>
@@ -363,6 +391,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>A500KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009180E1</HWID>
@@ -373,6 +402,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>G550KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007B80E1</HWID>
@@ -383,6 +413,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>PF500KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007B80E1</HWID>
@@ -393,6 +424,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>PF550KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -403,6 +435,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>Z380KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -413,6 +446,7 @@
 <HASHID>FBD4DE360136046BBF581DC5EFF178E1F716188E6834DA714E485695230D00F3</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZA550KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -423,6 +457,7 @@
 <HASHID>8ECF3EAA03F772E28479FA2F0BBAE2141CCAD6F106B384D1C46263EDB5B02838</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZB450KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -433,6 +468,7 @@
 <HASHID>E9993D6F5FEF611657545C3B637934BD7DAA48CC79BFD78197E4BCD8FE788F6B</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZB452KG</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -443,6 +479,7 @@
 <HASHID>5F62A3F033BF45346C15E1CC7B31D4E1ADFFDF641BDF618B09D44AD075029AD1</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZB500KG</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -453,6 +490,7 @@
 <HASHID>0B010BCB83A7B520C240A358A00DB87675681FB9C7C703496692AC3154466053</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZB500KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009180E1</HWID>
@@ -463,6 +501,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZB501KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009180E1</HWID>
@@ -473,6 +512,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZB551KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -483,6 +523,7 @@
 <HASHID>AD38BEB6615BA7FBA38361DAE6BF2DF14AF5E7AC6AF8E78DB46C3ADD435E4174</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZB553KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -493,6 +534,7 @@
 <HASHID>FBD4DE360136046BBF581DC5EFF178E1F716188E6834DA714E485695230D00F3</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZB555KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000CC0E1</HWID>
@@ -504,6 +546,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZB602KL</Model>
 <AltName>ZenFone Max Pro (M1)</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -514,6 +557,7 @@
 <HASHID>54736AEBEAAF4167A56D97D6D0C5F52FA3FCE66E28B2B377B52EDF6E53490B65</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZB631KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -524,6 +568,7 @@
 <HASHID>49D087CA08C6E2CA3D209C5697971E85D42A2F632592E68230C7D780F7D5DC1F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZC520KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -534,6 +579,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZC550KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -544,6 +590,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZC550KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -554,6 +601,7 @@
 <HASHID>AD38BEB6615BA7FBA38361DAE6BF2DF14AF5E7AC6AF8E78DB46C3ADD435E4174</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZC553KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -564,6 +612,7 @@
 <HASHID>49D087CA08C6E2CA3D209C5697971E85D42A2F632592E68230C7D780F7D5DC1F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZC554KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -574,6 +623,7 @@
 <HASHID>F069A87F6D4364EFCDFECFCD34BD5201F4126990D38424FCF7F21724F9EC0BF2</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZD551KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -584,6 +634,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZE500KG</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -594,6 +645,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZE500KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -604,6 +656,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZE520KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -614,6 +667,7 @@
 <HASHID>F069A87F6D4364EFCDFECFCD34BD5201F4126990D38424FCF7F21724F9EC0BF2</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZE550KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -624,6 +678,7 @@
 <HASHID>F069A87F6D4364EFCDFECFCD34BD5201F4126990D38424FCF7F21724F9EC0BF2</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZE550KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0007E0E1</HWID>
@@ -631,6 +686,7 @@
 <HASHID>B73514537FFC38A0ED1D2CA67B39C87968C402A50F02AC78423F617AE200106D</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZenFone 4</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008B0E1</HWID>
@@ -641,6 +697,7 @@
 <HASHID>1E5D0B2A695A7275A88DF56F40FFCE23BA6294EE704FA90F801524184A44BE5F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZS620KL</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -651,6 +708,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>BenQ</Trademark>
 <Model>T47_09</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -661,6 +719,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>BQ</Trademark>
 <Model>Aquaris X Pro</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000CC0E1</HWID>
@@ -671,6 +730,7 @@
 <HASHID>85ED99A93351924F0F116449D448127F1FD54780BBED4F6AF54199A31CDF7FB9</HASHID>
 <Trademark>BQ</Trademark>
 <Model>Aquaris X2</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -681,6 +741,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>BQ</Trademark>
 <Model>Aquaris X5 Plus</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -691,6 +752,7 @@
 <HASHID>DF989E3C2BE41617A8FF5019AD996BF706BBD5D3EEE0DC4B9A2F048F9224FA54</HASHID>
 <Trademark>Caterpillar</Trademark>
 <Model>Cat S30</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -701,6 +763,7 @@
 <HASHID>DF989E3C2BE41617A8FF5019AD996BF706BBD5D3EEE0DC4B9A2F048F9224FA54</HASHID>
 <Trademark>Caterpillar</Trademark>
 <Model>Cat S31</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009840E1</HWID>
@@ -711,6 +774,7 @@
 <HASHID>84E0FA565714285DAC5237CFE602D4BB2B1A4794C75DFC8D1425E8AD55C0E641</HASHID>
 <Trademark>Caterpillar</Trademark>
 <Model>Cat S60</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000AC0E1</HWID>
@@ -721,6 +785,7 @@
 <HASHID>EE43AB11D0CA65C9DE6F717134DAF0819B9610FA36C5AD94A484520EB7708836</HASHID>
 <Trademark>Caterpillar</Trademark>
 <Model>Cat S61</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -731,6 +796,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>China Modile</Trademark>
 <Model>A3s</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -741,6 +807,7 @@
 <HASHID>7D8BD4A98B53F2F4B6B9D2ECE63F8C238F4FC7873F89CF02750E2569545E47EF</HASHID>
 <Trademark>Coolpad</Trademark>
 <Model>C103</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -752,6 +819,7 @@
 <Trademark>Coolpad</Trademark>
 <Model>C107-9</Model>
 <AltName>C1</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -762,6 +830,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Dexp</Trademark>
 <Model>Ixion P245</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -772,6 +841,7 @@
 <HASHID>5B49D99A5282E9847631B8B9B7A942CBF2C3B6FAC436A12B9571BA6EB396D324</HASHID>
 <Trademark>Dexp</Trademark>
 <Model>Ixion W5</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -782,6 +852,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Dexp</Trademark>
 <Model>Ixion Y 5</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -792,6 +863,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Discovery</Trademark>
 <Model>V9 WCDMA</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005E0E1</HWID>
@@ -802,6 +874,7 @@
 <HASHID>DE025086886AA0CA5FB043A3E74CD1D46819A1BA379D5E597D8BBF3331BED134</HASHID>
 <Trademark>Essential Phone</Trademark>
 <Model>PH-1</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -812,6 +885,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>General Mobile</Trademark>
 <Model>GM 5</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -822,6 +896,7 @@
 <HASHID>1A6BA5B80B9E7811D7656C7C9F74E63925A8AB6D2B664595F3DAB1C2E3C4B250</HASHID>
 <Trademark>Gionee</Trademark>
 <Model>GN5007</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009690E1</HWID>
@@ -832,6 +907,7 @@
 <HASHID>B5BACA995AEC012DB32EB9E49CA340F7D4C26153AAA60C5A82A03F99AFC698E3</HASHID>
 <Trademark>Google</Trademark>
 <Model>Nexus 5X</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009400E1</HWID>
@@ -842,6 +918,7 @@
 <HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
 <Trademark>Google</Trademark>
 <Model>Nexus 6P</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008B0E1</HWID>
@@ -852,6 +929,7 @@
 <HASHID>E693A06F0C0E7E610DFF09371F1C8077C5EB1BDE02E7AD1DA99B8C45117F8F32</HASHID>
 <Trademark>Google</Trademark>
 <Model>Pixel 3</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -862,6 +940,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Highscreen</Trademark>
 <Model>Omega Prime S</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -872,6 +951,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Highscreen</Trademark>
 <Model>Spark 2</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008050E1</HWID>
@@ -882,6 +962,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Highscreen</Trademark>
 <Model>Spider</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -892,6 +973,7 @@
 <HASHID>06A0604B3069CCA35FD538F8CA5A8FC5D07C90A6E755F8CFACC1426CB9D75D22</HASHID>
 <Trademark>Hisense</Trademark>
 <Model>A6</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -902,6 +984,7 @@
 <HASHID>7C6DCA9BF5674291AA39DD55760C0D4B65C7A4223097AAB1DB791E2192002DDF</HASHID>
 <Trademark>Hisense</Trademark>
 <Model>C20S</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -912,6 +995,7 @@
 <HASHID>4570CEE6CB4660C5B3049B5698DD0A9CECAD3A955B87812C2D7EEE9E205FEA47</HASHID>
 <Trademark>HP</Trademark>
 <Model>Elite X3</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -922,6 +1006,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>HTC</Trademark>
 <Model>516 DS</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -933,6 +1018,7 @@
 <Trademark>Huawei</Trademark>
 <Model>AGS-L09</Model>
 <AltName>Mediapad T3 10</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -944,6 +1030,7 @@
 <Trademark>Huawei</Trademark>
 <Model>ARS-L22</Model>
 <AltName>Y Max</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -955,6 +1042,7 @@
 <Trademark>Huawei</Trademark>
 <Model>ATU-L21</Model>
 <AltName>Y6 2018</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -966,6 +1054,7 @@
 <Trademark>Huawei</Trademark>
 <Model>ATU-L31</Model>
 <AltName>Y6 Prime 2018</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -977,6 +1066,7 @@
 <Trademark>Huawei</Trademark>
 <Model>ATU-L42</Model>
 <AltName>Y6 Prime 2018</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -988,6 +1078,7 @@
 <Trademark>Huawei</Trademark>
 <Model>AUM-L29</Model>
 <AltName>Honor 7A Pro</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -999,6 +1090,7 @@
 <Trademark>Huawei</Trademark>
 <Model>AUM-L41</Model>
 <AltName>Honor 7C</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -1010,6 +1102,7 @@
 <Trademark>Huawei</Trademark>
 <Model>BAH-09</Model>
 <AltName>MediaPad M3 Lite 10</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BA0E1</HWID>
@@ -1021,6 +1114,7 @@
 <Trademark>Huawei</Trademark>
 <Model>BKK-L21</Model>
 <AltName>Honor 8C</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -1032,6 +1126,7 @@
 <Trademark>Huawei</Trademark>
 <Model>CAN-L11</Model>
 <AltName>Nova</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -1043,6 +1138,7 @@
 <Trademark>Huawei</Trademark>
 <Model>CPN-L09</Model>
 <AltName>MediaPad M3 Lite 8</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -1054,6 +1150,7 @@
 <Trademark>Huawei</Trademark>
 <Model>DIG-L21</Model>
 <AltName>Honor 6C</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -1065,6 +1162,7 @@
 <Trademark>Huawei</Trademark>
 <Model>DLI-TL20</Model>
 <AltName>Honor 6A</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0009A0E1</HWID>
@@ -1076,6 +1174,7 @@
 <Trademark>Huawei</Trademark>
 <Model>DUB-AL00</Model>
 <AltName>Y7 2019</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0009A0E1</HWID>
@@ -1087,6 +1186,7 @@
 <Trademark>Huawei</Trademark>
 <Model>DUB-LX1</Model>
 <AltName>Y7 2019</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -1098,6 +1198,7 @@
 <Trademark>Huawei</Trademark>
 <Model>G630-U20</Model>
 <AltName>Ascend G630</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -1109,6 +1210,7 @@
 <Trademark>Huawei</Trademark>
 <Model>G6-U10</Model>
 <AltName>Ascend G6</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -1120,6 +1222,7 @@
 <Trademark>Huawei</Trademark>
 <Model>G7-L01</Model>
 <AltName>Ascend G7</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -1130,6 +1233,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Huawei</Trademark>
 <Model>GR5</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -1141,6 +1245,7 @@
 <Trademark>Huawei</Trademark>
 <Model>KIW-L21</Model>
 <AltName>Honor 5X</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -1152,6 +1257,7 @@
 <Trademark>Huawei</Trademark>
 <Model>RIO-L01</Model>
 <AltName>G8</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -1163,6 +1269,7 @@
 <Trademark>Huawei</Trademark>
 <Model>S8-701u</Model>
 <AltName>MediaPad T1 8</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -1174,6 +1281,7 @@
 <Trademark>Huawei</Trademark>
 <Model>SCL-L04</Model>
 <AltName>Y6</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -1185,6 +1293,7 @@
 <Trademark>Huawei</Trademark>
 <Model>SCL-L21</Model>
 <AltName>Y6</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -1196,6 +1305,7 @@
 <Trademark>Huawei</Trademark>
 <Model>SLA-L22</Model>
 <AltName>Nova Lite 2017</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -1207,6 +1317,7 @@
 <Trademark>Huawei</Trademark>
 <Model>TRT-AL00</Model>
 <AltName>Enjoy 7 Plus</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -1218,6 +1329,7 @@
 <Trademark>Huawei</Trademark>
 <Model>TRT-LX1</Model>
 <AltName>Y7 2017</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -1229,6 +1341,7 @@
 <Trademark>Huawei</Trademark>
 <Model>Y635-TL00</Model>
 <AltName>Ascend Y635</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -1240,6 +1353,7 @@
 <Trademark>Kyocera</Trademark>
 <Model>C6530</Model>
 <AltName>Hydro life</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009180E1</HWID>
@@ -1251,6 +1365,7 @@
 <Trademark>Kyocera</Trademark>
 <Model>E6560</Model>
 <AltName>DuraForce</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -1262,6 +1377,7 @@
 <Trademark>LeEco</Trademark>
 <Model>C106</Model>
 <AltName>Cool 1</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -1273,6 +1389,7 @@
 <Trademark>LeEco</Trademark>
 <Model>X520</Model>
 <AltName>Le 2</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -1284,6 +1401,7 @@
 <Trademark>LeEco</Trademark>
 <Model>X522</Model>
 <AltName>Le S3</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -1294,6 +1412,7 @@
 <HASHID>7C24B3BEC0B604392D8F610D812998CF744D0B3E0572C7F2CC184DC3F7DCD46C</HASHID>
 <Trademark>LeEco</Trademark>
 <Model>X526</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -1305,6 +1424,7 @@
 <Trademark>LeEco</Trademark>
 <Model>X527</Model>
 <AltName>Le 2</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005F0E1</HWID>
@@ -1316,6 +1436,7 @@
 <Trademark>LeEco</Trademark>
 <Model>X720</Model>
 <AltName>Le Pro 3</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -1327,6 +1448,7 @@
 <Trademark>LeEco</Trademark>
 <Model>X722</Model>
 <AltName>Le Pro 3 Elite</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005F0E1</HWID>
@@ -1338,6 +1460,7 @@
 <Trademark>LeEco</Trademark>
 <Model>X727</Model>
 <AltName>Le Pro 3</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009400E1</HWID>
@@ -1349,6 +1472,7 @@
 <Trademark>LeEco</Trademark>
 <Model>X800 CN</Model>
 <AltName>Le 1 Pro</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009400E1</HWID>
@@ -1360,6 +1484,7 @@
 <Trademark>LeEco</Trademark>
 <Model>X800 NA</Model>
 <AltName>Le 1 Pro</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005F0E1</HWID>
@@ -1371,6 +1496,7 @@
 <Trademark>LeEco</Trademark>
 <Model>X850</Model>
 <AltName>Le Max 3</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009400E1</HWID>
@@ -1381,6 +1507,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>LeEco</Trademark>
 <Model>X900+</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007B40E1</HWID>
@@ -1391,6 +1518,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Lenovo</Trademark>
 <Model>K920</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -1401,6 +1529,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Lenovo</Trademark>
 <Model>Lenovo A2020a40</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -1411,6 +1540,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Lenovo</Trademark>
 <Model>Lenovo A6000</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -1421,6 +1551,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Lenovo</Trademark>
 <Model>Lenovo A6010</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -1432,6 +1563,7 @@
 <Trademark>Lenovo</Trademark>
 <Model>Lenovo A6020a46</Model>
 <AltName>K5</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -1443,6 +1575,7 @@
 <Trademark>Lenovo</Trademark>
 <Model>Lenovo L38011</Model>
 <AltName>K5</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0009A0E1</HWID>
@@ -1454,6 +1587,7 @@
 <Trademark>Lenovo</Trademark>
 <Model>Lenovo L38012</Model>
 <AltName>K5 Note</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000CC0E1</HWID>
@@ -1465,6 +1599,7 @@
 <Trademark>Lenovo</Trademark>
 <Model>Lenovo L38041</Model>
 <AltName>K5 Pro</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000DB0E1</HWID>
@@ -1476,6 +1611,7 @@
 <Trademark>Lenovo</Trademark>
 <Model>Lenovo L38111</Model>
 <AltName>Z6 Youth Edition</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000DB0E1</HWID>
@@ -1487,6 +1623,7 @@
 <Trademark>Lenovo</Trademark>
 <Model>Lenovo L78071</Model>
 <AltName>Z5s</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -1497,6 +1634,7 @@
 <HASHID>99C8C13E374C34D8F9AFB065EA4C733E6B1B21CBC5A78705F041EB24ACDD5FE5</HASHID>
 <Trademark>Lenovo</Trademark>
 <Model>P1c72</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -1507,6 +1645,7 @@
 <HASHID>99C8C13E374C34D8F9AFB065EA4C733E6B1B21CBC5A78705F041EB24ACDD5FE5</HASHID>
 <Trademark>Lenovo</Trademark>
 <Model>P2c72</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -1517,6 +1656,7 @@
 <HASHID>99C8C13E374C34D8F9AFB065EA4C733E6B1B21CBC5A78705F041EB24ACDD5FE5</HASHID>
 <Trademark>Lenovo</Trademark>
 <Model>PB2-690M</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -1527,6 +1667,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Lenovo</Trademark>
 <Model>S580</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -1537,6 +1678,7 @@
 <HASHID>99C8C13E374C34D8F9AFB065EA4C733E6B1B21CBC5A78705F041EB24ACDD5FE5</HASHID>
 <Trademark>Lenovo</Trademark>
 <Model>S60-a</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -1547,6 +1689,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Lenovo</Trademark>
 <Model>S90-a</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -1558,6 +1701,7 @@
 <Trademark>Lenovo</Trademark>
 <Model>TB2-X30L</Model>
 <AltName>Tab 2 (A10-30)</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -1569,6 +1713,7 @@
 <Trademark>Lenovo</Trademark>
 <Model>TB-8504X</Model>
 <AltName>Tab 4</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -1580,6 +1725,7 @@
 <Trademark>Lenovo</Trademark>
 <Model>TB-8703X</Model>
 <AltName>Tab 3 Plus</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009690E1</HWID>
@@ -1591,6 +1737,7 @@
 <Trademark>Lenovo</Trademark>
 <Model>X3a40</Model>
 <AltName>Vibe X3</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009690E1</HWID>
@@ -1602,6 +1749,7 @@
 <Trademark>Lenovo</Trademark>
 <Model>X3c50</Model>
 <AltName>Vibe X3</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -1612,6 +1760,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Lenovo</Trademark>
 <Model>YT3-850M</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009D00E1</HWID>
@@ -1622,6 +1771,7 @@
 <HASHID>6DB709FA451D68AE4FBEEC1063A3DF1EA84F159BC9EED10112F3F85F8C79D3A3</HASHID>
 <Trademark>Lenovo</Trademark>
 <Model>YT-X703F</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -1632,6 +1782,7 @@
 <HASHID>6DB709FA451D68AE4FBEEC1063A3DF1EA84F159BC9EED10112F3F85F8C79D3A3</HASHID>
 <Trademark>Lenovo</Trademark>
 <Model>YT-X703L/X</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -1642,6 +1793,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Lenovo</Trademark>
 <Model>Z90a40</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008110E1</HWID>
@@ -1652,6 +1804,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>LG</Trademark>
 <Model>D170</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008110E1</HWID>
@@ -1662,6 +1815,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>LG</Trademark>
 <Model>D285</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -1672,6 +1826,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>LG</Trademark>
 <Model>D290</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -1682,6 +1837,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>LG</Trademark>
 <Model>D295</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008110E1</HWID>
@@ -1692,6 +1848,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>LG</Trademark>
 <Model>D325</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008110E1</HWID>
@@ -1702,6 +1859,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>LG</Trademark>
 <Model>D380</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -1712,6 +1870,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>LG</Trademark>
 <Model>D392</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008050E1</HWID>
@@ -1722,6 +1881,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>LG</Trademark>
 <Model>D722</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008000E1</HWID>
@@ -1732,6 +1892,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>LG</Trademark>
 <Model>D724</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007B40E1</HWID>
@@ -1742,6 +1903,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>LG</Trademark>
 <Model>D855</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009690E1</HWID>
@@ -1752,6 +1914,7 @@
 <HASHID>B5BACA995AEC012DB32EB9E49CA340F7D4C26153AAA60C5A82A03F99AFC698E3</HASHID>
 <Trademark>LG</Trademark>
 <Model>F600L</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009690E1</HWID>
@@ -1759,6 +1922,7 @@
 <HASHID>73C51DE96B5F6F0EE44E40EEBC671322071BC00D705EEBDD7C60705A1AD11248</HASHID>
 <Trademark>LG</Trademark>
 <Model>G4</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005F0E1</HWID>
@@ -1769,6 +1933,7 @@
 <HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
 <Trademark>LG</Trademark>
 <Model>G600K</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008B0E1</HWID>
@@ -1779,6 +1944,7 @@
 <HASHID>1030CD12CE708F29D6914D7529DF75149D8EF91C27DAF0E1F84B90F4B707329A</HASHID>
 <Trademark>LG</Trademark>
 <Model>G710</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -1789,6 +1955,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>LG</Trademark>
 <Model>H650e</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009690E1</HWID>
@@ -1799,6 +1966,7 @@
 <HASHID>B5BACA995AEC012DB32EB9E49CA340F7D4C26153AAA60C5A82A03F99AFC698E3</HASHID>
 <Trademark>LG</Trademark>
 <Model>H818P</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -1809,6 +1977,7 @@
 <HASHID>B5BACA995AEC012DB32EB9E49CA340F7D4C26153AAA60C5A82A03F99AFC698E3</HASHID>
 <Trademark>LG</Trademark>
 <Model>K330</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005F0E1</HWID>
@@ -1820,6 +1989,7 @@
 <Trademark>LG</Trademark>
 <Model>LMQ850EMW</Model>
 <AltName>G7 Fit</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -1831,6 +2001,7 @@
 <Trademark>LG</Trademark>
 <Model>LM-X210NMW</Model>
 <AltName>K9</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -1841,6 +2012,7 @@
 <HASHID>B5BACA995AEC012DB32EB9E49CA340F7D4C26153AAA60C5A82A03F99AFC698E3</HASHID>
 <Trademark>LG</Trademark>
 <Model>LS675</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -1851,6 +2023,7 @@
 <HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
 <Trademark>LG</Trademark>
 <Model>LS992</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -1861,6 +2034,7 @@
 <HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
 <Trademark>LG</Trademark>
 <Model>LS997</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -1871,6 +2045,7 @@
 <HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
 <Trademark>LG</Trademark>
 <Model>TP260</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008050E1</HWID>
@@ -1881,6 +2056,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>LG</Trademark>
 <Model>V490</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -1892,6 +2068,7 @@
 <Trademark>Meizu</Trademark>
 <Model>Meizu M1721</Model>
 <AltName>M6 Note</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -1903,6 +2080,7 @@
 <Trademark>Meizu</Trademark>
 <Model>Meizu M1810</Model>
 <AltName>M8c</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BA0E1</HWID>
@@ -1914,6 +2092,7 @@
 <Trademark>Meizu</Trademark>
 <Model>Meizu M1822</Model>
 <AltName>Note 8</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000DB0E1</HWID>
@@ -1925,6 +2104,7 @@
 <Trademark>Meizu</Trademark>
 <Model>Meizu M1852</Model>
 <AltName>X8</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -1936,6 +2116,7 @@
 <Trademark>Meizu</Trademark>
 <Model>Meizu M1871</Model>
 <AltName>15 lite</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000DB0E1</HWID>
@@ -1947,6 +2128,7 @@
 <Trademark>Meizu</Trademark>
 <Model>Meizu M1872</Model>
 <AltName>16x</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -1958,6 +2140,7 @@
 <Trademark>Meizu</Trademark>
 <Model>Meizu M1881</Model>
 <AltName>15</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008B0E1</HWID>
@@ -1969,6 +2152,7 @@
 <Trademark>Meizu</Trademark>
 <Model>Meizu M1882</Model>
 <AltName>16th</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008B0E1</HWID>
@@ -1980,6 +2164,7 @@
 <Trademark>Meizu</Trademark>
 <Model>Meizu M1892</Model>
 <AltName>16th Plus</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000950E1</HWID>
@@ -1991,6 +2176,7 @@
 <Trademark>Meizu</Trademark>
 <Model>Meizu M1923</Model>
 <AltName>Note 9</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000950E1</HWID>
@@ -2002,6 +2188,7 @@
 <Trademark>Meizu</Trademark>
 <Model>Meizu M1926</Model>
 <AltName>16Xs</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000A50E1</HWID>
@@ -2013,6 +2200,7 @@
 <Trademark>Meizu</Trademark>
 <Model>Meizu M1971</Model>
 <AltName>16s</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -2023,6 +2211,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Micromax</Trademark>
 <Model>Q401</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -2033,6 +2222,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Micromax</Trademark>
 <Model>Q415</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -2043,6 +2233,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Micromax</Trademark>
 <Model>Q4202</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -2053,6 +2244,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Micromax</Trademark>
 <Model>Q450</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009840E1</HWID>
@@ -2060,6 +2252,7 @@
 <HASHID>8D417EF2B7F102A17C2715710ABD76B16CBCE8A8FCEB9E9803733E731030176B</HASHID>
 <Trademark>Motorola</Trademark>
 <Model>G4 Plus</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007B40E1</HWID>
@@ -2070,6 +2263,7 @@
 <HASHID>8C694C4263AB8FDFF1C385D9A12E406705B22453771910317C63F58E5E675CB8</HASHID>
 <Trademark>Motorola</Trademark>
 <Model>XT1096</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009690E1</HWID>
@@ -2080,11 +2274,13 @@
 <HASHID>72C0D49BF111F40542838951113321A955D002ED1EF7C3B8152CBD3212583952</HASHID>
 <Trademark>Nextbit</Trademark>
 <Model>Robin (N108)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HASHID>9B3184613D694EA24D3BEEBA6944FDB64196FEA7056C833D38D2EF683FD96E9B</HASHID>
 <Trademark>Nexus</Trademark>
 <Model>6 (shamu)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009400E1</HWID>
@@ -2092,6 +2288,7 @@
 <HASHID>30758B3E0D2E47B19EBCAC1F0A66B545960784AD6D428A2FE3C70E3934C29C7A</HASHID>
 <Trademark>Nexus</Trademark>
 <Model>6P (angler)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000940E1</HWID>
@@ -2102,6 +2299,7 @@
 <HASHID>1357FDAEABB7BECBE49095F000D9D3DADF198885106D98598CAC6D1B9B2EDB3A</HASHID>
 <Trademark>Nokia</Trademark>
 <Model>8110 4g</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -2110,6 +2308,7 @@
 <Trademark>Nokia</Trademark>
 <Model>d1c</Model>
 <AltName>6</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -2121,6 +2320,7 @@
 <Trademark>Nokia</Trademark>
 <Model>TA-1021</Model>
 <AltName>6</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -2132,6 +2332,7 @@
 <Trademark>Nokia</Trademark>
 <Model>TA-1029</Model>
 <AltName>2</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000AC0E1</HWID>
@@ -2143,6 +2344,7 @@
 <Trademark>Nokia</Trademark>
 <Model>TA-1043</Model>
 <AltName>6.1</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -2154,6 +2356,7 @@
 <Trademark>Nokia</Trademark>
 <Model>TA-1053</Model>
 <AltName>5</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -2165,6 +2368,7 @@
 <Trademark>Nokia</Trademark>
 <Model>TA-1053</Model>
 <AltName>5</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -2176,6 +2380,7 @@
 <Trademark>Nokia</Trademark>
 <Model>TA-1080</Model>
 <AltName>2.1</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000CC0E1</HWID>
@@ -2187,6 +2392,7 @@
 <Trademark>Nokia</Trademark>
 <Model>TA-1095</Model>
 <AltName>7.1</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -2198,6 +2404,7 @@
 <Trademark>Nokia</Trademark>
 <Model>TA-1196</Model>
 <AltName>7.2</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009400E1</HWID>
@@ -2205,6 +2412,7 @@
 <HASHID>63A47E46A664CCD1244A36535D10CA0B97B50B510BD481252F786177197C3C44</HASHID>
 <Trademark>OnePlus</Trademark>
 <Model>2</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -2212,6 +2420,7 @@
 <HASHID>C34EC1FDDFAC05D8F63EED3EE90C8E6983FE2B0E4B2837B30D8619A29633649C</HASHID>
 <Trademark>OnePlus</Trademark>
 <Model>3</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -2219,6 +2428,7 @@
 <HASHID>97EFF4D4111DD90523F6182E05650298B7AE803F0EC36F69A643C031399D8D13</HASHID>
 <Trademark>OnePlus</Trademark>
 <Model>3</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -2226,6 +2436,7 @@
 <HASHID>A1B7EB81C61525D6819916847E02E9AE5031BF163D246895780BD0E3F786C7EE</HASHID>
 <Trademark>OnePlus</Trademark>
 <Model>3T</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -2233,6 +2444,7 @@
 <HASHID>EEF93D29E4EDDA26CCE493B859E22161853439DE7B2151A47DAFE3068EE43ABE</HASHID>
 <Trademark>OnePlus</Trademark>
 <Model>3T</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005F0E1</HWID>
@@ -2243,6 +2455,7 @@
 <HASHID>C0C66E278FE81226585252B851370EABF8D4192F0F335576C3028190D49D14D4</HASHID>
 <Trademark>OnePlus</Trademark>
 <Model>3T</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005E0E1</HWID>
@@ -2250,6 +2463,7 @@
 <HASHID>02FFDAA49CF25F7FF287CAB82DA0E4F943CABF6E6A4BFE31C3198D1C2CFA1185</HASHID>
 <Trademark>OnePlus</Trademark>
 <Model>5 (cheeseburger)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008B0E1</HWID>
@@ -2260,6 +2474,7 @@
 <HASHID>DD7C5F2E53176BEE91747B53900CCEC33DD30FA4DED0DFE9BAF9156E6910862F</HASHID>
 <Trademark>OnePlus</Trademark>
 <Model>6T</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005E0E1</HWID>
@@ -2271,6 +2486,7 @@
 <Trademark>OnePlus</Trademark>
 <Model>A5000</Model>
 <AltName>5</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005E0E1</HWID>
@@ -2282,6 +2498,7 @@
 <Trademark>OnePlus</Trademark>
 <Model>A5010</Model>
 <AltName>5T</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007BC0E1</HWID>
@@ -2293,6 +2510,7 @@
 <Trademark>OnePlus</Trademark>
 <Model>E1001</Model>
 <AltName>X</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007B00E1</HWID>
@@ -2300,6 +2518,7 @@
 <HASHID>71C4F97535893BA7A3177320143AC94DB4C6584544C01B61860ACA80A477D4C9</HASHID>
 <Trademark>OnePlus</Trademark>
 <Model>One</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007B00E1</HWID>
@@ -2307,6 +2526,7 @@
 <HASHID>964B5C486B200AA6462733A682F9CEAD3EBFAD555CE2FF3622FEA8B279B006EE</HASHID>
 <Trademark>OnePlus</Trademark>
 <Model>X</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -2318,6 +2538,7 @@
 <Trademark>OPPO</Trademark>
 <Model>CPH1701</Model>
 <AltName>A57</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0009A0E1</HWID>
@@ -2329,6 +2550,7 @@
 <Trademark>OPPO</Trademark>
 <Model>CPH1809</Model>
 <AltName>A5</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -2340,6 +2562,7 @@
 <Trademark>OPPO</Trademark>
 <Model>CPH1893</Model>
 <AltName>RX17 Neo</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0009A0E1</HWID>
@@ -2351,6 +2574,7 @@
 <Trademark>OPPO</Trademark>
 <Model>PBAM00</Model>
 <AltName>A5</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000DB0E1</HWID>
@@ -2362,6 +2586,7 @@
 <Trademark>OPPO</Trademark>
 <Model>RMX1901</Model>
 <AltName>RealMe X</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008110E1</HWID>
@@ -2372,6 +2597,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Phicomm</Trademark>
 <Model>C230</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -2382,6 +2608,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Phicomm</Trademark>
 <Model>C630</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -2392,6 +2619,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Prestigio</Trademark>
 <Model>PSP3405 Duo</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -2402,6 +2630,7 @@
 <HASHID>37E6FB104AA363CC06B47DB7AE340A785274642CA5CFA53B42076D4C70216D51</HASHID>
 <Trademark>Protruly</Trademark>
 <Model>Darling V10s</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005E0E1</HWID>
@@ -2412,6 +2641,7 @@
 <HASHID>9B96CAC35E56A6282276E5C8E128CC2687100186E5A8592A4CBF3DEC66F9CEFB</HASHID>
 <Trademark>Razer</Trademark>
 <Model>Phone (cheryl)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000E60E1</HWID>
@@ -2419,6 +2649,7 @@
 <HASHID>32942e378adbc21376abb8b83a681e579bfebf5926c5bdc53b08f35738147041</HASHID>
 <Trademark>Realme</Trademark>
 <Model>X2</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0009A0E1</HWID>
@@ -2429,6 +2660,7 @@
 <HASHID>24319AB8CA2D2116C8E9016E23A2C066C60E6A7ACE70C62867070329D330B0B5</HASHID>
 <Trademark>Samsung</Trademark>
 <Model>A6+</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -2439,6 +2671,7 @@
 <HASHID>883B478977BDA8552CEE34FCBE1DA84116B4F99B2BA20C564298E0BA716AA51C</HASHID>
 <Trademark>Santin</Trademark>
 <Model>Ace Pro</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -2449,6 +2682,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Santin</Trademark>
 <Model>Actoma Ace</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008050E1</HWID>
@@ -2459,6 +2693,7 @@
 <HASHID>8EF51E99C4C1E16BA892980EF5693690775CDA9C2EED3ECB3C4DEB980E6C2F8E</HASHID>
 <Trademark>Sharp</Trademark>
 <Model>305SH</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -2469,6 +2704,7 @@
 <HASHID>07046415532823B0F6E3526FC4501B711E1A42DE51E4FCB68F0B8E62CC08BA2B</HASHID>
 <Trademark>Sharp</Trademark>
 <Model>Aquos S2 (128GB)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0007E0E1</HWID>
@@ -2479,6 +2715,7 @@
 <HASHID>07046415532823B0F6E3526FC4501B711E1A42DE51E4FCB68F0B8E62CC08BA2B</HASHID>
 <Trademark>Sharp</Trademark>
 <Model>Aquos S2 (64GB)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000AC0E1</HWID>
@@ -2489,6 +2726,7 @@
 <HASHID>07046415532823B0F6E3526FC4501B711E1A42DE51E4FCB68F0B8E62CC08BA2B</HASHID>
 <Trademark>Sharp</Trademark>
 <Model>SS2 (64GB)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -2499,6 +2737,7 @@
 <HASHID>7E425BCB25364725731899C3F82960AD92B114C0D84840F2C49AE19B7D80E479</HASHID>
 <Trademark>Smartisan</Trademark>
 <Model>U3 Pro (osborn)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -2509,6 +2748,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Stream</Trademark>
 <Model>B3 Maxi</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -2520,6 +2760,7 @@
 <Trademark>TP-LINK</Trademark>
 <Model>TP601A</Model>
 <AltName>Neffos C5L</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -2530,6 +2771,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Vertex</Trademark>
 <Model>Impress Grip</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BF0E1</HWID>
@@ -2541,6 +2783,7 @@
 <Trademark>VIVO</Trademark>
 <Model>1807</Model>
 <AltName>Y95</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -2552,6 +2795,7 @@
 <Trademark>VIVO</Trademark>
 <Model>PD1628F</Model>
 <AltName>Y53</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000DB0E1</HWID>
@@ -2563,6 +2807,7 @@
 <Trademark>VIVO</Trademark>
 <Model>PD1911F</Model>
 <AltName>Z5x</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0010A0E1</HWID>
@@ -2574,6 +2819,7 @@
 <Trademark>VIVO</Trademark>
 <Model>PD1945F</Model>
 <AltName>S1 Pro</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -2584,6 +2830,7 @@
 <HASHID>5637CD7EFD4B633C0F2E8D7533B82E7A5A30CDDF76A64A4F87789C91461B6E23</HASHID>
 <Trademark>Wileyfox</Trademark>
 <Model>Storm</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -2594,6 +2841,7 @@
 <HASHID>D36C6073C9C2CB1C36FB4EE0FBB6DF9D5B12A35BD07C0C03A6260022D7C0FCC2</HASHID>
 <Trademark>Wileyfox</Trademark>
 <Model>Swift</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -2604,6 +2852,7 @@
 <HASHID>8008B2CD7B7E36F1BD723381ADA008109F6D434A0780C38CE017C7CA89672D69</HASHID>
 <Trademark>Wileyfox</Trademark>
 <Model>Swift 2</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008B0E1</HWID>
@@ -2614,6 +2863,7 @@
 <HASHID>ACB465293769A1C7F33050B6734564ACEF31DB8244C1104C7D3E12647BB5174A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Black Shark</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000A50E1</HWID>
@@ -2624,6 +2874,7 @@
 <HASHID>8362111A15F700DC4CDA0A4FE33942A67A462F1E293B93E65B12CD505CD0E637</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Black Shark 2</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007B00E1</HWID>
@@ -2631,6 +2882,7 @@
 <HASHID>964B5C486B200AA6462733A682F9CEAD3EBFAD555CE2FF3622FEA8B279B006EE</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 3 (cancro)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007B60E1</HWID>
@@ -2641,6 +2893,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 3 (cancro)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009690E1</HWID>
@@ -2651,6 +2904,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 4c (libra)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -2661,6 +2915,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 4i (ferrari)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007B60E1</HWID>
@@ -2671,6 +2926,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 4w (cancro)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006C0E1</HWID>
@@ -2680,6 +2936,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 4w (cancro)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -2690,6 +2947,7 @@
 <HASHID>355D47F912FEA0AF1F46C007C6DC22C43544FB9359E30AA7DB5F4734D18FBD74</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 5 (gemini)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -2697,6 +2955,7 @@
 <HASHID>C215AC92B799D755AF0466E14C7F4E4DC53B590F5FBC0D4633AFAFE5CECC41C3</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 5 (gemini)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005F0E1</HWID>
@@ -2707,6 +2966,7 @@
 <HASHID>355D47F912FEA0AF1F46C007C6DC22C43544FB9359E30AA7DB5F4734D18FBD74</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 5s (capricorn)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005F0E1</HWID>
@@ -2714,6 +2974,7 @@
 <HASHID>2DDE12F09B1217DBBD53860DD9145326A394BF6942131E440C161D9A13DC43DD</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 5s (capricorn)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005F0E1</HWID>
@@ -2724,6 +2985,7 @@
 <HASHID>355D47F912FEA0AF1F46C007C6DC22C43544FB9359E30AA7DB5F4734D18FBD74</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 5s Plus (natrium)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -2731,6 +2993,7 @@
 <HASHID>69A6E465C2F1E2CAABB370D398026441B29B45C975778E4682FC5E89283771BD</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 5s Plus (natrium)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -2741,6 +3004,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 5x (tiffany)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -2748,6 +3012,7 @@
 <HASHID>61135CB65671284290A99BD9EDF5C075672E7FEBA2A4A79BA9CFACD70CD2EA50</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 5x (tiffany)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005E0E1</HWID>
@@ -2755,6 +3020,7 @@
 <HASHID>67A7EA77C23FDD1046ECCE7628BFD5975E9949F66ADDD55BB3572CAF9FE97AEA</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 6 (sagit)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005E0E1</HWID>
@@ -2765,6 +3031,7 @@
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 6 (sagit)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -2775,6 +3042,7 @@
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 6x (wayne)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008B0E1</HWID>
@@ -2785,6 +3053,7 @@
 <HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 8 (dipper)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -2795,6 +3064,7 @@
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 8 Lite (platina)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008B0E1</HWID>
@@ -2805,6 +3075,7 @@
 <HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 8 Pro (equuleus)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000DB0E1</HWID>
@@ -2815,6 +3086,7 @@
 <HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 8 SE (sirius)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000DB0E1</HWID>
@@ -2825,6 +3097,7 @@
 <HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 9 Lite (pyxis)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>001080E1</HWID>
@@ -2835,6 +3108,7 @@
 <HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 9 SE (grus)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000A50E1</HWID>
@@ -2845,6 +3119,7 @@
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA46</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 9T Pro (raphael)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -2855,6 +3130,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi A1 (tissot)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -2862,6 +3138,7 @@
 <HASHID>A38C6F01272814E0A47E556B4AD17F999769A0FEE6D3C98343B7DE6DE741E79C</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi A1 (tissot)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -2872,6 +3149,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi A2 lite (daisy)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0010A0E1</HWID>
@@ -2882,6 +3160,7 @@
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA46</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi A3 (laurel)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -2892,6 +3171,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Max (helium)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -2902,6 +3182,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Max 2 (oxygen)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -2909,6 +3190,7 @@
 <HASHID>BB5E36491053118486EBCCD5817C5519A53EAE5EDA9730F1127C22DD6C1B5C2B</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Max 2 (oxygen)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000CC0E1</HWID>
@@ -2919,6 +3201,7 @@
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Max 3 (nitrogen)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -2929,6 +3212,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Max Prime (helium)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -2936,6 +3220,7 @@
 <HASHID>3DB3B7FD2664D98FD16F432E8D8AD821A85B85BD37701422F563079CB64D084C</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Mix (lithium)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005E0E1</HWID>
@@ -2946,6 +3231,7 @@
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Mix 2 (chiron)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005E0E1</HWID>
@@ -2953,6 +3239,7 @@
 <HASHID>ADEB0034FC38C99C8401DCDBA9008EE5A8525BB66F1FC031EE8F4EFC22C5A1DF</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Mix 2 (chiron)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008B0E1</HWID>
@@ -2963,6 +3250,7 @@
 <HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Mix 2s (polaris)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007B40E1</HWID>
@@ -2973,6 +3261,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Note (virgo)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005F0E1</HWID>
@@ -2983,6 +3272,7 @@
 <HASHID>355D47F912FEA0AF1F46C007C6DC22C43544FB9359E30AA7DB5F4734D18FBD74</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Note 2 (scorpio)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -2993,6 +3283,7 @@
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Note 3 (jason)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -3003,6 +3294,7 @@
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Pad 4 (clover)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008B0E1</HWID>
@@ -3013,6 +3305,7 @@
 <HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Pocophone F1 (beryllium)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -3023,6 +3316,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 2 (wt88047)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -3033,6 +3327,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 3 (ido)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -3043,6 +3338,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 3s/3x (land)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -3053,6 +3349,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 4 (prada)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -3063,6 +3360,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 4 Prime (markw)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -3070,6 +3368,7 @@
 <HASHID>7F6CE28D52815A4FAC276F62B99B5ABEB3F73C495F9474EB55204B3B4E6FCE6D</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 4a (rolex)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -3080,6 +3379,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 4a (rolex)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -3090,6 +3390,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 4x (santoni)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0009A0E1</HWID>
@@ -3100,6 +3401,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 5 (rosy)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -3110,6 +3412,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 5 Plus (vince)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -3120,6 +3423,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 5A (riva)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -3127,6 +3431,7 @@
 <HASHID>67D32C753DDB67982E9AEF0C13D49B33DF1B95CC7997A548D23A49C1DD030194</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 5A (riva)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -3137,6 +3442,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 6 Pro (sakura)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BA0E1</HWID>
@@ -3147,6 +3453,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 7 (onclite)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BF0E1</HWID>
@@ -3157,6 +3464,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 7a (pine)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BF0E1</HWID>
@@ -3167,6 +3475,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 8 (olive)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BF0E1</HWID>
@@ -3177,6 +3486,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 8a (olivelite)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -3187,6 +3497,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Go (tiare)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000A50E1</HWID>
@@ -3197,6 +3508,7 @@
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA46</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi K20 Pro (raphael)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -3204,6 +3516,7 @@
 <HASHID>BF4E25AE6108D6F6C8D9218383BD85273993262EC0EBA088F6C58A04FC02903B</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 2 (scorpion)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -3211,6 +3524,7 @@
 <HASHID>1D4A7043A8A55A19F7E1C294D42872CD57A71B8F370E3D9551A796415E61B434</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 3 (jason)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009B00E1</HWID>
@@ -3221,6 +3535,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 3 Pro (kenzo)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -3228,6 +3543,7 @@
 <HASHID>5C9CCCF88B6AB026D8165378D6ADA00275A606B8C4AD724FBCA33E8224695207</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 3 Pro (kenzo)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009B00E1</HWID>
@@ -3238,6 +3554,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 3 SE (kate)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -3245,6 +3562,7 @@
 <HASHID>5D45ECF8864DBBC741FB7874F878126E8F23EE9448A3EA1EDE8E16FE02F782C0</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 4/4x (mido)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -3255,6 +3573,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 4/4x (mido)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000CC0E1</HWID>
@@ -3265,6 +3584,7 @@
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 5 (whyred)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -3272,6 +3592,7 @@
 <HASHID>8483423802d7f01bf1043365c855885b0eea193bf32ed25041a347bc80c32d6b</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 5a (ugglite)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -3282,6 +3603,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 5a (ugglite)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -3292,6 +3614,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 5a Prime (ugg)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -3299,6 +3622,7 @@
 <HASHID>5F1C47435A031331B7F6EC33E8F406EF42BAEF9A4E3C6D2F438A8B827DD00075</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 5a Prime (ugg)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000CC0E1</HWID>
@@ -3309,6 +3633,7 @@
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 6 Pro (tulip)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -3319,6 +3644,7 @@
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 7 (lavender)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0010A0E1</HWID>
@@ -3329,6 +3655,7 @@
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA46</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 8 (ginkgo)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0010A0E1</HWID>
@@ -3339,6 +3666,7 @@
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA46</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 8t (willow)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -3349,6 +3677,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note Prime (gucci)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -3359,6 +3688,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi S2 (ysl)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BA0E1</HWID>
@@ -3369,6 +3699,7 @@
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Y3 (onc)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000AC0E1</HWID>
@@ -3379,6 +3710,7 @@
 <HASHID>AA0E1191D83A1EFAEBB921AC74F3382AC6EB4F5127E8AFD9E58E32AFEA1BA049</HASHID>
 <Trademark>Yandex</Trademark>
 <Model>Smartphone (YNDX-000SB)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0007E0E1</HWID>
@@ -3389,6 +3721,7 @@
 <HASHID>AA0E1191D83A1EFAEBB921AC74F3382AC6EB4F5127E8AFD9E58E32AFEA1BA049</HASHID>
 <Trademark>Yandex</Trademark>
 <Model>Smartphone (YNDX-000SB)</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007BC0E1</HWID>
@@ -3399,6 +3732,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>YotaPhone</Trademark>
 <Model>2</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -3406,6 +3740,7 @@
 <HASHID>CB06DECBE7B1C47D10C97AE815D4FB2A06D62983738D383ED69B25630C394DED</HASHID>
 <Trademark>ZTE</Trademark>
 <Model>Axon 7</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -3417,6 +3752,7 @@
 <Trademark>ZTE</Trademark>
 <Model>B2016</Model>
 <AltName>Axon Mini</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009720E1</HWID>
@@ -3428,6 +3764,7 @@
 <Trademark>ZTE</Trademark>
 <Model>B2017G</Model>
 <AltName>Axon 7 Mini</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -3439,6 +3776,7 @@
 <Trademark>ZTE</Trademark>
 <Model>N939St</Model>
 <AltName>Blade X9</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -3450,6 +3788,7 @@
 <Trademark>ZTE</Trademark>
 <Model>N958St</Model>
 <AltName>Blade V5 Max</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009400E1</HWID>
@@ -3461,6 +3800,7 @@
 <Trademark>ZTE</Trademark>
 <Model>NX510J</Model>
 <AltName>Nubia Z9 Max</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -3472,6 +3812,7 @@
 <Trademark>ZTE</Trademark>
 <Model>NX512J</Model>
 <AltName>Nubia Z9 max</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -3483,6 +3824,7 @@
 <Trademark>ZTE</Trademark>
 <Model>NX523J</Model>
 <AltName>Nubia Z11 max</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009840E1</HWID>
@@ -3494,6 +3836,7 @@
 <Trademark>ZTE</Trademark>
 <Model>NX529J</Model>
 <AltName>Nubia Z11 mini</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009720E1</HWID>
@@ -3505,6 +3848,7 @@
 <Trademark>ZTE</Trademark>
 <Model>NX529J</Model>
 <AltName>Nubia Z11 mini</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -3516,6 +3860,7 @@
 <Trademark>ZTE</Trademark>
 <Model>NX531J</Model>
 <AltName>Nubia Z11</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -3527,6 +3872,7 @@
 <Trademark>ZTE</Trademark>
 <Model>NX549J</Model>
 <AltName>Nubia Z11 Mini S</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -3538,6 +3884,7 @@
 <Trademark>ZTE</Trademark>
 <Model>NX569J</Model>
 <AltName>Nubia Z17 mini</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>30020000</HWID>
@@ -3549,6 +3896,7 @@
 <Trademark>ZTE</Trademark>
 <Model>NX595J</Model>
 <AltName>Nubia Z17S</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -3560,6 +3908,7 @@
 <Trademark>ZTE</Trademark>
 <Model>NX608J</Model>
 <AltName>Nubia N3</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -3571,6 +3920,7 @@
 <Trademark>ZTE</Trademark>
 <Model>NX612J</Model>
 <AltName>Nubia V18</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008B0E1</HWID>
@@ -3582,6 +3932,7 @@
 <Trademark>ZTE</Trademark>
 <Model>NX616J</Model>
 <AltName>Nubia X</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -3593,6 +3944,7 @@
 <Trademark>ZTE</Trademark>
 <Model>NX907J</Model>
 <AltName>Nubia M2 Play</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -3604,6 +3956,7 @@
 <Trademark>ZTE</Trademark>
 <Model>P809A20</Model>
 <AltName>Blade T610</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -3615,6 +3968,7 @@
 <Trademark>ZTE</Trademark>
 <Model>P809A20</Model>
 <AltName>Blade A460</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -3626,6 +3980,7 @@
 <Trademark>ZTE</Trademark>
 <Model>P809A50</Model>
 <AltName>Blade A310</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -3637,6 +3992,7 @@
 <Trademark>ZTE</Trademark>
 <Model>P809F10</Model>
 <AltName>Blade A520c</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -3648,6 +4004,7 @@
 <Trademark>ZTE</Trademark>
 <Model>P809F12</Model>
 <AltName>Blade A0622</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -3659,6 +4016,7 @@
 <Trademark>ZTE</Trademark>
 <Model>P809F20</Model>
 <AltName>Blade A320</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -3670,6 +4028,7 @@
 <Trademark>ZTE</Trademark>
 <Model>P809F30</Model>
 <AltName>Blade A330</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -3681,6 +4040,7 @@
 <Trademark>ZTE</Trademark>
 <Model>P817E52</Model>
 <AltName>Blade Z10 A512</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008110E1</HWID>
@@ -3692,6 +4052,7 @@
 <Trademark>ZTE</Trademark>
 <Model>P821E10</Model>
 <AltName>Blade V811w</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -3703,6 +4064,7 @@
 <Trademark>ZTE</Trademark>
 <Model>P829A10</Model>
 <AltName>Blade T617</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -3714,6 +4076,7 @@
 <Trademark>ZTE</Trademark>
 <Model>P839F30</Model>
 <AltName>Blade S6 lite</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -3725,6 +4088,7 @@
 <Trademark>ZTE</Trademark>
 <Model>P839F35</Model>
 <AltName>Blade T920</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -3736,6 +4100,7 @@
 <Trademark>ZTE</Trademark>
 <Model>P840F01</Model>
 <AltName>Blade V0850</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -3747,6 +4112,7 @@
 <Trademark>ZTE</Trademark>
 <Model>P840F03</Model>
 <AltName>Blade V9 Bita V0920</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -3758,6 +4124,7 @@
 <Trademark>ZTE</Trademark>
 <Model>P840F10</Model>
 <AltName>Blade V0800</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -3769,6 +4136,7 @@
 <Trademark>ZTE</Trademark>
 <Model>P840F12</Model>
 <AltName>Blade A6 A0620</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007B00E1</HWID>
@@ -3776,6 +4144,7 @@
 <HASHID>A27232BF1383BB765937AEA1EBDEE8079B8A453F3982B46F5E7096C373D18BB3</HASHID>
 <Trademark>ZUK</Trademark>
 <Model>Z1</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -3783,6 +4152,7 @@
 <HASHID>3FDAF99FC506A42FCBC649B7B46D9BB8DD32AEABA4B56C920B45E93A4A7080EA</HASHID>
 <Trademark>ZUK</Trademark>
 <Model>Z2</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -3790,6 +4160,7 @@
 <HASHID>48741756201674EB88C580DF1FDB06C7B823DC95B3FC89588A84A495E815FBD4</HASHID>
 <Trademark>ZUK</Trademark>
 <Model>Z2</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008110E1</HWID>
@@ -3800,6 +4171,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Билайн</Trademark>
 <Model>Смарт 2</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -3810,6 +4182,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Билайн</Trademark>
 <Model>Фаст +</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008110E1</HWID>
@@ -3820,6 +4193,7 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Мегафон</Trademark>
 <Model>Логин 3</Model>
+<Proof>0</Proof>
 </ForFilter>
 </dataroot>
 </root>

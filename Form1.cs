@@ -80,17 +80,12 @@ namespace FirehoseFinder
             //        "Ссылка для загрузки:" + Environment.NewLine +
             //       "http://www.microsoft.com/en-us/download/details.aspx?id=13255", "Требуются дополнительные компоненты");
             //}
-            dataSet_phone_collection.ReadXml("ForFilter.xml");
+
             //Закрываем специализированные закладки
             tabControl1.TabPages.Remove(tabPage_collection);
             tabControl1.TabPages.Remove(tabPage_guide);
             tabControl1.TabPages.Remove(tabPage_phone);
-            tabControl1.TabPages.Remove(tabPage_about);
-            richTextBox_about.Text = "Версия сборки: " + Assembly.GetExecutingAssembly().GetName().Version + Environment.NewLine
-                + Environment.NewLine +
-                "Часто задаваемые вопросы: " + Environment.NewLine + Resources.String_faq1 +
-                Environment.NewLine + Environment.NewLine + Resources.String_faq2 +
-                Environment.NewLine + Environment.NewLine + Resources.String_faq3;
+            //Всплывающие подсказки к разным контролам
             toolTip1.SetToolTip(button_findIDs, "Выберите папку для сохранения лог-файла с идентификаторами устройства");
             toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
             toolTip1.SetToolTip(button_useSahara_fhf, "При нажатии произойдёт переименование выбранного файла по идентификаторам, указанным в таблице");
@@ -1003,35 +998,12 @@ namespace FirehoseFinder
         }
         #endregion
 
-        #region Функции команд контролов закладки О программе
-
-        /// <summary>
-        /// Переход по ссылке на 4PDA
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void LinkLabel_about_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("http://4pda.ru/forum/index.php?showtopic=643084");
-        }
-
-        /// <summary>
-        /// Переход по ссылке в Телеграмм-канал (либо открытие приложения)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void LinkLabel_telega_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("https://t.me/firehosefinder");
-        }
-        #endregion
-
         private void СправочникУстройствToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
         {
             if (справочникУстройствToolStripMenuItem.Checked)
             {
-                tabControl1.TabPages.Insert(1, tabPage_collection);
-                tabControl1.TabPages.Insert(2, tabPage_guide);
+                tabControl1.TabPages.Insert(tabControl1.TabPages.Count, tabPage_collection);
+                tabControl1.TabPages.Insert(tabControl1.TabPages.Count, tabPage_guide);
             }
             else
             {
@@ -1044,7 +1016,7 @@ namespace FirehoseFinder
         {
             if (работаСУстройствомToolStripMenuItem.Checked)
             {
-                tabControl1.TabPages.Insert(tabControl1.TabPages.Count, tabPage_phone);
+                tabControl1.TabPages.Insert(0, tabPage_phone);
             }
             else
             {
@@ -1055,6 +1027,31 @@ namespace FirehoseFinder
         private void ВыходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ActiveForm.Close();
+        }
+
+        private void ОПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Версия сборки: " + Assembly.GetExecutingAssembly().GetName().Version + Environment.NewLine + Environment.NewLine +
+                "Программа подбора программеров(firehose) для телефонов на базе процессоров от Qualcomm." + Environment.NewLine + Environment.NewLine +
+                "Ссылка на базовую тему \"Общие принципы восстановления загрузчиков на Qualcomm | HS - USB QDLoader 9008, HS - USB Diagnostics 9006, QHUSB_DLOAD и т.д.\":" + Environment.NewLine +
+                "http://4pda.ru/forum/index.php?showtopic=643084" + Environment.NewLine + Environment.NewLine +
+                "Есть вопросы, предложения, замечания? Пишите в Телеграмм-канал \"Firehose - Finder issues\":" + Environment.NewLine +
+                "https://t.me/firehosefinder", "О программе Firehose-Finder", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void ВопросОтветToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Часто задаваемые вопросы: " + Environment.NewLine + Resources.String_faq1 +
+                Environment.NewLine + Environment.NewLine + Resources.String_faq2 +
+                Environment.NewLine + Environment.NewLine + Resources.String_faq3, "Список ответов на часто задаваемые вопросы", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataSet1.ReadXml("ForFilter.xml",XmlReadMode.ReadSchema);
+            bindingSource1.DataMember = dataSet1.Tables[1].TableName;
+            //MessageBox.Show(dataSet1.Tables[1].TableName);
+            //dataTable1 = dataSet1.Tables[0];
         }
     }
 }
