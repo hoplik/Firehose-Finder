@@ -13,7 +13,7 @@ namespace FirehoseFinder
             { "0", "SBL1 image" },
             { "1", "MBA image" },
             { "2", "Modem image hashtable" },
-            { "3", "Загрузчик из аварийного режима (EDL-9008)" },
+            { "3", "Firehose programmer" },
             { "4", "lpass etc running on ADSP" },
             { "5", "Device configuration image" },
             { "6", "Reserved" },

@@ -136,39 +136,6 @@ namespace FirehoseFinder
         }
 
         /// <summary>
-        /// Включаем возможность выбора данных из Справочника
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void RadioButton_manualfilter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton_manualfilter.Checked)
-            {
-                forFilterDataGridView.Enabled = true;
-                button_findIDs.Enabled = false;
-                textBox_find.Enabled = true;
-                toolStripStatusLabel_guide.Text = "К Справочнику может быть применена сортировка, поиск и фильтр";
-            }
-        }
-
-        /// <summary>
-        /// Отключаем Справочник
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void RadioButton_autofilter_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton_autofilter.Checked)
-            {
-                forFilterDataGridView.Enabled = false;
-                button_findIDs.Enabled = true;
-                textBox_find.Enabled = false;
-                textBox_find.Text = string.Empty;
-                toolStripStatusLabel_guide.Text = "Работаем в автоматическом режиме";
-            }
-        }
-
-        /// <summary>
         /// Набираем данные для фильтра
         /// </summary>
         /// <param name="sender"></param>
@@ -214,23 +181,14 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button_findIDs_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Нажимая \"Ок\", вы соглашаетесь с автоматическим получением программой идентификаторов устройства." + Environment.NewLine +
-                "Никакая другая (персональная) информация с аппарата скопирована не будет. Аппарат будет автоматически перегружен в аварийный режим при условии, что он поддерживает такой функционал на программном уровне." + Environment.NewLine +
-                "После получения идентификаторов данные будут сверены со Справочником ID. Если полученные в автоматическом режиме данные будут отсутствовать или отличаться от данных Справочника, то в публичный Телеграмм-канал \"Firehose-Finder issues\" будет отправлено сообщение о включении/редактировании Справочника.",
-                "Подключите устройство в обычном режиме (в режиме зарядки)!", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-            if (dr == DialogResult.OK)
+            if (listView_comport.CheckedItems.Count > 0)
             {
-                tabControl1.SelectedTab = tabPage_phone;
-                if (listView_comport.CheckedItems.Count > 0)
-                {
-                    GetSaharaIDs();
-                    return;
-                }
-                if (!ADB_Check()) return;
-                GetADBIDs(true);
-                waitSahara = true; //Ждём подключения в аварийном режиме
+                GetSaharaIDs();
+                return;
             }
-            else radioButton_manualfilter.Checked = true;
+            if (!ADB_Check()) return;
+            GetADBIDs(true);
+            waitSahara = true; //Ждём подключения в аварийном режиме
         }
 
         /// <summary>
@@ -284,22 +242,30 @@ namespace FirehoseFinder
         {
             //Стартуем сервер
             textBox_ADB.AppendText("Запускаем сервер ADB ..." + Environment.NewLine);
+            textBox_main_term.AppendText("Запускаем сервер ADB ..." + Environment.NewLine);
             AdbServer server = new AdbServer();
             var result = server.StartServer("adb.exe", restartServerIfNewer: false);
             //Подключаем клиента (устройства)
             AdbClient client = new AdbClient();
             List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
             textBox_ADB.AppendText(result.ToString() + Environment.NewLine);
+            textBox_main_term.AppendText(result.ToString() + Environment.NewLine);
             button_ADB_start.Enabled = false;
-            foreach (var device in devices) textBox_ADB.AppendText("Подключено устройство: " + device + Environment.NewLine);
+            foreach (var device in devices)
+            {
+                textBox_ADB.AppendText("Подключено устройство: " + device + Environment.NewLine);
+                textBox_main_term.AppendText("Подключено устройство: " + device + Environment.NewLine);
+            }
             if (devices.Count > 1)
             {
                 textBox_ADB.AppendText("Подключено более одного андройд-устройства. Пожалуйста, оставьте подключённым только то устройство, с которым планируется дальнейшая работа." + Environment.NewLine);
+                textBox_main_term.AppendText("Подключено более одного андройд-устройства. Пожалуйста, оставьте подключённым только то устройство, с которым планируется дальнейшая работа." + Environment.NewLine);
                 return false;
             }
             else if (devices.Count == 0)
             {
                 textBox_ADB.AppendText("Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли \"Отладка по USB\" в разделе \"Система\" - \"Для разработчиков\"" + Environment.NewLine);
+                textBox_main_term.AppendText("Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли \"Отладка по USB\" в разделе \"Система\" - \"Для разработчиков\"" + Environment.NewLine);
                 return false;
             }
             else
@@ -312,6 +278,7 @@ namespace FirehoseFinder
         /// <summary>
         /// Получаем пакетно идентификаторы и сверяем их со справочником (с последующей перезагрузкой или без)
         /// </summary>
+        /// <param name="reset">true - если перегружаем после получения ID, false - если перезагрузка не нужна</param>
         private void GetADBIDs(bool reset)
         {
             AdbClient client = new AdbClient();
@@ -351,9 +318,13 @@ namespace FirehoseFinder
                 textBox_ADB.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
                     "Модель: " + label_model.Text + Environment.NewLine +
                     "Тип памяти: " + mem_type + Environment.NewLine);
+                textBox_main_term.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
+                    "Модель: " + label_model.Text + Environment.NewLine +
+                    "Тип памяти: " + mem_type + Environment.NewLine);
                 if (reset)
                 {
                     textBox_ADB.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
+                    textBox_main_term.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
                     client.Reboot("edl", device);
                     Thread.Sleep(1000);
                     StopAdb();
@@ -362,6 +333,7 @@ namespace FirehoseFinder
             catch (SharpAdbClient.Exceptions.AdbException ex)
             {
                 textBox_ADB.AppendText(ex.AdbError + Environment.NewLine);
+                textBox_main_term.AppendText(ex.AdbError + Environment.NewLine);
             }
         }
 
@@ -381,6 +353,7 @@ namespace FirehoseFinder
             StreamReader reader = process.StandardOutput;
             string output = reader.ReadToEnd();
             textBox_ADB.AppendText(output);
+            textBox_main_term.AppendText(output);
             process.WaitForExit();
             process.Close();
             //Обрабатываем запрос идентификаторов
@@ -401,14 +374,14 @@ namespace FirehoseFinder
             {
                 try
                 {
-                    using (StreamWriter sw = new StreamWriter(label_log.Text + "\\CPU_Report.txt", false)) sw.Write(logstr);
+                    using (StreamWriter sw = new StreamWriter(label_log.Text + "\\" + label_model.Text + "_Report.txt", false)) sw.Write(logstr);
                 }
                 catch (Exception ex)
                 {
                     toolStripStatusLabel_filescompleted.Text = "Ошибка записи файла отчёта: " + ex.Message;
                 }
             }
-            if (waitSahara) _ = CheckIDs(logstr);
+            if (waitSahara && checkBox_send.Checked) _ = CheckIDs(logstr);
             waitSahara = false;
         }
 
@@ -518,7 +491,7 @@ namespace FirehoseFinder
                             dataGridView_final["Column_Sel", i].Value = false;
                         }
                         dataGridView_final["Column_Sel", e.RowIndex].Value = true;
-                        button_useSahara_fhf.Visible = true;
+                        //button_useSahara_fhf.Visible = true;
                     }
                 }
             }
@@ -586,7 +559,7 @@ namespace FirehoseFinder
                         break;
                     case "7F454C45": //не совсем ELF
                         curfilerating++;
-                        dataGridView_final["Column_Name", Currnum].Style.BackColor = Color.Yellow;
+                        dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.PaleVioletRed;
                         dataGridView_final["Column_Name", Currnum].ToolTipText = "Файл не является ELF!";
                         break;
                     default: //совсем не ELF
@@ -917,6 +890,7 @@ namespace FirehoseFinder
         {
             AdbClient client = new AdbClient();
             textBox_ADB.Text = "Сеанс ADB завершён" + Environment.NewLine;
+            textBox_main_term.Text = "Сеанс ADB завершён" + Environment.NewLine;
             try
             {
                 client.KillAdb();
@@ -1009,6 +983,20 @@ namespace FirehoseFinder
             {
                 tabControl1.TabPages.Remove(tabPage_collection);
                 tabControl1.TabPages.Remove(tabPage_guide);
+                неподтверждённыеДанныеToolStripMenuItem.Checked = false;
+            }
+        }
+
+        private void НеподтверждённыеДанныеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (неподтверждённыеДанныеToolStripMenuItem.Checked)
+            {
+                справочникУстройствToolStripMenuItem.Checked = true;
+                //отображаем все данные справочника. Пруфы красим бледно-зелёным
+            }
+            else
+            {
+                //Отображаем только пруф=1
             }
         }
 
@@ -1048,7 +1036,7 @@ namespace FirehoseFinder
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataSet1.ReadXml("ForFilter.xml",XmlReadMode.ReadSchema);
+            dataSet1.ReadXml("ForFilter.xml", XmlReadMode.ReadSchema);
             bindingSource1.DataMember = dataSet1.Tables[1].TableName;
             //MessageBox.Show(dataSet1.Tables[1].TableName);
             //dataTable1 = dataSet1.Tables[0];
