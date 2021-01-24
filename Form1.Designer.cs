@@ -30,32 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfhf));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage_phone = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox_logs = new System.Windows.Forms.GroupBox();
-            this.radioButton_fulllog = new System.Windows.Forms.RadioButton();
-            this.radioButton_shortlog = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox_mem_type = new System.Windows.Forms.ComboBox();
-            this.comboBox_fh_command = new System.Windows.Forms.ComboBox();
-            this.checkBox_reset = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button_Sahara_CommandStart = new System.Windows.Forms.Button();
-            this.button_Sahara_Ids = new System.Windows.Forms.Button();
-            this.label_Sahara_fhf = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.listView_comport = new System.Windows.Forms.ListView();
-            this.columnHeader_portnum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_portname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button_ADB_start = new System.Windows.Forms.Button();
-            this.button_ADB_comstart = new System.Windows.Forms.Button();
-            this.button_ADB_clear = new System.Windows.Forms.Button();
-            this.textBox_ADB_commandstring = new System.Windows.Forms.TextBox();
-            this.comboBox_ADB_commands = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox_ADB = new System.Windows.Forms.TextBox();
+            this.dataSet1 = new System.Data.DataSet();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.видToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.справочникУстройствToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.неподтверждённыеДанныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.работаСУстройствомToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вопросОтветToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage_collection = new System.Windows.Forms.TabPage();
+            this.label_find = new System.Windows.Forms.Label();
+            this.textBox_find = new System.Windows.Forms.TextBox();
+            this.dataGridView_collection = new System.Windows.Forms.DataGridView();
             this.tabPage_firehose = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox_main_term = new System.Windows.Forms.TextBox();
@@ -93,361 +88,217 @@
             this.toolStripStatusLabel_filescompleted = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar_filescompleted = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel_vol = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tabPage_collection = new System.Windows.Forms.TabPage();
-            this.label_find = new System.Windows.Forms.Label();
-            this.textBox_find = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new System.Data.DataSet();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tabPage_guide = new System.Windows.Forms.TabPage();
-            this.forFilterDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vendor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AltName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.forFilterBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qcom_phonesDataSet = new FirehoseFinder.qcom_phonesDataSet();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel_guide = new System.Windows.Forms.ToolStripStatusLabel();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.tableAdapterManager = new FirehoseFinder.qcom_phonesDataSetTableAdapters.TableAdapterManager();
-            this.forFilterTableAdapter = new FirehoseFinder.qcom_phonesDataSetTableAdapters.ForFilterTableAdapter();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.видToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.справочникУстройствToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.неподтверждённыеДанныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.работаСУстройствомToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.вопросОтветToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl1.SuspendLayout();
-            this.tabPage_phone.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox_logs.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.tabPage_phone = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox_logs = new System.Windows.Forms.GroupBox();
+            this.radioButton_fulllog = new System.Windows.Forms.RadioButton();
+            this.radioButton_shortlog = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox_mem_type = new System.Windows.Forms.ComboBox();
+            this.comboBox_fh_command = new System.Windows.Forms.ComboBox();
+            this.checkBox_reset = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button_Sahara_CommandStart = new System.Windows.Forms.Button();
+            this.button_Sahara_Ids = new System.Windows.Forms.Button();
+            this.label_Sahara_fhf = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.listView_comport = new System.Windows.Forms.ListView();
+            this.columnHeader_portnum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_portname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button_ADB_start = new System.Windows.Forms.Button();
+            this.button_ADB_comstart = new System.Windows.Forms.Button();
+            this.button_ADB_clear = new System.Windows.Forms.Button();
+            this.textBox_ADB_commandstring = new System.Windows.Forms.TextBox();
+            this.comboBox_ADB_commands = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox_ADB = new System.Windows.Forms.TextBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.bindingSource_collection = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            this.tabPage_collection.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_collection)).BeginInit();
             this.tabPage_firehose.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_final)).BeginInit();
             this.panel1.SuspendLayout();
             this.statusStrip_firehose.SuspendLayout();
-            this.tabPage_collection.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            this.tabPage_guide.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.forFilterDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.forFilterBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qcom_phonesDataSet)).BeginInit();
-            this.statusStrip1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.tabPage_phone.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox_logs.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_collection)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // dataSet1
             // 
-            this.tabControl1.Controls.Add(this.tabPage_phone);
-            this.tabControl1.Controls.Add(this.tabPage_firehose);
-            this.tabControl1.Controls.Add(this.tabPage_collection);
-            this.tabControl1.Controls.Add(this.tabPage_guide);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 28);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1369, 576);
-            this.tabControl1.TabIndex = 0;
+            this.dataSet1.DataSetName = "DataSet_ForFilter";
             // 
-            // tabPage_phone
+            // backgroundWorker_Read_File
             // 
-            this.tabPage_phone.Controls.Add(this.groupBox2);
-            this.tabPage_phone.Controls.Add(this.groupBox3);
-            this.tabPage_phone.Controls.Add(this.groupBox1);
-            this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
-            this.tabPage_phone.Name = "tabPage_phone";
-            this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_phone.Size = new System.Drawing.Size(1361, 547);
-            this.tabPage_phone.TabIndex = 2;
-            this.tabPage_phone.Text = "Работа с устройством";
-            this.tabPage_phone.UseVisualStyleBackColor = true;
+            this.backgroundWorker_Read_File.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_Read_File_DoWork);
+            this.backgroundWorker_Read_File.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_Read_File_RunWorkerCompleted);
             // 
-            // groupBox2
+            // toolTip1
             // 
-            this.groupBox2.Controls.Add(this.groupBox_logs);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.comboBox_mem_type);
-            this.groupBox2.Controls.Add(this.comboBox_fh_command);
-            this.groupBox2.Controls.Add(this.checkBox_reset);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.button_Sahara_CommandStart);
-            this.groupBox2.Controls.Add(this.button_Sahara_Ids);
-            this.groupBox2.Controls.Add(this.label_Sahara_fhf);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.listView_comport);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(481, 135);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(877, 409);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Sahara";
+            this.toolTip1.Tag = "";
             // 
-            // groupBox_logs
+            // serialPort1
             // 
-            this.groupBox_logs.Controls.Add(this.radioButton_fulllog);
-            this.groupBox_logs.Controls.Add(this.radioButton_shortlog);
-            this.groupBox_logs.Location = new System.Drawing.Point(487, 345);
-            this.groupBox_logs.Name = "groupBox_logs";
-            this.groupBox_logs.Size = new System.Drawing.Size(353, 58);
-            this.groupBox_logs.TabIndex = 10;
-            this.groupBox_logs.TabStop = false;
-            this.groupBox_logs.Text = "Вывод логов в терминал";
+            this.serialPort1.BaudRate = 115200;
             // 
-            // radioButton_fulllog
+            // menuStrip1
             // 
-            this.radioButton_fulllog.AutoSize = true;
-            this.radioButton_fulllog.Location = new System.Drawing.Point(139, 22);
-            this.radioButton_fulllog.Name = "radioButton_fulllog";
-            this.radioButton_fulllog.Size = new System.Drawing.Size(105, 21);
-            this.radioButton_fulllog.TabIndex = 1;
-            this.radioButton_fulllog.Text = "Подробный";
-            this.radioButton_fulllog.UseVisualStyleBackColor = true;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem,
+            this.видToolStripMenuItem,
+            this.справкаToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1369, 28);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // radioButton_shortlog
+            // файлToolStripMenuItem
             // 
-            this.radioButton_shortlog.AutoSize = true;
-            this.radioButton_shortlog.Checked = true;
-            this.radioButton_shortlog.Location = new System.Drawing.Point(7, 22);
-            this.radioButton_shortlog.Name = "radioButton_shortlog";
-            this.radioButton_shortlog.Size = new System.Drawing.Size(122, 21);
-            this.radioButton_shortlog.TabIndex = 0;
-            this.radioButton_shortlog.TabStop = true;
-            this.radioButton_shortlog.Text = "Сокращённый";
-            this.radioButton_shortlog.UseVisualStyleBackColor = true;
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.выходToolStripMenuItem});
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.файлToolStripMenuItem.Text = "Файл";
             // 
-            // label3
+            // выходToolStripMenuItem
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(684, 277);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 34);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Тип памяти\r\n(eMMC по-умолчанию)";
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.ВыходToolStripMenuItem_Click);
             // 
-            // comboBox_mem_type
+            // видToolStripMenuItem
             // 
-            this.comboBox_mem_type.Enabled = false;
-            this.comboBox_mem_type.FormattingEnabled = true;
-            this.comboBox_mem_type.Items.AddRange(new object[] {
-            "eMMC",
-            "UFS"});
-            this.comboBox_mem_type.Location = new System.Drawing.Point(687, 313);
-            this.comboBox_mem_type.Name = "comboBox_mem_type";
-            this.comboBox_mem_type.Size = new System.Drawing.Size(153, 24);
-            this.comboBox_mem_type.TabIndex = 8;
+            this.видToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator1,
+            this.справочникУстройствToolStripMenuItem,
+            this.работаСУстройствомToolStripMenuItem,
+            this.toolStripSeparator2});
+            this.видToolStripMenuItem.Name = "видToolStripMenuItem";
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.видToolStripMenuItem.Text = "Вид";
             // 
-            // comboBox_fh_command
+            // toolStripSeparator1
             // 
-            this.comboBox_fh_command.Enabled = false;
-            this.comboBox_fh_command.FormattingEnabled = true;
-            this.comboBox_fh_command.Items.AddRange(new object[] {
-            "Проверка firehose (только перезагрузка устройства)"});
-            this.comboBox_fh_command.Location = new System.Drawing.Point(7, 314);
-            this.comboBox_fh_command.Name = "comboBox_fh_command";
-            this.comboBox_fh_command.Size = new System.Drawing.Size(462, 24);
-            this.comboBox_fh_command.TabIndex = 7;
-            this.comboBox_fh_command.Text = "Выберите команду";
-            this.comboBox_fh_command.SelectedIndexChanged += new System.EventHandler(this.ComboBox_fh_command_SelectedIndexChanged);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(246, 6);
             // 
-            // checkBox_reset
+            // справочникУстройствToolStripMenuItem
             // 
-            this.checkBox_reset.AutoSize = true;
-            this.checkBox_reset.Checked = true;
-            this.checkBox_reset.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_reset.Enabled = false;
-            this.checkBox_reset.Location = new System.Drawing.Point(7, 344);
-            this.checkBox_reset.Name = "checkBox_reset";
-            this.checkBox_reset.Size = new System.Drawing.Size(334, 38);
-            this.checkBox_reset.TabIndex = 6;
-            this.checkBox_reset.Text = "Перегрузить устройство в нормальный режим\r\nпосле выполнения запроса";
-            this.checkBox_reset.UseVisualStyleBackColor = true;
+            this.справочникУстройствToolStripMenuItem.CheckOnClick = true;
+            this.справочникУстройствToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.неподтверждённыеДанныеToolStripMenuItem});
+            this.справочникУстройствToolStripMenuItem.Name = "справочникУстройствToolStripMenuItem";
+            this.справочникУстройствToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.справочникУстройствToolStripMenuItem.Text = "Справочник устройств";
+            this.справочникУстройствToolStripMenuItem.CheckedChanged += new System.EventHandler(this.СправочникУстройствToolStripMenuItem_CheckedChanged);
             // 
-            // label4
+            // неподтверждённыеДанныеToolStripMenuItem
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(2, 179);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(278, 17);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Для этой команды программер не нужен";
+            this.неподтверждённыеДанныеToolStripMenuItem.CheckOnClick = true;
+            this.неподтверждённыеДанныеToolStripMenuItem.Name = "неподтверждённыеДанныеToolStripMenuItem";
+            this.неподтверждённыеДанныеToolStripMenuItem.Size = new System.Drawing.Size(289, 26);
+            this.неподтверждённыеДанныеToolStripMenuItem.Text = "Неподтверждённые данные";
+            this.неподтверждённыеДанныеToolStripMenuItem.Click += new System.EventHandler(this.НеподтверждённыеДанныеToolStripMenuItem_Click);
             // 
-            // button_Sahara_CommandStart
+            // работаСУстройствомToolStripMenuItem
             // 
-            this.button_Sahara_CommandStart.Enabled = false;
-            this.button_Sahara_CommandStart.Location = new System.Drawing.Point(487, 314);
-            this.button_Sahara_CommandStart.Name = "button_Sahara_CommandStart";
-            this.button_Sahara_CommandStart.Size = new System.Drawing.Size(170, 23);
-            this.button_Sahara_CommandStart.TabIndex = 4;
-            this.button_Sahara_CommandStart.Text = "Выполнить команду";
-            this.button_Sahara_CommandStart.UseVisualStyleBackColor = true;
-            this.button_Sahara_CommandStart.Click += new System.EventHandler(this.Button_Sahara_CommandStart_Click);
+            this.работаСУстройствомToolStripMenuItem.CheckOnClick = true;
+            this.работаСУстройствомToolStripMenuItem.Name = "работаСУстройствомToolStripMenuItem";
+            this.работаСУстройствомToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.работаСУстройствомToolStripMenuItem.Text = "Работа с устройством";
+            this.работаСУстройствомToolStripMenuItem.CheckedChanged += new System.EventHandler(this.РаботаСУстройствомToolStripMenuItem_CheckedChanged);
             // 
-            // button_Sahara_Ids
+            // toolStripSeparator2
             // 
-            this.button_Sahara_Ids.Enabled = false;
-            this.button_Sahara_Ids.Location = new System.Drawing.Point(6, 199);
-            this.button_Sahara_Ids.Name = "button_Sahara_Ids";
-            this.button_Sahara_Ids.Size = new System.Drawing.Size(307, 23);
-            this.button_Sahara_Ids.TabIndex = 3;
-            this.button_Sahara_Ids.Text = "Получить идентификаторы устройства";
-            this.button_Sahara_Ids.UseVisualStyleBackColor = true;
-            this.button_Sahara_Ids.Click += new System.EventHandler(this.Button_Sahara_Ids_Click);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(246, 6);
             // 
-            // label_Sahara_fhf
+            // справкаToolStripMenuItem
             // 
-            this.label_Sahara_fhf.AutoSize = true;
-            this.label_Sahara_fhf.Location = new System.Drawing.Point(3, 289);
-            this.label_Sahara_fhf.Name = "label_Sahara_fhf";
-            this.label_Sahara_fhf.Size = new System.Drawing.Size(371, 17);
-            this.label_Sahara_fhf.TabIndex = 2;
-            this.label_Sahara_fhf.Text = "Выберете программер на вкладке \"Работа с файлами\"";
+            this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.вопросОтветToolStripMenuItem,
+            this.оПрограммеToolStripMenuItem});
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.справкаToolStripMenuItem.Text = "Справка";
             // 
-            // label2
+            // вопросОтветToolStripMenuItem
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(2, 243);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(821, 34);
-            this.label2.TabIndex = 1;
-            this.label2.Text = resources.GetString("label2.Text");
+            this.вопросОтветToolStripMenuItem.Name = "вопросОтветToolStripMenuItem";
+            this.вопросОтветToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.вопросОтветToolStripMenuItem.Text = "Вопрос / ответ";
+            this.вопросОтветToolStripMenuItem.Click += new System.EventHandler(this.ВопросОтветToolStripMenuItem_Click);
             // 
-            // listView_comport
+            // оПрограммеToolStripMenuItem
             // 
-            this.listView_comport.CheckBoxes = true;
-            this.listView_comport.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader_portnum,
-            this.columnHeader_portname});
-            this.listView_comport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.listView_comport.HideSelection = false;
-            this.listView_comport.Location = new System.Drawing.Point(3, 18);
-            this.listView_comport.Name = "listView_comport";
-            this.listView_comport.Size = new System.Drawing.Size(871, 158);
-            this.listView_comport.TabIndex = 0;
-            this.listView_comport.UseCompatibleStateImageBehavior = false;
-            this.listView_comport.View = System.Windows.Forms.View.Details;
-            this.listView_comport.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.ListView_comport_ItemChecked);
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.ОПрограммеToolStripMenuItem_Click);
             // 
-            // columnHeader_portnum
+            // tabPage_collection
             // 
-            this.columnHeader_portnum.Text = "Порт";
+            this.tabPage_collection.Controls.Add(this.label_find);
+            this.tabPage_collection.Controls.Add(this.textBox_find);
+            this.tabPage_collection.Controls.Add(this.dataGridView_collection);
+            this.tabPage_collection.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_collection.Name = "tabPage_collection";
+            this.tabPage_collection.Size = new System.Drawing.Size(1361, 547);
+            this.tabPage_collection.TabIndex = 4;
+            this.tabPage_collection.Text = "Справочник устройств";
+            this.tabPage_collection.UseVisualStyleBackColor = true;
             // 
-            // columnHeader_portname
+            // label_find
             // 
-            this.columnHeader_portname.Text = "Наименование устройства";
-            this.columnHeader_portname.Width = 300;
+            this.label_find.AutoSize = true;
+            this.label_find.Location = new System.Drawing.Point(3, 10);
+            this.label_find.Name = "label_find";
+            this.label_find.Size = new System.Drawing.Size(148, 17);
+            this.label_find.TabIndex = 11;
+            this.label_find.Text = "Поиск по всем полям";
             // 
-            // groupBox3
+            // textBox_find
             // 
-            this.groupBox3.Controls.Add(this.button_ADB_start);
-            this.groupBox3.Controls.Add(this.button_ADB_comstart);
-            this.groupBox3.Controls.Add(this.button_ADB_clear);
-            this.groupBox3.Controls.Add(this.textBox_ADB_commandstring);
-            this.groupBox3.Controls.Add(this.comboBox_ADB_commands);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Location = new System.Drawing.Point(481, 3);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(877, 127);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Android Debug Bridge";
+            this.textBox_find.Location = new System.Drawing.Point(169, 10);
+            this.textBox_find.Name = "textBox_find";
+            this.textBox_find.Size = new System.Drawing.Size(282, 22);
+            this.textBox_find.TabIndex = 10;
+            this.textBox_find.TextChanged += new System.EventHandler(this.TextBox_find_TextChanged);
             // 
-            // button_ADB_start
+            // dataGridView_collection
             // 
-            this.button_ADB_start.Location = new System.Drawing.Point(6, 21);
-            this.button_ADB_start.Name = "button_ADB_start";
-            this.button_ADB_start.Size = new System.Drawing.Size(213, 23);
-            this.button_ADB_start.TabIndex = 2;
-            this.button_ADB_start.Text = "Подключить ADB";
-            this.button_ADB_start.UseVisualStyleBackColor = true;
-            this.button_ADB_start.Click += new System.EventHandler(this.Button_ADB_start_Click);
-            // 
-            // button_ADB_comstart
-            // 
-            this.button_ADB_comstart.Enabled = false;
-            this.button_ADB_comstart.Location = new System.Drawing.Point(225, 93);
-            this.button_ADB_comstart.Name = "button_ADB_comstart";
-            this.button_ADB_comstart.Size = new System.Drawing.Size(206, 23);
-            this.button_ADB_comstart.TabIndex = 5;
-            this.button_ADB_comstart.Text = "Выполнить команду";
-            this.button_ADB_comstart.UseVisualStyleBackColor = true;
-            this.button_ADB_comstart.Click += new System.EventHandler(this.Button_ADB_comstart_Click);
-            // 
-            // button_ADB_clear
-            // 
-            this.button_ADB_clear.Location = new System.Drawing.Point(225, 21);
-            this.button_ADB_clear.Name = "button_ADB_clear";
-            this.button_ADB_clear.Size = new System.Drawing.Size(206, 23);
-            this.button_ADB_clear.TabIndex = 3;
-            this.button_ADB_clear.Text = "Очистить и закрыть ADB";
-            this.button_ADB_clear.UseVisualStyleBackColor = true;
-            this.button_ADB_clear.Click += new System.EventHandler(this.Button_ADB_clear_Click);
-            // 
-            // textBox_ADB_commandstring
-            // 
-            this.textBox_ADB_commandstring.Location = new System.Drawing.Point(6, 93);
-            this.textBox_ADB_commandstring.Name = "textBox_ADB_commandstring";
-            this.textBox_ADB_commandstring.Size = new System.Drawing.Size(213, 22);
-            this.textBox_ADB_commandstring.TabIndex = 6;
-            this.textBox_ADB_commandstring.Visible = false;
-            this.textBox_ADB_commandstring.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBox_ADB_commandstring_KeyUp);
-            // 
-            // comboBox_ADB_commands
-            // 
-            this.comboBox_ADB_commands.Enabled = false;
-            this.comboBox_ADB_commands.FormattingEnabled = true;
-            this.comboBox_ADB_commands.Items.AddRange(new object[] {
-            "Перегрузить устройство в аварийный режим",
-            "Параметры устройства (модель, тип памяти)",
-            "Командная строка (ADB Shell)"});
-            this.comboBox_ADB_commands.Location = new System.Drawing.Point(6, 63);
-            this.comboBox_ADB_commands.Name = "comboBox_ADB_commands";
-            this.comboBox_ADB_commands.Size = new System.Drawing.Size(462, 24);
-            this.comboBox_ADB_commands.TabIndex = 4;
-            this.comboBox_ADB_commands.Text = "Выберите команду";
-            this.comboBox_ADB_commands.SelectedIndexChanged += new System.EventHandler(this.ComboBox_ADB_commands_SelectedIndexChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.textBox_ADB);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(478, 541);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Terminal";
-            // 
-            // textBox_ADB
-            // 
-            this.textBox_ADB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_ADB.Location = new System.Drawing.Point(3, 18);
-            this.textBox_ADB.Multiline = true;
-            this.textBox_ADB.Name = "textBox_ADB";
-            this.textBox_ADB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_ADB.Size = new System.Drawing.Size(472, 520);
-            this.textBox_ADB.TabIndex = 1;
+            this.dataGridView_collection.AllowUserToAddRows = false;
+            this.dataGridView_collection.AllowUserToDeleteRows = false;
+            this.dataGridView_collection.AllowUserToOrderColumns = true;
+            this.dataGridView_collection.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView_collection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_collection.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView_collection.Location = new System.Drawing.Point(0, 49);
+            this.dataGridView_collection.MultiSelect = false;
+            this.dataGridView_collection.Name = "dataGridView_collection";
+            this.dataGridView_collection.ReadOnly = true;
+            this.dataGridView_collection.RowHeadersVisible = false;
+            this.dataGridView_collection.RowHeadersWidth = 51;
+            this.dataGridView_collection.RowTemplate.Height = 24;
+            this.dataGridView_collection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_collection.ShowCellErrors = false;
+            this.dataGridView_collection.ShowCellToolTips = false;
+            this.dataGridView_collection.ShowEditingIcon = false;
+            this.dataGridView_collection.ShowRowErrors = false;
+            this.dataGridView_collection.Size = new System.Drawing.Size(1361, 498);
+            this.dataGridView_collection.TabIndex = 2;
             // 
             // tabPage_firehose
             // 
@@ -834,349 +685,297 @@
             this.toolStripStatusLabel_vol.Name = "toolStripStatusLabel_vol";
             this.toolStripStatusLabel_vol.Size = new System.Drawing.Size(0, 24);
             // 
-            // tabPage_collection
-            // 
-            this.tabPage_collection.Controls.Add(this.label_find);
-            this.tabPage_collection.Controls.Add(this.textBox_find);
-            this.tabPage_collection.Controls.Add(this.dataGridView1);
-            this.tabPage_collection.Controls.Add(this.button1);
-            this.tabPage_collection.Location = new System.Drawing.Point(4, 25);
-            this.tabPage_collection.Name = "tabPage_collection";
-            this.tabPage_collection.Size = new System.Drawing.Size(1361, 545);
-            this.tabPage_collection.TabIndex = 4;
-            this.tabPage_collection.Text = "Справочник устройств";
-            this.tabPage_collection.UseVisualStyleBackColor = true;
-            // 
-            // label_find
-            // 
-            this.label_find.AutoSize = true;
-            this.label_find.Location = new System.Drawing.Point(190, 48);
-            this.label_find.Name = "label_find";
-            this.label_find.Size = new System.Drawing.Size(148, 17);
-            this.label_find.TabIndex = 11;
-            this.label_find.Text = "Поиск по всем полям";
-            // 
-            // textBox_find
-            // 
-            this.textBox_find.Enabled = false;
-            this.textBox_find.Location = new System.Drawing.Point(356, 48);
-            this.textBox_find.Name = "textBox_find";
-            this.textBox_find.Size = new System.Drawing.Size(282, 22);
-            this.textBox_find.TabIndex = 10;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.bindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 124);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = this.dataSet1;
-            this.bindingSource1.Position = 0;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet_ForFilter";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(52, 48);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tabPage_guide
-            // 
-            this.tabPage_guide.Controls.Add(this.forFilterDataGridView);
-            this.tabPage_guide.Controls.Add(this.statusStrip1);
-            this.tabPage_guide.Location = new System.Drawing.Point(4, 25);
-            this.tabPage_guide.Name = "tabPage_guide";
-            this.tabPage_guide.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_guide.Size = new System.Drawing.Size(1361, 545);
-            this.tabPage_guide.TabIndex = 3;
-            this.tabPage_guide.Text = "Справочник ID";
-            this.tabPage_guide.UseVisualStyleBackColor = true;
-            // 
-            // forFilterDataGridView
-            // 
-            this.forFilterDataGridView.AllowUserToAddRows = false;
-            this.forFilterDataGridView.AllowUserToDeleteRows = false;
-            this.forFilterDataGridView.AutoGenerateColumns = false;
-            this.forFilterDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.forFilterDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.forFilterDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.CPU,
-            this.dataGridViewTextBoxColumn3,
-            this.Vendor,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.AltName});
-            this.forFilterDataGridView.DataSource = this.forFilterBindingSource;
-            this.forFilterDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.forFilterDataGridView.Enabled = false;
-            this.forFilterDataGridView.Location = new System.Drawing.Point(3, 106);
-            this.forFilterDataGridView.MultiSelect = false;
-            this.forFilterDataGridView.Name = "forFilterDataGridView";
-            this.forFilterDataGridView.ReadOnly = true;
-            this.forFilterDataGridView.RowHeadersVisible = false;
-            this.forFilterDataGridView.RowHeadersWidth = 51;
-            this.forFilterDataGridView.RowTemplate.Height = 24;
-            this.forFilterDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.forFilterDataGridView.Size = new System.Drawing.Size(1355, 410);
-            this.forFilterDataGridView.TabIndex = 4;
-            this.forFilterDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ForFilterDataGridView_CellDoubleClick);
-            this.forFilterDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ForFilterDataGridView_CellMouseClick);
-            this.forFilterDataGridView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ForFilterDataGridView_ColumnHeaderMouseClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "HWID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "HWID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 73;
-            // 
-            // CPU
-            // 
-            this.CPU.DataPropertyName = "CPU";
-            this.CPU.HeaderText = "CPU";
-            this.CPU.MinimumWidth = 6;
-            this.CPU.Name = "CPU";
-            this.CPU.ReadOnly = true;
-            this.CPU.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "OEMID";
-            this.dataGridViewTextBoxColumn3.HeaderText = "OEMID";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 81;
-            // 
-            // Vendor
-            // 
-            this.Vendor.DataPropertyName = "Vendor";
-            this.Vendor.HeaderText = "Vendor";
-            this.Vendor.MinimumWidth = 6;
-            this.Vendor.Name = "Vendor";
-            this.Vendor.ReadOnly = true;
-            this.Vendor.Width = 83;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "MODELID";
-            this.dataGridViewTextBoxColumn5.HeaderText = "MODELID";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 99;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "HASHID";
-            this.dataGridViewTextBoxColumn6.HeaderText = "HASHID";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 88;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Trademark";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Trademark";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 106;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Model";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Model";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 75;
-            // 
-            // AltName
-            // 
-            this.AltName.DataPropertyName = "AltName";
-            this.AltName.HeaderText = "AltName";
-            this.AltName.MinimumWidth = 6;
-            this.AltName.Name = "AltName";
-            this.AltName.ReadOnly = true;
-            this.AltName.Width = 90;
-            // 
-            // forFilterBindingSource
-            // 
-            this.forFilterBindingSource.DataMember = "ForFilter";
-            this.forFilterBindingSource.DataSource = this.qcom_phonesDataSet;
-            // 
-            // qcom_phonesDataSet
-            // 
-            this.qcom_phonesDataSet.DataSetName = "qcom_phonesDataSet";
-            this.qcom_phonesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel_guide});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 516);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1355, 26);
-            this.statusStrip1.TabIndex = 4;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel_guide
-            // 
-            this.toolStripStatusLabel_guide.Name = "toolStripStatusLabel_guide";
-            this.toolStripStatusLabel_guide.Size = new System.Drawing.Size(27, 20);
-            this.toolStripStatusLabel_guide.Text = "---";
-            // 
-            // backgroundWorker_Read_File
-            // 
-            this.backgroundWorker_Read_File.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_Read_File_DoWork);
-            this.backgroundWorker_Read_File.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_Read_File_RunWorkerCompleted);
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.Tag = "";
-            // 
-            // serialPort1
-            // 
-            this.serialPort1.BaudRate = 115200;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.CPUsTableAdapter = null;
-            this.tableAdapterManager.FullDBTableAdapter = null;
-            this.tableAdapterManager.HASH_IDsTableAdapter = null;
-            this.tableAdapterManager.HW_IDsTableAdapter = null;
-            this.tableAdapterManager.OEM_IDsTableAdapter = null;
-            this.tableAdapterManager.Phone_ModelsTableAdapter = null;
-            this.tableAdapterManager.SellersTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = FirehoseFinder.qcom_phonesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VendorsTableAdapter = null;
-            // 
-            // forFilterTableAdapter
-            // 
-            this.forFilterTableAdapter.ClearBeforeFill = true;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem,
-            this.видToolStripMenuItem,
-            this.справкаToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1369, 28);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // файлToolStripMenuItem
-            // 
-            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.выходToolStripMenuItem});
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
-            this.файлToolStripMenuItem.Text = "Файл";
-            // 
-            // выходToolStripMenuItem
-            // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
-            this.выходToolStripMenuItem.Text = "Выход";
-            this.выходToolStripMenuItem.Click += new System.EventHandler(this.ВыходToolStripMenuItem_Click);
-            // 
-            // видToolStripMenuItem
-            // 
-            this.видToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator1,
-            this.справочникУстройствToolStripMenuItem,
-            this.работаСУстройствомToolStripMenuItem,
-            this.toolStripSeparator2});
-            this.видToolStripMenuItem.Name = "видToolStripMenuItem";
-            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
-            this.видToolStripMenuItem.Text = "Вид";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(246, 6);
-            // 
-            // справочникУстройствToolStripMenuItem
-            // 
-            this.справочникУстройствToolStripMenuItem.CheckOnClick = true;
-            this.справочникУстройствToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.неподтверждённыеДанныеToolStripMenuItem});
-            this.справочникУстройствToolStripMenuItem.Name = "справочникУстройствToolStripMenuItem";
-            this.справочникУстройствToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
-            this.справочникУстройствToolStripMenuItem.Text = "Справочник устройств";
-            this.справочникУстройствToolStripMenuItem.CheckedChanged += new System.EventHandler(this.СправочникУстройствToolStripMenuItem_CheckedChanged);
-            // 
-            // неподтверждённыеДанныеToolStripMenuItem
-            // 
-            this.неподтверждённыеДанныеToolStripMenuItem.CheckOnClick = true;
-            this.неподтверждённыеДанныеToolStripMenuItem.Name = "неподтверждённыеДанныеToolStripMenuItem";
-            this.неподтверждённыеДанныеToolStripMenuItem.Size = new System.Drawing.Size(289, 26);
-            this.неподтверждённыеДанныеToolStripMenuItem.Text = "Неподтверждённые данные";
-            this.неподтверждённыеДанныеToolStripMenuItem.Click += new System.EventHandler(this.НеподтверждённыеДанныеToolStripMenuItem_Click);
-            // 
-            // работаСУстройствомToolStripMenuItem
-            // 
-            this.работаСУстройствомToolStripMenuItem.CheckOnClick = true;
-            this.работаСУстройствомToolStripMenuItem.Name = "работаСУстройствомToolStripMenuItem";
-            this.работаСУстройствомToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
-            this.работаСУстройствомToolStripMenuItem.Text = "Работа с устройством";
-            this.работаСУстройствомToolStripMenuItem.CheckedChanged += new System.EventHandler(this.РаботаСУстройствомToolStripMenuItem_CheckedChanged);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(246, 6);
-            // 
-            // справкаToolStripMenuItem
-            // 
-            this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.вопросОтветToolStripMenuItem,
-            this.оПрограммеToolStripMenuItem});
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
-            this.справкаToolStripMenuItem.Text = "Справка";
-            // 
-            // вопросОтветToolStripMenuItem
-            // 
-            this.вопросОтветToolStripMenuItem.Name = "вопросОтветToolStripMenuItem";
-            this.вопросОтветToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
-            this.вопросОтветToolStripMenuItem.Text = "Вопрос / ответ";
-            this.вопросОтветToolStripMenuItem.Click += new System.EventHandler(this.ВопросОтветToolStripMenuItem_Click);
-            // 
-            // оПрограммеToolStripMenuItem
-            // 
-            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
-            this.оПрограммеToolStripMenuItem.Text = "О программе";
-            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.ОПрограммеToolStripMenuItem_Click);
+            // tabPage_phone
+            // 
+            this.tabPage_phone.Controls.Add(this.groupBox2);
+            this.tabPage_phone.Controls.Add(this.groupBox3);
+            this.tabPage_phone.Controls.Add(this.groupBox1);
+            this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_phone.Name = "tabPage_phone";
+            this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_phone.Size = new System.Drawing.Size(1361, 547);
+            this.tabPage_phone.TabIndex = 2;
+            this.tabPage_phone.Text = "Работа с устройством";
+            this.tabPage_phone.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.groupBox_logs);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.comboBox_mem_type);
+            this.groupBox2.Controls.Add(this.comboBox_fh_command);
+            this.groupBox2.Controls.Add(this.checkBox_reset);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.button_Sahara_CommandStart);
+            this.groupBox2.Controls.Add(this.button_Sahara_Ids);
+            this.groupBox2.Controls.Add(this.label_Sahara_fhf);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.listView_comport);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox2.Location = new System.Drawing.Point(481, 135);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(877, 409);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Sahara";
+            // 
+            // groupBox_logs
+            // 
+            this.groupBox_logs.Controls.Add(this.radioButton_fulllog);
+            this.groupBox_logs.Controls.Add(this.radioButton_shortlog);
+            this.groupBox_logs.Location = new System.Drawing.Point(487, 345);
+            this.groupBox_logs.Name = "groupBox_logs";
+            this.groupBox_logs.Size = new System.Drawing.Size(353, 58);
+            this.groupBox_logs.TabIndex = 10;
+            this.groupBox_logs.TabStop = false;
+            this.groupBox_logs.Text = "Вывод логов в терминал";
+            // 
+            // radioButton_fulllog
+            // 
+            this.radioButton_fulllog.AutoSize = true;
+            this.radioButton_fulllog.Location = new System.Drawing.Point(139, 22);
+            this.radioButton_fulllog.Name = "radioButton_fulllog";
+            this.radioButton_fulllog.Size = new System.Drawing.Size(105, 21);
+            this.radioButton_fulllog.TabIndex = 1;
+            this.radioButton_fulllog.Text = "Подробный";
+            this.radioButton_fulllog.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_shortlog
+            // 
+            this.radioButton_shortlog.AutoSize = true;
+            this.radioButton_shortlog.Checked = true;
+            this.radioButton_shortlog.Location = new System.Drawing.Point(7, 22);
+            this.radioButton_shortlog.Name = "radioButton_shortlog";
+            this.radioButton_shortlog.Size = new System.Drawing.Size(122, 21);
+            this.radioButton_shortlog.TabIndex = 0;
+            this.radioButton_shortlog.TabStop = true;
+            this.radioButton_shortlog.Text = "Сокращённый";
+            this.radioButton_shortlog.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(684, 277);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(156, 34);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Тип памяти\r\n(eMMC по-умолчанию)";
+            // 
+            // comboBox_mem_type
+            // 
+            this.comboBox_mem_type.Enabled = false;
+            this.comboBox_mem_type.FormattingEnabled = true;
+            this.comboBox_mem_type.Items.AddRange(new object[] {
+            "eMMC",
+            "UFS"});
+            this.comboBox_mem_type.Location = new System.Drawing.Point(687, 313);
+            this.comboBox_mem_type.Name = "comboBox_mem_type";
+            this.comboBox_mem_type.Size = new System.Drawing.Size(153, 24);
+            this.comboBox_mem_type.TabIndex = 8;
+            // 
+            // comboBox_fh_command
+            // 
+            this.comboBox_fh_command.Enabled = false;
+            this.comboBox_fh_command.FormattingEnabled = true;
+            this.comboBox_fh_command.Items.AddRange(new object[] {
+            "Проверка firehose (только перезагрузка устройства)"});
+            this.comboBox_fh_command.Location = new System.Drawing.Point(7, 314);
+            this.comboBox_fh_command.Name = "comboBox_fh_command";
+            this.comboBox_fh_command.Size = new System.Drawing.Size(462, 24);
+            this.comboBox_fh_command.TabIndex = 7;
+            this.comboBox_fh_command.Text = "Выберите команду";
+            this.comboBox_fh_command.SelectedIndexChanged += new System.EventHandler(this.ComboBox_fh_command_SelectedIndexChanged);
+            // 
+            // checkBox_reset
+            // 
+            this.checkBox_reset.AutoSize = true;
+            this.checkBox_reset.Checked = true;
+            this.checkBox_reset.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_reset.Enabled = false;
+            this.checkBox_reset.Location = new System.Drawing.Point(7, 344);
+            this.checkBox_reset.Name = "checkBox_reset";
+            this.checkBox_reset.Size = new System.Drawing.Size(334, 38);
+            this.checkBox_reset.TabIndex = 6;
+            this.checkBox_reset.Text = "Перегрузить устройство в нормальный режим\r\nпосле выполнения запроса";
+            this.checkBox_reset.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(2, 179);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(278, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Для этой команды программер не нужен";
+            // 
+            // button_Sahara_CommandStart
+            // 
+            this.button_Sahara_CommandStart.Enabled = false;
+            this.button_Sahara_CommandStart.Location = new System.Drawing.Point(487, 314);
+            this.button_Sahara_CommandStart.Name = "button_Sahara_CommandStart";
+            this.button_Sahara_CommandStart.Size = new System.Drawing.Size(170, 23);
+            this.button_Sahara_CommandStart.TabIndex = 4;
+            this.button_Sahara_CommandStart.Text = "Выполнить команду";
+            this.button_Sahara_CommandStart.UseVisualStyleBackColor = true;
+            this.button_Sahara_CommandStart.Click += new System.EventHandler(this.Button_Sahara_CommandStart_Click);
+            // 
+            // button_Sahara_Ids
+            // 
+            this.button_Sahara_Ids.Enabled = false;
+            this.button_Sahara_Ids.Location = new System.Drawing.Point(6, 199);
+            this.button_Sahara_Ids.Name = "button_Sahara_Ids";
+            this.button_Sahara_Ids.Size = new System.Drawing.Size(307, 23);
+            this.button_Sahara_Ids.TabIndex = 3;
+            this.button_Sahara_Ids.Text = "Получить идентификаторы устройства";
+            this.button_Sahara_Ids.UseVisualStyleBackColor = true;
+            this.button_Sahara_Ids.Click += new System.EventHandler(this.Button_Sahara_Ids_Click);
+            // 
+            // label_Sahara_fhf
+            // 
+            this.label_Sahara_fhf.AutoSize = true;
+            this.label_Sahara_fhf.Location = new System.Drawing.Point(3, 289);
+            this.label_Sahara_fhf.Name = "label_Sahara_fhf";
+            this.label_Sahara_fhf.Size = new System.Drawing.Size(371, 17);
+            this.label_Sahara_fhf.TabIndex = 2;
+            this.label_Sahara_fhf.Text = "Выберете программер на вкладке \"Работа с файлами\"";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(2, 243);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(821, 34);
+            this.label2.TabIndex = 1;
+            this.label2.Text = resources.GetString("label2.Text");
+            // 
+            // listView_comport
+            // 
+            this.listView_comport.CheckBoxes = true;
+            this.listView_comport.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader_portnum,
+            this.columnHeader_portname});
+            this.listView_comport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.listView_comport.HideSelection = false;
+            this.listView_comport.Location = new System.Drawing.Point(3, 18);
+            this.listView_comport.Name = "listView_comport";
+            this.listView_comport.Size = new System.Drawing.Size(871, 158);
+            this.listView_comport.TabIndex = 0;
+            this.listView_comport.UseCompatibleStateImageBehavior = false;
+            this.listView_comport.View = System.Windows.Forms.View.Details;
+            this.listView_comport.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.ListView_comport_ItemChecked);
+            // 
+            // columnHeader_portnum
+            // 
+            this.columnHeader_portnum.Text = "Порт";
+            // 
+            // columnHeader_portname
+            // 
+            this.columnHeader_portname.Text = "Наименование устройства";
+            this.columnHeader_portname.Width = 300;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button_ADB_start);
+            this.groupBox3.Controls.Add(this.button_ADB_comstart);
+            this.groupBox3.Controls.Add(this.button_ADB_clear);
+            this.groupBox3.Controls.Add(this.textBox_ADB_commandstring);
+            this.groupBox3.Controls.Add(this.comboBox_ADB_commands);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox3.Location = new System.Drawing.Point(481, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(877, 127);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Android Debug Bridge";
+            // 
+            // button_ADB_start
+            // 
+            this.button_ADB_start.Location = new System.Drawing.Point(6, 21);
+            this.button_ADB_start.Name = "button_ADB_start";
+            this.button_ADB_start.Size = new System.Drawing.Size(213, 23);
+            this.button_ADB_start.TabIndex = 2;
+            this.button_ADB_start.Text = "Подключить ADB";
+            this.button_ADB_start.UseVisualStyleBackColor = true;
+            this.button_ADB_start.Click += new System.EventHandler(this.Button_ADB_start_Click);
+            // 
+            // button_ADB_comstart
+            // 
+            this.button_ADB_comstart.Enabled = false;
+            this.button_ADB_comstart.Location = new System.Drawing.Point(225, 93);
+            this.button_ADB_comstart.Name = "button_ADB_comstart";
+            this.button_ADB_comstart.Size = new System.Drawing.Size(206, 23);
+            this.button_ADB_comstart.TabIndex = 5;
+            this.button_ADB_comstart.Text = "Выполнить команду";
+            this.button_ADB_comstart.UseVisualStyleBackColor = true;
+            this.button_ADB_comstart.Click += new System.EventHandler(this.Button_ADB_comstart_Click);
+            // 
+            // button_ADB_clear
+            // 
+            this.button_ADB_clear.Location = new System.Drawing.Point(225, 21);
+            this.button_ADB_clear.Name = "button_ADB_clear";
+            this.button_ADB_clear.Size = new System.Drawing.Size(206, 23);
+            this.button_ADB_clear.TabIndex = 3;
+            this.button_ADB_clear.Text = "Очистить и закрыть ADB";
+            this.button_ADB_clear.UseVisualStyleBackColor = true;
+            this.button_ADB_clear.Click += new System.EventHandler(this.Button_ADB_clear_Click);
+            // 
+            // textBox_ADB_commandstring
+            // 
+            this.textBox_ADB_commandstring.Location = new System.Drawing.Point(6, 93);
+            this.textBox_ADB_commandstring.Name = "textBox_ADB_commandstring";
+            this.textBox_ADB_commandstring.Size = new System.Drawing.Size(213, 22);
+            this.textBox_ADB_commandstring.TabIndex = 6;
+            this.textBox_ADB_commandstring.Visible = false;
+            this.textBox_ADB_commandstring.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBox_ADB_commandstring_KeyUp);
+            // 
+            // comboBox_ADB_commands
+            // 
+            this.comboBox_ADB_commands.Enabled = false;
+            this.comboBox_ADB_commands.FormattingEnabled = true;
+            this.comboBox_ADB_commands.Items.AddRange(new object[] {
+            "Перегрузить устройство в аварийный режим",
+            "Параметры устройства (модель, тип памяти)",
+            "Командная строка (ADB Shell)"});
+            this.comboBox_ADB_commands.Location = new System.Drawing.Point(6, 63);
+            this.comboBox_ADB_commands.Name = "comboBox_ADB_commands";
+            this.comboBox_ADB_commands.Size = new System.Drawing.Size(462, 24);
+            this.comboBox_ADB_commands.TabIndex = 4;
+            this.comboBox_ADB_commands.Text = "Выберите команду";
+            this.comboBox_ADB_commands.SelectedIndexChanged += new System.EventHandler(this.ComboBox_ADB_commands_SelectedIndexChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox_ADB);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(478, 541);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Terminal";
+            // 
+            // textBox_ADB
+            // 
+            this.textBox_ADB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_ADB.Location = new System.Drawing.Point(3, 18);
+            this.textBox_ADB.Multiline = true;
+            this.textBox_ADB.Name = "textBox_ADB";
+            this.textBox_ADB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox_ADB.Size = new System.Drawing.Size(472, 520);
+            this.textBox_ADB.TabIndex = 1;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage_phone);
+            this.tabControl1.Controls.Add(this.tabPage_firehose);
+            this.tabControl1.Controls.Add(this.tabPage_collection);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 28);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1369, 576);
+            this.tabControl1.TabIndex = 0;
             // 
             // Formfhf
             // 
@@ -1191,16 +990,12 @@
             this.Text = "Firehose Finder";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Formfhf_FormClosing);
             this.Load += new System.EventHandler(this.Formfhf_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage_phone.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox_logs.ResumeLayout(false);
-            this.groupBox_logs.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.tabPage_collection.ResumeLayout(false);
+            this.tabPage_collection.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_collection)).EndInit();
             this.tabPage_firehose.ResumeLayout(false);
             this.tabPage_firehose.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1210,37 +1005,67 @@
             this.panel1.PerformLayout();
             this.statusStrip_firehose.ResumeLayout(false);
             this.statusStrip_firehose.PerformLayout();
-            this.tabPage_collection.ResumeLayout(false);
-            this.tabPage_collection.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            this.tabPage_guide.ResumeLayout(false);
-            this.tabPage_guide.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.forFilterDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.forFilterBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qcom_phonesDataSet)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.tabPage_phone.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox_logs.ResumeLayout(false);
+            this.groupBox_logs.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_collection)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage_firehose;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.StatusStrip statusStrip_firehose;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar_filescompleted;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_filescompleted;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_vol;
+        private System.ComponentModel.BackgroundWorker backgroundWorker_Read_File;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem видToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem справочникУстройствToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem работаСУстройствомToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem вопросОтветToolStripMenuItem;
+        private System.Data.DataSet dataSet1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem неподтверждённыеДанныеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.TabPage tabPage_collection;
+        private System.Windows.Forms.Label label_find;
+        private System.Windows.Forms.TextBox textBox_find;
+        private System.Windows.Forms.DataGridView dataGridView_collection;
+        private System.Windows.Forms.TabPage tabPage_firehose;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textBox_main_term;
         private System.Windows.Forms.DataGridView dataGridView_final;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column_Sel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_rate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Full;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_SW_type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Comp;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label_info;
+        private System.Windows.Forms.CheckBox checkBox_send;
+        private System.Windows.Forms.Label label_log;
+        private System.Windows.Forms.CheckBox checkBox_Log;
+        private System.Windows.Forms.Button button_findIDs;
+        private System.Windows.Forms.Label label_altname;
+        private System.Windows.Forms.Label label_model;
+        private System.Windows.Forms.Label label_tm;
+        private System.Windows.Forms.Label label_tm_model;
+        private System.Windows.Forms.Label label_SW_Ver;
+        private System.Windows.Forms.Label label_swid;
         private System.Windows.Forms.Label label_hwid;
         private System.Windows.Forms.Button button_useSahara_fhf;
         private System.Windows.Forms.TextBox textBox_oemid;
@@ -1251,89 +1076,37 @@
         private System.Windows.Forms.TextBox textBox_oemhash;
         private System.Windows.Forms.Label label_oemhash;
         private System.Windows.Forms.TextBox textBox_modelid;
-        private System.ComponentModel.BackgroundWorker backgroundWorker_Read_File;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.StatusStrip statusStrip_firehose;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_filescompleted;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar_filescompleted;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_vol;
         private System.Windows.Forms.TabPage tabPage_phone;
-        private System.Windows.Forms.TabPage tabPage_guide;
-        private System.Windows.Forms.Button button_ADB_start;
-        private System.Windows.Forms.TextBox textBox_ADB;
-        private System.Windows.Forms.Button button_ADB_clear;
-        private System.Windows.Forms.ComboBox comboBox_ADB_commands;
-        private System.Windows.Forms.Button button_ADB_comstart;
-        private System.Windows.Forms.TextBox textBox_ADB_commandstring;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListView listView_comport;
-        private System.Windows.Forms.ColumnHeader columnHeader_portnum;
-        private System.Windows.Forms.ColumnHeader columnHeader_portname;
-        private System.IO.Ports.SerialPort serialPort1;
-        private System.Windows.Forms.Label label_Sahara_fhf;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button_Sahara_Ids;
-        private System.Windows.Forms.Label label_SW_Ver;
-        private System.Windows.Forms.Label label_swid;
-        private System.Windows.Forms.Button button_Sahara_CommandStart;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label4;
-        private qcom_phonesDataSet qcom_phonesDataSet;
-        private qcom_phonesDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.Label label_tm_model;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_guide;
-        private System.Windows.Forms.BindingSource forFilterBindingSource;
-        private qcom_phonesDataSetTableAdapters.ForFilterTableAdapter forFilterTableAdapter;
-        private System.Windows.Forms.DataGridView forFilterDataGridView;
-        private System.Windows.Forms.Label label_model;
-        private System.Windows.Forms.Label label_tm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Vendor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AltName;
-        private System.Windows.Forms.Label label_altname;
+        private System.Windows.Forms.GroupBox groupBox_logs;
+        private System.Windows.Forms.RadioButton radioButton_fulllog;
+        private System.Windows.Forms.RadioButton radioButton_shortlog;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox_mem_type;
         private System.Windows.Forms.ComboBox comboBox_fh_command;
         private System.Windows.Forms.CheckBox checkBox_reset;
-        private System.Windows.Forms.GroupBox groupBox_logs;
-        private System.Windows.Forms.RadioButton radioButton_fulllog;
-        private System.Windows.Forms.RadioButton radioButton_shortlog;
-        private System.Windows.Forms.TabPage tabPage_collection;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem видToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem справочникУстройствToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem работаСУстройствомToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem вопросОтветToolStripMenuItem;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Data.DataSet dataSet1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem неподтверждённыеДанныеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.TextBox textBox_main_term;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column_Sel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_rate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Full;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_SW_type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Comp;
-        private System.Windows.Forms.Label label_log;
-        private System.Windows.Forms.CheckBox checkBox_Log;
-        private System.Windows.Forms.Button button_findIDs;
-        private System.Windows.Forms.CheckBox checkBox_send;
-        private System.Windows.Forms.Label label_find;
-        private System.Windows.Forms.TextBox textBox_find;
-        private System.Windows.Forms.Label label_info;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button_Sahara_CommandStart;
+        private System.Windows.Forms.Button button_Sahara_Ids;
+        private System.Windows.Forms.Label label_Sahara_fhf;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListView listView_comport;
+        private System.Windows.Forms.ColumnHeader columnHeader_portnum;
+        private System.Windows.Forms.ColumnHeader columnHeader_portname;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button_ADB_start;
+        private System.Windows.Forms.Button button_ADB_comstart;
+        private System.Windows.Forms.Button button_ADB_clear;
+        private System.Windows.Forms.TextBox textBox_ADB_commandstring;
+        private System.Windows.Forms.ComboBox comboBox_ADB_commands;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox_ADB;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.BindingSource bindingSource_collection;
     }
 }
 

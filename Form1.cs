@@ -70,20 +70,12 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Formfhf_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    forFilterTableAdapter.Fill(qcom_phonesDataSet.ForFilter);
-            //}
-            //catch (InvalidOperationException)
-            //{
-            //    MessageBox.Show("Для загрузки Справочника (базы данных) требуется установка Access Database Engine 2010 версии, совпадающей с установленным пакетом Microsoft Office (x86 или x64)" + Environment.NewLine +
-            //        "Ссылка для загрузки:" + Environment.NewLine +
-            //       "http://www.microsoft.com/en-us/download/details.aspx?id=13255", "Требуются дополнительные компоненты");
-            //}
-
+            //Загружаем Справочник устройств
+            dataSet1.ReadXml("ForFilter.xml", XmlReadMode.ReadSchema);
+            bindingSource_collection.DataSource = dataSet1.Tables[1];
+            dataGridView_collection.DataSource = bindingSource_collection;
             //Закрываем специализированные закладки
             tabControl1.TabPages.Remove(tabPage_collection);
-            tabControl1.TabPages.Remove(tabPage_guide);
             tabControl1.TabPages.Remove(tabPage_phone);
             //Всплывающие подсказки к разным контролам
             toolTip1.SetToolTip(button_findIDs, "Подключите устройство и нажмите для получения идентификаторов");
@@ -114,66 +106,6 @@ namespace FirehoseFinder
         #region Функции команд контролов закладки Справочник
 
         /// <summary>
-        /// Пользователь вручную выбрал устройство из Справочника для поиска по идентификаторам
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ForFilterDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //Заполняем контролы для поиска шланга
-            textBox_hwid.Text = forFilterDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-            textBox_oemid.Text = forFilterDataGridView.SelectedRows[0].Cells[2].Value.ToString();
-            textBox_modelid.Text = forFilterDataGridView.SelectedRows[0].Cells[4].Value.ToString();
-            textBox_oemhash.Text = forFilterDataGridView.SelectedRows[0].Cells[5].Value.ToString();
-            label_tm.Text = forFilterDataGridView.SelectedRows[0].Cells[6].Value.ToString();
-            label_model.Text = forFilterDataGridView.SelectedRows[0].Cells[7].Value.ToString();
-            label_altname.Text = forFilterDataGridView.SelectedRows[0].Cells[8].Value.ToString();
-            toolStripStatusLabel_guide.Text = string.Empty;
-            //Переходим на вкладку поиска
-            dataGridView_final.Rows.Clear();
-            tabControl1.SelectedTab = tabPage_firehose;
-        }
-
-        /// <summary>
-        /// Набираем данные для фильтра
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ForFilterDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                //Меняем название столбца на значение ячейки для применения фильтра
-                try
-                {
-                    forFilterDataGridView.Columns[e.ColumnIndex].HeaderText = forFilterDataGridView[e.ColumnIndex, e.RowIndex].Value.ToString();
-                    forFilterDataGridView.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.GreenYellow;
-                    toolStripStatusLabel_guide.Text = "Отобрано " + MakeFilter().ToString() + " записей";
-                }
-                catch (ArgumentOutOfRangeException)
-                {
-                    toolStripStatusLabel_guide.Text = "Кликнули вне области таблицы";
-                }
-            }
-        }
-
-        /// <summary>
-        /// Сбрасываем фильтр с названия столбца
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ForFilterDataGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                //Меняем название столбца на значение ячейки для применения фильтра 
-                forFilterDataGridView.Columns[e.ColumnIndex].HeaderText = forFilterDataGridView.Columns[e.ColumnIndex].DataPropertyName;
-                forFilterDataGridView.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.Empty;
-                toolStripStatusLabel_guide.Text = "Отобрано " + MakeFilter().ToString() + " записей";
-            }
-        }
-
-        /// <summary>
         /// Автозапуск получения идентификаторов и сверки их со Справочником
         /// </summary>
         /// <param name="sender"></param>
@@ -185,7 +117,12 @@ namespace FirehoseFinder
                 GetSaharaIDs();
                 return;
             }
-            if (!ADB_Check()) return;
+            if (!ADB_Check())
+            {
+                MessageBox.Show("Проверка корректности работы с устройством через ADB закончилась неудачно." + Environment.NewLine +
+                    "Пожалуйста, исправьте ошибки по данным лога и/или подключите устройство в режиме 9008 после перезагрузки вручную", "Ошибка ADB", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             GetADBIDs(true);
             waitSahara = true; //Ждём подключения в аварийном режиме
         }
@@ -211,27 +148,6 @@ namespace FirehoseFinder
         #endregion
 
         #region Функции самостоятельных команд Справочника
-
-        /// <summary>
-        /// Подготавливаем фильтр для грида Справочника
-        /// </summary>
-        private int MakeFilter()
-        {
-            StringBuilder fullfilter = new StringBuilder(string.Empty);
-            int countfilters = 0;
-            foreach (DataGridViewColumn ColoumnHeaderText in forFilterDataGridView.Columns)
-            {
-                if (ColoumnHeaderText.HeaderText != ColoumnHeaderText.DataPropertyName)
-                {
-                    //Применяем фильтр
-                    if (countfilters > 0) fullfilter.Append(" AND ");
-                    fullfilter.Append(string.Format("{0} LIKE '{1}'", ColoumnHeaderText.DataPropertyName, ColoumnHeaderText.HeaderText));
-                    countfilters++;
-                }
-            }
-            forFilterBindingSource.Filter = fullfilter.ToString();
-            return forFilterDataGridView.Rows.Count;
-        }
 
         /// <summary>
         /// Проверяем корректность подключения устройства через запуск ADB
@@ -306,33 +222,41 @@ namespace FirehoseFinder
                     if (string.IsNullOrEmpty(results[i])) results[i] = string.Empty;
                     receiver.Flush();
                 }
-                label_tm.Text = results[0];
-                label_model.Text = results[1];
-                if (!string.IsNullOrEmpty(results[2]))
-                {
-                    mem_type = "eMMC : " + results[2];
-                    comboBox_mem_type.Text = comboBox_mem_type.Items[(int)Guide.MEM_TYPE.eMMC].ToString();
-                    comboBox_mem_type.SelectedIndex = (int)Guide.MEM_TYPE.eMMC;
-                }
-                textBox_ADB.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
-                    "Модель: " + label_model.Text + Environment.NewLine +
-                    "Тип памяти: " + mem_type + Environment.NewLine);
-                textBox_main_term.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
-                    "Модель: " + label_model.Text + Environment.NewLine +
-                    "Тип памяти: " + mem_type + Environment.NewLine);
-                if (reset)
-                {
-                    textBox_ADB.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
-                    textBox_main_term.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
-                    client.Reboot("edl", device);
-                    Thread.Sleep(1000);
-                    StopAdb();
-                }
             }
             catch (SharpAdbClient.Exceptions.AdbException ex)
             {
                 textBox_ADB.AppendText(ex.AdbError + Environment.NewLine);
                 textBox_main_term.AppendText(ex.AdbError + Environment.NewLine);
+            }
+            label_tm.Text = results[0];
+            label_model.Text = results[1];
+            if (!string.IsNullOrEmpty(results[2]))
+            {
+                mem_type = "eMMC : " + results[2];
+                comboBox_mem_type.Text = comboBox_mem_type.Items[(int)Guide.MEM_TYPE.eMMC].ToString();
+                comboBox_mem_type.SelectedIndex = (int)Guide.MEM_TYPE.eMMC;
+            }
+            textBox_ADB.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
+                "Модель: " + label_model.Text + Environment.NewLine +
+                "Тип памяти: " + mem_type + Environment.NewLine);
+            textBox_main_term.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
+                "Модель: " + label_model.Text + Environment.NewLine +
+                "Тип памяти: " + mem_type + Environment.NewLine);
+            if (reset)
+            {
+                textBox_ADB.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
+                textBox_main_term.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
+                try
+                {
+                    client.Reboot("edl", device);
+                }
+                catch (Exception ex)
+                {
+                    textBox_ADB.AppendText(ex.Message + Environment.NewLine + "Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную." + Environment.NewLine);
+                    textBox_main_term.AppendText(ex.Message + Environment.NewLine + "Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную." + Environment.NewLine);
+                }
+                Thread.Sleep(2000);
+                StopAdb();
             }
         }
 
@@ -391,7 +315,7 @@ namespace FirehoseFinder
         {
             //Проводим две проверки: 
             //Все четыре идентификатора Сахары совпадают 
-            forFilterBindingSource.Filter = string.Format(
+            /*forFilterBindingSource.Filter = string.Format(
                 "HWID LIKE '{0}' AND OEMID LIKE '{1}' AND MODELID LIKE '{2}' AND HASHID LIKE '{3}'",
                 textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text, textBox_oemhash.Text);
             if (forFilterDataGridView.Rows.Count > 0) //Есть устройство с такими идентификаторами
@@ -407,7 +331,7 @@ namespace FirehoseFinder
                 await BotSendMes("Пожалуйста, добавьте или исправьте в Справочнике название/модель устройства" + Environment.NewLine + send_string);
             }
             //Устройства нет, надо добавить в автосообщение
-            else await BotSendMes("Пожалуйста, добавьте в Справочник устройство" + Environment.NewLine + send_string);
+            else await BotSendMes("Пожалуйста, добавьте в Справочник устройство" + Environment.NewLine + send_string);*/
         }
 
         /// <summary>
@@ -871,12 +795,12 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void TextBox_find_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox_find.Text)) forFilterBindingSource.Filter = string.Empty;
-            else
-            {
-                forFilterBindingSource.Filter = string.Format("HWID LIKE '%{0}%' OR CPU LIKE '%{0}%' OR OEMID LIKE '%{0}%' OR Vendor LIKE '%{0}%' OR MODELID LIKE '%{0}%' OR HASHID LIKE '%{0}%' OR Trademark LIKE '%{0}%' OR Model LIKE '%{0}%' OR AltName LIKE '%{0}%'", textBox_find.Text);
-                toolStripStatusLabel_guide.Text = "Отобрано " + forFilterDataGridView.Rows.Count.ToString() + " записей";
-            }
+            //if (string.IsNullOrEmpty(textBox_find.Text)) forFilterBindingSource.Filter = string.Empty;
+            //else
+            //{
+            //    forFilterBindingSource.Filter = string.Format("HWID LIKE '%{0}%' OR CPU LIKE '%{0}%' OR OEMID LIKE '%{0}%' OR Vendor LIKE '%{0}%' OR MODELID LIKE '%{0}%' OR HASHID LIKE '%{0}%' OR Trademark LIKE '%{0}%' OR Model LIKE '%{0}%' OR AltName LIKE '%{0}%'", textBox_find.Text);
+            //    toolStripStatusLabel_guide.Text = "Отобрано " + forFilterDataGridView.Rows.Count.ToString() + " записей";
+            //}
         }
 
         #endregion
@@ -977,12 +901,15 @@ namespace FirehoseFinder
             if (справочникУстройствToolStripMenuItem.Checked)
             {
                 tabControl1.TabPages.Insert(tabControl1.TabPages.Count, tabPage_collection);
-                tabControl1.TabPages.Insert(tabControl1.TabPages.Count, tabPage_guide);
+                if (!неподтверждённыеДанныеToolStripMenuItem.Checked)
+                {
+                    //Отображаем только подтверждённые данные
+                    bindingSource_collection.Filter = "Proof = true";
+                }
             }
             else
             {
                 tabControl1.TabPages.Remove(tabPage_collection);
-                tabControl1.TabPages.Remove(tabPage_guide);
                 неподтверждённыеДанныеToolStripMenuItem.Checked = false;
             }
         }
@@ -993,10 +920,12 @@ namespace FirehoseFinder
             {
                 справочникУстройствToolStripMenuItem.Checked = true;
                 //отображаем все данные справочника. Пруфы красим бледно-зелёным
+                bindingSource_collection.Filter = null;
             }
             else
             {
-                //Отображаем только пруф=1
+                //Отображаем только подтверждённые данные
+                bindingSource_collection.Filter = "Proof = true";
             }
         }
 
@@ -1032,14 +961,6 @@ namespace FirehoseFinder
             MessageBox.Show("Часто задаваемые вопросы: " + Environment.NewLine + Resources.String_faq1 +
                 Environment.NewLine + Environment.NewLine + Resources.String_faq2 +
                 Environment.NewLine + Environment.NewLine + Resources.String_faq3, "Список ответов на часто задаваемые вопросы", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            dataSet1.ReadXml("ForFilter.xml", XmlReadMode.ReadSchema);
-            bindingSource1.DataMember = dataSet1.Tables[1].TableName;
-            //MessageBox.Show(dataSet1.Tables[1].TableName);
-            //dataTable1 = dataSet1.Tables[0];
         }
     }
 }

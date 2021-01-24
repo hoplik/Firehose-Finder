@@ -22,15 +22,5 @@ namespace FirehoseFinder.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\qcom_phones.accdb")]
-        public string qcom_phonesConnectionString {
-            get {
-                return ((string)(this["qcom_phonesConnectionString"]));
-            }
-        }
     }
 }
