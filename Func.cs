@@ -213,13 +213,19 @@ namespace FirehoseFinder
         /// <summary>
         /// Парсинг результата работы команды Сахары 07
         /// </summary>
-        /// <returns>Строка идентификатора SW SBL1</returns>
+        /// <returns>Строка идентификатора SW SBL1 в little endian</returns>
         internal string SaharaCommand7()
         {
             StringBuilder SC7 = new StringBuilder();
             if (File.Exists("commandop07.bin"))
             {
-                SC7.Append(BitConverter.ToString(File.ReadAllBytes("commandop07.bin")).Replace("-", ""));
+                string strbyte = BitConverter.ToString(File.ReadAllBytes("commandop07.bin")).Replace("-", "");
+                byte count = (byte)strbyte.Length;
+                while (count > 0)
+                {
+                    SC7.Append(strbyte.Substring(count - 2, 2));
+                    count -= 2;
+                }
                 File.Delete("commandop07.bin");
             }
             return SC7.ToString();

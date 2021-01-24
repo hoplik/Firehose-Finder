@@ -58,8 +58,21 @@
             this.textBox_ADB = new System.Windows.Forms.TextBox();
             this.tabPage_firehose = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox_main_term = new System.Windows.Forms.TextBox();
             this.dataGridView_final = new System.Windows.Forms.DataGridView();
+            this.Column_Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Comp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label_info = new System.Windows.Forms.Label();
+            this.checkBox_send = new System.Windows.Forms.CheckBox();
+            this.label_log = new System.Windows.Forms.Label();
+            this.checkBox_Log = new System.Windows.Forms.CheckBox();
+            this.button_findIDs = new System.Windows.Forms.Button();
             this.label_altname = new System.Windows.Forms.Label();
             this.label_model = new System.Windows.Forms.Label();
             this.label_tm = new System.Windows.Forms.Label();
@@ -81,6 +94,8 @@
             this.toolStripProgressBar_filescompleted = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel_vol = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabPage_collection = new System.Windows.Forms.TabPage();
+            this.label_find = new System.Windows.Forms.Label();
+            this.textBox_find = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new System.Data.DataSet();
@@ -118,21 +133,6 @@
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вопросОтветToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox_main_term = new System.Windows.Forms.TextBox();
-            this.Column_Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Comp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label_log = new System.Windows.Forms.Label();
-            this.checkBox_Log = new System.Windows.Forms.CheckBox();
-            this.button_findIDs = new System.Windows.Forms.Button();
-            this.label_find = new System.Windows.Forms.Label();
-            this.textBox_find = new System.Windows.Forms.TextBox();
-            this.checkBox_send = new System.Windows.Forms.CheckBox();
-            this.label_info = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage_phone.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -178,7 +178,7 @@
             this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
             this.tabPage_phone.Name = "tabPage_phone";
             this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_phone.Size = new System.Drawing.Size(1330, 545);
+            this.tabPage_phone.Size = new System.Drawing.Size(1361, 547);
             this.tabPage_phone.TabIndex = 2;
             this.tabPage_phone.Text = "Работа с устройством";
             this.tabPage_phone.UseVisualStyleBackColor = true;
@@ -197,9 +197,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.listView_comport);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(481, 133);
+            this.groupBox2.Location = new System.Drawing.Point(481, 135);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(846, 409);
+            this.groupBox2.Size = new System.Drawing.Size(877, 409);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sahara";
@@ -343,7 +343,7 @@
             this.listView_comport.HideSelection = false;
             this.listView_comport.Location = new System.Drawing.Point(3, 18);
             this.listView_comport.Name = "listView_comport";
-            this.listView_comport.Size = new System.Drawing.Size(840, 158);
+            this.listView_comport.Size = new System.Drawing.Size(871, 158);
             this.listView_comport.TabIndex = 0;
             this.listView_comport.UseCompatibleStateImageBehavior = false;
             this.listView_comport.View = System.Windows.Forms.View.Details;
@@ -368,7 +368,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(481, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(846, 127);
+            this.groupBox3.Size = new System.Drawing.Size(877, 127);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Android Debug Bridge";
@@ -434,7 +434,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(478, 539);
+            this.groupBox1.Size = new System.Drawing.Size(478, 541);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Terminal";
@@ -446,7 +446,7 @@
             this.textBox_ADB.Multiline = true;
             this.textBox_ADB.Name = "textBox_ADB";
             this.textBox_ADB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_ADB.Size = new System.Drawing.Size(472, 518);
+            this.textBox_ADB.Size = new System.Drawing.Size(472, 520);
             this.textBox_ADB.TabIndex = 1;
             // 
             // tabPage_firehose
@@ -472,6 +472,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1355, 391);
             this.panel2.TabIndex = 18;
+            // 
+            // textBox_main_term
+            // 
+            this.textBox_main_term.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_main_term.Location = new System.Drawing.Point(0, 0);
+            this.textBox_main_term.Multiline = true;
+            this.textBox_main_term.Name = "textBox_main_term";
+            this.textBox_main_term.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox_main_term.Size = new System.Drawing.Size(409, 391);
+            this.textBox_main_term.TabIndex = 16;
             // 
             // dataGridView_final
             // 
@@ -501,6 +511,57 @@
             this.dataGridView_final.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellClick);
             this.dataGridView_final.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellDoubleClick);
             // 
+            // Column_Sel
+            // 
+            this.Column_Sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column_Sel.HeaderText = "Выбор";
+            this.Column_Sel.MinimumWidth = 6;
+            this.Column_Sel.Name = "Column_Sel";
+            this.Column_Sel.Width = 57;
+            // 
+            // Column_Name
+            // 
+            this.Column_Name.HeaderText = "Файл";
+            this.Column_Name.MinimumWidth = 6;
+            this.Column_Name.Name = "Column_Name";
+            this.Column_Name.Width = 200;
+            // 
+            // Column_id
+            // 
+            this.Column_id.HeaderText = "HW-OEM-MODEL-HASH-SW(Ver)";
+            this.Column_id.MinimumWidth = 6;
+            this.Column_id.Name = "Column_id";
+            this.Column_id.Width = 200;
+            // 
+            // Column_rate
+            // 
+            this.Column_rate.HeaderText = "Рейтинг (max10)";
+            this.Column_rate.MinimumWidth = 6;
+            this.Column_rate.Name = "Column_rate";
+            this.Column_rate.Width = 60;
+            // 
+            // Column_Full
+            // 
+            this.Column_Full.HeaderText = "Full Ids";
+            this.Column_Full.MinimumWidth = 6;
+            this.Column_Full.Name = "Column_Full";
+            this.Column_Full.Visible = false;
+            this.Column_Full.Width = 59;
+            // 
+            // Column_SW_type
+            // 
+            this.Column_SW_type.HeaderText = "Тип ПО";
+            this.Column_SW_type.MinimumWidth = 6;
+            this.Column_SW_type.Name = "Column_SW_type";
+            this.Column_SW_type.Width = 62;
+            // 
+            // Column_Comp
+            // 
+            this.Column_Comp.HeaderText = "Может подойти для:";
+            this.Column_Comp.MinimumWidth = 6;
+            this.Column_Comp.Name = "Column_Comp";
+            this.Column_Comp.Width = 125;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label_info);
@@ -529,6 +590,58 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1355, 122);
             this.panel1.TabIndex = 17;
+            // 
+            // label_info
+            // 
+            this.label_info.AutoSize = true;
+            this.label_info.Location = new System.Drawing.Point(1059, 8);
+            this.label_info.Name = "label_info";
+            this.label_info.Size = new System.Drawing.Size(284, 102);
+            this.label_info.TabIndex = 28;
+            this.label_info.Text = "Текстовые поля для поиска программера\r\nпо идентификаторам устройства можно \r\nзапо" +
+    "лнить вручную или автоматически,\r\nподключив устройство в нормальном\r\nрежиме и на" +
+    "жав кнопку \"Опросить\r\nустройство\"";
+            // 
+            // checkBox_send
+            // 
+            this.checkBox_send.AutoSize = true;
+            this.checkBox_send.Checked = true;
+            this.checkBox_send.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_send.Location = new System.Drawing.Point(168, 4);
+            this.checkBox_send.Name = "checkBox_send";
+            this.checkBox_send.Size = new System.Drawing.Size(213, 38);
+            this.checkBox_send.TabIndex = 27;
+            this.checkBox_send.Text = "Отправить в Справочник\r\nданные (при их отсутствии)";
+            this.checkBox_send.UseVisualStyleBackColor = true;
+            // 
+            // label_log
+            // 
+            this.label_log.AutoSize = true;
+            this.label_log.Location = new System.Drawing.Point(5, 93);
+            this.label_log.Name = "label_log";
+            this.label_log.Size = new System.Drawing.Size(0, 17);
+            this.label_log.TabIndex = 26;
+            // 
+            // checkBox_Log
+            // 
+            this.checkBox_Log.AutoSize = true;
+            this.checkBox_Log.Location = new System.Drawing.Point(168, 45);
+            this.checkBox_Log.Name = "checkBox_Log";
+            this.checkBox_Log.Size = new System.Drawing.Size(221, 38);
+            this.checkBox_Log.TabIndex = 25;
+            this.checkBox_Log.Text = "Сохранить данные в файл\r\n(потребуется указать папку)";
+            this.checkBox_Log.UseVisualStyleBackColor = true;
+            this.checkBox_Log.CheckedChanged += new System.EventHandler(this.CheckBox_Log_CheckedChanged);
+            // 
+            // button_findIDs
+            // 
+            this.button_findIDs.Location = new System.Drawing.Point(5, 4);
+            this.button_findIDs.Name = "button_findIDs";
+            this.button_findIDs.Size = new System.Drawing.Size(157, 86);
+            this.button_findIDs.TabIndex = 24;
+            this.button_findIDs.Text = "Опросить устройство";
+            this.button_findIDs.UseVisualStyleBackColor = true;
+            this.button_findIDs.Click += new System.EventHandler(this.Button_findIDs_Click);
             // 
             // label_altname
             // 
@@ -729,10 +842,27 @@
             this.tabPage_collection.Controls.Add(this.button1);
             this.tabPage_collection.Location = new System.Drawing.Point(4, 25);
             this.tabPage_collection.Name = "tabPage_collection";
-            this.tabPage_collection.Size = new System.Drawing.Size(1330, 545);
+            this.tabPage_collection.Size = new System.Drawing.Size(1361, 545);
             this.tabPage_collection.TabIndex = 4;
             this.tabPage_collection.Text = "Справочник устройств";
             this.tabPage_collection.UseVisualStyleBackColor = true;
+            // 
+            // label_find
+            // 
+            this.label_find.AutoSize = true;
+            this.label_find.Location = new System.Drawing.Point(190, 48);
+            this.label_find.Name = "label_find";
+            this.label_find.Size = new System.Drawing.Size(148, 17);
+            this.label_find.TabIndex = 11;
+            this.label_find.Text = "Поиск по всем полям";
+            // 
+            // textBox_find
+            // 
+            this.textBox_find.Enabled = false;
+            this.textBox_find.Location = new System.Drawing.Point(356, 48);
+            this.textBox_find.Name = "textBox_find";
+            this.textBox_find.Size = new System.Drawing.Size(282, 22);
+            this.textBox_find.TabIndex = 10;
             // 
             // dataGridView1
             // 
@@ -772,7 +902,7 @@
             this.tabPage_guide.Location = new System.Drawing.Point(4, 25);
             this.tabPage_guide.Name = "tabPage_guide";
             this.tabPage_guide.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_guide.Size = new System.Drawing.Size(1330, 545);
+            this.tabPage_guide.Size = new System.Drawing.Size(1361, 545);
             this.tabPage_guide.TabIndex = 3;
             this.tabPage_guide.Text = "Справочник ID";
             this.tabPage_guide.UseVisualStyleBackColor = true;
@@ -805,7 +935,7 @@
             this.forFilterDataGridView.RowHeadersWidth = 51;
             this.forFilterDataGridView.RowTemplate.Height = 24;
             this.forFilterDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.forFilterDataGridView.Size = new System.Drawing.Size(1324, 410);
+            this.forFilterDataGridView.Size = new System.Drawing.Size(1355, 410);
             this.forFilterDataGridView.TabIndex = 4;
             this.forFilterDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ForFilterDataGridView_CellDoubleClick);
             this.forFilterDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ForFilterDataGridView_CellMouseClick);
@@ -909,7 +1039,7 @@
             this.toolStripStatusLabel_guide});
             this.statusStrip1.Location = new System.Drawing.Point(3, 516);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1324, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(1355, 26);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -968,7 +1098,7 @@
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // выходToolStripMenuItem
@@ -986,7 +1116,7 @@
             this.работаСУстройствомToolStripMenuItem,
             this.toolStripSeparator2});
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
-            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.видToolStripMenuItem.Text = "Вид";
             // 
             // toolStripSeparator1
@@ -1031,7 +1161,7 @@
             this.вопросОтветToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 26);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // вопросОтветToolStripMenuItem
@@ -1047,136 +1177,6 @@
             this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.ОПрограммеToolStripMenuItem_Click);
-            // 
-            // textBox_main_term
-            // 
-            this.textBox_main_term.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_main_term.Location = new System.Drawing.Point(0, 0);
-            this.textBox_main_term.Multiline = true;
-            this.textBox_main_term.Name = "textBox_main_term";
-            this.textBox_main_term.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_main_term.Size = new System.Drawing.Size(409, 391);
-            this.textBox_main_term.TabIndex = 16;
-            // 
-            // Column_Sel
-            // 
-            this.Column_Sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column_Sel.HeaderText = "Выбор";
-            this.Column_Sel.MinimumWidth = 6;
-            this.Column_Sel.Name = "Column_Sel";
-            this.Column_Sel.Width = 57;
-            // 
-            // Column_Name
-            // 
-            this.Column_Name.HeaderText = "Файл";
-            this.Column_Name.MinimumWidth = 6;
-            this.Column_Name.Name = "Column_Name";
-            this.Column_Name.Width = 200;
-            // 
-            // Column_id
-            // 
-            this.Column_id.HeaderText = "HW-OEM-MODEL-HASH-SW(Ver)";
-            this.Column_id.MinimumWidth = 6;
-            this.Column_id.Name = "Column_id";
-            this.Column_id.Width = 200;
-            // 
-            // Column_rate
-            // 
-            this.Column_rate.HeaderText = "Рейтинг (max10)";
-            this.Column_rate.MinimumWidth = 6;
-            this.Column_rate.Name = "Column_rate";
-            this.Column_rate.Width = 60;
-            // 
-            // Column_Full
-            // 
-            this.Column_Full.HeaderText = "Full Ids";
-            this.Column_Full.MinimumWidth = 6;
-            this.Column_Full.Name = "Column_Full";
-            this.Column_Full.Visible = false;
-            this.Column_Full.Width = 59;
-            // 
-            // Column_SW_type
-            // 
-            this.Column_SW_type.HeaderText = "Тип ПО";
-            this.Column_SW_type.MinimumWidth = 6;
-            this.Column_SW_type.Name = "Column_SW_type";
-            this.Column_SW_type.Width = 62;
-            // 
-            // Column_Comp
-            // 
-            this.Column_Comp.HeaderText = "Может подойти для:";
-            this.Column_Comp.MinimumWidth = 6;
-            this.Column_Comp.Name = "Column_Comp";
-            this.Column_Comp.Width = 125;
-            // 
-            // label_log
-            // 
-            this.label_log.AutoSize = true;
-            this.label_log.Location = new System.Drawing.Point(5, 93);
-            this.label_log.Name = "label_log";
-            this.label_log.Size = new System.Drawing.Size(0, 17);
-            this.label_log.TabIndex = 26;
-            // 
-            // checkBox_Log
-            // 
-            this.checkBox_Log.AutoSize = true;
-            this.checkBox_Log.Location = new System.Drawing.Point(168, 45);
-            this.checkBox_Log.Name = "checkBox_Log";
-            this.checkBox_Log.Size = new System.Drawing.Size(221, 38);
-            this.checkBox_Log.TabIndex = 25;
-            this.checkBox_Log.Text = "Сохранить данные в файл\r\n(потребуется указать папку)";
-            this.checkBox_Log.UseVisualStyleBackColor = true;
-            this.checkBox_Log.CheckedChanged += new System.EventHandler(this.CheckBox_Log_CheckedChanged);
-            // 
-            // button_findIDs
-            // 
-            this.button_findIDs.Location = new System.Drawing.Point(5, 4);
-            this.button_findIDs.Name = "button_findIDs";
-            this.button_findIDs.Size = new System.Drawing.Size(157, 86);
-            this.button_findIDs.TabIndex = 24;
-            this.button_findIDs.Text = "Опросить устройство";
-            this.button_findIDs.UseVisualStyleBackColor = true;
-            this.button_findIDs.Click += new System.EventHandler(this.Button_findIDs_Click);
-            // 
-            // label_find
-            // 
-            this.label_find.AutoSize = true;
-            this.label_find.Location = new System.Drawing.Point(190, 48);
-            this.label_find.Name = "label_find";
-            this.label_find.Size = new System.Drawing.Size(148, 17);
-            this.label_find.TabIndex = 11;
-            this.label_find.Text = "Поиск по всем полям";
-            // 
-            // textBox_find
-            // 
-            this.textBox_find.Enabled = false;
-            this.textBox_find.Location = new System.Drawing.Point(356, 48);
-            this.textBox_find.Name = "textBox_find";
-            this.textBox_find.Size = new System.Drawing.Size(282, 22);
-            this.textBox_find.TabIndex = 10;
-            // 
-            // checkBox_send
-            // 
-            this.checkBox_send.AutoSize = true;
-            this.checkBox_send.Checked = true;
-            this.checkBox_send.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_send.Location = new System.Drawing.Point(168, 4);
-            this.checkBox_send.Name = "checkBox_send";
-            this.checkBox_send.Size = new System.Drawing.Size(213, 38);
-            this.checkBox_send.TabIndex = 27;
-            this.checkBox_send.Text = "Отправить в Справочник\r\nданные (при их отсутствии)";
-            this.checkBox_send.UseVisualStyleBackColor = true;
-            // 
-            // label_info
-            // 
-            this.label_info.AutoSize = true;
-            this.label_info.Location = new System.Drawing.Point(1059, 8);
-            this.label_info.Name = "label_info";
-            this.label_info.Size = new System.Drawing.Size(284, 102);
-            this.label_info.TabIndex = 28;
-            this.label_info.Text = "Текстовые поля для поиска программера\r\nпо идентификаторам устройства можно \r\nзапо" +
-    "лнить вручную или автоматически,\r\nподключив устройство в нормальном\r\nрежиме и на" +
-    "жав кнопку \"Опросить\r\nустройство\"";
             // 
             // Formfhf
             // 

@@ -83,7 +83,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-01-23T21:28:57">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-01-24T16:58:39">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
@@ -2941,10 +2941,7 @@
 <ForFilter>
 <HWID>009470E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
-<OEMID>0000</OEMID>
-<Names>Qualcomm</Names>
-<MODELID>0000</MODELID>
-<HASHID>355D47F912FEA0AF1F46C007C6DC22C43544FB9359E30AA7DB5F4734D18FBD74</HASHID>
+<HASHID>C215AC92B799D755AF0466E14C7F4E4DC53B590F5FBC0D4633AFAFE5CECC41C3</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 5 (gemini)</Model>
 <Proof>0</Proof>
@@ -2952,9 +2949,20 @@
 <ForFilter>
 <HWID>009470E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
-<HASHID>C215AC92B799D755AF0466E14C7F4E4DC53B590F5FBC0D4633AFAFE5CECC41C3</HASHID>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>355D47F912FEA0AF1F46C007C6DC22C43544FB9359E30AA7DB5F4734D18FBD74</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 5 (gemini)</Model>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>0005F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 821 mobile platform</FullName>
+<HASHID>2DDE12F09B1217DBBD53860DD9145326A394BF6942131E440C161D9A13DC43DD</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 5s (capricorn)</Model>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -2964,14 +2972,6 @@
 <Names>Qualcomm</Names>
 <MODELID>0000</MODELID>
 <HASHID>355D47F912FEA0AF1F46C007C6DC22C43544FB9359E30AA7DB5F4734D18FBD74</HASHID>
-<Trademark>Xiaomi</Trademark>
-<Model>Mi 5s (capricorn)</Model>
-<Proof>0</Proof>
-</ForFilter>
-<ForFilter>
-<HWID>0005F0E1</HWID>
-<FullName>Qualcomm® Snapdragon™ 821 mobile platform</FullName>
-<HASHID>2DDE12F09B1217DBBD53860DD9145326A394BF6942131E440C161D9A13DC43DD</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 5s (capricorn)</Model>
 <Proof>0</Proof>
@@ -3124,6 +3124,14 @@
 <ForFilter>
 <HWID>000460E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
+<HASHID>A38C6F01272814E0A47E556B4AD17F999769A0FEE6D3C98343B7DE6DE741E79C</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi A1 (tissot)</Model>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
 <OEMID>0000</OEMID>
 <Names>Qualcomm</Names>
 <MODELID>0000</MODELID>
@@ -3133,12 +3141,15 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
-<HWID>000460E1</HWID>
-<FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
-<HASHID>A38C6F01272814E0A47E556B4AD17F999769A0FEE6D3C98343B7DE6DE741E79C</HASHID>
+<HWID>0008C0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 660 mobile platform</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi A1 (tissot)</Model>
-<Proof>0</Proof>
+<Model>Mi A2</Model>
+<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -3326,8 +3337,9 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 3 (ido)</Model>
-<Proof>0</Proof>
+<Model>Redmi 3</Model>
+<AltName>ido</AltName>
+<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>

@@ -86,9 +86,9 @@ namespace FirehoseFinder
             tabControl1.TabPages.Remove(tabPage_guide);
             tabControl1.TabPages.Remove(tabPage_phone);
             //Всплывающие подсказки к разным контролам
-            toolTip1.SetToolTip(button_findIDs, "Выберите папку для сохранения лог-файла с идентификаторами устройства");
+            toolTip1.SetToolTip(button_findIDs, "Подключите устройство и нажмите для получения идентификаторов");
             toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
-            toolTip1.SetToolTip(button_useSahara_fhf, "При нажатии произойдёт переименование выбранного файла по идентификаторам, указанным в таблице");
+            toolTip1.SetToolTip(button_useSahara_fhf, "Нажмите для проверки выбранного программера");
             CheckListPorts(); //Вносим в листвью список активных портов
         }
 
@@ -101,7 +101,6 @@ namespace FirehoseFinder
         {
             try
             {
-                //if (File.Exists("adb.exe")) File.Delete("adb.exe"); //При закрытии надо убивать процесс, а не удалять файл
                 if (File.Exists("commandop02.bin")) File.Delete("commandop02.bin");
                 if (File.Exists("commandop03.bin")) File.Delete("commandop03.bin");
                 if (File.Exists("commandop07.bin")) File.Delete("commandop07.bin");
@@ -304,7 +303,7 @@ namespace FirehoseFinder
                             if (item.Contains("]")) results[i] = item.Remove(item.IndexOf(']'));
                         }
                     }
-                    if (results[i] == null) results[i] = string.Empty;
+                    if (string.IsNullOrEmpty(results[i])) results[i] = string.Empty;
                     receiver.Flush();
                 }
                 label_tm.Text = results[0];
@@ -491,6 +490,7 @@ namespace FirehoseFinder
                             dataGridView_final["Column_Sel", i].Value = false;
                         }
                         dataGridView_final["Column_Sel", e.RowIndex].Value = true;
+                        //Для этой кнопки будет другая команда - проверить программер перезагрузкой устройства
                         //button_useSahara_fhf.Visible = true;
                     }
                 }
