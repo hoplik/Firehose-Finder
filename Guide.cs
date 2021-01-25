@@ -40,10 +40,13 @@ namespace FirehoseFinder
             { "200","Debug Policy"}
         };
 
-        internal enum MEM_TYPE : byte
+        /// <summary>
+        /// Справочник типов памяти
+        /// </summary>
+        internal enum MEM_TYPE
         {
-            eMMC = 0,
-            UFS = 1
+            eMMC,
+            UFS
         }
     }
 }

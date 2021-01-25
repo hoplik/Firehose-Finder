@@ -83,7 +83,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-01-24T16:58:39">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-01-25T14:29:54">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
@@ -115,7 +115,7 @@
 <HASHID>7C6DCA9BF5674291AA39DD55760C0D4B65C7A4223097AAB1DB791E2192002DDF</HASHID>
 <Trademark>AGM</Trademark>
 <Model>AGM A9</Model>
-<AltName>А9</AltName>
+<AltName>T61IN</AltName>
 <Proof>1</Proof>
 </ForFilter>
 <ForFilter>

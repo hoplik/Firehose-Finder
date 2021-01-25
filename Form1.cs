@@ -74,6 +74,8 @@ namespace FirehoseFinder
             dataSet1.ReadXml("ForFilter.xml", XmlReadMode.ReadSchema);
             bindingSource_collection.DataSource = dataSet1.Tables[1];
             dataGridView_collection.DataSource = bindingSource_collection;
+            bindingNavigator_collection.BindingSource = bindingSource_collection;
+            dataGridView_collection.Columns["Proof"].Visible = false;
             //Закрываем специализированные закладки
             tabControl1.TabPages.Remove(tabPage_collection);
             tabControl1.TabPages.Remove(tabPage_phone);
@@ -202,45 +204,49 @@ namespace FirehoseFinder
             var device = devices[0];
             string mem_type = "не определена (возможно UFS)";
             List<string> adbcommands = new List<string>() {
+                "getprop | grep ro.emmc_size",
+                "getprop | grep ro.product.name",
                 "getprop | grep ro.product.manufacturer",
-                "getprop | grep ro.product.model",
-                "getprop | grep ro.emmc_size"};
+                "getprop | grep ro.product.model"};
             string[] results = new string[adbcommands.Count];
-            try
+            for (int i = 0; i < adbcommands.Count; i++)
             {
-                for (int i = 0; i < adbcommands.Count; i++)
+                try
                 {
                     client.ExecuteRemoteCommand(adbcommands[i], device, receiver);
-                    string[] adbstr = receiver.ToString().Split('[');
-                    foreach (string item in adbstr)
-                    {
-                        if (!item.StartsWith("ro.product.m") || !item.StartsWith("ro.emmc"))
-                        {
-                            if (item.Contains("]")) results[i] = item.Remove(item.IndexOf(']'));
-                        }
-                    }
-                    if (string.IsNullOrEmpty(results[i])) results[i] = string.Empty;
-                    receiver.Flush();
                 }
+                catch (SharpAdbClient.Exceptions.AdbException ex)
+                {
+                    textBox_ADB.AppendText(ex.AdbError + Environment.NewLine);
+                    textBox_main_term.AppendText(ex.AdbError + Environment.NewLine);
+                }
+                string[] adbstr = receiver.ToString().Split('[');
+                foreach (string item in adbstr)
+                {
+                    if (!item.StartsWith("ro.product.m") || !item.StartsWith("ro.emmc"))
+                    {
+                        if (item.Contains("]")) results[i] = item.Remove(item.IndexOf(']'));
+                    }
+                }
+                if (string.IsNullOrEmpty(results[i])) results[i] = string.Empty;
+                receiver.Flush();
             }
-            catch (SharpAdbClient.Exceptions.AdbException ex)
+            label_altname.Text = results[1];
+            label_tm.Text = results[2];
+            label_model.Text = results[3];
+            if (!string.IsNullOrEmpty(results[0]))
             {
-                textBox_ADB.AppendText(ex.AdbError + Environment.NewLine);
-                textBox_main_term.AppendText(ex.AdbError + Environment.NewLine);
-            }
-            label_tm.Text = results[0];
-            label_model.Text = results[1];
-            if (!string.IsNullOrEmpty(results[2]))
-            {
-                mem_type = "eMMC : " + results[2];
+                mem_type = "eMMC : " + results[0];
                 comboBox_mem_type.Text = comboBox_mem_type.Items[(int)Guide.MEM_TYPE.eMMC].ToString();
                 comboBox_mem_type.SelectedIndex = (int)Guide.MEM_TYPE.eMMC;
             }
             textBox_ADB.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
                 "Модель: " + label_model.Text + Environment.NewLine +
+                "Альтернативное наименование: " + label_altname.Text + Environment.NewLine +
                 "Тип памяти: " + mem_type + Environment.NewLine);
             textBox_main_term.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
                 "Модель: " + label_model.Text + Environment.NewLine +
+                "Альтернативное наименование: " + label_altname.Text + Environment.NewLine +
                 "Тип памяти: " + mem_type + Environment.NewLine);
             if (reset)
             {
@@ -292,7 +298,7 @@ namespace FirehoseFinder
             //Переходим на вкладку Работа с файлами
             tabControl1.SelectedTab = tabPage_firehose;
             toolStripStatusLabel_filescompleted.Text = "Все идентификаторы получены, устройство можно отключить и перезагрузить";
-            string logstr = textBox_hwid.Text + textBox_oemid.Text + textBox_modelid.Text + "-" + textBox_oemhash.Text + "-" + label_SW_Ver.Text + "-" + label_tm.Text + "-" + label_model.Text;
+            string logstr = textBox_hwid.Text + textBox_oemid.Text + textBox_modelid.Text + "-" + textBox_oemhash.Text + "-" + label_SW_Ver.Text + "-" + label_tm.Text + "-" + label_model.Text + "-" + label_altname.Text;
             if (checkBox_Log.Checked)
             {
                 try
@@ -315,14 +321,14 @@ namespace FirehoseFinder
         {
             //Проводим две проверки: 
             //Все четыре идентификатора Сахары совпадают 
-            /*forFilterBindingSource.Filter = string.Format(
-                "HWID LIKE '{0}' AND OEMID LIKE '{1}' AND MODELID LIKE '{2}' AND HASHID LIKE '{3}'",
-                textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text, textBox_oemhash.Text);
-            if (forFilterDataGridView.Rows.Count > 0) //Есть устройство с такими идентификаторами
+            bindingSource_collection.Filter = string.Format(
+                 "HWID LIKE '{0}' AND OEMID LIKE '{1}' AND MODELID LIKE '{2}' AND HASHID LIKE '{3}'",
+                 textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text, textBox_oemhash.Text);
+            if (dataGridView_collection.Rows.Count > 0) //Есть устройство с такими идентификаторами
             {
-                for (int i = 0; i < forFilterDataGridView.Rows.Count; i++)
+                for (int i = 0; i < dataGridView_collection.Rows.Count; i++)
                 {
-                    if (forFilterDataGridView[7, i].Value.ToString().Equals(label_model.Text)) //Проверяем модель на наличие
+                    if (dataGridView_collection["Model", i].Value.ToString().Equals(label_model.Text)) //Проверяем модель на наличие
                     {
                         return;
                     }
@@ -331,7 +337,7 @@ namespace FirehoseFinder
                 await BotSendMes("Пожалуйста, добавьте или исправьте в Справочнике название/модель устройства" + Environment.NewLine + send_string);
             }
             //Устройства нет, надо добавить в автосообщение
-            else await BotSendMes("Пожалуйста, добавьте в Справочник устройство" + Environment.NewLine + send_string);*/
+            else await BotSendMes("Пожалуйста, добавьте в Справочник устройство" + Environment.NewLine + send_string);
         }
 
         /// <summary>
@@ -795,12 +801,12 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void TextBox_find_TextChanged(object sender, EventArgs e)
         {
-            //if (string.IsNullOrEmpty(textBox_find.Text)) forFilterBindingSource.Filter = string.Empty;
-            //else
-            //{
-            //    forFilterBindingSource.Filter = string.Format("HWID LIKE '%{0}%' OR CPU LIKE '%{0}%' OR OEMID LIKE '%{0}%' OR Vendor LIKE '%{0}%' OR MODELID LIKE '%{0}%' OR HASHID LIKE '%{0}%' OR Trademark LIKE '%{0}%' OR Model LIKE '%{0}%' OR AltName LIKE '%{0}%'", textBox_find.Text);
-            //    toolStripStatusLabel_guide.Text = "Отобрано " + forFilterDataGridView.Rows.Count.ToString() + " записей";
-            //}
+            if (string.IsNullOrEmpty(toolStripTextBox_find.Text))
+            {
+                if (!неподтверждённыеДанныеToolStripMenuItem.Checked) bindingSource_collection.Filter = "Proof = true";
+                else bindingSource_collection.Filter = null;
+            }
+            else bindingSource_collection.Filter = string.Format("HWID LIKE '%{0}%' OR FullName LIKE '%{0}%' OR OEMID LIKE '%{0}%' OR Names LIKE '%{0}%' OR MODELID LIKE '%{0}%' OR HASHID LIKE '%{0}%' OR Trademark LIKE '%{0}%' OR Model LIKE '%{0}%' OR AltName LIKE '%{0}%'", toolStripTextBox_find.Text);
         }
 
         #endregion
@@ -961,6 +967,23 @@ namespace FirehoseFinder
             MessageBox.Show("Часто задаваемые вопросы: " + Environment.NewLine + Resources.String_faq1 +
                 Environment.NewLine + Environment.NewLine + Resources.String_faq2 +
                 Environment.NewLine + Environment.NewLine + Resources.String_faq3, "Список ответов на часто задаваемые вопросы", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        /// <summary>
+        /// Заполняем форму поиска программера из Справочника
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGridView_collection_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int sel_row = e.RowIndex;
+            textBox_hwid.Text = dataGridView_collection["HWID", sel_row].Value.ToString();
+            textBox_oemid.Text = dataGridView_collection["OEMID", sel_row].Value.ToString();
+            textBox_modelid.Text = dataGridView_collection["MODELID", sel_row].Value.ToString();
+            textBox_oemhash.Text = dataGridView_collection["HASHID", sel_row].Value.ToString();
+            label_tm.Text = dataGridView_collection["Trademark", sel_row].Value.ToString();
+            label_altname.Text = dataGridView_collection["Model", sel_row].Value.ToString();
+            label_model.Text = dataGridView_collection["AltName", sel_row].Value.ToString();
+            tabControl1.SelectedTab = tabPage_firehose;
         }
     }
 }
