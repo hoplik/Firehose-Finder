@@ -49,6 +49,17 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage_collection = new System.Windows.Forms.TabPage();
             this.dataGridView_collection = new System.Windows.Forms.DataGridView();
+            this.bindingNavigator_collection = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBox_find = new System.Windows.Forms.ToolStripTextBox();
             this.tabPage_firehose = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox_main_term = new System.Windows.Forms.TextBox();
@@ -113,21 +124,15 @@
             this.textBox_ADB = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.bindingSource_collection = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNavigator_collection = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripTextBox_find = new System.Windows.Forms.ToolStripTextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.radioButton_man_reset = new System.Windows.Forms.RadioButton();
+            this.radioButton_adb_reset = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabPage_collection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_collection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_collection)).BeginInit();
+            this.bindingNavigator_collection.SuspendLayout();
             this.tabPage_firehose.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_final)).BeginInit();
@@ -140,8 +145,7 @@
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_collection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_collection)).BeginInit();
-            this.bindingNavigator_collection.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataSet1
@@ -179,7 +183,7 @@
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // выходToolStripMenuItem
@@ -197,7 +201,7 @@
             this.работаСУстройствомToolStripMenuItem,
             this.toolStripSeparator2});
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
-            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.видToolStripMenuItem.Text = "Вид";
             // 
             // toolStripSeparator1
@@ -242,7 +246,7 @@
             this.вопросОтветToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 26);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // вопросОтветToolStripMenuItem
@@ -294,6 +298,112 @@
             this.dataGridView_collection.TabIndex = 2;
             this.dataGridView_collection.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_collection_CellContentDoubleClick);
             // 
+            // bindingNavigator_collection
+            // 
+            this.bindingNavigator_collection.AddNewItem = null;
+            this.bindingNavigator_collection.CountItem = this.bindingNavigatorCountItem;
+            this.bindingNavigator_collection.DeleteItem = null;
+            this.bindingNavigator_collection.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bindingNavigator_collection.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.bindingNavigator_collection.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.toolStripTextBox_find});
+            this.bindingNavigator_collection.Location = new System.Drawing.Point(0, 520);
+            this.bindingNavigator_collection.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingNavigator_collection.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingNavigator_collection.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingNavigator_collection.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingNavigator_collection.Name = "bindingNavigator_collection";
+            this.bindingNavigator_collection.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingNavigator_collection.Size = new System.Drawing.Size(1361, 27);
+            this.bindingNavigator_collection.TabIndex = 12;
+            this.bindingNavigator_collection.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(55, 24);
+            this.bindingNavigatorCountItem.Text = "для {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Положение";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripTextBox_find
+            // 
+            this.toolStripTextBox_find.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox_find.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox_find.Name = "toolStripTextBox_find";
+            this.toolStripTextBox_find.Size = new System.Drawing.Size(100, 27);
+            this.toolStripTextBox_find.ToolTipText = "Поиск по всем полям";
+            this.toolStripTextBox_find.TextChanged += new System.EventHandler(this.TextBox_find_TextChanged);
+            // 
             // tabPage_firehose
             // 
             this.tabPage_firehose.Controls.Add(this.panel2);
@@ -313,9 +423,9 @@
             this.panel2.Controls.Add(this.textBox_main_term);
             this.panel2.Controls.Add(this.dataGridView_final);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 124);
+            this.panel2.Location = new System.Drawing.Point(3, 151);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1355, 391);
+            this.panel2.Size = new System.Drawing.Size(1355, 364);
             this.panel2.TabIndex = 18;
             // 
             // textBox_main_term
@@ -325,7 +435,7 @@
             this.textBox_main_term.Multiline = true;
             this.textBox_main_term.Name = "textBox_main_term";
             this.textBox_main_term.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_main_term.Size = new System.Drawing.Size(409, 391);
+            this.textBox_main_term.Size = new System.Drawing.Size(409, 364);
             this.textBox_main_term.TabIndex = 16;
             // 
             // dataGridView_final
@@ -351,7 +461,7 @@
             this.dataGridView_final.RowHeadersWidth = 51;
             this.dataGridView_final.RowTemplate.Height = 24;
             this.dataGridView_final.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_final.Size = new System.Drawing.Size(946, 391);
+            this.dataGridView_final.Size = new System.Drawing.Size(946, 364);
             this.dataGridView_final.TabIndex = 15;
             this.dataGridView_final.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellClick);
             this.dataGridView_final.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellDoubleClick);
@@ -409,6 +519,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.label_info);
             this.panel1.Controls.Add(this.checkBox_send);
             this.panel1.Controls.Add(this.label_log);
@@ -433,7 +544,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1355, 122);
+            this.panel1.Size = new System.Drawing.Size(1355, 149);
             this.panel1.TabIndex = 17;
             // 
             // label_info
@@ -441,11 +552,9 @@
             this.label_info.AutoSize = true;
             this.label_info.Location = new System.Drawing.Point(1059, 8);
             this.label_info.Name = "label_info";
-            this.label_info.Size = new System.Drawing.Size(284, 102);
+            this.label_info.Size = new System.Drawing.Size(293, 119);
             this.label_info.TabIndex = 28;
-            this.label_info.Text = "Текстовые поля для поиска программера\r\nпо идентификаторам устройства можно \r\nзапо" +
-    "лнить вручную или автоматически,\r\nподключив устройство в нормальном\r\nрежиме и на" +
-    "жав кнопку \"Опросить\r\nустройство\"";
+            this.label_info.Text = resources.GetString("label_info.Text");
             // 
             // checkBox_send
             // 
@@ -462,7 +571,7 @@
             // label_log
             // 
             this.label_log.AutoSize = true;
-            this.label_log.Location = new System.Drawing.Point(5, 93);
+            this.label_log.Location = new System.Drawing.Point(165, 66);
             this.label_log.Name = "label_log";
             this.label_log.Size = new System.Drawing.Size(0, 17);
             this.label_log.TabIndex = 26;
@@ -470,11 +579,11 @@
             // checkBox_Log
             // 
             this.checkBox_Log.AutoSize = true;
-            this.checkBox_Log.Location = new System.Drawing.Point(168, 45);
+            this.checkBox_Log.Location = new System.Drawing.Point(168, 42);
             this.checkBox_Log.Name = "checkBox_Log";
-            this.checkBox_Log.Size = new System.Drawing.Size(221, 38);
+            this.checkBox_Log.Size = new System.Drawing.Size(203, 21);
             this.checkBox_Log.TabIndex = 25;
-            this.checkBox_Log.Text = "Сохранить данные в файл\r\n(потребуется указать папку)";
+            this.checkBox_Log.Text = "Сохранить данные в файл";
             this.checkBox_Log.UseVisualStyleBackColor = true;
             this.checkBox_Log.CheckedChanged += new System.EventHandler(this.CheckBox_Log_CheckedChanged);
             // 
@@ -484,14 +593,14 @@
             this.button_findIDs.Name = "button_findIDs";
             this.button_findIDs.Size = new System.Drawing.Size(157, 86);
             this.button_findIDs.TabIndex = 24;
-            this.button_findIDs.Text = "Опросить устройство";
+            this.button_findIDs.Text = "Опросить устройство с перезагрузкой в аварийный режим";
             this.button_findIDs.UseVisualStyleBackColor = true;
             this.button_findIDs.Click += new System.EventHandler(this.Button_findIDs_Click);
             // 
             // label_altname
             // 
             this.label_altname.AutoSize = true;
-            this.label_altname.Location = new System.Drawing.Point(600, 4);
+            this.label_altname.Location = new System.Drawing.Point(600, 14);
             this.label_altname.Name = "label_altname";
             this.label_altname.Size = new System.Drawing.Size(23, 17);
             this.label_altname.TabIndex = 23;
@@ -500,7 +609,7 @@
             // label_model
             // 
             this.label_model.AutoSize = true;
-            this.label_model.Location = new System.Drawing.Point(680, 4);
+            this.label_model.Location = new System.Drawing.Point(680, 14);
             this.label_model.Name = "label_model";
             this.label_model.Size = new System.Drawing.Size(23, 17);
             this.label_model.TabIndex = 22;
@@ -509,7 +618,7 @@
             // label_tm
             // 
             this.label_tm.AutoSize = true;
-            this.label_tm.Location = new System.Drawing.Point(518, 4);
+            this.label_tm.Location = new System.Drawing.Point(518, 14);
             this.label_tm.Name = "label_tm";
             this.label_tm.Size = new System.Drawing.Size(23, 17);
             this.label_tm.TabIndex = 21;
@@ -518,7 +627,7 @@
             // label_tm_model
             // 
             this.label_tm_model.AutoSize = true;
-            this.label_tm_model.Location = new System.Drawing.Point(395, 4);
+            this.label_tm_model.Location = new System.Drawing.Point(395, 14);
             this.label_tm_model.Name = "label_tm_model";
             this.label_tm_model.Size = new System.Drawing.Size(117, 17);
             this.label_tm_model.TabIndex = 20;
@@ -527,7 +636,7 @@
             // label_SW_Ver
             // 
             this.label_SW_Ver.AutoSize = true;
-            this.label_SW_Ver.Location = new System.Drawing.Point(979, 31);
+            this.label_SW_Ver.Location = new System.Drawing.Point(978, 45);
             this.label_SW_Ver.Name = "label_SW_Ver";
             this.label_SW_Ver.Size = new System.Drawing.Size(72, 17);
             this.label_SW_Ver.TabIndex = 19;
@@ -536,7 +645,7 @@
             // label_swid
             // 
             this.label_swid.AutoSize = true;
-            this.label_swid.Location = new System.Drawing.Point(862, 31);
+            this.label_swid.Location = new System.Drawing.Point(861, 45);
             this.label_swid.Name = "label_swid";
             this.label_swid.Size = new System.Drawing.Size(117, 17);
             this.label_swid.TabIndex = 18;
@@ -545,7 +654,7 @@
             // label_hwid
             // 
             this.label_hwid.AutoSize = true;
-            this.label_hwid.Location = new System.Drawing.Point(395, 31);
+            this.label_hwid.Location = new System.Drawing.Point(394, 45);
             this.label_hwid.Name = "label_hwid";
             this.label_hwid.Size = new System.Drawing.Size(70, 17);
             this.label_hwid.TabIndex = 1;
@@ -553,12 +662,12 @@
             // 
             // button_useSahara_fhf
             // 
-            this.button_useSahara_fhf.Location = new System.Drawing.Point(733, 87);
+            this.button_useSahara_fhf.Location = new System.Drawing.Point(733, 116);
             this.button_useSahara_fhf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_useSahara_fhf.Name = "button_useSahara_fhf";
             this.button_useSahara_fhf.Size = new System.Drawing.Size(324, 23);
             this.button_useSahara_fhf.TabIndex = 10;
-            this.button_useSahara_fhf.Text = "Использовать в работе с устройством";
+            this.button_useSahara_fhf.Text = "Проверить выбранный программер";
             this.button_useSahara_fhf.UseVisualStyleBackColor = true;
             this.button_useSahara_fhf.Visible = false;
             this.button_useSahara_fhf.Click += new System.EventHandler(this.Button__useSahara_fhf_Click);
@@ -567,7 +676,7 @@
             // 
             this.textBox_oemid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_oemid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_oemid.Location = new System.Drawing.Point(644, 28);
+            this.textBox_oemid.Location = new System.Drawing.Point(643, 42);
             this.textBox_oemid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_oemid.MaxLength = 4;
             this.textBox_oemid.Name = "textBox_oemid";
@@ -578,7 +687,7 @@
             // label_modelid
             // 
             this.label_modelid.AutoSize = true;
-            this.label_modelid.Location = new System.Drawing.Point(700, 31);
+            this.label_modelid.Location = new System.Drawing.Point(699, 45);
             this.label_modelid.Name = "label_modelid";
             this.label_modelid.Size = new System.Drawing.Size(96, 17);
             this.label_modelid.TabIndex = 3;
@@ -588,7 +697,7 @@
             // 
             this.textBox_hwid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_hwid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_hwid.Location = new System.Drawing.Point(471, 28);
+            this.textBox_hwid.Location = new System.Drawing.Point(470, 42);
             this.textBox_hwid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_hwid.MaxLength = 8;
             this.textBox_hwid.Name = "textBox_hwid";
@@ -599,7 +708,7 @@
             // label_oemid
             // 
             this.label_oemid.AutoSize = true;
-            this.label_oemid.Location = new System.Drawing.Point(560, 31);
+            this.label_oemid.Location = new System.Drawing.Point(559, 45);
             this.label_oemid.Name = "label_oemid";
             this.label_oemid.Size = new System.Drawing.Size(78, 17);
             this.label_oemid.TabIndex = 5;
@@ -607,7 +716,7 @@
             // 
             // button_path
             // 
-            this.button_path.Location = new System.Drawing.Point(398, 87);
+            this.button_path.Location = new System.Drawing.Point(398, 116);
             this.button_path.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_path.Name = "button_path";
             this.button_path.Size = new System.Drawing.Size(275, 23);
@@ -620,7 +729,7 @@
             // 
             this.textBox_oemhash.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_oemhash.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_oemhash.Location = new System.Drawing.Point(483, 61);
+            this.textBox_oemhash.Location = new System.Drawing.Point(483, 77);
             this.textBox_oemhash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_oemhash.MaxLength = 64;
             this.textBox_oemhash.Name = "textBox_oemhash";
@@ -630,7 +739,7 @@
             // label_oemhash
             // 
             this.label_oemhash.AutoSize = true;
-            this.label_oemhash.Location = new System.Drawing.Point(395, 63);
+            this.label_oemhash.Location = new System.Drawing.Point(395, 79);
             this.label_oemhash.Name = "label_oemhash";
             this.label_oemhash.Size = new System.Drawing.Size(85, 17);
             this.label_oemhash.TabIndex = 7;
@@ -640,7 +749,7 @@
             // 
             this.textBox_modelid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_modelid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_modelid.Location = new System.Drawing.Point(803, 28);
+            this.textBox_modelid.Location = new System.Drawing.Point(802, 42);
             this.textBox_modelid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_modelid.MaxLength = 4;
             this.textBox_modelid.Name = "textBox_modelid";
@@ -971,111 +1080,38 @@
             this.tabControl1.Size = new System.Drawing.Size(1369, 576);
             this.tabControl1.TabIndex = 0;
             // 
-            // bindingNavigator_collection
+            // groupBox4
             // 
-            this.bindingNavigator_collection.AddNewItem = null;
-            this.bindingNavigator_collection.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigator_collection.DeleteItem = null;
-            this.bindingNavigator_collection.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bindingNavigator_collection.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.bindingNavigator_collection.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.toolStripTextBox_find});
-            this.bindingNavigator_collection.Location = new System.Drawing.Point(0, 520);
-            this.bindingNavigator_collection.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingNavigator_collection.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingNavigator_collection.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingNavigator_collection.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingNavigator_collection.Name = "bindingNavigator_collection";
-            this.bindingNavigator_collection.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator_collection.Size = new System.Drawing.Size(1361, 27);
-            this.bindingNavigator_collection.TabIndex = 12;
-            this.bindingNavigator_collection.Text = "bindingNavigator1";
+            this.groupBox4.Controls.Add(this.radioButton_adb_reset);
+            this.groupBox4.Controls.Add(this.radioButton_man_reset);
+            this.groupBox4.Location = new System.Drawing.Point(6, 97);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(375, 49);
+            this.groupBox4.TabIndex = 29;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Перегрузить в аварийный режим";
             // 
-            // bindingNavigatorMoveFirstItem
+            // radioButton_man_reset
             // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
+            this.radioButton_man_reset.AutoSize = true;
+            this.radioButton_man_reset.Location = new System.Drawing.Point(7, 22);
+            this.radioButton_man_reset.Name = "radioButton_man_reset";
+            this.radioButton_man_reset.Size = new System.Drawing.Size(86, 21);
+            this.radioButton_man_reset.TabIndex = 0;
+            this.radioButton_man_reset.Text = "Вручную";
+            this.radioButton_man_reset.UseVisualStyleBackColor = true;
             // 
-            // bindingNavigatorMovePreviousItem
+            // radioButton_adb_reset
             // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Положение";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(55, 24);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripTextBox_find
-            // 
-            this.toolStripTextBox_find.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolStripTextBox_find.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripTextBox_find.Name = "toolStripTextBox_find";
-            this.toolStripTextBox_find.Size = new System.Drawing.Size(100, 27);
-            this.toolStripTextBox_find.ToolTipText = "Поиск по всем полям";
-            this.toolStripTextBox_find.TextChanged += new System.EventHandler(this.TextBox_find_TextChanged);
+            this.radioButton_adb_reset.AutoSize = true;
+            this.radioButton_adb_reset.Checked = true;
+            this.radioButton_adb_reset.Location = new System.Drawing.Point(123, 21);
+            this.radioButton_adb_reset.Name = "radioButton_adb_reset";
+            this.radioButton_adb_reset.Size = new System.Drawing.Size(140, 21);
+            this.radioButton_adb_reset.TabIndex = 1;
+            this.radioButton_adb_reset.TabStop = true;
+            this.radioButton_adb_reset.Text = "Средствами ADB";
+            this.radioButton_adb_reset.UseVisualStyleBackColor = true;
             // 
             // Formfhf
             // 
@@ -1096,6 +1132,9 @@
             this.tabPage_collection.ResumeLayout(false);
             this.tabPage_collection.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_collection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_collection)).EndInit();
+            this.bindingNavigator_collection.ResumeLayout(false);
+            this.bindingNavigator_collection.PerformLayout();
             this.tabPage_firehose.ResumeLayout(false);
             this.tabPage_firehose.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1116,9 +1155,8 @@
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_collection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_collection)).EndInit();
-            this.bindingNavigator_collection.ResumeLayout(false);
-            this.bindingNavigator_collection.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1219,6 +1257,9 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox_find;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RadioButton radioButton_adb_reset;
+        private System.Windows.Forms.RadioButton radioButton_man_reset;
     }
 }
 

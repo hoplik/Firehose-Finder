@@ -31,8 +31,8 @@
     <ProductName>Firehose-Finder</ProductName>
     <PublisherName>hoplik</PublisherName>
     <MinimumRequiredVersion>2.0.5.0</MinimumRequiredVersion>
-    <ApplicationRevision>4</ApplicationRevision>
-    <ApplicationVersion>3.0.0.4</ApplicationVersion>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>3.0.0.5</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -153,6 +153,12 @@
     </Compile>
     <Compile Include="Func.cs" />
     <Compile Include="Guide.cs" />
+    <Compile Include="InsertModelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertModelForm.Designer.cs">
+      <DependentUpon>InsertModelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -162,6 +168,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertModelForm.resx">
+      <DependentUpon>InsertModelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
