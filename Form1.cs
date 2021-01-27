@@ -963,9 +963,16 @@ namespace FirehoseFinder
             //Переходим на вкладку Работа с файлами
             tabControl1.SelectedTab = tabPage_firehose;
             toolStripStatusLabel_filescompleted.Text = "Идентификаторы получены, устройство можно отключить и перезагрузить";
-            if (label_tm.Text.StartsWith("---") || label_model.Text.StartsWith("---"))
+            if (checkBox_Log.Checked || checkBox_send.Checked)
             {
-                //InsertModelForm.Show();
+                if (label_tm.Text.StartsWith("---") || label_model.Text.StartsWith("---"))
+                {
+                    InsertModelForm fr = new InsertModelForm();
+                    fr.ShowDialog();
+                    label_tm.Text = fr.comboBox_tm_insert.Text;
+                    label_model.Text = fr.textBox_model_insert.Text;
+                    label_altname.Text = fr.textBox_alt_insert.Text;
+                }
             }
             string logstr = textBox_hwid.Text + textBox_oemid.Text + textBox_modelid.Text + "-" + textBox_oemhash.Text + "-" + label_SW_Ver.Text + "-" + label_tm.Text + "-" + label_model.Text + "-" + label_altname.Text;
             if (checkBox_Log.Checked)
@@ -979,7 +986,7 @@ namespace FirehoseFinder
                     toolStripStatusLabel_filescompleted.Text = "Ошибка записи файла отчёта: " + ex.Message;
                 }
             }
-            if (waitSahara && checkBox_send.Checked) _ = CheckIDs(logstr);
+            if (checkBox_send.Checked) _ = CheckIDs(logstr);
             waitSahara = false;
         }
 
