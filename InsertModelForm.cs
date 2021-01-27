@@ -50,11 +50,18 @@ namespace FirehoseFinder
         private void ComboBox_tm_insert_TextChanged(object sender, EventArgs e)
         {
             label_tm_insert.BackColor = Color.Transparent;
+            if (comboBox_tm_insert.Text.Contains("http") || comboBox_tm_insert.Text.Contains("/") || comboBox_tm_insert.Text.Contains("@")) comboBox_tm_insert.Text = string.Empty;
         }
 
         private void TextBox_model_insert_TextChanged(object sender, EventArgs e)
         {
             label_model_insert.BackColor = Color.Transparent;
+            if (textBox_model_insert.Text.Contains("http") || textBox_model_insert.Text.Contains("/") || textBox_model_insert.Text.Contains("@")) textBox_model_insert.Text = string.Empty;
+        }
+
+        private void TextBox_alt_insert_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox_alt_insert.Text.Contains("http") || textBox_alt_insert.Text.Contains("/") || textBox_alt_insert.Text.Contains("@")) textBox_alt_insert.Text = string.Empty;
         }
     }
 }

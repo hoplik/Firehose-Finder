@@ -138,6 +138,7 @@ namespace FirehoseFinder
             this.textBox_alt_insert.Name = "textBox_alt_insert";
             this.textBox_alt_insert.Size = new System.Drawing.Size(179, 22);
             this.textBox_alt_insert.TabIndex = 6;
+            this.textBox_alt_insert.TextChanged += new System.EventHandler(this.TextBox_alt_insert_TextChanged);
             // 
             // button_ok_insert
             // 

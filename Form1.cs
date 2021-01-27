@@ -969,7 +969,7 @@ namespace FirehoseFinder
                 {
                     InsertModelForm fr = new InsertModelForm();
                     fr.ShowDialog();
-                    label_tm.Text = fr.comboBox_tm_insert.Text;
+                    label_tm.Text = "\"" + fr.comboBox_tm_insert.Text + "\""; //Если Производитель в кавычках - введено вручную
                     label_model.Text = fr.textBox_model_insert.Text;
                     label_altname.Text = fr.textBox_alt_insert.Text;
                 }
