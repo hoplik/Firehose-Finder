@@ -184,12 +184,8 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void ОПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Версия сборки: " + Assembly.GetExecutingAssembly().GetName().Version + Environment.NewLine + Environment.NewLine +
-                "Программа подбора программеров(firehose) для телефонов на базе процессоров от Qualcomm." + Environment.NewLine + Environment.NewLine +
-                "Ссылка на базовую тему \"Общие принципы восстановления загрузчиков на Qualcomm | HS - USB QDLoader 9008, HS - USB Diagnostics 9006, QHUSB_DLOAD и т.д.\":" + Environment.NewLine +
-                "http://4pda.ru/forum/index.php?showtopic=643084" + Environment.NewLine + Environment.NewLine +
-                "Есть вопросы, предложения, замечания? Пишите в Телеграмм-канал \"Firehose - Finder issues\":" + Environment.NewLine +
-                "https://t.me/firehosefinder", "О программе Firehose-Finder", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            AboutBox1 about = new AboutBox1();
+            about.Show();
         }
 
         /// <summary>
@@ -197,11 +193,10 @@ namespace FirehoseFinder
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ВопросОтветToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ПросмотрСправкиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Часто задаваемые вопросы: " + Environment.NewLine + Resources.String_faq1 +
-                Environment.NewLine + Environment.NewLine + Resources.String_faq2 +
-                Environment.NewLine + Environment.NewLine + Resources.String_faq3, "Список ответов на часто задаваемые вопросы", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ProcessStartInfo psin = new ProcessStartInfo("help_ru.pdf");
+            Process.Start(psin);
         }
 
         #endregion
@@ -1035,5 +1030,18 @@ namespace FirehoseFinder
             }
         }
         #endregion
+
+        private void ВнестиПроизводителяМодельToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertModelForm imf = new InsertModelForm();
+            imf.Show();
+        }
+
+        private void Formfhf_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            ProcessStartInfo psin = new ProcessStartInfo("help_ru.pdf");
+            Process.Start(psin);
+            hlpevent.Handled = true;
+        }
     }
 }

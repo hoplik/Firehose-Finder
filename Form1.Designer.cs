@@ -39,11 +39,13 @@
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.видToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.приветствиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.справочникУстройствToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.неподтверждённыеДанныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.работаСУстройствомToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.внестиПроизводителяМодельToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вопросОтветToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,6 +74,9 @@
             this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Comp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.radioButton_adb_reset = new System.Windows.Forms.RadioButton();
+            this.radioButton_man_reset = new System.Windows.Forms.RadioButton();
             this.label_info = new System.Windows.Forms.Label();
             this.checkBox_send = new System.Windows.Forms.CheckBox();
             this.label_log = new System.Windows.Forms.Label();
@@ -124,9 +129,6 @@
             this.textBox_ADB = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.bindingSource_collection = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.radioButton_man_reset = new System.Windows.Forms.RadioButton();
-            this.radioButton_adb_reset = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabPage_collection.SuspendLayout();
@@ -137,6 +139,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_final)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.statusStrip_firehose.SuspendLayout();
             this.tabPage_phone.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -145,7 +148,6 @@
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_collection)).BeginInit();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataSet1
@@ -174,7 +176,7 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1369, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1369, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -183,7 +185,7 @@
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // выходToolStripMenuItem
@@ -196,18 +198,26 @@
             // видToolStripMenuItem
             // 
             this.видToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.приветствиеToolStripMenuItem,
             this.toolStripSeparator1,
             this.справочникУстройствToolStripMenuItem,
             this.работаСУстройствомToolStripMenuItem,
-            this.toolStripSeparator2});
+            this.toolStripSeparator2,
+            this.внестиПроизводителяМодельToolStripMenuItem});
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
-            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
             this.видToolStripMenuItem.Text = "Вид";
+            // 
+            // приветствиеToolStripMenuItem
+            // 
+            this.приветствиеToolStripMenuItem.Name = "приветствиеToolStripMenuItem";
+            this.приветствиеToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.приветствиеToolStripMenuItem.Text = "Приветствие";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(246, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(307, 6);
             // 
             // справочникУстройствToolStripMenuItem
             // 
@@ -215,7 +225,7 @@
             this.справочникУстройствToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.неподтверждённыеДанныеToolStripMenuItem});
             this.справочникУстройствToolStripMenuItem.Name = "справочникУстройствToolStripMenuItem";
-            this.справочникУстройствToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.справочникУстройствToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
             this.справочникУстройствToolStripMenuItem.Text = "Справочник устройств";
             this.справочникУстройствToolStripMenuItem.CheckedChanged += new System.EventHandler(this.СправочникУстройствToolStripMenuItem_CheckedChanged);
             // 
@@ -231,14 +241,21 @@
             // 
             this.работаСУстройствомToolStripMenuItem.CheckOnClick = true;
             this.работаСУстройствомToolStripMenuItem.Name = "работаСУстройствомToolStripMenuItem";
-            this.работаСУстройствомToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.работаСУстройствомToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
             this.работаСУстройствомToolStripMenuItem.Text = "Работа с устройством";
             this.работаСУстройствомToolStripMenuItem.CheckedChanged += new System.EventHandler(this.РаботаСУстройствомToolStripMenuItem_CheckedChanged);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(246, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(307, 6);
+            // 
+            // внестиПроизводителяМодельToolStripMenuItem
+            // 
+            this.внестиПроизводителяМодельToolStripMenuItem.Name = "внестиПроизводителяМодельToolStripMenuItem";
+            this.внестиПроизводителяМодельToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.внестиПроизводителяМодельToolStripMenuItem.Text = "Внести производителя, модель";
+            this.внестиПроизводителяМодельToolStripMenuItem.Click += new System.EventHandler(this.ВнестиПроизводителяМодельToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 
@@ -246,20 +263,20 @@
             this.вопросОтветToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 26);
             this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // вопросОтветToolStripMenuItem
             // 
             this.вопросОтветToolStripMenuItem.Name = "вопросОтветToolStripMenuItem";
-            this.вопросОтветToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
-            this.вопросОтветToolStripMenuItem.Text = "Вопрос / ответ";
-            this.вопросОтветToolStripMenuItem.Click += new System.EventHandler(this.ВопросОтветToolStripMenuItem_Click);
+            this.вопросОтветToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.вопросОтветToolStripMenuItem.Text = "Просмотр справки";
+            this.вопросОтветToolStripMenuItem.Click += new System.EventHandler(this.ПросмотрСправкиToolStripMenuItem_Click);
             // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.ОПрограммеToolStripMenuItem_Click);
             // 
@@ -269,7 +286,7 @@
             this.tabPage_collection.Controls.Add(this.bindingNavigator_collection);
             this.tabPage_collection.Location = new System.Drawing.Point(4, 25);
             this.tabPage_collection.Name = "tabPage_collection";
-            this.tabPage_collection.Size = new System.Drawing.Size(1361, 547);
+            this.tabPage_collection.Size = new System.Drawing.Size(1361, 545);
             this.tabPage_collection.TabIndex = 4;
             this.tabPage_collection.Text = "Справочник устройств";
             this.tabPage_collection.UseVisualStyleBackColor = true;
@@ -294,7 +311,7 @@
             this.dataGridView_collection.ShowCellToolTips = false;
             this.dataGridView_collection.ShowEditingIcon = false;
             this.dataGridView_collection.ShowRowErrors = false;
-            this.dataGridView_collection.Size = new System.Drawing.Size(1361, 520);
+            this.dataGridView_collection.Size = new System.Drawing.Size(1361, 518);
             this.dataGridView_collection.TabIndex = 2;
             this.dataGridView_collection.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_collection_CellContentDoubleClick);
             // 
@@ -316,7 +333,7 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.toolStripTextBox_find});
-            this.bindingNavigator_collection.Location = new System.Drawing.Point(0, 520);
+            this.bindingNavigator_collection.Location = new System.Drawing.Point(0, 518);
             this.bindingNavigator_collection.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator_collection.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator_collection.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -413,7 +430,7 @@
             this.tabPage_firehose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage_firehose.Name = "tabPage_firehose";
             this.tabPage_firehose.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage_firehose.Size = new System.Drawing.Size(1361, 547);
+            this.tabPage_firehose.Size = new System.Drawing.Size(1361, 545);
             this.tabPage_firehose.TabIndex = 0;
             this.tabPage_firehose.Text = "Работа с файлами";
             this.tabPage_firehose.UseVisualStyleBackColor = true;
@@ -425,7 +442,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 151);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1355, 364);
+            this.panel2.Size = new System.Drawing.Size(1355, 362);
             this.panel2.TabIndex = 18;
             // 
             // textBox_main_term
@@ -435,7 +452,7 @@
             this.textBox_main_term.Multiline = true;
             this.textBox_main_term.Name = "textBox_main_term";
             this.textBox_main_term.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_main_term.Size = new System.Drawing.Size(409, 364);
+            this.textBox_main_term.Size = new System.Drawing.Size(409, 362);
             this.textBox_main_term.TabIndex = 16;
             // 
             // dataGridView_final
@@ -461,7 +478,7 @@
             this.dataGridView_final.RowHeadersWidth = 51;
             this.dataGridView_final.RowTemplate.Height = 24;
             this.dataGridView_final.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_final.Size = new System.Drawing.Size(946, 364);
+            this.dataGridView_final.Size = new System.Drawing.Size(946, 362);
             this.dataGridView_final.TabIndex = 15;
             this.dataGridView_final.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellClick);
             this.dataGridView_final.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellDoubleClick);
@@ -546,6 +563,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1355, 149);
             this.panel1.TabIndex = 17;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.radioButton_adb_reset);
+            this.groupBox4.Controls.Add(this.radioButton_man_reset);
+            this.groupBox4.Location = new System.Drawing.Point(6, 97);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(375, 49);
+            this.groupBox4.TabIndex = 29;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Перегрузить в аварийный режим";
+            // 
+            // radioButton_adb_reset
+            // 
+            this.radioButton_adb_reset.AutoSize = true;
+            this.radioButton_adb_reset.Checked = true;
+            this.radioButton_adb_reset.Location = new System.Drawing.Point(123, 21);
+            this.radioButton_adb_reset.Name = "radioButton_adb_reset";
+            this.radioButton_adb_reset.Size = new System.Drawing.Size(140, 21);
+            this.radioButton_adb_reset.TabIndex = 1;
+            this.radioButton_adb_reset.TabStop = true;
+            this.radioButton_adb_reset.Text = "Средствами ADB";
+            this.radioButton_adb_reset.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_man_reset
+            // 
+            this.radioButton_man_reset.AutoSize = true;
+            this.radioButton_man_reset.Location = new System.Drawing.Point(7, 22);
+            this.radioButton_man_reset.Name = "radioButton_man_reset";
+            this.radioButton_man_reset.Size = new System.Drawing.Size(86, 21);
+            this.radioButton_man_reset.TabIndex = 0;
+            this.radioButton_man_reset.Text = "Вручную";
+            this.radioButton_man_reset.UseVisualStyleBackColor = true;
             // 
             // label_info
             // 
@@ -764,7 +814,7 @@
             this.toolStripStatusLabel_filescompleted,
             this.toolStripProgressBar_filescompleted,
             this.toolStripStatusLabel_vol});
-            this.statusStrip_firehose.Location = new System.Drawing.Point(3, 515);
+            this.statusStrip_firehose.Location = new System.Drawing.Point(3, 513);
             this.statusStrip_firehose.Name = "statusStrip_firehose";
             this.statusStrip_firehose.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
             this.statusStrip_firehose.Size = new System.Drawing.Size(1355, 30);
@@ -796,7 +846,7 @@
             this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
             this.tabPage_phone.Name = "tabPage_phone";
             this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_phone.Size = new System.Drawing.Size(1361, 547);
+            this.tabPage_phone.Size = new System.Drawing.Size(1361, 545);
             this.tabPage_phone.TabIndex = 2;
             this.tabPage_phone.Text = "Работа с устройством";
             this.tabPage_phone.UseVisualStyleBackColor = true;
@@ -815,7 +865,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.listView_comport);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(481, 135);
+            this.groupBox2.Location = new System.Drawing.Point(481, 133);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(877, 409);
             this.groupBox2.TabIndex = 1;
@@ -1052,7 +1102,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(478, 541);
+            this.groupBox1.Size = new System.Drawing.Size(478, 539);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Terminal";
@@ -1064,7 +1114,7 @@
             this.textBox_ADB.Multiline = true;
             this.textBox_ADB.Name = "textBox_ADB";
             this.textBox_ADB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_ADB.Size = new System.Drawing.Size(472, 520);
+            this.textBox_ADB.Size = new System.Drawing.Size(472, 518);
             this.textBox_ADB.TabIndex = 1;
             // 
             // tabControl1
@@ -1073,45 +1123,12 @@
             this.tabControl1.Controls.Add(this.tabPage_firehose);
             this.tabControl1.Controls.Add(this.tabPage_collection);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 28);
+            this.tabControl1.Location = new System.Drawing.Point(0, 30);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1369, 576);
+            this.tabControl1.Size = new System.Drawing.Size(1369, 574);
             this.tabControl1.TabIndex = 0;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.radioButton_adb_reset);
-            this.groupBox4.Controls.Add(this.radioButton_man_reset);
-            this.groupBox4.Location = new System.Drawing.Point(6, 97);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(375, 49);
-            this.groupBox4.TabIndex = 29;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Перегрузить в аварийный режим";
-            // 
-            // radioButton_man_reset
-            // 
-            this.radioButton_man_reset.AutoSize = true;
-            this.radioButton_man_reset.Location = new System.Drawing.Point(7, 22);
-            this.radioButton_man_reset.Name = "radioButton_man_reset";
-            this.radioButton_man_reset.Size = new System.Drawing.Size(86, 21);
-            this.radioButton_man_reset.TabIndex = 0;
-            this.radioButton_man_reset.Text = "Вручную";
-            this.radioButton_man_reset.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_adb_reset
-            // 
-            this.radioButton_adb_reset.AutoSize = true;
-            this.radioButton_adb_reset.Checked = true;
-            this.radioButton_adb_reset.Location = new System.Drawing.Point(123, 21);
-            this.radioButton_adb_reset.Name = "radioButton_adb_reset";
-            this.radioButton_adb_reset.Size = new System.Drawing.Size(140, 21);
-            this.radioButton_adb_reset.TabIndex = 1;
-            this.radioButton_adb_reset.TabStop = true;
-            this.radioButton_adb_reset.Text = "Средствами ADB";
-            this.radioButton_adb_reset.UseVisualStyleBackColor = true;
             // 
             // Formfhf
             // 
@@ -1120,12 +1137,18 @@
             this.ClientSize = new System.Drawing.Size(1369, 604);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Formfhf";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Firehose Finder";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Formfhf_FormClosing);
             this.Load += new System.EventHandler(this.Formfhf_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Formfhf_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -1142,6 +1165,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_final)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.statusStrip_firehose.ResumeLayout(false);
             this.statusStrip_firehose.PerformLayout();
             this.tabPage_phone.ResumeLayout(false);
@@ -1155,8 +1180,6 @@
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_collection)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1199,9 +1222,6 @@
         private System.Windows.Forms.Label label_log;
         private System.Windows.Forms.CheckBox checkBox_Log;
         private System.Windows.Forms.Button button_findIDs;
-        private System.Windows.Forms.Label label_altname;
-        private System.Windows.Forms.Label label_model;
-        private System.Windows.Forms.Label label_tm;
         private System.Windows.Forms.Label label_tm_model;
         private System.Windows.Forms.Label label_SW_Ver;
         private System.Windows.Forms.Label label_swid;
@@ -1260,6 +1280,11 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton radioButton_adb_reset;
         private System.Windows.Forms.RadioButton radioButton_man_reset;
+        private System.Windows.Forms.Label label_altname;
+        private System.Windows.Forms.Label label_model;
+        private System.Windows.Forms.Label label_tm;
+        private System.Windows.Forms.ToolStripMenuItem приветствиеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem внестиПроизводителяМодельToolStripMenuItem;
     }
 }
 

@@ -83,7 +83,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-01-25T14:29:54">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-01-29T14:15:39">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 210 processor</FullName>
@@ -2462,7 +2462,8 @@
 <FullName>Qualcomm® Snapdragon™ 835 mobile platform</FullName>
 <HASHID>02FFDAA49CF25F7FF287CAB82DA0E4F943CABF6E6A4BFE31C3198D1C2CFA1185</HASHID>
 <Trademark>OnePlus</Trademark>
-<Model>5 (cheeseburger)</Model>
+<Model>5</Model>
+<AltName>cheeseburger</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -2881,7 +2882,8 @@
 <FullName>Qualcomm® Snapdragon™ 800 processor</FullName>
 <HASHID>964B5C486B200AA6462733A682F9CEAD3EBFAD555CE2FF3622FEA8B279B006EE</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 3 (cancro)</Model>
+<Model>Mi 3</Model>
+<AltName>cancro</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -2892,7 +2894,8 @@
 <MODELID>0000</MODELID>
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 3 (cancro)</Model>
+<Model>Mi 3</Model>
+<AltName>cancro</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -2903,7 +2906,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 4c (libra)</Model>
+<Model>Mi 4c</Model>
+<AltName>libra</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -2914,7 +2918,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 4i (ferrari)</Model>
+<Model>Mi 4i</Model>
+<AltName>ferrari</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -2925,7 +2930,8 @@
 <MODELID>0000</MODELID>
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 4w (cancro)</Model>
+<Model>Mi 4w</Model>
+<AltName>cancro</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -2935,7 +2941,8 @@
 <MODELID>0000</MODELID>
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 4w (cancro)</Model>
+<Model>Mi 4w</Model>
+<AltName>cancro</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -2943,7 +2950,8 @@
 <FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
 <HASHID>C215AC92B799D755AF0466E14C7F4E4DC53B590F5FBC0D4633AFAFE5CECC41C3</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 5 (gemini)</Model>
+<Model>Mi 5</Model>
+<AltName>gemini</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -2954,7 +2962,8 @@
 <MODELID>0000</MODELID>
 <HASHID>355D47F912FEA0AF1F46C007C6DC22C43544FB9359E30AA7DB5F4734D18FBD74</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 5 (gemini)</Model>
+<Model>Mi 5</Model>
+<AltName>gemini</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -2962,7 +2971,8 @@
 <FullName>Qualcomm® Snapdragon™ 821 mobile platform</FullName>
 <HASHID>2DDE12F09B1217DBBD53860DD9145326A394BF6942131E440C161D9A13DC43DD</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 5s (capricorn)</Model>
+<Model>Mi 5s</Model>
+<AltName>capricorn</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -2973,7 +2983,8 @@
 <MODELID>0000</MODELID>
 <HASHID>355D47F912FEA0AF1F46C007C6DC22C43544FB9359E30AA7DB5F4734D18FBD74</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 5s (capricorn)</Model>
+<Model>Mi 5s</Model>
+<AltName>capricorn</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -2984,7 +2995,8 @@
 <MODELID>0000</MODELID>
 <HASHID>355D47F912FEA0AF1F46C007C6DC22C43544FB9359E30AA7DB5F4734D18FBD74</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 5s Plus (natrium)</Model>
+<Model>Mi 5s Plus</Model>
+<AltName>natrium</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -2992,7 +3004,8 @@
 <FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
 <HASHID>69A6E465C2F1E2CAABB370D398026441B29B45C975778E4682FC5E89283771BD</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 5s Plus (natrium)</Model>
+<Model>Mi 5s Plus</Model>
+<AltName>natrium</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3003,7 +3016,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 5x (tiffany)</Model>
+<Model>Mi 5x</Model>
+<AltName>tiffany</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3011,7 +3025,8 @@
 <FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
 <HASHID>61135CB65671284290A99BD9EDF5C075672E7FEBA2A4A79BA9CFACD70CD2EA50</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 5x (tiffany)</Model>
+<Model>Mi 5x</Model>
+<AltName>tiffany</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3019,7 +3034,8 @@
 <FullName>Qualcomm® Snapdragon™ 835 mobile platform</FullName>
 <HASHID>67A7EA77C23FDD1046ECCE7628BFD5975E9949F66ADDD55BB3572CAF9FE97AEA</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 6 (sagit)</Model>
+<Model>Mi 6</Model>
+<AltName>sagit</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3030,7 +3046,8 @@
 <MODELID>0000</MODELID>
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 6 (sagit)</Model>
+<Model>Mi 6</Model>
+<AltName>sagit</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3041,7 +3058,8 @@
 <MODELID>0000</MODELID>
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 6x (wayne)</Model>
+<Model>Mi 6x</Model>
+<AltName>wayne</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3052,7 +3070,8 @@
 <MODELID>0000</MODELID>
 <HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 8 (dipper)</Model>
+<Model>Mi 8</Model>
+<AltName>dipper</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3063,7 +3082,8 @@
 <MODELID>0000</MODELID>
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 8 Lite (platina)</Model>
+<Model>Mi 8 Lite</Model>
+<AltName>platina</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3074,7 +3094,8 @@
 <MODELID>0000</MODELID>
 <HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 8 Pro (equuleus)</Model>
+<Model>Mi 8 Pro</Model>
+<AltName>equuleus</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3085,7 +3106,8 @@
 <MODELID>0000</MODELID>
 <HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 8 SE (sirius)</Model>
+<Model>Mi 8 SE</Model>
+<AltName>sirius</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3096,7 +3118,8 @@
 <MODELID>0000</MODELID>
 <HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 9 Lite (pyxis)</Model>
+<Model>Mi 9 Lite</Model>
+<AltName>pyxis</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3107,7 +3130,8 @@
 <MODELID>0000</MODELID>
 <HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 9 SE (grus)</Model>
+<Model>Mi 9 SE</Model>
+<AltName>grus</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3118,7 +3142,8 @@
 <MODELID>0000</MODELID>
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA46</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi 9T Pro (raphael)</Model>
+<Model>Mi 9T Pro</Model>
+<AltName>raphael</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3126,7 +3151,8 @@
 <FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
 <HASHID>A38C6F01272814E0A47E556B4AD17F999769A0FEE6D3C98343B7DE6DE741E79C</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi A1 (tissot)</Model>
+<Model>Mi A1</Model>
+<AltName>tissot</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3137,7 +3163,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi A1 (tissot)</Model>
+<Model>Mi A1</Model>
+<AltName>tissot</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3159,7 +3186,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi A2 lite (daisy)</Model>
+<Model>Mi A2 lite</Model>
+<AltName>daisy</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3170,7 +3198,8 @@
 <MODELID>0000</MODELID>
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA46</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi A3 (laurel)</Model>
+<Model>Mi A3</Model>
+<AltName>laurel</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3181,7 +3210,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi Max (helium)</Model>
+<Model>Mi Max</Model>
+<AltName>helium</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3192,7 +3222,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi Max 2 (oxygen)</Model>
+<Model>Mi Max 2</Model>
+<AltName>oxygen</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3200,7 +3231,8 @@
 <FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
 <HASHID>BB5E36491053118486EBCCD5817C5519A53EAE5EDA9730F1127C22DD6C1B5C2B</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi Max 2 (oxygen)</Model>
+<Model>Mi Max 2</Model>
+<AltName>oxygen</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3211,7 +3243,8 @@
 <MODELID>0000</MODELID>
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi Max 3 (nitrogen)</Model>
+<Model>Mi Max 3</Model>
+<AltName>nitrogen</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3222,7 +3255,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi Max Prime (helium)</Model>
+<Model>Mi Max Prime</Model>
+<AltName>helium</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3230,7 +3264,8 @@
 <FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
 <HASHID>3DB3B7FD2664D98FD16F432E8D8AD821A85B85BD37701422F563079CB64D084C</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi Mix (lithium)</Model>
+<Model>Mi Mix</Model>
+<AltName>lithium</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3241,7 +3276,8 @@
 <MODELID>0000</MODELID>
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi Mix 2 (chiron)</Model>
+<Model>Mi Mix 2</Model>
+<AltName>chiron</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3249,7 +3285,8 @@
 <FullName>Qualcomm® Snapdragon™ 835 mobile platform</FullName>
 <HASHID>ADEB0034FC38C99C8401DCDBA9008EE5A8525BB66F1FC031EE8F4EFC22C5A1DF</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi Mix 2 (chiron)</Model>
+<Model>Mi Mix 2</Model>
+<AltName>chiron</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3260,7 +3297,8 @@
 <MODELID>0000</MODELID>
 <HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi Mix 2s (polaris)</Model>
+<Model>Mi Mix 2s</Model>
+<AltName>polaris</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3271,7 +3309,8 @@
 <MODELID>0000</MODELID>
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi Note (virgo)</Model>
+<Model>Mi Note</Model>
+<AltName>virgo</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3282,7 +3321,8 @@
 <MODELID>0000</MODELID>
 <HASHID>355D47F912FEA0AF1F46C007C6DC22C43544FB9359E30AA7DB5F4734D18FBD74</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi Note 2 (scorpio)</Model>
+<Model>Mi Note 2</Model>
+<AltName>scorpio</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3293,7 +3333,8 @@
 <MODELID>0000</MODELID>
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi Note 3 (jason)</Model>
+<Model>Mi Note 3</Model>
+<AltName>jason</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3304,7 +3345,8 @@
 <MODELID>0000</MODELID>
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Mi Pad 4 (clover)</Model>
+<Model>Mi Pad 4</Model>
+<AltName>clover</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3315,7 +3357,8 @@
 <MODELID>0000</MODELID>
 <HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Pocophone F1 (beryllium)</Model>
+<Model>Pocophone F1</Model>
+<AltName>beryllium</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3326,7 +3369,8 @@
 <MODELID>0000</MODELID>
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 2 (wt88047)</Model>
+<Model>Redmi 2</Model>
+<AltName>wt88047</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3349,7 +3393,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 3s/3x (land)</Model>
+<Model>Redmi 3s/3x</Model>
+<AltName>land</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3360,7 +3405,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 4 (prada)</Model>
+<Model>Redmi 4</Model>
+<AltName>prada</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3371,7 +3417,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 4 Prime (markw)</Model>
+<Model>Redmi 4 Prime</Model>
+<AltName>markw</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3379,7 +3426,8 @@
 <FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
 <HASHID>7F6CE28D52815A4FAC276F62B99B5ABEB3F73C495F9474EB55204B3B4E6FCE6D</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 4a (rolex)</Model>
+<Model>Redmi 4a</Model>
+<AltName>rolex</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3390,7 +3438,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 4a (rolex)</Model>
+<Model>Redmi 4a</Model>
+<AltName>rolex</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3401,7 +3450,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 4x (santoni)</Model>
+<Model>Redmi 4x</Model>
+<AltName>santoni</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3412,7 +3462,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 5 (rosy)</Model>
+<Model>Redmi 5</Model>
+<AltName>rosy</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3423,7 +3474,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 5 Plus (vince)</Model>
+<Model>Redmi 5 Plus</Model>
+<AltName>vince</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3434,7 +3486,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 5A (riva)</Model>
+<Model>Redmi 5A</Model>
+<AltName>riva</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3442,7 +3495,8 @@
 <FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
 <HASHID>67D32C753DDB67982E9AEF0C13D49B33DF1B95CC7997A548D23A49C1DD030194</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 5A (riva)</Model>
+<Model>Redmi 5A</Model>
+<AltName>riva</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3453,7 +3507,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 6 Pro (sakura)</Model>
+<Model>Redmi 6 Pro</Model>
+<AltName>sakura</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3464,7 +3519,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 7 (onclite)</Model>
+<Model>Redmi 7</Model>
+<AltName>onclite</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3475,7 +3531,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 7a (pine)</Model>
+<Model>Redmi 7a</Model>
+<AltName>pine</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3486,7 +3543,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 8 (olive)</Model>
+<Model>Redmi 8</Model>
+<AltName>olive</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3497,7 +3555,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 8a (olivelite)</Model>
+<Model>Redmi 8a</Model>
+<AltName>olivelite</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3508,7 +3567,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Go (tiare)</Model>
+<Model>Redmi Go</Model>
+<AltName>tiare</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3519,7 +3579,8 @@
 <MODELID>0000</MODELID>
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA46</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi K20 Pro (raphael)</Model>
+<Model>Redmi K20 Pro</Model>
+<AltName>raphael</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3527,7 +3588,8 @@
 <FullName>Qualcomm® Snapdragon™ 820 processor</FullName>
 <HASHID>BF4E25AE6108D6F6C8D9218383BD85273993262EC0EBA088F6C58A04FC02903B</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 2 (scorpion)</Model>
+<Model>Redmi Note 2</Model>
+<AltName>scorpion</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3535,7 +3597,8 @@
 <FullName>Qualcomm® Snapdragon™ 660 mobile platform</FullName>
 <HASHID>1D4A7043A8A55A19F7E1C294D42872CD57A71B8F370E3D9551A796415E61B434</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 3 (jason)</Model>
+<Model>Redmi Note 3</Model>
+<AltName>jason</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3546,7 +3609,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 3 Pro (kenzo)</Model>
+<Model>Redmi Note 3 Pro</Model>
+<AltName>kenzo</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3554,7 +3618,8 @@
 <FullName>Qualcomm® Snapdragon™ 652 processor</FullName>
 <HASHID>5C9CCCF88B6AB026D8165378D6ADA00275A606B8C4AD724FBCA33E8224695207</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 3 Pro (kenzo)</Model>
+<Model>Redmi Note 3 Pro</Model>
+<AltName>kenzo</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3565,7 +3630,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 3 SE (kate)</Model>
+<Model>Redmi Note 3 SE</Model>
+<AltName>kate</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3573,7 +3639,8 @@
 <FullName>Qualcomm® Snapdragon™ 625 mobile platform</FullName>
 <HASHID>5D45ECF8864DBBC741FB7874F878126E8F23EE9448A3EA1EDE8E16FE02F782C0</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 4/4x (mido)</Model>
+<Model>Redmi Note 4/4x</Model>
+<AltName>mido</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3584,7 +3651,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 4/4x (mido)</Model>
+<Model>Redmi Note 4/4x</Model>
+<AltName>mido</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3595,7 +3663,8 @@
 <MODELID>0000</MODELID>
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 5 (whyred)</Model>
+<Model>Redmi Note 5</Model>
+<AltName>whyred</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3603,7 +3672,8 @@
 <FullName>Qualcomm® Snapdragon™ 425 mobile platform</FullName>
 <HASHID>8483423802d7f01bf1043365c855885b0eea193bf32ed25041a347bc80c32d6b</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 5a (ugglite)</Model>
+<Model>Redmi Note 5a</Model>
+<AltName>ugglite</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3614,7 +3684,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 5a (ugglite)</Model>
+<Model>Redmi Note 5a</Model>
+<AltName>ugglite</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3625,7 +3696,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 5a Prime (ugg)</Model>
+<Model>Redmi Note 5a Prime</Model>
+<AltName>ugg</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3633,7 +3705,8 @@
 <FullName>Qualcomm® Snapdragon™ 430 mobile platform</FullName>
 <HASHID>5F1C47435A031331B7F6EC33E8F406EF42BAEF9A4E3C6D2F438A8B827DD00075</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 5a Prime (ugg)</Model>
+<Model>Redmi Note 5a Prime</Model>
+<AltName>ugg</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3644,7 +3717,8 @@
 <MODELID>0000</MODELID>
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 6 Pro (tulip)</Model>
+<Model>Redmi Note 6 Pro</Model>
+<AltName>tulip</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3655,7 +3729,8 @@
 <MODELID>0000</MODELID>
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 7 (lavender)</Model>
+<Model>Redmi Note 7</Model>
+<AltName>lavender</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3666,8 +3741,9 @@
 <MODELID>0000</MODELID>
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA46</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 8 (ginkgo)</Model>
-<Proof>0</Proof>
+<Model>Redmi Note 8</Model>
+<AltName>ginkgo</AltName>
+<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0010A0E1</HWID>
@@ -3677,7 +3753,8 @@
 <MODELID>0000</MODELID>
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA46</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 8t (willow)</Model>
+<Model>Redmi Note 8t</Model>
+<AltName>willow</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3688,7 +3765,8 @@
 <MODELID>0000</MODELID>
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note Prime (gucci)</Model>
+<Model>Redmi Note Prime</Model>
+<AltName>gucci</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3699,7 +3777,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi S2 (ysl)</Model>
+<Model>Redmi S2</Model>
+<AltName>ysl</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3710,7 +3789,8 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Y3 (onc)</Model>
+<Model>Redmi Y3</Model>
+<AltName>onc</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3721,7 +3801,8 @@
 <MODELID>0000</MODELID>
 <HASHID>AA0E1191D83A1EFAEBB921AC74F3382AC6EB4F5127E8AFD9E58E32AFEA1BA049</HASHID>
 <Trademark>Yandex</Trademark>
-<Model>Smartphone (YNDX-000SB)</Model>
+<Model>YNDX-000SB</Model>
+<AltName>Smartphone</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -3732,7 +3813,8 @@
 <MODELID>0000</MODELID>
 <HASHID>AA0E1191D83A1EFAEBB921AC74F3382AC6EB4F5127E8AFD9E58E32AFEA1BA049</HASHID>
 <Trademark>Yandex</Trademark>
-<Model>Smartphone (YNDX-000SB)</Model>
+<Model>YNDX-000SB</Model>
+<AltName>Smartphone</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>

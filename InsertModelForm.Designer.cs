@@ -183,6 +183,7 @@ namespace FirehoseFinder
             this.Controls.Add(this.label_model_insert);
             this.Controls.Add(this.label_tm_insert);
             this.Controls.Add(this.comboBox_tm_insert);
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

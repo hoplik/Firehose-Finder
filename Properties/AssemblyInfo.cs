@@ -7,12 +7,12 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
 [assembly: AssemblyTitle("FirehoseFinder")]
-[assembly: AssemblyDescription("Извлекалка сертификатов из firehose и не только")]
+[assembly: AssemblyDescription("Программа подбора программеров(firehose) для телефонов на базе процессоров от Qualcomm.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HOPLIK")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("FirehoseFinder")]
 [assembly: AssemblyCopyright("Copyright ©  2020 HOPLIK")]
-[assembly: AssemblyTrademark("HOPLIK")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Установка значения False для параметра ComVisible делает типы в этой сборке невидимыми
