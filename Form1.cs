@@ -87,6 +87,18 @@ namespace FirehoseFinder
         }
 
         /// <summary>
+        /// Отобразить Справку
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="hlpevent"></param>
+        private void Formfhf_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            ProcessStartInfo psin = new ProcessStartInfo("help_ru.pdf");
+            Process.Start(psin);
+            hlpevent.Handled = true;
+        }
+
+        /// <summary>
         /// При закрытии приложения подчищаем за собой
         /// </summary>
         /// <param name="sender"></param>
@@ -106,6 +118,26 @@ namespace FirehoseFinder
         }
 
         #region Функции команд контролов меню программы
+
+        /// <summary>
+        /// Закрытие приложения из меню
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ВыходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActiveForm.Close();
+        }
+
+        /// <summary>
+        /// Окно "Приветствие" при старте программы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void приветствиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("В стадии разработки");
+        }
 
         /// <summary>
         /// Отображаем/скрываем вкладку Справочник устройств
@@ -168,13 +200,25 @@ namespace FirehoseFinder
         }
 
         /// <summary>
-        /// Закрытие приложения из меню
+        /// Окно "Внести производителя, модель" для ручного ввода данных
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ВыходToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ВнестиПроизводителяМодельToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ActiveForm.Close();
+            InsertModelForm imf = new InsertModelForm();
+            imf.Show();
+        }
+
+        /// <summary>
+        /// Просмотр Справки
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ПросмотрСправкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo psin = new ProcessStartInfo("help_ru.pdf");
+            Process.Start(psin);
         }
 
         /// <summary>
@@ -186,17 +230,6 @@ namespace FirehoseFinder
         {
             AboutBox1 about = new AboutBox1();
             about.Show();
-        }
-
-        /// <summary>
-        /// ЧаВо
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ПросмотрСправкиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ProcessStartInfo psin = new ProcessStartInfo("help_ru.pdf");
-            Process.Start(psin);
         }
 
         #endregion
@@ -556,13 +589,19 @@ namespace FirehoseFinder
         {
             KeyValuePair<string, long> FileToRead = (KeyValuePair<string, long>)e.Argument;
             int len = Convert.ToInt32(FileToRead.Value);
-            if (len > 12288) len = 12288; //Нам нужно только до 0х3000, где есть первые три сертификата
             StringBuilder dumptext = new StringBuilder(len);
             byte[] chunk = new byte[len];
             using (var stream = File.OpenRead(FileToRead.Key))
             {
-                int byteschunk = stream.Read(chunk, 0, len);
-                for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, String.Format("{0:X2}", (int)chunk[i]));
+                int byteschunk = stream.Read(chunk, 0, 4);
+                for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, string.Format("{0:X2}", (int)chunk[i]));
+                if (dumptext.ToString().Equals("D1DC4B84") || dumptext.ToString().StartsWith("7F454C4"))
+                {
+                    dumptext.Clear();
+                    stream.Position = 0;
+                    byteschunk = stream.Read(chunk, 0, len);
+                    for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, string.Format("{0:X2}", (int)chunk[i]));
+                }
             }
             e.Result = dumptext.ToString();
         }
@@ -589,6 +628,9 @@ namespace FirehoseFinder
                         curfilerating++;
                         dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.PaleVioletRed;
                         dataGridView_final["Column_Name", Currnum].ToolTipText = "Файл не является ELF!";
+                        break;
+                    case "D1DC4B84": //Старый программер
+                        curfilerating++;
                         break;
                     default: //совсем не ELF
                         break;
@@ -1030,18 +1072,5 @@ namespace FirehoseFinder
             }
         }
         #endregion
-
-        private void ВнестиПроизводителяМодельToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InsertModelForm imf = new InsertModelForm();
-            imf.Show();
-        }
-
-        private void Formfhf_HelpRequested(object sender, HelpEventArgs hlpevent)
-        {
-            ProcessStartInfo psin = new ProcessStartInfo("help_ru.pdf");
-            Process.Start(psin);
-            hlpevent.Handled = true;
-        }
     }
 }

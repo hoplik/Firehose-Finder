@@ -43,77 +43,100 @@ namespace FirehoseFinder
             string[] certarray = new string[6] { "-", "-", "-", "-", "-", "-" };
             int HWIDstrInd = dumpfile.IndexOf("2048575F4944"); // HW_ID
             int SWIDstrInd = dumpfile.IndexOf("2053575F4944"); // SW_ID
+            string HWID = "3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F"; // Для неопределённого HWID ставим ??
+            string SWID = "3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F"; // Для неопределённого SWID ставим ??
             if (HWIDstrInd >= 32 && SWIDstrInd >= 32)
             {
-                string HWID = dumpfile.Substring(HWIDstrInd - 32, 32);
-                string SWID = dumpfile.Substring(SWIDstrInd - 32, 32);
-                for (int i = 0; i < certarray.Length; i++)
+                HWID = dumpfile.Substring(HWIDstrInd - 32, 32);
+                SWID = dumpfile.Substring(SWIDstrInd - 32, 32);
+            }
+            for (int i = 0; i < certarray.Length; i++)
+            {
+                switch (i)
                 {
-                    switch (i)
-                    {
-                        case 0: // Вытягиваем процессор
-                            string[] HStr = new string[8];
-                            int counth = 0;
-                            for (int j = 0; j < 16; j += 2)
-                            {
-                                HStr[counth] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
-                                counth++;
-                            }
-                            certarray[i] = String.Join(string.Empty, HStr);
-                            break;
-                        case 1: // Вытягиваем производителя
-                            string[] OStr = new string[4];
-                            int counto = 0;
-                            for (int j = 16; j < 24; j += 2)
-                            {
-                                OStr[counto] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
-                                counto++;
-                            }
-                            certarray[i] = String.Join(string.Empty, OStr);
-                            break;
-                        case 2: // Вытягиваем номер модели
-                            string[] MStr = new string[4];
-                            int countm = 0;
-                            for (int j = 24; j < 32; j += 2)
-                            {
-                                MStr[countm] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
-                                countm++;
-                            }
-                            certarray[i] = String.Join(string.Empty, MStr);
-                            break;
-                        case 3: // Расчитываем хеш
-                            certarray[i] = CertExtr(dumpfile);
-                            break;
-                        case 4: // Формируем тип софтвера
-                            string[] SNStr = new string[8];
-                            int countn = 0;
-                            for (int j = 16; j < 32; j += 2)
-                            {
-                                SNStr[countn] = Convert.ToString((char)int.Parse(SWID.Substring(j, 2), NumberStyles.HexNumber));
-                                countn++;
-                            }
-                            string nstr = String.Join("", SNStr);
-                            string nend;
-                            if (String.Compare("00000000", nstr) != 0) nend = nstr.TrimStart('0');
-                            else nend = "0";
-                            certarray[i] = nend;
-                            break;
-                        case 5: //  Формируем версию софтвера
-                            string[] SWStr = new string[8];
-                            int countv = 0;
-                            for (int j = 0; j < 16; j += 2)
-                            {
-                                SWStr[countv] = Convert.ToString((char)int.Parse(SWID.Substring(j, 2), NumberStyles.HexNumber));
-                                countv++;
-                            }
-                            string verstr = String.Join(string.Empty, SWStr);
-                            string verend = string.Empty;
-                            if (String.Compare("00000000", verstr) != 0) verend = "(" + verstr.TrimStart('0') + ")";
-                            certarray[i] = verend;
-                            break;
-                        default:
-                            break;
-                    }
+                    case 0: // Вытягиваем процессор
+                        string[] HStr = new string[8];
+                        int counth = 0;
+                        for (int j = 0; j < 16; j += 2)
+                        {
+                            HStr[counth] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
+                            counth++;
+                        }
+                        certarray[i] = String.Join(string.Empty, HStr);
+                        break;
+                    case 1: // Вытягиваем производителя
+                        string[] OStr = new string[4];
+                        int counto = 0;
+                        for (int j = 16; j < 24; j += 2)
+                        {
+                            OStr[counto] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
+                            counto++;
+                        }
+                        certarray[i] = String.Join(string.Empty, OStr);
+                        break;
+                    case 2: // Вытягиваем номер модели
+                        string[] MStr = new string[4];
+                        int countm = 0;
+                        for (int j = 24; j < 32; j += 2)
+                        {
+                            MStr[countm] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
+                            countm++;
+                        }
+                        certarray[i] = String.Join(string.Empty, MStr);
+                        break;
+                    case 3: // Расчитываем хеш
+                        certarray[i] = CertExtr(dumpfile);
+                        break;
+                    case 4: // Формируем тип софтвера
+                        string[] SNStr = new string[8];
+                        int countn = 0;
+                        for (int j = 16; j < 32; j += 2)
+                        {
+                            SNStr[countn] = Convert.ToString((char)int.Parse(SWID.Substring(j, 2), NumberStyles.HexNumber));
+                            countn++;
+                        }
+                        string nstr = String.Join(string.Empty, SNStr);
+                        string nend;
+                        switch (nstr)
+                        {
+                            case "????????":
+                                nend = "?";
+                                break;
+                            case "00000000":
+                                nend = "0";
+                                break;
+                            default:
+                                nend = nstr.TrimStart('0');
+                                break;
+                        }
+                        certarray[i] = nend;
+                        break;
+                    case 5: //  Формируем версию софтвера
+                        string[] SWStr = new string[8];
+                        int countv = 0;
+                        for (int j = 0; j < 16; j += 2)
+                        {
+                            SWStr[countv] = Convert.ToString((char)int.Parse(SWID.Substring(j, 2), NumberStyles.HexNumber));
+                            countv++;
+                        }
+                        string verstr = String.Join(string.Empty, SWStr);
+                        string verend;
+                        switch (verstr)
+                        {
+                            case "????????":
+                                verend = string.Empty;
+                                break;
+                            case "00000000":
+                                verend = string.Empty;
+                                break;
+                            default:
+                                verend = "(" + verstr.TrimStart('0') + ")";
+                                break;
+                        }
+                        certarray[i] = verend;
+                        break;
+                    default:
+                        break;
                 }
             }
             return certarray;
@@ -126,7 +149,7 @@ namespace FirehoseFinder
         /// <returns>Строка хеша</returns>
         private static string CertExtr(string SFDump)
         {
-            byte rootcert = 3; //Расположение корневого сертификата в файле (третий)
+            int rootcert = 3; //Расположение корневого сертификата в файле (третий)
             string pattern = "(3082.{4}3082)"; //Бинарный признак сертификата с его длиной в середине (4-4-4 знака)
             MatchCollection matchs = Regex.Matches(SFDump, pattern);
             List<string> certs = new List<string>(rootcert);
@@ -144,11 +167,6 @@ namespace FirehoseFinder
                 SHAstr.Append(BitConverter.ToString(hashbytes));
                 SHAstr.Replace("-", string.Empty);
                 while (SHAstr.Length < 64) SHAstr.Insert(0, "0");
-                //И так понятно
-                //if (certs[1].Contains("534841323536")) // SHA256
-                //{
-                //    SHAstr.Append("(SHA256)");
-                //}
             }
             return SHAstr.ToString();
         }
