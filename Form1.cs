@@ -524,8 +524,8 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button__useSahara_fhf_Click(object sender, EventArgs e)
         {
-            label_Sahara_fhf.Text = button_path.Text + "\\" + dataGridView_final.SelectedRows[0].Cells[1].Value.ToString();
-            tabControl1.SelectedTab = tabPage_phone;
+            //Для этой кнопки будет другая команда - проверить программер перезагрузкой устройства
+            MessageBox.Show("В процессе доработки. Пользуйтесь пока вкладкой \"Работа с устройством\"");
         }
 
         /// <summary>
@@ -551,8 +551,8 @@ namespace FirehoseFinder
                             dataGridView_final["Column_Sel", i].Value = false;
                         }
                         dataGridView_final["Column_Sel", e.RowIndex].Value = true;
-                        //Для этой кнопки будет другая команда - проверить программер перезагрузкой устройства
-                        //button_useSahara_fhf.Visible = true;
+                        button_useSahara_fhf.Visible = true;
+                        label_Sahara_fhf.Text = button_path.Text + "\\" + dataGridView_final.SelectedRows[0].Cells[1].Value.ToString();
                     }
                 }
             }
