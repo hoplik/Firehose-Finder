@@ -87,18 +87,6 @@ namespace FirehoseFinder
         }
 
         /// <summary>
-        /// Отобразить Справку
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="hlpevent"></param>
-        private void Formfhf_HelpRequested(object sender, HelpEventArgs hlpevent)
-        {
-            ProcessStartInfo psin = new ProcessStartInfo("help_ru.pdf");
-            Process.Start(psin);
-            hlpevent.Handled = true;
-        }
-
-        /// <summary>
         /// При закрытии приложения подчищаем за собой
         /// </summary>
         /// <param name="sender"></param>
@@ -428,6 +416,7 @@ namespace FirehoseFinder
         {
             button_Sahara_CommandStart.Enabled = true;
         }
+
         /// <summary>
         /// Поиск по всем полям
         /// </summary>
@@ -524,8 +513,10 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button__useSahara_fhf_Click(object sender, EventArgs e)
         {
-            //Для этой кнопки будет другая команда - проверить программер перезагрузкой устройства
-            MessageBox.Show("В процессе доработки. Пользуйтесь пока вкладкой \"Работа с устройством\"");
+            MessageBox.Show("Пожалуйста, для дальнейшей работы используйте вкладку \"Работа с устройством\". Активировать вкладку можно в меню \"Вид\"" + Environment.NewLine +
+                "Для проверки программера после запроса идентификаторов, устройство должно быть обязательно отключено от компьютера и перезагружено в аварийный режим (9008)." + Environment.NewLine +
+                "Перезагрузку устройства в аварийный режим можно будет осуществить на вкладке \"Работа с устройством\" средствами ADB либо вручную. Команды протокола \"Сахара\" станут доступны после определения устройства на com-порту." + Environment.NewLine +
+                "Из-за особенностей протокола \"Сахара\" попытка загрузки программера в память устройства без его перезагрузки вызовет зависание программы.", "Важная информация!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>
@@ -1041,7 +1032,7 @@ namespace FirehoseFinder
             {
                 for (int i = 0; i < dataGridView_collection.Rows.Count; i++)
                 {
-                    if (dataGridView_collection["Model", i].Value.ToString().Equals(label_model.Text)) //Проверяем модель на наличие
+                    if (dataGridView_collection["Model", i].Value.ToString().Equals(label_model.Text) && (bool)dataGridView_collection["Proof", i].Value) //Проверяем модель на наличие
                     {
                         return;
                     }
@@ -1063,7 +1054,8 @@ namespace FirehoseFinder
             try
             {
                 var mybot = new TelegramBotClient(Resources.bot);
-                string chat = "@firehosefinder";
+                //string chat = "@firehosefinder";
+                Telegram.Bot.Types.ChatId chat = -1001227261414;
                 _ = await mybot.SendTextMessageAsync(chat, send_message);
             }
             catch (Exception ex)
