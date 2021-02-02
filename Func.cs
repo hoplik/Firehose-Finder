@@ -149,13 +149,24 @@ namespace FirehoseFinder
         /// <returns>Строка хеша</returns>
         private static string CertExtr(string SFDump)
         {
-            int rootcert = 3; //Расположение корневого сертификата в файле (третий)
-            string pattern = "(3082.{4}3082)"; //Бинарный признак сертификата с его длиной в середине (4-4-4 знака)
+            int rootcert = 0; //Расположение корневого сертификата в файле (второй или третий)
+            string pattern = "3082.{4}3082"; //Бинарный признак сертификата с его длиной в середине (3082-4 знака-3082)
             MatchCollection matchs = Regex.Matches(SFDump, pattern);
-            List<string> certs = new List<string>(rootcert);
+            List<string> certs = new List<string>();
             StringBuilder SHAstr = new StringBuilder(string.Empty);
             SHA256 mysha256 = SHA256.Create();
-            if (matchs.Count >= rootcert)
+            SHA384 rsaPSS = SHA384.Create();
+            byte[] hashbytes;
+            foreach (var item in matchs)
+            {
+                MessageBox.Show(item.ToString());
+            }
+            if (matchs.Count >= 2)
+            {
+                rootcert = 2;
+                if (matchs.Count >= 3) rootcert = 3;
+            }
+            if (rootcert > 0)
             {
                 for (int i = 0; i < rootcert; i++)
                 {
@@ -163,10 +174,28 @@ namespace FirehoseFinder
                     int certlen = Int32.Parse(certl, NumberStyles.HexNumber); // Перевели её в 10 инт
                     certs.Insert(i, matchs[i].Value + SFDump.Substring(matchs[i].Index + 12, certlen * 2 - 4));
                 }
-                byte[] hashbytes = mysha256.ComputeHash(StringToByteArray(certs[2]));
-                SHAstr.Append(BitConverter.ToString(hashbytes));
-                SHAstr.Replace("-", string.Empty);
-                while (SHAstr.Length < 64) SHAstr.Insert(0, "0");
+                string alg_crypto = certs[rootcert - 1].Substring(certs[rootcert - 1].IndexOf("06092A864886F70D0101") + 20, 2);
+                switch (alg_crypto)
+                {
+                    case "0B"://SHA256 - нормальные серты
+                        hashbytes = mysha256.ComputeHash(StringToByteArray(certs[rootcert - 1]));
+                        break;
+                    case "0A"://SHA384 - новые серты
+                        hashbytes = rsaPSS.ComputeHash(StringToByteArray(certs[rootcert - 1]));
+                        break;
+                    case "05"://SHA256 - старые серты
+                        hashbytes = mysha256.ComputeHash(StringToByteArray(certs[rootcert - 1]));
+                        break;
+                    default:
+                        hashbytes = null;
+                        break;
+                }
+                if (hashbytes != null)
+                {
+                    SHAstr.Append(BitConverter.ToString(hashbytes));
+                    SHAstr.Replace("-", string.Empty);
+                    while (SHAstr.Length < 64) SHAstr.Insert(0, "0");
+                }
             }
             return SHAstr.ToString();
         }
