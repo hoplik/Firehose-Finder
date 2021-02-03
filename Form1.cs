@@ -811,10 +811,10 @@ namespace FirehoseFinder
             dataGridView_final["Column_id", Currnum].Value = id[0] + "-" + id[1] + "-" + id[2] + "-" + oemhash + "-" + id[4] + id[5];
             if (guide.SW_ID_type.ContainsKey(id[4])) sw_type = guide.SW_ID_type[id[4]];
             dataGridView_final["Column_SW_type", Currnum].Value = sw_type;
-            dataGridView_final["Column_Full", Currnum].Value = "HW_ID (процессор) - " + id[0] + Environment.NewLine +
+            dataGridView_final["Column_Full", Currnum].Value = "Jtag_ID (процессор) - " + id[0] + Environment.NewLine +
                 "OEM_ID (производитель) - " + id[1] + Environment.NewLine +
                 "MODEL_ID (модель) - " + id[2] + Environment.NewLine +
-                "OEM_HASH (хеш корневого сертификата) - " + id[3] + Environment.NewLine +
+                "OEM_PK_HASH (хеш корневого сертификата) - " + id[3] + Environment.NewLine +
                 "SW_ID (тип программы (версия)) - " + id[4] + id[5] + " - " + sw_type;
             //!!!!Добавить проверку на все процессоры, в т.ч. и переходные по единому ID!!!!
             if (textBox_hwid.Text.Equals(id[0])) //Процессор такой же
@@ -834,7 +834,7 @@ namespace FirehoseFinder
             }
             if (id[3].Length >= 64)
             {
-                if (textBox_oemhash.Text.Equals(id[3].Substring(0, 64))) // Хеши равны
+                if (textBox_oemhash.Text.Equals(id[3])) // Хеши равны
                 {
                     textBox_oemhash.BackColor = Color.LawnGreen;
                     gross += 2;
@@ -1054,8 +1054,7 @@ namespace FirehoseFinder
             try
             {
                 var mybot = new TelegramBotClient(Resources.bot);
-                //string chat = "@firehosefinder";
-                Telegram.Bot.Types.ChatId chat = -1001227261414;
+                Telegram.Bot.Types.ChatId chat = -1001227261414; //string chat = "@firehosefinder";
                 _ = await mybot.SendTextMessageAsync(chat, send_message);
             }
             catch (Exception ex)

@@ -66,13 +66,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox_main_term = new System.Windows.Forms.TextBox();
             this.dataGridView_final = new System.Windows.Forms.DataGridView();
-            this.Column_Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Comp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.radioButton_adb_reset = new System.Windows.Forms.RadioButton();
@@ -129,6 +122,13 @@
             this.textBox_ADB = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.bindingSource_collection = new System.Windows.Forms.BindingSource(this.components);
+            this.Column_Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Comp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabPage_collection.SuspendLayout();
@@ -185,7 +185,7 @@
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // выходToolStripMenuItem
@@ -205,7 +205,7 @@
             this.toolStripSeparator2,
             this.внестиПроизводителяМодельToolStripMenuItem});
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
-            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.видToolStripMenuItem.Text = "Вид";
             // 
             // приветствиеToolStripMenuItem
@@ -264,7 +264,7 @@
             this.вопросОтветToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 26);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // вопросОтветToolStripMenuItem
@@ -484,57 +484,6 @@
             this.dataGridView_final.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellClick);
             this.dataGridView_final.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellDoubleClick);
             // 
-            // Column_Sel
-            // 
-            this.Column_Sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column_Sel.HeaderText = "Выбор";
-            this.Column_Sel.MinimumWidth = 6;
-            this.Column_Sel.Name = "Column_Sel";
-            this.Column_Sel.Width = 57;
-            // 
-            // Column_Name
-            // 
-            this.Column_Name.HeaderText = "Файл";
-            this.Column_Name.MinimumWidth = 6;
-            this.Column_Name.Name = "Column_Name";
-            this.Column_Name.Width = 200;
-            // 
-            // Column_id
-            // 
-            this.Column_id.HeaderText = "HW-OEM-MODEL-HASH-SW(Ver)";
-            this.Column_id.MinimumWidth = 6;
-            this.Column_id.Name = "Column_id";
-            this.Column_id.Width = 200;
-            // 
-            // Column_rate
-            // 
-            this.Column_rate.HeaderText = "Рейтинг (max10)";
-            this.Column_rate.MinimumWidth = 6;
-            this.Column_rate.Name = "Column_rate";
-            this.Column_rate.Width = 60;
-            // 
-            // Column_Full
-            // 
-            this.Column_Full.HeaderText = "Full Ids";
-            this.Column_Full.MinimumWidth = 6;
-            this.Column_Full.Name = "Column_Full";
-            this.Column_Full.Visible = false;
-            this.Column_Full.Width = 59;
-            // 
-            // Column_SW_type
-            // 
-            this.Column_SW_type.HeaderText = "Тип ПО";
-            this.Column_SW_type.MinimumWidth = 6;
-            this.Column_SW_type.Name = "Column_SW_type";
-            this.Column_SW_type.Width = 62;
-            // 
-            // Column_Comp
-            // 
-            this.Column_Comp.HeaderText = "Может подойти для:";
-            this.Column_Comp.MinimumWidth = 6;
-            this.Column_Comp.Name = "Column_Comp";
-            this.Column_Comp.Width = 125;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.groupBox4);
@@ -707,9 +656,9 @@
             this.label_hwid.AutoSize = true;
             this.label_hwid.Location = new System.Drawing.Point(394, 45);
             this.label_hwid.Name = "label_hwid";
-            this.label_hwid.Size = new System.Drawing.Size(70, 17);
+            this.label_hwid.Size = new System.Drawing.Size(74, 17);
             this.label_hwid.TabIndex = 1;
-            this.label_hwid.Text = "HW_ID 0x";
+            this.label_hwid.Text = "Jtag_ID 0x";
             // 
             // button_useSahara_fhf
             // 
@@ -778,11 +727,11 @@
             // 
             this.textBox_oemhash.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_oemhash.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_oemhash.Location = new System.Drawing.Point(483, 77);
+            this.textBox_oemhash.Location = new System.Drawing.Point(512, 77);
             this.textBox_oemhash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_oemhash.MaxLength = 96;
             this.textBox_oemhash.Name = "textBox_oemhash";
-            this.textBox_oemhash.Size = new System.Drawing.Size(574, 22);
+            this.textBox_oemhash.Size = new System.Drawing.Size(545, 22);
             this.textBox_oemhash.TabIndex = 6;
             // 
             // label_oemhash
@@ -790,9 +739,9 @@
             this.label_oemhash.AutoSize = true;
             this.label_oemhash.Location = new System.Drawing.Point(395, 79);
             this.label_oemhash.Name = "label_oemhash";
-            this.label_oemhash.Size = new System.Drawing.Size(85, 17);
+            this.label_oemhash.Size = new System.Drawing.Size(111, 17);
             this.label_oemhash.TabIndex = 7;
-            this.label_oemhash.Text = "OEM_HASH";
+            this.label_oemhash.Text = "OEM_PK_HASH";
             // 
             // textBox_modelid
             // 
@@ -844,7 +793,7 @@
             this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
             this.tabPage_phone.Name = "tabPage_phone";
             this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_phone.Size = new System.Drawing.Size(1361, 545);
+            this.tabPage_phone.Size = new System.Drawing.Size(1361, 547);
             this.tabPage_phone.TabIndex = 2;
             this.tabPage_phone.Text = "Работа с устройством";
             this.tabPage_phone.UseVisualStyleBackColor = true;
@@ -863,7 +812,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.listView_comport);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(481, 133);
+            this.groupBox2.Location = new System.Drawing.Point(481, 135);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(877, 409);
             this.groupBox2.TabIndex = 1;
@@ -1100,7 +1049,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(478, 539);
+            this.groupBox1.Size = new System.Drawing.Size(478, 541);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Terminal";
@@ -1112,7 +1061,7 @@
             this.textBox_ADB.Multiline = true;
             this.textBox_ADB.Name = "textBox_ADB";
             this.textBox_ADB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_ADB.Size = new System.Drawing.Size(472, 518);
+            this.textBox_ADB.Size = new System.Drawing.Size(472, 520);
             this.textBox_ADB.TabIndex = 1;
             // 
             // tabControl1
@@ -1131,6 +1080,57 @@
             // bindingSource_collection
             // 
             this.bindingSource_collection.AllowNew = false;
+            // 
+            // Column_Sel
+            // 
+            this.Column_Sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column_Sel.HeaderText = "Выбор";
+            this.Column_Sel.MinimumWidth = 6;
+            this.Column_Sel.Name = "Column_Sel";
+            this.Column_Sel.Width = 57;
+            // 
+            // Column_Name
+            // 
+            this.Column_Name.HeaderText = "Файл";
+            this.Column_Name.MinimumWidth = 6;
+            this.Column_Name.Name = "Column_Name";
+            this.Column_Name.Width = 200;
+            // 
+            // Column_id
+            // 
+            this.Column_id.HeaderText = "Jtag-OEM-MODEL-HASH-SW(Ver)";
+            this.Column_id.MinimumWidth = 6;
+            this.Column_id.Name = "Column_id";
+            this.Column_id.Width = 200;
+            // 
+            // Column_rate
+            // 
+            this.Column_rate.HeaderText = "Рейтинг (max10)";
+            this.Column_rate.MinimumWidth = 6;
+            this.Column_rate.Name = "Column_rate";
+            this.Column_rate.Width = 60;
+            // 
+            // Column_Full
+            // 
+            this.Column_Full.HeaderText = "Full Ids";
+            this.Column_Full.MinimumWidth = 6;
+            this.Column_Full.Name = "Column_Full";
+            this.Column_Full.Visible = false;
+            this.Column_Full.Width = 59;
+            // 
+            // Column_SW_type
+            // 
+            this.Column_SW_type.HeaderText = "Тип ПО";
+            this.Column_SW_type.MinimumWidth = 6;
+            this.Column_SW_type.Name = "Column_SW_type";
+            this.Column_SW_type.Width = 62;
+            // 
+            // Column_Comp
+            // 
+            this.Column_Comp.HeaderText = "Может подойти для:";
+            this.Column_Comp.MinimumWidth = 6;
+            this.Column_Comp.Name = "Column_Comp";
+            this.Column_Comp.Width = 125;
             // 
             // Formfhf
             // 
@@ -1206,13 +1206,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox_main_term;
         private System.Windows.Forms.DataGridView dataGridView_final;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column_Sel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_rate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Full;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_SW_type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Comp;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_info;
         private System.Windows.Forms.CheckBox checkBox_send;
@@ -1282,6 +1275,13 @@
         private System.Windows.Forms.Label label_tm;
         private System.Windows.Forms.ToolStripMenuItem приветствиеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem внестиПроизводителяМодельToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column_Sel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_rate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Full;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_SW_type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Comp;
     }
 }
 
