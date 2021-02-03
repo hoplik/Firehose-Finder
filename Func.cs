@@ -85,7 +85,7 @@ namespace FirehoseFinder
                         certarray[i] = String.Join(string.Empty, MStr);
                         break;
                     case 3: // Расчитываем хеш
-                        certarray[i] = CertExtr(dumpfile);
+                        if (string.IsNullOrEmpty(CertExtr(dumpfile))) certarray[i] = "?"; else certarray[i] = CertExtr(dumpfile);
                         break;
                     case 4: // Формируем тип софтвера
                         string[] SNStr = new string[8];
@@ -157,14 +157,16 @@ namespace FirehoseFinder
             SHA256 mysha256 = SHA256.Create();
             SHA384 rsaPSS = SHA384.Create();
             byte[] hashbytes;
-            foreach (var item in matchs)
-            {
-                MessageBox.Show(item.ToString());
-            }
             if (matchs.Count >= 2)
             {
-                rootcert = 2;
-                if (matchs.Count >= 3) rootcert = 3;
+                //Проверяем, реально ли сертификат по длине между 1 и 2
+                string certl = SFDump.Substring(matchs[0].Index + 4, 4); // Получили длину сертификата в строке хекс
+                int certlen = Int32.Parse(certl, NumberStyles.HexNumber); // Перевели её в 10 инт
+                if ((matchs[0].Index + certlen * 2 + 8) == matchs[1].Index)
+                {
+                    rootcert = 2;
+                    if (matchs.Count >= 3) rootcert = 3;
+                }
             }
             if (rootcert > 0)
             {
@@ -177,14 +179,14 @@ namespace FirehoseFinder
                 string alg_crypto = certs[rootcert - 1].Substring(certs[rootcert - 1].IndexOf("06092A864886F70D0101") + 20, 2);
                 switch (alg_crypto)
                 {
+                    case "05"://SHA256 - старые серты
+                        hashbytes = mysha256.ComputeHash(StringToByteArray(certs[rootcert - 1]));
+                        break;
                     case "0B"://SHA256 - нормальные серты
                         hashbytes = mysha256.ComputeHash(StringToByteArray(certs[rootcert - 1]));
                         break;
                     case "0A"://SHA384 - новые серты
                         hashbytes = rsaPSS.ComputeHash(StringToByteArray(certs[rootcert - 1]));
-                        break;
-                    case "05"://SHA256 - старые серты
-                        hashbytes = mysha256.ComputeHash(StringToByteArray(certs[rootcert - 1]));
                         break;
                     default:
                         hashbytes = null;

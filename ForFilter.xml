@@ -83,7 +83,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-02T14:17:40">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-03T10:01:27">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 210</FullName>
@@ -1006,8 +1006,9 @@
 <MODELID>0000</MODELID>
 <HASHID>4570CEE6CB4660C5B3049B5698DD0A9CECAD3A955B87812C2D7EEE9E205FEA47</HASHID>
 <Trademark>HP</Trademark>
-<Model>Elite X3</Model>
-<Proof>0</Proof>
+<Model>Y1M46EA</Model>
+<AltName>Elite x3</AltName>
+<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>

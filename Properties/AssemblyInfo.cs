@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
 [assembly: AssemblyTitle("FirehoseFinder")]
-[assembly: AssemblyDescription("Программа подбора программеров(firehose) для телефонов на базе процессоров от Qualcomm.")]
+[assembly: AssemblyDescription("Программа подбора программеров(firehose) для устройств на базе процессоров от Qualcomm.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("FirehoseFinder")]
