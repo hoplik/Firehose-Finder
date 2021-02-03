@@ -83,7 +83,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-03T10:01:27">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-03T16:11:09">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 210</FullName>
@@ -383,6 +383,17 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430</FullName>
+<OEMID>1234</OEMID>
+<Names>Asus</Names>
+<MODELID>0001</MODELID>
+<HASHID>FBD4DE360136046BBF581DC5EFF178E1F716188E6834DA714E485695230D00F3</HASHID>
+<Trademark>ASUS</Trademark>
+<AltName>ZB555KL</AltName>
+<Proof>1</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>008050E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 400</FullName>
 <OEMID>0029</OEMID>
@@ -523,17 +534,6 @@
 <HASHID>AD38BEB6615BA7FBA38361DAE6BF2DF14AF5E7AC6AF8E78DB46C3ADD435E4174</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZB553KL</Model>
-<Proof>0</Proof>
-</ForFilter>
-<ForFilter>
-<HWID>0004F0E1</HWID>
-<FullName>Qualcomm® Snapdragon™ 430</FullName>
-<OEMID>1234</OEMID>
-<Names>Asus</Names>
-<MODELID>0001</MODELID>
-<HASHID>FBD4DE360136046BBF581DC5EFF178E1F716188E6834DA714E485695230D00F3</HASHID>
-<Trademark>ASUS</Trademark>
-<Model>ZB555KL</Model>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
