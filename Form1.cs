@@ -195,7 +195,10 @@ namespace FirehoseFinder
         private void ВнестиПроизводителяМодельToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InsertModelForm imf = new InsertModelForm();
-            imf.Show();
+            imf.ShowDialog();
+            label_tm.Text = "\"" + imf.comboBox_tm_insert.Text + "\""; //Если Производитель пришёл в кавычках, значит вводили вручную
+            label_model.Text = imf.textBox_model_insert.Text;
+            label_altname.Text = imf.textBox_alt_insert.Text;
         }
 
         /// <summary>
@@ -997,7 +1000,7 @@ namespace FirehoseFinder
                 {
                     InsertModelForm fr = new InsertModelForm();
                     fr.ShowDialog();
-                    label_tm.Text = "\"" + fr.comboBox_tm_insert.Text + "\""; //Если Производитель в кавычках - введено вручную
+                    label_tm.Text = "\"" + fr.comboBox_tm_insert.Text + "\""; //Если Производитель пришёл в кавычках, значит вводили вручную
                     label_model.Text = fr.textBox_model_insert.Text;
                     label_altname.Text = fr.textBox_alt_insert.Text;
                 }
@@ -1065,3 +1068,4 @@ namespace FirehoseFinder
         #endregion
     }
 }
+ 

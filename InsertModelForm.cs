@@ -10,6 +10,7 @@ namespace FirehoseFinder
         {
             InitializeComponent();
         }
+         
         /// <summary>
         /// Копируем данные на основную форму
         /// </summary>
@@ -23,13 +24,6 @@ namespace FirehoseFinder
                 MessageBox.Show("Пожалуйста, выберите наименование производителя из списка или введите, при отсутствии подходящего значения.", "Пустые обязательные поля", MessageBoxButtons.OK);
                 return;
             }
-            if (string.IsNullOrEmpty(textBox_model_insert.Text))
-            {
-                label_model_insert.BackColor = Color.Red;
-                MessageBox.Show("Пожалуйста, выберите модель из списка или введите, при отсутствии подходящего значения.", "Пустые обязательные поля", MessageBoxButtons.OK);
-                return;
-            }
-            //label_model.text = label_model_insert.Text;
             Hide();
         }
 

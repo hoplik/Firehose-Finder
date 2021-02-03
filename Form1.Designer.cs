@@ -636,7 +636,7 @@
             // label_SW_Ver
             // 
             this.label_SW_Ver.AutoSize = true;
-            this.label_SW_Ver.Location = new System.Drawing.Point(978, 45);
+            this.label_SW_Ver.Location = new System.Drawing.Point(978, 43);
             this.label_SW_Ver.Name = "label_SW_Ver";
             this.label_SW_Ver.Size = new System.Drawing.Size(72, 17);
             this.label_SW_Ver.TabIndex = 19;
@@ -645,20 +645,20 @@
             // label_swid
             // 
             this.label_swid.AutoSize = true;
-            this.label_swid.Location = new System.Drawing.Point(861, 45);
+            this.label_swid.Location = new System.Drawing.Point(861, 43);
             this.label_swid.Name = "label_swid";
-            this.label_swid.Size = new System.Drawing.Size(117, 17);
+            this.label_swid.Size = new System.Drawing.Size(99, 17);
             this.label_swid.TabIndex = 18;
-            this.label_swid.Text = "Image id (ver.) 0x";
+            this.label_swid.Text = "Image id (ver.)";
             // 
             // label_hwid
             // 
             this.label_hwid.AutoSize = true;
-            this.label_hwid.Location = new System.Drawing.Point(394, 45);
+            this.label_hwid.Location = new System.Drawing.Point(394, 43);
             this.label_hwid.Name = "label_hwid";
-            this.label_hwid.Size = new System.Drawing.Size(74, 17);
+            this.label_hwid.Size = new System.Drawing.Size(56, 17);
             this.label_hwid.TabIndex = 1;
-            this.label_hwid.Text = "Jtag_ID 0x";
+            this.label_hwid.Text = "Jtag_ID";
             // 
             // button_useSahara_fhf
             // 
@@ -676,7 +676,7 @@
             // 
             this.textBox_oemid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_oemid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_oemid.Location = new System.Drawing.Point(643, 42);
+            this.textBox_oemid.Location = new System.Drawing.Point(657, 40);
             this.textBox_oemid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_oemid.MaxLength = 4;
             this.textBox_oemid.Name = "textBox_oemid";
@@ -686,17 +686,17 @@
             // label_modelid
             // 
             this.label_modelid.AutoSize = true;
-            this.label_modelid.Location = new System.Drawing.Point(699, 45);
+            this.label_modelid.Location = new System.Drawing.Point(708, 43);
             this.label_modelid.Name = "label_modelid";
-            this.label_modelid.Size = new System.Drawing.Size(96, 17);
+            this.label_modelid.Size = new System.Drawing.Size(78, 17);
             this.label_modelid.TabIndex = 3;
-            this.label_modelid.Text = "MODEL_ID 0x";
+            this.label_modelid.Text = "MODEL_ID";
             // 
             // textBox_hwid
             // 
             this.textBox_hwid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_hwid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_hwid.Location = new System.Drawing.Point(471, 42);
+            this.textBox_hwid.Location = new System.Drawing.Point(484, 40);
             this.textBox_hwid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_hwid.MaxLength = 8;
             this.textBox_hwid.Name = "textBox_hwid";
@@ -706,11 +706,11 @@
             // label_oemid
             // 
             this.label_oemid.AutoSize = true;
-            this.label_oemid.Location = new System.Drawing.Point(559, 45);
+            this.label_oemid.Location = new System.Drawing.Point(573, 43);
             this.label_oemid.Name = "label_oemid";
-            this.label_oemid.Size = new System.Drawing.Size(78, 17);
+            this.label_oemid.Size = new System.Drawing.Size(60, 17);
             this.label_oemid.TabIndex = 5;
-            this.label_oemid.Text = "OEM_ID 0x";
+            this.label_oemid.Text = "OEM_ID";
             // 
             // button_path
             // 
@@ -747,7 +747,7 @@
             // 
             this.textBox_modelid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_modelid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_modelid.Location = new System.Drawing.Point(802, 42);
+            this.textBox_modelid.Location = new System.Drawing.Point(810, 40);
             this.textBox_modelid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_modelid.MaxLength = 4;
             this.textBox_modelid.Name = "textBox_modelid";

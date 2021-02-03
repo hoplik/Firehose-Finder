@@ -119,9 +119,9 @@ namespace FirehoseFinder
             this.label_model_insert.AutoSize = true;
             this.label_model_insert.Location = new System.Drawing.Point(13, 42);
             this.label_model_insert.Name = "label_model_insert";
-            this.label_model_insert.Size = new System.Drawing.Size(67, 17);
+            this.label_model_insert.Size = new System.Drawing.Size(58, 17);
             this.label_model_insert.TabIndex = 4;
-            this.label_model_insert.Text = "Модель *";
+            this.label_model_insert.Text = "Модель";
             // 
             // label_altname_insert
             // 
