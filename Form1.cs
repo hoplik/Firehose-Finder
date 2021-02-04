@@ -11,9 +11,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Telegram.Bot;
 
 namespace FirehoseFinder
 {
@@ -1017,14 +1015,14 @@ namespace FirehoseFinder
                     toolStripStatusLabel_filescompleted.Text = "Ошибка записи файла отчёта: " + ex.Message;
                 }
             }
-            if (checkBox_send.Checked) _ = CheckIDs(logstr);
+            if (checkBox_send.Checked) CheckIDs(logstr);
             waitSahara = false;
         }
 
         /// <summary>
         /// Проверяем все идентификаторы на наличие в Справочнике.
         /// </summary>
-        async Task CheckIDs(string send_string)
+        public void CheckIDs(string send_string)
         {
             //Проводим две проверки: 
             //Все четыре идентификатора Сахары совпадают 
@@ -1041,10 +1039,10 @@ namespace FirehoseFinder
                     }
                 }
                 //Исправить/добавить название/модель если 1 совпадает, а 2 нет
-                await BotSendMes("Пожалуйста, добавьте или исправьте в Справочнике название/модель устройства" + Environment.NewLine + send_string);
+                BotSendMes("Пожалуйста, добавьте или исправьте в Справочнике название/модель устройства" + Environment.NewLine + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
             }
             //Устройства нет, надо добавить в автосообщение
-            else await BotSendMes("Пожалуйста, добавьте в Справочник устройство" + Environment.NewLine + send_string);
+            else BotSendMes("Пожалуйста, добавьте в Справочник устройство" + Environment.NewLine + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
         }
 
         /// <summary>
@@ -1052,20 +1050,21 @@ namespace FirehoseFinder
         /// </summary>
         /// <param name="send_message"></param>
         /// <returns></returns>
-        async static Task BotSendMes(string send_message)
+        public void BotSendMes(string send_message, string version)
         {
+            var mybot = new TelegramBotApi.TelegramBotClient(Resources.bot);
+            long chat = -1001227261414;
             try
             {
-                var mybot = new TelegramBotClient(Resources.bot);
-                Telegram.Bot.Types.ChatId chat = -1001227261414; //string chat = "@firehosefinder";
-                _ = await mybot.SendTextMessageAsync(chat, send_message);
+                mybot.SendTextMessage(chat, send_message + Environment.NewLine + version);
+                toolStripStatusLabel_filescompleted.Text = "Данные успешно отправлены";
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Данные не отправлены");
             }
+            checkBox_send.Checked = false;
         }
         #endregion
     }
 }
- 
