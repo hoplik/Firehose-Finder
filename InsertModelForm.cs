@@ -18,7 +18,7 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button_ok_insert_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(comboBox_tm_insert.Text))
+            if (string.IsNullOrWhiteSpace(comboBox_tm_insert.Text))
             {
                 label_tm_insert.BackColor = Color.Red;
                 MessageBox.Show("Пожалуйста, выберите наименование производителя из списка или введите, при отсутствии подходящего значения.", "Пустые обязательные поля", MessageBoxButtons.OK);
