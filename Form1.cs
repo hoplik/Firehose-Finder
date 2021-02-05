@@ -833,7 +833,7 @@ namespace FirehoseFinder
                 textBox_modelid.BackColor = Color.LawnGreen;
                 gross++;
             }
-            if (id[3].Length >= 64)
+            if (id[3].Length >= 64 && textBox_oemhash.Text.Length >= id[3].Length)
             {
                 if (id[3].Equals(textBox_oemhash.Text.Substring(0, id[3].Length))) // Хеши равны
                 {
@@ -841,7 +841,22 @@ namespace FirehoseFinder
                     gross += 2;
                 }
             }
-            if (id[4].Equals("3")) gross += 2; // SWID начинается с 3 (альтернативная проверка: есть fh@0x%08 - Contains("6668403078253038"))
+            if (id[4].Equals("3")) gross += 2; // SWID начинается с 3
+            //Добавляем из справочника возможные модели для данного шланга
+            bindingSource_collection.Filter = string.Format("HWID LIKE '{0}' AND OEMID LIKE '{1}' AND MODELID LIKE '{2}' AND HASHID LIKE '{3}'",
+                id[0], id[1], id[2], id[3]);
+            StringBuilder comp_model = new StringBuilder(string.Empty);
+            byte count = 1;
+            if (dataGridView_collection.Rows.Count > 0) //Есть минимум одно устройство с такими идентификаторами
+            {
+                foreach (DataGridViewRow comp_row in dataGridView_collection.Rows)
+                {
+                    if (count > 1) comp_model.Append("; ");
+                    comp_model.Append(comp_row.Cells["Model"].Value.ToString());
+                    count++;
+                }
+            }
+            dataGridView_final["Column_Comp", Currnum].Value = comp_model;
             return gross;
         }
 
