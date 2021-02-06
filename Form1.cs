@@ -818,10 +818,33 @@ namespace FirehoseFinder
                 "OEM_PK_HASH (хеш корневого сертификата) - " + id[3] + Environment.NewLine +
                 "SW_ID (тип программы (версия)) - " + id[4] + id[5] + " - " + sw_type;
             //!!!!Добавить проверку на все процессоры, в т.ч. и переходные по единому ID!!!!
-            if (textBox_hwid.Text.Equals(id[0])) //Процессор такой же
+            if (guide.Double_CPU.ContainsKey(textBox_hwid.Text))
             {
-                textBox_hwid.BackColor = Color.LawnGreen;
-                gross += 2;
+                string d_cpu_val = guide.Double_CPU[textBox_hwid.Text];
+                List<string> d_cpu_key = new List<string>();
+                foreach (KeyValuePair<string, string> d_cpu in guide.Double_CPU)
+                {
+                    if (d_cpu.Value.Equals(d_cpu_val)) d_cpu_key.Add(d_cpu.Key.ToString());
+                }
+                if (d_cpu_key.Count > 0)
+                {
+                    foreach (string item in d_cpu_key)
+                    {
+                        if (item.Equals(id[0])) //Процессор такой же
+                        {
+                            textBox_hwid.BackColor = Color.LawnGreen;
+                            gross += 2;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (textBox_hwid.Text.Equals(id[0])) //Процессор такой же
+                {
+                    textBox_hwid.BackColor = Color.LawnGreen;
+                    gross += 2;
+                }
             }
             if (textBox_oemid.Text.Equals(id[1])) // Производитель один и тот же
             {
