@@ -138,6 +138,9 @@
   <metadata name="bindingNavigator_collection.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 46</value>
   </metadata>
+  <metadata name="bindingNavigator_collection.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 46</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bindingNavigatorMoveFirstItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -200,15 +203,6 @@
   <metadata name="Column_Comp.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="label_info.Text" xml:space="preserve">
-    <value>Текстовые поля для поиска программера
-по идентификаторам устройства можно 
-заполнить вручную, автоматически или
-из Справочника. Подключите устройство в
-нормальном режиме и нажмите кнопку
-"Опросить устройство с перезагрузкой в
-аварийный режим"</value>
-  </data>
   <metadata name="statusStrip_firehose.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>221, 17</value>
   </metadata>

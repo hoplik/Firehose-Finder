@@ -121,4 +121,8 @@
   <data name="bot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bot.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
+  <data name="Greeting" xml:space="preserve">
+    <value>Текстовые поля для поиска программера по идентификаторам устройства можно заполнить вручную, автоматически или из Справочника. Подключите устройство в нормальном режиме и нажмите кнопку "Опросить устройство с перезагрузкой в аварийный режим"</value>
+    <comment>Строка приветствия</comment>
+  </data>
 </root>

@@ -68,5 +68,14 @@ namespace FirehoseFinder.Properties {
                 return ResourceManager.GetString("bot", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Текстовые поля для поиска программера по идентификаторам устройства можно заполнить вручную, автоматически или из Справочника. Подключите устройство в нормальном режиме и нажмите кнопку &quot;Опросить устройство с перезагрузкой в аварийный режим&quot;.
+        /// </summary>
+        internal static string Greeting {
+            get {
+                return ResourceManager.GetString("Greeting", resourceCulture);
+            }
+        }
     }
 }

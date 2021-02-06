@@ -201,10 +201,19 @@ namespace FirehoseFinder
         private void ВнестиПроизводителяМодельToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InsertModelForm imf = new InsertModelForm();
-            imf.ShowDialog();
-            label_tm.Text = "\"" + imf.comboBox_tm_insert.Text + "\""; //Если Производитель пришёл в кавычках, значит вводили вручную
-            label_model.Text = imf.textBox_model_insert.Text;
-            label_altname.Text = imf.textBox_alt_insert.Text;
+            switch (imf.ShowDialog())
+            {
+                case DialogResult.Cancel:
+                    label_tm.Text = "---";
+                    label_model.Text = "---";
+                    label_altname.Text = "---";
+                    break;
+                default:
+                    label_tm.Text = "\"" + imf.comboBox_tm_insert.Text + "\""; //Если Производитель пришёл в кавычках, значит вводили вручную
+                    label_model.Text = imf.textBox_model_insert.Text;
+                    label_altname.Text = imf.textBox_alt_insert.Text;
+                    break;
+            }
         }
 
         /// <summary>
@@ -1043,10 +1052,21 @@ namespace FirehoseFinder
                 if (label_tm.Text.StartsWith("---") || label_model.Text.StartsWith("---"))
                 {
                     InsertModelForm fr = new InsertModelForm();
-                    fr.ShowDialog();
-                    label_tm.Text = "\"" + fr.comboBox_tm_insert.Text + "\""; //Если Производитель пришёл в кавычках, значит вводили вручную
-                    label_model.Text = fr.textBox_model_insert.Text;
-                    label_altname.Text = fr.textBox_alt_insert.Text;
+                    switch (fr.ShowDialog())
+                    {
+                        case DialogResult.Cancel:
+                            label_tm.Text = "---";
+                            label_model.Text = "---";
+                            label_altname.Text = "---";
+                            toolStripStatusLabel_filescompleted.Text = "Не все идентификаторы получены, отправка данных отменена";
+                            checkBox_send.Checked = false;
+                            break;
+                        default:
+                            label_tm.Text = "\"" + fr.comboBox_tm_insert.Text + "\""; //Если Производитель пришёл в кавычках, значит вводили вручную
+                            label_model.Text = fr.textBox_model_insert.Text;
+                            label_altname.Text = fr.textBox_alt_insert.Text;
+                            break;
+                    }
                 }
             }
             string logstr = textBox_hwid.Text + textBox_oemid.Text + textBox_modelid.Text + "-" + textBox_oemhash.Text + "-" + label_SW_Ver.Text + "-" + label_tm.Text + "-" + label_model.Text + "-" + label_altname.Text;
@@ -1112,5 +1132,14 @@ namespace FirehoseFinder
             checkBox_send.Checked = false;
         }
         #endregion
+
+        private void TextBox_oemhash_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox_oemhash.Text)) label_oemhash.Text = "OEM_PK_HASH";
+            else label_oemhash.Text = "OEM_PK_HASH" + Environment.NewLine + "(" + textBox_oemhash.Text.Length.ToString() + " знаков)";
+            {
+
+            }
+        }
     }
 }

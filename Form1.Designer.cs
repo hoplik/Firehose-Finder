@@ -77,7 +77,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.radioButton_adb_reset = new System.Windows.Forms.RadioButton();
             this.radioButton_man_reset = new System.Windows.Forms.RadioButton();
-            this.label_info = new System.Windows.Forms.Label();
             this.checkBox_send = new System.Windows.Forms.CheckBox();
             this.label_log = new System.Windows.Forms.Label();
             this.checkBox_Log = new System.Windows.Forms.CheckBox();
@@ -287,7 +286,7 @@
             this.tabPage_collection.Controls.Add(this.bindingNavigator_collection);
             this.tabPage_collection.Location = new System.Drawing.Point(4, 25);
             this.tabPage_collection.Name = "tabPage_collection";
-            this.tabPage_collection.Size = new System.Drawing.Size(1361, 547);
+            this.tabPage_collection.Size = new System.Drawing.Size(1361, 545);
             this.tabPage_collection.TabIndex = 4;
             this.tabPage_collection.Text = "Справочник устройств";
             this.tabPage_collection.UseVisualStyleBackColor = true;
@@ -312,7 +311,7 @@
             this.dataGridView_collection.ShowCellToolTips = false;
             this.dataGridView_collection.ShowEditingIcon = false;
             this.dataGridView_collection.ShowRowErrors = false;
-            this.dataGridView_collection.Size = new System.Drawing.Size(1361, 520);
+            this.dataGridView_collection.Size = new System.Drawing.Size(1361, 518);
             this.dataGridView_collection.TabIndex = 2;
             this.dataGridView_collection.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_collection_CellContentDoubleClick);
             // 
@@ -334,7 +333,7 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.toolStripTextBox_find});
-            this.bindingNavigator_collection.Location = new System.Drawing.Point(0, 520);
+            this.bindingNavigator_collection.Location = new System.Drawing.Point(0, 518);
             this.bindingNavigator_collection.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator_collection.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator_collection.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -538,7 +537,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.groupBox4);
-            this.panel1.Controls.Add(this.label_info);
             this.panel1.Controls.Add(this.checkBox_send);
             this.panel1.Controls.Add(this.label_log);
             this.panel1.Controls.Add(this.checkBox_Log);
@@ -597,15 +595,6 @@
             this.radioButton_man_reset.TabIndex = 0;
             this.radioButton_man_reset.Text = "Вручную";
             this.radioButton_man_reset.UseVisualStyleBackColor = true;
-            // 
-            // label_info
-            // 
-            this.label_info.AutoSize = true;
-            this.label_info.Location = new System.Drawing.Point(1059, 8);
-            this.label_info.Name = "label_info";
-            this.label_info.Size = new System.Drawing.Size(293, 119);
-            this.label_info.TabIndex = 28;
-            this.label_info.Text = resources.GetString("label_info.Text");
             // 
             // checkBox_send
             // 
@@ -696,7 +685,7 @@
             // label_swid
             // 
             this.label_swid.AutoSize = true;
-            this.label_swid.Location = new System.Drawing.Point(861, 43);
+            this.label_swid.Location = new System.Drawing.Point(869, 43);
             this.label_swid.Name = "label_swid";
             this.label_swid.Size = new System.Drawing.Size(99, 17);
             this.label_swid.TabIndex = 18;
@@ -713,10 +702,10 @@
             // 
             // button_useSahara_fhf
             // 
-            this.button_useSahara_fhf.Location = new System.Drawing.Point(733, 116);
+            this.button_useSahara_fhf.Location = new System.Drawing.Point(1075, 97);
             this.button_useSahara_fhf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_useSahara_fhf.Name = "button_useSahara_fhf";
-            this.button_useSahara_fhf.Size = new System.Drawing.Size(324, 23);
+            this.button_useSahara_fhf.Size = new System.Drawing.Size(275, 41);
             this.button_useSahara_fhf.TabIndex = 10;
             this.button_useSahara_fhf.Text = "Проверить выбранный программер";
             this.button_useSahara_fhf.UseVisualStyleBackColor = true;
@@ -737,7 +726,7 @@
             // label_modelid
             // 
             this.label_modelid.AutoSize = true;
-            this.label_modelid.Location = new System.Drawing.Point(708, 43);
+            this.label_modelid.Location = new System.Drawing.Point(713, 43);
             this.label_modelid.Name = "label_modelid";
             this.label_modelid.Size = new System.Drawing.Size(78, 17);
             this.label_modelid.TabIndex = 3;
@@ -747,7 +736,7 @@
             // 
             this.textBox_hwid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_hwid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_hwid.Location = new System.Drawing.Point(484, 40);
+            this.textBox_hwid.Location = new System.Drawing.Point(478, 40);
             this.textBox_hwid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_hwid.MaxLength = 8;
             this.textBox_hwid.Name = "textBox_hwid";
@@ -757,7 +746,7 @@
             // label_oemid
             // 
             this.label_oemid.AutoSize = true;
-            this.label_oemid.Location = new System.Drawing.Point(573, 43);
+            this.label_oemid.Location = new System.Drawing.Point(581, 43);
             this.label_oemid.Name = "label_oemid";
             this.label_oemid.Size = new System.Drawing.Size(60, 17);
             this.label_oemid.TabIndex = 5;
@@ -765,10 +754,10 @@
             // 
             // button_path
             // 
-            this.button_path.Location = new System.Drawing.Point(398, 116);
+            this.button_path.Location = new System.Drawing.Point(1075, 14);
             this.button_path.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_path.Name = "button_path";
-            this.button_path.Size = new System.Drawing.Size(275, 23);
+            this.button_path.Size = new System.Drawing.Size(275, 45);
             this.button_path.TabIndex = 9;
             this.button_path.Text = "Выберите папку с программерами";
             this.button_path.UseVisualStyleBackColor = true;
@@ -781,9 +770,12 @@
             this.textBox_oemhash.Location = new System.Drawing.Point(512, 77);
             this.textBox_oemhash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_oemhash.MaxLength = 96;
+            this.textBox_oemhash.Multiline = true;
             this.textBox_oemhash.Name = "textBox_oemhash";
-            this.textBox_oemhash.Size = new System.Drawing.Size(545, 22);
+            this.textBox_oemhash.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox_oemhash.Size = new System.Drawing.Size(545, 61);
             this.textBox_oemhash.TabIndex = 6;
+            this.textBox_oemhash.TextChanged += new System.EventHandler(this.TextBox_oemhash_TextChanged);
             // 
             // label_oemhash
             // 
@@ -1207,7 +1199,6 @@
         private System.Windows.Forms.TextBox textBox_main_term;
         private System.Windows.Forms.DataGridView dataGridView_final;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label_info;
         private System.Windows.Forms.CheckBox checkBox_send;
         private System.Windows.Forms.Label label_log;
         private System.Windows.Forms.CheckBox checkBox_Log;
