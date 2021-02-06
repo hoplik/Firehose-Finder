@@ -10,7 +10,7 @@ namespace FirehoseFinder
         {
             InitializeComponent();
         }
-         
+
         /// <summary>
         /// Копируем данные на основную форму
         /// </summary>
@@ -39,7 +39,30 @@ namespace FirehoseFinder
             textBox_alt_insert.Text = string.Empty;
             DialogResult dr = MessageBox.Show("Обратите внимание!\r\nНезаполнение полей Производителя и Модели устройства приведёт к невозможности идентификации устройства только по данным CPU." + Environment.NewLine +
                 "Нажимая \"ОК\" вы вернётесь к заполнению формы, \"Отмена\" закроет форму без сохранения данных", "Внимание!", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-            if (dr == DialogResult.Cancel) Hide();
+            switch (dr)
+            {
+                case DialogResult.None:
+                    break;
+                case DialogResult.OK:
+                    comboBox_tm_insert.Focus();
+                    Show();
+                    break;
+                case DialogResult.Cancel:
+                    Hide();
+                    break;
+                case DialogResult.Abort:
+                    break;
+                case DialogResult.Retry:
+                    break;
+                case DialogResult.Ignore:
+                    break;
+                case DialogResult.Yes:
+                    break;
+                case DialogResult.No:
+                    break;
+                default:
+                    break;
+            }
         }
 
         /// <summary>

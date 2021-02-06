@@ -22,5 +22,17 @@ namespace FirehoseFinder.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CheckBox_start_Checked {
+            get {
+                return ((bool)(this["CheckBox_start_Checked"]));
+            }
+            set {
+                this["CheckBox_start_Checked"] = value;
+            }
+        }
     }
 }

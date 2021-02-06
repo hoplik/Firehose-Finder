@@ -58,6 +58,7 @@ namespace FirehoseFinder
             "Dexp",
             "Discovery",
             "Essential Phone",
+            "Foxda",
             "General Mobile",
             "Gionee",
             "Google",
@@ -90,11 +91,12 @@ namespace FirehoseFinder
             "Stream",
             "TP-LINK",
             "Vertex",
-            "VIVO",
+            "vivo",
+            "vsmart",
             "Wileyfox",
             "Xiaomi",
             "Yandex",
-            "YotaPhone",
+            "Yota Devices Limited",
             "ZTE",
             "ZUK",
             "Билайн",
@@ -173,7 +175,6 @@ namespace FirehoseFinder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.button_cancel_insert;
             this.ClientSize = new System.Drawing.Size(327, 153);
             this.Controls.Add(this.textBox_model_insert);
             this.Controls.Add(this.button_cancel_insert);
@@ -183,7 +184,6 @@ namespace FirehoseFinder
             this.Controls.Add(this.label_model_insert);
             this.Controls.Add(this.label_tm_insert);
             this.Controls.Add(this.comboBox_tm_insert);
-            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

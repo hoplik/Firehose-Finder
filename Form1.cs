@@ -82,6 +82,12 @@ namespace FirehoseFinder
             toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
             toolTip1.SetToolTip(button_useSahara_fhf, "Нажмите для проверки выбранного программера");
             CheckListPorts();
+            //Открываем приветствие если новое или отмечено в настройках
+            if (Settings.Default.CheckBox_start_Checked)
+            {
+                Greeting greeting = new Greeting();
+                greeting.ShowDialog();
+            }
         }
 
         /// <summary>
@@ -91,6 +97,7 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Formfhf_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Settings.Default.Save(); //Сохраняем настройки
             try
             {
                 if (File.Exists("commandop02.bin")) File.Delete("commandop02.bin");
@@ -120,9 +127,10 @@ namespace FirehoseFinder
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void приветствиеToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ПриветствиеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("В стадии разработки");
+            Greeting greeting = new Greeting();
+            greeting.Show();
         }
 
         /// <summary>
