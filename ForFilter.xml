@@ -83,7 +83,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-06T22:16:24">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-07T23:03:12">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 210</FullName>
@@ -571,22 +571,22 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
-<HWID>0090B0E1</HWID>
-<FullName>Qualcomm® Snapdragon™ 615</FullName>
+<HWID>007050E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 410</FullName>
 <OEMID>0029</OEMID>
 <Names>Asus</Names>
-<MODELID>001F</MODELID>
+<MODELID>001E</MODELID>
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZC550KL</Model>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
-<HWID>007050E1</HWID>
-<FullName>Qualcomm® Snapdragon™ 410</FullName>
+<HWID>0090B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 615</FullName>
 <OEMID>0029</OEMID>
 <Names>Asus</Names>
-<MODELID>001E</MODELID>
+<MODELID>001F</MODELID>
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZC550KL</Model>
@@ -1032,6 +1032,17 @@
 <Trademark>HTC</Trademark>
 <Model>516 DS</Model>
 <Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>009180E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 400</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>BA2102DA99C924058C758FA9F4250847C92CABDE17FDCEF01D4DAFF8DF5D6753</HASHID>
+<Trademark>HTC</Trademark>
+<Model>825</Model>
+<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -2466,7 +2477,7 @@
 <ForFilter>
 <HWID>009470E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 820</FullName>
-<HASHID>97EFF4D4111DD90523F6182E05650298B7AE803F0EC36F69A643C031399D8D13</HASHID>
+<HASHID>C34EC1FDDFAC05D8F63EED3EE90C8E6983FE2B0E4B2837B30D8619A29633649C</HASHID>
 <Trademark>OnePlus</Trademark>
 <Model>3</Model>
 <Proof>0</Proof>
@@ -2474,7 +2485,7 @@
 <ForFilter>
 <HWID>009470E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 820</FullName>
-<HASHID>C34EC1FDDFAC05D8F63EED3EE90C8E6983FE2B0E4B2837B30D8619A29633649C</HASHID>
+<HASHID>97EFF4D4111DD90523F6182E05650298B7AE803F0EC36F69A643C031399D8D13</HASHID>
 <Trademark>OnePlus</Trademark>
 <Model>3</Model>
 <Proof>0</Proof>
@@ -2986,21 +2997,21 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
-<HWID>007B60E1</HWID>
-<FullName>Qualcomm® Snapdragon™ 801</FullName>
-<OEMID>0000</OEMID>
-<Names>Qualcomm</Names>
-<MODELID>0000</MODELID>
-<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<HWID>007B00E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 800</FullName>
+<HASHID>964B5C486B200AA6462733A682F9CEAD3EBFAD555CE2FF3622FEA8B279B006EE</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 3</Model>
 <AltName>cancro</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
-<HWID>007B00E1</HWID>
-<FullName>Qualcomm® Snapdragon™ 800</FullName>
-<HASHID>964B5C486B200AA6462733A682F9CEAD3EBFAD555CE2FF3622FEA8B279B006EE</HASHID>
+<HWID>007B60E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 801</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 3</Model>
 <AltName>cancro</AltName>
@@ -3031,7 +3042,8 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
-<HWID>0006C0E1</HWID>
+<HWID>007B60E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 801</FullName>
 <OEMID>0000</OEMID>
 <Names>Qualcomm</Names>
 <MODELID>0000</MODELID>
@@ -3042,8 +3054,7 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
-<HWID>007B60E1</HWID>
-<FullName>Qualcomm® Snapdragon™ 801</FullName>
+<HWID>0006C0E1</HWID>
 <OEMID>0000</OEMID>
 <Names>Qualcomm</Names>
 <MODELID>0000</MODELID>
@@ -3119,15 +3130,6 @@
 <ForFilter>
 <HWID>000460E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 625</FullName>
-<HASHID>61135CB65671284290A99BD9EDF5C075672E7FEBA2A4A79BA9CFACD70CD2EA50</HASHID>
-<Trademark>Xiaomi</Trademark>
-<Model>Mi 5x</Model>
-<AltName>tiffany</AltName>
-<Proof>0</Proof>
-</ForFilter>
-<ForFilter>
-<HWID>000460E1</HWID>
-<FullName>Qualcomm® Snapdragon™ 625</FullName>
 <OEMID>0000</OEMID>
 <Names>Qualcomm</Names>
 <MODELID>0000</MODELID>
@@ -3138,12 +3140,18 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 625</FullName>
+<HASHID>61135CB65671284290A99BD9EDF5C075672E7FEBA2A4A79BA9CFACD70CD2EA50</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 5x</Model>
+<AltName>tiffany</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>0005E0E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 835</FullName>
-<OEMID>0000</OEMID>
-<Names>Qualcomm</Names>
-<MODELID>0000</MODELID>
-<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<HASHID>67A7EA77C23FDD1046ECCE7628BFD5975E9949F66ADDD55BB3572CAF9FE97AEA</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 6</Model>
 <AltName>sagit</AltName>
@@ -3152,7 +3160,10 @@
 <ForFilter>
 <HWID>0005E0E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 835</FullName>
-<HASHID>67A7EA77C23FDD1046ECCE7628BFD5975E9949F66ADDD55BB3572CAF9FE97AEA</HASHID>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 6</Model>
 <AltName>sagit</AltName>
@@ -3325,10 +3336,7 @@
 <ForFilter>
 <HWID>000460E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 625</FullName>
-<OEMID>0000</OEMID>
-<Names>Qualcomm</Names>
-<MODELID>0000</MODELID>
-<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<HASHID>BB5E36491053118486EBCCD5817C5519A53EAE5EDA9730F1127C22DD6C1B5C2B</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Max 2</Model>
 <AltName>oxygen</AltName>
@@ -3337,7 +3345,10 @@
 <ForFilter>
 <HWID>000460E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 625</FullName>
-<HASHID>BB5E36491053118486EBCCD5817C5519A53EAE5EDA9730F1127C22DD6C1B5C2B</HASHID>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Max 2</Model>
 <AltName>oxygen</AltName>
@@ -3379,7 +3390,10 @@
 <ForFilter>
 <HWID>0005E0E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 835</FullName>
-<HASHID>ADEB0034FC38C99C8401DCDBA9008EE5A8525BB66F1FC031EE8F4EFC22C5A1DF</HASHID>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Mix 2</Model>
 <AltName>chiron</AltName>
@@ -3388,10 +3402,7 @@
 <ForFilter>
 <HWID>0005E0E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 835</FullName>
-<OEMID>0000</OEMID>
-<Names>Qualcomm</Names>
-<MODELID>0000</MODELID>
-<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<HASHID>ADEB0034FC38C99C8401DCDBA9008EE5A8525BB66F1FC031EE8F4EFC22C5A1DF</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Mix 2</Model>
 <AltName>chiron</AltName>
@@ -3701,6 +3712,18 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>009B00E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 650</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 3</Model>
+<AltName>aosp_kenzo</AltName>
+<Proof>1</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>0008C0E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 660</FullName>
 <HASHID>1D4A7043A8A55A19F7E1C294D42872CD57A71B8F370E3D9551A796415E61B434</HASHID>
@@ -3717,18 +3740,6 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 3</Model>
-<AltName>aosp_kenzo</AltName>
-<Proof>1</Proof>
-</ForFilter>
-<ForFilter>
-<HWID>009B00E1</HWID>
-<FullName>Qualcomm® Snapdragon™ 650</FullName>
-<OEMID>0000</OEMID>
-<Names>Qualcomm</Names>
-<MODELID>0000</MODELID>
-<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
-<Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 3 SE</Model>
 <AltName>kate</AltName>
 <Proof>0</Proof>
@@ -3736,10 +3747,7 @@
 <ForFilter>
 <HWID>000460E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 625</FullName>
-<OEMID>0000</OEMID>
-<Names>Qualcomm</Names>
-<MODELID>0000</MODELID>
-<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<HASHID>5D45ECF8864DBBC741FB7874F878126E8F23EE9448A3EA1EDE8E16FE02F782C0</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 4/4x</Model>
 <AltName>mido</AltName>
@@ -3748,7 +3756,10 @@
 <ForFilter>
 <HWID>000460E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 625</FullName>
-<HASHID>5D45ECF8864DBBC741FB7874F878126E8F23EE9448A3EA1EDE8E16FE02F782C0</HASHID>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 4/4x</Model>
 <AltName>mido</AltName>
@@ -3779,21 +3790,21 @@
 <Proof>1</Proof>
 </ForFilter>
 <ForFilter>
-<HWID>0006B0E1</HWID>
-<FullName>Qualcomm® Snapdragon™ 435</FullName>
-<OEMID>0000</OEMID>
-<Names>Qualcomm</Names>
-<MODELID>0000</MODELID>
-<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<HWID>0004F0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 430</FullName>
+<HASHID>5F1C47435A031331B7F6EC33E8F406EF42BAEF9A4E3C6D2F438A8B827DD00075</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 5a Prime</Model>
 <AltName>ugg</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
-<HWID>0004F0E1</HWID>
-<FullName>Qualcomm® Snapdragon™ 430</FullName>
-<HASHID>5F1C47435A031331B7F6EC33E8F406EF42BAEF9A4E3C6D2F438A8B827DD00075</HASHID>
+<HWID>0006B0E1</HWID>
+<FullName>Qualcomm® Snapdragon™ 435</FullName>
+<OEMID>0000</OEMID>
+<Names>Qualcomm</Names>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 5a Prime</Model>
 <AltName>ugg</AltName>

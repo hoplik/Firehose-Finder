@@ -32,7 +32,7 @@ namespace FirehoseFinder
             this.tableLayoutPanel_greeting = new System.Windows.Forms.TableLayoutPanel();
             this.checkBox_start = new System.Windows.Forms.CheckBox();
             this.button_ok = new System.Windows.Forms.Button();
-            this.label_greeting = new System.Windows.Forms.Label();
+            this.textBox_greeting = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel_greeting.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +43,7 @@ namespace FirehoseFinder
             this.tableLayoutPanel_greeting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_greeting.Controls.Add(this.checkBox_start, 0, 1);
             this.tableLayoutPanel_greeting.Controls.Add(this.button_ok, 1, 1);
-            this.tableLayoutPanel_greeting.Controls.Add(this.label_greeting, 0, 0);
+            this.tableLayoutPanel_greeting.Controls.Add(this.textBox_greeting, 0, 0);
             this.tableLayoutPanel_greeting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_greeting.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel_greeting.Name = "tableLayoutPanel_greeting";
@@ -76,15 +76,17 @@ namespace FirehoseFinder
             this.button_ok.UseVisualStyleBackColor = true;
             this.button_ok.Click += new System.EventHandler(this.Button_ok_Click);
             // 
-            // label_greeting
+            // textBox_greeting
             // 
-            this.label_greeting.AutoSize = true;
-            this.tableLayoutPanel_greeting.SetColumnSpan(this.label_greeting, 2);
-            this.label_greeting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_greeting.Location = new System.Drawing.Point(3, 0);
-            this.label_greeting.Name = "label_greeting";
-            this.label_greeting.Size = new System.Drawing.Size(650, 412);
-            this.label_greeting.TabIndex = 2;
+            this.tableLayoutPanel_greeting.SetColumnSpan(this.textBox_greeting, 2);
+            this.textBox_greeting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_greeting.Location = new System.Drawing.Point(3, 3);
+            this.textBox_greeting.Multiline = true;
+            this.textBox_greeting.Name = "textBox_greeting";
+            this.textBox_greeting.ReadOnly = true;
+            this.textBox_greeting.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox_greeting.Size = new System.Drawing.Size(650, 406);
+            this.textBox_greeting.TabIndex = 2;
             // 
             // Greeting
             // 
@@ -111,6 +113,6 @@ namespace FirehoseFinder
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_greeting;
         private System.Windows.Forms.CheckBox checkBox_start;
         private System.Windows.Forms.Button button_ok;
-        private System.Windows.Forms.Label label_greeting;
+        private System.Windows.Forms.TextBox textBox_greeting;
     }
 }
