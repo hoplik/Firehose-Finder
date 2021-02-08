@@ -83,7 +83,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-08T22:43:52">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-08T23:02:50">
 <ForFilter>
 <HWID>0009A0E1</HWID>
 <FullName>Qualcomm® Snapdragon™ 450</FullName>
@@ -92,7 +92,7 @@
 <MODELID>0000</MODELID>
 <HASHID>7C6DCA9BF5674291AA39DD55760C0D4B65C7A4223097AAB1DB791E2192002DDF</HASHID>
 <Trademark>AGM</Trademark>
-<Model>AGM A</Model>
+<Model>AGM A9</Model>
 <AltName>T61IN</AltName>
 <Proof>1</Proof>
 </ForFilter>
