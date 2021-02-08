@@ -1069,7 +1069,7 @@ namespace FirehoseFinder
                     }
                 }
             }
-            string logstr = textBox_hwid.Text + textBox_oemid.Text + textBox_modelid.Text + "-" + textBox_oemhash.Text + "-" + label_SW_Ver.Text + "-" + label_tm.Text + "-" + label_model.Text + "-" + label_altname.Text;
+            string logstr = textBox_hwid.Text + textBox_oemid.Text + textBox_modelid.Text + "<>" + textBox_oemhash.Text + "<>" + label_SW_Ver.Text + "<>" + label_tm.Text + "<>" + label_model.Text + "<>" + label_altname.Text;
             if (checkBox_Log.Checked)
             {
                 try
