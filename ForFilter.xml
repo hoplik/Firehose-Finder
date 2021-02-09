@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-09T14:23:48">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-09T19:36:50">
 <ForFilter>
 <HWID>0009A0E1</HWID>
 <FullName>Snapdragon 450</FullName>
@@ -138,8 +138,8 @@
 <MODELID>0000</MODELID>
 <HASHID>BA2102DA99C924058C758FA9F4250847C92CABDE17FDCEF01D4DAFF8DF5D6753</HASHID>
 <Trademark>HTC</Trademark>
-<Model>825</Model>
-<Proof>0</Proof>
+<Model>Desire 825</Model>
+<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BA0E1</HWID>

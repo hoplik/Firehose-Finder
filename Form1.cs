@@ -1084,7 +1084,15 @@ namespace FirehoseFinder
                     toolStripStatusLabel_filescompleted.Text = "Ошибка записи файла отчёта: " + ex.Message;
                 }
             }
-            if (checkBox_send.Checked) CheckIDs(logstr);
+            if (checkBox_send.Checked)
+            {
+                if (string.IsNullOrWhiteSpace(textBox_hwid.Text) && string.IsNullOrWhiteSpace(textBox_oemid.Text) &&
+                    string.IsNullOrWhiteSpace(textBox_modelid.Text) && string.IsNullOrWhiteSpace(textBox_oemhash.Text))
+                {
+                    toolStripStatusLabel_filescompleted.Text = "Идентификаторы пусты. Нечего отправлять";
+                }
+                else CheckIDs(logstr);
+            }
             waitSahara = false;
         }
 
