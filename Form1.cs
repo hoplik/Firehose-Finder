@@ -74,6 +74,9 @@ namespace FirehoseFinder
             dataGridView_collection.DataSource = bindingSource_collection;
             bindingNavigator_collection.BindingSource = bindingSource_collection;
             dataGridView_collection.Columns["Proof"].Visible = false;
+            dataGridView_collection.Columns["HASHID"].HeaderText = "OEM Private Key Hash";
+            dataGridView_collection.Columns["OEMID"].HeaderText = "OEM";
+            dataGridView_collection.Columns["MODELID"].HeaderText = "Model";
             //Закрываем специализированные закладки
             tabControl1.TabPages.Remove(tabPage_collection);
             tabControl1.TabPages.Remove(tabPage_phone);
@@ -512,7 +515,7 @@ namespace FirehoseFinder
             textBox_modelid.BackColor = Color.Empty;
             textBox_oemhash.BackColor = Color.Empty;
             dataGridView_final.Rows.Clear();
-            button_useSahara_fhf.Visible = false;
+            button_useSahara_fhf.Enabled = false;
             toolStripStatusLabel_filescompleted.Text = string.Empty;
             toolStripStatusLabel_vol.Text = string.Empty;
             toolStripProgressBar_filescompleted.Value = 0;
@@ -551,7 +554,7 @@ namespace FirehoseFinder
                     if (Convert.ToBoolean(dataGridView_final["Column_Sel", e.RowIndex].Value))
                     {
                         dataGridView_final["Column_Sel", e.RowIndex].Value = false;
-                        button_useSahara_fhf.Visible = false;
+                        button_useSahara_fhf.Enabled = false;
                     }
                     else
                     {
@@ -560,7 +563,7 @@ namespace FirehoseFinder
                             dataGridView_final["Column_Sel", i].Value = false;
                         }
                         dataGridView_final["Column_Sel", e.RowIndex].Value = true;
-                        button_useSahara_fhf.Visible = true;
+                        button_useSahara_fhf.Enabled = true;
                         label_Sahara_fhf.Text = button_path.Text + "\\" + dataGridView_final.SelectedRows[0].Cells[1].Value.ToString();
                     }
                 }
