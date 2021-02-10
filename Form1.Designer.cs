@@ -855,7 +855,7 @@
             this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
             this.tabPage_phone.Name = "tabPage_phone";
             this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_phone.Size = new System.Drawing.Size(1361, 547);
+            this.tabPage_phone.Size = new System.Drawing.Size(1361, 545);
             this.tabPage_phone.TabIndex = 2;
             this.tabPage_phone.Text = "Работа с устройством";
             this.tabPage_phone.UseVisualStyleBackColor = true;
@@ -874,7 +874,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.listView_comport);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(481, 135);
+            this.groupBox2.Location = new System.Drawing.Point(481, 133);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(877, 409);
             this.groupBox2.TabIndex = 1;
@@ -1111,7 +1111,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(478, 541);
+            this.groupBox1.Size = new System.Drawing.Size(478, 539);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Terminal";
@@ -1123,7 +1123,7 @@
             this.textBox_ADB.Multiline = true;
             this.textBox_ADB.Name = "textBox_ADB";
             this.textBox_ADB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_ADB.Size = new System.Drawing.Size(472, 520);
+            this.textBox_ADB.Size = new System.Drawing.Size(472, 518);
             this.textBox_ADB.TabIndex = 1;
             // 
             // tabControl1

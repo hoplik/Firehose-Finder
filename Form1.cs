@@ -450,7 +450,7 @@ namespace FirehoseFinder
                 if (!неподтверждённыеДанныеToolStripMenuItem.Checked) bindingSource_collection.Filter = "Proof = true";
                 else bindingSource_collection.Filter = null;
             }
-            else bindingSource_collection.Filter = string.Format("HWID LIKE '%{0}%' OR FullName LIKE '%{0}%' OR OEMID LIKE '%{0}%' OR Names LIKE '%{0}%' OR MODELID LIKE '%{0}%' OR HASHID LIKE '%{0}%' OR Trademark LIKE '%{0}%' OR Model LIKE '%{0}%' OR AltName LIKE '%{0}%'", toolStripTextBox_find.Text);
+            else bindingSource_collection.Filter = string.Format("HWID LIKE '%{0}%' OR FullName LIKE '%{0}%' OR OEMID LIKE '%{0}%' OR MODELID LIKE '%{0}%' OR HASHID LIKE '%{0}%' OR Trademark LIKE '%{0}%' OR Model LIKE '%{0}%' OR AltName LIKE '%{0}%'", toolStripTextBox_find.Text);
         }
 
         #endregion
@@ -661,6 +661,18 @@ namespace FirehoseFinder
                 Check_Unread_Files(); //Проверяем, не осталось ли необработанных файлов
             }
         }
+        
+        /// <summary>
+        /// При вводе хеша считаем количество символов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_oemhash_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox_oemhash.Text)) label_oemhash.Text = "OEM_PK_HASH";
+            else label_oemhash.Text = "OEM_PK_HASH" + Environment.NewLine + "(" + textBox_oemhash.Text.Length.ToString() + " знаков)";
+        }
+
         #endregion
 
         #region Функции команд контролов вкладки Справочник устройств
@@ -1142,15 +1154,7 @@ namespace FirehoseFinder
             }
             checkBox_send.Checked = false;
         }
+
         #endregion
-
-        private void TextBox_oemhash_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(textBox_oemhash.Text)) label_oemhash.Text = "OEM_PK_HASH";
-            else label_oemhash.Text = "OEM_PK_HASH" + Environment.NewLine + "(" + textBox_oemhash.Text.Length.ToString() + " знаков)";
-            {
-
-            }
-        }
     }
 }

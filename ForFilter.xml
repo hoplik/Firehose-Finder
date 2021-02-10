@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-09T19:36:50">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-10T20:27:36">
 <ForFilter>
 <HWID>0009A0E1</HWID>
 <FullName>Snapdragon 450</FullName>
@@ -172,6 +172,15 @@
 <Trademark>LG</Trademark>
 <Model>L90</Model>
 <AltName>D410</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Snapdragon 410</FullName>
+<OEMID>0028</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>59B38969C8B392F173E8FA7081A1758317C14789245EA1332B2547D6FB530C33</HASHID>
+<Trademark>Motorola</Trademark>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
