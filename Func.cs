@@ -255,8 +255,10 @@ namespace FirehoseFinder
             }
             int strlen = SC3.Length / 3;
             for (int i = 0; i < 3; i++) compareresult[i] = SC3.ToString().Substring(i * strlen, strlen);
-            if (compareresult[0].Equals(compareresult[1]) && compareresult[1].Equals(compareresult[2])) return compareresult[0];
-            else return SC3.ToString();
+            return compareresult[0];
+            //if (compareresult[0].Equals(compareresult[1]) && compareresult[1].Equals(compareresult[2])) return compareresult[0];
+            //else return SC3.ToString(); //Всё равно возвращаем только первое значение, понимая, что различаются.
+            //NOTE From revision 2.4, PK Hash returns three hashes for APPS, MBA, and MSS code segments for B - family chips.
         }
 
         /// <summary>
