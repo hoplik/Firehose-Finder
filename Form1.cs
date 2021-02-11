@@ -1038,7 +1038,7 @@ namespace FirehoseFinder
             //Выполняем запрос HWID-OEMID (command02)
             Process process = new Process();
             process.StartInfo.FileName = "QSaharaServer.exe";
-            process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 2 -c 3 -c 7";
+            process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 2 -c 3 -c 7"; //-x -i -k не работают
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.RedirectStandardOutput = true;
