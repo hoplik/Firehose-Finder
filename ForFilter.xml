@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-13T19:41:38">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-13T19:57:20">
 <ForFilter>
 <HWID>0009A0E1</HWID>
 <FullName>Snapdragon 450</FullName>
@@ -305,6 +305,15 @@
 <Model>PD1930CF_EX</Model>
 <AltName>1906_RU</AltName>
 <Proof>1</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>001060E1</HWID>
+<OEMID>016E</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>15E7119B24228246FC6A165557A02E8EB88148856FD138C83E947792D9AF2805</HASHID>
+<Trademark>vsmart</Trademark>
+<Model>Star</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0009A0E1</HWID>
