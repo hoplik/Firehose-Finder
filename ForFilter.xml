@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-12T20:51:42">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-13T19:41:38">
 <ForFilter>
 <HWID>0009A0E1</HWID>
 <FullName>Snapdragon 450</FullName>
@@ -127,6 +127,17 @@
 <Trademark>Foxda</Trademark>
 <Model>MFLogin3T</Model>
 <AltName>MFLogin3T</AltName>
+<Proof>1</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>000910E1</HWID>
+<FullName>Snapdragon 670</FullName>
+<OEMID>0042</OEMID>
+<MODELID>0006</MODELID>
+<HASHID>778B0AEF202BCB95109AE2D12B498D333413DC123CD723C02D8D31E795DA8D81</HASHID>
+<Trademark>Google</Trademark>
+<Model>Pixel 3a</Model>
+<AltName>sargo</AltName>
 <Proof>1</Proof>
 </ForFilter>
 <ForFilter>
@@ -238,8 +249,8 @@
 <MODELID>0000</MODELID>
 <HASHID>2201BBA0E6233F9BEDE802D8B87560CD0E9727D26E313F4B9ABC2681C2A34A96</HASHID>
 <Trademark>Motorola</Trademark>
-<Model>MotoE2</Model>
-<AltName>otus_reteu_ds</AltName>
+<Model>otus_reteu_ds</Model>
+<AltName>MotoE2</AltName>
 <Proof>1</Proof>
 </ForFilter>
 <ForFilter>
@@ -302,8 +313,8 @@
 <MODELID>0000</MODELID>
 <HASHID>15E7119B24228246FC6A165557A02E8EB88148856FD138C83E947792D9AF2805</HASHID>
 <Trademark>vsmart</Trademark>
-<Model>Joy 2+</Model>
-<AltName>V420A_open</AltName>
+<Model>V420A_open</Model>
+<AltName>Joy 2+</AltName>
 <Proof>1</Proof>
 </ForFilter>
 <ForFilter>
