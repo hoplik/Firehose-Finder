@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-13T19:57:20">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-14T19:32:15">
 <ForFilter>
 <HWID>0009A0E1</HWID>
 <FullName>Snapdragon 450</FullName>
@@ -105,6 +105,17 @@
 <HASHID>FBD4DE360136046BBF581DC5EFF178E1F716188E6834DA714E485695230D00F3</HASHID>
 <Trademark>ASUS</Trademark>
 <AltName>ZB555KL</AltName>
+<Proof>1</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Snapdragon 425</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>M653</Model>
+<AltName>WW_Phone (ChinaMobile A3s)</AltName>
 <Proof>1</Proof>
 </ForFilter>
 <ForFilter>
@@ -380,6 +391,17 @@
 <Model>Redmi 3s</Model>
 <AltName>land</AltName>
 <Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>0006B0E1</HWID>
+<FullName>Snapdragon 435</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 4x</Model>
+<AltName>santoni</AltName>
+<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BA0E1</HWID>
