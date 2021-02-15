@@ -690,8 +690,8 @@ namespace FirehoseFinder
             textBox_modelid.Text = dataGridView_collection["MODELID", sel_row].Value.ToString();
             textBox_oemhash.Text = dataGridView_collection["HASHID", sel_row].Value.ToString();
             label_tm.Text = dataGridView_collection["Trademark", sel_row].Value.ToString();
-            label_altname.Text = dataGridView_collection["Model", sel_row].Value.ToString();
-            label_model.Text = dataGridView_collection["AltName", sel_row].Value.ToString();
+            label_model.Text = dataGridView_collection["Model", sel_row].Value.ToString();
+            label_altname.Text = dataGridView_collection["AltName", sel_row].Value.ToString();
             tabControl1.SelectedTab = tabPage_firehose;
         }
 

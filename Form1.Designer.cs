@@ -76,6 +76,7 @@
             this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Comp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox_tm_model = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.radioButton_adb_reset = new System.Windows.Forms.RadioButton();
             this.radioButton_man_reset = new System.Windows.Forms.RadioButton();
@@ -86,7 +87,6 @@
             this.label_altname = new System.Windows.Forms.Label();
             this.label_model = new System.Windows.Forms.Label();
             this.label_tm = new System.Windows.Forms.Label();
-            this.label_tm_model = new System.Windows.Forms.Label();
             this.label_SW_Ver = new System.Windows.Forms.Label();
             this.label_swid = new System.Windows.Forms.Label();
             this.label_hwid = new System.Windows.Forms.Label();
@@ -140,6 +140,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_final)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox_tm_model.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.statusStrip_firehose.SuspendLayout();
             this.tabPage_phone.SuspendLayout();
@@ -555,15 +556,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.groupBox_tm_model);
             this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.checkBox_send);
             this.panel1.Controls.Add(this.label_log);
             this.panel1.Controls.Add(this.checkBox_Log);
             this.panel1.Controls.Add(this.button_findIDs);
-            this.panel1.Controls.Add(this.label_altname);
-            this.panel1.Controls.Add(this.label_model);
-            this.panel1.Controls.Add(this.label_tm);
-            this.panel1.Controls.Add(this.label_tm_model);
             this.panel1.Controls.Add(this.label_SW_Ver);
             this.panel1.Controls.Add(this.label_swid);
             this.panel1.Controls.Add(this.label_hwid);
@@ -581,6 +579,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1355, 149);
             this.panel1.TabIndex = 17;
+            // 
+            // groupBox_tm_model
+            // 
+            this.groupBox_tm_model.Controls.Add(this.label_model);
+            this.groupBox_tm_model.Controls.Add(this.label_altname);
+            this.groupBox_tm_model.Controls.Add(this.label_tm);
+            this.groupBox_tm_model.Location = new System.Drawing.Point(409, 4);
+            this.groupBox_tm_model.Name = "groupBox_tm_model";
+            this.groupBox_tm_model.Size = new System.Drawing.Size(647, 52);
+            this.groupBox_tm_model.TabIndex = 30;
+            this.groupBox_tm_model.TabStop = false;
+            this.groupBox_tm_model.Text = "Для устройства";
             // 
             // groupBox4
             // 
@@ -659,7 +669,7 @@
             // label_altname
             // 
             this.label_altname.AutoSize = true;
-            this.label_altname.Location = new System.Drawing.Point(600, 14);
+            this.label_altname.Location = new System.Drawing.Point(382, 21);
             this.label_altname.Name = "label_altname";
             this.label_altname.Size = new System.Drawing.Size(23, 17);
             this.label_altname.TabIndex = 23;
@@ -668,7 +678,7 @@
             // label_model
             // 
             this.label_model.AutoSize = true;
-            this.label_model.Location = new System.Drawing.Point(680, 14);
+            this.label_model.Location = new System.Drawing.Point(178, 24);
             this.label_model.Name = "label_model";
             this.label_model.Size = new System.Drawing.Size(23, 17);
             this.label_model.TabIndex = 22;
@@ -677,25 +687,16 @@
             // label_tm
             // 
             this.label_tm.AutoSize = true;
-            this.label_tm.Location = new System.Drawing.Point(518, 14);
+            this.label_tm.Location = new System.Drawing.Point(6, 21);
             this.label_tm.Name = "label_tm";
             this.label_tm.Size = new System.Drawing.Size(23, 17);
             this.label_tm.TabIndex = 21;
             this.label_tm.Text = "---";
             // 
-            // label_tm_model
-            // 
-            this.label_tm_model.AutoSize = true;
-            this.label_tm_model.Location = new System.Drawing.Point(395, 14);
-            this.label_tm_model.Name = "label_tm_model";
-            this.label_tm_model.Size = new System.Drawing.Size(117, 17);
-            this.label_tm_model.TabIndex = 20;
-            this.label_tm_model.Text = "Для устройства:";
-            // 
             // label_SW_Ver
             // 
             this.label_SW_Ver.AutoSize = true;
-            this.label_SW_Ver.Location = new System.Drawing.Point(978, 43);
+            this.label_SW_Ver.Location = new System.Drawing.Point(984, 64);
             this.label_SW_Ver.Name = "label_SW_Ver";
             this.label_SW_Ver.Size = new System.Drawing.Size(72, 17);
             this.label_SW_Ver.TabIndex = 19;
@@ -704,7 +705,7 @@
             // label_swid
             // 
             this.label_swid.AutoSize = true;
-            this.label_swid.Location = new System.Drawing.Point(869, 43);
+            this.label_swid.Location = new System.Drawing.Point(875, 64);
             this.label_swid.Name = "label_swid";
             this.label_swid.Size = new System.Drawing.Size(99, 17);
             this.label_swid.TabIndex = 18;
@@ -713,7 +714,7 @@
             // label_hwid
             // 
             this.label_hwid.AutoSize = true;
-            this.label_hwid.Location = new System.Drawing.Point(394, 43);
+            this.label_hwid.Location = new System.Drawing.Point(400, 64);
             this.label_hwid.Name = "label_hwid";
             this.label_hwid.Size = new System.Drawing.Size(56, 17);
             this.label_hwid.TabIndex = 1;
@@ -735,7 +736,7 @@
             // 
             this.textBox_oemid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_oemid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_oemid.Location = new System.Drawing.Point(657, 40);
+            this.textBox_oemid.Location = new System.Drawing.Point(663, 61);
             this.textBox_oemid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_oemid.MaxLength = 4;
             this.textBox_oemid.Name = "textBox_oemid";
@@ -745,7 +746,7 @@
             // label_modelid
             // 
             this.label_modelid.AutoSize = true;
-            this.label_modelid.Location = new System.Drawing.Point(713, 43);
+            this.label_modelid.Location = new System.Drawing.Point(719, 64);
             this.label_modelid.Name = "label_modelid";
             this.label_modelid.Size = new System.Drawing.Size(78, 17);
             this.label_modelid.TabIndex = 3;
@@ -755,7 +756,7 @@
             // 
             this.textBox_hwid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_hwid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_hwid.Location = new System.Drawing.Point(478, 40);
+            this.textBox_hwid.Location = new System.Drawing.Point(484, 61);
             this.textBox_hwid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_hwid.MaxLength = 8;
             this.textBox_hwid.Name = "textBox_hwid";
@@ -765,7 +766,7 @@
             // label_oemid
             // 
             this.label_oemid.AutoSize = true;
-            this.label_oemid.Location = new System.Drawing.Point(581, 43);
+            this.label_oemid.Location = new System.Drawing.Point(587, 64);
             this.label_oemid.Name = "label_oemid";
             this.label_oemid.Size = new System.Drawing.Size(60, 17);
             this.label_oemid.TabIndex = 5;
@@ -786,20 +787,20 @@
             // 
             this.textBox_oemhash.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_oemhash.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_oemhash.Location = new System.Drawing.Point(512, 77);
+            this.textBox_oemhash.Location = new System.Drawing.Point(512, 97);
             this.textBox_oemhash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_oemhash.MaxLength = 96;
             this.textBox_oemhash.Multiline = true;
             this.textBox_oemhash.Name = "textBox_oemhash";
             this.textBox_oemhash.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_oemhash.Size = new System.Drawing.Size(545, 61);
+            this.textBox_oemhash.Size = new System.Drawing.Size(545, 41);
             this.textBox_oemhash.TabIndex = 6;
             this.textBox_oemhash.TextChanged += new System.EventHandler(this.TextBox_oemhash_TextChanged);
             // 
             // label_oemhash
             // 
             this.label_oemhash.AutoSize = true;
-            this.label_oemhash.Location = new System.Drawing.Point(395, 79);
+            this.label_oemhash.Location = new System.Drawing.Point(395, 97);
             this.label_oemhash.Name = "label_oemhash";
             this.label_oemhash.Size = new System.Drawing.Size(111, 17);
             this.label_oemhash.TabIndex = 7;
@@ -809,7 +810,7 @@
             // 
             this.textBox_modelid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_modelid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_modelid.Location = new System.Drawing.Point(810, 40);
+            this.textBox_modelid.Location = new System.Drawing.Point(816, 61);
             this.textBox_modelid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_modelid.MaxLength = 4;
             this.textBox_modelid.Name = "textBox_modelid";
@@ -855,7 +856,7 @@
             this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
             this.tabPage_phone.Name = "tabPage_phone";
             this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_phone.Size = new System.Drawing.Size(1361, 545);
+            this.tabPage_phone.Size = new System.Drawing.Size(1361, 547);
             this.tabPage_phone.TabIndex = 2;
             this.tabPage_phone.Text = "Работа с устройством";
             this.tabPage_phone.UseVisualStyleBackColor = true;
@@ -874,7 +875,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.listView_comport);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(481, 133);
+            this.groupBox2.Location = new System.Drawing.Point(481, 135);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(877, 409);
             this.groupBox2.TabIndex = 1;
@@ -1111,7 +1112,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(478, 539);
+            this.groupBox1.Size = new System.Drawing.Size(478, 541);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Terminal";
@@ -1123,7 +1124,7 @@
             this.textBox_ADB.Multiline = true;
             this.textBox_ADB.Name = "textBox_ADB";
             this.textBox_ADB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_ADB.Size = new System.Drawing.Size(472, 518);
+            this.textBox_ADB.Size = new System.Drawing.Size(472, 520);
             this.textBox_ADB.TabIndex = 1;
             // 
             // tabControl1
@@ -1173,6 +1174,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_final)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox_tm_model.ResumeLayout(false);
+            this.groupBox_tm_model.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.statusStrip_firehose.ResumeLayout(false);
@@ -1222,7 +1225,6 @@
         private System.Windows.Forms.Label label_log;
         private System.Windows.Forms.CheckBox checkBox_Log;
         private System.Windows.Forms.Button button_findIDs;
-        private System.Windows.Forms.Label label_tm_model;
         private System.Windows.Forms.Label label_SW_Ver;
         private System.Windows.Forms.Label label_swid;
         private System.Windows.Forms.Label label_hwid;
@@ -1292,6 +1294,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Full;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_SW_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Comp;
+        private System.Windows.Forms.GroupBox groupBox_tm_model;
     }
 }
 
