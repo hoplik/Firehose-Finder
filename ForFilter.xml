@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-16T11:57:59">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-16T16:14:52">
 <ForFilter>
 <HWID>0009A0E1</HWID>
 <FullName>Snapdragon 450</FullName>
@@ -263,6 +263,17 @@
 <HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
 <Trademark>LG</Trademark>
 <Model>V30</Model>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Snapdragon 210</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Micromax</Trademark>
+<Model>Q4202</Model>
+<AltName>Bolt Warrior 2</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
