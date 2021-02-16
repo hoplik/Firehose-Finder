@@ -661,7 +661,7 @@ namespace FirehoseFinder
                 Check_Unread_Files(); //Проверяем, не осталось ли необработанных файлов
             }
         }
-        
+
         /// <summary>
         /// При вводе хеша считаем количество символов
         /// </summary>
@@ -1084,7 +1084,7 @@ namespace FirehoseFinder
                     }
                 }
             }
-            string logstr = textBox_hwid.Text + textBox_oemid.Text + textBox_modelid.Text + "<>" + textBox_oemhash.Text + "<>" + label_SW_Ver.Text + "<>" + label_tm.Text + "<>" + label_model.Text + "<>" + label_altname.Text;
+            string logstr = label_tm.Text + "<>" + label_model.Text + "<>" + label_altname.Text + Environment.NewLine + textBox_hwid.Text + textBox_oemid.Text + textBox_modelid.Text + "<>" + textBox_oemhash.Text + "<>" + label_SW_Ver.Text;
             if (checkBox_Log.Checked)
             {
                 try
@@ -1128,10 +1128,10 @@ namespace FirehoseFinder
                     }
                 }
                 //Исправить/добавить название/модель если 1 совпадает, а 2 нет
-                BotSendMes("Пожалуйста, добавьте или исправьте в Справочнике название/модель устройства" + Environment.NewLine + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                BotSendMes("Модель >" + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
             }
             //Устройства нет, надо добавить в автосообщение
-            else BotSendMes("Пожалуйста, добавьте в Справочник устройство" + Environment.NewLine + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            else BotSendMes("Идентификаторы >" + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
         }
 
         /// <summary>

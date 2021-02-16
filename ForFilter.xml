@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-15T20:28:17">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-16T11:57:59">
 <ForFilter>
 <HWID>0009A0E1</HWID>
 <FullName>Snapdragon 450</FullName>
@@ -86,7 +86,7 @@
 <Trademark>AGM</Trademark>
 <Model>AGM A9</Model>
 <AltName>T61IN</AltName>
-<Proof>1</Proof>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000A50E1</HWID>
@@ -212,6 +212,16 @@
 <Model>BKK-L21</Model>
 <AltName>BKK-L21RU</AltName>
 <Proof>1</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>0090B0E1</HWID>
+<FullName>Snapdragon 615</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>MediaPad T2 10.0 Pro</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000CC0E1</HWID>
