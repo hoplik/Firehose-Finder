@@ -76,7 +76,18 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-16T16:14:52">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-17T22:34:55">
+<ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Snapdragon 210</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>AGM</Trademark>
+<Model>A8_mini</Model>
+<AltName>A8_mini</AltName>
+<Proof>1</Proof>
+</ForFilter>
 <ForFilter>
 <HWID>0009A0E1</HWID>
 <FullName>Snapdragon 450</FullName>
@@ -86,7 +97,7 @@
 <Trademark>AGM</Trademark>
 <Model>AGM A9</Model>
 <AltName>T61IN</AltName>
-<Proof>0</Proof>
+<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000A50E1</HWID>
@@ -242,6 +253,17 @@
 <Trademark>LG</Trademark>
 <Model>G3</Model>
 <AltName>D855</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Snapdragon 820</FullName>
+<OEMID>0031</OEMID>
+<MODELID>026C</MODELID>
+<HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
+<Trademark>LG</Trademark>
+<Model>H918</Model>
+<AltName>v20</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
