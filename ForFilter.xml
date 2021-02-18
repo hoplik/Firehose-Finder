@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-17T22:34:55">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-18T22:13:14">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -339,6 +339,17 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>000510E1</HWID>
+<FullName>Snapdragon 2100</FullName>
+<OEMID>0004</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>88FE65873D77A0C1C80475D54BFCABC02F291BE27CF0D1F77406BE28B107C33B</HASHID>
+<Trademark>nubia</Trademark>
+<Model>SW1002</Model>
+<AltName>SW1002</AltName>
+<Proof>1</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>0013F0E1</HWID>
 <OEMID>0051</OEMID>
 <MODELID>5198</MODELID>
@@ -475,6 +486,17 @@
 <Model>Redmi 4x</Model>
 <AltName>santoni</AltName>
 <Proof>1</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>0009A0E1</HWID>
+<FullName>Snapdragon 450</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 5</Model>
+<AltName>rosy</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BA0E1</HWID>
