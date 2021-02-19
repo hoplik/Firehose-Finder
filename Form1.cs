@@ -603,17 +603,20 @@ namespace FirehoseFinder
             KeyValuePair<string, long> FileToRead = (KeyValuePair<string, long>)e.Argument;
             int len = Convert.ToInt32(FileToRead.Value);
             StringBuilder dumptext = new StringBuilder(len);
-            byte[] chunk = new byte[len];
-            using (var stream = File.OpenRead(FileToRead.Key))
+            if (len > 4)
             {
-                int byteschunk = stream.Read(chunk, 0, 4);
-                for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, string.Format("{0:X2}", (int)chunk[i]));
-                if (dumptext.ToString().Equals("D1DC4B84") || dumptext.ToString().StartsWith("7F454C4"))
+                byte[] chunk = new byte[len];
+                using (var stream = File.OpenRead(FileToRead.Key))
                 {
-                    dumptext.Clear();
-                    stream.Position = 0;
-                    byteschunk = stream.Read(chunk, 0, len);
+                    int byteschunk = stream.Read(chunk, 0, 4);
                     for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, string.Format("{0:X2}", (int)chunk[i]));
+                    if (dumptext.ToString().Equals("D1DC4B84") || dumptext.ToString().StartsWith("7F454C4"))
+                    {
+                        dumptext.Clear();
+                        stream.Position = 0;
+                        byteschunk = stream.Read(chunk, 0, len);
+                        for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, string.Format("{0:X2}", (int)chunk[i]));
+                    }
                 }
             }
             e.Result = dumptext.ToString();
@@ -632,21 +635,24 @@ namespace FirehoseFinder
                 string dumpfile = e.Result.ToString();
                 byte curfilerating = 0;
                 int Currnum = dataGridView_final.Rows.Count - 1; //Номер последней, "пустой" строки грида
-                switch (dumpfile.Substring(0, 8))
+                if (dumpfile.Length > 8)
                 {
-                    case "7F454C46": //ELF
-                        curfilerating++;
-                        break;
-                    case "7F454C45": //не совсем ELF
-                        curfilerating++;
-                        dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.PaleVioletRed;
-                        dataGridView_final["Column_Name", Currnum].ToolTipText = "Файл не является ELF!";
-                        break;
-                    case "D1DC4B84": //Старый программер
-                        curfilerating++;
-                        break;
-                    default: //совсем не ELF
-                        break;
+                    switch (dumpfile.Substring(0, 8))
+                    {
+                        case "7F454C46": //ELF
+                            curfilerating++;
+                            break;
+                        case "7F454C45": //не совсем ELF
+                            curfilerating++;
+                            dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.PaleVioletRed;
+                            dataGridView_final["Column_Name", Currnum].ToolTipText = "Файл не является ELF!";
+                            break;
+                        case "D1DC4B84": //Старый программер
+                            curfilerating++;
+                            break;
+                        default: //совсем не ELF
+                            break;
+                    }
                 }
                 if (curfilerating != 0) //Увеличиваем рейтинг совпадениями поиска файла
                 {
