@@ -399,28 +399,29 @@ namespace FirehoseFinder
                 process1.Close();
                 fh_command_args.Append(serialPort1.PortName);
                 if (comboBox_mem_type.SelectedIndex == (int)Guide.MEM_TYPE.eMMC) fh_command_args.Append(" --memoryname=emmc");
-                if (checkBox_reset.Checked) fh_command_args.Append(" --reset");
+                if (checkBox_reset.Checked) fh_command_args.Append(" --noprompt --reset");
                 if (radioButton_shortlog.Checked) fh_command_args.Append(" --loglevel=1");
                 if (radioButton_fulllog.Checked) fh_command_args.Append(" --loglevel=2");
-                fh_command_args.Append(" --noprompt");// --dontsorttags - выдаёт предупреждение!
                 switch (comboBox_fh_command.SelectedIndex)
                 {
                     case 0:
-                        Process process2 = new Process();
-                        process2.StartInfo.UseShellExecute = false;
-                        process2.StartInfo.RedirectStandardOutput = true;
-                        process2.StartInfo.CreateNoWindow = true;
-                        process2.StartInfo.FileName = "fh_loader.exe";
-                        process2.StartInfo.Arguments = fh_command_args.ToString();
-                        process2.Start();
-                        StreamReader reader2 = process2.StandardOutput;
-                        textBox_ADB.AppendText(reader2.ReadToEnd());
-                        process2.WaitForExit();
-                        process2.Close();
+                        fh_command_args.Append(" --getstorageinfo=0");
                         break;
                     default:
+                        fh_command_args.Append(" --showpercentagecomplete");// --dontsorttags - выдаёт предупреждение!
                         break;
                 }
+                Process process2 = new Process();
+                process2.StartInfo.UseShellExecute = false;
+                process2.StartInfo.RedirectStandardOutput = true;
+                process2.StartInfo.CreateNoWindow = true;
+                process2.StartInfo.FileName = "fh_loader.exe";
+                process2.StartInfo.Arguments = fh_command_args.ToString();
+                process2.Start();
+                StreamReader reader2 = process2.StandardOutput;
+                textBox_ADB.AppendText(reader2.ReadToEnd());
+                process2.WaitForExit();
+                process2.Close();
             }
             catch (Exception ex)
             {
