@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-18T22:13:14">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-20T21:16:40">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -128,6 +128,17 @@
 <Trademark>ASUS</Trademark>
 <Model>ZB555KL</Model>
 <Proof>1</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Snapdragon 660</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>54736AEBEAAF4167A56D97D6D0C5F52FA3FCE66E28B2B377B52EDF6E53490B65</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZB631KL</Model>
+<AltName>max pro m2</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -381,6 +392,17 @@
 <Proof>1</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Snapdragon 210</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Tplink</Trademark>
+<Model>C5L</Model>
+<AltName>lineage_c5l</AltName>
+<Proof>1</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>000BF0E1</HWID>
 <FullName>Snapdragon 439</FullName>
 <OEMID>0000</OEMID>
@@ -453,6 +475,17 @@
 <Model>Mi A3</Model>
 <AltName>laurel_sprout</AltName>
 <Proof>1</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Snapdragon 625</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>MiMax 2</Model>
+<AltName>HIDROGEN</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
