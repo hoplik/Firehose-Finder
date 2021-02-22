@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfhf));
             this.dataSet1 = new System.Data.DataSet();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
@@ -105,6 +105,8 @@
             this.toolStripStatusLabel_vol = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabPage_phone = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox_lun = new System.Windows.Forms.GroupBox();
+            this.textBox_lun = new System.Windows.Forms.TextBox();
             this.groupBox_logs = new System.Windows.Forms.GroupBox();
             this.radioButton_fulllog = new System.Windows.Forms.RadioButton();
             this.radioButton_shortlog = new System.Windows.Forms.RadioButton();
@@ -145,6 +147,7 @@
             this.statusStrip_firehose.SuspendLayout();
             this.tabPage_phone.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox_lun.SuspendLayout();
             this.groupBox_logs.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -289,7 +292,7 @@
             this.tabPage_collection.Controls.Add(this.bindingNavigator_collection);
             this.tabPage_collection.Location = new System.Drawing.Point(4, 25);
             this.tabPage_collection.Name = "tabPage_collection";
-            this.tabPage_collection.Size = new System.Drawing.Size(1361, 545);
+            this.tabPage_collection.Size = new System.Drawing.Size(1361, 547);
             this.tabPage_collection.TabIndex = 4;
             this.tabPage_collection.Text = "Справочник устройств";
             this.tabPage_collection.UseVisualStyleBackColor = true;
@@ -301,23 +304,23 @@
             this.dataGridView_collection.AllowUserToOrderColumns = true;
             this.dataGridView_collection.AllowUserToResizeRows = false;
             this.dataGridView_collection.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_collection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_collection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView_collection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_collection.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_collection.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView_collection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_collection.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_collection.MultiSelect = false;
@@ -331,7 +334,7 @@
             this.dataGridView_collection.ShowCellToolTips = false;
             this.dataGridView_collection.ShowEditingIcon = false;
             this.dataGridView_collection.ShowRowErrors = false;
-            this.dataGridView_collection.Size = new System.Drawing.Size(1361, 518);
+            this.dataGridView_collection.Size = new System.Drawing.Size(1361, 520);
             this.dataGridView_collection.TabIndex = 2;
             this.dataGridView_collection.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_collection_CellContentDoubleClick);
             // 
@@ -353,7 +356,7 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.toolStripTextBox_find});
-            this.bindingNavigator_collection.Location = new System.Drawing.Point(0, 518);
+            this.bindingNavigator_collection.Location = new System.Drawing.Point(0, 520);
             this.bindingNavigator_collection.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator_collection.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator_collection.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -450,7 +453,7 @@
             this.tabPage_firehose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage_firehose.Name = "tabPage_firehose";
             this.tabPage_firehose.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage_firehose.Size = new System.Drawing.Size(1361, 545);
+            this.tabPage_firehose.Size = new System.Drawing.Size(1361, 547);
             this.tabPage_firehose.TabIndex = 0;
             this.tabPage_firehose.Text = "Работа с файлами";
             this.tabPage_firehose.UseVisualStyleBackColor = true;
@@ -462,7 +465,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 151);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1355, 362);
+            this.panel2.Size = new System.Drawing.Size(1355, 364);
             this.panel2.TabIndex = 18;
             // 
             // textBox_main_term
@@ -472,7 +475,7 @@
             this.textBox_main_term.Multiline = true;
             this.textBox_main_term.Name = "textBox_main_term";
             this.textBox_main_term.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_main_term.Size = new System.Drawing.Size(409, 362);
+            this.textBox_main_term.Size = new System.Drawing.Size(409, 364);
             this.textBox_main_term.TabIndex = 16;
             // 
             // dataGridView_final
@@ -498,7 +501,7 @@
             this.dataGridView_final.RowHeadersWidth = 51;
             this.dataGridView_final.RowTemplate.Height = 24;
             this.dataGridView_final.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_final.Size = new System.Drawing.Size(946, 362);
+            this.dataGridView_final.Size = new System.Drawing.Size(946, 364);
             this.dataGridView_final.TabIndex = 15;
             this.dataGridView_final.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellClick);
             this.dataGridView_final.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellDoubleClick);
@@ -824,7 +827,7 @@
             this.toolStripStatusLabel_filescompleted,
             this.toolStripProgressBar_filescompleted,
             this.toolStripStatusLabel_vol});
-            this.statusStrip_firehose.Location = new System.Drawing.Point(3, 513);
+            this.statusStrip_firehose.Location = new System.Drawing.Point(3, 515);
             this.statusStrip_firehose.Name = "statusStrip_firehose";
             this.statusStrip_firehose.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
             this.statusStrip_firehose.Size = new System.Drawing.Size(1355, 30);
@@ -863,6 +866,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.groupBox_lun);
             this.groupBox2.Controls.Add(this.groupBox_logs);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.comboBox_mem_type);
@@ -882,13 +886,36 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sahara";
             // 
+            // groupBox_lun
+            // 
+            this.groupBox_lun.Controls.Add(this.textBox_lun);
+            this.groupBox_lun.Location = new System.Drawing.Point(413, 348);
+            this.groupBox_lun.Name = "groupBox_lun";
+            this.groupBox_lun.Size = new System.Drawing.Size(68, 55);
+            this.groupBox_lun.TabIndex = 11;
+            this.groupBox_lun.TabStop = false;
+            this.groupBox_lun.Text = "LUN";
+            // 
+            // textBox_lun
+            // 
+            this.textBox_lun.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_lun.Enabled = false;
+            this.textBox_lun.Location = new System.Drawing.Point(3, 18);
+            this.textBox_lun.MaxLength = 2;
+            this.textBox_lun.Name = "textBox_lun";
+            this.textBox_lun.Size = new System.Drawing.Size(62, 22);
+            this.textBox_lun.TabIndex = 0;
+            this.textBox_lun.Text = "0";
+            this.textBox_lun.TextChanged += new System.EventHandler(this.TextBox_lun_TextChanged);
+            this.textBox_lun.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_lun_KeyPress);
+            // 
             // groupBox_logs
             // 
             this.groupBox_logs.Controls.Add(this.radioButton_fulllog);
             this.groupBox_logs.Controls.Add(this.radioButton_shortlog);
-            this.groupBox_logs.Location = new System.Drawing.Point(487, 345);
+            this.groupBox_logs.Location = new System.Drawing.Point(487, 348);
             this.groupBox_logs.Name = "groupBox_logs";
-            this.groupBox_logs.Size = new System.Drawing.Size(353, 58);
+            this.groupBox_logs.Size = new System.Drawing.Size(353, 55);
             this.groupBox_logs.TabIndex = 10;
             this.groupBox_logs.TabStop = false;
             this.groupBox_logs.Text = "Вывод логов в терминал";
@@ -944,7 +971,7 @@
             "Получить информацию о запоминающем устройстве (storage_info)"});
             this.comboBox_fh_command.Location = new System.Drawing.Point(7, 314);
             this.comboBox_fh_command.Name = "comboBox_fh_command";
-            this.comboBox_fh_command.Size = new System.Drawing.Size(462, 24);
+            this.comboBox_fh_command.Size = new System.Drawing.Size(474, 24);
             this.comboBox_fh_command.TabIndex = 7;
             this.comboBox_fh_command.Text = "Выберите команду";
             this.comboBox_fh_command.SelectedIndexChanged += new System.EventHandler(this.ComboBox_fh_command_SelectedIndexChanged);
@@ -956,9 +983,9 @@
             this.checkBox_reset.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_reset.Location = new System.Drawing.Point(7, 344);
             this.checkBox_reset.Name = "checkBox_reset";
-            this.checkBox_reset.Size = new System.Drawing.Size(334, 38);
+            this.checkBox_reset.Size = new System.Drawing.Size(377, 38);
             this.checkBox_reset.TabIndex = 6;
-            this.checkBox_reset.Text = "Перегрузить устройство в нормальный режим\r\nпосле выполнения запроса";
+            this.checkBox_reset.Text = "Перегрузить устройство в нормальный режим после\r\nвыполнения запроса";
             this.checkBox_reset.UseVisualStyleBackColor = true;
             // 
             // label4
@@ -1182,6 +1209,8 @@
             this.tabPage_phone.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox_lun.ResumeLayout(false);
+            this.groupBox_lun.PerformLayout();
             this.groupBox_logs.ResumeLayout(false);
             this.groupBox_logs.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -1294,6 +1323,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_SW_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Comp;
         private System.Windows.Forms.GroupBox groupBox_tm_model;
+        private System.Windows.Forms.GroupBox groupBox_lun;
+        private System.Windows.Forms.TextBox textBox_lun;
     }
 }
 

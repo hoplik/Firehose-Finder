@@ -20,6 +20,7 @@ namespace FirehoseFinder
         Func func = new Func(); // Подключили функции
         Guide guide = new Guide();
         bool waitSahara = false; //Ждём ли мы автоперезагрузку с получением ID Sahara
+        bool SaharaAlreadyLoaded = false; //Был ли успешно загружен протокол (чтоб не грузить повторно)
 
         /// <summary>
         /// Инициализация компонентов
@@ -346,6 +347,8 @@ namespace FirehoseFinder
             }
             else
             {
+                comboBox_fh_command.Enabled = false;
+                button_Sahara_CommandStart.Enabled = false;
                 button_Sahara_Ids.Enabled = false;
             }
         }
@@ -385,18 +388,20 @@ namespace FirehoseFinder
             sahara_command_args.Append(label_Sahara_fhf.Text);
             if (radioButton_shortlog.Checked) sahara_command_args.Append(" -v 0");
             if (radioButton_fulllog.Checked) sahara_command_args.Append(" -v 1");
-            {
-
-            }
+            textBox_lun.Enabled = false;
             try
             {
                 process1.StartInfo.FileName = "QSaharaServer.exe";
                 process1.StartInfo.Arguments = sahara_command_args.ToString();
-                process1.Start();
-                StreamReader reader1 = process1.StandardOutput;
-                textBox_ADB.AppendText(reader1.ReadToEnd());
-                process1.WaitForExit();
-                process1.Close();
+                if (!SaharaAlreadyLoaded)
+                {
+                    process1.Start();
+                    StreamReader reader1 = process1.StandardOutput;
+                    textBox_ADB.AppendText(reader1.ReadToEnd());
+                    process1.WaitForExit();
+                    process1.Close();
+                    SaharaAlreadyLoaded = true;
+                }
                 fh_command_args.Append(serialPort1.PortName);
                 if (comboBox_mem_type.SelectedIndex == (int)Guide.MEM_TYPE.eMMC) fh_command_args.Append(" --memoryname=emmc");
                 if (checkBox_reset.Checked) fh_command_args.Append(" --noprompt --reset");
@@ -405,7 +410,8 @@ namespace FirehoseFinder
                 switch (comboBox_fh_command.SelectedIndex)
                 {
                     case 0:
-                        fh_command_args.Append(" --getstorageinfo=0");
+
+                        fh_command_args.Append(" --getstorageinfo=" + textBox_lun.Text);
                         break;
                     default:
                         fh_command_args.Append(" --showpercentagecomplete");// --dontsorttags - выдаёт предупреждение!
@@ -436,6 +442,15 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void ComboBox_fh_command_SelectedIndexChanged(object sender, EventArgs e)
         {
+            switch (comboBox_fh_command.SelectedIndex)
+            {
+                case 0:
+                    textBox_lun.Enabled = true;
+                    break;
+                default:
+                    textBox_lun.Enabled = false;
+                    break;
+            }
             button_Sahara_CommandStart.Enabled = true;
         }
 
@@ -1163,5 +1178,16 @@ namespace FirehoseFinder
         }
 
         #endregion
+
+        private void TextBox_lun_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox_lun.Text)) textBox_lun.Text = "0";
+        }
+
+        private void TextBox_lun_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char LUN = e.KeyChar;
+            if (!Char.IsDigit(LUN) && LUN != 8 && LUN != 127) e.Handled = true;
+        }
     }
 }
