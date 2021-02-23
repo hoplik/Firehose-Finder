@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-22T19:37:42">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-23T19:53:15">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -257,6 +257,17 @@
 <Proof>1</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>009600E1</HWID>
+<FullName>Snapdragon 210</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Lenovo</Trademark>
+<Model>Vibe C</Model>
+<AltName>A2020</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>007B40E1</HWID>
 <FullName>Snapdragon 801</FullName>
 <OEMID>0031</OEMID>
@@ -390,6 +401,36 @@
 <Model>CPH2127</Model>
 <AltName>CPH2127RU</AltName>
 <Proof>1</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>0010A0E1</HWID>
+<FullName>Snapdragon 765</FullName>
+<OEMID>0051</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>92D86F650BDE72FE9B447AE32545F2B16FFEA572ACBC596970102A9C40420889BE4FAE7212D956EBE50A81D191FF5D6B</HASHID>
+<Trademark>Realme</Trademark>
+<Model>5</Model>
+<AltName>RMX1927</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>0005E0E1</HWID>
+<FullName>Snapdragon 835</FullName>
+<OEMID>0149</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>D6AB87BC95C893891BA2A3190C17BB95AEBC1081F7F81FDA93D477A1BB9EA5C1</HASHID>
+<Trademark>RED</Trademark>
+<Model>HydrogenONE</Model>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>009010E1</HWID>
+<FullName>Snapdragon 805</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>1738585D89D929FB7B6F9DF5A943C595F889A4EE0E36D046489D05AA54A7988E</HASHID>
+<Trademark>Samsung</Trademark>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
