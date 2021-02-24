@@ -69,7 +69,7 @@ namespace FirehoseFinder
             "Huawei",
             "Kyocera",
             "LeEco",
-            "Lenovo",
+            "LENOVO",
             "LG",
             "Meizu",
             "Micromax",

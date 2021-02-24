@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-23T19:53:15">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-24T21:00:25">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -251,9 +251,20 @@
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>0374637D23C4E2EEDE23DA5D60C1E7ABCD81CCC4CD641045F859B317650F47DF</HASHID>
-<Trademark>Lenovo</Trademark>
+<Trademark>LENOVO</Trademark>
 <Model>Lenovo L38041</Model>
 <AltName>K5 Pro</AltName>
+<Proof>1</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Snapdragon 200</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LENOVO</Trademark>
+<Model>Lenovo S580</Model>
+<AltName>S580</AltName>
 <Proof>1</Proof>
 </ForFilter>
 <ForFilter>
@@ -262,7 +273,7 @@
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
-<Trademark>Lenovo</Trademark>
+<Trademark>LENOVO</Trademark>
 <Model>Vibe C</Model>
 <AltName>A2020</AltName>
 <Proof>0</Proof>
@@ -590,8 +601,19 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi 7a</Model>
+<Model>Redmi 7A</Model>
 <AltName>pine</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>000BF0E1</HWID>
+<FullName>Snapdragon 439</FullName>
+<OEMID>0072</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 8A</Model>
+<AltName>olivelite</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
