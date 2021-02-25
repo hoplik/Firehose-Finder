@@ -73,6 +73,7 @@ namespace FirehoseFinder
             "LG",
             "Meizu",
             "Micromax",
+            "MOQI",
             "Motorola",
             "Nextbit",
             "Nexus",

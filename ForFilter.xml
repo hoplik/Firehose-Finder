@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-24T21:00:25">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-26T00:37:00">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -332,6 +332,17 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>000DB0E1</HWID>
+<FullName>Snapdragon 710</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>AFCA69D4235117E5BFC21467068B20DF85E0115D7413D5821883A6D244961581</HASHID>
+<Trademark>MOQI</Trademark>
+<Model>I7S</Model>
+<AltName>i7s</AltName>
+<Proof>1</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>007050E1</HWID>
 <FullName>Snapdragon 410</FullName>
 <OEMID>0028</OEMID>
@@ -441,6 +452,16 @@
 <MODELID>0000</MODELID>
 <HASHID>1738585D89D929FB7B6F9DF5A943C595F889A4EE0E36D046489D05AA54A7988E</HASHID>
 <Trademark>Samsung</Trademark>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>007070E1</HWID>
+<FullName>Snapdragon 410</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>DC7929EB7AB50E7EE0E88FF0E71AB9431D2CADE5FAD04DB6F276C12EC53909EF</HASHID>
+<Trademark>Samsung</Trademark>
+<Model>j500h</Model>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -670,6 +691,17 @@
 <Model>YD201</Model>
 <AltName>yotaphone2</AltName>
 <Proof>1</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Snapdragon 625</FullName>
+<OEMID>0004</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>404D181E75AF65A806B01DCF394B82B8A645FB0DE76E3C386FE42092D33500D6</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>NX551J</Model>
+<AltName>Nubia M2</AltName>
+<Proof>0</Proof>
 </ForFilter>
 </dataroot>
 </root>
