@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-26T00:37:00">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-02-27T20:29:42">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -236,6 +236,17 @@
 <Proof>1</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Snapdragon 410</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>G620S-L01</Model>
+<AltName>Ascend G620s</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>0090B0E1</HWID>
 <FullName>Snapdragon 615</FullName>
 <OEMID>0000</OEMID>
@@ -308,6 +319,17 @@
 <Trademark>LG</Trademark>
 <Model>L90</Model>
 <AltName>D410</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Snapdragon 425</FullName>
+<OEMID>0031</OEMID>
+<MODELID>0279</MODELID>
+<HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
+<Trademark>LG</Trademark>
+<Model>LM-X220MB</Model>
+<AltName>Aristo 3+ MetrPCS</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -561,6 +583,17 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>0008B0E1</HWID>
+<FullName>Snapdragon 845</FullName>
+<OEMID>0072</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Pocophone F1</Model>
+<AltName>beryllium</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>0090B0E1</HWID>
 <FullName>Snapdragon 615</FullName>
 <OEMID>0000</OEMID>
@@ -602,6 +635,17 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 5</Model>
 <AltName>rosy</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>000460E1</HWID>
+<FullName>Snapdragon 625</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 5 Plus</Model>
+<AltName>MEE7 vince</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -657,6 +701,17 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 5a</Model>
 <AltName>ugglite</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>000CC0E1</HWID>
+<FullName>Snapdragon 636</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 6 Pro</Model>
+<AltName>tulip</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
