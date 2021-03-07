@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-03-06T11:41:56">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-03-07T21:56:32">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -323,16 +323,6 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
-<HWID>007B40E1</HWID>
-<FullName>Snapdragon 801</FullName>
-<OEMID>0031</OEMID>
-<MODELID>0000</MODELID>
-<Trademark>LG</Trademark>
-<Model>G3</Model>
-<AltName>D855</AltName>
-<Proof>0</Proof>
-</ForFilter>
-<ForFilter>
 <HWID>009470E1</HWID>
 <FullName>Snapdragon 820</FullName>
 <OEMID>0031</OEMID>
@@ -404,15 +394,6 @@
 <MODELID>0000</MODELID>
 <HASHID>59B38969C8B392F173E8FA7081A1758317C14789245EA1332B2547D6FB530C33</HASHID>
 <Trademark>Motorola</Trademark>
-<Proof>0</Proof>
-</ForFilter>
-<ForFilter>
-<HWID>009010E1</HWID>
-<FullName>Snapdragon 805</FullName>
-<OEMID>0228</OEMID>
-<MODELID>0000</MODELID>
-<Trademark>Motorola</Trademark>
-<Model>Droid Turbo</Model>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -735,6 +716,17 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 8A</Model>
 <AltName>olivelite</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Snapdragon 425</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Go</Model>
+<AltName>tiare</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
