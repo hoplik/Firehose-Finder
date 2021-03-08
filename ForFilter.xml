@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-03-07T21:56:32">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-03-08T17:14:14">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -406,6 +406,16 @@
 <Model>MotoE2</Model>
 <AltName>otus_reteu_ds</AltName>
 <Proof>1</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>008050E1</HWID>
+<FullName>Snapdragon 400</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>831BE6B18E7006372069545885A80F786C33D064904732D39EFBE0EC7019B5D4</HASHID>
+<Trademark>Nokia</Trademark>
+<Model>RM-1075</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -739,6 +749,17 @@
 <Model>Redmi Note 3</Model>
 <AltName>aosp_kenzo</AltName>
 <Proof>1</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Snapdragon 660</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 3</Model>
+<AltName>jason</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
