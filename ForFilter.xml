@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-03-08T17:14:14">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-03-09T21:53:43">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -320,6 +320,16 @@
 <Trademark>LENOVO</Trademark>
 <Model>Vibe C</Model>
 <AltName>A2020</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Snapdragon 200</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LG</Trademark>
+<Model>D295</Model>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
