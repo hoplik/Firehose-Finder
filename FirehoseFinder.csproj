@@ -30,7 +30,9 @@
     <TargetCulture>ru</TargetCulture>
     <ProductName>Firehose-Finder</ProductName>
     <PublisherName>hoplik</PublisherName>
-    <MinimumRequiredVersion>3.0.2.3</MinimumRequiredVersion>
+    <MinimumRequiredVersion>3.0.2.4</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
     <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>3.0.2.4</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>

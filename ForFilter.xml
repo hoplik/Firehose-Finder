@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-03-09T21:53:43">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-03-11T15:37:31">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -225,6 +225,16 @@
 <Proof>1</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>0009A0E1</HWID>
+<FullName>Snapdragon 450</FullName>
+<OEMID>0015</OEMID>
+<MODELID>0065</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<AltName>Y7 2019</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>0004F0E1</HWID>
 <FullName>Snapdragon 430</FullName>
 <OEMID>0015</OEMID>
@@ -233,17 +243,6 @@
 <Trademark>Huawei</Trademark>
 <Model>AUM-L29</Model>
 <AltName>Honor 7A Pro</AltName>
-<Proof>0</Proof>
-</ForFilter>
-<ForFilter>
-<HWID>0006B0E1</HWID>
-<FullName>Snapdragon 435</FullName>
-<OEMID>0015</OEMID>
-<MODELID>0062</MODELID>
-<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
-<Trademark>Huawei</Trademark>
-<Model>BAH-I09</Model>
-<AltName>MediaPad M3 Lite 10</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -280,6 +279,17 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>0006B0E1</HWID>
+<FullName>Snapdragon 435</FullName>
+<OEMID>0015</OEMID>
+<MODELID>0062</MODELID>
+<HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>MediaPad M3 Lite 10</Model>
+<AltName>BAH-L09</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>0090B0E1</HWID>
 <FullName>Snapdragon 615</FullName>
 <OEMID>0000</OEMID>
@@ -287,7 +297,8 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Huawei</Trademark>
 <Model>MediaPad T2 10.0 Pro</Model>
-<Proof>0</Proof>
+<AltName>FDR-A01L</AltName>
+<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000CC0E1</HWID>
@@ -543,6 +554,17 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>000BE0E1</HWID>
+<FullName>Snapdragon 429</FullName>
+<OEMID>0020</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>4E55DB8B39C6792CD2F53BA96DE6E0D26B3C1020A659AD5F224497E9F2CFABAF</HASHID>
+<Trademark>Samsung</Trademark>
+<Model>Tab A 8.0</Model>
+<AltName>SM-T295</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
 <OEMID>0000</OEMID>
@@ -725,7 +747,7 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 7A</Model>
 <AltName>pine</AltName>
-<Proof>0</Proof>
+<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BF0E1</HWID>
