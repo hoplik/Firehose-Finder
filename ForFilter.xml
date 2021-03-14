@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-03-11T15:37:31">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-03-14T22:31:39">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -98,6 +98,16 @@
 <Model>AGM A9</Model>
 <AltName>T61IN</AltName>
 <Proof>1</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>0008B0E1</HWID>
+<FullName>Snapdragon 845</FullName>
+<OEMID>0043</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>BC4C2FAAF0C46B258B8B6A94543F3985741D41481B41241E32D24770871831EA22F330E82495886D29F9A2C56A752E39</HASHID>
+<Trademark>AGM</Trademark>
+<Model>AGM X3</Model>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000A50E1</HWID>
@@ -215,6 +225,17 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>009400E1</HWID>
+<FullName>Snapdragon 810</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>BA2102DA99C924058C758FA9F4250847C92CABDE17FDCEF01D4DAFF8DF5D6753</HASHID>
+<Trademark>HTC</Trademark>
+<Model>10 evo</Model>
+<AltName>Bolt</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>009180E1</HWID>
 <FullName>Snapdragon 400</FullName>
 <OEMID>0000</OEMID>
@@ -279,6 +300,17 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Snapdragon 200</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>G630-U20</Model>
+<AltName>Ascend G630</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>0006B0E1</HWID>
 <FullName>Snapdragon 435</FullName>
 <OEMID>0015</OEMID>
@@ -298,6 +330,17 @@
 <Trademark>Huawei</Trademark>
 <Model>MediaPad T2 10.0 Pro</Model>
 <AltName>FDR-A01L</AltName>
+<Proof>1</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Snapdragon 430</FullName>
+<OEMID>0000</OEMID>
+<MODELID>7A2A</MODELID>
+<HASHID>99C8C13E374C34D8F9AFB065EA4C733E6B1B21CBC5A78705F041EB24ACDD5FE5</HASHID>
+<Trademark>LENOVO</Trademark>
+<Model>Lenovo K53a48</Model>
+<AltName>karatep</AltName>
 <Proof>1</Proof>
 </ForFilter>
 <ForFilter>
@@ -629,6 +672,28 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>0005F0E1</HWID>
+<FullName>Snapdragon 821</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>355D47F912FEA0AF1F46C007C6DC22C43544FB9359E30AA7DB5F4734D18FBD74</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 5s</Model>
+<AltName>capricorn</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>000E60E1</HWID>
+<FullName>Snapdragon 730</FullName>
+<OEMID>0072</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 9T</Model>
+<AltName>davinci</AltName>
+<Proof>1</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>0008C0E1</HWID>
 <FullName>Snapdragon 660</FullName>
 <OEMID>0000</OEMID>
@@ -772,6 +837,17 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Snapdragon 660</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 3</Model>
+<AltName>jason</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>009B00E1</HWID>
 <FullName>Snapdragon 650</FullName>
 <OEMID>0000</OEMID>
@@ -783,14 +859,14 @@
 <Proof>1</Proof>
 </ForFilter>
 <ForFilter>
-<HWID>0008C0E1</HWID>
-<FullName>Snapdragon 660</FullName>
+<HWID>000CC0E1</HWID>
+<FullName>Snapdragon 636</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 3</Model>
-<AltName>jason</AltName>
+<Model>Redmi Note 5</Model>
+<AltName>whyred</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
