@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-03-21T17:38:39">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-03-23T09:58:42">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -264,6 +264,17 @@
 <HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
 <Trademark>Huawei</Trademark>
 <AltName>Y7 2019</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>000CC0E1</HWID>
+<FullName>Snapdragon 636</FullName>
+<OEMID>0015</OEMID>
+<MODELID>0066</MODELID>
+<HASHID>A1A5C29846C9881B7A6081EC218212B9B7EB1765EE8843798F16619D6FCD3FE0</HASHID>
+<Trademark>Huawei</Trademark>
+<Model>ARE-AL00B</Model>
+<AltName>Honor 8X Max</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
