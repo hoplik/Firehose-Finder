@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-03-23T09:58:42">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-03-28T14:50:26">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -366,6 +366,16 @@
 <Proof>1</Proof>
 </ForFilter>
 <ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Snapdragon 410</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LENOVO</Trademark>
+<Model>Lenovo A6000</Model>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
 <HWID>0004F0E1</HWID>
 <FullName>Snapdragon 430</FullName>
 <OEMID>0000</OEMID>
@@ -410,13 +420,14 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
-<HWID>008140E1</HWID>
-<FullName>Snapdragon 200</FullName>
+<HWID>008000E1</HWID>
+<FullName>Snapdragon 400</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>LG</Trademark>
-<Model>D295</Model>
+<Model>G3 S</Model>
+<AltName>D724</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -428,6 +439,17 @@
 <Trademark>LG</Trademark>
 <Model>H918TN</Model>
 <AltName>v20</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Snapdragon 200</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>LG</Trademark>
+<Model>L Fino</Model>
+<AltName>D295</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -623,10 +645,10 @@
 <FullName>Snapdragon 410</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>FD174CBC0E0DE00383238F5776FA35CD7CB7F64E9789C21C18AF09314FAC8B78</HASHID>
+<HASHID>CDAF79CC7593D50E0F27BC386A32E887BC46B0194E2A02254F06CFB25CEDC514</HASHID>
 <Trademark>Samsung</Trademark>
-<Model>Galaxy J5 (2016)</Model>
-<AltName>SM-J510FN</AltName>
+<Model>Galaxy J5</Model>
+<AltName>SM-J500FN</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -636,7 +658,19 @@
 <MODELID>0000</MODELID>
 <HASHID>DC7929EB7AB50E7EE0E88FF0E71AB9431D2CADE5FAD04DB6F276C12EC53909EF</HASHID>
 <Trademark>Samsung</Trademark>
-<Model>j500h</Model>
+<Model>Galaxy J5</Model>
+<AltName>SM-J500H</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Snapdragon 410</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>FD174CBC0E0DE00383238F5776FA35CD7CB7F64E9789C21C18AF09314FAC8B78</HASHID>
+<Trademark>Samsung</Trademark>
+<Model>Galaxy J5 (2016)</Model>
+<AltName>SM-J510FN</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
