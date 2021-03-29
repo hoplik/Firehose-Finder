@@ -20,7 +20,8 @@ namespace FirehoseFinder
         Func func = new Func(); // Подключили функции
         Guide guide = new Guide();
         bool waitSahara = false; //Ждём ли мы автоперезагрузку с получением ID Sahara
-        bool SaharaAlreadyLoaded = false; //Был ли успешно загружен протокол (чтоб не грузить повторно)
+        bool FHAlreadyLoaded = false; //Был ли успешно загружен программер (не надо грузить повторно)
+        bool NeedReset = false; //Требуется ли перезагрузка устройства после работы с Сахарой
 
         /// <summary>
         /// Инициализация компонентов
@@ -47,10 +48,11 @@ namespace FirehoseFinder
             {
                 switch (m.WParam.ToInt32())
                 {
-                    case 0x8000://новое usb подключено
+                    case 0x8000: //Новое usb подключено
+                        NeedReset = false;
                         CheckListPorts();
                         break;
-                    case 0x0007: // Любое изменение конфигурации оборудования
+                    case 0x0007: //Любое изменение конфигурации оборудования
                         CheckListPorts();
                         break;
                     default:
@@ -341,8 +343,8 @@ namespace FirehoseFinder
                 comboBox_fh_command.Enabled = true;
                 if (waitSahara)
                 {
-                    GetSaharaIDs();
                     button_Sahara_Ids.Enabled = false;
+                    GetSaharaIDs();
                 }
             }
             else
@@ -389,40 +391,54 @@ namespace FirehoseFinder
             if (radioButton_shortlog.Checked) sahara_command_args.Append(" -v 0");
             if (radioButton_fulllog.Checked) sahara_command_args.Append(" -v 1");
             textBox_lun.Enabled = false;
-            try
+            if (!FHAlreadyLoaded)
             {
+                if (NeedReset)
+                {
+                    MessageBox.Show("Для получения идентификаторов устройство должно быть переподключено!" + Environment.NewLine +
+                        "Пожалуйста, отключите устройство от компьютера, перезагрузите в аварийный режим (9008) и подключите повторно.", "Внимание!");
+                    return;
+                }
                 process1.StartInfo.FileName = "QSaharaServer.exe";
                 process1.StartInfo.Arguments = sahara_command_args.ToString();
-                if (!SaharaAlreadyLoaded)
+                try
                 {
                     process1.Start();
                     StreamReader reader1 = process1.StandardOutput;
                     textBox_ADB.AppendText(reader1.ReadToEnd());
                     process1.WaitForExit();
                     process1.Close();
-                    SaharaAlreadyLoaded = true;
+                    FHAlreadyLoaded = true;
+                    NeedReset = true;
                 }
-                fh_command_args.Append(serialPort1.PortName);
-                if (comboBox_mem_type.SelectedIndex == (int)Guide.MEM_TYPE.eMMC) fh_command_args.Append(" --memoryname=emmc");
-                if (checkBox_reset.Checked) fh_command_args.Append(" --noprompt --reset");
-                if (radioButton_shortlog.Checked) fh_command_args.Append(" --loglevel=1");
-                if (radioButton_fulllog.Checked) fh_command_args.Append(" --loglevel=2");
-                switch (comboBox_fh_command.SelectedIndex)
+                catch (Exception ex)
                 {
-                    case 0:
-
-                        fh_command_args.Append(" --getstorageinfo=" + textBox_lun.Text);
-                        break;
-                    default:
-                        fh_command_args.Append(" --showpercentagecomplete");// --dontsorttags - выдаёт предупреждение!
-                        break;
+                    MessageBox.Show(ex.Message);
                 }
-                Process process2 = new Process();
-                process2.StartInfo.UseShellExecute = false;
-                process2.StartInfo.RedirectStandardOutput = true;
-                process2.StartInfo.CreateNoWindow = true;
-                process2.StartInfo.FileName = "fh_loader.exe";
-                process2.StartInfo.Arguments = fh_command_args.ToString();
+            }
+            fh_command_args.Append(serialPort1.PortName);
+            if (comboBox_mem_type.SelectedIndex == (int)Guide.MEM_TYPE.eMMC) fh_command_args.Append(" --memoryname=emmc");
+            if (checkBox_reset.Checked) fh_command_args.Append(" --noprompt --reset");
+            if (radioButton_shortlog.Checked) fh_command_args.Append(" --loglevel=1");
+            if (radioButton_fulllog.Checked) fh_command_args.Append(" --loglevel=2");
+            switch (comboBox_fh_command.SelectedIndex)
+            {
+                case 0:
+
+                    fh_command_args.Append(" --getstorageinfo=" + textBox_lun.Text);
+                    break;
+                default:
+                    fh_command_args.Append(" --showpercentagecomplete");// --dontsorttags - выдаёт предупреждение!
+                    break;
+            }
+            Process process2 = new Process();
+            process2.StartInfo.UseShellExecute = false;
+            process2.StartInfo.RedirectStandardOutput = true;
+            process2.StartInfo.CreateNoWindow = true;
+            process2.StartInfo.FileName = "fh_loader.exe";
+            process2.StartInfo.Arguments = fh_command_args.ToString();
+            try
+            {
                 process2.Start();
                 StreamReader reader2 = process2.StandardOutput;
                 textBox_ADB.AppendText(reader2.ReadToEnd());
@@ -1057,20 +1073,35 @@ namespace FirehoseFinder
         /// </summary>
         private void GetSaharaIDs()
         {
+            waitSahara = false;
+            if (NeedReset)
+            {
+                MessageBox.Show("Для получения идентификаторов устройство должно быть переподключено!" + Environment.NewLine +
+                    "Пожалуйста, отключите устройство от компьютера, перезагрузите в аварийный режим (9008) и подключите повторно.", "Внимание!");
+                return;
+            }
             //Выполняем запрос HWID-OEMID (command02)
             Process process = new Process();
             process.StartInfo.FileName = "QSaharaServer.exe";
-            process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 2 -c 3 -c 7"; //-x -i -k не работают
+            process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 2 -c 3 -c 7";
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.RedirectStandardOutput = true;
-            process.Start();
-            StreamReader reader = process.StandardOutput;
-            string output = reader.ReadToEnd();
-            textBox_ADB.AppendText(output);
-            textBox_main_term.AppendText(output);
-            process.WaitForExit();
-            process.Close();
+            try
+            {
+                process.Start();
+                StreamReader reader = process.StandardOutput;
+                string output = reader.ReadToEnd();
+                textBox_ADB.AppendText(output);
+                textBox_main_term.AppendText(output);
+                process.WaitForExit();
+                process.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            NeedReset = true;
             //Обрабатываем запрос идентификаторов
             string HWOEMIDs = func.SaharaCommand2();
             if (HWOEMIDs.Length == 16)
@@ -1127,7 +1158,6 @@ namespace FirehoseFinder
                 }
                 else CheckIDs(logstr);
             }
-            waitSahara = false;
         }
 
         /// <summary>
@@ -1153,7 +1183,20 @@ namespace FirehoseFinder
                 BotSendMes("Модель >" + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
             }
             //Устройства нет, надо добавить в автосообщение
-            else BotSendMes("Идентификаторы >" + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            else
+            {
+                if (!string.IsNullOrEmpty(textBox_hwid.Text) &&
+                    !string.IsNullOrEmpty(textBox_oemid.Text) &&
+                    !string.IsNullOrEmpty(textBox_modelid.Text) &&
+                    !string.IsNullOrEmpty(textBox_oemhash.Text))
+                {
+                    BotSendMes("Идентификаторы >" + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                }
+                else
+                {
+                    toolStripStatusLabel_filescompleted.Text = "Не все идентификаторы указаны. Пока не отправляем.";
+                }
+            }
         }
 
         /// <summary>
