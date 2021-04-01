@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-03-29T15:01:28">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-01T22:17:22">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -576,8 +576,8 @@
 <HASHID>6E91B529AAD0307F1FC67310DAB1FF821EB7AA02FA5620157A9D20E124F4E0B84897B1389836216B4F2CB50D8DBB87B8</HASHID>
 <Trademark>OPPO</Trademark>
 <Model>CPH1931</Model>
-<AltName>A5 (2020)</AltName>
-<Proof>0</Proof>
+<AltName>CPH1931RU</AltName>
+<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>001360E1</HWID>
@@ -641,17 +641,6 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
-<HWID>007050E1</HWID>
-<FullName>Snapdragon 410</FullName>
-<OEMID>0000</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>CDAF79CC7593D50E0F27BC386A32E887BC46B0194E2A02254F06CFB25CEDC514</HASHID>
-<Trademark>Samsung</Trademark>
-<Model>Galaxy J5</Model>
-<AltName>SM-J500FN</AltName>
-<Proof>0</Proof>
-</ForFilter>
-<ForFilter>
 <HWID>007070E1</HWID>
 <FullName>Snapdragon 410</FullName>
 <OEMID>0000</OEMID>
@@ -660,6 +649,17 @@
 <Trademark>Samsung</Trademark>
 <Model>Galaxy J5</Model>
 <AltName>SM-J500H</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>007050E1</HWID>
+<FullName>Snapdragon 410</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CDAF79CC7593D50E0F27BC386A32E887BC46B0194E2A02254F06CFB25CEDC514</HASHID>
+<Trademark>Samsung</Trademark>
+<Model>Galaxy J5</Model>
+<AltName>SM-J500FN</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -791,6 +791,17 @@
 <Model>Mi A3</Model>
 <AltName>laurel_sprout</AltName>
 <Proof>1</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>000E60E1</HWID>
+<FullName>Snapdragon 730</FullName>
+<OEMID>0072</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi Note 10</Model>
+<AltName>tucana</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -925,17 +936,6 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
-<HWID>009B00E1</HWID>
-<FullName>Snapdragon 650</FullName>
-<OEMID>0000</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
-<Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 3</Model>
-<AltName>aosp_kenzo</AltName>
-<Proof>1</Proof>
-</ForFilter>
-<ForFilter>
 <HWID>0008C0E1</HWID>
 <FullName>Snapdragon 660</FullName>
 <OEMID>0000</OEMID>
@@ -945,6 +945,17 @@
 <Model>Redmi Note 3</Model>
 <AltName>jason</AltName>
 <Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>009B00E1</HWID>
+<FullName>Snapdragon 650</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 3</Model>
+<AltName>aosp_kenzo</AltName>
+<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000CC0E1</HWID>
