@@ -15,10 +15,10 @@ namespace FirehoseFinder
         /// <summary>
         /// Создаём список файлов с размером из указанной директории
         /// </summary>
-        public Dictionary<string, long> WFiles(string WorkDir)
+        public Dictionary<string, long> WFiles(string WorkDir, bool allFiles)
         {
             Dictionary<string, long> WorkFiles = new Dictionary<string, long>();
-            var workF = new DirectoryInfo(WorkDir).EnumerateFiles("*.*", SearchOption.TopDirectoryOnly);
+            var workF = new DirectoryInfo(WorkDir).EnumerateFiles("*.*", (SearchOption)Convert.ToInt32(allFiles));
             try
             {
                 foreach (var WF in workF)

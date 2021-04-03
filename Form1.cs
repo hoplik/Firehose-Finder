@@ -296,7 +296,7 @@ namespace FirehoseFinder
                 switch (comboBox_ADB_commands.SelectedIndex)
                 {
                     case 0:
-                        textBox_ADB.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
+                        textBox_soft_term.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
                         client.Reboot("edl", device);
                         Thread.Sleep(1000);
                         StopAdb();
@@ -313,7 +313,7 @@ namespace FirehoseFinder
             }
             catch (SharpAdbClient.Exceptions.AdbException ex)
             {
-                textBox_ADB.AppendText(ex.AdbError + Environment.NewLine);
+                textBox_soft_term.AppendText(ex.AdbError + Environment.NewLine);
             }
             button_ADB_comstart.Enabled = false;
         }
@@ -405,7 +405,7 @@ namespace FirehoseFinder
                 {
                     process1.Start();
                     StreamReader reader1 = process1.StandardOutput;
-                    textBox_ADB.AppendText(reader1.ReadToEnd());
+                    textBox_soft_term.AppendText(reader1.ReadToEnd());
                     process1.WaitForExit();
                     process1.Close();
                     FHAlreadyLoaded = true;
@@ -441,7 +441,7 @@ namespace FirehoseFinder
             {
                 process2.Start();
                 StreamReader reader2 = process2.StandardOutput;
-                textBox_ADB.AppendText(reader2.ReadToEnd());
+                textBox_soft_term.AppendText(reader2.ReadToEnd());
                 process2.WaitForExit();
                 process2.Close();
             }
@@ -566,10 +566,9 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button__useSahara_fhf_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Пожалуйста, для дальнейшей работы используйте вкладку \"Работа с устройством\". Активировать вкладку можно в меню \"Вид\"" + Environment.NewLine +
-                "Для проверки программера после запроса идентификаторов, устройство должно быть обязательно отключено от компьютера и перезагружено в аварийный режим (9008)." + Environment.NewLine +
-                "Перезагрузку устройства в аварийный режим можно будет осуществить на вкладке \"Работа с устройством\" средствами ADB либо вручную. Команды протокола \"Сахара\" станут доступны после определения устройства на com-порту." + Environment.NewLine +
-                "Из-за особенностей протокола \"Сахара\" попытка загрузки программера в память устройства без его перезагрузки вызовет зависание программы.", "Важная информация!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            работаСУстройствомToolStripMenuItem.Checked = true;
+            tabControl1.SelectedTab = tabPage_phone;
+            tabControl_soft.SelectedTab = tabPage_sahara;
         }
 
         /// <summary>
@@ -587,6 +586,7 @@ namespace FirehoseFinder
                     {
                         dataGridView_final["Column_Sel", e.RowIndex].Value = false;
                         button_useSahara_fhf.Enabled = false;
+                        label_Sahara_fhf.Text = "Выберете программер на вкладке \"Работа с файлами\"";
                     }
                     else
                     {
@@ -791,18 +791,20 @@ namespace FirehoseFinder
         private void StopAdb()
         {
             AdbClient client = new AdbClient();
-            textBox_ADB.Text = "Сеанс ADB завершён" + Environment.NewLine;
-            textBox_main_term.Text = "Сеанс ADB завершён" + Environment.NewLine;
+            button_ADB_start.Enabled = true;
+            button_ADB_clear.Enabled = false;
+            comboBox_ADB_commands.Enabled = false;
+            button_ADB_comstart.Enabled = false;
             try
             {
                 client.KillAdb();
+                textBox_soft_term.AppendText("Сеанс ADB завершён" + Environment.NewLine);
+                textBox_main_term.AppendText("Сеанс ADB завершён" + Environment.NewLine);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                textBox_soft_term.AppendText("Неудачное завершение сеанса ADB" + Environment.NewLine + ex.Message + Environment.NewLine);
             }
-            button_ADB_start.Enabled = true;
-            comboBox_ADB_commands.Enabled = false;
-            button_ADB_comstart.Enabled = false;
         }
 
         /// <summary>
@@ -815,16 +817,16 @@ namespace FirehoseFinder
             var receiver = new ConsoleOutputReceiver();
             List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
             var device = devices[0];
-            textBox_ADB.AppendText(Com_String + Environment.NewLine);
+            textBox_soft_term.AppendText(Com_String + Environment.NewLine);
             textBox_ADB_commandstring.Text = string.Empty;
             try
             {
                 client.ExecuteRemoteCommand(Com_String, device, receiver);
-                textBox_ADB.AppendText(receiver.ToString() + Environment.NewLine);
+                textBox_soft_term.AppendText(receiver.ToString() + Environment.NewLine);
             }
             catch (SharpAdbClient.Exceptions.AdbException ex)
             {
-                textBox_ADB.AppendText(ex.AdbError + Environment.NewLine);
+                textBox_soft_term.AppendText(ex.AdbError + Environment.NewLine);
             }
         }
 
@@ -834,7 +836,7 @@ namespace FirehoseFinder
         private void Check_Unread_Files()
         {
             button_path.Enabled = false;
-            Dictionary<string, long> Resfiles = func.WFiles(button_path.Text); //Полный путь с именем файла и его объём для каждого файла в выбраной папке
+            Dictionary<string, long> Resfiles = func.WFiles(button_path.Text, radioButton_alldir.Checked); //Полный путь с именем файла и его объём для каждого файла в выбраной папке
             int currreadfiles = dataGridView_final.Rows.Count;
             int totalreadfiles = Resfiles.Count;
             toolStripStatusLabel_filescompleted.Text = "Обработано " + currreadfiles.ToString() + " файлов из " + totalreadfiles.ToString();
@@ -959,31 +961,32 @@ namespace FirehoseFinder
         /// <returns>true - всё хорошо, false - есть ошибки</returns>
         private bool ADB_Check()
         {
+            button_ADB_clear.Enabled = true;
             //Стартуем сервер
-            textBox_ADB.AppendText("Запускаем сервер ADB ..." + Environment.NewLine);
+            textBox_soft_term.AppendText("Запускаем сервер ADB ..." + Environment.NewLine);
             textBox_main_term.AppendText("Запускаем сервер ADB ..." + Environment.NewLine);
             AdbServer server = new AdbServer();
             var result = server.StartServer("adb.exe", restartServerIfNewer: false);
             //Подключаем клиента (устройства)
             AdbClient client = new AdbClient();
             List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
-            textBox_ADB.AppendText(result.ToString() + Environment.NewLine);
+            textBox_soft_term.AppendText(result.ToString() + Environment.NewLine);
             textBox_main_term.AppendText(result.ToString() + Environment.NewLine);
             button_ADB_start.Enabled = false;
             foreach (var device in devices)
             {
-                textBox_ADB.AppendText("Подключено устройство: " + device + Environment.NewLine);
+                textBox_soft_term.AppendText("Подключено устройство: " + device + Environment.NewLine);
                 textBox_main_term.AppendText("Подключено устройство: " + device + Environment.NewLine);
             }
             if (devices.Count > 1)
             {
-                textBox_ADB.AppendText("Подключено более одного андройд-устройства. Пожалуйста, оставьте подключённым только то устройство, с которым планируется дальнейшая работа." + Environment.NewLine);
+                textBox_soft_term.AppendText("Подключено более одного андройд-устройства. Пожалуйста, оставьте подключённым только то устройство, с которым планируется дальнейшая работа." + Environment.NewLine);
                 textBox_main_term.AppendText("Подключено более одного андройд-устройства. Пожалуйста, оставьте подключённым только то устройство, с которым планируется дальнейшая работа." + Environment.NewLine);
                 return false;
             }
             else if (devices.Count == 0)
             {
-                textBox_ADB.AppendText("Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли \"Отладка по USB\" в разделе \"Система\" - \"Для разработчиков\"" + Environment.NewLine);
+                textBox_soft_term.AppendText("Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли \"Отладка по USB\" в разделе \"Система\" - \"Для разработчиков\"" + Environment.NewLine);
                 textBox_main_term.AppendText("Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли \"Отладка по USB\" в разделе \"Система\" - \"Для разработчиков\"" + Environment.NewLine);
                 return false;
             }
@@ -1019,7 +1022,7 @@ namespace FirehoseFinder
                 }
                 catch (SharpAdbClient.Exceptions.AdbException ex)
                 {
-                    textBox_ADB.AppendText(ex.AdbError + Environment.NewLine);
+                    textBox_soft_term.AppendText(ex.AdbError + Environment.NewLine);
                     textBox_main_term.AppendText(ex.AdbError + Environment.NewLine);
                 }
                 string[] adbstr = receiver.ToString().Split('[');
@@ -1042,7 +1045,7 @@ namespace FirehoseFinder
                 comboBox_mem_type.Text = comboBox_mem_type.Items[(int)Guide.MEM_TYPE.eMMC].ToString();
                 comboBox_mem_type.SelectedIndex = (int)Guide.MEM_TYPE.eMMC;
             }
-            textBox_ADB.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
+            textBox_soft_term.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
                 "Модель: " + label_model.Text + Environment.NewLine +
                 "Альтернативное наименование: " + label_altname.Text + Environment.NewLine +
                 "Тип памяти: " + mem_type + Environment.NewLine);
@@ -1052,7 +1055,7 @@ namespace FirehoseFinder
                 "Тип памяти: " + mem_type + Environment.NewLine);
             if (reset)
             {
-                textBox_ADB.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
+                textBox_soft_term.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
                 textBox_main_term.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
                 try
                 {
@@ -1060,7 +1063,7 @@ namespace FirehoseFinder
                 }
                 catch (Exception ex)
                 {
-                    textBox_ADB.AppendText(ex.Message + Environment.NewLine + "Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную." + Environment.NewLine);
+                    textBox_soft_term.AppendText(ex.Message + Environment.NewLine + "Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную." + Environment.NewLine);
                     textBox_main_term.AppendText(ex.Message + Environment.NewLine + "Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную." + Environment.NewLine);
                 }
                 Thread.Sleep(2000);
@@ -1092,7 +1095,7 @@ namespace FirehoseFinder
                 process.Start();
                 StreamReader reader = process.StandardOutput;
                 string output = reader.ReadToEnd();
-                textBox_ADB.AppendText(output);
+                textBox_soft_term.AppendText(output);
                 textBox_main_term.AppendText(output);
                 process.WaitForExit();
                 process.Close();
@@ -1231,6 +1234,47 @@ namespace FirehoseFinder
         {
             char LUN = e.KeyChar;
             if (!Char.IsDigit(LUN) && LUN != 8 && LUN != 127) e.Handled = true;
+        }
+
+        private void TextBox_soft_term_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox_soft_term.Text))
+            {
+                button_term_clear.Enabled = false;
+                button_term_save.Enabled = false;
+            }
+            else
+            {
+                button_term_clear.Enabled = true;
+                button_term_save.Enabled = true;
+            }
+        }
+
+        private void Button_term_clear_Click(object sender, EventArgs e)
+        {
+            textBox_soft_term.Text = string.Empty;
+        }
+
+        private void Button_term_save_Click(object sender, EventArgs e)
+        {
+            DialogResult result = folderBrowserDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter(folderBrowserDialog1.SelectedPath + "\\log_terminal_soft_" + DateTime.Now.ToString("mm_ss") + ".txt", false)) sw.Write(textBox_soft_term.Text + "Сохранение прошло успешно" + Environment.NewLine);
+                    textBox_soft_term.AppendText("Сохранение прошло успешно" + Environment.NewLine);
+                    button_term_save.Enabled = false;
+                }
+                catch (Exception ex)
+                {
+                    textBox_soft_term.AppendText("Ошибка записи файла лога" + ex.Message + Environment.NewLine);
+                }
+            }
+            else
+            {
+                textBox_soft_term.AppendText("Сохранение отменено" + Environment.NewLine);
+            }
         }
     }
 }
