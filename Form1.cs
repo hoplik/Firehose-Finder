@@ -269,18 +269,6 @@ namespace FirehoseFinder
         }
 
         /// <summary>
-        /// При выборе команды на исполнение делаем доступным кнопку старта выполнения
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ComboBox_ADB_commands_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            button_ADB_comstart.Enabled = true;
-            if (comboBox_ADB_commands.SelectedIndex == 2) textBox_ADB_commandstring.Visible = true;
-            else textBox_ADB_commandstring.Visible = false;
-        }
-
-        /// <summary>
         /// Запуск на выполнение выбранной в комбобоксе команды
         /// </summary>
         /// <param name="sender"></param>
@@ -293,29 +281,21 @@ namespace FirehoseFinder
             string Com_String = textBox_ADB_commandstring.Text;
             try
             {
-                switch (comboBox_ADB_commands.SelectedIndex)
+                if (radioButton_adb_IDs.Checked) GetADBIDs(false);
+                if (radioButton_reboot_edl.Checked)
                 {
-                    case 0:
-                        textBox_soft_term.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
-                        client.Reboot("edl", device);
-                        Thread.Sleep(1000);
-                        StopAdb();
-                        break;
-                    case 1:
-                        GetADBIDs(false);
-                        break;
-                    case 2:
-                        if (!string.IsNullOrEmpty(Com_String)) Adb_Comm_String(Com_String);
-                        break;
-                    default:
-                        break;
+                    textBox_soft_term.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
+                    client.Reboot("edl", device);
+                    Thread.Sleep(1000);
+                    StopAdb();
+                    tabControl_soft.SelectedTab = tabPage_sahara;
                 }
+                if (radioButton_adb_com.Checked && !string.IsNullOrEmpty(Com_String)) Adb_Comm_String(Com_String);
             }
             catch (SharpAdbClient.Exceptions.AdbException ex)
             {
                 textBox_soft_term.AppendText(ex.AdbError + Environment.NewLine);
             }
-            button_ADB_comstart.Enabled = false;
         }
 
         /// <summary>
@@ -793,7 +773,7 @@ namespace FirehoseFinder
             AdbClient client = new AdbClient();
             button_ADB_start.Enabled = true;
             button_ADB_clear.Enabled = false;
-            comboBox_ADB_commands.Enabled = false;
+            groupBox_adb_commands.Enabled = false;
             button_ADB_comstart.Enabled = false;
             try
             {
@@ -992,7 +972,7 @@ namespace FirehoseFinder
             }
             else
             {
-                comboBox_ADB_commands.Enabled = true;
+                groupBox_adb_commands.Enabled = true;
                 return true;
             }
         }
@@ -1007,9 +987,7 @@ namespace FirehoseFinder
             var receiver = new ConsoleOutputReceiver();
             List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
             var device = devices[0];
-            string mem_type = "не определена (возможно UFS)";
             List<string> adbcommands = new List<string>() {
-                "getprop | grep ro.emmc_size",
                 "getprop | grep ro.product.name",
                 "getprop | grep ro.product.manufacturer",
                 "getprop | grep ro.product.model"};
@@ -1036,23 +1014,15 @@ namespace FirehoseFinder
                 if (string.IsNullOrEmpty(results[i])) results[i] = string.Empty;
                 receiver.Flush();
             }
-            label_altname.Text = results[1];
-            label_tm.Text = results[2];
-            label_model.Text = results[3];
-            if (!string.IsNullOrEmpty(results[0]))
-            {
-                mem_type = "eMMC : " + results[0];
-                comboBox_mem_type.Text = comboBox_mem_type.Items[(int)Guide.MEM_TYPE.eMMC].ToString();
-                comboBox_mem_type.SelectedIndex = (int)Guide.MEM_TYPE.eMMC;
-            }
+            label_altname.Text = results[0];
+            label_tm.Text = results[1];
+            label_model.Text = results[2];
             textBox_soft_term.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
                 "Модель: " + label_model.Text + Environment.NewLine +
-                "Альтернативное наименование: " + label_altname.Text + Environment.NewLine +
-                "Тип памяти: " + mem_type + Environment.NewLine);
+                "Альтернативное наименование: " + label_altname.Text + Environment.NewLine);
             textBox_main_term.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
                 "Модель: " + label_model.Text + Environment.NewLine +
-                "Альтернативное наименование: " + label_altname.Text + Environment.NewLine +
-                "Тип памяти: " + mem_type + Environment.NewLine);
+                "Альтернативное наименование: " + label_altname.Text + Environment.NewLine);
             if (reset)
             {
                 textBox_soft_term.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
@@ -1271,10 +1241,13 @@ namespace FirehoseFinder
                     textBox_soft_term.AppendText("Ошибка записи файла лога" + ex.Message + Environment.NewLine);
                 }
             }
-            else
-            {
-                textBox_soft_term.AppendText("Сохранение отменено" + Environment.NewLine);
-            }
+            else textBox_soft_term.AppendText("Сохранение отменено" + Environment.NewLine);
+        }
+
+        private void RadioButton_adb_com_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_adb_com.Checked) textBox_ADB_commandstring.Enabled = true;
+            else textBox_ADB_commandstring.Enabled = false;
         }
     }
 }
