@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-03T23:45:39">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-05T18:30:23">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -652,17 +652,6 @@
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
-<HWID>007070E1</HWID>
-<FullName>Snapdragon 410</FullName>
-<OEMID>0000</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>DC7929EB7AB50E7EE0E88FF0E71AB9431D2CADE5FAD04DB6F276C12EC53909EF</HASHID>
-<Trademark>Samsung</Trademark>
-<Model>Galaxy J5</Model>
-<AltName>SM-J500H</AltName>
-<Proof>0</Proof>
-</ForFilter>
-<ForFilter>
 <HWID>007050E1</HWID>
 <FullName>Snapdragon 410</FullName>
 <OEMID>0000</OEMID>
@@ -671,6 +660,17 @@
 <Trademark>Samsung</Trademark>
 <Model>Galaxy J5</Model>
 <AltName>SM-J500FN</AltName>
+<Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>007070E1</HWID>
+<FullName>Snapdragon 410</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>DC7929EB7AB50E7EE0E88FF0E71AB9431D2CADE5FAD04DB6F276C12EC53909EF</HASHID>
+<Trademark>Samsung</Trademark>
+<Model>Galaxy J5</Model>
+<AltName>SM-J500H</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -923,6 +923,17 @@
 <Model>Redmi 7A</Model>
 <AltName>pine</AltName>
 <Proof>1</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>000BF0E1</HWID>
+<FullName>Snapdragon 439</FullName>
+<OEMID>0072</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi 8</Model>
+<AltName>olive</AltName>
+<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BF0E1</HWID>

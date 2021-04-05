@@ -908,7 +908,7 @@ namespace FirehoseFinder
                 textBox_modelid.BackColor = Color.LawnGreen;
                 gross++;
             }
-            if (id[3].Length >= 64 && textBox_oemhash.Text.Length >= id[3].Length)
+            if (id[3].Length >= 64 && textBox_oemhash.Text.Length <= id[3].Length)
             {
                 if (id[3].Equals(textBox_oemhash.Text.Substring(0, id[3].Length))) // Хеши равны
                 {
