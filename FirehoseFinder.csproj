@@ -15,26 +15,26 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\serge\Desktop\Publishing\</PublishUrl>
+    <PublishUrl>ftp://fhf.mywebcommunity.org/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Background</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <SupportUrl>https://github.com/hoplik/Firehose-Finder/</SupportUrl>
     <ErrorReportUrl>https://github.com/hoplik/Firehose-Finder/issues</ErrorReportUrl>
     <TargetCulture>ru</TargetCulture>
     <ProductName>Firehose-Finder</ProductName>
     <PublisherName>hoplik</PublisherName>
-    <MinimumRequiredVersion>3.0.2.4</MinimumRequiredVersion>
+    <MinimumRequiredVersion>3.1.0.2</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
-    <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>3.1.0.1</ApplicationVersion>
+    <WebPage>index.htm</WebPage>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>3.1.0.2</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfhf));
             this.dataSet1 = new System.Data.DataSet();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
@@ -114,14 +114,14 @@
             this.tabControl_soft = new System.Windows.Forms.TabControl();
             this.tabPage_adb = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel_adb = new System.Windows.Forms.TableLayoutPanel();
+            this.button_ADB_start = new System.Windows.Forms.Button();
+            this.button_ADB_clear = new System.Windows.Forms.Button();
             this.groupBox_adb_commands = new System.Windows.Forms.GroupBox();
             this.radioButton_adb_com = new System.Windows.Forms.RadioButton();
             this.radioButton_adb_IDs = new System.Windows.Forms.RadioButton();
             this.radioButton_reboot_edl = new System.Windows.Forms.RadioButton();
             this.button_ADB_comstart = new System.Windows.Forms.Button();
             this.textBox_ADB_commandstring = new System.Windows.Forms.TextBox();
-            this.button_ADB_start = new System.Windows.Forms.Button();
-            this.button_ADB_clear = new System.Windows.Forms.Button();
             this.tabPage_sahara = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox_mem_type = new System.Windows.Forms.ComboBox();
@@ -213,7 +213,7 @@
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // выходToolStripMenuItem
@@ -233,7 +233,7 @@
             this.toolStripSeparator2,
             this.внестиПроизводителяМодельToolStripMenuItem});
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
-            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
             this.видToolStripMenuItem.Text = "Вид";
             // 
             // приветствиеToolStripMenuItem
@@ -292,7 +292,7 @@
             this.вопросОтветToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 26);
             this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // вопросОтветToolStripMenuItem
@@ -327,23 +327,23 @@
             this.dataGridView_collection.AllowUserToOrderColumns = true;
             this.dataGridView_collection.AllowUserToResizeRows = false;
             this.dataGridView_collection.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_collection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_collection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_collection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_collection.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_collection.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_collection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_collection.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_collection.MultiSelect = false;
@@ -1010,6 +1010,27 @@
             this.tableLayoutPanel_adb.Size = new System.Drawing.Size(929, 557);
             this.tableLayoutPanel_adb.TabIndex = 8;
             // 
+            // button_ADB_start
+            // 
+            this.button_ADB_start.Location = new System.Drawing.Point(3, 3);
+            this.button_ADB_start.Name = "button_ADB_start";
+            this.button_ADB_start.Size = new System.Drawing.Size(194, 23);
+            this.button_ADB_start.TabIndex = 2;
+            this.button_ADB_start.Text = "Подключить ADB";
+            this.button_ADB_start.UseVisualStyleBackColor = true;
+            this.button_ADB_start.Click += new System.EventHandler(this.Button_ADB_start_Click);
+            // 
+            // button_ADB_clear
+            // 
+            this.button_ADB_clear.Enabled = false;
+            this.button_ADB_clear.Location = new System.Drawing.Point(203, 3);
+            this.button_ADB_clear.Name = "button_ADB_clear";
+            this.button_ADB_clear.Size = new System.Drawing.Size(194, 23);
+            this.button_ADB_clear.TabIndex = 3;
+            this.button_ADB_clear.Text = "Закрыть сессию ADB";
+            this.button_ADB_clear.UseVisualStyleBackColor = true;
+            this.button_ADB_clear.Click += new System.EventHandler(this.Button_ADB_clear_Click);
+            // 
             // groupBox_adb_commands
             // 
             this.tableLayoutPanel_adb.SetColumnSpan(this.groupBox_adb_commands, 3);
@@ -1078,27 +1099,6 @@
             this.textBox_ADB_commandstring.Size = new System.Drawing.Size(213, 22);
             this.textBox_ADB_commandstring.TabIndex = 6;
             this.textBox_ADB_commandstring.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBox_ADB_commandstring_KeyUp);
-            // 
-            // button_ADB_start
-            // 
-            this.button_ADB_start.Location = new System.Drawing.Point(3, 3);
-            this.button_ADB_start.Name = "button_ADB_start";
-            this.button_ADB_start.Size = new System.Drawing.Size(194, 23);
-            this.button_ADB_start.TabIndex = 2;
-            this.button_ADB_start.Text = "Подключить ADB";
-            this.button_ADB_start.UseVisualStyleBackColor = true;
-            this.button_ADB_start.Click += new System.EventHandler(this.Button_ADB_start_Click);
-            // 
-            // button_ADB_clear
-            // 
-            this.button_ADB_clear.Enabled = false;
-            this.button_ADB_clear.Location = new System.Drawing.Point(203, 3);
-            this.button_ADB_clear.Name = "button_ADB_clear";
-            this.button_ADB_clear.Size = new System.Drawing.Size(194, 23);
-            this.button_ADB_clear.TabIndex = 3;
-            this.button_ADB_clear.Text = "Закрыть сессию ADB";
-            this.button_ADB_clear.UseVisualStyleBackColor = true;
-            this.button_ADB_clear.Click += new System.EventHandler(this.Button_ADB_clear_Click);
             // 
             // tabPage_sahara
             // 

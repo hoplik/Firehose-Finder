@@ -621,7 +621,7 @@ namespace FirehoseFinder
                 {
                     int byteschunk = stream.Read(chunk, 0, 4);
                     for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, string.Format("{0:X2}", (int)chunk[i]));
-                    if (dumptext.ToString().Equals("D1DC4B84") || dumptext.ToString().StartsWith("7F454C4"))
+                    if (Enum.IsDefined(typeof(Func.FH_magic_numbers), Convert.ToUInt32(dumptext.ToString(), 16)))
                     {
                         dumptext.Clear();
                         stream.Position = 0;
@@ -648,20 +648,21 @@ namespace FirehoseFinder
                 int Currnum = dataGridView_final.Rows.Count - 1; //Номер последней, "пустой" строки грида
                 if (dumpfile.Length > 8)
                 {
-                    switch (dumpfile.Substring(0, 8))
+                    uint fh_type = Convert.ToUInt32(dumpfile.Substring(0, 8), 16);
+                    switch ((Func.FH_magic_numbers)fh_type)
                     {
-                        case "7F454C46": //ELF
+                        case Func.FH_magic_numbers.ELF: //ELF
                             curfilerating++;
                             break;
-                        case "7F454C45": //не совсем ELF
+                        case Func.FH_magic_numbers.ELE: //не совсем ELF
                             curfilerating++;
                             dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.PaleVioletRed;
                             dataGridView_final["Column_Name", Currnum].ToolTipText = "Файл не является ELF!";
                             break;
-                        case "D1DC4B84": //Старый программер
+                        case Func.FH_magic_numbers.OLD: //Старый программер
                             curfilerating++;
                             break;
-                        default: //совсем не ELF
+                        default: //совсем не шланг
                             break;
                     }
                 }
@@ -859,8 +860,8 @@ namespace FirehoseFinder
             string[] id = func.IDs(dumpfile);
             string oemhash;
             string sw_type = string.Empty;
-            if (id[3].Length < 64) oemhash = id[3];
-            else oemhash = id[3].Substring(56);
+            if (id[3].Length < 8) oemhash = id[3];
+            else oemhash = id[3].Substring(id[3].Length - 8);
             dataGridView_final["Column_id", Currnum].Value = id[0] + "-" + id[1] + "-" + id[2] + "-" + oemhash + "-" + id[4] + id[5];
             if (guide.SW_ID_type.ContainsKey(id[4])) sw_type = guide.SW_ID_type[id[4]];
             dataGridView_final["Column_SW_type", Currnum].Value = sw_type;
@@ -908,13 +909,10 @@ namespace FirehoseFinder
                 textBox_modelid.BackColor = Color.LawnGreen;
                 gross++;
             }
-            if (id[3].Length >= 64 && textBox_oemhash.Text.Length <= id[3].Length)
+            if (id[3].Equals(textBox_oemhash.Text)) // Хеши равны
             {
-                if (id[3].Equals(textBox_oemhash.Text.Substring(0, id[3].Length))) // Хеши равны
-                {
-                    textBox_oemhash.BackColor = Color.LawnGreen;
-                    gross += 2;
-                }
+                textBox_oemhash.BackColor = Color.LawnGreen;
+                gross += 2;
             }
             if (id[4].Equals("3")) gross += 2; // SWID начинается с 3
             //Добавляем из справочника возможные модели для данного шланга
