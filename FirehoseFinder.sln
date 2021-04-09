@@ -5,13 +5,6 @@ VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirehoseFinder", "FirehoseFinder.csproj", "{174489A6-DEC6-4A93-BD95-78E6D9224ADA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{48EF8FBB-2EBA-4E14-A880-A44C03681986}"
-	ProjectSection(SolutionItems) = preProject
-		FirehoseFinder.GeneratedMSBuildEditorConfig.editorconfig = FirehoseFinder.GeneratedMSBuildEditorConfig.editorconfig
-	EndProjectSection
-EndProject
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "FhF_Setup", "FhF_Setup\FhF_Setup.wixproj", "{EF564E2A-94B0-4E93-A234-76CD8FD52E93}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,12 +21,6 @@ Global
 		{174489A6-DEC6-4A93-BD95-78E6D9224ADA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{174489A6-DEC6-4A93-BD95-78E6D9224ADA}.Release|x86.ActiveCfg = Release|x86
 		{174489A6-DEC6-4A93-BD95-78E6D9224ADA}.Release|x86.Build.0 = Release|x86
-		{EF564E2A-94B0-4E93-A234-76CD8FD52E93}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{EF564E2A-94B0-4E93-A234-76CD8FD52E93}.Debug|x86.ActiveCfg = Debug|x86
-		{EF564E2A-94B0-4E93-A234-76CD8FD52E93}.Debug|x86.Build.0 = Debug|x86
-		{EF564E2A-94B0-4E93-A234-76CD8FD52E93}.Release|Any CPU.ActiveCfg = Release|x86
-		{EF564E2A-94B0-4E93-A234-76CD8FD52E93}.Release|x86.ActiveCfg = Release|x86
-		{EF564E2A-94B0-4E93-A234-76CD8FD52E93}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -831,18 +831,18 @@ namespace FirehoseFinder
             }
             //Есть необработанные файлы - обрабатываем первый отсутствующий в цикле
             List<string> ReadedFiles = new List<string>(); //Создаём массив под список уже обработанных файлов
-            //Заполняем массив короткими именами файлов из грида (если они есть)
+            //Заполняем массив полными именами файлов из грида (если они есть)
             for (int i = 0; i < currreadfiles; i++) ReadedFiles.Add(dataGridView_final["Column_Name", i].Value.ToString().Trim());
             toolStripProgressBar_filescompleted.Value = currreadfiles * 100 / totalreadfiles; //Количество обработанных файлов в прогрессбаре
             dataGridView_final.Rows.Add();
             foreach (KeyValuePair<string, long> unreadfiles in Resfiles)
             {
                 string shortfilename = Path.GetFileName(unreadfiles.Key); //Получили название файла
-                if (!ReadedFiles.Contains(shortfilename))
+                if (!ReadedFiles.Contains(unreadfiles.Key))
                 {
                     toolStripStatusLabel_vol.Text = "Сейчас обрабатывается файл - " + shortfilename;
                     statusStrip_firehose.Refresh();
-                    dataGridView_final[1, currreadfiles].Value = shortfilename;
+                    dataGridView_final["Column_Name", currreadfiles].Value = unreadfiles.Key;
                     backgroundWorker_Read_File.RunWorkerAsync(unreadfiles); //Запускаем цикл обработки отдельно каждого необработанного файла в папке
                     break;
                 }
@@ -1246,6 +1246,16 @@ namespace FirehoseFinder
         {
             if (radioButton_adb_com.Checked) textBox_ADB_commandstring.Enabled = true;
             else textBox_ADB_commandstring.Enabled = false;
+        }
+
+        private void перейтиКРасположениюФайлаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Перешли к файлу");
+        }
+
+        private void dataGridView_final_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //contextMenuStrip1.Show(dataGridView_final);
         }
     }
 }
