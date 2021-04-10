@@ -621,7 +621,7 @@ namespace FirehoseFinder
                 {
                     int byteschunk = stream.Read(chunk, 0, 4);
                     for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, string.Format("{0:X2}", (int)chunk[i]));
-                    if (Enum.IsDefined(typeof(Func.FH_magic_numbers), Convert.ToUInt32(dumptext.ToString(), 16)))
+                    if (Enum.IsDefined(typeof(Guide.FH_magic_numbers), Convert.ToUInt32(dumptext.ToString(), 16)))
                     {
                         dumptext.Clear();
                         stream.Position = 0;
@@ -649,17 +649,17 @@ namespace FirehoseFinder
                 if (dumpfile.Length > 8)
                 {
                     uint fh_type = Convert.ToUInt32(dumpfile.Substring(0, 8), 16);
-                    switch ((Func.FH_magic_numbers)fh_type)
+                    switch ((Guide.FH_magic_numbers)fh_type)
                     {
-                        case Func.FH_magic_numbers.ELF: //ELF
+                        case Guide.FH_magic_numbers.ELF: //ELF
                             curfilerating++;
                             break;
-                        case Func.FH_magic_numbers.ELE: //не совсем ELF
+                        case Guide.FH_magic_numbers.ELE: //не совсем ELF
                             curfilerating++;
                             dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.PaleVioletRed;
                             dataGridView_final["Column_Name", Currnum].ToolTipText = "Файл не является ELF!";
                             break;
-                        case Func.FH_magic_numbers.OLD: //Старый программер
+                        case Guide.FH_magic_numbers.OLD: //Старый программер
                             curfilerating++;
                             break;
                         default: //совсем не шланг

@@ -76,7 +76,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-09T21:15:11">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-09T21:35:21">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -670,7 +670,7 @@
 <HASHID>0BD3EDE609A95DFAC45B17C2D865D72CDDADFAFDDAB51E5E6665E747ACABDE12</HASHID>
 <Trademark>Samsung</Trademark>
 <Model>Galaxy C9 Pro</Model>
-<AltName>C9000</AltName>
+<AltName>SM-C9000</AltName>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>

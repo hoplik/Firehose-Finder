@@ -100,5 +100,15 @@ namespace FirehoseFinder
             { "1006F0E1", "MSM8996AU" },
             { "4006F0E1", "MSM8996AU" }
         };
+
+        /// <summary>
+        /// Список признаков отношения файла к шлангу
+        /// </summary>
+        internal enum FH_magic_numbers : uint
+        {
+            ELF = 2135247942, //7F454C46 - ELF
+            ELE = 2135247941, //7F454C45 - ELE
+            OLD = 3520875396 //D1DC4B84 - Старый программер
+        }
     }
 }
