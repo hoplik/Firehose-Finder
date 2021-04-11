@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
-[assembly: AssemblyTitle("FirehoseFinder")]
+[assembly: AssemblyTitle("Firehose Finder")]
 [assembly: AssemblyDescription("Программа подбора программеров(firehose) для устройств на базе процессоров от Qualcomm.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FirehoseFinder")]
+[assembly: AssemblyCompany("HOPLIK")]
+[assembly: AssemblyProduct("Firehose Finder")]
 [assembly: AssemblyCopyright("Copyright ©  2020 HOPLIK")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -32,6 +32,6 @@ using System.Runtime.InteropServices;
 // Можно задать все значения или принять номера сборки и редакции по умолчанию 
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("3.1.0.4")]
-[assembly: AssemblyFileVersion("3.1.0.4")]
+[assembly: AssemblyVersion("3.1.2.0")]
+[assembly: AssemblyFileVersion("3.1.2.0")]
 [assembly: NeutralResourcesLanguage("ru-RU")]
