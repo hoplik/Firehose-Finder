@@ -5,11 +5,6 @@ VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirehoseFinder", "FirehoseFinder.csproj", "{174489A6-DEC6-4A93-BD95-78E6D9224ADA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5AAB0240-4F28-46B0-B00A-150E93F9011C}"
-	ProjectSection(SolutionItems) = preProject
-		FhF_Setup.aip = FhF_Setup.aip
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		All|Any CPU = All|Any CPU
