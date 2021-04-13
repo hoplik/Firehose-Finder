@@ -665,6 +665,29 @@ namespace FirehoseFinder
                         case Guide.FH_magic_numbers.PATCHEDOLD: //Патченый старый программер
                             curfilerating++;
                             break;
+                        case Guide.FH_magic_numbers.ZTEEncode: //ZTE программер зашифрованный
+                            curfilerating++;
+                            break;
+                        case Guide.FH_magic_numbers.ARMPRG: //самый старый программер
+                            curfilerating++;
+                            break;
+                        case Guide.FH_magic_numbers.ARM9: //ARMPRG 9
+                            curfilerating++;
+                            break;
+                        case Guide.FH_magic_numbers.ARM412: //ARMPRG 0412
+                            curfilerating++;
+                            break;
+                        case Guide.FH_magic_numbers.ARM12: //ARMPRG 120001
+                            curfilerating++;
+                            break;
+                        case Guide.FH_magic_numbers.ARM14: //ARMPRG 140000
+                            curfilerating++;
+                            break;
+                        case Guide.FH_magic_numbers.UFSEncoding: //Закодированный UFS программер
+                            curfilerating++;
+                            dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.PaleVioletRed;
+                            dataGridView_final["Column_Name", Currnum].ToolTipText = "Файл закодирован!";
+                            break;
                         default: //совсем не шланг
                             break;
                     }
@@ -889,7 +912,7 @@ namespace FirehoseFinder
                         if (item.Equals(id[0])) //Процессор такой же
                         {
                             textBox_hwid.BackColor = Color.LawnGreen;
-                            gross ++;
+                            gross++;
                         }
                     }
                 }
@@ -899,13 +922,13 @@ namespace FirehoseFinder
                 if (textBox_hwid.Text.Equals(id[0])) //Процессор такой же
                 {
                     textBox_hwid.BackColor = Color.LawnGreen;
-                    gross ++;
+                    gross++;
                 }
             }
             if (textBox_oemid.Text.Equals(id[1])) // Производитель один и тот же
             {
                 textBox_oemid.BackColor = Color.LawnGreen;
-                gross ++;
+                gross++;
             }
             if (textBox_modelid.Text.Equals(id[2])) // Модели равны
             {
@@ -917,7 +940,7 @@ namespace FirehoseFinder
                 textBox_oemhash.BackColor = Color.LawnGreen;
                 gross += 5;
             }
-            if (id[4].Equals("3")) gross ++; // SWID начинается с 3
+            if (id[4].Equals("3")) gross++; // SWID начинается с 3
             //Добавляем из справочника возможные модели для данного шланга "Может подойти для ..."
             bindingSource_collection.Filter = string.Format("HWID LIKE '{0}' AND OEMID LIKE '{1}' AND MODELID LIKE '{2}' AND HASHID LIKE '{3}'",
                 id[0], id[1], id[2], id[3]);

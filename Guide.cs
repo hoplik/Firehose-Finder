@@ -109,7 +109,14 @@ namespace FirehoseFinder
             ELF = 2135247942, //7F454C46 - ELF
             ELE = 2135247941, //7F454C45 - ELE
             OLD = 3520875396, //D1DC4B84 - Старый программер
-            PATCHEDOLD = 1442835967 //55FFEDFF - Паченый старый программер
+            PATCHEDOLD = 1442835967, //55FFEDFF - Паченый старый программер
+            ZTEEncode = 3973917226, //ECDD2A2A - ZTE программер зашифрованный
+            ARMPRG = 117440512, //07000000 - самый старый программер
+            ARM9 = 218103808, //0D000000 - ARMPRG 9
+            ARM412 = 2484117477, //94109FE5 - ARMPRG 0412
+            ARM12 = 4094730213, //F4109FE5 - ARMPRG 120001
+            ARM14 = 83886080, //05000000 - ARMPRG 140000
+            UFSEncoding = 1684108385 //64617461 - Закодированный UFS программер
         }
 
         internal readonly Dictionary<string, int> SHA_magic_numbers = new Dictionary<string, int>(5)
