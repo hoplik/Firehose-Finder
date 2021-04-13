@@ -662,6 +662,9 @@ namespace FirehoseFinder
                         case Guide.FH_magic_numbers.OLD: //Старый программер
                             curfilerating++;
                             break;
+                        case Guide.FH_magic_numbers.PATCHEDOLD: //Патченый старый программер
+                            curfilerating++;
+                            break;
                         default: //совсем не шланг
                             break;
                     }
@@ -827,6 +830,7 @@ namespace FirehoseFinder
                 button_path.Enabled = true;
                 toolStripStatusLabel_vol.Text = string.Empty;
                 toolStripProgressBar_filescompleted.Value = 0;
+                if (currreadfiles > 0) dataGridView_final.Rows[0].Selected = true;
                 return;
             }
             //Есть необработанные файлы - обрабатываем первый отсутствующий в цикле
@@ -856,7 +860,7 @@ namespace FirehoseFinder
         /// <param name="Currnum">Номер текущей строки грида для добавления идентификаторов</param>
         private byte Rating(string dumpfile, int Currnum)
         {
-            byte gross = 0;
+            byte gross = 0; //Рейтинг файла
             string[] id = func.IDs(dumpfile);
             string oemhash;
             string sw_type = string.Empty;
@@ -870,7 +874,6 @@ namespace FirehoseFinder
                 "MODEL_ID (модель) - " + id[2] + Environment.NewLine +
                 "OEM_PK_HASH (хеш корневого сертификата) - " + id[3] + Environment.NewLine +
                 "SW_ID (тип программы (версия)) - " + id[4] + id[5] + " - " + sw_type;
-            //!!!!Добавить проверку на все процессоры, в т.ч. и переходные по единому ID!!!!
             if (guide.Double_CPU.ContainsKey(textBox_hwid.Text))
             {
                 string d_cpu_val = guide.Double_CPU[textBox_hwid.Text];
@@ -886,7 +889,7 @@ namespace FirehoseFinder
                         if (item.Equals(id[0])) //Процессор такой же
                         {
                             textBox_hwid.BackColor = Color.LawnGreen;
-                            gross += 2;
+                            gross ++;
                         }
                     }
                 }
@@ -896,13 +899,13 @@ namespace FirehoseFinder
                 if (textBox_hwid.Text.Equals(id[0])) //Процессор такой же
                 {
                     textBox_hwid.BackColor = Color.LawnGreen;
-                    gross += 2;
+                    gross ++;
                 }
             }
             if (textBox_oemid.Text.Equals(id[1])) // Производитель один и тот же
             {
                 textBox_oemid.BackColor = Color.LawnGreen;
-                gross += 2;
+                gross ++;
             }
             if (textBox_modelid.Text.Equals(id[2])) // Модели равны
             {
@@ -912,10 +915,10 @@ namespace FirehoseFinder
             if (id[3].Equals(textBox_oemhash.Text)) // Хеши равны
             {
                 textBox_oemhash.BackColor = Color.LawnGreen;
-                gross += 2;
+                gross += 5;
             }
-            if (id[4].Equals("3")) gross += 2; // SWID начинается с 3
-            //Добавляем из справочника возможные модели для данного шланга
+            if (id[4].Equals("3")) gross ++; // SWID начинается с 3
+            //Добавляем из справочника возможные модели для данного шланга "Может подойти для ..."
             bindingSource_collection.Filter = string.Format("HWID LIKE '{0}' AND OEMID LIKE '{1}' AND MODELID LIKE '{2}' AND HASHID LIKE '{3}'",
                 id[0], id[1], id[2], id[3]);
             StringBuilder comp_model = new StringBuilder(string.Empty);
