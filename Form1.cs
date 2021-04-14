@@ -451,18 +451,89 @@ namespace FirehoseFinder
         }
 
         /// <summary>
-        /// Поиск по всем полям
+        /// Проверяем на не пустоту поле выбора диска для запроса
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TextBox_find_TextChanged(object sender, EventArgs e)
+        private void TextBox_lun_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(toolStripTextBox_find.Text))
+            if (string.IsNullOrEmpty(textBox_lun.Text)) textBox_lun.Text = "0";
+        }
+
+        /// <summary>
+        /// Ограничиваем ввод в поле выбора диска только числами, del, enter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_lun_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char LUN = e.KeyChar;
+            if (!Char.IsDigit(LUN) && LUN != 8 && LUN != 127) e.Handled = true;
+        }
+
+        /// <summary>
+        /// Подсвечиваем/тушим кнопки терминала
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_soft_term_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox_soft_term.Text))
             {
-                if (!ProofAllToolStripMenuItem.Checked) bindingSource_collection.Filter = "Proof = true";
-                else bindingSource_collection.Filter = null;
+                button_term_clear.Enabled = false;
+                button_term_save.Enabled = false;
             }
-            else bindingSource_collection.Filter = string.Format("HWID LIKE '%{0}%' OR FullName LIKE '%{0}%' OR OEMID LIKE '%{0}%' OR MODELID LIKE '%{0}%' OR HASHID LIKE '%{0}%' OR Trademark LIKE '%{0}%' OR Model LIKE '%{0}%' OR AltName LIKE '%{0}%'", toolStripTextBox_find.Text);
+            else
+            {
+                button_term_clear.Enabled = true;
+                button_term_save.Enabled = true;
+            }
+        }
+
+        /// <summary>
+        /// Очищаем поле терминала
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_term_clear_Click(object sender, EventArgs e)
+        {
+            textBox_soft_term.Text = string.Empty;
+        }
+
+        /// <summary>
+        /// Сохраняем лог терминала в файл
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_term_save_Click(object sender, EventArgs e)
+        {
+            DialogResult result = folderBrowserDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter(folderBrowserDialog1.SelectedPath + "\\log_terminal_soft_" + DateTime.Now.ToString("mm_ss") + ".txt", false)) sw.Write(textBox_soft_term.Text + "Сохранение прошло успешно" + Environment.NewLine);
+                    textBox_soft_term.AppendText("Сохранение прошло успешно" + Environment.NewLine);
+                    button_term_save.Enabled = false;
+                }
+                catch (Exception ex)
+                {
+                    textBox_soft_term.AppendText("Ошибка записи файла лога" + ex.Message + Environment.NewLine);
+                }
+            }
+            else textBox_soft_term.AppendText("Сохранение отменено" + Environment.NewLine);
+        }
+
+        /// <summary>
+        /// Отображаем/скрываем поле ввода команд ADB
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RadioButton_adb_com_CheckedChanged(object sender, EventArgs e)
+        {
+            button_ADB_comstart.Enabled = true;
+            if (radioButton_adb_com.Checked) textBox_ADB_commandstring.Enabled = true;
+            else textBox_ADB_commandstring.Enabled = false;
         }
 
         #endregion
@@ -576,7 +647,7 @@ namespace FirehoseFinder
                         }
                         dataGridView_final["Column_Sel", e.RowIndex].Value = true;
                         button_useSahara_fhf.Enabled = true;
-                        label_Sahara_fhf.Text = button_path.Text + "\\" + dataGridView_final.SelectedRows[0].Cells[1].Value.ToString();
+                        label_Sahara_fhf.Text = dataGridView_final.SelectedRows[0].Cells[1].Value.ToString();
                     }
                 }
             }
@@ -749,6 +820,21 @@ namespace FirehoseFinder
                 if (dr == DialogResult.OK) Process.Start(string.Format(dataGridView_collection["Url", sel_row].Value.ToString()).Trim('#'));
                 return;
             }
+        }
+
+        /// <summary>
+        /// Поиск по всем полям
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_find_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(toolStripTextBox_find.Text))
+            {
+                if (!ProofAllToolStripMenuItem.Checked) bindingSource_collection.Filter = "Proof = true";
+                else bindingSource_collection.Filter = null;
+            }
+            else bindingSource_collection.Filter = string.Format("HWID LIKE '%{0}%' OR FullName LIKE '%{0}%' OR OEMID LIKE '%{0}%' OR MODELID LIKE '%{0}%' OR HASHID LIKE '%{0}%' OR Trademark LIKE '%{0}%' OR Model LIKE '%{0}%' OR AltName LIKE '%{0}%'", toolStripTextBox_find.Text);
         }
 
         #endregion
@@ -1230,69 +1316,14 @@ namespace FirehoseFinder
 
         #endregion
 
-        private void TextBox_lun_TextChanged(object sender, EventArgs e)
+        private void radioButton_adb_IDs_CheckedChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox_lun.Text)) textBox_lun.Text = "0";
+            button_ADB_comstart.Enabled = true;
         }
 
-        private void TextBox_lun_KeyPress(object sender, KeyPressEventArgs e)
+        private void radioButton_reboot_edl_CheckedChanged(object sender, EventArgs e)
         {
-            char LUN = e.KeyChar;
-            if (!Char.IsDigit(LUN) && LUN != 8 && LUN != 127) e.Handled = true;
-        }
-
-        private void TextBox_soft_term_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(textBox_soft_term.Text))
-            {
-                button_term_clear.Enabled = false;
-                button_term_save.Enabled = false;
-            }
-            else
-            {
-                button_term_clear.Enabled = true;
-                button_term_save.Enabled = true;
-            }
-        }
-
-        private void Button_term_clear_Click(object sender, EventArgs e)
-        {
-            textBox_soft_term.Text = string.Empty;
-        }
-
-        private void Button_term_save_Click(object sender, EventArgs e)
-        {
-            DialogResult result = folderBrowserDialog1.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                try
-                {
-                    using (StreamWriter sw = new StreamWriter(folderBrowserDialog1.SelectedPath + "\\log_terminal_soft_" + DateTime.Now.ToString("mm_ss") + ".txt", false)) sw.Write(textBox_soft_term.Text + "Сохранение прошло успешно" + Environment.NewLine);
-                    textBox_soft_term.AppendText("Сохранение прошло успешно" + Environment.NewLine);
-                    button_term_save.Enabled = false;
-                }
-                catch (Exception ex)
-                {
-                    textBox_soft_term.AppendText("Ошибка записи файла лога" + ex.Message + Environment.NewLine);
-                }
-            }
-            else textBox_soft_term.AppendText("Сохранение отменено" + Environment.NewLine);
-        }
-
-        private void RadioButton_adb_com_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton_adb_com.Checked) textBox_ADB_commandstring.Enabled = true;
-            else textBox_ADB_commandstring.Enabled = false;
-        }
-
-        private void перейтиКРасположениюФайлаToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Перешли к файлу");
-        }
-
-        private void dataGridView_final_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            //contextMenuStrip1.Show(dataGridView_final);
+            button_ADB_comstart.Enabled = true;
         }
     }
 }
