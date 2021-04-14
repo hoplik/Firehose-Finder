@@ -1316,12 +1316,12 @@ namespace FirehoseFinder
 
         #endregion
 
-        private void radioButton_adb_IDs_CheckedChanged(object sender, EventArgs e)
+        private void RadioButton_adb_IDs_CheckedChanged(object sender, EventArgs e)
         {
             button_ADB_comstart.Enabled = true;
         }
 
-        private void radioButton_reboot_edl_CheckedChanged(object sender, EventArgs e)
+        private void RadioButton_reboot_edl_CheckedChanged(object sender, EventArgs e)
         {
             button_ADB_comstart.Enabled = true;
         }
