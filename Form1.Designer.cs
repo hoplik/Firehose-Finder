@@ -48,8 +48,8 @@
             this.приветствиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.работаСУстройствомToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справочникУстройствToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.неподтверждённыеДанныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CollectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProofAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.внестиПроизводителяМодельToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -236,7 +236,7 @@
             this.приветствиеToolStripMenuItem,
             this.toolStripSeparator1,
             this.работаСУстройствомToolStripMenuItem,
-            this.справочникУстройствToolStripMenuItem,
+            this.CollectionToolStripMenuItem,
             this.toolStripSeparator2,
             this.внестиПроизводителяМодельToolStripMenuItem});
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
@@ -246,50 +246,50 @@
             // приветствиеToolStripMenuItem
             // 
             this.приветствиеToolStripMenuItem.Name = "приветствиеToolStripMenuItem";
-            this.приветствиеToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.приветствиеToolStripMenuItem.Size = new System.Drawing.Size(391, 26);
             this.приветствиеToolStripMenuItem.Text = "Приветствие";
             this.приветствиеToolStripMenuItem.Click += new System.EventHandler(this.ПриветствиеToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(307, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(388, 6);
             // 
             // работаСУстройствомToolStripMenuItem
             // 
             this.работаСУстройствомToolStripMenuItem.CheckOnClick = true;
             this.работаСУстройствомToolStripMenuItem.Name = "работаСУстройствомToolStripMenuItem";
-            this.работаСУстройствомToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.работаСУстройствомToolStripMenuItem.Size = new System.Drawing.Size(391, 26);
             this.работаСУстройствомToolStripMenuItem.Text = "Работа с устройством";
             this.работаСУстройствомToolStripMenuItem.CheckedChanged += new System.EventHandler(this.РаботаСУстройствомToolStripMenuItem_CheckedChanged);
             // 
-            // справочникУстройствToolStripMenuItem
+            // CollectionToolStripMenuItem
             // 
-            this.справочникУстройствToolStripMenuItem.CheckOnClick = true;
-            this.справочникУстройствToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.неподтверждённыеДанныеToolStripMenuItem});
-            this.справочникУстройствToolStripMenuItem.Name = "справочникУстройствToolStripMenuItem";
-            this.справочникУстройствToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
-            this.справочникУстройствToolStripMenuItem.Text = "Справочник устройств";
-            this.справочникУстройствToolStripMenuItem.CheckedChanged += new System.EventHandler(this.СправочникУстройствToolStripMenuItem_CheckedChanged);
+            this.CollectionToolStripMenuItem.CheckOnClick = true;
+            this.CollectionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ProofAllToolStripMenuItem});
+            this.CollectionToolStripMenuItem.Name = "CollectionToolStripMenuItem";
+            this.CollectionToolStripMenuItem.Size = new System.Drawing.Size(391, 26);
+            this.CollectionToolStripMenuItem.Text = "Справочник устройств (с программерами)";
+            this.CollectionToolStripMenuItem.CheckedChanged += new System.EventHandler(this.СправочникУстройствToolStripMenuItem_CheckedChanged);
             // 
-            // неподтверждённыеДанныеToolStripMenuItem
+            // ProofAllToolStripMenuItem
             // 
-            this.неподтверждённыеДанныеToolStripMenuItem.CheckOnClick = true;
-            this.неподтверждённыеДанныеToolStripMenuItem.Name = "неподтверждённыеДанныеToolStripMenuItem";
-            this.неподтверждённыеДанныеToolStripMenuItem.Size = new System.Drawing.Size(289, 26);
-            this.неподтверждённыеДанныеToolStripMenuItem.Text = "Неподтверждённые данные";
-            this.неподтверждённыеДанныеToolStripMenuItem.Click += new System.EventHandler(this.НеподтверждённыеДанныеToolStripMenuItem_Click);
+            this.ProofAllToolStripMenuItem.CheckOnClick = true;
+            this.ProofAllToolStripMenuItem.Name = "ProofAllToolStripMenuItem";
+            this.ProofAllToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.ProofAllToolStripMenuItem.Text = "Полный список";
+            this.ProofAllToolStripMenuItem.Click += new System.EventHandler(this.НеподтверждённыеДанныеToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(307, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(388, 6);
             // 
             // внестиПроизводителяМодельToolStripMenuItem
             // 
             this.внестиПроизводителяМодельToolStripMenuItem.Name = "внестиПроизводителяМодельToolStripMenuItem";
-            this.внестиПроизводителяМодельToolStripMenuItem.Size = new System.Drawing.Size(310, 26);
+            this.внестиПроизводителяМодельToolStripMenuItem.Size = new System.Drawing.Size(391, 26);
             this.внестиПроизводителяМодельToolStripMenuItem.Text = "Внести производителя, модель";
             this.внестиПроизводителяМодельToolStripMenuItem.Click += new System.EventHandler(this.ВнестиПроизводителяМодельToolStripMenuItem_Click);
             // 
@@ -364,7 +364,7 @@
             this.dataGridView_collection.ShowCellToolTips = false;
             this.dataGridView_collection.ShowEditingIcon = false;
             this.dataGridView_collection.ShowRowErrors = false;
-            this.dataGridView_collection.Size = new System.Drawing.Size(1361, 598);
+            this.dataGridView_collection.Size = new System.Drawing.Size(1361, 594);
             this.dataGridView_collection.TabIndex = 2;
             this.dataGridView_collection.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_collection_CellContentDoubleClick);
             // 
@@ -386,21 +386,21 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.toolStripTextBox_find});
-            this.bindingNavigator_collection.Location = new System.Drawing.Point(0, 598);
+            this.bindingNavigator_collection.Location = new System.Drawing.Point(0, 594);
             this.bindingNavigator_collection.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator_collection.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator_collection.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bindingNavigator_collection.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator_collection.Name = "bindingNavigator_collection";
             this.bindingNavigator_collection.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator_collection.Size = new System.Drawing.Size(1361, 27);
+            this.bindingNavigator_collection.Size = new System.Drawing.Size(1361, 31);
             this.bindingNavigator_collection.TabIndex = 12;
             this.bindingNavigator_collection.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(55, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(55, 28);
             this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
             // 
@@ -410,7 +410,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
             // 
             // bindingNavigatorMovePreviousItem
@@ -419,13 +419,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -440,7 +440,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -448,7 +448,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
             // 
             // bindingNavigatorMoveLastItem
@@ -457,20 +457,20 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripTextBox_find
             // 
             this.toolStripTextBox_find.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.toolStripTextBox_find.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox_find.Name = "toolStripTextBox_find";
-            this.toolStripTextBox_find.Size = new System.Drawing.Size(100, 27);
+            this.toolStripTextBox_find.Size = new System.Drawing.Size(100, 31);
             this.toolStripTextBox_find.ToolTipText = "Поиск по всем полям";
             this.toolStripTextBox_find.TextChanged += new System.EventHandler(this.TextBox_find_TextChanged);
             // 
@@ -936,7 +936,7 @@
             this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
             this.tabPage_phone.Name = "tabPage_phone";
             this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_phone.Size = new System.Drawing.Size(1361, 625);
+            this.tabPage_phone.Size = new System.Drawing.Size(1361, 627);
             this.tabPage_phone.TabIndex = 2;
             this.tabPage_phone.Text = "Работа с устройством";
             this.tabPage_phone.UseVisualStyleBackColor = true;
@@ -955,7 +955,7 @@
             this.tableLayoutPanel_phone.RowCount = 2;
             this.tableLayoutPanel_phone.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_phone.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel_phone.Size = new System.Drawing.Size(1355, 619);
+            this.tableLayoutPanel_phone.Size = new System.Drawing.Size(1355, 621);
             this.tableLayoutPanel_phone.TabIndex = 8;
             // 
             // groupBox_terminal
@@ -964,7 +964,7 @@
             this.groupBox_terminal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_terminal.Location = new System.Drawing.Point(3, 3);
             this.groupBox_terminal.Name = "groupBox_terminal";
-            this.groupBox_terminal.Size = new System.Drawing.Size(394, 553);
+            this.groupBox_terminal.Size = new System.Drawing.Size(394, 555);
             this.groupBox_terminal.TabIndex = 7;
             this.groupBox_terminal.TabStop = false;
             this.groupBox_terminal.Text = "Terminal";
@@ -976,7 +976,7 @@
             this.textBox_soft_term.Multiline = true;
             this.textBox_soft_term.Name = "textBox_soft_term";
             this.textBox_soft_term.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_soft_term.Size = new System.Drawing.Size(388, 532);
+            this.textBox_soft_term.Size = new System.Drawing.Size(388, 534);
             this.textBox_soft_term.TabIndex = 1;
             this.textBox_soft_term.TextChanged += new System.EventHandler(this.TextBox_soft_term_TextChanged);
             // 
@@ -987,7 +987,7 @@
             this.groupBox_soft.Location = new System.Drawing.Point(403, 3);
             this.groupBox_soft.Name = "groupBox_soft";
             this.tableLayoutPanel_phone.SetRowSpan(this.groupBox_soft, 2);
-            this.groupBox_soft.Size = new System.Drawing.Size(949, 613);
+            this.groupBox_soft.Size = new System.Drawing.Size(949, 615);
             this.groupBox_soft.TabIndex = 8;
             this.groupBox_soft.TabStop = false;
             this.groupBox_soft.Text = "Soft";
@@ -1000,7 +1000,7 @@
             this.tabControl_soft.Location = new System.Drawing.Point(3, 18);
             this.tabControl_soft.Name = "tabControl_soft";
             this.tabControl_soft.SelectedIndex = 0;
-            this.tabControl_soft.Size = new System.Drawing.Size(943, 592);
+            this.tabControl_soft.Size = new System.Drawing.Size(943, 594);
             this.tabControl_soft.TabIndex = 0;
             // 
             // tabPage_adb
@@ -1009,7 +1009,7 @@
             this.tabPage_adb.Location = new System.Drawing.Point(4, 25);
             this.tabPage_adb.Name = "tabPage_adb";
             this.tabPage_adb.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_adb.Size = new System.Drawing.Size(935, 563);
+            this.tabPage_adb.Size = new System.Drawing.Size(935, 565);
             this.tabPage_adb.TabIndex = 0;
             this.tabPage_adb.Text = "Android Debug Bridge";
             this.tabPage_adb.UseVisualStyleBackColor = true;
@@ -1029,7 +1029,7 @@
             this.tableLayoutPanel_adb.RowCount = 2;
             this.tableLayoutPanel_adb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel_adb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_adb.Size = new System.Drawing.Size(929, 557);
+            this.tableLayoutPanel_adb.Size = new System.Drawing.Size(929, 559);
             this.tableLayoutPanel_adb.TabIndex = 8;
             // 
             // button_ADB_start
@@ -1065,7 +1065,7 @@
             this.groupBox_adb_commands.Enabled = false;
             this.groupBox_adb_commands.Location = new System.Drawing.Point(3, 33);
             this.groupBox_adb_commands.Name = "groupBox_adb_commands";
-            this.groupBox_adb_commands.Size = new System.Drawing.Size(923, 521);
+            this.groupBox_adb_commands.Size = new System.Drawing.Size(923, 523);
             this.groupBox_adb_commands.TabIndex = 7;
             this.groupBox_adb_commands.TabStop = false;
             this.groupBox_adb_commands.Text = "Команды ADB";
@@ -1138,7 +1138,7 @@
             this.tabPage_sahara.Location = new System.Drawing.Point(4, 25);
             this.tabPage_sahara.Name = "tabPage_sahara";
             this.tabPage_sahara.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_sahara.Size = new System.Drawing.Size(935, 563);
+            this.tabPage_sahara.Size = new System.Drawing.Size(935, 565);
             this.tabPage_sahara.TabIndex = 1;
             this.tabPage_sahara.Text = "Sahara & Firehose_loader";
             this.tabPage_sahara.UseVisualStyleBackColor = true;
@@ -1316,7 +1316,7 @@
             this.groupBox_term_buttons.Controls.Add(this.button_term_clear);
             this.groupBox_term_buttons.Controls.Add(this.button_term_save);
             this.groupBox_term_buttons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_term_buttons.Location = new System.Drawing.Point(3, 562);
+            this.groupBox_term_buttons.Location = new System.Drawing.Point(3, 564);
             this.groupBox_term_buttons.Name = "groupBox_term_buttons";
             this.groupBox_term_buttons.Size = new System.Drawing.Size(394, 54);
             this.groupBox_term_buttons.TabIndex = 9;
@@ -1450,7 +1450,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem видToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem справочникУстройствToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CollectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem работаСУстройствомToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
@@ -1458,7 +1458,7 @@
         private System.Windows.Forms.ToolStripMenuItem вопросОтветToolStripMenuItem;
         private System.Data.DataSet dataSet1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem неподтверждённыеДанныеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ProofAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.TabPage tabPage_collection;
         private System.Windows.Forms.DataGridView dataGridView_collection;

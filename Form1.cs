@@ -146,10 +146,10 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void СправочникУстройствToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
         {
-            if (справочникУстройствToolStripMenuItem.Checked)
+            if (CollectionToolStripMenuItem.Checked)
             {
                 tabControl1.TabPages.Insert(tabControl1.TabPages.Count, tabPage_collection);
-                if (!неподтверждённыеДанныеToolStripMenuItem.Checked)
+                if (!ProofAllToolStripMenuItem.Checked)
                 {
                     //Отображаем только подтверждённые данные
                     bindingSource_collection.Filter = "Proof = true";
@@ -158,7 +158,7 @@ namespace FirehoseFinder
             else
             {
                 tabControl1.TabPages.Remove(tabPage_collection);
-                неподтверждённыеДанныеToolStripMenuItem.Checked = false;
+                ProofAllToolStripMenuItem.Checked = false;
             }
         }
 
@@ -169,9 +169,9 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void НеподтверждённыеДанныеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (неподтверждённыеДанныеToolStripMenuItem.Checked)
+            if (ProofAllToolStripMenuItem.Checked)
             {
-                справочникУстройствToolStripMenuItem.Checked = true;
+                CollectionToolStripMenuItem.Checked = true;
                 //отображаем все данные справочника. Пруфы красим бледно-зелёным
                 bindingSource_collection.Filter = null;
             }
@@ -459,7 +459,7 @@ namespace FirehoseFinder
         {
             if (string.IsNullOrEmpty(toolStripTextBox_find.Text))
             {
-                if (!неподтверждённыеДанныеToolStripMenuItem.Checked) bindingSource_collection.Filter = "Proof = true";
+                if (!ProofAllToolStripMenuItem.Checked) bindingSource_collection.Filter = "Proof = true";
                 else bindingSource_collection.Filter = null;
             }
             else bindingSource_collection.Filter = string.Format("HWID LIKE '%{0}%' OR FullName LIKE '%{0}%' OR OEMID LIKE '%{0}%' OR MODELID LIKE '%{0}%' OR HASHID LIKE '%{0}%' OR Trademark LIKE '%{0}%' OR Model LIKE '%{0}%' OR AltName LIKE '%{0}%'", toolStripTextBox_find.Text);
@@ -738,6 +738,17 @@ namespace FirehoseFinder
             label_model.Text = dataGridView_collection["Model", sel_row].Value.ToString();
             label_altname.Text = dataGridView_collection["AltName", sel_row].Value.ToString();
             tabControl1.SelectedTab = tabPage_firehose;
+            //Загружаем программер с сервера
+            if (!string.IsNullOrEmpty(dataGridView_collection["Url", sel_row].Value.ToString()))
+            {
+                DialogResult dr = MessageBox.Show("При подтверждении, с сервера будет загружен программер, который другие пользователи " +
+                    "смогли успешно использовать. Это не гарантирует того, что у вас с этим программером всё получится. Просто " +
+                    "это, с высокой долей вероятности, подходящий к выбранной вами модели файл.",
+                    "Загрузка файла с сервера",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (dr == DialogResult.OK) Process.Start(string.Format(dataGridView_collection["Url", sel_row].Value.ToString()).Trim('#'));
+                return;
+            }
         }
 
         #endregion
