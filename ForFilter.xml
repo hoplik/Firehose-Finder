@@ -83,7 +83,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-14T15:21:41">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-15T00:06:25">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -104,7 +104,7 @@
 <Trademark>AGM</Trademark>
 <Model>AGM A9</Model>
 <AltName>T61IN</AltName>
-<Url>#http://fhf.mywebcommunity.org/fh_collection/92002DDF/prog_emmc_firehose_8953_ddr_0009a0e1.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/92002DDF/prog_emmc_firehose_8953_ddr_0009a0e1.mbn#</Url>
 <Proof>1</Proof>
 </ForFilter>
 <ForFilter>
@@ -198,7 +198,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZE552KL</Model>
 <AltName>Zenfone 3 (Z012D)</AltName>
-<Url>#http://fhf.mywebcommunity.org/fh_collection/D42A380F/asus_Z012D_prog_emmc_firehose_8953_ddr.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D42A380F/asus_Z012D_prog_emmc_firehose_8953_ddr.mbn#</Url>
 <Proof>1</Proof>
 </ForFilter>
 <ForFilter>
