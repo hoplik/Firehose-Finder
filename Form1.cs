@@ -81,7 +81,6 @@ namespace FirehoseFinder
             bindingSource_firehose.DataSource = dataSet_Find.Tables[1];
             dataGridView_FInd_Server.DataSource = bindingSource_firehose;
             //Настройки отображения справочника
-            //dataGridView_collection.Columns["Proof"].Visible = false;
             dataGridView_collection.Columns["HASHID"].HeaderText = "OEM Private Key Hash";
             dataGridView_collection.Columns["OEMID"].HeaderText = "OEM";
             dataGridView_collection.Columns["MODELID"].HeaderText = "Model";
@@ -157,7 +156,7 @@ namespace FirehoseFinder
                 if (!ProofAllToolStripMenuItem.Checked)
                 {
                     //Отображаем только подтверждённые данные
-                    bindingSource_collection.Filter = "Url NOT null";
+                    bindingSource_collection.Filter = "Url is Not Null";
                 }
             }
             else
@@ -183,7 +182,7 @@ namespace FirehoseFinder
             else
             {
                 //Отображаем только подтверждённые данные
-                bindingSource_collection.Filter = "Url NOT null";
+                bindingSource_collection.Filter = "Url is Not Null";
             }
         }
 
@@ -620,7 +619,7 @@ namespace FirehoseFinder
             if (checkBox_Find_Server.Checked)
             {
                 object[] somerec = { false, "На сервере не нашлось", null, 0, null, null, null };
-                bindingSource_firehose.Filter = string.Format("HASH_FH LIKE '%{0}%'", textBox_oemhash.Text);
+                bindingSource_firehose.Filter = string.Format("HW_FH = '{0}' OR OEM_FH = '{1}' OR MODEL_FH = '{2}' OR HASH_FH = '{3}'", textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text, textBox_oemhash.Text);
                 if (dataGridView_FInd_Server.Rows.Count > 0)
                 {
                     for (int i = 0; i < dataGridView_FInd_Server.Rows.Count; i++)
@@ -630,9 +629,17 @@ namespace FirehoseFinder
                             dataGridView_FInd_Server["OEM_FH", i].Value.ToString(), dataGridView_FInd_Server["MODEL_FH", i].Value.ToString(),
                             dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Substring(dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Length - 8));
                         somerec[3] = 11; //Пока максимум, потом расчёт
-                        somerec[4] = "Файл на сервере";
+                        somerec[4] = "Jtag_ID (процессор) - " + dataGridView_FInd_Server["HW_FH", i].Value.ToString() + Environment.NewLine +
+                            "OEM_ID (производитель) - " + dataGridView_FInd_Server["OEM_FH", i].Value.ToString() + Environment.NewLine +
+                            "MODEL_ID (модель) - " + dataGridView_FInd_Server["MODEL_FH", i].Value.ToString() + Environment.NewLine +
+                            "OEM_PK_HASH (хеш корневого сертификата) - " + dataGridView_FInd_Server["HASH_FH", i].Value.ToString();
                         somerec[5] = 3;
-                        somerec[6] = dataGridView_FInd_Server["Model", i].Value.ToString();
+                        if (string.IsNullOrEmpty(dataGridView_FInd_Server["Model", i].Value.ToString()))
+                        {
+                            //Заполняем возможными вариантами моделей
+                            somerec[6] = null;
+                        }
+                        else somerec[6] = dataGridView_FInd_Server["Model", i].Value.ToString();
                         dataGridView_final.Rows.Insert(0, somerec);
                         dataGridView_final[3, 0].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     }
@@ -838,8 +845,8 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void TextBox_oemhash_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox_oemhash.Text)) label_oemhash.Text = "OEM_PK_HASH";
-            else label_oemhash.Text = "OEM_PK_HASH" + Environment.NewLine + "(" + textBox_oemhash.Text.Length.ToString() + " знаков)";
+            if (string.IsNullOrWhiteSpace(textBox_oemhash.Text)) label_oemhash.Text = "OEM_PK" + Environment.NewLine + "_HASH";
+            else label_oemhash.Text = "OEM_PK" + Environment.NewLine + "_HASH" + Environment.NewLine + "(" + textBox_oemhash.Text.Length.ToString() + " знаков)";
         }
 
         #endregion
@@ -871,7 +878,6 @@ namespace FirehoseFinder
                     "Загрузка файла с сервера",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (dr == DialogResult.OK) Process.Start(string.Format(dataGridView_collection["Url", sel_row].Value.ToString()).Trim('#'));
-                //return;
             }
         }
 
@@ -884,7 +890,7 @@ namespace FirehoseFinder
         {
             if (string.IsNullOrEmpty(toolStripTextBox_find.Text))
             {
-                if (!ProofAllToolStripMenuItem.Checked) bindingSource_collection.Filter = "Url NOT null";
+                if (!ProofAllToolStripMenuItem.Checked) bindingSource_collection.Filter = "Url is Not Null";
                 else bindingSource_collection.Filter = null;
             }
             else bindingSource_collection.Filter = string.Format("HWID LIKE '%{0}%' OR FullName LIKE '%{0}%' OR OEMID LIKE '%{0}%' OR MODELID LIKE '%{0}%' OR HASHID LIKE '%{0}%' OR Trademark LIKE '%{0}%' OR Model LIKE '%{0}%' OR AltName LIKE '%{0}%'", toolStripTextBox_find.Text);
