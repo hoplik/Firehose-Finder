@@ -620,7 +620,7 @@ namespace FirehoseFinder
             работаСУстройствомToolStripMenuItem.Checked = true;
             tabControl1.SelectedTab = tabPage_phone;
             tabControl_soft.SelectedTab = tabPage_sahara;
-            MessageBox.Show("Уважаемый пользователь!" + Environment.NewLine + 
+            MessageBox.Show("Уважаемый пользователь!" + Environment.NewLine +
                 "В связи с тем, что разработка программы продолжается, и пока не реализована автоматическая отправка на сервер успешно " +
                 "подключённого программера, пожалуйста, только при успешном подборе программера, отправьте в телеграмм-канал (https://t.me/firehosefinder) два файла:" + Environment.NewLine +
                 "1. Отчёт о подключённом устройстве (поставить галку на \"Сохранить идентификаторы и марку/модель в файл\"" + Environment.NewLine +
@@ -1334,6 +1334,28 @@ namespace FirehoseFinder
         private void RadioButton_reboot_edl_CheckedChanged(object sender, EventArgs e)
         {
             button_ADB_comstart.Enabled = true;
+        }
+
+        private void CheckBox_Find_Local_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_Find_Local.Checked)
+            {
+                radioButton_topdir.Enabled = true;
+                radioButton_alldir.Enabled = true;
+                button_path.Enabled = true;
+            }
+            else
+            {
+                radioButton_topdir.Enabled = false;
+                radioButton_alldir.Enabled = false;
+                if (!checkBox_Find_Server.Checked) button_path.Enabled = false;
+            }
+        }
+
+        private void CheckBox_Find_Server_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_Find_Server.Checked) button_path.Enabled = true;
+            else if (!checkBox_Find_Local.Checked) button_path.Enabled = false;
         }
     }
 }

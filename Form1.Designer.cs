@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfhf));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataSet1 = new System.Data.DataSet();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
@@ -81,6 +81,8 @@
             this.Column_Comp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox_fh_sel_path = new System.Windows.Forms.GroupBox();
+            this.checkBox_Find_Local = new System.Windows.Forms.CheckBox();
+            this.checkBox_Find_Server = new System.Windows.Forms.CheckBox();
             this.radioButton_alldir = new System.Windows.Forms.RadioButton();
             this.radioButton_topdir = new System.Windows.Forms.RadioButton();
             this.button_path = new System.Windows.Forms.Button();
@@ -208,7 +210,7 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1369, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1369, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -217,7 +219,7 @@
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // выходToolStripMenuItem
@@ -237,7 +239,7 @@
             this.toolStripSeparator2,
             this.внестиПроизводителяМодельToolStripMenuItem});
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
-            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.видToolStripMenuItem.Text = "Вид";
             // 
             // приветствиеToolStripMenuItem
@@ -296,7 +298,7 @@
             this.вопросОтветToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 26);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // вопросОтветToolStripMenuItem
@@ -319,7 +321,7 @@
             this.tabPage_collection.Controls.Add(this.bindingNavigator_collection);
             this.tabPage_collection.Location = new System.Drawing.Point(4, 25);
             this.tabPage_collection.Name = "tabPage_collection";
-            this.tabPage_collection.Size = new System.Drawing.Size(1361, 627);
+            this.tabPage_collection.Size = new System.Drawing.Size(1361, 625);
             this.tabPage_collection.TabIndex = 4;
             this.tabPage_collection.Text = "Справочник устройств";
             this.tabPage_collection.UseVisualStyleBackColor = true;
@@ -331,23 +333,23 @@
             this.dataGridView_collection.AllowUserToOrderColumns = true;
             this.dataGridView_collection.AllowUserToResizeRows = false;
             this.dataGridView_collection.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_collection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_collection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView_collection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_collection.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_collection.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView_collection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_collection.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_collection.MultiSelect = false;
@@ -361,7 +363,7 @@
             this.dataGridView_collection.ShowCellToolTips = false;
             this.dataGridView_collection.ShowEditingIcon = false;
             this.dataGridView_collection.ShowRowErrors = false;
-            this.dataGridView_collection.Size = new System.Drawing.Size(1361, 600);
+            this.dataGridView_collection.Size = new System.Drawing.Size(1361, 598);
             this.dataGridView_collection.TabIndex = 2;
             this.dataGridView_collection.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_collection_CellContentDoubleClick);
             // 
@@ -383,7 +385,7 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.toolStripTextBox_find});
-            this.bindingNavigator_collection.Location = new System.Drawing.Point(0, 600);
+            this.bindingNavigator_collection.Location = new System.Drawing.Point(0, 598);
             this.bindingNavigator_collection.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator_collection.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator_collection.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -480,7 +482,7 @@
             this.tabPage_firehose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage_firehose.Name = "tabPage_firehose";
             this.tabPage_firehose.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage_firehose.Size = new System.Drawing.Size(1361, 625);
+            this.tabPage_firehose.Size = new System.Drawing.Size(1361, 627);
             this.tabPage_firehose.TabIndex = 0;
             this.tabPage_firehose.Text = "Работа с файлами";
             this.tabPage_firehose.UseVisualStyleBackColor = true;
@@ -490,9 +492,9 @@
             this.panel2.Controls.Add(this.textBox_main_term);
             this.panel2.Controls.Add(this.dataGridView_final);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 151);
+            this.panel2.Location = new System.Drawing.Point(3, 180);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1355, 442);
+            this.panel2.Size = new System.Drawing.Size(1355, 415);
             this.panel2.TabIndex = 18;
             // 
             // textBox_main_term
@@ -502,16 +504,16 @@
             this.textBox_main_term.Multiline = true;
             this.textBox_main_term.Name = "textBox_main_term";
             this.textBox_main_term.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_main_term.Size = new System.Drawing.Size(409, 442);
+            this.textBox_main_term.Size = new System.Drawing.Size(409, 415);
             this.textBox_main_term.TabIndex = 16;
             // 
             // dataGridView_final
             // 
             this.dataGridView_final.AllowUserToAddRows = false;
             this.dataGridView_final.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_final.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_final.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView_final.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView_final.ColumnHeadersHeight = 29;
             this.dataGridView_final.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -534,7 +536,7 @@
             this.dataGridView_final.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView_final.RowTemplate.Height = 24;
             this.dataGridView_final.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_final.Size = new System.Drawing.Size(946, 442);
+            this.dataGridView_final.Size = new System.Drawing.Size(946, 415);
             this.dataGridView_final.TabIndex = 15;
             this.dataGridView_final.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellClick);
             this.dataGridView_final.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellDoubleClick);
@@ -542,8 +544,8 @@
             // Column_Sel
             // 
             this.Column_Sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle4.NullValue = false;
-            this.Column_Sel.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.NullValue = false;
+            this.Column_Sel.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column_Sel.HeaderText = "Выбор";
             this.Column_Sel.MinimumWidth = 6;
             this.Column_Sel.Name = "Column_Sel";
@@ -551,9 +553,9 @@
             // 
             // Column_Name
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column_Name.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column_Name.DefaultCellStyle = dataGridViewCellStyle11;
             this.Column_Name.HeaderText = "Файл";
             this.Column_Name.MinimumWidth = 6;
             this.Column_Name.Name = "Column_Name";
@@ -583,9 +585,9 @@
             // 
             // Column_SW_type
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column_SW_type.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column_SW_type.DefaultCellStyle = dataGridViewCellStyle12;
             this.Column_SW_type.HeaderText = "Тип ПО";
             this.Column_SW_type.MinimumWidth = 6;
             this.Column_SW_type.Name = "Column_SW_type";
@@ -621,26 +623,54 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1355, 149);
+            this.panel1.Size = new System.Drawing.Size(1355, 178);
             this.panel1.TabIndex = 17;
             // 
             // groupBox_fh_sel_path
             // 
+            this.groupBox_fh_sel_path.Controls.Add(this.checkBox_Find_Local);
+            this.groupBox_fh_sel_path.Controls.Add(this.checkBox_Find_Server);
             this.groupBox_fh_sel_path.Controls.Add(this.radioButton_alldir);
             this.groupBox_fh_sel_path.Controls.Add(this.radioButton_topdir);
             this.groupBox_fh_sel_path.Controls.Add(this.button_path);
             this.groupBox_fh_sel_path.Location = new System.Drawing.Point(1063, 4);
             this.groupBox_fh_sel_path.Name = "groupBox_fh_sel_path";
-            this.groupBox_fh_sel_path.Size = new System.Drawing.Size(287, 102);
+            this.groupBox_fh_sel_path.Size = new System.Drawing.Size(287, 135);
             this.groupBox_fh_sel_path.TabIndex = 31;
             this.groupBox_fh_sel_path.TabStop = false;
-            this.groupBox_fh_sel_path.Text = "Выберите папку с программерами";
+            this.groupBox_fh_sel_path.Text = "Поиск программера";
+            // 
+            // checkBox_Find_Local
+            // 
+            this.checkBox_Find_Local.AutoSize = true;
+            this.checkBox_Find_Local.Checked = true;
+            this.checkBox_Find_Local.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_Find_Local.Location = new System.Drawing.Point(142, 30);
+            this.checkBox_Find_Local.Name = "checkBox_Find_Local";
+            this.checkBox_Find_Local.Size = new System.Drawing.Size(94, 21);
+            this.checkBox_Find_Local.TabIndex = 13;
+            this.checkBox_Find_Local.Text = "Локально";
+            this.checkBox_Find_Local.UseVisualStyleBackColor = true;
+            this.checkBox_Find_Local.CheckedChanged += new System.EventHandler(this.CheckBox_Find_Local_CheckedChanged);
+            // 
+            // checkBox_Find_Server
+            // 
+            this.checkBox_Find_Server.AutoSize = true;
+            this.checkBox_Find_Server.Checked = true;
+            this.checkBox_Find_Server.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_Find_Server.Location = new System.Drawing.Point(7, 30);
+            this.checkBox_Find_Server.Name = "checkBox_Find_Server";
+            this.checkBox_Find_Server.Size = new System.Drawing.Size(106, 21);
+            this.checkBox_Find_Server.TabIndex = 12;
+            this.checkBox_Find_Server.Text = "На сервере";
+            this.checkBox_Find_Server.UseVisualStyleBackColor = true;
+            this.checkBox_Find_Server.CheckedChanged += new System.EventHandler(this.CheckBox_Find_Server_CheckedChanged);
             // 
             // radioButton_alldir
             // 
             this.radioButton_alldir.AutoSize = true;
             this.radioButton_alldir.Checked = true;
-            this.radioButton_alldir.Location = new System.Drawing.Point(6, 21);
+            this.radioButton_alldir.Location = new System.Drawing.Point(7, 106);
             this.radioButton_alldir.Name = "radioButton_alldir";
             this.radioButton_alldir.Size = new System.Drawing.Size(206, 21);
             this.radioButton_alldir.TabIndex = 11;
@@ -651,7 +681,7 @@
             // radioButton_topdir
             // 
             this.radioButton_topdir.AutoSize = true;
-            this.radioButton_topdir.Location = new System.Drawing.Point(6, 48);
+            this.radioButton_topdir.Location = new System.Drawing.Point(7, 57);
             this.radioButton_topdir.Name = "radioButton_topdir";
             this.radioButton_topdir.Size = new System.Drawing.Size(151, 38);
             this.radioButton_topdir.TabIndex = 10;
@@ -660,12 +690,12 @@
             // 
             // button_path
             // 
-            this.button_path.Location = new System.Drawing.Point(173, 51);
+            this.button_path.Location = new System.Drawing.Point(164, 62);
             this.button_path.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_path.Name = "button_path";
-            this.button_path.Size = new System.Drawing.Size(108, 34);
+            this.button_path.Size = new System.Drawing.Size(117, 34);
             this.button_path.TabIndex = 9;
-            this.button_path.Text = "Путь к папке";
+            this.button_path.Text = "Поиск";
             this.button_path.UseVisualStyleBackColor = true;
             this.button_path.Click += new System.EventHandler(this.Button_path_Click);
             // 
@@ -714,7 +744,7 @@
             this.groupBox4.Controls.Add(this.radioButton_man_reset);
             this.groupBox4.Location = new System.Drawing.Point(6, 97);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(375, 49);
+            this.groupBox4.Size = new System.Drawing.Size(375, 75);
             this.groupBox4.TabIndex = 29;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Перегрузить в аварийный режим";
@@ -812,7 +842,7 @@
             // button_useSahara_fhf
             // 
             this.button_useSahara_fhf.Enabled = false;
-            this.button_useSahara_fhf.Location = new System.Drawing.Point(1063, 111);
+            this.button_useSahara_fhf.Location = new System.Drawing.Point(1063, 146);
             this.button_useSahara_fhf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_useSahara_fhf.Name = "button_useSahara_fhf";
             this.button_useSahara_fhf.Size = new System.Drawing.Size(287, 27);
@@ -865,13 +895,13 @@
             // 
             this.textBox_oemhash.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_oemhash.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox_oemhash.Location = new System.Drawing.Point(512, 97);
+            this.textBox_oemhash.Location = new System.Drawing.Point(484, 97);
             this.textBox_oemhash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_oemhash.MaxLength = 96;
             this.textBox_oemhash.Multiline = true;
             this.textBox_oemhash.Name = "textBox_oemhash";
             this.textBox_oemhash.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_oemhash.Size = new System.Drawing.Size(545, 41);
+            this.textBox_oemhash.Size = new System.Drawing.Size(573, 76);
             this.textBox_oemhash.TabIndex = 6;
             this.textBox_oemhash.TextChanged += new System.EventHandler(this.TextBox_oemhash_TextChanged);
             // 
@@ -880,9 +910,9 @@
             this.label_oemhash.AutoSize = true;
             this.label_oemhash.Location = new System.Drawing.Point(395, 97);
             this.label_oemhash.Name = "label_oemhash";
-            this.label_oemhash.Size = new System.Drawing.Size(111, 17);
+            this.label_oemhash.Size = new System.Drawing.Size(65, 34);
             this.label_oemhash.TabIndex = 7;
-            this.label_oemhash.Text = "OEM_PK_HASH";
+            this.label_oemhash.Text = "OEM_PK\r\n_HASH";
             // 
             // textBox_modelid
             // 
@@ -902,7 +932,7 @@
             this.toolStripStatusLabel_filescompleted,
             this.toolStripProgressBar_filescompleted,
             this.toolStripStatusLabel_vol});
-            this.statusStrip_firehose.Location = new System.Drawing.Point(3, 593);
+            this.statusStrip_firehose.Location = new System.Drawing.Point(3, 595);
             this.statusStrip_firehose.Name = "statusStrip_firehose";
             this.statusStrip_firehose.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
             this.statusStrip_firehose.Size = new System.Drawing.Size(1355, 30);
@@ -1351,11 +1381,11 @@
             this.tabControl1.Controls.Add(this.tabPage_firehose);
             this.tabControl1.Controls.Add(this.tabPage_collection);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 30);
+            this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1369, 654);
+            this.tabControl1.Size = new System.Drawing.Size(1369, 656);
             this.tabControl1.TabIndex = 0;
             // 
             // bindingSource_collection
@@ -1537,6 +1567,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Full;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_SW_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Comp;
+        private System.Windows.Forms.CheckBox checkBox_Find_Local;
+        private System.Windows.Forms.CheckBox checkBox_Find_Server;
     }
 }
 
