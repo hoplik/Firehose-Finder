@@ -602,11 +602,35 @@ namespace FirehoseFinder
             toolStripStatusLabel_filescompleted.Text = string.Empty;
             toolStripStatusLabel_vol.Text = string.Empty;
             toolStripProgressBar_filescompleted.Value = 0;
-            DialogResult result = folderBrowserDialog1.ShowDialog();
-            if (result == DialogResult.OK)
+            //Условия по чек-боксам
+            if (checkBox_Find_Local.Checked)
             {
-                button_path.Text = folderBrowserDialog1.SelectedPath;
-                Check_Unread_Files();
+                DialogResult result = folderBrowserDialog1.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    button_path.Text = folderBrowserDialog1.SelectedPath;
+                    Check_Unread_Files();
+                }
+            }
+            if (checkBox_Find_Server.Checked)
+            {
+                dataSet_Find.ReadXml("ForFound.xml", XmlReadMode.ReadSchema);
+                bindingSource_firehose.DataSource = dataSet_Find.Tables[1];
+                object[] zerorec = { false, "На сервере не нашлось", null, 0, null, null, null };
+                object[] somerec = { false, "Ура!", null, 0, null, null, null };
+                //dataGridView_collection.DataSource = bindingSource_collection;
+                bindingSource_firehose.Filter = string.Format("HASH_FH LIKE '%{0}%'", textBox_oemhash.Text);
+                if (dataGridView_FInd_Server.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dataGridView_FInd_Server.Rows.Count; i++)
+                    {
+                        dataGridView_final.Rows.Insert(0, somerec);
+                    }
+                }
+                else
+                {
+                    dataGridView_final.Rows.Insert(0, zerorec);
+                }
             }
         }
 
