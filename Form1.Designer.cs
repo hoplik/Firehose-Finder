@@ -112,6 +112,7 @@
             this.toolStripStatusLabel_filescompleted = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar_filescompleted = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel_vol = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dataGridView_FInd_Server = new System.Windows.Forms.DataGridView();
             this.tabPage_phone = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel_phone = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox_terminal = new System.Windows.Forms.GroupBox();
@@ -152,7 +153,6 @@
             this.bindingSource_collection = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet_Find = new System.Data.DataSet();
             this.bindingSource_firehose = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView_FInd_Server = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabPage_collection.SuspendLayout();
@@ -167,6 +167,7 @@
             this.groupBox_tm_model.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.statusStrip_firehose.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_FInd_Server)).BeginInit();
             this.tabPage_phone.SuspendLayout();
             this.tableLayoutPanel_phone.SuspendLayout();
             this.groupBox_terminal.SuspendLayout();
@@ -183,7 +184,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_collection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Find)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_firehose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_FInd_Server)).BeginInit();
             this.SuspendLayout();
             // 
             // dataSet1
@@ -327,7 +327,7 @@
             this.tabPage_collection.Controls.Add(this.bindingNavigator_collection);
             this.tabPage_collection.Location = new System.Drawing.Point(4, 25);
             this.tabPage_collection.Name = "tabPage_collection";
-            this.tabPage_collection.Size = new System.Drawing.Size(1361, 627);
+            this.tabPage_collection.Size = new System.Drawing.Size(1361, 625);
             this.tabPage_collection.TabIndex = 4;
             this.tabPage_collection.Text = "Справочник устройств";
             this.tabPage_collection.UseVisualStyleBackColor = true;
@@ -369,7 +369,7 @@
             this.dataGridView_collection.ShowCellToolTips = false;
             this.dataGridView_collection.ShowEditingIcon = false;
             this.dataGridView_collection.ShowRowErrors = false;
-            this.dataGridView_collection.Size = new System.Drawing.Size(1361, 600);
+            this.dataGridView_collection.Size = new System.Drawing.Size(1361, 598);
             this.dataGridView_collection.TabIndex = 2;
             this.dataGridView_collection.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_collection_CellContentDoubleClick);
             // 
@@ -391,7 +391,7 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.toolStripTextBox_find});
-            this.bindingNavigator_collection.Location = new System.Drawing.Point(0, 600);
+            this.bindingNavigator_collection.Location = new System.Drawing.Point(0, 598);
             this.bindingNavigator_collection.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator_collection.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator_collection.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -811,7 +811,7 @@
             // 
             // button_findIDs
             // 
-            this.button_findIDs.Location = new System.Drawing.Point(5, 4);
+            this.button_findIDs.Location = new System.Drawing.Point(5, 5);
             this.button_findIDs.Name = "button_findIDs";
             this.button_findIDs.Size = new System.Drawing.Size(157, 86);
             this.button_findIDs.TabIndex = 24;
@@ -915,7 +915,7 @@
             // label_oemhash
             // 
             this.label_oemhash.AutoSize = true;
-            this.label_oemhash.Location = new System.Drawing.Point(395, 97);
+            this.label_oemhash.Location = new System.Drawing.Point(400, 99);
             this.label_oemhash.Name = "label_oemhash";
             this.label_oemhash.Size = new System.Drawing.Size(65, 34);
             this.label_oemhash.TabIndex = 7;
@@ -963,13 +963,26 @@
             this.toolStripStatusLabel_vol.Name = "toolStripStatusLabel_vol";
             this.toolStripStatusLabel_vol.Size = new System.Drawing.Size(0, 24);
             // 
+            // dataGridView_FInd_Server
+            // 
+            this.dataGridView_FInd_Server.AllowUserToAddRows = false;
+            this.dataGridView_FInd_Server.AllowUserToDeleteRows = false;
+            this.dataGridView_FInd_Server.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_FInd_Server.Location = new System.Drawing.Point(166, 253);
+            this.dataGridView_FInd_Server.Name = "dataGridView_FInd_Server";
+            this.dataGridView_FInd_Server.ReadOnly = true;
+            this.dataGridView_FInd_Server.RowHeadersWidth = 51;
+            this.dataGridView_FInd_Server.RowTemplate.Height = 24;
+            this.dataGridView_FInd_Server.Size = new System.Drawing.Size(186, 96);
+            this.dataGridView_FInd_Server.TabIndex = 19;
+            // 
             // tabPage_phone
             // 
             this.tabPage_phone.Controls.Add(this.tableLayoutPanel_phone);
             this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
             this.tabPage_phone.Name = "tabPage_phone";
             this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_phone.Size = new System.Drawing.Size(1361, 627);
+            this.tabPage_phone.Size = new System.Drawing.Size(1361, 625);
             this.tabPage_phone.TabIndex = 2;
             this.tabPage_phone.Text = "Работа с устройством";
             this.tabPage_phone.UseVisualStyleBackColor = true;
@@ -988,7 +1001,7 @@
             this.tableLayoutPanel_phone.RowCount = 2;
             this.tableLayoutPanel_phone.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_phone.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel_phone.Size = new System.Drawing.Size(1355, 621);
+            this.tableLayoutPanel_phone.Size = new System.Drawing.Size(1355, 619);
             this.tableLayoutPanel_phone.TabIndex = 8;
             // 
             // groupBox_terminal
@@ -997,7 +1010,7 @@
             this.groupBox_terminal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_terminal.Location = new System.Drawing.Point(3, 3);
             this.groupBox_terminal.Name = "groupBox_terminal";
-            this.groupBox_terminal.Size = new System.Drawing.Size(394, 555);
+            this.groupBox_terminal.Size = new System.Drawing.Size(394, 553);
             this.groupBox_terminal.TabIndex = 7;
             this.groupBox_terminal.TabStop = false;
             this.groupBox_terminal.Text = "Terminal";
@@ -1009,7 +1022,7 @@
             this.textBox_soft_term.Multiline = true;
             this.textBox_soft_term.Name = "textBox_soft_term";
             this.textBox_soft_term.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_soft_term.Size = new System.Drawing.Size(388, 534);
+            this.textBox_soft_term.Size = new System.Drawing.Size(388, 532);
             this.textBox_soft_term.TabIndex = 1;
             this.textBox_soft_term.TextChanged += new System.EventHandler(this.TextBox_soft_term_TextChanged);
             // 
@@ -1020,7 +1033,7 @@
             this.groupBox_soft.Location = new System.Drawing.Point(403, 3);
             this.groupBox_soft.Name = "groupBox_soft";
             this.tableLayoutPanel_phone.SetRowSpan(this.groupBox_soft, 2);
-            this.groupBox_soft.Size = new System.Drawing.Size(949, 615);
+            this.groupBox_soft.Size = new System.Drawing.Size(949, 613);
             this.groupBox_soft.TabIndex = 8;
             this.groupBox_soft.TabStop = false;
             this.groupBox_soft.Text = "Soft";
@@ -1033,7 +1046,7 @@
             this.tabControl_soft.Location = new System.Drawing.Point(3, 18);
             this.tabControl_soft.Name = "tabControl_soft";
             this.tabControl_soft.SelectedIndex = 0;
-            this.tabControl_soft.Size = new System.Drawing.Size(943, 594);
+            this.tabControl_soft.Size = new System.Drawing.Size(943, 592);
             this.tabControl_soft.TabIndex = 0;
             // 
             // tabPage_adb
@@ -1173,7 +1186,7 @@
             this.tabPage_sahara.Location = new System.Drawing.Point(4, 25);
             this.tabPage_sahara.Name = "tabPage_sahara";
             this.tabPage_sahara.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_sahara.Size = new System.Drawing.Size(935, 565);
+            this.tabPage_sahara.Size = new System.Drawing.Size(935, 563);
             this.tabPage_sahara.TabIndex = 1;
             this.tabPage_sahara.Text = "Sahara & Firehose_loader";
             this.tabPage_sahara.UseVisualStyleBackColor = true;
@@ -1351,7 +1364,7 @@
             this.groupBox_term_buttons.Controls.Add(this.button_term_clear);
             this.groupBox_term_buttons.Controls.Add(this.button_term_save);
             this.groupBox_term_buttons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_term_buttons.Location = new System.Drawing.Point(3, 564);
+            this.groupBox_term_buttons.Location = new System.Drawing.Point(3, 562);
             this.groupBox_term_buttons.Name = "groupBox_term_buttons";
             this.groupBox_term_buttons.Size = new System.Drawing.Size(394, 54);
             this.groupBox_term_buttons.TabIndex = 9;
@@ -1407,21 +1420,6 @@
             // 
             this.bindingSource_firehose.AllowNew = false;
             // 
-            // dataGridView_FInd_Server
-            // 
-            this.dataGridView_FInd_Server.AllowUserToAddRows = false;
-            this.dataGridView_FInd_Server.AllowUserToDeleteRows = false;
-            this.dataGridView_FInd_Server.AutoGenerateColumns = false;
-            this.dataGridView_FInd_Server.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_FInd_Server.DataSource = this.bindingSource_firehose;
-            this.dataGridView_FInd_Server.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView_FInd_Server.Name = "dataGridView_FInd_Server";
-            this.dataGridView_FInd_Server.ReadOnly = true;
-            this.dataGridView_FInd_Server.RowHeadersWidth = 51;
-            this.dataGridView_FInd_Server.RowTemplate.Height = 24;
-            this.dataGridView_FInd_Server.Size = new System.Drawing.Size(162, 92);
-            this.dataGridView_FInd_Server.TabIndex = 19;
-            // 
             // Formfhf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1460,6 +1458,7 @@
             this.groupBox4.PerformLayout();
             this.statusStrip_firehose.ResumeLayout(false);
             this.statusStrip_firehose.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_FInd_Server)).EndInit();
             this.tabPage_phone.ResumeLayout(false);
             this.tableLayoutPanel_phone.ResumeLayout(false);
             this.groupBox_terminal.ResumeLayout(false);
@@ -1481,7 +1480,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_collection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Find)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_firehose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_FInd_Server)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

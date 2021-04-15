@@ -78,12 +78,11 @@
 </xsd:restriction>
 </xsd:simpleType>
 </xsd:element>
-<xsd:element name="Proof" minOccurs="1" od:jetType="yesno" od:sqlSType="bit" od:nonNullable="yes" type="xsd:boolean"/>
 </xsd:sequence>
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-15T16:22:36">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-15T22:41:08">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -93,7 +92,6 @@
 <Trademark>AGM</Trademark>
 <Model>A8_mini</Model>
 <AltName>A8_mini</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0009A0E1</HWID>
@@ -105,7 +103,6 @@
 <Model>AGM A9</Model>
 <AltName>T61IN</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/92002DDF/prog_emmc_firehose_8953_ddr_0009a0e1.mbn#</Url>
-<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008B0E1</HWID>
@@ -115,7 +112,6 @@
 <HASHID>BC4C2FAAF0C46B258B8B6A94543F3985741D41481B41241E32D24770871831EA22F330E82495886D29F9A2C56A752E39</HASHID>
 <Trademark>AGM</Trademark>
 <Model>AGM X3</Model>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000A50E1</HWID>
@@ -124,7 +120,6 @@
 <MODELID>0025</MODELID>
 <HASHID>7E5ACFFF90370967EDD2BDF205A9EBC9035ABCA140B3AB9BB7771BD7C27057CBFCF13FBCE7E71D9B35B6A505AA4E1FE1</HASHID>
 <Trademark>ASUS</Trademark>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -135,7 +130,6 @@
 <Trademark>ASUS</Trademark>
 <Model>M653</Model>
 <AltName>WW_Phone (ChinaMobile A3s)</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -145,7 +139,6 @@
 <HASHID>FBD4DE360136046BBF581DC5EFF178E1F716188E6834DA714E485695230D00F3</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZB555KL</Model>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000CC0E1</HWID>
@@ -156,7 +149,6 @@
 <Trademark>ASUS</Trademark>
 <Model>ZB602KL</Model>
 <AltName>ZenFone Max Pro (M1)</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -167,7 +159,6 @@
 <Trademark>ASUS</Trademark>
 <Model>ZB631KL</Model>
 <AltName>Zenfone Max Pro (M2)</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -177,7 +168,6 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZE500KG</Model>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -187,7 +177,6 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZE500KL</Model>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -199,7 +188,6 @@
 <Model>ZE552KL</Model>
 <AltName>Zenfone 3 (Z012D)</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D42A380F/asus_Z012D_prog_emmc_firehose_8953_ddr.mbn#</Url>
-<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000AC0E1</HWID>
@@ -210,7 +198,6 @@
 <Trademark>ASUS</Trademark>
 <Model>ZE554KL</Model>
 <AltName>WW_Z01KDA</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008110E1</HWID>
@@ -221,7 +208,6 @@
 <Trademark>Foxda</Trademark>
 <Model>MFLogin3T</Model>
 <AltName>MFLogin3T</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000910E1</HWID>
@@ -232,7 +218,6 @@
 <Trademark>Google</Trademark>
 <Model>Pixel 3a</Model>
 <AltName>sargo</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -242,7 +227,6 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Honeywell</Trademark>
 <Model>EDA50</Model>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -253,7 +237,6 @@
 <Trademark>HP</Trademark>
 <Model>Y1M46EA</Model>
 <AltName>Elite x3</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009400E1</HWID>
@@ -264,7 +247,6 @@
 <Trademark>HTC</Trademark>
 <Model>10 evo</Model>
 <AltName>Bolt</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009180E1</HWID>
@@ -274,7 +256,6 @@
 <HASHID>BA2102DA99C924058C758FA9F4250847C92CABDE17FDCEF01D4DAFF8DF5D6753</HASHID>
 <Trademark>HTC</Trademark>
 <Model>Desire 825</Model>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005E0E1</HWID>
@@ -285,7 +266,6 @@
 <Trademark>HTC</Trademark>
 <Model>U11</Model>
 <AltName>Ocean</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0009A0E1</HWID>
@@ -295,7 +275,6 @@
 <HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
 <Trademark>Huawei</Trademark>
 <AltName>Y7 2019</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000CC0E1</HWID>
@@ -306,7 +285,6 @@
 <Trademark>Huawei</Trademark>
 <Model>ARE-AL00B</Model>
 <AltName>Honor 8X Max</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -317,7 +295,6 @@
 <Trademark>Huawei</Trademark>
 <Model>AUM-L29</Model>
 <AltName>Honor 7A Pro</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BA0E1</HWID>
@@ -328,7 +305,6 @@
 <Trademark>Huawei</Trademark>
 <Model>BKK-L21</Model>
 <AltName>BKK-L21RU</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -339,7 +315,6 @@
 <Trademark>Huawei</Trademark>
 <Model>DIG-L21</Model>
 <AltName>Honor 6C</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -350,7 +325,6 @@
 <Trademark>Huawei</Trademark>
 <Model>DLI-TL20</Model>
 <AltName>Honor 6A</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -361,7 +335,6 @@
 <Trademark>Huawei</Trademark>
 <Model>G620S-L01</Model>
 <AltName>Ascend G620s</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -372,7 +345,6 @@
 <Trademark>Huawei</Trademark>
 <Model>G630-U20</Model>
 <AltName>Ascend G630</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -383,7 +355,6 @@
 <Trademark>Huawei</Trademark>
 <Model>MediaPad M3 Lite 10</Model>
 <AltName>BAH-L09</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -394,7 +365,6 @@
 <Trademark>Huawei</Trademark>
 <Model>MediaPad T1 8</Model>
 <AltName>S8-701u</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -405,7 +375,6 @@
 <Trademark>Huawei</Trademark>
 <Model>MediaPad T2 10.0 Pro</Model>
 <AltName>FDR-A01L</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -415,7 +384,6 @@
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>LENOVO</Trademark>
 <Model>Lenovo A6000</Model>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -426,7 +394,6 @@
 <Trademark>LENOVO</Trademark>
 <Model>Lenovo K53a48</Model>
 <AltName>karatep</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000CC0E1</HWID>
@@ -437,7 +404,6 @@
 <Trademark>LENOVO</Trademark>
 <Model>Lenovo L38041</Model>
 <AltName>K5 Pro</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -448,7 +414,6 @@
 <Trademark>LENOVO</Trademark>
 <Model>Lenovo S580</Model>
 <AltName>S580</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -459,7 +424,6 @@
 <Trademark>LENOVO</Trademark>
 <Model>Vibe C</Model>
 <AltName>A2020</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008000E1</HWID>
@@ -470,7 +434,6 @@
 <Trademark>LG</Trademark>
 <Model>G3 S</Model>
 <AltName>D724</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
@@ -481,7 +444,6 @@
 <Trademark>LG</Trademark>
 <Model>H918TN</Model>
 <AltName>v20</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -492,7 +454,6 @@
 <Trademark>LG</Trademark>
 <Model>L Fino</Model>
 <AltName>D295</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008000E1</HWID>
@@ -503,7 +464,6 @@
 <Trademark>LG</Trademark>
 <Model>L90</Model>
 <AltName>D410</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -514,7 +474,6 @@
 <Trademark>LG</Trademark>
 <Model>LM-X220MB</Model>
 <AltName>Aristo 3+ MetrPCS</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005E0E1</HWID>
@@ -524,7 +483,6 @@
 <HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
 <Trademark>LG</Trademark>
 <Model>V30</Model>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -535,7 +493,6 @@
 <Trademark>Micromax</Trademark>
 <Model>Q4202</Model>
 <AltName>Bolt Warrior 2</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000DB0E1</HWID>
@@ -546,7 +503,6 @@
 <Trademark>MOQI</Trademark>
 <Model>I7S</Model>
 <AltName>i7s</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -555,7 +511,6 @@
 <MODELID>0000</MODELID>
 <HASHID>59B38969C8B392F173E8FA7081A1758317C14789245EA1332B2547D6FB530C33</HASHID>
 <Trademark>Motorola</Trademark>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -566,7 +521,6 @@
 <Trademark>Motorola</Trademark>
 <Model>MotoE2</Model>
 <AltName>otus_reteu_ds</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>008050E1</HWID>
@@ -576,7 +530,6 @@
 <HASHID>831BE6B18E7006372069545885A80F786C33D064904732D39EFBE0EC7019B5D4</HASHID>
 <Trademark>Nokia</Trademark>
 <Model>RM-1075</Model>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -587,7 +540,6 @@
 <Trademark>Nokia</Trademark>
 <Model>TA-1196</Model>
 <AltName>7.2</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000510E1</HWID>
@@ -598,7 +550,6 @@
 <Trademark>nubia</Trademark>
 <Model>SW1002</Model>
 <AltName>SW1002</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009400E1</HWID>
@@ -609,7 +560,6 @@
 <Trademark>OnePlus</Trademark>
 <Model>2</Model>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/prog_emmc_firehose_8994_lite.mbn#</Url>
-<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005F0E1</HWID>
@@ -621,7 +571,6 @@
 <Model>3T</Model>
 <AltName>84</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D49D14D4/prog_ufs_firehose_8996_lite.elf#</Url>
-<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0013F0E1</HWID>
@@ -631,7 +580,6 @@
 <Trademark>OnePlus</Trademark>
 <Model>BE2029</Model>
 <AltName>OnePlusN10</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0010A0E1</HWID>
@@ -642,7 +590,6 @@
 <Trademark>OPPO</Trademark>
 <Model>CPH1931</Model>
 <AltName>CPH1931RU</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>001360E1</HWID>
@@ -652,7 +599,6 @@
 <Trademark>OPPO</Trademark>
 <Model>CPH2127</Model>
 <AltName>CPH2127RU</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008B0E1</HWID>
@@ -662,7 +608,6 @@
 <HASHID>074DDB00C617690187503D8C795F497005C760965F8F48A7A8955271E4BF826B</HASHID>
 <Trademark>Razer</Trademark>
 <Model>Phone 2</Model>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0010A0E1</HWID>
@@ -673,7 +618,6 @@
 <Trademark>Realme</Trademark>
 <Model>5</Model>
 <AltName>RMX1927</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000DB0E1</HWID>
@@ -684,7 +628,6 @@
 <Trademark>Realme</Trademark>
 <Model>X</Model>
 <AltName>RMX1901</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005E0E1</HWID>
@@ -694,7 +637,6 @@
 <HASHID>D6AB87BC95C893891BA2A3190C17BB95AEBC1081F7F81FDA93D477A1BB9EA5C1</HASHID>
 <Trademark>RED</Trademark>
 <Model>HydrogenONE</Model>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009010E1</HWID>
@@ -703,7 +645,6 @@
 <MODELID>0000</MODELID>
 <HASHID>1738585D89D929FB7B6F9DF5A943C595F889A4EE0E36D046489D05AA54A7988E</HASHID>
 <Trademark>Samsung</Trademark>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009900E1</HWID>
@@ -714,7 +655,6 @@
 <Trademark>Samsung</Trademark>
 <Model>Galaxy C9 Pro</Model>
 <AltName>SM-C9000</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -725,7 +665,6 @@
 <Trademark>Samsung</Trademark>
 <Model>Galaxy J5</Model>
 <AltName>SM-J500FN</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007070E1</HWID>
@@ -736,7 +675,6 @@
 <Trademark>Samsung</Trademark>
 <Model>Galaxy J5</Model>
 <AltName>SM-J500H</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -747,7 +685,6 @@
 <Trademark>Samsung</Trademark>
 <Model>Galaxy J5 (2016)</Model>
 <AltName>SM-J510FN</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BE0E1</HWID>
@@ -758,7 +695,6 @@
 <Trademark>Samsung</Trademark>
 <Model>Tab A 8.0</Model>
 <AltName>SM-T295</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -769,7 +705,6 @@
 <Trademark>Tplink</Trademark>
 <Model>C5L</Model>
 <AltName>lineage_c5l</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BF0E1</HWID>
@@ -780,7 +715,6 @@
 <Trademark>vivo</Trademark>
 <Model>PD1930CF_EX</Model>
 <AltName>1906_RU</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0009A0E1</HWID>
@@ -791,7 +725,6 @@
 <Trademark>vsmart</Trademark>
 <Model>Joy 2+</Model>
 <AltName>V420A_open</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>001060E1</HWID>
@@ -800,7 +733,6 @@
 <HASHID>15E7119B24228246FC6A165557A02E8EB88148856FD138C83E947792D9AF2805</HASHID>
 <Trademark>vsmart</Trademark>
 <Model>Star</Model>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -812,7 +744,6 @@
 <Model>Swift2</Model>
 <AltName>Swift 2 X</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/89672D69/prog_emmc_firehose_x50_signed_lite.mbn#</Url>
-<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000C30E1</HWID>
@@ -823,7 +754,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>K30 Pro</Model>
 <AltName>M2004J11G</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0005F0E1</HWID>
@@ -834,7 +764,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 5s</Model>
 <AltName>capricorn</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000E60E1</HWID>
@@ -845,7 +774,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 9T</Model>
 <AltName>davinci</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -856,7 +784,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Mi A2</Model>
 <AltName>jasmine</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0010A0E1</HWID>
@@ -867,7 +794,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Mi A3</Model>
 <AltName>laurel_sprout</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000E60E1</HWID>
@@ -878,7 +804,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Mi Note 10</Model>
 <AltName>tucana</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -889,7 +814,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>MiMax 2</Model>
 <AltName>HIDROGEN</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008B0E1</HWID>
@@ -900,8 +824,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Pocophone F1</Model>
 <AltName>beryllium</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/6965FE65/prog_ufs_firehose_sdm845_Mi8_Pocco.elf#</Url>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -912,7 +834,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 3</Model>
 <AltName>ido</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -923,7 +844,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 3s</Model>
 <AltName>land</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -934,7 +854,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 4</Model>
 <AltName>Prada</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -945,7 +864,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 4x</Model>
 <AltName>santoni</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0009A0E1</HWID>
@@ -956,7 +874,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 5</Model>
 <AltName>rosy</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -967,7 +884,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 5 Plus</Model>
 <AltName>MEE7 vince</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BA0E1</HWID>
@@ -978,7 +894,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 7</Model>
 <AltName>onclite</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BF0E1</HWID>
@@ -989,7 +904,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 7A</Model>
 <AltName>pine</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BF0E1</HWID>
@@ -1000,7 +914,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 8</Model>
 <AltName>olive</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000BF0E1</HWID>
@@ -1011,7 +924,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 8A</Model>
 <AltName>olivelite</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -1022,7 +934,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Go</Model>
 <AltName>tiare</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -1033,7 +944,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 3</Model>
 <AltName>jason</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009B00E1</HWID>
@@ -1044,7 +954,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 3</Model>
 <AltName>aosp_kenzo</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000CC0E1</HWID>
@@ -1055,7 +964,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 5</Model>
 <AltName>whyred</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -1066,7 +974,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 5a</Model>
 <AltName>ugglite</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000CC0E1</HWID>
@@ -1077,7 +984,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 6 Pro</Model>
 <AltName>tulip</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -1088,7 +994,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 7</Model>
 <AltName>lavender</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>0010A0E1</HWID>
@@ -1099,7 +1004,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 8</Model>
 <AltName>ginkgo</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007BC0E1</HWID>
@@ -1110,7 +1014,6 @@
 <Trademark>Yota Devices Limited</Trademark>
 <Model>YD201</Model>
 <AltName>yotaphone2</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -1122,7 +1025,6 @@
 <Model>A0722</Model>
 <AltName>Blade A7 Vita</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A758CF6D/prog_emmc_firehose_8917.mbn#</Url>
-<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -1133,7 +1035,6 @@
 <Trademark>ZTE</Trademark>
 <Model>N9130</Model>
 <AltName>speed</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -1144,7 +1045,6 @@
 <Trademark>ZTE</Trademark>
 <Model>NX551J</Model>
 <AltName>Nubia M2</AltName>
-<Proof>0</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>009720E1</HWID>
@@ -1156,7 +1056,6 @@
 <Model>Z981</Model>
 <AltName>Zmax Pro</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A2CF981F/BCM6153_V1660_PreBoot_20_KN.bin#</Url>
-<Proof>1</Proof>
 </ForFilter>
 </dataroot>
 </root>

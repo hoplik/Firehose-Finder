@@ -76,7 +76,12 @@ namespace FirehoseFinder
             bindingSource_collection.DataSource = dataSet1.Tables[1];
             dataGridView_collection.DataSource = bindingSource_collection;
             bindingNavigator_collection.BindingSource = bindingSource_collection;
-            dataGridView_collection.Columns["Proof"].Visible = false;
+            //Загружаем список программеров с сервера
+            dataSet_Find.ReadXml("ForFound.xml", XmlReadMode.ReadSchema);
+            bindingSource_firehose.DataSource = dataSet_Find.Tables[1];
+            dataGridView_FInd_Server.DataSource = bindingSource_firehose;
+            //Настройки отображения справочника
+            //dataGridView_collection.Columns["Proof"].Visible = false;
             dataGridView_collection.Columns["HASHID"].HeaderText = "OEM Private Key Hash";
             dataGridView_collection.Columns["OEMID"].HeaderText = "OEM";
             dataGridView_collection.Columns["MODELID"].HeaderText = "Model";
@@ -152,7 +157,7 @@ namespace FirehoseFinder
                 if (!ProofAllToolStripMenuItem.Checked)
                 {
                     //Отображаем только подтверждённые данные
-                    bindingSource_collection.Filter = "Proof = true";
+                    bindingSource_collection.Filter = "Url NOT null";
                 }
             }
             else
@@ -178,7 +183,7 @@ namespace FirehoseFinder
             else
             {
                 //Отображаем только подтверждённые данные
-                bindingSource_collection.Filter = "Proof = true";
+                bindingSource_collection.Filter = "Url NOT null";
             }
         }
 
@@ -614,23 +619,25 @@ namespace FirehoseFinder
             }
             if (checkBox_Find_Server.Checked)
             {
-                dataSet_Find.ReadXml("ForFound.xml", XmlReadMode.ReadSchema);
-                bindingSource_firehose.DataSource = dataSet_Find.Tables[1];
-                object[] zerorec = { false, "На сервере не нашлось", null, 0, null, null, null };
-                object[] somerec = { false, "Ура!", null, 0, null, null, null };
-                //dataGridView_collection.DataSource = bindingSource_collection;
+                object[] somerec = { false, "На сервере не нашлось", null, 0, null, null, null };
                 bindingSource_firehose.Filter = string.Format("HASH_FH LIKE '%{0}%'", textBox_oemhash.Text);
                 if (dataGridView_FInd_Server.Rows.Count > 0)
                 {
                     for (int i = 0; i < dataGridView_FInd_Server.Rows.Count; i++)
                     {
+                        somerec[1] = dataGridView_FInd_Server["Url", i].Value.ToString();
+                        somerec[2] = string.Format("{0}-{1}-{2}-{3}", dataGridView_FInd_Server["HW_FH", i].Value.ToString(),
+                            dataGridView_FInd_Server["OEM_FH", i].Value.ToString(), dataGridView_FInd_Server["MODEL_FH", i].Value.ToString(),
+                            dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Substring(dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Length - 8));
+                        somerec[3] = 11; //Пока максимум, потом расчёт
+                        somerec[4] = "Файл на сервере";
+                        somerec[5] = 3;
+                        somerec[6] = dataGridView_FInd_Server["Model", i].Value.ToString();
                         dataGridView_final.Rows.Insert(0, somerec);
+                        dataGridView_final[3, 0].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     }
                 }
-                else
-                {
-                    dataGridView_final.Rows.Insert(0, zerorec);
-                }
+                else dataGridView_final.Rows.Insert(0, somerec);
             }
         }
 
@@ -641,14 +648,26 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button__useSahara_fhf_Click(object sender, EventArgs e)
         {
-            работаСУстройствомToolStripMenuItem.Checked = true;
-            tabControl1.SelectedTab = tabPage_phone;
-            tabControl_soft.SelectedTab = tabPage_sahara;
-            MessageBox.Show("Уважаемый пользователь!" + Environment.NewLine +
-                "В связи с тем, что разработка программы продолжается, и пока не реализована автоматическая отправка на сервер успешно " +
-                "подключённого программера, пожалуйста, только при успешном подборе программера, отправьте в телеграмм-канал (https://t.me/firehosefinder) два файла:" + Environment.NewLine +
-                "1. Отчёт о подключённом устройстве (поставить галку на \"Сохранить идентификаторы и марку/модель в файл\"" + Environment.NewLine +
-                "2. Сам программер", "Просьба!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (label_Sahara_fhf.Text.StartsWith("#"))
+            {
+                DialogResult dr = MessageBox.Show("При подтверждении, с сервера будет загружен программер. " +
+                    "Это не гарантирует того, что у вас с этим программером всё получится. Просто " +
+                    "это, с высокой долей вероятности, подходящий к выбранной вами модели файл.",
+                    "Загрузка файла с сервера",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (dr == DialogResult.OK) Process.Start(string.Format(label_Sahara_fhf.Text.Trim('#')));
+            }
+            else
+            {
+                работаСУстройствомToolStripMenuItem.Checked = true;
+                tabControl1.SelectedTab = tabPage_phone;
+                tabControl_soft.SelectedTab = tabPage_sahara;
+                MessageBox.Show("Уважаемый пользователь!" + Environment.NewLine +
+                    "В связи с тем, что разработка программы продолжается, и пока не реализована автоматическая отправка на сервер успешно " +
+                    "подключённого программера, пожалуйста, только при успешном подборе программера, отправьте в телеграмм-канал (https://t.me/firehosefinder) два файла:" + Environment.NewLine +
+                    "1. Отчёт о подключённом устройстве (поставить галку на \"Сохранить идентификаторы и марку/модель в файл\"" + Environment.NewLine +
+                    "2. Сам программер", "Просьба!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         /// <summary>
@@ -852,7 +871,7 @@ namespace FirehoseFinder
                     "Загрузка файла с сервера",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (dr == DialogResult.OK) Process.Start(string.Format(dataGridView_collection["Url", sel_row].Value.ToString()).Trim('#'));
-                return;
+                //return;
             }
         }
 
@@ -865,7 +884,7 @@ namespace FirehoseFinder
         {
             if (string.IsNullOrEmpty(toolStripTextBox_find.Text))
             {
-                if (!ProofAllToolStripMenuItem.Checked) bindingSource_collection.Filter = "Proof = true";
+                if (!ProofAllToolStripMenuItem.Checked) bindingSource_collection.Filter = "Url NOT null";
                 else bindingSource_collection.Filter = null;
             }
             else bindingSource_collection.Filter = string.Format("HWID LIKE '%{0}%' OR FullName LIKE '%{0}%' OR OEMID LIKE '%{0}%' OR MODELID LIKE '%{0}%' OR HASHID LIKE '%{0}%' OR Trademark LIKE '%{0}%' OR Model LIKE '%{0}%' OR AltName LIKE '%{0}%'", toolStripTextBox_find.Text);
@@ -1302,7 +1321,7 @@ namespace FirehoseFinder
             {
                 for (int i = 0; i < dataGridView_collection.Rows.Count; i++)
                 {
-                    if (dataGridView_collection["Model", i].Value.ToString().Equals(label_model.Text) && (bool)dataGridView_collection["Proof", i].Value) //Проверяем модель на наличие
+                    if (dataGridView_collection["Model", i].Value.ToString().Equals(label_model.Text)) //Проверяем модель на наличие
                     {
                         return;
                     }
@@ -1367,6 +1386,7 @@ namespace FirehoseFinder
                 radioButton_topdir.Enabled = true;
                 radioButton_alldir.Enabled = true;
                 button_path.Enabled = true;
+                if (checkBox_Find_Server.Checked) checkBox_Find_Server.Checked = false;
             }
             else
             {
@@ -1378,7 +1398,11 @@ namespace FirehoseFinder
 
         private void CheckBox_Find_Server_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox_Find_Server.Checked) button_path.Enabled = true;
+            if (checkBox_Find_Server.Checked)
+            {
+                button_path.Enabled = true;
+                if (checkBox_Find_Local.Checked) checkBox_Find_Local.Checked = false;
+            }
             else if (!checkBox_Find_Local.Checked) button_path.Enabled = false;
         }
     }
