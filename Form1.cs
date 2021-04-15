@@ -620,6 +620,11 @@ namespace FirehoseFinder
             работаСУстройствомToolStripMenuItem.Checked = true;
             tabControl1.SelectedTab = tabPage_phone;
             tabControl_soft.SelectedTab = tabPage_sahara;
+            MessageBox.Show("Уважаемый пользователь!" + Environment.NewLine + 
+                "В связи с тем, что разработка программы продолжается, и пока не реализована автоматическая отправка на сервер успешно " +
+                "подключённого программера, пожалуйста, только при успешном подборе программера, отправьте в телеграмм-канал (https://t.me/firehosefinder) два файла:" + Environment.NewLine +
+                "1. Отчёт о подключённом устройстве (поставить галку на \"Сохранить идентификаторы и марку/модель в файл\"" + Environment.NewLine +
+                "2. Сам программер", "Просьба!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>

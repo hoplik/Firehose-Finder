@@ -83,7 +83,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-15T00:06:25">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-15T11:35:18">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -1108,6 +1108,18 @@
 <Model>NX551J</Model>
 <AltName>Nubia M2</AltName>
 <Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>009720E1</HWID>
+<FullName>Snapdragon 210</FullName>
+<OEMID>0004</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>06E90D11F17C6237F0297B33613530F00A9ECA807551A6BD86EAF34EA2CF981F</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>Z981</Model>
+<AltName>Zmax Pro</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A2CF981F/BCM6153_V1660_PreBoot_20_KN.bin#</Url>
+<Proof>1</Proof>
 </ForFilter>
 </dataroot>
 </root>
