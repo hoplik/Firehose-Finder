@@ -83,7 +83,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-15T11:35:18">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-15T12:43:56">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -788,7 +788,8 @@
 <Trademark>Wileyfox</Trademark>
 <Model>Swift2</Model>
 <AltName>Swift 2 X</AltName>
-<Proof>0</Proof>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/89672D69/prog_emmc_firehose_x50_signed_lite.mbn#</Url>
+<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>000C30E1</HWID>
@@ -876,6 +877,7 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Pocophone F1</Model>
 <AltName>beryllium</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/6965FE65/prog_ufs_firehose_sdm845_Mi8_Pocco.elf#</Url>
 <Proof>0</Proof>
 </ForFilter>
 <ForFilter>
@@ -1086,6 +1088,18 @@
 <Model>YD201</Model>
 <AltName>yotaphone2</AltName>
 <Proof>0</Proof>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Snapdragon 425</FullName>
+<OEMID>0004</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>168D0BAD52B5D5CBB882A90C1DAC68F9299D3905816386BA1B1887DDA758CF6D</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>A0722</Model>
+<AltName>Blade A7 Vita</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A758CF6D/prog_emmc_firehose_8917.mbn#</Url>
+<Proof>1</Proof>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>

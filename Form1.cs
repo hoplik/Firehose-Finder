@@ -764,6 +764,11 @@ namespace FirehoseFinder
                             dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.PaleVioletRed;
                             dataGridView_final["Column_Name", Currnum].ToolTipText = "Файл закодирован!";
                             break;
+                        case Guide.FH_magic_numbers.XiUFSEnc: //Xiaomi закодированный UFS программер
+                            curfilerating++;
+                            dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.PaleVioletRed;
+                            dataGridView_final["Column_Name", Currnum].ToolTipText = "Файл закодирован!";
+                            break;
                         default: //совсем не шланг
                             break;
                     }

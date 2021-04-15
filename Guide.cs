@@ -116,7 +116,8 @@ namespace FirehoseFinder
             ARM412 = 2484117477, //94109FE5 - ARMPRG 0412
             ARM12 = 4094730213, //F4109FE5 - ARMPRG 120001
             ARM14 = 83886080, //05000000 - ARMPRG 140000
-            UFSEncoding = 1684108385 //64617461 - Закодированный UFS программер
+            UFSEncoding = 1684108385, //64617461 - Закодированный UFS программер
+            XiUFSEnc = 2358991973 //8C9B5C65 - Xiaomi закодированный UFS программер
         }
 
         internal readonly Dictionary<string, int> SHA_magic_numbers = new Dictionary<string, int>(5)
