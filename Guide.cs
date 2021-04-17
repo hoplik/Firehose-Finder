@@ -51,7 +51,7 @@ namespace FirehoseFinder
         /// <summary>
         /// Дубликаты CPU
         /// </summary>
-        internal readonly Dictionary<string, string> Double_CPU = new Dictionary<string, string>(46)
+        internal readonly Dictionary<string, string> Double_CPU = new Dictionary<string, string>(44)
         {
             { "000630E1", "MSM8996AU" },
             { "001080E1", "SDM712" },
@@ -67,9 +67,7 @@ namespace FirehoseFinder
             { "009690E1", "MSM8992" },
             { "009700E1", "MSM8956" },
             { "009710E1", "APQ8056" },
-            { "009820E1", "MSM8976" },
             { "009830E1", "APQ8076" },
-            { "009900E1", "MSM8976" },
             { "30020000", "MSM8998" },
             { "30060000", "SDM660" },
             { "30070000", "SDM630" },

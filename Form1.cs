@@ -619,7 +619,67 @@ namespace FirehoseFinder
             if (checkBox_Find_Server.Checked)
             {
                 object[] somerec = { false, "На сервере не нашлось", null, 0, null, null, null };
-                bindingSource_firehose.Filter = string.Format("HW_FH = '{0}' OR OEM_FH = '{1}' OR MODEL_FH = '{2}' OR HASH_FH = '{3}'", textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text, textBox_oemhash.Text);
+                //Делаем фильтр
+                char[] filter_chr = { '0', '0', '0', '0' };
+                if (!string.IsNullOrEmpty(textBox_hwid.Text)) filter_chr[0] = '1';
+                if (!string.IsNullOrEmpty(textBox_oemid.Text)) filter_chr[1] = '1';
+                if (!string.IsNullOrEmpty(textBox_modelid.Text)) filter_chr[2] = '1';
+                if (!string.IsNullOrEmpty(textBox_oemhash.Text)) filter_chr[3] = '1';
+                string filter_str = new string(filter_chr);
+                switch (Convert.ToInt32(filter_str, 2))
+                {
+                    case 0:
+                        bindingSource_firehose.Filter = null;
+                        break;
+                    case 1:
+                        bindingSource_firehose.Filter = string.Format("HASH_FH LIKE '%{0}%'", textBox_oemhash.Text);
+                        break;
+                    case 2:
+                        bindingSource_firehose.Filter = string.Format("MODEL_FH LIKE '%{0}%'", textBox_modelid.Text);
+                        break;
+                    case 3:
+                        bindingSource_firehose.Filter = string.Format("MODEL_FH LIKE '%{0}%' AND HASH_FH LIKE '%{1}%'", textBox_modelid.Text, textBox_oemhash.Text);
+                        break;
+                    case 4:
+                        bindingSource_firehose.Filter = string.Format("OEM_FH LIKE '%{0}%'", textBox_oemid.Text);
+                        break;
+                    case 5:
+                        bindingSource_firehose.Filter = string.Format("OEM_FH LIKE '%{0}%' AND HASH_FH LIKE '%{1}%'", textBox_oemid.Text, textBox_oemhash.Text);
+                        break;
+                    case 6:
+                        bindingSource_firehose.Filter = string.Format("OEM_FH LIKE '%{0}%' AND MODEL_FH LIKE '%{1}%'", textBox_oemid.Text, textBox_modelid.Text);
+                        break;
+                    case 7:
+                        bindingSource_firehose.Filter = string.Format("OEM_FH LIKE '%{0}%' AND MODEL_FH LIKE '%{1}%' AND HASH_FH LIKE '%{2}%'", textBox_oemid.Text, textBox_modelid.Text, textBox_oemhash.Text);
+                        break;
+                    case 8:
+                        bindingSource_firehose.Filter = string.Format("HW_FH LIKE '%{0}%'", textBox_hwid.Text);
+                        break;
+                    case 9:
+                        bindingSource_firehose.Filter = string.Format("HW_FH LIKE '%{0}%' AND HASH_FH LIKE '%{1}%'", textBox_hwid.Text, textBox_oemhash.Text);
+                        break;
+                    case 10:
+                        bindingSource_firehose.Filter = string.Format("HW_FH LIKE '%{0}%' AND MODEL_FH LIKE '%{1}%'", textBox_hwid.Text, textBox_modelid.Text);
+                        break;
+                    case 11:
+                        bindingSource_firehose.Filter = string.Format("HW_FH LIKE '%{0}%' AND MODEL_FH LIKE '%{1}%' AND HASH_FH LIKE '%{2}%'", textBox_hwid.Text, textBox_modelid.Text, textBox_oemhash.Text);
+                        break;
+                    case 12:
+                        bindingSource_firehose.Filter = string.Format("HW_FH LIKE '%{0}%' AND OEM_FH LIKE '%{1}%'", textBox_hwid.Text, textBox_oemid.Text);
+                        break;
+                    case 13:
+                        bindingSource_firehose.Filter = string.Format("HW_FH LIKE '%{0}%' AND OEM_FH LIKE '%{1}%' AND HASH_FH LIKE '%{2}%'", textBox_hwid.Text, textBox_oemid.Text, textBox_oemhash.Text);
+                        break;
+                    case 14:
+                        bindingSource_firehose.Filter = string.Format("HW_FH LIKE '%{0}%' AND OEM_FH LIKE '%{1}%' AND MODEL_FH LIKE '%{2}%'", textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text);
+                        break;
+                    case 15:
+                        bindingSource_firehose.Filter = string.Format("HW_FH LIKE '%{0}%' AND OEM_FH LIKE '%{1}%' AND MODEL_FH LIKE '%{2}%' AND HASH_FH LIKE '%{3}%'", textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text, textBox_oemhash.Text);
+                        break;
+                    default:
+                        bindingSource_firehose.Filter = null;
+                        break;
+                }
                 if (dataGridView_FInd_Server.Rows.Count > 0)
                 {
                     for (int i = 0; i < dataGridView_FInd_Server.Rows.Count; i++)
@@ -633,16 +693,24 @@ namespace FirehoseFinder
                             "OEM_ID (производитель) - " + dataGridView_FInd_Server["OEM_FH", i].Value.ToString() + Environment.NewLine +
                             "MODEL_ID (модель) - " + dataGridView_FInd_Server["MODEL_FH", i].Value.ToString() + Environment.NewLine +
                             "OEM_PK_HASH (хеш корневого сертификата) - " + dataGridView_FInd_Server["HASH_FH", i].Value.ToString();
-                        somerec[5] = 3;
                         if (string.IsNullOrEmpty(dataGridView_FInd_Server["Model", i].Value.ToString()))
                         {
                             //Заполняем возможными вариантами моделей
                             somerec[6] = null;
+                            //bindingSource_collection.Filter = ;
+                            //if (dataGridView_collection.Rows.Count > 0)
+                            //{
+                            //    foreach (var item in collection)
+                            //    {
+
+                            //    }
+                            //}
                         }
                         else somerec[6] = dataGridView_FInd_Server["Model", i].Value.ToString();
                         dataGridView_final.Rows.Insert(0, somerec);
                         dataGridView_final[3, 0].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     }
+                    toolStripStatusLabel_filescompleted.Text = "Обработано " + dataGridView_final.Rows.Count.ToString() + " файлов из " + dataGridView_final.Rows.Count.ToString();
                 }
                 else dataGridView_final.Rows.Insert(0, somerec);
             }
@@ -1053,33 +1121,54 @@ namespace FirehoseFinder
                 "MODEL_ID (модель) - " + id[2] + Environment.NewLine +
                 "OEM_PK_HASH (хеш корневого сертификата) - " + id[3] + Environment.NewLine +
                 "SW_ID (тип программы (версия)) - " + id[4] + id[5] + " - " + sw_type;
-            if (guide.Double_CPU.ContainsKey(textBox_hwid.Text))
+            if (guide.Double_CPU.ContainsKey(id[0])) //HWID два или более
             {
-                string d_cpu_val = guide.Double_CPU[textBox_hwid.Text];
-                List<string> d_cpu_key = new List<string>();
-                foreach (KeyValuePair<string, string> d_cpu in guide.Double_CPU)
+                StringBuilder comp_model = new StringBuilder(string.Empty);
+                byte count = 1;
+                foreach (string d_cpu_str in DOUBLE_CPU(id[0]))
                 {
-                    if (d_cpu.Value.Equals(d_cpu_val)) d_cpu_key.Add(d_cpu.Key.ToString());
-                }
-                if (d_cpu_key.Count > 0)
-                {
-                    foreach (string item in d_cpu_key)
+                    if (d_cpu_str.Equals(textBox_hwid.Text)) //Процессор такой же
                     {
-                        if (item.Equals(id[0])) //Процессор такой же
+                        textBox_hwid.BackColor = Color.LawnGreen;
+                        gross++;
+                    }
+                    //Добавляем из справочника возможные модели для данного шланга "Может подойти для ..."
+                    bindingSource_collection.Filter = string.Format("HWID = '{0}' AND OEMID = '{1}' AND MODELID = '{2}' AND HASHID = '{3}'",
+                        d_cpu_str, id[1], id[2], id[3]);
+                    if (dataGridView_collection.Rows.Count > 0) //Есть минимум одно устройство с такими идентификаторами
+                    {
+                        foreach (DataGridViewRow comp_row in dataGridView_collection.Rows)
                         {
-                            textBox_hwid.BackColor = Color.LawnGreen;
-                            gross++;
+                            if (count > 1) comp_model.Append("; ");
+                            comp_model.Append(comp_row.Cells["Model"].Value.ToString());
+                            count++;
                         }
                     }
                 }
+                dataGridView_final["Column_Comp", Currnum].Value = comp_model;
             }
-            else
+            else //HWID единственный
             {
                 if (textBox_hwid.Text.Equals(id[0])) //Процессор такой же
                 {
                     textBox_hwid.BackColor = Color.LawnGreen;
                     gross++;
                 }
+                //Добавляем из справочника возможные модели для данного шланга "Может подойти для ..."
+                bindingSource_collection.Filter = string.Format("HWID = '{0}' AND OEMID = '{1}' AND MODELID = '{2}' AND HASHID = '{3}'",
+                    id[0], id[1], id[2], id[3]);
+                StringBuilder comp_model = new StringBuilder(string.Empty);
+                byte count = 1;
+                if (dataGridView_collection.Rows.Count > 0) //Есть минимум одно устройство с такими идентификаторами
+                {
+                    foreach (DataGridViewRow comp_row in dataGridView_collection.Rows)
+                    {
+                        if (count > 1) comp_model.Append("; ");
+                        comp_model.Append(comp_row.Cells["Model"].Value.ToString());
+                        count++;
+                    }
+                }
+                dataGridView_final["Column_Comp", Currnum].Value = comp_model;
             }
             if (textBox_oemid.Text.Equals(id[1])) // Производитель один и тот же
             {
@@ -1097,22 +1186,23 @@ namespace FirehoseFinder
                 gross += 5;
             }
             if (id[4].Equals("3")) gross++; // SWID начинается с 3
-            //Добавляем из справочника возможные модели для данного шланга "Может подойти для ..."
-            bindingSource_collection.Filter = string.Format("HWID LIKE '{0}' AND OEMID LIKE '{1}' AND MODELID LIKE '{2}' AND HASHID LIKE '{3}'",
-                id[0], id[1], id[2], id[3]);
-            StringBuilder comp_model = new StringBuilder(string.Empty);
-            byte count = 1;
-            if (dataGridView_collection.Rows.Count > 0) //Есть минимум одно устройство с такими идентификаторами
-            {
-                foreach (DataGridViewRow comp_row in dataGridView_collection.Rows)
-                {
-                    if (count > 1) comp_model.Append("; ");
-                    comp_model.Append(comp_row.Cells["Model"].Value.ToString());
-                    count++;
-                }
-            }
-            dataGridView_final["Column_Comp", Currnum].Value = comp_model;
             return gross;
+        }
+
+        /// <summary>
+        /// Список дубликатов процессоров по указанному идентификатору
+        /// </summary>
+        /// <param name="hwid">Идентификатор процессора для поиска дублей</param>
+        /// <returns>Список дубликатов</returns>
+        private List<string> DOUBLE_CPU(string hwid)
+        {
+            string d_cpu_val = guide.Double_CPU[hwid];
+            List<string> d_cpu_key = new List<string>();
+            foreach (KeyValuePair<string, string> d_cpu in guide.Double_CPU)
+            {
+                if (d_cpu.Value.Equals(d_cpu_val)) d_cpu_key.Add(d_cpu.Key.ToString());
+            }
+            return d_cpu_key;
         }
 
         /// <summary>
