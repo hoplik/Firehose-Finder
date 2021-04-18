@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-18T18:10:30">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-18T18:12:14">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
