@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-15T22:41:08">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-18T18:10:30">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -120,16 +120,6 @@
 <MODELID>0025</MODELID>
 <HASHID>7E5ACFFF90370967EDD2BDF205A9EBC9035ABCA140B3AB9BB7771BD7C27057CBFCF13FBCE7E71D9B35B6A505AA4E1FE1</HASHID>
 <Trademark>ASUS</Trademark>
-</ForFilter>
-<ForFilter>
-<HWID>000560E1</HWID>
-<FullName>Snapdragon 425</FullName>
-<OEMID>0000</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
-<Trademark>ASUS</Trademark>
-<Model>M653</Model>
-<AltName>WW_Phone (ChinaMobile A3s)</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -198,6 +188,17 @@
 <Trademark>ASUS</Trademark>
 <Model>ZE554KL</Model>
 <AltName>WW_Z01KDA</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Snapdragon 425</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>4BC6A094D433F49FE0AA20D36F71229E75EED022744744A0E738CF0139657295</HASHID>
+<Trademark>China Mobile</Trademark>
+<Model>A3s</Model>
+<AltName>M653</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/39657295/prog_emmc_firehose_8917_lite.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>008110E1</HWID>
@@ -295,6 +296,7 @@
 <Trademark>Huawei</Trademark>
 <Model>AUM-L29</Model>
 <AltName>Honor 7A Pro</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/Honor_AUM-L29.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>000BA0E1</HWID>

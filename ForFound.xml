@@ -61,7 +61,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-15T23:05:06">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-18T18:10:35">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A758CF6D/prog_emmc_firehose_8917.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -100,6 +100,30 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASH_FH>
 <Model>2</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/39657295/prog_emmc_firehose_8917_lite.mbn#</Url>
+<HW_FH>000560E1</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>4BC6A094D433F49FE0AA20D36F71229E75EED022744744A0E738CF0139657295</HASH_FH>
+<Model>A3s</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/Honor_AUM-L29.mbn#</Url>
+<HW_FH>0004F0E1</HW_FH>
+<OEM_FH>0015</OEM_FH>
+<MODEL_FH>0041</MODEL_FH>
+<HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
+<Model>AUM-L29</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/Honor_AUM-L29.mbn#</Url>
+<HW_FH>0004F0E1</HW_FH>
+<OEM_FH>0015</OEM_FH>
+<MODEL_FH>0041</MODEL_FH>
+<HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
+<Model>AUM-L41</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A2CF981F/BCM6153_V1660_PreBoot_20_KN.bin#</Url>
