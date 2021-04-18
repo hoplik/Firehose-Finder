@@ -606,7 +606,7 @@ namespace FirehoseFinder
             toolStripStatusLabel_filescompleted.Text = string.Empty;
             toolStripStatusLabel_vol.Text = string.Empty;
             toolStripProgressBar_filescompleted.Value = 0;
-            //Условия по чек-боксам
+            //Ищем локально или на сервере
             if (checkBox_Find_Local.Checked)
             {
                 DialogResult result = folderBrowserDialog1.ShowDialog();
@@ -688,27 +688,17 @@ namespace FirehoseFinder
                         somerec[2] = string.Format("{0}-{1}-{2}-{3}", dataGridView_FInd_Server["HW_FH", i].Value.ToString(),
                             dataGridView_FInd_Server["OEM_FH", i].Value.ToString(), dataGridView_FInd_Server["MODEL_FH", i].Value.ToString(),
                             dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Substring(dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Length - 8));
-                        somerec[3] = 11; //Пока максимум, потом расчёт
-                        somerec[4] = "Jtag_ID (процессор) - " + dataGridView_FInd_Server["HW_FH", i].Value.ToString() + Environment.NewLine +
-                            "OEM_ID (производитель) - " + dataGridView_FInd_Server["OEM_FH", i].Value.ToString() + Environment.NewLine +
-                            "MODEL_ID (модель) - " + dataGridView_FInd_Server["MODEL_FH", i].Value.ToString() + Environment.NewLine +
-                            "OEM_PK_HASH (хеш корневого сертификата) - " + dataGridView_FInd_Server["HASH_FH", i].Value.ToString();
-                        if (string.IsNullOrEmpty(dataGridView_FInd_Server["Model", i].Value.ToString()))
-                        {
-                            //Заполняем возможными вариантами моделей
-                            somerec[6] = null;
-                            //bindingSource_collection.Filter = ;
-                            //if (dataGridView_collection.Rows.Count > 0)
-                            //{
-                            //    foreach (var item in collection)
-                            //    {
-
-                            //    }
-                            //}
-                        }
-                        else somerec[6] = dataGridView_FInd_Server["Model", i].Value.ToString();
+                        string[] id_str = {
+                            dataGridView_FInd_Server["HW_FH", i].Value.ToString(),
+                            dataGridView_FInd_Server["OEM_FH", i].Value.ToString(),
+                            dataGridView_FInd_Server["MODEL_FH", i].Value.ToString(),
+                            dataGridView_FInd_Server["HASH_FH", i].Value.ToString(),
+                            "3",
+                            string.Empty
+                        };
                         dataGridView_final.Rows.Insert(0, somerec);
-                        dataGridView_final[3, 0].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        dataGridView_final["Column_rate", 0].Value = 1 + Rating(id_str, 0);
+                        dataGridView_final["Column_rate", 0].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     }
                     toolStripStatusLabel_filescompleted.Text = "Обработано " + dataGridView_final.Rows.Count.ToString() + " файлов из " + dataGridView_final.Rows.Count.ToString();
                 }
@@ -893,7 +883,7 @@ namespace FirehoseFinder
                 }
                 if (curfilerating != 0) //Увеличиваем рейтинг совпадениями поиска файла
                 {
-                    dataGridView_final["Column_rate", Currnum].Value = curfilerating + Rating(dumpfile, Currnum);
+                    dataGridView_final["Column_rate", Currnum].Value = curfilerating + Rating(func.IDs(dumpfile), Currnum);
                     dataGridView_final["Column_rate", Currnum].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 }
                 else //Рейтинг 0 не обрабатываем
@@ -1103,29 +1093,28 @@ namespace FirehoseFinder
         /// <summary>
         /// Список проверок для увеличения рейтинга файла и заполнения грида идентификаторами
         /// </summary>
-        /// <param name="dumpfile">Строковый массив байт обрабатываемого файла</param>
+        /// <param name="id_str">Строковый массив байт обработанного файла</param>
         /// <param name="Currnum">Номер текущей строки грида для добавления идентификаторов</param>
-        private byte Rating(string dumpfile, int Currnum)
+        private byte Rating(string[] id_str, int Currnum)
         {
             byte gross = 0; //Рейтинг файла
-            string[] id = func.IDs(dumpfile);
-            string oemhash;
             string sw_type = string.Empty;
-            if (id[3].Length < 8) oemhash = id[3];
-            else oemhash = id[3].Substring(id[3].Length - 8);
-            dataGridView_final["Column_id", Currnum].Value = id[0] + "-" + id[1] + "-" + id[2] + "-" + oemhash + "-" + id[4] + id[5];
-            if (guide.SW_ID_type.ContainsKey(id[4])) sw_type = guide.SW_ID_type[id[4]];
+            string oemhash;
+            if (id_str[3].Length < 8) oemhash = id_str[3];
+            else oemhash = id_str[3].Substring(id_str[3].Length - 8);
+            dataGridView_final["Column_id", Currnum].Value = id_str[0] + "-" + id_str[1] + "-" + id_str[2] + "-" + oemhash + "-" + id_str[4] + id_str[5];
+            if (guide.SW_ID_type.ContainsKey(id_str[4])) sw_type = guide.SW_ID_type[id_str[4]];
             dataGridView_final["Column_SW_type", Currnum].Value = sw_type;
-            dataGridView_final["Column_Full", Currnum].Value = "Jtag_ID (процессор) - " + id[0] + Environment.NewLine +
-                "OEM_ID (производитель) - " + id[1] + Environment.NewLine +
-                "MODEL_ID (модель) - " + id[2] + Environment.NewLine +
-                "OEM_PK_HASH (хеш корневого сертификата) - " + id[3] + Environment.NewLine +
-                "SW_ID (тип программы (версия)) - " + id[4] + id[5] + " - " + sw_type;
-            if (guide.Double_CPU.ContainsKey(id[0])) //HWID два или более
+            dataGridView_final["Column_Full", Currnum].Value = "Jtag_ID (процессор) - " + id_str[0] + Environment.NewLine +
+                "OEM_ID (производитель) - " + id_str[1] + Environment.NewLine +
+                "MODEL_ID (модель) - " + id_str[2] + Environment.NewLine +
+                "OEM_PK_HASH (хеш корневого сертификата) - " + id_str[3] + Environment.NewLine +
+                "SW_ID (тип программы (версия)) - " + id_str[4] + id_str[5] + " - " + sw_type;
+            if (guide.Double_CPU.ContainsKey(id_str[0])) //HWID два или более
             {
                 StringBuilder comp_model = new StringBuilder(string.Empty);
                 byte count = 1;
-                foreach (string d_cpu_str in DOUBLE_CPU(id[0]))
+                foreach (string d_cpu_str in DOUBLE_CPU(id_str[0]))
                 {
                     if (d_cpu_str.Equals(textBox_hwid.Text)) //Процессор такой же
                     {
@@ -1134,7 +1123,7 @@ namespace FirehoseFinder
                     }
                     //Добавляем из справочника возможные модели для данного шланга "Может подойти для ..."
                     bindingSource_collection.Filter = string.Format("HWID = '{0}' AND OEMID = '{1}' AND MODELID = '{2}' AND HASHID = '{3}'",
-                        d_cpu_str, id[1], id[2], id[3]);
+                        d_cpu_str, id_str[1], id_str[2], id_str[3]);
                     if (dataGridView_collection.Rows.Count > 0) //Есть минимум одно устройство с такими идентификаторами
                     {
                         foreach (DataGridViewRow comp_row in dataGridView_collection.Rows)
@@ -1149,14 +1138,14 @@ namespace FirehoseFinder
             }
             else //HWID единственный
             {
-                if (textBox_hwid.Text.Equals(id[0])) //Процессор такой же
+                if (textBox_hwid.Text.Equals(id_str[0])) //Процессор такой же
                 {
                     textBox_hwid.BackColor = Color.LawnGreen;
                     gross++;
                 }
                 //Добавляем из справочника возможные модели для данного шланга "Может подойти для ..."
                 bindingSource_collection.Filter = string.Format("HWID = '{0}' AND OEMID = '{1}' AND MODELID = '{2}' AND HASHID = '{3}'",
-                    id[0], id[1], id[2], id[3]);
+                    id_str[0], id_str[1], id_str[2], id_str[3]);
                 StringBuilder comp_model = new StringBuilder(string.Empty);
                 byte count = 1;
                 if (dataGridView_collection.Rows.Count > 0) //Есть минимум одно устройство с такими идентификаторами
@@ -1170,22 +1159,22 @@ namespace FirehoseFinder
                 }
                 dataGridView_final["Column_Comp", Currnum].Value = comp_model;
             }
-            if (textBox_oemid.Text.Equals(id[1])) // Производитель один и тот же
+            if (textBox_oemid.Text.Equals(id_str[1])) // Производитель один и тот же
             {
                 textBox_oemid.BackColor = Color.LawnGreen;
                 gross++;
             }
-            if (textBox_modelid.Text.Equals(id[2])) // Модели равны
+            if (textBox_modelid.Text.Equals(id_str[2])) // Модели равны
             {
                 textBox_modelid.BackColor = Color.LawnGreen;
                 gross++;
             }
-            if (id[3].Equals(textBox_oemhash.Text)) // Хеши равны
+            if (id_str[3].Equals(textBox_oemhash.Text)) // Хеши равны
             {
                 textBox_oemhash.BackColor = Color.LawnGreen;
                 gross += 5;
             }
-            if (id[4].Equals("3")) gross++; // SWID начинается с 3
+            if (id_str[4].Equals("3")) gross++; // SWID начинается с 3
             return gross;
         }
 
