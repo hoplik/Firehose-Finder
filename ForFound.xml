@@ -61,7 +61,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-19T22:44:10">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-19T23:58:29">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -149,6 +149,22 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>4673478F4DD4D43C68D4091D6B5EE1AB170D045FA285E515A15F3B987D9DE4AB</HASH_FH>
 <Model>B2017G</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F5B53BBC/OPPO_A57_8937_ddr.mbn#</Url>
+<HW_FH>0006B0E1</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>77A22B92A1BCD0C4D3AAA10AA9F1B2C36D51C0CA7429B5201D0FD1D5F5B53BBC</HASH_FH>
+<Model>CPH1701</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/92002DDF/0004f0e100000000_7c6dca9bf5674291_fhprg_peek.bin#</Url>
+<HW_FH>0004F0E1</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>7C6DCA9BF5674291AA39DD55760C0D4B65C7A4223097AAB1DB791E2192002DDF</HASH_FH>
+<Model>C20S</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A758CF6D/prog_emmc_firehose_8917.mbn#</Url>
