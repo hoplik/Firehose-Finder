@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-18T23:17:53">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-19T22:44:05">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -1737,14 +1737,14 @@
 <ForFilter>
 <HWID>009470E1</HWID>
 <FullName>Snapdragon 820</FullName>
-<HASHID>97EFF4D4111DD90523F6182E05650298B7AE803F0EC36F69A643C031399D8D13</HASHID>
+<HASHID>C34EC1FDDFAC05D8F63EED3EE90C8E6983FE2B0E4B2837B30D8619A29633649C</HASHID>
 <Trademark>OnePlus</Trademark>
 <Model>3</Model>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
 <FullName>Snapdragon 820</FullName>
-<HASHID>C34EC1FDDFAC05D8F63EED3EE90C8E6983FE2B0E4B2837B30D8619A29633649C</HASHID>
+<HASHID>97EFF4D4111DD90523F6182E05650298B7AE803F0EC36F69A643C031399D8D13</HASHID>
 <Trademark>OnePlus</Trademark>
 <Model>3</Model>
 </ForFilter>
@@ -2410,26 +2410,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Y3</Model>
 <AltName>onc</AltName>
-</ForFilter>
-<ForFilter>
-<HWID>000AC0E1</HWID>
-<FullName>Snapdragon 636</FullName>
-<OEMID>0000</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>AA0E1191D83A1EFAEBB921AC74F3382AC6EB4F5127E8AFD9E58E32AFEA1BA049</HASHID>
-<Trademark>Yandex</Trademark>
-<Model>YNDX-000SB</Model>
-<AltName>Smartphone</AltName>
-</ForFilter>
-<ForFilter>
-<HWID>0007E0E1</HWID>
-<FullName>Snapdragon 630</FullName>
-<OEMID>0000</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>AA0E1191D83A1EFAEBB921AC74F3382AC6EB4F5127E8AFD9E58E32AFEA1BA049</HASHID>
-<Trademark>Yandex</Trademark>
-<Model>YNDX-000SB</Model>
-<AltName>Smartphone</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>009470E1</HWID>
