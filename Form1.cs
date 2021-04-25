@@ -540,6 +540,26 @@ namespace FirehoseFinder
             else textBox_ADB_commandstring.Enabled = false;
         }
 
+        /// <summary>
+        /// Активируем кнопку "Выполнить команду" при изменении переключателя
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RadioButton_adb_IDs_CheckedChanged(object sender, EventArgs e)
+        {
+            button_ADB_comstart.Enabled = true;
+        }
+
+        /// <summary>
+        /// Активируем кнопку "Выполнить команду" при изменении переключателя
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RadioButton_reboot_edl_CheckedChanged(object sender, EventArgs e)
+        {
+            button_ADB_comstart.Enabled = true;
+        }
+
         #endregion
 
         #region Функции команд контролов вкладки Работа с файлами
@@ -905,6 +925,43 @@ namespace FirehoseFinder
         {
             if (string.IsNullOrWhiteSpace(textBox_oemhash.Text)) label_oemhash.Text = "OEM_PK" + Environment.NewLine + "_HASH";
             else label_oemhash.Text = "OEM_PK" + Environment.NewLine + "_HASH" + Environment.NewLine + "(" + textBox_oemhash.Text.Length.ToString() + " знаков)";
+        }
+
+        /// <summary>
+        /// Ищем на локальном диске
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckBox_Find_Local_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_Find_Local.Checked)
+            {
+                radioButton_topdir.Enabled = true;
+                radioButton_alldir.Enabled = true;
+                button_path.Enabled = true;
+                if (checkBox_Find_Server.Checked) checkBox_Find_Server.Checked = false;
+            }
+            else
+            {
+                radioButton_topdir.Enabled = false;
+                radioButton_alldir.Enabled = false;
+                if (!checkBox_Find_Server.Checked) button_path.Enabled = false;
+            }
+        }
+
+        /// <summary>
+        /// Ищем на сервере (в файле XML)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckBox_Find_Server_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_Find_Server.Checked)
+            {
+                button_path.Enabled = true;
+                if (checkBox_Find_Local.Checked) checkBox_Find_Local.Checked = false;
+            }
+            else if (!checkBox_Find_Local.Checked) button_path.Enabled = false;
         }
 
         #endregion
@@ -1453,42 +1510,5 @@ namespace FirehoseFinder
         }
 
         #endregion
-
-        private void RadioButton_adb_IDs_CheckedChanged(object sender, EventArgs e)
-        {
-            button_ADB_comstart.Enabled = true;
-        }
-
-        private void RadioButton_reboot_edl_CheckedChanged(object sender, EventArgs e)
-        {
-            button_ADB_comstart.Enabled = true;
-        }
-
-        private void CheckBox_Find_Local_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox_Find_Local.Checked)
-            {
-                radioButton_topdir.Enabled = true;
-                radioButton_alldir.Enabled = true;
-                button_path.Enabled = true;
-                if (checkBox_Find_Server.Checked) checkBox_Find_Server.Checked = false;
-            }
-            else
-            {
-                radioButton_topdir.Enabled = false;
-                radioButton_alldir.Enabled = false;
-                if (!checkBox_Find_Server.Checked) button_path.Enabled = false;
-            }
-        }
-
-        private void CheckBox_Find_Server_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox_Find_Server.Checked)
-            {
-                button_path.Enabled = true;
-                if (checkBox_Find_Local.Checked) checkBox_Find_Local.Checked = false;
-            }
-            else if (!checkBox_Find_Local.Checked) button_path.Enabled = false;
-        }
     }
 }
