@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-04-30T11:42:40">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-05-04T22:12:17">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -1332,16 +1332,6 @@
 <AltName>7.2</AltName>
 </ForFilter>
 <ForFilter>
-<HWID>000510E1</HWID>
-<FullName>Snapdragon 2100</FullName>
-<OEMID>0004</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>88FE65873D77A0C1C80475D54BFCABC02F291BE27CF0D1F77406BE28B107C33B</HASHID>
-<Trademark>nubia</Trademark>
-<Model>SW1002</Model>
-<AltName>SW1002</AltName>
-</ForFilter>
-<ForFilter>
 <HWID>009400E1</HWID>
 <FullName>Snapdragon 810</FullName>
 <OEMID>0000</OEMID>
@@ -2028,16 +2018,6 @@
 <AltName>scorpio</AltName>
 </ForFilter>
 <ForFilter>
-<HWID>0008C0E1</HWID>
-<FullName>Snapdragon 660</FullName>
-<OEMID>0000</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
-<Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 3</Model>
-<AltName>jason</AltName>
-</ForFilter>
-<ForFilter>
 <HWID>009B00E1</HWID>
 <FullName>Snapdragon 650</FullName>
 <OEMID>0000</OEMID>
@@ -2047,6 +2027,16 @@
 <Model>Redmi Note 3</Model>
 <AltName>aosp_kenzo</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/prog_emmc_firehose_8976_ddr.mbn#</Url>
+</ForFilter>
+<ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Snapdragon 660</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 3</Model>
+<AltName>jason</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>009B00E1</HWID>
@@ -2373,7 +2363,7 @@
 <HASHID>3767512BCB320B2B8450BAB3FCC7D891D913702CBA941717D6D13AF81FDADC68</HASHID>
 <Trademark>ZTE</Trademark>
 <Model>P809A20</Model>
-<AltName>Blade A460</AltName>
+<AltName>Blade T610</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -2383,7 +2373,7 @@
 <HASHID>3767512BCB320B2B8450BAB3FCC7D891D913702CBA941717D6D13AF81FDADC68</HASHID>
 <Trademark>ZTE</Trademark>
 <Model>P809A20</Model>
-<AltName>Blade T610</AltName>
+<AltName>Blade A460</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
@@ -2516,6 +2506,16 @@
 <Model>P840F12</Model>
 <AltName>Blade A6 A0620</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/03F0FE65/prog_emmc_firehose_8940.mbn#</Url>
+</ForFilter>
+<ForFilter>
+<HWID>000510E1</HWID>
+<FullName>Snapdragon 2100</FullName>
+<OEMID>0004</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>88FE65873D77A0C1C80475D54BFCABC02F291BE27CF0D1F77406BE28B107C33B</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>SW1002</Model>
+<AltName>Nubia Alpha</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>009720E1</HWID>

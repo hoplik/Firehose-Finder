@@ -78,7 +78,6 @@ namespace FirehoseFinder
             "Nextbit",
             "Nexus",
             "Nokia",
-            "nubia",
             "OnePlus",
             "OPPO",
             "Phicomm",
