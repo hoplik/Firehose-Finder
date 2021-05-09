@@ -67,6 +67,7 @@ namespace FirehoseFinder
             "HP",
             "HTC",
             "Huawei",
+            "Hytera",
             "Kyocera",
             "LeEco",
             "LENOVO",

@@ -87,6 +87,11 @@ namespace FirehoseFinder
             //Закрываем специализированные закладки
             tabControl1.TabPages.Remove(tabPage_collection);
             tabControl1.TabPages.Remove(tabPage_phone);
+            //Закрываем неиспользуемые диски
+            while (tabControl_LUN.TabPages.Count > 1)
+            {
+                tabControl_LUN.TabPages.RemoveAt(tabControl_LUN.TabPages.Count - 1);
+            }
             //Всплывающие подсказки к разным контролам
             toolTip1.SetToolTip(button_findIDs, "Подключите устройство и нажмите для получения идентификаторов");
             toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
@@ -324,7 +329,7 @@ namespace FirehoseFinder
             {
                 serialPort1.PortName = e.Item.Text;
                 button_Sahara_Ids.Enabled = true;
-                comboBox_fh_command.Enabled = true;
+                button_Sahara_CommandStart.Enabled = true;
                 if (waitSahara)
                 {
                     button_Sahara_Ids.Enabled = false;
@@ -333,7 +338,6 @@ namespace FirehoseFinder
             }
             else
             {
-                comboBox_fh_command.Enabled = false;
                 button_Sahara_CommandStart.Enabled = false;
                 button_Sahara_Ids.Enabled = false;
             }
@@ -363,6 +367,7 @@ namespace FirehoseFinder
             process1.StartInfo.CreateNoWindow = true;
             StringBuilder sahara_command_args = new StringBuilder("-p \\\\.\\" + serialPort1.PortName + " -s 13:");
             StringBuilder fh_command_args = new StringBuilder("--port=\\\\.\\");
+            bool need_parsing_lun = false;
             if (!File.Exists(label_Sahara_fhf.Text))
             {
                 DialogResult dr = MessageBox.Show("Выберете программер на вкладке \"Работа с файлами\"",
@@ -374,7 +379,6 @@ namespace FirehoseFinder
             sahara_command_args.Append(label_Sahara_fhf.Text);
             if (radioButton_shortlog.Checked) sahara_command_args.Append(" -v 0");
             if (radioButton_fulllog.Checked) sahara_command_args.Append(" -v 1");
-            textBox_lun.Enabled = false;
             if (!FHAlreadyLoaded)
             {
                 if (NeedReset)
@@ -401,18 +405,32 @@ namespace FirehoseFinder
                 }
             }
             fh_command_args.Append(serialPort1.PortName);
-            if (comboBox_mem_type.SelectedIndex == (int)Guide.MEM_TYPE.eMMC) fh_command_args.Append(" --memoryname=emmc");
-            if (checkBox_reset.Checked) fh_command_args.Append(" --noprompt --reset");
-            if (radioButton_shortlog.Checked) fh_command_args.Append(" --loglevel=1");
-            if (radioButton_fulllog.Checked) fh_command_args.Append(" --loglevel=2");
-            switch (comboBox_fh_command.SelectedIndex)
+            switch (label_mem_type.Text)
             {
-                case 0:
-
-                    fh_command_args.Append(" --getstorageinfo=" + textBox_lun.Text);
+                case "eMMC":
+                    fh_command_args.Append(" --memoryname=emmc");
+                    break;
+                case "UFS":
+                    fh_command_args.Append(" --memoryname=ufs");
                     break;
                 default:
-                    fh_command_args.Append(" --showpercentagecomplete");// --dontsorttags - выдаёт предупреждение!
+                    fh_command_args.Append(" --memoryname=emmc");
+                    break;
+            }
+            if (radioButton_shortlog.Checked) fh_command_args.Append(" --loglevel=1");
+            if (radioButton_fulllog.Checked) fh_command_args.Append(" --loglevel=2");
+            switch (button_Sahara_CommandStart.Text.Substring(0, 4))
+            {
+                case "Инфо":
+                    button_Sahara_CommandStart.Text = "Перегрузить устройство в нормальный режим";
+                    fh_command_args.Append(" --getstorageinfo=0");
+                    need_parsing_lun = true;
+                    break;
+                case "Пере":
+                    button_Sahara_CommandStart.Text = "Информация о запоминающем устройстве (storage_info)";
+                    fh_command_args.Append(" --noprompt --reset");
+                    break;
+                default:
                     break;
             }
             Process process2 = new Process();
@@ -425,9 +443,12 @@ namespace FirehoseFinder
             {
                 process2.Start();
                 StreamReader reader2 = process2.StandardOutput;
-                textBox_soft_term.AppendText(reader2.ReadToEnd());
+                string output_FH = reader2.ReadToEnd();
+                textBox_soft_term.AppendText(output_FH);
                 process2.WaitForExit();
                 process2.Close();
+                panel_lun0.Visible = true;
+                if (need_parsing_lun) NeedParsingLun(output_FH);
             }
             catch (Exception ex)
             {
@@ -435,44 +456,68 @@ namespace FirehoseFinder
             }
         }
 
-        /// <summary>
-        /// Если выбрали команду, активировали кнопку исполнения команды
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ComboBox_fh_command_SelectedIndexChanged(object sender, EventArgs e)
+        private void NeedParsingLun(string output_FH)
         {
-            switch (comboBox_fh_command.SelectedIndex)
+            if (output_FH.Contains("\"storage_info\": {"))
             {
-                case 0:
-                    textBox_lun.Enabled = true;
-                    break;
-                default:
-                    textBox_lun.Enabled = false;
-                    break;
+                //При успешном считывании памяти надо отправлять данные о модели и программере в телеграмм-канал
+                StringBuilder parsingLUN = new StringBuilder(output_FH);
+                //Обрезаем строку спереди
+                parsingLUN.Remove(0, output_FH.IndexOf("\"storage_info\": {") + 16);
+                //Обрезаем строку сзади
+                parsingLUN.Remove(parsingLUN.ToString().IndexOf('}'), parsingLUN.Length - parsingLUN.ToString().IndexOf('}'));
+                MessageBox.Show(parsingLUN.ToString(), "Проверяем вывод");
+                int[] parsLUN_int = func.StorageInfo(parsingLUN.ToString());
+                label_total_blocks.Text = parsLUN_int[0].ToString();
+                label_block_size.Text = parsLUN_int[1].ToString();
+                for (int i = 1; i < parsLUN_int[2]; i++)
+                {
+                    switch (i)
+                    {
+                        case 1:
+                            tabControl_LUN.TabPages.Insert(1, LUN_1);
+                            break;
+                        case 2:
+                            tabControl_LUN.TabPages.Insert(2, LUN_2);
+                            break;
+                        case 3:
+                            tabControl_LUN.TabPages.Insert(3, LUN_3);
+                            break;
+                        case 4:
+                            tabControl_LUN.TabPages.Insert(4, LUN_4);
+                            break;
+                        case 5:
+                            tabControl_LUN.TabPages.Insert(5, LUN_5);
+                            break;
+                        case 6:
+                            tabControl_LUN.TabPages.Insert(6, LUN_6);
+                            break;
+                        case 7:
+                            tabControl_LUN.TabPages.Insert(7, LUN_7);
+                            break;
+                        case 8:
+                            tabControl_LUN.TabPages.Insert(8, LUN_8);
+                            break;
+                        case 9:
+                            tabControl_LUN.TabPages.Insert(9, LUN_9);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                switch (parsLUN_int[3])
+                {
+                    case 0:
+                        label_mem_type.Text = "eMMC";
+                        break;
+                    case 1:
+                        label_mem_type.Text = "UFS";
+                        break;
+                    default:
+                        label_mem_type.Text = "---";
+                        break;
+                }
             }
-            button_Sahara_CommandStart.Enabled = true;
-        }
-
-        /// <summary>
-        /// Проверяем на не пустоту поле выбора диска для запроса
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_lun_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(textBox_lun.Text)) textBox_lun.Text = "0";
-        }
-
-        /// <summary>
-        /// Ограничиваем ввод в поле выбора диска только числами, del, enter
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox_lun_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char LUN = e.KeyChar;
-            if (!Char.IsDigit(LUN) && LUN != 8 && LUN != 127) e.Handled = true;
         }
 
         /// <summary>
@@ -747,11 +792,6 @@ namespace FirehoseFinder
                 работаСУстройствомToolStripMenuItem.Checked = true;
                 tabControl1.SelectedTab = tabPage_phone;
                 tabControl_soft.SelectedTab = tabPage_sahara;
-                MessageBox.Show("Уважаемый пользователь!" + Environment.NewLine +
-                    "В связи с тем, что разработка программы продолжается, и пока не реализована автоматическая отправка на сервер успешно " +
-                    "подключённого программера, пожалуйста, только при успешном подборе программера, отправьте в телеграмм-канал (https://t.me/firehosefinder) два файла:" + Environment.NewLine +
-                    "1. Отчёт о подключённом устройстве (поставить галку на \"Сохранить идентификаторы и марку/модель в файл\"" + Environment.NewLine +
-                    "2. Сам программер", "Просьба!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -1475,7 +1515,7 @@ namespace FirehoseFinder
                     }
                 }
                 //Исправить/добавить название/модель если 1 совпадает, а 2 нет
-                BotSendMes("Модель >" + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                BotSendMes("Добавить/исправить модель >" + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
             }
             //Устройства нет, надо добавить в автосообщение
             else
@@ -1485,7 +1525,7 @@ namespace FirehoseFinder
                     !string.IsNullOrEmpty(textBox_modelid.Text) &&
                     !string.IsNullOrEmpty(textBox_oemhash.Text))
                 {
-                    BotSendMes("Идентификаторы >" + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                    BotSendMes("Добавить устройство >" + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
                 }
                 else
                 {

@@ -312,6 +312,22 @@ namespace FirehoseFinder
             }
             return SC7.ToString();
         }
+
+        internal int[] StorageInfo(string storage_info)
+        {
+            //«"storage_info": {"total_blocks":122142720, "block_size":512, 
+            //"page_size":512, "num_physical":3, "mfr_id":21, "serial_num":710139074, 
+            //"fw_version":"7","mem_type":"eMMC", "prod_name":"RC14MB"
+            int[] SI = new int[4];
+            //Стартуем с " и до ": - это поле для свича
+            //От конца поля для свича до , - значение
+            //Если значение в "", то это стринг, иначе инт
+            SI[0] = 0; //total_blocks
+            SI[1] = 512; //block_size
+            SI[2] = 3; //num_physical
+            SI[3] = (int)Guide.MEM_TYPE.eMMC; //mem_type
+            return SI;
+        }
     }
 }
 
