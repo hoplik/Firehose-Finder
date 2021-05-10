@@ -61,7 +61,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-05-10T12:52:04">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-05-10T23:21:01">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -133,14 +133,6 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>9764995D53559360DC5789643D7424ACE3BF6208DA9433656B7C9DD103F0FE65</HASH_FH>
 <Model>P840F12</Model>
-</ForFound>
-<ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A758CF6D/prog_emmc_firehose_8917.mbn#</Url>
-<HW_FH>000560E1</HW_FH>
-<OEM_FH>0004</OEM_FH>
-<MODEL_FH>0000</MODEL_FH>
-<HASH_FH>168D0BAD52B5D5CBB882A90C1DAC68F9299D3905816386BA1B1887DDA758CF6D</HASH_FH>
-<Model>A0722</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/7D9DE4AB/prog_emmc_firehose_8952_ddr.mbn#</Url>
