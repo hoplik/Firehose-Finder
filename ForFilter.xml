@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-05-10T23:20:57">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-05-11T00:03:37">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -257,6 +257,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ASUS_I003DD</Model>
 <AltName>Rog Phone 3, ZS661KS, WW_I003D</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/324A62B3/prog_firehose_ddr_lp5.bin#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -275,6 +276,7 @@
 <HASHID>8ECF3EAA03F772E28479FA2F0BBAE2141CCAD6F106B384D1C46263EDB5B02838</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZB450KL</Model>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/B5B02838/zb450kl_prog_emmc_firehose_8916.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -340,6 +342,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZB631KL</Model>
 <AltName>Zenfone Max Pro M2, X01BD</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BD25D20B/asus.elf#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -359,6 +362,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZC550KL</Model>
 <AltName>ZenFone Max, Z010DA</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D42A380F/z010d_prog_emmc_firehose_8916.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -696,6 +700,7 @@
 <Trademark>Huawei</Trademark>
 <Model>BKK-L21</Model>
 <AltName>Honor 8C, BKK-L21RU</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/prog_emmc_firehose.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>000460E1</HWID>
@@ -1610,6 +1615,7 @@
 <Trademark>TCL</Trademark>
 <Model>M3G</Model>
 <AltName>UMi EMAX mini, Meme Da 3S</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/064FB702/prog_emmc_firehose_8936.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>009600E1</HWID>
