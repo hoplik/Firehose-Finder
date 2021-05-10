@@ -92,6 +92,7 @@ namespace FirehoseFinder
             "Sharp",
             "Smartisan",
             "Stream",
+            "TCL",
             "Tplink",
             "Vertex",
             "vivo",

@@ -1241,15 +1241,26 @@ namespace FirehoseFinder
             }
             else //HWID единственный
             {
-                if (textBox_hwid.Text.Equals(id_str[0])) //Процессор такой же
-                {
-                    textBox_hwid.BackColor = Color.LawnGreen;
-                    gross++;
-                }
-                //Добавляем из справочника возможные модели для данного шланга "Может подойти для ..."
-                bindingSource_collection.Filter = string.Format("HWID = '{0}' AND OEMID = '{1}' AND MODELID = '{2}' AND HASHID = '{3}'",
-                    id_str[0], id_str[1], id_str[2], id_str[3]);
                 StringBuilder comp_model = new StringBuilder(string.Empty);
+                switch (id_str[0])
+                {
+                    case "00000000":
+                        //Добавляем из справочника возможные модели для данного шланга "Может подойти для ..."
+                        bindingSource_collection.Filter = string.Format("OEMID = '{0}' AND MODELID = '{1}' AND HASHID = '{2}'",
+                            id_str[1], id_str[2], id_str[3]);
+
+                        break;
+                    default:
+                        if (textBox_hwid.Text.Equals(id_str[0])) //Процессор такой же
+                        {
+                            textBox_hwid.BackColor = Color.LawnGreen;
+                            gross++;
+                        }
+                        //Добавляем из справочника возможные модели для данного шланга "Может подойти для ..."
+                        bindingSource_collection.Filter = string.Format("HWID = '{0}' AND OEMID = '{1}' AND MODELID = '{2}' AND HASHID = '{3}'",
+                            id_str[0], id_str[1], id_str[2], id_str[3]);
+                        break;
+                }
                 byte count = 1;
                 if (dataGridView_collection.Rows.Count > 0) //Есть минимум одно устройство с такими идентификаторами
                 {
