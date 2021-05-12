@@ -61,7 +61,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-05-12T22:39:38">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-05-12T23:36:18">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -213,6 +213,70 @@
 <MODEL_FH>0067</MODEL_FH>
 <HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
 <Model>BKK-L21</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/1.mbn#</Url>
+<HW_FH>000560E1</HW_FH>
+<OEM_FH>0015</OEM_FH>
+<MODEL_FH>003A</MODEL_FH>
+<HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
+<Model>ATU-L31</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/Loader_V2.mbn#</Url>
+<HW_FH>0009A0E1</HW_FH>
+<OEM_FH>0015</OEM_FH>
+<MODEL_FH>0062</MODEL_FH>
+<HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
+<Model>DUB-LX1</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/38CE1496/prog_ufs_firehose_8996_g5.elf#</Url>
+<HW_FH>009470E1</HW_FH>
+<OEM_FH>0031</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASH_FH>
+<Model>G5</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9C83E2B0/prog_ufs_firehose_Sdm845_lge.elf#</Url>
+<HW_FH>0008B0E1</HW_FH>
+<OEM_FH>0031</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>E746E34F737403F40212CF29F0C0CAB9F1038AA8BCE6C097E82CC93213020EDBCB967BFE180AE14C9AFB4DAC9C83E2B0</HASH_FH>
+<Model>G7</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCFC995/15_lite_prog_emmc_firehose_8953_ddr.mbn#</Url>
+<HW_FH>000460E1</HW_FH>
+<OEM_FH>0138</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>40E4AEBA3491DADE17EA92D9DCCCB2D20C4DB54D1C34C9695828C5259FCFC995</HASH_FH>
+<Model>Meizu M1871</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C51FC5CC/Note8_prog_emmc_firehose_8953_ddr.mbn#</Url>
+<HW_FH>000BA0E1</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>C451A1168EF5C7C73B87B91090AA11D8B61425E61CC46C94EC311AC0C51FC5CC</HASH_FH>
+<Model>Meizu M1822</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8AA10082/A015F_prog_emmc_firehose_8937_ddr.mbn#</Url>
+<HW_FH>000BF0E1</HW_FH>
+<OEM_FH>0020</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>3CC959AC5B3364A42EC3CB40C091C90F2A8101F1C1207C5C9ED1D2348AA10082</HASH_FH>
+<Model>Galaxy A01</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/MI_1A_prog_emmc_firehose_8953_ddr.mbn#</Url>
+<HW_FH>000460E1</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASH_FH>
+<Model>Mi A1</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A758CF6D/prog_emmc_firehose_8917.mbn#</Url>
