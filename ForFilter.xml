@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-05-12T23:36:14">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-05-17T20:47:20">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -122,6 +122,15 @@
 <HASHID>BC4C2FAAF0C46B258B8B6A94543F3985741D41481B41241E32D24770871831EA22F330E82495886D29F9A2C56A752E39</HASHID>
 <Trademark>AGM</Trademark>
 <Model>AGM X3</Model>
+</ForFilter>
+<ForFilter>
+<HWID>001060E1</HWID>
+<FullName>215 Mobile Platform</FullName>
+<OEMID>0042</OEMID>
+<MODELID>0051</MODELID>
+<HASHID>5F9C14F9A6E480E903466336100DB7AE8EA358263F0D14CEDF468ED43FF9AFAD</HASHID>
+<Trademark>Alcatel</Trademark>
+<Model>5002H</Model>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -1387,7 +1396,7 @@
 <FullName>Snapdragon 430</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>F5F4192A33B2830974B400119BAB728CC9FE911011F928625C2AED0DA441AC97</HASHID>
+<HASHID>D18EF172D0D45AACC294212A45FBA91D8A8431CC686B164C6F0E522D476735E9</HASHID>
 <Trademark>Nokia</Trademark>
 <Model>TA-1053</Model>
 <AltName>5</AltName>
@@ -1397,7 +1406,7 @@
 <FullName>Snapdragon 430</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>D18EF172D0D45AACC294212A45FBA91D8A8431CC686B164C6F0E522D476735E9</HASHID>
+<HASHID>F5F4192A33B2830974B400119BAB728CC9FE911011F928625C2AED0DA441AC97</HASHID>
 <Trademark>Nokia</Trademark>
 <Model>TA-1053</Model>
 <AltName>5</AltName>
@@ -1623,6 +1632,16 @@
 <AltName>SM-N910C</AltName>
 </ForFilter>
 <ForFilter>
+<HWID>008000E1</HWID>
+<FullName>Snapdragon 400</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>0F37B52C0B399B917D793B633C3E58829CB48CBCB36A3DA1C34E71F0F9C4166A</HASHID>
+<Trademark>Samsung</Trademark>
+<Model>Galaxy Tab 4 8.0 3G</Model>
+<AltName>SM-T331</AltName>
+</ForFilter>
+<ForFilter>
 <HWID>000BE0E1</HWID>
 <FullName>Snapdragon 429</FullName>
 <OEMID>0020</OEMID>
@@ -1715,6 +1734,7 @@
 </ForFilter>
 <ForFilter>
 <HWID>001060E1</HWID>
+<FullName>215 Mobile Platform</FullName>
 <OEMID>016E</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>15E7119B24228246FC6A165557A02E8EB88148856FD138C83E947792D9AF2805</HASHID>
@@ -1833,6 +1853,16 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Mi 8 Lite</Model>
 <AltName>platina</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000DB0E1</HWID>
+<FullName>Snapdragon 710</FullName>
+<OEMID>0072</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Mi 8 SE</Model>
+<AltName>sirius</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>000E60E1</HWID>
@@ -2143,6 +2173,16 @@
 <AltName>scorpio</AltName>
 </ForFilter>
 <ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Snapdragon 660</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 3</Model>
+<AltName>jason</AltName>
+</ForFilter>
+<ForFilter>
 <HWID>009B00E1</HWID>
 <FullName>Snapdragon 650</FullName>
 <OEMID>0000</OEMID>
@@ -2152,16 +2192,6 @@
 <Model>Redmi Note 3</Model>
 <AltName>aosp_kenzo</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/prog_emmc_firehose_8976_ddr.mbn#</Url>
-</ForFilter>
-<ForFilter>
-<HWID>0008C0E1</HWID>
-<FullName>Snapdragon 660</FullName>
-<OEMID>0000</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
-<Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 3</Model>
-<AltName>jason</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>009B00E1</HWID>
@@ -2298,8 +2328,8 @@
 <AltName>onc</AltName>
 </ForFilter>
 <ForFilter>
-<HWID>0007E0E1</HWID>
-<FullName>Snapdragon 630</FullName>
+<HWID>000AC0E1</HWID>
+<FullName>Snapdragon 636</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>AA0E1191D83A1EFAEBB921AC74F3382AC6EB4F5127E8AFD9E58E32AFEA1BA049</HASHID>
@@ -2308,8 +2338,8 @@
 <AltName>Smartphone</AltName>
 </ForFilter>
 <ForFilter>
-<HWID>000AC0E1</HWID>
-<FullName>Snapdragon 636</FullName>
+<HWID>0007E0E1</HWID>
+<FullName>Snapdragon 630</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>AA0E1191D83A1EFAEBB921AC74F3382AC6EB4F5127E8AFD9E58E32AFEA1BA049</HASHID>
