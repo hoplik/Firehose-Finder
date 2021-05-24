@@ -87,11 +87,6 @@ namespace FirehoseFinder
             //Закрываем специализированные закладки
             tabControl1.TabPages.Remove(tabPage_collection);
             tabControl1.TabPages.Remove(tabPage_phone);
-            //Закрываем неиспользуемые диски
-            while (tabControl_LUN.TabPages.Count > 1)
-            {
-                tabControl_LUN.TabPages.RemoveAt(tabControl_LUN.TabPages.Count - 1);
-            }
             //Всплывающие подсказки к разным контролам
             toolTip1.SetToolTip(button_findIDs, "Подключите устройство и нажмите для получения идентификаторов");
             toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
@@ -447,7 +442,6 @@ namespace FirehoseFinder
                 textBox_soft_term.AppendText(output_FH);
                 process2.WaitForExit();
                 process2.Close();
-                panel_lun0.Visible = true;
                 if (need_parsing_lun) NeedParsingLun(output_FH);
             }
             catch (Exception ex)
@@ -470,40 +464,10 @@ namespace FirehoseFinder
                 int[] parsLUN_int = func.StorageInfo(parsingLUN.ToString());
                 label_total_blocks.Text = parsLUN_int[0].ToString();
                 label_block_size.Text = parsLUN_int[1].ToString();
-                for (int i = 1; i < parsLUN_int[2]; i++)
+                comboBox_lun_count.Items.Clear();
+                for (int i = 0; i < parsLUN_int[2]; i++)
                 {
-                    switch (i)
-                    {
-                        case 1:
-                            tabControl_LUN.TabPages.Insert(1, LUN_1);
-                            break;
-                        case 2:
-                            tabControl_LUN.TabPages.Insert(2, LUN_2);
-                            break;
-                        case 3:
-                            tabControl_LUN.TabPages.Insert(3, LUN_3);
-                            break;
-                        case 4:
-                            tabControl_LUN.TabPages.Insert(4, LUN_4);
-                            break;
-                        case 5:
-                            tabControl_LUN.TabPages.Insert(5, LUN_5);
-                            break;
-                        case 6:
-                            tabControl_LUN.TabPages.Insert(6, LUN_6);
-                            break;
-                        case 7:
-                            tabControl_LUN.TabPages.Insert(7, LUN_7);
-                            break;
-                        case 8:
-                            tabControl_LUN.TabPages.Insert(8, LUN_8);
-                            break;
-                        case 9:
-                            tabControl_LUN.TabPages.Insert(9, LUN_9);
-                            break;
-                        default:
-                            break;
-                    }
+                    comboBox_lun_count.Items.Add("Диск " + i.ToString());
                 }
                 switch (parsLUN_int[3])
                 {
