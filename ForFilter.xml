@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-05-24T19:37:29">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-05-24T19:53:52">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -2285,6 +2285,7 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 8</Model>
 <AltName>ginkgo</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCADFE3/prog_emmc_firehose_Sm6125_ddr.elf#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>0010A0E1</HWID>
@@ -2418,6 +2419,7 @@
 <Trademark>ZTE</Trademark>
 <Model>NX523J</Model>
 <AltName>Nubia Z11 max</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/2B4DB504/prog_emmc_firehose_8976_lite.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>009720E1</HWID>
