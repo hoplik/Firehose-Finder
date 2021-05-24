@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfhf));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataSet1 = new System.Data.DataSet();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
@@ -130,12 +130,15 @@
             this.button_ADB_comstart = new System.Windows.Forms.Button();
             this.textBox_ADB_commandstring = new System.Windows.Forms.TextBox();
             this.tabPage_sahara = new System.Windows.Forms.TabPage();
+            this.groupBox_lun_count = new System.Windows.Forms.GroupBox();
+            this.comboBox_lun_count = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label_mem_type = new System.Windows.Forms.Label();
-            this.groupBox_total_blocks = new System.Windows.Forms.GroupBox();
-            this.label_total_blocks = new System.Windows.Forms.Label();
+            this.groupBox_LUN = new System.Windows.Forms.GroupBox();
             this.groupBox_block_size = new System.Windows.Forms.GroupBox();
             this.label_block_size = new System.Windows.Forms.Label();
+            this.groupBox_total_blocks = new System.Windows.Forms.GroupBox();
+            this.label_total_blocks = new System.Windows.Forms.Label();
             this.groupBox_logs = new System.Windows.Forms.GroupBox();
             this.radioButton_fulllog = new System.Windows.Forms.RadioButton();
             this.radioButton_shortlog = new System.Windows.Forms.RadioButton();
@@ -153,9 +156,6 @@
             this.bindingSource_collection = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet_Find = new System.Data.DataSet();
             this.bindingSource_firehose = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox_LUN = new System.Windows.Forms.GroupBox();
-            this.comboBox_lun_count = new System.Windows.Forms.ComboBox();
-            this.groupBox_lun_count = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabPage_collection.SuspendLayout();
@@ -180,17 +180,17 @@
             this.tableLayoutPanel_adb.SuspendLayout();
             this.groupBox_adb_commands.SuspendLayout();
             this.tabPage_sahara.SuspendLayout();
+            this.groupBox_lun_count.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox_total_blocks.SuspendLayout();
+            this.groupBox_LUN.SuspendLayout();
             this.groupBox_block_size.SuspendLayout();
+            this.groupBox_total_blocks.SuspendLayout();
             this.groupBox_logs.SuspendLayout();
             this.groupBox_term_buttons.SuspendLayout();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_collection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Find)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_firehose)).BeginInit();
-            this.groupBox_LUN.SuspendLayout();
-            this.groupBox_lun_count.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataSet1
@@ -232,7 +232,7 @@
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // выходToolStripMenuItem
@@ -252,7 +252,7 @@
             this.toolStripSeparator2,
             this.внестиПроизводителяМодельToolStripMenuItem});
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
-            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.видToolStripMenuItem.Text = "Вид";
             // 
             // приветствиеToolStripMenuItem
@@ -311,7 +311,7 @@
             this.вопросОтветToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 26);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // вопросОтветToolStripMenuItem
@@ -346,23 +346,23 @@
             this.dataGridView_collection.AllowUserToOrderColumns = true;
             this.dataGridView_collection.AllowUserToResizeRows = false;
             this.dataGridView_collection.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_collection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_collection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridView_collection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_collection.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_collection.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridView_collection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_collection.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_collection.MultiSelect = false;
@@ -525,9 +525,9 @@
             // 
             this.dataGridView_final.AllowUserToAddRows = false;
             this.dataGridView_final.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_final.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_final.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView_final.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView_final.ColumnHeadersHeight = 29;
             this.dataGridView_final.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -558,8 +558,8 @@
             // Column_Sel
             // 
             this.Column_Sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle4.NullValue = false;
-            this.Column_Sel.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.NullValue = false;
+            this.Column_Sel.DefaultCellStyle = dataGridViewCellStyle16;
             this.Column_Sel.HeaderText = "Выбор";
             this.Column_Sel.MinimumWidth = 6;
             this.Column_Sel.Name = "Column_Sel";
@@ -567,9 +567,9 @@
             // 
             // Column_Name
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column_Name.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column_Name.DefaultCellStyle = dataGridViewCellStyle17;
             this.Column_Name.HeaderText = "Файл";
             this.Column_Name.MinimumWidth = 6;
             this.Column_Name.Name = "Column_Name";
@@ -599,9 +599,9 @@
             // 
             // Column_SW_type
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column_SW_type.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column_SW_type.DefaultCellStyle = dataGridViewCellStyle18;
             this.Column_SW_type.HeaderText = "Тип ПО";
             this.Column_SW_type.MinimumWidth = 6;
             this.Column_SW_type.Name = "Column_SW_type";
@@ -1194,6 +1194,27 @@
             this.tabPage_sahara.Text = "Sahara & Firehose_loader";
             this.tabPage_sahara.UseVisualStyleBackColor = true;
             // 
+            // groupBox_lun_count
+            // 
+            this.groupBox_lun_count.Controls.Add(this.comboBox_lun_count);
+            this.groupBox_lun_count.Location = new System.Drawing.Point(426, 108);
+            this.groupBox_lun_count.Name = "groupBox_lun_count";
+            this.groupBox_lun_count.Size = new System.Drawing.Size(222, 47);
+            this.groupBox_lun_count.TabIndex = 16;
+            this.groupBox_lun_count.TabStop = false;
+            this.groupBox_lun_count.Text = "Список доступных дисков";
+            // 
+            // comboBox_lun_count
+            // 
+            this.comboBox_lun_count.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox_lun_count.Enabled = false;
+            this.comboBox_lun_count.FormattingEnabled = true;
+            this.comboBox_lun_count.Location = new System.Drawing.Point(3, 18);
+            this.comboBox_lun_count.Name = "comboBox_lun_count";
+            this.comboBox_lun_count.Size = new System.Drawing.Size(216, 24);
+            this.comboBox_lun_count.TabIndex = 16;
+            this.comboBox_lun_count.SelectedIndexChanged += new System.EventHandler(this.ComboBox_lun_count_SelectedIndexChanged);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label_mem_type);
@@ -1214,25 +1235,17 @@
             this.label_mem_type.TabIndex = 0;
             this.label_mem_type.Text = "---";
             // 
-            // groupBox_total_blocks
+            // groupBox_LUN
             // 
-            this.groupBox_total_blocks.Controls.Add(this.label_total_blocks);
-            this.groupBox_total_blocks.Location = new System.Drawing.Point(146, 21);
-            this.groupBox_total_blocks.Name = "groupBox_total_blocks";
-            this.groupBox_total_blocks.Size = new System.Drawing.Size(135, 41);
-            this.groupBox_total_blocks.TabIndex = 1;
-            this.groupBox_total_blocks.TabStop = false;
-            this.groupBox_total_blocks.Text = "Всего блоков";
-            // 
-            // label_total_blocks
-            // 
-            this.label_total_blocks.AutoSize = true;
-            this.label_total_blocks.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_total_blocks.Location = new System.Drawing.Point(3, 18);
-            this.label_total_blocks.Name = "label_total_blocks";
-            this.label_total_blocks.Size = new System.Drawing.Size(16, 17);
-            this.label_total_blocks.TabIndex = 0;
-            this.label_total_blocks.Text = "0";
+            this.groupBox_LUN.Controls.Add(this.groupBox_block_size);
+            this.groupBox_LUN.Controls.Add(this.groupBox_total_blocks);
+            this.groupBox_LUN.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox_LUN.Location = new System.Drawing.Point(3, 161);
+            this.groupBox_LUN.Name = "groupBox_LUN";
+            this.groupBox_LUN.Size = new System.Drawing.Size(929, 399);
+            this.groupBox_LUN.TabIndex = 15;
+            this.groupBox_LUN.TabStop = false;
+            this.groupBox_LUN.Text = "Диск 0";
             // 
             // groupBox_block_size
             // 
@@ -1253,6 +1266,26 @@
             this.label_block_size.Size = new System.Drawing.Size(16, 17);
             this.label_block_size.TabIndex = 0;
             this.label_block_size.Text = "0";
+            // 
+            // groupBox_total_blocks
+            // 
+            this.groupBox_total_blocks.Controls.Add(this.label_total_blocks);
+            this.groupBox_total_blocks.Location = new System.Drawing.Point(146, 21);
+            this.groupBox_total_blocks.Name = "groupBox_total_blocks";
+            this.groupBox_total_blocks.Size = new System.Drawing.Size(135, 41);
+            this.groupBox_total_blocks.TabIndex = 1;
+            this.groupBox_total_blocks.TabStop = false;
+            this.groupBox_total_blocks.Text = "Всего блоков";
+            // 
+            // label_total_blocks
+            // 
+            this.label_total_blocks.AutoSize = true;
+            this.label_total_blocks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_total_blocks.Location = new System.Drawing.Point(3, 18);
+            this.label_total_blocks.Name = "label_total_blocks";
+            this.label_total_blocks.Size = new System.Drawing.Size(16, 17);
+            this.label_total_blocks.TabIndex = 0;
+            this.label_total_blocks.Text = "0";
             // 
             // groupBox_logs
             // 
@@ -1412,37 +1445,6 @@
             // 
             this.bindingSource_firehose.AllowNew = false;
             // 
-            // groupBox_LUN
-            // 
-            this.groupBox_LUN.Controls.Add(this.groupBox_block_size);
-            this.groupBox_LUN.Controls.Add(this.groupBox_total_blocks);
-            this.groupBox_LUN.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox_LUN.Location = new System.Drawing.Point(3, 161);
-            this.groupBox_LUN.Name = "groupBox_LUN";
-            this.groupBox_LUN.Size = new System.Drawing.Size(929, 399);
-            this.groupBox_LUN.TabIndex = 15;
-            this.groupBox_LUN.TabStop = false;
-            this.groupBox_LUN.Text = "Диск 0";
-            // 
-            // comboBox_lun_count
-            // 
-            this.comboBox_lun_count.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox_lun_count.FormattingEnabled = true;
-            this.comboBox_lun_count.Location = new System.Drawing.Point(3, 18);
-            this.comboBox_lun_count.Name = "comboBox_lun_count";
-            this.comboBox_lun_count.Size = new System.Drawing.Size(216, 24);
-            this.comboBox_lun_count.TabIndex = 16;
-            // 
-            // groupBox_lun_count
-            // 
-            this.groupBox_lun_count.Controls.Add(this.comboBox_lun_count);
-            this.groupBox_lun_count.Location = new System.Drawing.Point(426, 108);
-            this.groupBox_lun_count.Name = "groupBox_lun_count";
-            this.groupBox_lun_count.Size = new System.Drawing.Size(222, 47);
-            this.groupBox_lun_count.TabIndex = 16;
-            this.groupBox_lun_count.TabStop = false;
-            this.groupBox_lun_count.Text = "Список доступных дисков";
-            // 
             // Formfhf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1494,12 +1496,14 @@
             this.groupBox_adb_commands.PerformLayout();
             this.tabPage_sahara.ResumeLayout(false);
             this.tabPage_sahara.PerformLayout();
+            this.groupBox_lun_count.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox_total_blocks.ResumeLayout(false);
-            this.groupBox_total_blocks.PerformLayout();
+            this.groupBox_LUN.ResumeLayout(false);
             this.groupBox_block_size.ResumeLayout(false);
             this.groupBox_block_size.PerformLayout();
+            this.groupBox_total_blocks.ResumeLayout(false);
+            this.groupBox_total_blocks.PerformLayout();
             this.groupBox_logs.ResumeLayout(false);
             this.groupBox_logs.PerformLayout();
             this.groupBox_term_buttons.ResumeLayout(false);
@@ -1507,8 +1511,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_collection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Find)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_firehose)).EndInit();
-            this.groupBox_LUN.ResumeLayout(false);
-            this.groupBox_lun_count.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

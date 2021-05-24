@@ -469,6 +469,8 @@ namespace FirehoseFinder
                 {
                     comboBox_lun_count.Items.Add("Диск " + i.ToString());
                 }
+                comboBox_lun_count.SelectedIndex = 0;
+                comboBox_lun_count.Enabled = true;
                 switch (parsLUN_int[3])
                 {
                     case 0:
@@ -1531,5 +1533,11 @@ namespace FirehoseFinder
         }
 
         #endregion
+
+        private void ComboBox_lun_count_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Изменился выбор диска - запрашиваем данные именно для него
+            string.Format("--getstorageinfo={0}", comboBox_lun_count.SelectedItem);
+        }
     }
 }
