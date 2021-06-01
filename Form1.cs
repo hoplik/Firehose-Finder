@@ -400,34 +400,37 @@ namespace FirehoseFinder
                 }
             }
             fh_command_args.Append(serialPort1.PortName);
-            switch (label_mem_type.Text)
-            {
-                case "eMMC":
-                    fh_command_args.Append(" --memoryname=emmc");
-                    break;
-                case "UFS":
-                    fh_command_args.Append(" --memoryname=ufs");
-                    break;
-                default:
-                    fh_command_args.Append(" --memoryname=emmc");
-                    break;
-            }
+            if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs");
+            else fh_command_args.Append(" --memoryname=emmc");
             if (radioButton_shortlog.Checked) fh_command_args.Append(" --loglevel=1");
             if (radioButton_fulllog.Checked) fh_command_args.Append(" --loglevel=2");
-            switch (button_Sahara_CommandStart.Text.Substring(0, 4))
+            int lun_int = 0;
+            if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
+            switch (comboBox_fh_commands.SelectedIndex)
             {
-                case "Инфо":
-                    button_Sahara_CommandStart.Text = "Перегрузить устройство в нормальный режим";
-                    fh_command_args.Append(" --getstorageinfo=0");
+                case 0:
+                    textBox_soft_term.AppendText("Получаем информацию о запоминающем устройстве");
+                    fh_command_args.Append(" --getstorageinfo=" + lun_int.ToString());
                     need_parsing_lun = true;
                     break;
-                case "Пере":
-                    button_Sahara_CommandStart.Text = "Информация о запоминающем устройстве (storage_info)";
+                case 1:
+                    textBox_soft_term.AppendText("Получаем таблицу разметки (GPT)");
+                    //fh_command_args.Append(" --noprompt --reset");
+                    break;
+                case 2:
+                    textBox_soft_term.AppendText("Перегружаем устройство в нормальный режим");
                     fh_command_args.Append(" --noprompt --reset");
                     break;
                 default:
+                    textBox_soft_term.AppendText("Получаем информацию о запоминающем устройстве");
+                    fh_command_args.Append(" --getstorageinfo=" + lun_int.ToString());
+                    need_parsing_lun = true;
                     break;
             }
+            //После первой выполненной команды по получению инфо хранилища делаем доступным выбор других команд
+            comboBox_fh_commands.Enabled = true;
+            comboBox_lun_count.Enabled = true;
+            groupBox_mem_type.Enabled = true;
             Process process2 = new Process();
             process2.StartInfo.UseShellExecute = false;
             process2.StartInfo.RedirectStandardOutput = true;
@@ -473,14 +476,14 @@ namespace FirehoseFinder
                 comboBox_lun_count.Enabled = true;
                 switch (parsLUN_int[3])
                 {
-                    case 0:
-                        label_mem_type.Text = "eMMC";
+                    case (int)Guide.MEM_TYPE.eMMC:
+                        radioButton_mem_emmc.Checked = true;
                         break;
-                    case 1:
-                        label_mem_type.Text = "UFS";
+                    case (int)Guide.MEM_TYPE.UFS:
+                        radioButton_mem_ufs.Checked = true;
                         break;
                     default:
-                        label_mem_type.Text = "---";
+                        radioButton_mem_emmc.Checked = true;
                         break;
                 }
             }
@@ -1141,7 +1144,7 @@ namespace FirehoseFinder
             }
             //Есть необработанные файлы - обрабатываем первый отсутствующий в цикле
             List<string> ReadedFiles = new List<string>(); //Создаём массив под список уже обработанных файлов
-            //Заполняем массив полными именами файлов из грида (если они есть)
+                                                           //Заполняем массив полными именами файлов из грида (если они есть)
             for (int i = 0; i < currreadfiles; i++) ReadedFiles.Add(dataGridView_final["Column_Name", i].Value.ToString().Trim());
             toolStripProgressBar_filescompleted.Value = currreadfiles * 100 / totalreadfiles; //Количество обработанных файлов в прогрессбаре
             dataGridView_final.Rows.Add();
@@ -1533,11 +1536,5 @@ namespace FirehoseFinder
         }
 
         #endregion
-
-        private void ComboBox_lun_count_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Изменился выбор диска - запрашиваем данные именно для него
-            string.Format("--getstorageinfo={0}", comboBox_lun_count.SelectedItem);
-        }
     }
 }

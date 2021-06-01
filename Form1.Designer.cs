@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfhf));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataSet1 = new System.Data.DataSet();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
@@ -132,8 +132,7 @@
             this.tabPage_sahara = new System.Windows.Forms.TabPage();
             this.groupBox_lun_count = new System.Windows.Forms.GroupBox();
             this.comboBox_lun_count = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label_mem_type = new System.Windows.Forms.Label();
+            this.groupBox_mem_type = new System.Windows.Forms.GroupBox();
             this.groupBox_LUN = new System.Windows.Forms.GroupBox();
             this.groupBox_block_size = new System.Windows.Forms.GroupBox();
             this.label_block_size = new System.Windows.Forms.Label();
@@ -156,6 +155,10 @@
             this.bindingSource_collection = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet_Find = new System.Data.DataSet();
             this.bindingSource_firehose = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox_fh_commands = new System.Windows.Forms.ComboBox();
+            this.groupBox_fh_commands = new System.Windows.Forms.GroupBox();
+            this.radioButton_mem_emmc = new System.Windows.Forms.RadioButton();
+            this.radioButton_mem_ufs = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabPage_collection.SuspendLayout();
@@ -181,7 +184,7 @@
             this.groupBox_adb_commands.SuspendLayout();
             this.tabPage_sahara.SuspendLayout();
             this.groupBox_lun_count.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBox_mem_type.SuspendLayout();
             this.groupBox_LUN.SuspendLayout();
             this.groupBox_block_size.SuspendLayout();
             this.groupBox_total_blocks.SuspendLayout();
@@ -191,6 +194,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_collection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Find)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_firehose)).BeginInit();
+            this.groupBox_fh_commands.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataSet1
@@ -232,7 +236,7 @@
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // выходToolStripMenuItem
@@ -252,7 +256,7 @@
             this.toolStripSeparator2,
             this.внестиПроизводителяМодельToolStripMenuItem});
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
-            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
             this.видToolStripMenuItem.Text = "Вид";
             // 
             // приветствиеToolStripMenuItem
@@ -311,7 +315,7 @@
             this.вопросОтветToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 26);
             this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // вопросОтветToolStripMenuItem
@@ -346,23 +350,23 @@
             this.dataGridView_collection.AllowUserToOrderColumns = true;
             this.dataGridView_collection.AllowUserToResizeRows = false;
             this.dataGridView_collection.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_collection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_collection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridView_collection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_collection.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_collection.DefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridView_collection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_collection.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_collection.MultiSelect = false;
@@ -525,9 +529,9 @@
             // 
             this.dataGridView_final.AllowUserToAddRows = false;
             this.dataGridView_final.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_final.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_final.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
             this.dataGridView_final.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView_final.ColumnHeadersHeight = 29;
             this.dataGridView_final.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -558,8 +562,8 @@
             // Column_Sel
             // 
             this.Column_Sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle16.NullValue = false;
-            this.Column_Sel.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle28.NullValue = false;
+            this.Column_Sel.DefaultCellStyle = dataGridViewCellStyle28;
             this.Column_Sel.HeaderText = "Выбор";
             this.Column_Sel.MinimumWidth = 6;
             this.Column_Sel.Name = "Column_Sel";
@@ -567,9 +571,9 @@
             // 
             // Column_Name
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column_Name.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column_Name.DefaultCellStyle = dataGridViewCellStyle29;
             this.Column_Name.HeaderText = "Файл";
             this.Column_Name.MinimumWidth = 6;
             this.Column_Name.Name = "Column_Name";
@@ -599,9 +603,9 @@
             // 
             // Column_SW_type
             // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column_SW_type.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column_SW_type.DefaultCellStyle = dataGridViewCellStyle30;
             this.Column_SW_type.HeaderText = "Тип ПО";
             this.Column_SW_type.MinimumWidth = 6;
             this.Column_SW_type.Name = "Column_SW_type";
@@ -1177,15 +1181,15 @@
             // 
             // tabPage_sahara
             // 
+            this.tabPage_sahara.Controls.Add(this.groupBox_fh_commands);
             this.tabPage_sahara.Controls.Add(this.groupBox_lun_count);
-            this.tabPage_sahara.Controls.Add(this.groupBox1);
+            this.tabPage_sahara.Controls.Add(this.groupBox_mem_type);
             this.tabPage_sahara.Controls.Add(this.groupBox_LUN);
             this.tabPage_sahara.Controls.Add(this.groupBox_logs);
             this.tabPage_sahara.Controls.Add(this.listView_comport);
             this.tabPage_sahara.Controls.Add(this.label4);
             this.tabPage_sahara.Controls.Add(this.button_Sahara_Ids);
             this.tabPage_sahara.Controls.Add(this.label_Sahara_fhf);
-            this.tabPage_sahara.Controls.Add(this.button_Sahara_CommandStart);
             this.tabPage_sahara.Location = new System.Drawing.Point(4, 25);
             this.tabPage_sahara.Name = "tabPage_sahara";
             this.tabPage_sahara.Padding = new System.Windows.Forms.Padding(3);
@@ -1197,9 +1201,9 @@
             // groupBox_lun_count
             // 
             this.groupBox_lun_count.Controls.Add(this.comboBox_lun_count);
-            this.groupBox_lun_count.Location = new System.Drawing.Point(426, 108);
+            this.groupBox_lun_count.Location = new System.Drawing.Point(653, 148);
             this.groupBox_lun_count.Name = "groupBox_lun_count";
-            this.groupBox_lun_count.Size = new System.Drawing.Size(222, 47);
+            this.groupBox_lun_count.Size = new System.Drawing.Size(275, 47);
             this.groupBox_lun_count.TabIndex = 16;
             this.groupBox_lun_count.TabStop = false;
             this.groupBox_lun_count.Text = "Список доступных дисков";
@@ -1209,40 +1213,34 @@
             this.comboBox_lun_count.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox_lun_count.Enabled = false;
             this.comboBox_lun_count.FormattingEnabled = true;
+            this.comboBox_lun_count.Items.AddRange(new object[] {
+            "Диск 0"});
             this.comboBox_lun_count.Location = new System.Drawing.Point(3, 18);
             this.comboBox_lun_count.Name = "comboBox_lun_count";
-            this.comboBox_lun_count.Size = new System.Drawing.Size(216, 24);
+            this.comboBox_lun_count.Size = new System.Drawing.Size(269, 24);
             this.comboBox_lun_count.TabIndex = 16;
-            this.comboBox_lun_count.SelectedIndexChanged += new System.EventHandler(this.ComboBox_lun_count_SelectedIndexChanged);
+            this.comboBox_lun_count.Text = "Диск 0";
             // 
-            // groupBox1
+            // groupBox_mem_type
             // 
-            this.groupBox1.Controls.Add(this.label_mem_type);
-            this.groupBox1.Location = new System.Drawing.Point(654, 108);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(123, 47);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Тип памяти";
-            // 
-            // label_mem_type
-            // 
-            this.label_mem_type.AutoSize = true;
-            this.label_mem_type.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_mem_type.Location = new System.Drawing.Point(3, 18);
-            this.label_mem_type.Name = "label_mem_type";
-            this.label_mem_type.Size = new System.Drawing.Size(23, 17);
-            this.label_mem_type.TabIndex = 0;
-            this.label_mem_type.Text = "---";
+            this.groupBox_mem_type.Controls.Add(this.radioButton_mem_ufs);
+            this.groupBox_mem_type.Controls.Add(this.radioButton_mem_emmc);
+            this.groupBox_mem_type.Enabled = false;
+            this.groupBox_mem_type.Location = new System.Drawing.Point(653, 95);
+            this.groupBox_mem_type.Name = "groupBox_mem_type";
+            this.groupBox_mem_type.Size = new System.Drawing.Size(275, 47);
+            this.groupBox_mem_type.TabIndex = 2;
+            this.groupBox_mem_type.TabStop = false;
+            this.groupBox_mem_type.Text = "Тип памяти";
             // 
             // groupBox_LUN
             // 
             this.groupBox_LUN.Controls.Add(this.groupBox_block_size);
             this.groupBox_LUN.Controls.Add(this.groupBox_total_blocks);
             this.groupBox_LUN.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox_LUN.Location = new System.Drawing.Point(3, 161);
+            this.groupBox_LUN.Location = new System.Drawing.Point(3, 221);
             this.groupBox_LUN.Name = "groupBox_LUN";
-            this.groupBox_LUN.Size = new System.Drawing.Size(929, 399);
+            this.groupBox_LUN.Size = new System.Drawing.Size(929, 339);
             this.groupBox_LUN.TabIndex = 15;
             this.groupBox_LUN.TabStop = false;
             this.groupBox_LUN.Text = "Диск 0";
@@ -1291,7 +1289,7 @@
             // 
             this.groupBox_logs.Controls.Add(this.radioButton_fulllog);
             this.groupBox_logs.Controls.Add(this.radioButton_shortlog);
-            this.groupBox_logs.Location = new System.Drawing.Point(654, 58);
+            this.groupBox_logs.Location = new System.Drawing.Point(653, 42);
             this.groupBox_logs.Name = "groupBox_logs";
             this.groupBox_logs.Size = new System.Drawing.Size(275, 47);
             this.groupBox_logs.TabIndex = 10;
@@ -1327,7 +1325,7 @@
             this.columnHeader_portnum,
             this.columnHeader_portname});
             this.listView_comport.HideSelection = false;
-            this.listView_comport.Location = new System.Drawing.Point(0, 6);
+            this.listView_comport.Location = new System.Drawing.Point(-1, 42);
             this.listView_comport.Name = "listView_comport";
             this.listView_comport.Size = new System.Drawing.Size(648, 95);
             this.listView_comport.TabIndex = 0;
@@ -1347,16 +1345,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(651, 39);
+            this.label4.Location = new System.Drawing.Point(287, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(278, 17);
+            this.label4.Size = new System.Drawing.Size(363, 17);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Для этой команды программер не нужен";
+            this.label4.Text = "Для выполнения этой команды программер не нужен";
             // 
             // button_Sahara_Ids
             // 
             this.button_Sahara_Ids.Enabled = false;
-            this.button_Sahara_Ids.Location = new System.Drawing.Point(654, 6);
+            this.button_Sahara_Ids.Location = new System.Drawing.Point(6, 6);
             this.button_Sahara_Ids.Name = "button_Sahara_Ids";
             this.button_Sahara_Ids.Size = new System.Drawing.Size(275, 30);
             this.button_Sahara_Ids.TabIndex = 3;
@@ -1367,7 +1365,7 @@
             // label_Sahara_fhf
             // 
             this.label_Sahara_fhf.AutoSize = true;
-            this.label_Sahara_fhf.Location = new System.Drawing.Point(6, 104);
+            this.label_Sahara_fhf.Location = new System.Drawing.Point(6, 140);
             this.label_Sahara_fhf.Name = "label_Sahara_fhf";
             this.label_Sahara_fhf.Size = new System.Drawing.Size(371, 17);
             this.label_Sahara_fhf.TabIndex = 2;
@@ -1376,11 +1374,11 @@
             // button_Sahara_CommandStart
             // 
             this.button_Sahara_CommandStart.Enabled = false;
-            this.button_Sahara_CommandStart.Location = new System.Drawing.Point(3, 124);
+            this.button_Sahara_CommandStart.Location = new System.Drawing.Point(471, 17);
             this.button_Sahara_CommandStart.Name = "button_Sahara_CommandStart";
-            this.button_Sahara_CommandStart.Size = new System.Drawing.Size(416, 33);
+            this.button_Sahara_CommandStart.Size = new System.Drawing.Size(166, 33);
             this.button_Sahara_CommandStart.TabIndex = 4;
-            this.button_Sahara_CommandStart.Text = "Информация о запоминающем устройстве (storage_info)";
+            this.button_Sahara_CommandStart.Text = "Выполнить команду";
             this.button_Sahara_CommandStart.UseVisualStyleBackColor = true;
             this.button_Sahara_CommandStart.Click += new System.EventHandler(this.Button_Sahara_CommandStart_Click);
             // 
@@ -1445,6 +1443,52 @@
             // 
             this.bindingSource_firehose.AllowNew = false;
             // 
+            // comboBox_fh_commands
+            // 
+            this.comboBox_fh_commands.Enabled = false;
+            this.comboBox_fh_commands.FormattingEnabled = true;
+            this.comboBox_fh_commands.Items.AddRange(new object[] {
+            "Информация о запоминающем устройстве (storage_info)",
+            "Получить таблицу разметки (GPT)",
+            "Перегрузить устройство в нормальный режим (reset)"});
+            this.comboBox_fh_commands.Location = new System.Drawing.Point(6, 26);
+            this.comboBox_fh_commands.Name = "comboBox_fh_commands";
+            this.comboBox_fh_commands.Size = new System.Drawing.Size(419, 24);
+            this.comboBox_fh_commands.TabIndex = 17;
+            this.comboBox_fh_commands.Text = "Информация о запоминающем устройстве (storage_info)";
+            // 
+            // groupBox_fh_commands
+            // 
+            this.groupBox_fh_commands.Controls.Add(this.comboBox_fh_commands);
+            this.groupBox_fh_commands.Controls.Add(this.button_Sahara_CommandStart);
+            this.groupBox_fh_commands.Location = new System.Drawing.Point(4, 161);
+            this.groupBox_fh_commands.Name = "groupBox_fh_commands";
+            this.groupBox_fh_commands.Size = new System.Drawing.Size(643, 56);
+            this.groupBox_fh_commands.TabIndex = 18;
+            this.groupBox_fh_commands.TabStop = false;
+            this.groupBox_fh_commands.Text = "Доступные команды программера (Firehose)";
+            // 
+            // radioButton_mem_emmc
+            // 
+            this.radioButton_mem_emmc.AutoSize = true;
+            this.radioButton_mem_emmc.Checked = true;
+            this.radioButton_mem_emmc.Location = new System.Drawing.Point(7, 20);
+            this.radioButton_mem_emmc.Name = "radioButton_mem_emmc";
+            this.radioButton_mem_emmc.Size = new System.Drawing.Size(68, 21);
+            this.radioButton_mem_emmc.TabIndex = 1;
+            this.radioButton_mem_emmc.Text = "eMMC";
+            this.radioButton_mem_emmc.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_mem_ufs
+            // 
+            this.radioButton_mem_ufs.AutoSize = true;
+            this.radioButton_mem_ufs.Location = new System.Drawing.Point(139, 20);
+            this.radioButton_mem_ufs.Name = "radioButton_mem_ufs";
+            this.radioButton_mem_ufs.Size = new System.Drawing.Size(56, 21);
+            this.radioButton_mem_ufs.TabIndex = 2;
+            this.radioButton_mem_ufs.Text = "UFS";
+            this.radioButton_mem_ufs.UseVisualStyleBackColor = true;
+            // 
             // Formfhf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1497,8 +1541,8 @@
             this.tabPage_sahara.ResumeLayout(false);
             this.tabPage_sahara.PerformLayout();
             this.groupBox_lun_count.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox_mem_type.ResumeLayout(false);
+            this.groupBox_mem_type.PerformLayout();
             this.groupBox_LUN.ResumeLayout(false);
             this.groupBox_block_size.ResumeLayout(false);
             this.groupBox_block_size.PerformLayout();
@@ -1511,6 +1555,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_collection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Find)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_firehose)).EndInit();
+            this.groupBox_fh_commands.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1632,11 +1677,14 @@
         private System.Windows.Forms.Label label_total_blocks;
         private System.Windows.Forms.GroupBox groupBox_block_size;
         private System.Windows.Forms.Label label_block_size;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label_mem_type;
+        private System.Windows.Forms.GroupBox groupBox_mem_type;
         private System.Windows.Forms.GroupBox groupBox_lun_count;
         private System.Windows.Forms.ComboBox comboBox_lun_count;
         private System.Windows.Forms.GroupBox groupBox_LUN;
+        private System.Windows.Forms.GroupBox groupBox_fh_commands;
+        private System.Windows.Forms.ComboBox comboBox_fh_commands;
+        private System.Windows.Forms.RadioButton radioButton_mem_ufs;
+        private System.Windows.Forms.RadioButton radioButton_mem_emmc;
     }
 }
 
