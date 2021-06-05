@@ -94,6 +94,7 @@ namespace FirehoseFinder
             "Stream",
             "TCL",
             "Tplink",
+            "UniStrong",
             "Vertex",
             "vivo",
             "vsmart",

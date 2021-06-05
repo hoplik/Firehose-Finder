@@ -315,17 +315,40 @@ namespace FirehoseFinder
 
         internal int[] StorageInfo(string storage_info)
         {
-            //«"storage_info": {"total_blocks":122142720, "block_size":512, 
-            //"page_size":512, "num_physical":3, "mfr_id":21, "serial_num":710139074, 
+            //"total_blocks":122142720, "block_size":512, "page_size":512, "num_physical":3, "mfr_id":21, "serial_num":710139074, 
             //"fw_version":"7","mem_type":"eMMC", "prod_name":"RC14MB"
             int[] SI = new int[4];
             //Стартуем с " и до ": - это поле для свича
             //От конца поля для свича до , - значение
             //Если значение в "", то это стринг, иначе инт
-            SI[0] = 0; //total_blocks
-            SI[1] = 512; //block_size
-            SI[2] = 3; //num_physical
-            SI[3] = (int)Guide.MEM_TYPE.eMMC; //mem_type
+            //Сначала разбиваем массив на части по символу ,
+            string[] tempSI = storage_info.Split(',');
+            for (int i = 0; i < tempSI.Length; i++)
+            {
+                int startindex = tempSI[i].IndexOf('"');
+                int endindex = tempSI[i].IndexOf("\":");
+                switch (tempSI[i].Substring(startindex, endindex - startindex))
+                {
+                    case "total_blocks":
+                        MessageBox.Show("0", tempSI[i].Substring(startindex, endindex - startindex));
+                        SI[0] = 0;
+                        break;
+                    case "block_size":
+                        MessageBox.Show("512", tempSI[i].Substring(startindex, endindex - startindex));
+                        SI[1] = 512;
+                        break;
+                    case "num_physical":
+                        MessageBox.Show("3", tempSI[i].Substring(startindex, endindex - startindex));
+                        SI[2] = 3;
+                        break;
+                    case "mem_type":
+                        MessageBox.Show("eMMC", tempSI[i].Substring(startindex, endindex - startindex));
+                        SI[3] = (int)Guide.MEM_TYPE.eMMC;
+                        break;
+                    default:
+                        break;
+                }
+            }
             return SI;
         }
     }

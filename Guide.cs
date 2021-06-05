@@ -128,5 +128,15 @@ namespace FirehoseFinder
             { "06092A864886F70D01010A", 3 }, //SHA384 - новые серты
             { "06072A8648CE3D020106052B81040022", 4 }  //SHA384 - паченый старый программер
         };
+
+        internal readonly List<string> FilesToClean = new List<string>(6)
+        {
+            { "commandop02.bin" },
+            { "commandop03.bin" },
+            { "commandop07.bin" },
+            { "port_trace.txt" },
+            { "gpt_backup0.bin" },
+            { "gpt_main0.bin" }
+        };
     }
 }

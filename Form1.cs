@@ -110,10 +110,10 @@ namespace FirehoseFinder
             Settings.Default.Save(); //Сохраняем настройки
             try
             {
-                if (File.Exists("commandop02.bin")) File.Delete("commandop02.bin");
-                if (File.Exists("commandop03.bin")) File.Delete("commandop03.bin");
-                if (File.Exists("commandop07.bin")) File.Delete("commandop07.bin");
-                if (File.Exists("port_trace.txt")) File.Delete("port_trace.txt");
+                foreach (string cleanfile in guide.FilesToClean)
+                {
+                    if (File.Exists(cleanfile)) File.Delete(cleanfile);
+                }
             }
             catch (Exception)
             {
@@ -331,11 +331,24 @@ namespace FirehoseFinder
                     GetSaharaIDs();
                 }
             }
-            else
-            {
-                button_Sahara_CommandStart.Enabled = false;
-                button_Sahara_Ids.Enabled = false;
-            }
+            else StartStatus();
+        }
+
+        /// <summary>
+        /// Возвращаем исходное состояние
+        /// </summary>
+        private void StartStatus()
+        {
+            button_Sahara_CommandStart.Enabled = false;
+            button_Sahara_Ids.Enabled = false;
+            groupBox_mem_type.Enabled = false;
+            radioButton_mem_emmc.Checked = true;
+            comboBox_lun_count.SelectedIndex = 0;
+            comboBox_lun_count.Text = comboBox_lun_count.SelectedItem.ToString();
+            comboBox_lun_count.Enabled = false;
+            comboBox_fh_commands.SelectedIndex = 0;
+            comboBox_fh_commands.Text = comboBox_fh_commands.SelectedItem.ToString();
+            comboBox_fh_commands.Enabled = false;
         }
 
         /// <summary>
@@ -399,6 +412,10 @@ namespace FirehoseFinder
                     MessageBox.Show(ex.Message);
                 }
             }
+            //После первой выполненной команды по получению инфо хранилища делаем доступным выбор других команд
+            comboBox_fh_commands.Enabled = true;
+            comboBox_lun_count.Enabled = true;
+            groupBox_mem_type.Enabled = true;
             fh_command_args.Append(serialPort1.PortName);
             if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs");
             else fh_command_args.Append(" --memoryname=emmc");
@@ -415,11 +432,12 @@ namespace FirehoseFinder
                     break;
                 case 1:
                     textBox_soft_term.AppendText("Получаем таблицу разметки (GPT)");
-                    //fh_command_args.Append(" --noprompt --reset");
+                    fh_command_args.Append(" --getgptmainbackup=gpt_main0.bin");
                     break;
                 case 2:
                     textBox_soft_term.AppendText("Перегружаем устройство в нормальный режим");
                     fh_command_args.Append(" --noprompt --reset");
+                    StartStatus();
                     break;
                 default:
                     textBox_soft_term.AppendText("Получаем информацию о запоминающем устройстве");
@@ -427,10 +445,6 @@ namespace FirehoseFinder
                     need_parsing_lun = true;
                     break;
             }
-            //После первой выполненной команды по получению инфо хранилища делаем доступным выбор других команд
-            comboBox_fh_commands.Enabled = true;
-            comboBox_lun_count.Enabled = true;
-            groupBox_mem_type.Enabled = true;
             Process process2 = new Process();
             process2.StartInfo.UseShellExecute = false;
             process2.StartInfo.RedirectStandardOutput = true;
@@ -460,10 +474,9 @@ namespace FirehoseFinder
                 //При успешном считывании памяти надо отправлять данные о модели и программере в телеграмм-канал
                 StringBuilder parsingLUN = new StringBuilder(output_FH);
                 //Обрезаем строку спереди
-                parsingLUN.Remove(0, output_FH.IndexOf("\"storage_info\": {") + 16);
+                parsingLUN.Remove(0, output_FH.IndexOf("\"storage_info\": {") + 17);
                 //Обрезаем строку сзади
                 parsingLUN.Remove(parsingLUN.ToString().IndexOf('}'), parsingLUN.Length - parsingLUN.ToString().IndexOf('}'));
-                MessageBox.Show(parsingLUN.ToString(), "Проверяем вывод");
                 int[] parsLUN_int = func.StorageInfo(parsingLUN.ToString());
                 label_total_blocks.Text = parsLUN_int[0].ToString();
                 label_block_size.Text = parsLUN_int[1].ToString();
@@ -1536,5 +1549,6 @@ namespace FirehoseFinder
         }
 
         #endregion
+
     }
 }
