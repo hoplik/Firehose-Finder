@@ -325,25 +325,24 @@ namespace FirehoseFinder
             string[] tempSI = storage_info.Split(',');
             for (int i = 0; i < tempSI.Length; i++)
             {
-                int startindex = tempSI[i].IndexOf('"');
+                int startindex = tempSI[i].IndexOf('"') + 1;
                 int endindex = tempSI[i].IndexOf("\":");
-                switch (tempSI[i].Substring(startindex, endindex - startindex))
+                string str_links = tempSI[i].Substring(startindex, endindex - startindex);
+                string str_link_value = tempSI[i].Substring(endindex + 2).Trim('\"');
+                switch (str_links)
                 {
                     case "total_blocks":
-                        MessageBox.Show("0", tempSI[i].Substring(startindex, endindex - startindex));
-                        SI[0] = 0;
+                        SI[0] = Convert.ToInt32(str_link_value);
                         break;
                     case "block_size":
-                        MessageBox.Show("512", tempSI[i].Substring(startindex, endindex - startindex));
-                        SI[1] = 512;
+                        SI[1] = Convert.ToInt32(str_link_value);
                         break;
                     case "num_physical":
-                        MessageBox.Show("3", tempSI[i].Substring(startindex, endindex - startindex));
-                        SI[2] = 3;
+                        SI[2] = Convert.ToInt32(str_link_value);
                         break;
                     case "mem_type":
-                        MessageBox.Show("eMMC", tempSI[i].Substring(startindex, endindex - startindex));
-                        SI[3] = (int)Guide.MEM_TYPE.eMMC;
+                        if (str_link_value.Equals("UFS")) SI[3] = (int)Guide.MEM_TYPE.UFS;
+                        else SI[3] = (int)Guide.MEM_TYPE.eMMC;
                         break;
                     default:
                         break;

@@ -12,6 +12,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace FirehoseFinder
 {
@@ -349,6 +350,9 @@ namespace FirehoseFinder
             comboBox_fh_commands.SelectedIndex = 0;
             comboBox_fh_commands.Text = comboBox_fh_commands.SelectedItem.ToString();
             comboBox_fh_commands.Enabled = false;
+            groupBox_LUN.Text = "Диск 0";
+            label_block_size.Text = "0";
+            label_total_blocks.Text = "0";
         }
 
         /// <summary>
@@ -375,7 +379,8 @@ namespace FirehoseFinder
             process1.StartInfo.CreateNoWindow = true;
             StringBuilder sahara_command_args = new StringBuilder("-p \\\\.\\" + serialPort1.PortName + " -s 13:");
             StringBuilder fh_command_args = new StringBuilder("--port=\\\\.\\");
-            bool need_parsing_lun = false;
+            bool need_parsing_lun = false; //Необходимо ли парсить данные хранилища
+            bool getgpt = false; //Необходимо ли получить таблицу GPT
             if (!File.Exists(label_Sahara_fhf.Text))
             {
                 DialogResult dr = MessageBox.Show("Выберете программер на вкладке \"Работа с файлами\"",
@@ -423,6 +428,7 @@ namespace FirehoseFinder
             if (radioButton_fulllog.Checked) fh_command_args.Append(" --loglevel=2");
             int lun_int = 0;
             if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
+            groupBox_LUN.Text = "Диск " + lun_int.ToString();
             switch (comboBox_fh_commands.SelectedIndex)
             {
                 case 0:
@@ -432,7 +438,8 @@ namespace FirehoseFinder
                     break;
                 case 1:
                     textBox_soft_term.AppendText("Получаем таблицу разметки (GPT)");
-                    fh_command_args.Append(" --getgptmainbackup=gpt_main0.bin");
+                    fh_command_args.Append(string.Format(" --getgptmainbackup=gpt_main{0}.bin --lun={0}", lun_int.ToString()));
+                    getgpt = true;
                     break;
                 case 2:
                     textBox_soft_term.AppendText("Перегружаем устройство в нормальный режим");
@@ -460,6 +467,7 @@ namespace FirehoseFinder
                 process2.WaitForExit();
                 process2.Close();
                 if (need_parsing_lun) NeedParsingLun(output_FH);
+                if (getgpt) GetGPT(lun_int);
             }
             catch (Exception ex)
             {
@@ -471,22 +479,20 @@ namespace FirehoseFinder
         {
             if (output_FH.Contains("\"storage_info\": {"))
             {
-                //При успешном считывании памяти надо отправлять данные о модели и программере в телеграмм-канал
+                //При успешном считывании памяти надо подумать, как отправлять данные о модели и программере в телеграмм-канал
                 StringBuilder parsingLUN = new StringBuilder(output_FH);
                 //Обрезаем строку спереди
                 parsingLUN.Remove(0, output_FH.IndexOf("\"storage_info\": {") + 17);
                 //Обрезаем строку сзади
                 parsingLUN.Remove(parsingLUN.ToString().IndexOf('}'), parsingLUN.Length - parsingLUN.ToString().IndexOf('}'));
                 int[] parsLUN_int = func.StorageInfo(parsingLUN.ToString());
-                label_total_blocks.Text = parsLUN_int[0].ToString();
+                label_total_blocks.Text = parsLUN_int[0].ToString("N0", CultureInfo.CreateSpecificCulture("sv-SE"));
                 label_block_size.Text = parsLUN_int[1].ToString();
-                comboBox_lun_count.Items.Clear();
+                if (comboBox_lun_count.Items.Count > 0) comboBox_lun_count.Items.Clear();
                 for (int i = 0; i < parsLUN_int[2]; i++)
                 {
                     comboBox_lun_count.Items.Add("Диск " + i.ToString());
                 }
-                comboBox_lun_count.SelectedIndex = 0;
-                comboBox_lun_count.Enabled = true;
                 switch (parsLUN_int[3])
                 {
                     case (int)Guide.MEM_TYPE.eMMC:
@@ -499,6 +505,19 @@ namespace FirehoseFinder
                         radioButton_mem_emmc.Checked = true;
                         break;
                 }
+            }
+        }
+
+        private void GetGPT(int lun_number)
+        {
+            string gptmain = string.Format("gpt_main{0}.bin", lun_number.ToString());
+            if (File.Exists(gptmain))
+            {
+                MessageBox.Show("Выводим в таблицу");
+            }
+            else
+            {
+                MessageBox.Show("Таблица GPT не сформирована");
             }
         }
 
@@ -1549,6 +1568,5 @@ namespace FirehoseFinder
         }
 
         #endregion
-
     }
 }
