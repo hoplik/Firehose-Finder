@@ -12,6 +12,8 @@ namespace FirehoseFinder
 {
     class Func
     {
+        GPT gpt = new GPT();
+
         /// <summary>
         /// Создаём список файлов с размером из указанной директории
         /// </summary>
@@ -349,6 +351,24 @@ namespace FirehoseFinder
                 }
             }
             return SI;
+        }
+
+        internal string[] Parsing_GPT_main(string GPT_File, int block_size)
+        {
+            StringBuilder Full_GPT = new StringBuilder();
+            StringBuilder GPT_Header = new StringBuilder();
+            StringBuilder GPT_Values = new StringBuilder();
+            string[] GPT_Items = new string[5] { string.Empty, string.Empty, string.Empty, string.Empty, string.Empty };
+            //Сначала считываем весь файл
+            Full_GPT.Append(BitConverter.ToString(File.ReadAllBytes(GPT_File)).Replace("-", ""));
+            File.Delete(GPT_File);
+            //Обрабатываем заголовок
+            GPT_Header = Full_GPT.Remove(0, block_size); //Удалили MBR
+            string magic_gpt = GPT_Header.ToString().Substring(0, gpt.gpt_header_struct[0] * 2);
+            //Обрабатываем данные самой таблицы
+            GPT_Values = Full_GPT.Remove(0, block_size * 2); //Удалили MBR и заголовок
+
+            return GPT_Items;
         }
     }
 }

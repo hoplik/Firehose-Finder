@@ -513,12 +513,14 @@ namespace FirehoseFinder
             string gptmain = string.Format("gpt_main{0}.bin", lun_number.ToString());
             if (File.Exists(gptmain))
             {
-                MessageBox.Show("Выводим в таблицу");
+                //Заполняем листвью массивом итемов (разделов таблицы GPT)
+                //for (int i = 0; i < GPT.; i++)
+                //{
+
+                //}
+                func.Parsing_GPT_main(gptmain, Convert.ToInt32(label_block_size.Text));
             }
-            else
-            {
-                MessageBox.Show("Таблица GPT не сформирована");
-            }
+            else MessageBox.Show("Таблица GPT не сформирована");
         }
 
         /// <summary>
