@@ -374,6 +374,7 @@ namespace FirehoseFinder
             Process process1 = new Process();
             process1.StartInfo.UseShellExecute = false;
             process1.StartInfo.RedirectStandardOutput = true;
+            process1.StartInfo.CreateNoWindow = true;
             StringBuilder sahara_command_args = new StringBuilder("-p \\\\.\\" + serialPort1.PortName + " -s 13:");
             StringBuilder fh_command_args = new StringBuilder("--port=\\\\.\\");
             bool need_parsing_lun = false; //Необходимо ли парсить данные хранилища
@@ -455,6 +456,7 @@ namespace FirehoseFinder
             Process process2 = new Process();
             process2.StartInfo.UseShellExecute = false;
             process2.StartInfo.RedirectStandardOutput = true;
+            process2.StartInfo.CreateNoWindow = true;
             process2.StartInfo.FileName = "fh_loader.exe";
             process2.StartInfo.Arguments = fh_command_args.ToString();
             try
@@ -512,13 +514,13 @@ namespace FirehoseFinder
             string gptmain = string.Format("gpt_main{0}.bin", lun_number.ToString());
             if (File.Exists(gptmain))
             {
+                string[] gpt_array = func.Parsing_GPT_main(gptmain, Convert.ToInt32(label_block_size.Text));
+                MessageBox.Show(string.Format("Хедер длиной {0} байт, Количество разделов - {1}", gpt_array[0], gpt_array[1]));
                 //Заполняем листвью массивом итемов (разделов таблицы GPT)
                 //for (int i = 0; i < GPT.; i++)
                 //{
 
                 //}
-                //func.Parsing_GPT_main(gptmain, Convert.ToInt32(label_block_size.Text));
-                MessageBox.Show("Таблица GPT сформирована, но не обработана. Данная функция находится в разработке.");
             }
             else MessageBox.Show("Таблица GPT не сформирована");
         }
@@ -1441,6 +1443,7 @@ namespace FirehoseFinder
             process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 2 -c 3 -c 7";
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.CreateNoWindow = true;
             try
             {
                 process.Start();

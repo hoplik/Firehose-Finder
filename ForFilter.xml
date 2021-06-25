@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-06-25T16:28:15">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-06-25T22:43:40">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -269,6 +269,16 @@
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/324A62B3/prog_firehose_ddr_lp5.bin#</Url>
 </ForFilter>
 <ForFilter>
+<HWID>000CC0E1</HWID>
+<FullName>Snapdragon 636</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>7CD366EF83A08283AFD180486C2DDF0BEF4327ECF6C5DB07CA461A68BC22C6C4</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ASUS_X00TDB</Model>
+<AltName>ZenFone Max Pro M1, ZB602KL, RU_X00TD</AltName>
+</ForFilter>
+<ForFilter>
 <HWID>000560E1</HWID>
 <FullName>Snapdragon 425</FullName>
 <OEMID>1234</OEMID>
@@ -333,16 +343,6 @@
 <Model>ZB555KL</Model>
 </ForFilter>
 <ForFilter>
-<HWID>000CC0E1</HWID>
-<FullName>Snapdragon 636</FullName>
-<OEMID>0000</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>7CD366EF83A08283AFD180486C2DDF0BEF4327ECF6C5DB07CA461A68BC22C6C4</HASHID>
-<Trademark>ASUS</Trademark>
-<Model>ZB602KL</Model>
-<AltName>ZenFone Max Pro M1</AltName>
-</ForFilter>
-<ForFilter>
 <HWID>0008C0E1</HWID>
 <FullName>Snapdragon 660</FullName>
 <OEMID>0000</OEMID>
@@ -390,15 +390,6 @@
 <HASHID>49D087CA08C6E2CA3D209C5697971E85D42A2F632592E68230C7D780F7D5DC1F</HASHID>
 <Trademark>ASUS</Trademark>
 <Model>ZC554KL</Model>
-</ForFilter>
-<ForFilter>
-<HWID>0090B0E1</HWID>
-<FullName>Snapdragon 615</FullName>
-<OEMID>0001</OEMID>
-<MODELID>0004</MODELID>
-<HASHID>6F17625B447FC782F45D9D6B11CE1F34C5F120BFE8124AEFD14711F0B8A79498</HASHID>
-<Trademark>ASUS</Trademark>
-<Model>ZD551KL</Model>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -579,6 +570,16 @@
 <Trademark>Google</Trademark>
 <Model>Pixel 3a</Model>
 <AltName>sargo</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000E60E1</HWID>
+<FullName>Snapdragon 730</FullName>
+<OEMID>0066</OEMID>
+<MODELID>000A</MODELID>
+<HASHID>3EF72A02FB931BE15408BB63603588FAEAFEB09F07D567C04A3FDC7E9FDD7E2FAAB10F954C89A682AFE1CD46F8482C6C</HASHID>
+<Trademark>Google</Trademark>
+<Model>Pixel 4a</Model>
+<AltName>sunfish</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
