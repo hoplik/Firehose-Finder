@@ -154,6 +154,7 @@ namespace FirehoseFinder
             if (CollectionToolStripMenuItem.Checked)
             {
                 tabControl1.TabPages.Insert(tabControl1.TabPages.Count, tabPage_collection);
+                tabControl1.SelectedTab = tabPage_collection;
                 if (!ProofAllToolStripMenuItem.Checked)
                 {
                     //Отображаем только подтверждённые данные
@@ -197,11 +198,9 @@ namespace FirehoseFinder
             if (работаСУстройствомToolStripMenuItem.Checked)
             {
                 tabControl1.TabPages.Insert(0, tabPage_phone);
+                tabControl1.SelectedTab = tabPage_phone;
             }
-            else
-            {
-                tabControl1.TabPages.Remove(tabPage_phone);
-            }
+            else tabControl1.TabPages.Remove(tabPage_phone);
         }
 
         /// <summary>
@@ -362,7 +361,6 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button_Sahara_Ids_Click(object sender, EventArgs e)
         {
-            button_Sahara_Ids.Enabled = false;
             GetSaharaIDs();
         }
 
@@ -376,7 +374,6 @@ namespace FirehoseFinder
             Process process1 = new Process();
             process1.StartInfo.UseShellExecute = false;
             process1.StartInfo.RedirectStandardOutput = true;
-            process1.StartInfo.CreateNoWindow = true;
             StringBuilder sahara_command_args = new StringBuilder("-p \\\\.\\" + serialPort1.PortName + " -s 13:");
             StringBuilder fh_command_args = new StringBuilder("--port=\\\\.\\");
             bool need_parsing_lun = false; //Необходимо ли парсить данные хранилища
@@ -398,6 +395,9 @@ namespace FirehoseFinder
                 {
                     MessageBox.Show("Для получения идентификаторов устройство должно быть переподключено!" + Environment.NewLine +
                         "Пожалуйста, отключите устройство от компьютера, перезагрузите в аварийный режим (9008) и подключите повторно.", "Внимание!");
+
+                    button_Sahara_Ids.Enabled = false;
+                    button_Sahara_CommandStart.Enabled = false;
                     return;
                 }
                 process1.StartInfo.FileName = "QSaharaServer.exe";
@@ -455,7 +455,6 @@ namespace FirehoseFinder
             Process process2 = new Process();
             process2.StartInfo.UseShellExecute = false;
             process2.StartInfo.RedirectStandardOutput = true;
-            process2.StartInfo.CreateNoWindow = true;
             process2.StartInfo.FileName = "fh_loader.exe";
             process2.StartInfo.Arguments = fh_command_args.ToString();
             try
@@ -518,7 +517,8 @@ namespace FirehoseFinder
                 //{
 
                 //}
-                func.Parsing_GPT_main(gptmain, Convert.ToInt32(label_block_size.Text));
+                //func.Parsing_GPT_main(gptmain, Convert.ToInt32(label_block_size.Text));
+                MessageBox.Show("Таблица GPT сформирована, но не обработана. Данная функция находится в разработке.");
             }
             else MessageBox.Show("Таблица GPT не сформирована");
         }
@@ -809,7 +809,7 @@ namespace FirehoseFinder
             {
                 if (!dataGridView_final.Rows[e.RowIndex].ReadOnly)
                 {
-                    if (Convert.ToBoolean(dataGridView_final["Column_Sel", e.RowIndex].Value))
+                    if (Convert.ToBoolean(dataGridView_final["Column_Sel", e.RowIndex].Value) == true)
                     {
                         dataGridView_final["Column_Sel", e.RowIndex].Value = false;
                         button_useSahara_fhf.Enabled = false;
@@ -1110,6 +1110,10 @@ namespace FirehoseFinder
                     MessageBox.Show(ex.Message, "Внимание! Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            работаСУстройствомToolStripMenuItem.Checked = true;
+            tabControl1.SelectedTab = tabPage_phone;
+            tabControl_soft.SelectedTab = tabPage_sahara;
+            работаСУстройствомToolStripMenuItem.Checked = false;
         }
 
         /// <summary>
@@ -1412,7 +1416,7 @@ namespace FirehoseFinder
                     textBox_soft_term.AppendText(ex.Message + Environment.NewLine + "Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную." + Environment.NewLine);
                     textBox_main_term.AppendText(ex.Message + Environment.NewLine + "Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную." + Environment.NewLine);
                 }
-                Thread.Sleep(2000);
+                Thread.Sleep(1000);
                 StopAdb();
             }
         }
@@ -1427,14 +1431,15 @@ namespace FirehoseFinder
             {
                 MessageBox.Show("Для получения идентификаторов устройство должно быть переподключено!" + Environment.NewLine +
                     "Пожалуйста, отключите устройство от компьютера, перезагрузите в аварийный режим (9008) и подключите повторно.", "Внимание!");
+                button_Sahara_Ids.Enabled = false;
+                button_Sahara_CommandStart.Enabled = false;
                 return;
             }
-            //Выполняем запрос HWID-OEMID (command02)
+            //Выполняем запрос HWID-OEMID (command02, 03, 07)
             Process process = new Process();
             process.StartInfo.FileName = "QSaharaServer.exe";
             process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 2 -c 3 -c 7";
             process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = true;
             process.StartInfo.RedirectStandardOutput = true;
             try
             {
