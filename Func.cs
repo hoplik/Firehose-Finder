@@ -12,8 +12,6 @@ namespace FirehoseFinder
 {
     class Func
     {
-        GPT gpt = new GPT();
-
         /// <summary>
         /// Создаём список файлов с размером из указанной директории
         /// </summary>
@@ -355,6 +353,36 @@ namespace FirehoseFinder
 
         internal string[] Parsing_GPT_main(string GPT_File, int block_size)
         {
+            /* 
+              0x10	4 байта	27 6D 9F C9 Контрольная сумма GPT-заголовка(по адресам от 0x00 до 0x5C). Алгоритм контрольной суммы — CRC32.При подсчёте контрольной суммы начальное значение этого поля принимается равным нулю.
+              0x14	4 байта	00 00 00 00	Зарезервировано.Должно иметь значение 0
+              0x18	8 байт	01 00 00 00 00 00 00 00	Адрес сектора, содержащего первичный GPT-заголовок.Всегда имеет значение LBA 1.
+              0x20	8 байт	37 C8 11 01 00 00 00 00	Адрес сектора, содержащего копию GPT-заголовка.Всегда имеет значение адреса последнего сектора на диске.
+              0x28	8 байт	22 00 00 00 00 00 00 00	Адрес сектора с которого начинаются разделы на диске.Иными словами — адрес первого раздела диска
+              0x30	8 байт  17 C8 11 01 00 00 00 00	Адрес последнего сектора диска, отведенного под разделы
+              0x38	16 байт 00 A2 DA 98 9F 79 C0 01 A1 F4 04 62 2F D5 EC 6D	GUID диска. Содержит уникальный идентификатор, выданный диску и GPT-заголовку при разметке
+              0x48	8 байт  02 00 00 00 00 00 00 00	Адрес начала таблицы разделов
+              0x50	4 байта 80 00 00 00	Максимальное число разделов, которое может содержать таблица
+              0x54	4 байта 80 00 00 00	Размер записи для раздела
+              0x58	4 байта 27 C3 F3 85	Контрольная сумма таблицы разделов. Алгоритм контрольной суммы — CRC32
+              0x5C	420 байт    0	Зарезервировано.Должно быть заполнено нулями*/
+
+            GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty); //0x00    8 байт  45 46 49 20 50 41 52 54 Сигнатура заголовка.Используется для идентификации всех EFI - совместимых GPT - заголовков.Должно содержать значение 45 46 49 20 50 41 52 54, что в виде текста расшифровывается как "EFI PART".
+            GPT_Struct format_version = new GPT_Struct(0x08, 4, string.Empty); //0x08	4 байта 00 00 01 00	Версия формата заголовка (не спецификации UEFI). Сейчас используется версия заголовка 1.0
+            GPT_Struct header_length = new GPT_Struct(0x00, 8, string.Empty); //0x0C	4 байта	5C 00 00 00	Размер заголовка GPT в байтах.Имеет значение 0x5C (92 байта)
+            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
+            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
+            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
+            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
+            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
+            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
+            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
+            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
+            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
+            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
+            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
+            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
+
             string Full_GPT = BitConverter.ToString(File.ReadAllBytes(GPT_File)).Replace("-", ""); //Сначала считываем весь файл
             string GPT_Header = Full_GPT.Remove(0, block_size * 2); //Удалили MBR
             string GPT_Values = Full_GPT.Remove(0, block_size * 4); //Удалили MBR и хедер
@@ -362,12 +390,30 @@ namespace FirehoseFinder
             File.Delete(GPT_File);
             //Обрабатываем заголовок
             string gpt_header = GPT_Header.Remove(block_size * 2); //Удалили хвост
-            //Временно отображаем длину хедера в первом массиве
-            GPT_Items[0] = (gpt_header.Length / 2).ToString();
-            //Временно отображаем количество разделов таблицы во втором массиве
-            GPT_Items[1] = (GPT_Values.Length / 256).ToString();
-            string magic_gpt = GPT_Header.ToString().Substring(0, gpt.gpt_header_struct[0] * 2);
+            magic_number.ValueString = gpt_header.Substring(magic_number.StartAdress * 2, magic_number.Length * 2);
+            //Если не хедер, прекращаем обработку таблицы
+            if (!magic_number.ValueString.Equals("4546492050415254")) return GPT_Items;
+            format_version.ValueString = gpt_header.Substring(format_version.StartAdress * 2, format_version.Length * 2);
+            //Преобразовываем формат версии в вид X.X.X.X
+            string signver = string.Empty;
+            for (int i = 0; i < format_version.Length; i++)
+            {
+                if (!string.IsNullOrEmpty(signver))
+                {
+                    if (signver.EndsWith(".")) signver += "0";
+                    signver += ".";
+                }
+                signver += format_version.ValueString.Substring(i * 2, 2).TrimStart('0');
+            }
+            if (signver.EndsWith(".")) signver += "0";
+            //Для справки. Размер заголовка (надо убрать конечные нулевые байты при использовании).
+            header_length.ValueString = gpt_header.Substring(header_length.StartAdress * 2, header_length.Length * 2);
+
+
+            //Временно отображаем версию хедера в первом массиве
+            GPT_Items[0] = signver;
             //Обрабатываем данные самой таблицы
+
             return GPT_Items;
         }
     }

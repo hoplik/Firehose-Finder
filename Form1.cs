@@ -515,12 +515,8 @@ namespace FirehoseFinder
             if (File.Exists(gptmain))
             {
                 string[] gpt_array = func.Parsing_GPT_main(gptmain, Convert.ToInt32(label_block_size.Text));
-                MessageBox.Show(string.Format("Хедер длиной {0} байт, Количество разделов - {1}", gpt_array[0], gpt_array[1]));
+                MessageBox.Show(string.Format("Версия хедера - {0}", gpt_array[0]));
                 //Заполняем листвью массивом итемов (разделов таблицы GPT)
-                //for (int i = 0; i < GPT.; i++)
-                //{
-
-                //}
             }
             else MessageBox.Show("Таблица GPT не сформирована");
         }
