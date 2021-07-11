@@ -351,70 +351,138 @@ namespace FirehoseFinder
             return SI;
         }
 
-        internal string[] Parsing_GPT_main(string GPT_File, int block_size)
+        internal List<GPT_Table> Parsing_GPT_main(string GPT_File, int block_size)
         {
-            /* 
-              0x10	4 байта	27 6D 9F C9 Контрольная сумма GPT-заголовка(по адресам от 0x00 до 0x5C). Алгоритм контрольной суммы — CRC32.При подсчёте контрольной суммы начальное значение этого поля принимается равным нулю.
-              0x14	4 байта	00 00 00 00	Зарезервировано.Должно иметь значение 0
-              0x18	8 байт	01 00 00 00 00 00 00 00	Адрес сектора, содержащего первичный GPT-заголовок.Всегда имеет значение LBA 1.
-              0x20	8 байт	37 C8 11 01 00 00 00 00	Адрес сектора, содержащего копию GPT-заголовка.Всегда имеет значение адреса последнего сектора на диске.
-              0x28	8 байт	22 00 00 00 00 00 00 00	Адрес сектора с которого начинаются разделы на диске.Иными словами — адрес первого раздела диска
-              0x30	8 байт  17 C8 11 01 00 00 00 00	Адрес последнего сектора диска, отведенного под разделы
-              0x38	16 байт 00 A2 DA 98 9F 79 C0 01 A1 F4 04 62 2F D5 EC 6D	GUID диска. Содержит уникальный идентификатор, выданный диску и GPT-заголовку при разметке
-              0x48	8 байт  02 00 00 00 00 00 00 00	Адрес начала таблицы разделов
-              0x50	4 байта 80 00 00 00	Максимальное число разделов, которое может содержать таблица
-              0x54	4 байта 80 00 00 00	Размер записи для раздела
-              0x58	4 байта 27 C3 F3 85	Контрольная сумма таблицы разделов. Алгоритм контрольной суммы — CRC32
-              0x5C	420 байт    0	Зарезервировано.Должно быть заполнено нулями*/
-
+            List<GPT_Table> GPT = new List<GPT_Table>();
             GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty); //0x00    8 байт  45 46 49 20 50 41 52 54 Сигнатура заголовка.Используется для идентификации всех EFI - совместимых GPT - заголовков.Должно содержать значение 45 46 49 20 50 41 52 54, что в виде текста расшифровывается как "EFI PART".
-            GPT_Struct format_version = new GPT_Struct(0x08, 4, string.Empty); //0x08	4 байта 00 00 01 00	Версия формата заголовка (не спецификации UEFI). Сейчас используется версия заголовка 1.0
-            GPT_Struct header_length = new GPT_Struct(0x00, 8, string.Empty); //0x0C	4 байта	5C 00 00 00	Размер заголовка GPT в байтах.Имеет значение 0x5C (92 байта)
-            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
-            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
-            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
-            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
-            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
-            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
-            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
-            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
-            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
-            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
-            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
-            //GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty);
-
+            //GPT_Struct format_version = new GPT_Struct(0x08, 4, string.Empty); //0x08	4 байта 00 00 01 00	Версия формата заголовка (не спецификации UEFI). Сейчас используется версия заголовка 1.0
+            //GPT_Struct header_length = new GPT_Struct(0x0C, 4, string.Empty); //0x0C	4 байта	5C 00 00 00	Размер заголовка GPT в байтах.Имеет значение 0x5C (92 байта)
+            //GPT_Struct header_crc32 = new GPT_Struct(0x10, 4, string.Empty); //0x10	4 байта	27 6D 9F C9 Контрольная сумма GPT-заголовка(по адресам от 0x00 до 0x5C). Алгоритм контрольной суммы — CRC32.При подсчёте контрольной суммы начальное значение этого поля принимается равным нулю.
+            //GPT_Struct reserved1 = new GPT_Struct(0x14, 4, string.Empty); //0x14	4 байта	00 00 00 00	Зарезервировано.Должно иметь значение 0
+            //GPT_Struct header_adress = new GPT_Struct(0x18, 8, string.Empty); //0x18	8 байт	01 00 00 00 00 00 00 00	Адрес сектора, содержащего первичный GPT-заголовок.Всегда имеет значение LBA 1.
+            //GPT_Struct bak_header_adress = new GPT_Struct(0x20, 8, string.Empty); //0x20	8 байт	37 C8 11 01 00 00 00 00	Адрес сектора, содержащего копию GPT-заголовка.Всегда имеет значение адреса последнего сектора на диске.
+            //GPT_Struct data_startadress = new GPT_Struct(0x28, 8, string.Empty); //0x28	8 байт	22 00 00 00 00 00 00 00	Адрес сектора с которого начинаются разделы на диске.Иными словами — адрес первого раздела диска
+            //GPT_Struct data_endadress = new GPT_Struct(0x30, 8, string.Empty); //0x30	8 байт  17 C8 11 01 00 00 00 00	Адрес последнего сектора диска, отведенного под разделы
+            //GPT_Struct disk_id = new GPT_Struct(0x38, 16, string.Empty); //0x38	16 байт 00 A2 DA 98 9F 79 C0 01 A1 F4 04 62 2F D5 EC 6D	GUID диска. Содержит уникальный идентификатор, выданный диску и GPT-заголовку при разметке
+            GPT_Struct gpt_startadress = new GPT_Struct(0x48, 8, string.Empty); //0x48	8 байт  02 00 00 00 00 00 00 00	Адрес начала таблицы разделов
+            GPT_Struct max_gpt_blocks = new GPT_Struct(0x50, 4, string.Empty); //0x50	4 байта 80 00 00 00	Максимальное число разделов, которое может содержать таблица
+            GPT_Struct record_length = new GPT_Struct(0x54, 4, string.Empty); //0x54	4 байта 80 00 00 00	Размер записи для раздела
+                                                                              //GPT_Struct gpt_crc32 = new GPT_Struct(0x58, 4, string.Empty); //0x58	4 байта 27 C3 F3 85	Контрольная сумма таблицы разделов. Алгоритм контрольной суммы — CRC32
+                                                                              //GPT_Struct reserved2 = new GPT_Struct(0x5C, 420, string.Empty); //0x5C	420 байт    0	Зарезервировано.Должно быть заполнено нулями
             string Full_GPT = BitConverter.ToString(File.ReadAllBytes(GPT_File)).Replace("-", ""); //Сначала считываем весь файл
             string GPT_Header = Full_GPT.Remove(0, block_size * 2); //Удалили MBR
-            string GPT_Values = Full_GPT.Remove(0, block_size * 4); //Удалили MBR и хедер
-            string[] GPT_Items = new string[5] { string.Empty, string.Empty, string.Empty, string.Empty, string.Empty };
-            File.Delete(GPT_File);
             //Обрабатываем заголовок
             string gpt_header = GPT_Header.Remove(block_size * 2); //Удалили хвост
             magic_number.ValueString = gpt_header.Substring(magic_number.StartAdress * 2, magic_number.Length * 2);
             //Если не хедер, прекращаем обработку таблицы
-            if (!magic_number.ValueString.Equals("4546492050415254")) return GPT_Items;
-            format_version.ValueString = gpt_header.Substring(format_version.StartAdress * 2, format_version.Length * 2);
-            //Преобразовываем формат версии в вид X.X.X.X
-            string signver = string.Empty;
-            for (int i = 0; i < format_version.Length; i++)
+            if (!magic_number.ValueString.Equals("4546492050415254"))
             {
-                if (!string.IsNullOrEmpty(signver))
+                GPT_Table GPT_Items = new GPT_Table()
                 {
-                    if (signver.EndsWith(".")) signver += "0";
-                    signver += ".";
-                }
-                signver += format_version.ValueString.Substring(i * 2, 2).TrimStart('0');
+                    StartLBA = "Отсутствует признак хедера таблицы"
+                };
+                GPT.Add(GPT_Items);
+                return GPT;
             }
-            if (signver.EndsWith(".")) signver += "0";
-            //Для справки. Размер заголовка (надо убрать конечные нулевые байты при использовании).
-            header_length.ValueString = gpt_header.Substring(header_length.StartAdress * 2, header_length.Length * 2);
-
-
-            //Временно отображаем версию хедера в первом массиве
-            GPT_Items[0] = signver;
+            //Адрес начала таблицы
+            gpt_startadress.ValueString = gpt_header.Substring(gpt_startadress.StartAdress * 2, gpt_startadress.Length * 2);
+            string gsa = gpt_startadress.ValueString;
+            while (gsa.EndsWith("00"))
+            {
+                gsa = gsa.Remove(gsa.Length - 2, 2);
+            }
+            gsa = gsa.TrimStart('0');
+            //Максимальное количество блоков
+            max_gpt_blocks.ValueString = gpt_header.Substring(max_gpt_blocks.StartAdress * 2, max_gpt_blocks.Length * 2);
+            string mgb = string.Empty;
+            for (int i = 0; i < max_gpt_blocks.Length; i++)
+            {
+                mgb = mgb.Insert(0, max_gpt_blocks.ValueString.Substring(i * 2, 2));
+            }
+            mgb = mgb.TrimStart('0');
+            //Размер записи для раздела
+            record_length.ValueString = gpt_header.Substring(record_length.StartAdress * 2, record_length.Length * 2);
+            string rl = record_length.ValueString;
+            while (rl.EndsWith("00"))
+            {
+                rl = rl.Remove(rl.Length - 2, 2);
+            }
+            rl = rl.TrimStart('0');
+            int rlint = Convert.ToInt32(rl, 16);
             //Обрабатываем данные самой таблицы
+            string GPT_Values = Full_GPT.Remove(0, block_size * 2 * Convert.ToInt32(gsa, 16)); //Удалили MBR и хедер
+            //GPT_Struct block_idtype = new GPT_Struct(0x00, 16, string.Empty); //0x00    16 байт 28 73 2A C1 1F F8 D2 11 BA 4B 00 A0 C9 3E C9 3B GUID типа раздела. В примере приведен тип раздела "EFI System partition".Список всех типов можно посмотреть https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs
+            //GPT_Struct block_id = new GPT_Struct(0x10, 16, string.Empty); //0x10    16 байт C0 94 77 FC 43 86 C0 01 92 E0 3C 77 2E 43 AC 40 Уникальный GUID раздела.Генерируется при создании раздела
+            GPT_Struct block_startadress = new GPT_Struct(0x20, 8, string.Empty); //0x20    8 байт  3F 00 00 00 00 00 00 00 Начальный LBA-адрес раздела
+            GPT_Struct block_endadress = new GPT_Struct(0x28, 8, string.Empty); //0x28    8 байт CC 2F 03 00 00 00 00 00 Последний LBA-адрес раздела
+            //GPT_Struct block_attr = new GPT_Struct(0x30, 8, string.Empty); //0x30    8 байт  00 00 00 00 00 00 00 00 Атрибуты раздела в виде битовой маски
+            GPT_Struct block_name = new GPT_Struct(0x38, 72, string.Empty); //0x38    72 байта EFI system partition    Название раздела. Unicode - строка длиной 36 - символов
+            //Анализируем каждый блок из 128 и при ненулевом значении добавляем в список
+            string[] blocks_array = new string[Convert.ToInt32(mgb, 16)];
+            for (int i = 0; i < blocks_array.Length; i++)
+            {
+                blocks_array[i] = GPT_Values.Substring(i * rlint * 2, rlint * 2);
+            }
+            foreach (string block_string in blocks_array)
+            {
+                //Парсим стартовый адрес блока
+                block_startadress.ValueString = block_string.Substring(block_startadress.StartAdress * 2, block_startadress.Length * 2);
+                string bsa = string.Empty;
+                for (int k = 0; k < block_startadress.Length; k++)
+                {
+                    bsa = bsa.Insert(0, block_startadress.ValueString.Substring(k * 2, 2));
+                }
+                //Парсим последний адрес блока
+                block_endadress.ValueString = block_string.Substring(block_endadress.StartAdress * 2, block_endadress.Length * 2);
+                string bea = string.Empty;
+                for (int m = 0; m < block_endadress.Length; m++)
+                {
+                    bea = bea.Insert(0, block_endadress.ValueString.Substring(m * 2, 2));
+                }
+                //Парсим название блока
+                block_name.ValueString = block_string.Substring(block_name.StartAdress * 2, block_name.Length * 2);
+                StringBuilder bn = new StringBuilder();
+                for (int p = 0; p < block_name.Length; p += 4)
+                {
+                    string unichar = (block_name.ValueString.Substring(p + 2, 2) + block_name.ValueString.Substring(p, 2)).TrimStart('0');
+                    if (!string.IsNullOrEmpty(unichar)) bn.Append(Convert.ToChar(Convert.ToInt32(unichar, 16)));
+                }
+                GPT_Table GPT_Items = new GPT_Table()
+                {
+                    StartLBA = bsa.TrimStart('0'),
+                    EndLBA = bea.TrimStart('0'),
+                    BlockName = bn.ToString()
+                };
+                if (!string.IsNullOrEmpty(GPT_Items.StartLBA) && !string.IsNullOrEmpty(GPT_Items.EndLBA))
+                {
+                    uint blocks_count = Convert.ToUInt32(GPT_Items.EndLBA, 16) - Convert.ToUInt32(GPT_Items.StartLBA, 16) + 1;
+                    GPT_Items.BlockLength = BytesToMB(blocks_count, block_size);
+                    GPT.Add(GPT_Items);
+                }
+            }
+            return GPT;
+        }
 
-            return GPT_Items;
+        internal string BytesToMB(uint blocks, int block_size)
+        {
+            string byte_type = "b";
+            double total_size = blocks * block_size;
+            if (total_size >= 1024)
+            {
+                total_size /= 1024.00;
+                byte_type = "Kb";
+                if (total_size >= 1024)
+                {
+                    total_size /= 1024.00;
+                    byte_type = "Mb";
+                    if (total_size >= 1024)
+                    {
+                        total_size /= 1024.00;
+                        byte_type = "Gb";
+                    }
+                }
+            }
+            return string.Format("{0} ({1} {2})", blocks.ToString("N0", CultureInfo.CreateSpecificCulture("sv-SE")), total_size.ToString("N2", CultureInfo.CreateSpecificCulture("sv-SE")), byte_type);
         }
     }
 }

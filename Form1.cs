@@ -352,6 +352,7 @@ namespace FirehoseFinder
             groupBox_LUN.Text = "Диск 0";
             label_block_size.Text = "0";
             label_total_blocks.Text = "0";
+            label_total_gpt.Text = "0";
         }
 
         /// <summary>
@@ -512,11 +513,23 @@ namespace FirehoseFinder
         private void GetGPT(int lun_number)
         {
             string gptmain = string.Format("gpt_main{0}.bin", lun_number.ToString());
+            if (listView_GPT.Items.Count > 0) listView_GPT.Items.Clear();
             if (File.Exists(gptmain))
             {
-                string[] gpt_array = func.Parsing_GPT_main(gptmain, Convert.ToInt32(label_block_size.Text));
-                MessageBox.Show(string.Format("Версия хедера - {0}", gpt_array[0]));
-                //Заполняем листвью массивом итемов (разделов таблицы GPT)
+                List<GPT_Table> gpt_array = func.Parsing_GPT_main(gptmain, Convert.ToInt32(label_block_size.Text));
+                if (string.IsNullOrEmpty(gpt_array[0].EndLBA)) MessageBox.Show(gpt_array[0].StartLBA, "Ошибка обработки таблицы GPT");
+                else //Заполняем листвью массивом итемов(разделов таблицы GPT)
+                {
+                    for (int i = 0; i < gpt_array.Count; i++)
+                    {
+                        ListViewItem gpt_item = new ListViewItem(gpt_array[i].StartLBA);
+                        gpt_item.SubItems.Add(gpt_array[i].EndLBA);
+                        gpt_item.SubItems.Add(gpt_array[i].BlockName);
+                        gpt_item.SubItems.Add(gpt_array[i].BlockLength);
+                        listView_GPT.Items.Add(gpt_item);
+                    }
+                    label_total_gpt.Text = gpt_array.Count.ToString();
+                }
             }
             else MessageBox.Show("Таблица GPT не сформирована");
         }
@@ -1574,5 +1587,82 @@ namespace FirehoseFinder
         }
 
         #endregion
+
+        private void ВыбратьВсеРазделыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in listView_GPT.Items)
+            {
+                item.Checked = true;
+            }
+        }
+
+        private void СброситьВыборdeselectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in listView_GPT.Items)
+            {
+                item.Checked = false;
+            }
+        }
+
+        private void ListView_GPT_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            label_select_gpt.Text = listView_GPT.CheckedItems.Count.ToString();
+        }
+
+        private void ВыбратьРазделToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in listView_GPT.SelectedItems)
+            {
+                if (item.Checked) item.Checked = false;
+                else item.Checked = true;
+            }
+        }
+
+        private void СохранитьТаблицуВФайлmainGPTbinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists("gpt_main0.bin"))
+            {
+                DialogResult result = folderBrowserDialog1.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    try
+                    {
+                        File.Copy("gpt_main0.bin", folderBrowserDialog1.SelectedPath + "\\gpt_main0.bin");
+                        textBox_soft_term.AppendText("Сохранение файла таблицы разметки в выбранную папку прошло успешно." + Environment.NewLine);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка записи файла", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else MessageBox.Show("Не найден базовый файл таблицы разметки - gpt_main0.bin", "Ошибка доступа к файлу", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void СохранитьВыбранныеРазделыdumpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Обязательно убедитесь, что свободный размер диска больше суммарного объёма (всех выбранных разделов) сохраняемого дампа. " +
+                "Иначе возможны ошибки при сохранении или в процесе дальнейшей работы с сохранёнными разделами.", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //if (listView_GPT.CheckedItems.Count==0)
+            //{
+            //    MessageBox.Show("Не выбрано ни одного раздела для сохранения.", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    return;
+            //}
+            DialogResult result = folderBrowserDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    //Процедура экспорта
+                    Dump dump = new Dump(this);
+                    dump.ShowDialog();
+                    textBox_soft_term.AppendText("Сохранение выбранных разделов в выбранную папку прошло успешно." + Environment.NewLine);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка сохранения дампа", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

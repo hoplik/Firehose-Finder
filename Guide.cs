@@ -165,4 +165,27 @@ namespace FirehoseFinder
 
         }
     }
+
+    class GPT_Table
+    {
+        public string StartLBA;
+
+        public string EndLBA;
+
+        public string BlockName;
+
+        public string BlockLength;
+
+        public GPT_Table(string startLBA, string endLBA, string blockname, string blocklength)
+        {
+            StartLBA = startLBA;
+            EndLBA = endLBA;
+            BlockName = blockname;
+            BlockLength = blocklength;
+        }
+        public GPT_Table()
+        {
+
+        }
+    }
 }
