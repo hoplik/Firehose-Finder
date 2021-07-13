@@ -353,6 +353,7 @@ namespace FirehoseFinder
             label_block_size.Text = "0";
             label_total_blocks.Text = "0";
             label_total_gpt.Text = "0";
+            listView_GPT.Clear();
         }
 
         /// <summary>
@@ -1654,8 +1655,7 @@ namespace FirehoseFinder
                 try
                 {
                     //Процедура экспорта
-                    Dump dump = new Dump(this);
-                    dump.ShowDialog();
+
                     textBox_soft_term.AppendText("Сохранение выбранных разделов в выбранную папку прошло успешно." + Environment.NewLine);
                 }
                 catch (Exception ex)
