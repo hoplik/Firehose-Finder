@@ -152,6 +152,12 @@
     <Compile Include="AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dump_Sectors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dump_Sectors.Designer.cs">
+      <DependentUpon>Dump_Sectors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     <None Include="Resources\Greeting.txt" />
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dump_Sectors.resx">
+      <DependentUpon>Dump_Sectors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

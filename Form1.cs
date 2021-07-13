@@ -1644,17 +1644,19 @@ namespace FirehoseFinder
         {
             MessageBox.Show("Обязательно убедитесь, что свободный размер диска больше суммарного объёма (всех выбранных разделов) сохраняемого дампа. " +
                 "Иначе возможны ошибки при сохранении или в процесе дальнейшей работы с сохранёнными разделами.", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //if (listView_GPT.CheckedItems.Count==0)
-            //{
-            //    MessageBox.Show("Не выбрано ни одного раздела для сохранения.", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //    return;
-            //}
+            if (listView_GPT.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("Не выбрано ни одного раздела для сохранения.", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             DialogResult result = folderBrowserDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
                 try
                 {
                     //Процедура экспорта
+                    //Формируем строку для выполнения запроса
+                    //C:\Program Files (x86)\Qualcomm\QPST\bin\fh_loader.exe --port=\\.\COM3 --search_path=C:\Users\Work\AppData\Roaming\Qualcomm\QFIL\COMPORT_3 --convertprogram2read --sendimage=fh_gpt_header_0 --start_sector=1 --lun=0 --num_sectors=1 --noprompt --showpercentagecomplete --zlpawarehost=1 --memoryname=ufs
 
                     textBox_soft_term.AppendText("Сохранение выбранных разделов в выбранную папку прошло успешно." + Environment.NewLine);
                 }
@@ -1663,6 +1665,50 @@ namespace FirehoseFinder
                     MessageBox.Show(ex.Message, "Ошибка сохранения дампа", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void Label_select_gpt_TextChanged(object sender, EventArgs e)
+        {
+            if (label_select_gpt.Text.Equals(listView_GPT.Items.Count.ToString())) contextMenuStrip_gpt.Items[6].Enabled = false;
+            else
+            {
+                contextMenuStrip_gpt.Items[6].Enabled = true;
+            }
+            if (label_select_gpt.Text.Equals("0"))
+            {
+                contextMenuStrip_gpt.Items[4].Enabled = false;
+                contextMenuStrip_gpt.Items[7].Enabled = false;
+            }
+            else
+            {
+                contextMenuStrip_gpt.Items[4].Enabled = true;
+                contextMenuStrip_gpt.Items[7].Enabled = true;
+            }
+        }
+
+        private void Label_total_gpt_TextChanged(object sender, EventArgs e)
+        {
+            if (label_total_gpt.Text.Equals("0"))
+            {
+                contextMenuStrip_gpt.Items[0].Enabled = false;
+                contextMenuStrip_gpt.Items[3].Enabled = false;
+                contextMenuStrip_gpt.Items[4].Enabled = false;
+                contextMenuStrip_gpt.Items[6].Enabled = false;
+                contextMenuStrip_gpt.Items[7].Enabled = false;
+            }
+            else
+            {
+                contextMenuStrip_gpt.Items[0].Enabled = true;
+                contextMenuStrip_gpt.Items[3].Enabled = true;
+                contextMenuStrip_gpt.Items[4].Enabled = true;
+                contextMenuStrip_gpt.Items[6].Enabled = true;
+            }
+        }
+
+        private void СохранитьСектораПоНомеруdumpSectorNumderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dump_Sectors dump = new Dump_Sectors(this);
+            dump.Show();
         }
     }
 }
