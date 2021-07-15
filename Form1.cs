@@ -23,6 +23,8 @@ namespace FirehoseFinder
         bool waitSahara = false; //Ждём ли мы автоперезагрузку с получением ID Sahara
         bool FHAlreadyLoaded = false; //Был ли успешно загружен программер (не надо грузить повторно)
         bool NeedReset = false; //Требуется ли перезагрузка устройства после работы с Сахарой
+        internal Flash_Disk[] Flash_Params = new Flash_Disk[1];
+        Flash_Disk flash_start = new Flash_Disk(0, 0, 0);
 
         /// <summary>
         /// Инициализация компонентов
@@ -88,6 +90,8 @@ namespace FirehoseFinder
             //Закрываем специализированные закладки
             tabControl1.TabPages.Remove(tabPage_collection);
             tabControl1.TabPages.Remove(tabPage_phone);
+            //Обнуляем глобальные переменные
+            Flash_Params[0] = flash_start;
             //Всплывающие подсказки к разным контролам
             toolTip1.SetToolTip(button_findIDs, "Подключите устройство и нажмите для получения идентификаторов");
             toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
@@ -335,28 +339,6 @@ namespace FirehoseFinder
         }
 
         /// <summary>
-        /// Возвращаем исходное состояние
-        /// </summary>
-        private void StartStatus()
-        {
-            button_Sahara_CommandStart.Enabled = false;
-            button_Sahara_Ids.Enabled = false;
-            groupBox_mem_type.Enabled = false;
-            radioButton_mem_emmc.Checked = true;
-            comboBox_lun_count.SelectedIndex = 0;
-            comboBox_lun_count.Text = comboBox_lun_count.SelectedItem.ToString();
-            comboBox_lun_count.Enabled = false;
-            comboBox_fh_commands.SelectedIndex = 0;
-            comboBox_fh_commands.Text = comboBox_fh_commands.SelectedItem.ToString();
-            comboBox_fh_commands.Enabled = false;
-            groupBox_LUN.Text = "Диск 0";
-            label_block_size.Text = "0";
-            label_total_blocks.Text = "0";
-            label_total_gpt.Text = "0";
-            listView_GPT.Clear();
-        }
-
-        /// <summary>
         /// Получаем идентификаторы устройства, переносим их на вкладку Работа с файлами
         /// </summary>
         /// <param name="sender"></param>
@@ -381,6 +363,7 @@ namespace FirehoseFinder
             StringBuilder fh_command_args = new StringBuilder("--port=\\\\.\\");
             bool need_parsing_lun = false; //Необходимо ли парсить данные хранилища
             bool getgpt = false; //Необходимо ли получить таблицу GPT
+            button_Sahara_Ids.Enabled = false;
             if (!File.Exists(label_Sahara_fhf.Text))
             {
                 DialogResult dr = MessageBox.Show("Выберете программер на вкладке \"Работа с файлами\"",
@@ -469,7 +452,7 @@ namespace FirehoseFinder
                 textBox_soft_term.AppendText(output_FH);
                 process2.WaitForExit();
                 process2.Close();
-                if (need_parsing_lun) NeedParsingLun(output_FH);
+                if (need_parsing_lun) NeedParsingLun(output_FH, lun_int);
                 if (getgpt) GetGPT(lun_int);
             }
             catch (Exception ex)
@@ -478,7 +461,7 @@ namespace FirehoseFinder
             }
         }
 
-        private void NeedParsingLun(string output_FH)
+        private void NeedParsingLun(string output_FH, int lun_numder)
         {
             if (output_FH.Contains("\"storage_info\": {"))
             {
@@ -489,10 +472,17 @@ namespace FirehoseFinder
                 //Обрезаем строку сзади
                 parsingLUN.Remove(parsingLUN.ToString().IndexOf('}'), parsingLUN.Length - parsingLUN.ToString().IndexOf('}'));
                 int[] parsLUN_int = func.StorageInfo(parsingLUN.ToString());
-                label_total_blocks.Text = parsLUN_int[0].ToString("N0", CultureInfo.CreateSpecificCulture("sv-SE"));
-                label_block_size.Text = parsLUN_int[1].ToString();
+                Flash_Disk disk = new Flash_Disk(parsLUN_int[0], parsLUN_int[1], parsLUN_int[2]);
+                if (Flash_Params.Length < disk.Count_Lun) Array.Resize(ref Flash_Params, disk.Count_Lun);
+                for (int i = 0; i < Flash_Params.Length; i++)
+                {
+                    if (Flash_Params[i] == null) Flash_Params.SetValue(flash_start, i);
+                }
+                Flash_Params.SetValue(disk, lun_numder);
+                label_total_blocks.Text = Flash_Params[lun_numder].Total_Sectors.ToString("### ### ### ##0");
+                label_block_size.Text = Flash_Params[lun_numder].Sector_Size.ToString();
                 if (comboBox_lun_count.Items.Count > 0) comboBox_lun_count.Items.Clear();
-                for (int i = 0; i < parsLUN_int[2]; i++)
+                for (int i = 0; i < Flash_Params[lun_numder].Count_Lun; i++)
                 {
                     comboBox_lun_count.Items.Add("Диск " + i.ToString());
                 }
@@ -523,10 +513,10 @@ namespace FirehoseFinder
                 {
                     for (int i = 0; i < gpt_array.Count; i++)
                     {
-                        ListViewItem gpt_item = new ListViewItem(gpt_array[i].StartLBA);
-                        gpt_item.SubItems.Add(gpt_array[i].EndLBA);
-                        gpt_item.SubItems.Add(gpt_array[i].BlockName);
-                        gpt_item.SubItems.Add(gpt_array[i].BlockLength);
+                        ListViewItem gpt_item = new ListViewItem(gpt_array[i].StartLBA); //Это итем и сабитем0
+                        gpt_item.SubItems.Add(gpt_array[i].EndLBA); //сабитем1
+                        gpt_item.SubItems.Add(gpt_array[i].BlockName); //сабитем2
+                        gpt_item.SubItems.Add(gpt_array[i].BlockLength); //сабитем3
                         listView_GPT.Items.Add(gpt_item);
                     }
                     label_total_gpt.Text = gpt_array.Count.ToString();
@@ -576,8 +566,8 @@ namespace FirehoseFinder
             {
                 try
                 {
-                    using (StreamWriter sw = new StreamWriter(folderBrowserDialog1.SelectedPath + "\\log_terminal_soft_" + DateTime.Now.ToString("mm_ss") + ".txt", false)) sw.Write(textBox_soft_term.Text + "Сохранение прошло успешно" + Environment.NewLine);
-                    textBox_soft_term.AppendText("Сохранение прошло успешно" + Environment.NewLine);
+                    using (StreamWriter sw = new StreamWriter(folderBrowserDialog1.SelectedPath + "\\log_terminal_soft_" + DateTime.Now.ToString("mm_ss") + ".txt", false)) sw.Write(textBox_soft_term.Text + "Сохранение лога прошло успешно" + Environment.NewLine);
+                    textBox_soft_term.AppendText("Сохранение лога прошло успешно" + Environment.NewLine);
                     button_term_save.Enabled = false;
                 }
                 catch (Exception ex)
@@ -618,6 +608,22 @@ namespace FirehoseFinder
         private void RadioButton_reboot_edl_CheckedChanged(object sender, EventArgs e)
         {
             button_ADB_comstart.Enabled = true;
+        }
+
+        /// <summary>
+        /// Выбор другого диска для операции
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ComboBox_lun_count_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button_Sahara_Ids.Enabled = false;
+            groupBox_LUN.Text = comboBox_lun_count.SelectedItem.ToString();
+            label_block_size.Text = Flash_Params[comboBox_lun_count.SelectedIndex].Sector_Size.ToString();
+            label_total_blocks.Text = Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors.ToString("### ### ### ##0");
+            label_total_gpt.Text = "0";
+            label_select_gpt.Text = "0";
+            listView_GPT.Items.Clear();
         }
 
         #endregion
@@ -1587,6 +1593,28 @@ namespace FirehoseFinder
             checkBox_send.Checked = false;
         }
 
+        /// <summary>
+        /// Возвращаем исходное состояние
+        /// </summary>
+        private void StartStatus()
+        {
+            button_Sahara_CommandStart.Enabled = false;
+            button_Sahara_Ids.Enabled = false;
+            groupBox_mem_type.Enabled = false;
+            radioButton_mem_emmc.Checked = true;
+            comboBox_lun_count.SelectedIndex = 0;
+            comboBox_lun_count.Text = comboBox_lun_count.SelectedItem.ToString();
+            comboBox_lun_count.Enabled = false;
+            comboBox_fh_commands.SelectedIndex = 0;
+            comboBox_fh_commands.Text = comboBox_fh_commands.SelectedItem.ToString();
+            comboBox_fh_commands.Enabled = false;
+            groupBox_LUN.Text = comboBox_lun_count.SelectedItem.ToString();
+            label_block_size.Text = Flash_Params[comboBox_lun_count.SelectedIndex].Sector_Size.ToString();
+            label_total_blocks.Text = Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors.ToString("### ### ### ##0");
+            label_total_gpt.Text = "0";
+            label_select_gpt.Text = "0";
+            listView_GPT.Items.Clear();
+        }
         #endregion
 
         private void ВыбратьВсеРазделыToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1649,22 +1677,7 @@ namespace FirehoseFinder
                 MessageBox.Show("Не выбрано ни одного раздела для сохранения.", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            DialogResult result = folderBrowserDialog1.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                try
-                {
-                    //Процедура экспорта
-                    //Формируем строку для выполнения запроса
-                    //C:\Program Files (x86)\Qualcomm\QPST\bin\fh_loader.exe --port=\\.\COM3 --search_path=C:\Users\Work\AppData\Roaming\Qualcomm\QFIL\COMPORT_3 --convertprogram2read --sendimage=fh_gpt_header_0 --start_sector=1 --lun=0 --num_sectors=1 --noprompt --showpercentagecomplete --zlpawarehost=1 --memoryname=ufs
-
-                    textBox_soft_term.AppendText("Сохранение выбранных разделов в выбранную папку прошло успешно." + Environment.NewLine);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Ошибка сохранения дампа", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            DumpBySectors(true, 0, 0);
         }
 
         private void Label_select_gpt_TextChanged(object sender, EventArgs e)
@@ -1705,10 +1718,126 @@ namespace FirehoseFinder
             }
         }
 
+        private void Label_total_blocks_TextChanged(object sender, EventArgs e)
+        {
+            if (Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors == 0) contextMenuStrip_gpt.Items[1].Enabled = false;
+            else contextMenuStrip_gpt.Items[1].Enabled = true;
+        }
+
         private void СохранитьСектораПоНомеруdumpSectorNumderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dump_Sectors dump = new Dump_Sectors(this);
-            dump.Show();
+            switch (dump.ShowDialog())
+            {
+                case DialogResult.OK:
+                    DumpBySectors(false, Convert.ToInt32(dump.textBox_start_dump.Text), Convert.ToInt32(dump.textBox_count_dump.Text));
+                    break;
+                case DialogResult.Cancel:
+                    textBox_soft_term.AppendText("Сохранение секторов отменено пользователем" + Environment.NewLine);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void DumpBySectors(bool ByBlocks, int StartSector, int NumSectors)
+        {
+            //Запускаем диалог сохранения папки
+            DialogResult result = folderBrowserDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                object argsfordump = null; //Необходимые данные для параллельного потока
+                if (!backgroundWorker_dump.IsBusy) backgroundWorker_dump.RunWorkerAsync(argsfordump);
+            }
+        }
+
+        private void BackgroundWorker_dump_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            /*Начало цикла обработки секторов и разделов
+            StringBuilder fh_command_args = new StringBuilder("--port=\\\\.\\");
+            int lun_int = 0;
+            fh_command_args.Append(serialPort1.PortName);
+            fh_command_args.Append(" --convertprogram2read");
+            if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
+            fh_command_args.Append(string.Format(" --lun={0}", lun_int));
+            fh_command_args.Append(" --showpercentagecomplete --zlpawarehost=1"); // --noprompt
+            if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs");
+            else fh_command_args.Append(" --memoryname=emmc");
+            switch (ByBlocks)
+            {
+                case true: //Один или несколько запросов по именам разделов
+                    foreach (ListViewItem item in listView_GPT.CheckedItems)
+                    {
+                        fh_command_args.Append(string.Format(" --sendimage=dump_{0}", item.SubItems[2].Text));
+                        fh_command_args.Append(string.Format(" --start_sector={0}", Convert.ToInt32(item.SubItems[0].Text, 16)));
+                        int NumSec = Convert.ToInt32(item.SubItems[1].Text, 16) - Convert.ToInt32(item.SubItems[0].Text, 16) + 1;
+                        fh_command_args.Append(string.Format(" --num_sectors={0}", NumSec));
+                        textBox_soft_term.AppendText("Сохраняем " + item.SubItems[2].Text + " ...");
+                    }
+                    break;
+                case false: //Один запрос по секторам
+                    string newfilename = string.Format("dump_sectors{0}_{1}", StartSector, NumSectors);
+                    fh_command_args.Append(" --sendimage=" + newfilename);
+                    fh_command_args.Append(string.Format(" --start_sector={0}", StartSector));
+                    fh_command_args.Append(string.Format(" --num_sectors={0}", NumSectors));
+                    break;
+                default:
+                    break;
+            }
+            string[] dump_results = new string[2] { string.Empty, string.Empty }; //0-имя файла, 1-отчёт
+            Process process = new Process();
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.FileName = "fh_loader.exe";
+            process.StartInfo.Arguments = e.Argument.ToString();
+            try
+            {
+                process.Start();
+                StreamReader reader = process.StandardOutput;
+                string output_dump = reader.ReadToEnd();
+                dump_results.SetValue(output_dump, 1);
+                process.WaitForExit();
+                process.Close();
+            }
+            catch (Exception ex)
+            {
+                dump_results.SetValue("Ошибка сохранения дампа" + Environment.NewLine + ex.Message, 1);
+            }
+            worker.ReportProgress();
+            Конец цикла
+            e.Result = dump_results;*/
+            Thread.Sleep(1);
+        }
+
+        private void BackgroundWorker_dump_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar_phone.Value = e.ProgressPercentage;
+        }
+
+        private void BackgroundWorker_dump_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            string[] dump_res = (string[])e.Result;
+            string newfilename = dump_res[0];
+            if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine);
+            else
+            {
+                if (File.Exists(newfilename))
+                {
+                    try
+                    {
+                        File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                    }
+                    catch (IOException)
+                    {
+                        File.Delete(folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                        File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                    }
+                    File.Delete(newfilename);
+                }
+                textBox_soft_term.AppendText(dump_res[1] + Environment.NewLine + "Сохранение " + newfilename + " в выбранную папку прошло успешно." + Environment.NewLine);
+            }
         }
     }
 }

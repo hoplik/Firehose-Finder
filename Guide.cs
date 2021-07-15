@@ -188,4 +188,17 @@ namespace FirehoseFinder
 
         }
     }
+
+    class Flash_Disk
+    {
+        public int Total_Sectors;
+        public int Sector_Size;
+        public int Count_Lun;
+        public Flash_Disk(int total_sectors, int sector_size, int count_lun)
+        {
+            Total_Sectors = total_sectors;
+            Sector_Size = sector_size;
+            Count_Lun = count_lun;
+        }
+    }
 }
