@@ -1746,7 +1746,32 @@ namespace FirehoseFinder
             DialogResult result = folderBrowserDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
-                object argsfordump = null; //Необходимые данные для параллельного потока
+                string[] afd = new string[5] { string.Empty, string.Empty, string.Empty, string.Empty, string.Empty };
+                List<string[]> argsfordump = new List<string[]>(); //Необходимые данные для параллельного потока
+                switch (ByBlocks)
+                {
+                    case true: //Один или несколько запросов по именам разделов
+                        foreach (ListViewItem item in listView_GPT.CheckedItems)
+                        {
+                            //fh_command_args.Append(string.Format(" --sendimage=dump_{0}", item.SubItems[2].Text));
+                            //fh_command_args.Append(string.Format(" --start_sector={0}", Convert.ToInt32(item.SubItems[0].Text, 16)));
+                            //int NumSec = Convert.ToInt32(item.SubItems[1].Text, 16) - Convert.ToInt32(item.SubItems[0].Text, 16) + 1;
+                            //fh_command_args.Append(string.Format(" --num_sectors={0}", NumSec));
+                            textBox_soft_term.AppendText("Сохраняем " + item.SubItems[2].Text + " ...");
+                        }
+                        break;
+                    case false: //Один запрос по секторам
+                        string newfilename = string.Format("dump_sectors{0}_{1}", StartSector, NumSectors);
+                        //fh_command_args.Append(" --sendimage=" + newfilename);
+                        //fh_command_args.Append(string.Format(" --start_sector={0}", StartSector));
+                        //fh_command_args.Append(string.Format(" --num_sectors={0}", NumSectors));
+                        break;
+                    default:
+                        break;
+                }
+
+
+
                 if (!backgroundWorker_dump.IsBusy) backgroundWorker_dump.RunWorkerAsync(argsfordump);
             }
         }
@@ -1764,27 +1789,6 @@ namespace FirehoseFinder
             fh_command_args.Append(" --showpercentagecomplete --zlpawarehost=1"); // --noprompt
             if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs");
             else fh_command_args.Append(" --memoryname=emmc");
-            switch (ByBlocks)
-            {
-                case true: //Один или несколько запросов по именам разделов
-                    foreach (ListViewItem item in listView_GPT.CheckedItems)
-                    {
-                        fh_command_args.Append(string.Format(" --sendimage=dump_{0}", item.SubItems[2].Text));
-                        fh_command_args.Append(string.Format(" --start_sector={0}", Convert.ToInt32(item.SubItems[0].Text, 16)));
-                        int NumSec = Convert.ToInt32(item.SubItems[1].Text, 16) - Convert.ToInt32(item.SubItems[0].Text, 16) + 1;
-                        fh_command_args.Append(string.Format(" --num_sectors={0}", NumSec));
-                        textBox_soft_term.AppendText("Сохраняем " + item.SubItems[2].Text + " ...");
-                    }
-                    break;
-                case false: //Один запрос по секторам
-                    string newfilename = string.Format("dump_sectors{0}_{1}", StartSector, NumSectors);
-                    fh_command_args.Append(" --sendimage=" + newfilename);
-                    fh_command_args.Append(string.Format(" --start_sector={0}", StartSector));
-                    fh_command_args.Append(string.Format(" --num_sectors={0}", NumSectors));
-                    break;
-                default:
-                    break;
-            }
             string[] dump_results = new string[2] { string.Empty, string.Empty }; //0-имя файла, 1-отчёт
             Process process = new Process();
             process.StartInfo.UseShellExecute = false;
