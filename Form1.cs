@@ -1746,32 +1746,39 @@ namespace FirehoseFinder
             DialogResult result = folderBrowserDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
-                string[] afd = new string[5] { string.Empty, string.Empty, string.Empty, string.Empty, string.Empty };
-                List<string[]> argsfordump = new List<string[]>(); //Необходимые данные для параллельного потока
+                StringBuilder fh_all_args = new StringBuilder("--port=\\\\.\\");
+                List<string> argsfordump = new List<string>(); //Необходимые данные для параллельного потока
+                int lun_int = 0;
+                fh_all_args.Append(serialPort1.PortName);
+                fh_all_args.Append(" --convertprogram2read");
+                if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
+                fh_all_args.Append(string.Format(" --lun={0}", lun_int));
+                fh_all_args.Append(" --noprompt --zlpawarehost=1"); // --showpercentagecomplete
+                if (radioButton_mem_ufs.Checked) fh_all_args.Append(" --memoryname=ufs");
+                else fh_all_args.Append(" --memoryname=emmc");
                 switch (ByBlocks)
                 {
                     case true: //Один или несколько запросов по именам разделов
                         foreach (ListViewItem item in listView_GPT.CheckedItems)
                         {
-                            //fh_command_args.Append(string.Format(" --sendimage=dump_{0}", item.SubItems[2].Text));
-                            //fh_command_args.Append(string.Format(" --start_sector={0}", Convert.ToInt32(item.SubItems[0].Text, 16)));
-                            //int NumSec = Convert.ToInt32(item.SubItems[1].Text, 16) - Convert.ToInt32(item.SubItems[0].Text, 16) + 1;
-                            //fh_command_args.Append(string.Format(" --num_sectors={0}", NumSec));
-                            textBox_soft_term.AppendText("Сохраняем " + item.SubItems[2].Text + " ...");
+                            StringBuilder fh_mass_args = new StringBuilder(fh_all_args.ToString());
+                            fh_mass_args.Append(string.Format(" --sendimage=dump_{0}", item.SubItems[2].Text));
+                            fh_mass_args.Append(string.Format(" --start_sector={0}", Convert.ToInt32(item.SubItems[0].Text, 16)));
+                            int NumSec = Convert.ToInt32(item.SubItems[1].Text, 16) - Convert.ToInt32(item.SubItems[0].Text, 16) + 1;
+                            fh_mass_args.Append(string.Format(" --num_sectors={0}", NumSec));
+                            argsfordump.Add(fh_mass_args.ToString());
                         }
                         break;
                     case false: //Один запрос по секторам
                         string newfilename = string.Format("dump_sectors{0}_{1}", StartSector, NumSectors);
-                        //fh_command_args.Append(" --sendimage=" + newfilename);
-                        //fh_command_args.Append(string.Format(" --start_sector={0}", StartSector));
-                        //fh_command_args.Append(string.Format(" --num_sectors={0}", NumSectors));
+                        fh_all_args.Append(" --sendimage=" + newfilename);
+                        fh_all_args.Append(string.Format(" --start_sector={0}", StartSector));
+                        fh_all_args.Append(string.Format(" --num_sectors={0}", NumSectors));
+                        argsfordump.Add(fh_all_args.ToString());
                         break;
                     default:
                         break;
                 }
-
-
-
                 if (!backgroundWorker_dump.IsBusy) backgroundWorker_dump.RunWorkerAsync(argsfordump);
             }
         }
@@ -1779,68 +1786,67 @@ namespace FirehoseFinder
         private void BackgroundWorker_dump_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
-            /*Начало цикла обработки секторов и разделов
-            StringBuilder fh_command_args = new StringBuilder("--port=\\\\.\\");
-            int lun_int = 0;
-            fh_command_args.Append(serialPort1.PortName);
-            fh_command_args.Append(" --convertprogram2read");
-            if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
-            fh_command_args.Append(string.Format(" --lun={0}", lun_int));
-            fh_command_args.Append(" --showpercentagecomplete --zlpawarehost=1"); // --noprompt
-            if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs");
-            else fh_command_args.Append(" --memoryname=emmc");
-            string[] dump_results = new string[2] { string.Empty, string.Empty }; //0-имя файла, 1-отчёт
+            List<string> do_str = new List<string>((List<string>)e.Argument);
+            string dump_results = string.Empty; //Отчёт
             Process process = new Process();
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.FileName = "fh_loader.exe";
-            process.StartInfo.Arguments = e.Argument.ToString();
-            try
+            int count = 1;
+            foreach (string str in do_str)
             {
-                process.Start();
-                StreamReader reader = process.StandardOutput;
-                string output_dump = reader.ReadToEnd();
-                dump_results.SetValue(output_dump, 1);
-                process.WaitForExit();
-                process.Close();
+                process.StartInfo.Arguments = str.ToString();
+                string endoffilename = str.Remove(0, str.IndexOf("--sendimage=dump_") + 12);
+                int endoffile = endoffilename.IndexOf(' ');
+                string userState = endoffilename.Substring(0, endoffile); //Имя файла
+                try
+                {
+                    process.Start();
+                    StreamReader reader = process.StandardOutput;
+                    string output_dump = reader.ReadToEnd();
+                    dump_results += output_dump + Environment.NewLine;
+                    process.WaitForExit();
+                    worker.ReportProgress(count * 100 / do_str.Count, userState);
+                    count++;
+                }
+                catch (Exception ex)
+                {
+                    dump_results += "Ошибка сохранения дампа" + Environment.NewLine + ex.Message + Environment.NewLine;
+                }
             }
-            catch (Exception ex)
-            {
-                dump_results.SetValue("Ошибка сохранения дампа" + Environment.NewLine + ex.Message, 1);
-            }
-            worker.ReportProgress();
-            Конец цикла
-            e.Result = dump_results;*/
+            process.Close();
+            e.Result = dump_results;
             Thread.Sleep(1);
         }
 
         private void BackgroundWorker_dump_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
+            string newfilename = e.UserState.ToString();
             progressBar_phone.Value = e.ProgressPercentage;
+            textBox_soft_term.AppendText("Сохраняем " + newfilename + " ..." + Environment.NewLine);
+            if (File.Exists(newfilename))
+            {
+                try
+                {
+                    File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                }
+                catch (IOException)
+                {
+                    File.Delete(folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                    File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                }
+                File.Delete(newfilename);
+            }
         }
 
         private void BackgroundWorker_dump_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            string[] dump_res = (string[])e.Result;
-            string newfilename = dump_res[0];
             if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine);
             else
             {
-                if (File.Exists(newfilename))
-                {
-                    try
-                    {
-                        File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
-                    }
-                    catch (IOException)
-                    {
-                        File.Delete(folderBrowserDialog1.SelectedPath + "\\" + newfilename);
-                        File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
-                    }
-                    File.Delete(newfilename);
-                }
-                textBox_soft_term.AppendText(dump_res[1] + Environment.NewLine + "Сохранение " + newfilename + " в выбранную папку прошло успешно." + Environment.NewLine);
+                progressBar_phone.Value = 0;
+                textBox_soft_term.AppendText(e.Result + Environment.NewLine + "Сохранение в выбранную папку прошло успешно." + Environment.NewLine);
             }
         }
     }
