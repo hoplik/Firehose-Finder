@@ -51,6 +51,7 @@ namespace FirehoseFinder
             "Artel",
             "ASUS",
             "BenQ",
+            "Bluebird",
             "BQ",
             "Caterpillar",
             "Coolpad",
