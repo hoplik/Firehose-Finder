@@ -1849,5 +1849,49 @@ namespace FirehoseFinder
                 textBox_soft_term.AppendText(e.Result + Environment.NewLine + "Сохранение в выбранную папку прошло успешно." + Environment.NewLine);
             }
         }
+
+        private void Button_fb_check_Click(object sender, EventArgs e)
+        {
+            Process process = new Process();
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.FileName = "fastboot.exe";
+            process.StartInfo.Arguments = "devices -l";
+            try
+            {
+                process.Start();
+                StreamReader sreader = process.StandardOutput;
+                textBox_soft_term.AppendText(sreader.ReadToEnd());
+                process.WaitForExit();
+                process.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Button_fb_com_start_Click(object sender, EventArgs e)
+        {
+            Process process = new Process();
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.FileName = "fastboot.exe";
+            process.StartInfo.Arguments = "reboot";
+            try
+            {
+                process.Start();
+                StreamReader sreader = process.StandardOutput;
+                textBox_soft_term.AppendText(sreader.ReadToEnd());
+                process.WaitForExit();
+                process.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
