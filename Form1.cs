@@ -463,9 +463,55 @@ namespace FirehoseFinder
 
         private void NeedParsingLun(string output_FH, int lun_numder)
         {
-            if (output_FH.Contains("\"storage_info\": {"))
+            if (output_FH.Contains("TARGET SAID: '"))
             {
                 //При успешном считывании памяти надо подумать, как отправлять данные о модели и программере в телеграмм-канал
+                //Новый алгоритм!
+                string[] splitstr = { "TARGET SAID: '" };
+                string[] parLun = output_FH.Split(splitstr, StringSplitOptions.RemoveEmptyEntries);
+                string rep = string.Empty;
+                List<string> goodparLun = new List<string>();
+                foreach (string strparLun in parLun)
+                {
+                    if (strparLun.Contains("'"))
+                    {
+                        goodparLun.Add(strparLun.Substring(0, strparLun.IndexOf("'")));
+                    }
+                }
+                foreach (string item in goodparLun)
+                {
+                    switch (item.Substring(0, 14))
+                    {
+                        case "Device Total L":
+                            rep += item + Environment.NewLine;
+                            break;
+                        case "num_partition_":
+                            rep += item + Environment.NewLine;
+                            break;
+                        case "Device Block S":
+                            rep += item + Environment.NewLine;
+                            break;
+                        case "SECTOR_SIZE_IN":
+                            rep += item + Environment.NewLine;
+                            break;
+                        case "Device Total P":
+                            rep += item + Environment.NewLine;
+                            break;
+                        case "num_physical_p":
+                            rep += item + Environment.NewLine;
+                            break; 
+                        case "eMMC_RAW_DATA ":
+                            rep += "eMMC" + Environment.NewLine;
+                            break;
+                        case "{\"storage_info":
+                            rep += item + Environment.NewLine;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                MessageBox.Show(rep);
+                //Старый алгоритм - не работает!
                 StringBuilder parsingLUN = new StringBuilder(output_FH);
                 //Обрезаем строку спереди
                 parsingLUN.Remove(0, output_FH.IndexOf("\"storage_info\": {") + 17);
