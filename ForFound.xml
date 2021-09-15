@@ -61,7 +61,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-09-10T17:13:21">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-09-15T20:19:21">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -268,7 +268,7 @@
 <OEM_FH>0020</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>3CC959AC5B3364A42EC3CB40C091C90F2A8101F1C1207C5C9ED1D2348AA10082</HASH_FH>
-<Model>Galaxy A01</Model>
+<Model>SM-A015F</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/MI_1A_prog_emmc_firehose_8953_ddr.mbn#</Url>
