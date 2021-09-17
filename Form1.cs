@@ -12,7 +12,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using System.Globalization;
 
 namespace FirehoseFinder
 {
@@ -1640,31 +1639,35 @@ namespace FirehoseFinder
         /// <returns></returns>
         public void BotSendMes(string send_message, string version)
         {
-            var mybot = new TelegramBotApi.TelegramBotClient(Resources.bot);
-            long chat = -1001227261414;
             send_message += Environment.NewLine + version;
             //Экранируем запрещённые символы
             string message_not_mark = send_message.Replace("_", "\\_")
                 .Replace("*", "\\*")
                 .Replace("[", "\\[")
                 .Replace("'", "\\'")
-                .Replace("\"","\\\"");
+                .Replace("\"", "");
             string correct_mess = message_not_mark;
             //Ограничение на размер сообщения. Оставляем только конец.
             if (message_not_mark.Length > 4096)
             {
-                correct_mess = message_not_mark.Remove(0, message_not_mark.Length - 4093);
-                correct_mess.Insert(0, "...");
+                correct_mess = message_not_mark.Remove(0, message_not_mark.Length - 4092)
+                    .Insert(0, "...");
             }
+            var mybot = new TelegramBotApi.TelegramBotClient(Resources.bot);
+            long chat = -1001227261414;
             try
             {
                 mybot.SendTextMessage(chat, correct_mess);
                 toolStripStatusLabel_filescompleted.Text = "Данные успешно отправлены";
             }
+            catch (System.Runtime.Serialization.SerializationException)
+            {
+                //Отправляется, не смотря на косяк сериализации!
+            }
             catch (Exception ex)
             {
-                textBox_soft_term.AppendText("Данные не отправлены." + Environment.NewLine + ex.Message + Environment.NewLine);
-                MessageBox.Show(ex.Message, "Данные не отправлены");
+                textBox_soft_term.AppendText("Данные не отправлены." + ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine);
+                MessageBox.Show(ex.Message, "Данные не отправлены - " + ex.ToString());
             }
             checkBox_send.Checked = false;
         }
