@@ -480,27 +480,27 @@ namespace FirehoseFinder
                 }
                 foreach (string item in goodparLun)
                 {
-                    switch (item.Substring(0, 14))
+                    switch (item.Substring(0, 16))
                     {
-                        case "Device Total L":
+                        case "Device Total Log":
                             rep += item + Environment.NewLine;
                             break;
-                        case "num_partition_":
+                        case "num_partition_se":
                             rep += item + Environment.NewLine;
                             break;
-                        case "Device Block S":
+                        case "Device Block Siz":
                             rep += item + Environment.NewLine;
                             break;
-                        case "SECTOR_SIZE_IN":
+                        case "SECTOR_SIZE_IN_B":
                             rep += item + Environment.NewLine;
                             break;
-                        case "Device Total P":
+                        case "Device Total Phy":
                             rep += item + Environment.NewLine;
                             break;
-                        case "num_physical_p":
+                        case "num_physical_par":
                             rep += item + Environment.NewLine;
-                            break; 
-                        case "eMMC_RAW_DATA ":
+                            break;
+                        case "eMMC_RAW_DATA [0":
                             rep += "eMMC" + Environment.NewLine;
                             break;
                         case "{\"storage_info":
@@ -510,14 +510,14 @@ namespace FirehoseFinder
                             break;
                     }
                 }
-                MessageBox.Show(rep);
+
                 //Старый алгоритм - не работает!
                 StringBuilder parsingLUN = new StringBuilder(output_FH);
                 //Обрезаем строку спереди
-                parsingLUN.Remove(0, output_FH.IndexOf("\"storage_info\": {") + 17);
+                //parsingLUN.Remove(0, output_FH.IndexOf("\"storage_info\": {") + 17);
                 //Обрезаем строку сзади
-                parsingLUN.Remove(parsingLUN.ToString().IndexOf('}'), parsingLUN.Length - parsingLUN.ToString().IndexOf('}'));
-                int[] parsLUN_int = func.StorageInfo(parsingLUN.ToString());
+                //parsingLUN.Remove(parsingLUN.ToString().IndexOf('}'), parsingLUN.Length - parsingLUN.ToString().IndexOf('}'));
+                int[] parsLUN_int = { 0, 0, 1, 0 };//func.StorageInfo(parsingLUN.ToString());
                 Flash_Disk disk = new Flash_Disk(parsLUN_int[0], parsLUN_int[1], parsLUN_int[2]);
                 if (Flash_Params.Length < disk.Count_Lun) Array.Resize(ref Flash_Params, disk.Count_Lun);
                 for (int i = 0; i < Flash_Params.Length; i++)
@@ -525,8 +525,6 @@ namespace FirehoseFinder
                     if (Flash_Params[i] == null) Flash_Params.SetValue(flash_start, i);
                 }
                 Flash_Params.SetValue(disk, lun_numder);
-                label_total_blocks.Text = Flash_Params[lun_numder].Total_Sectors.ToString("### ### ### ##0");
-                label_block_size.Text = Flash_Params[lun_numder].Sector_Size.ToString();
                 if (comboBox_lun_count.Items.Count > 0) comboBox_lun_count.Items.Clear();
                 for (int i = 0; i < Flash_Params[lun_numder].Count_Lun; i++)
                 {
@@ -544,6 +542,23 @@ namespace FirehoseFinder
                         radioButton_mem_emmc.Checked = true;
                         break;
                 }
+
+                //При неправильном парсинге отправляем лог в канал при согласии пользователя.
+                if (Flash_Params[lun_numder].Sector_Size == 0 && Flash_Params[lun_numder].Total_Sectors == 0)
+                {
+                    Flash_Params[lun_numder].Sector_Size = 512;
+                    DialogResult dr = MessageBox.Show("Ответ телефона на запрос данных хранилища обработан некорректно. " +
+                        "Нажимая кнопку \"Ok\", вы разрешаете отправить в публичный телеграм-канал разрабтчикам лог ответа телефона для исправления этой ошибки. " +
+                        "Кнопка \"Отмена\" просто закроет это окно, без отправки данных.",
+                        "Внимание! Ошибка! Можно отправить данные?", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                    if (dr == DialogResult.OK)
+                    {
+                        textBox_soft_term.AppendText("Отправка лога подтверждена пользователем." + Environment.NewLine);
+                        BotSendMes(textBox_soft_term.Text, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                    }
+                }
+                label_total_blocks.Text = Flash_Params[lun_numder].Total_Sectors.ToString("### ### ### ##0");
+                label_block_size.Text = Flash_Params[lun_numder].Sector_Size.ToString();
             }
         }
 
@@ -1627,13 +1642,28 @@ namespace FirehoseFinder
         {
             var mybot = new TelegramBotApi.TelegramBotClient(Resources.bot);
             long chat = -1001227261414;
+            send_message += Environment.NewLine + version;
+            //Экранируем запрещённые символы
+            string message_not_mark = send_message.Replace("_", "\\_")
+                .Replace("*", "\\*")
+                .Replace("[", "\\[")
+                .Replace("'", "\\'")
+                .Replace("\"","\\\"");
+            string correct_mess = message_not_mark;
+            //Ограничение на размер сообщения. Оставляем только конец.
+            if (message_not_mark.Length > 4096)
+            {
+                correct_mess = message_not_mark.Remove(0, message_not_mark.Length - 4093);
+                correct_mess.Insert(0, "...");
+            }
             try
             {
-                mybot.SendTextMessage(chat, send_message + Environment.NewLine + version);
+                mybot.SendTextMessage(chat, correct_mess);
                 toolStripStatusLabel_filescompleted.Text = "Данные успешно отправлены";
             }
             catch (Exception ex)
             {
+                textBox_soft_term.AppendText("Данные не отправлены." + Environment.NewLine + ex.Message + Environment.NewLine);
                 MessageBox.Show(ex.Message, "Данные не отправлены");
             }
             checkBox_send.Checked = false;
