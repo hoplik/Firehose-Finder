@@ -298,6 +298,14 @@ namespace FirehoseFinder
                     tabControl_soft.SelectedTab = tabPage_sahara;
                 }
                 if (radioButton_adb_com.Checked && !string.IsNullOrEmpty(Com_String)) Adb_Comm_String(Com_String);
+                if (radioButton_reboot_fastboot.Checked)
+                {
+                    textBox_soft_term.AppendText("Устройство перегружается в режим загрузчика" + Environment.NewLine);
+                    client.Reboot("bootloader", device);
+                    Thread.Sleep(1000);
+                    StopAdb();
+                    tabControl_soft.SelectedTab = tabPage_fb;
+                }
             }
             catch (SharpAdbClient.Exceptions.AdbException ex)
             {
@@ -1957,48 +1965,42 @@ namespace FirehoseFinder
             }
         }
 
-        private void Button_fb_check_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Отправка команды в режиме загрузчика
+        /// </summary>
+        /// <param name="fb_command">Команда</param>
+        private void Fastboot_commands(string fb_command)
         {
             Process process = new Process();
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.FileName = "fastboot.exe";
-            process.StartInfo.Arguments = "devices -l";
+            process.StartInfo.Arguments = fb_command;
+            textBox_soft_term.AppendText("Отправили: " + fb_command + Environment.NewLine);
             try
             {
                 process.Start();
                 StreamReader sreader = process.StandardOutput;
-                textBox_soft_term.AppendText(sreader.ReadToEnd());
+                textBox_soft_term.AppendText("Получили: " + sreader.ReadToEnd() + Environment.NewLine);
                 process.WaitForExit();
                 process.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                textBox_soft_term.AppendText(ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine);
             }
+        }
+
+        private void Button_fb_check_Click(object sender, EventArgs e)
+        {
+            Fastboot_commands("devices -l");
+            button_fb_com_start.Enabled = true;
         }
 
         private void Button_fb_com_start_Click(object sender, EventArgs e)
         {
-            Process process = new Process();
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.FileName = "fastboot.exe";
-            process.StartInfo.Arguments = "reboot";
-            try
-            {
-                process.Start();
-                StreamReader sreader = process.StandardOutput;
-                textBox_soft_term.AppendText(sreader.ReadToEnd());
-                process.WaitForExit();
-                process.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            if (radioButton_fb_reboot_normal.Checked) Fastboot_commands("reboot");
         }
 
         /// <summary>
