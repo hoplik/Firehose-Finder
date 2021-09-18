@@ -313,44 +313,6 @@ namespace FirehoseFinder
             return SC7.ToString();
         }
 
-        internal int[] StorageInfo(string storage_info)
-        {
-            //"total_blocks":122142720, "block_size":512, "page_size":512, "num_physical":3, "mfr_id":21, "serial_num":710139074, 
-            //"fw_version":"7","mem_type":"eMMC", "prod_name":"RC14MB"
-            int[] SI = new int[4];
-            //Стартуем с " и до ": - это поле для свича
-            //От конца поля для свича до , - значение
-            //Если значение в "", то это стринг, иначе инт
-            //Сначала разбиваем массив на части по символу ,
-            string[] tempSI = storage_info.Split(',');
-            for (int i = 0; i < tempSI.Length; i++)
-            {
-                int startindex = tempSI[i].IndexOf('"') + 1;
-                int endindex = tempSI[i].IndexOf("\":");
-                string str_links = tempSI[i].Substring(startindex, endindex - startindex);
-                string str_link_value = tempSI[i].Substring(endindex + 2).Trim('\"');
-                switch (str_links)
-                {
-                    case "total_blocks":
-                        SI[0] = Convert.ToInt32(str_link_value);
-                        break;
-                    case "block_size":
-                        SI[1] = Convert.ToInt32(str_link_value);
-                        break;
-                    case "num_physical":
-                        SI[2] = Convert.ToInt32(str_link_value);
-                        break;
-                    case "mem_type":
-                        if (str_link_value.Equals("UFS")) SI[3] = (int)Guide.MEM_TYPE.UFS;
-                        else SI[3] = (int)Guide.MEM_TYPE.eMMC;
-                        break;
-                    default:
-                        break;
-                }
-            }
-            return SI;
-        }
-
         internal List<GPT_Table> Parsing_GPT_main(string GPT_File, int block_size)
         {
             List<GPT_Table> GPT = new List<GPT_Table>();

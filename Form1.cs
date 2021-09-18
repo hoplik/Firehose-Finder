@@ -22,8 +22,8 @@ namespace FirehoseFinder
         bool waitSahara = false; //Ждём ли мы автоперезагрузку с получением ID Sahara
         bool FHAlreadyLoaded = false; //Был ли успешно загружен программер (не надо грузить повторно)
         bool NeedReset = false; //Требуется ли перезагрузка устройства после работы с Сахарой
+        Flash_Disk flash_start = new Flash_Disk(0, 0, 1);
         internal Flash_Disk[] Flash_Params = new Flash_Disk[1];
-        Flash_Disk flash_start = new Flash_Disk(0, 0, 0);
 
         /// <summary>
         /// Инициализация компонентов
@@ -90,7 +90,7 @@ namespace FirehoseFinder
             tabControl1.TabPages.Remove(tabPage_collection);
             tabControl1.TabPages.Remove(tabPage_phone);
             //Обнуляем глобальные переменные
-            Flash_Params[0] = flash_start;
+            Flash_Params.SetValue(flash_start, 0);
             //Всплывающие подсказки к разным контролам
             toolTip1.SetToolTip(button_findIDs, "Подключите устройство и нажмите для получения идентификаторов");
             toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
@@ -464,71 +464,74 @@ namespace FirehoseFinder
         {
             if (output_FH.Contains("TARGET SAID: '"))
             {
-                //При успешном считывании памяти надо подумать, как отправлять данные о модели и программере в телеграмм-канал
-                //Новый алгоритм!
                 string[] splitstr = { "TARGET SAID: '" };
                 string[] parLun = output_FH.Split(splitstr, StringSplitOptions.RemoveEmptyEntries);
-                string rep = string.Empty;
+                int[] parsLUN_int = new int[] { 0, 0, 1, 0 }; //Значения по-умолчанию в случае некорректного парсинга
                 List<string> goodparLun = new List<string>();
                 foreach (string strparLun in parLun)
                 {
-                    if (strparLun.Contains("'"))
-                    {
-                        goodparLun.Add(strparLun.Substring(0, strparLun.IndexOf("'")));
-                    }
+                    if (strparLun.Contains("'")) goodparLun.Add(strparLun.Substring(0, strparLun.IndexOf("'")));
                 }
+                //Парсим ответ и раскидываем результат в массив
                 foreach (string item in goodparLun)
                 {
+                    string parstr;
                     switch (item.Substring(0, 16))
                     {
                         case "Device Total Log":
-                            rep += item + Environment.NewLine;
+                            parstr = item.Substring(item.IndexOf(": ") + 2);
+                            parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 0);
                             break;
                         case "num_partition_se":
-                            rep += item + Environment.NewLine;
+                            parstr = item.Substring(item.IndexOf('=') + 1);
+                            parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 0);
                             break;
                         case "Device Block Siz":
-                            rep += item + Environment.NewLine;
+                            parstr = item.Substring(item.IndexOf(": ") + 2);
+                            parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 1);
                             break;
                         case "SECTOR_SIZE_IN_B":
-                            rep += item + Environment.NewLine;
+                            parstr = item.Substring(item.IndexOf('=') + 1);
+                            parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 1);
                             break;
                         case "Device Total Phy":
-                            rep += item + Environment.NewLine;
+                            parstr = item.Substring(item.IndexOf(": ") + 2);
+                            parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 2);
                             break;
                         case "num_physical_par":
-                            rep += item + Environment.NewLine;
+                            parstr = item.Substring(item.IndexOf('=') + 1);
+                            parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 2);
                             break;
                         case "eMMC_RAW_DATA [0":
-                            rep += "eMMC" + Environment.NewLine;
+                            parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
                             break;
                         case "{\"storage_info":
-                            rep += item + Environment.NewLine;
+                            parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
+                            parstr = item.Substring(item.IndexOf("mem_type\":\"") + 11);
+                            string m_type = parstr.Substring(0, parstr.IndexOf("\","));
+                            if (m_type.Equals("UFS")) parsLUN_int.SetValue((int)Guide.MEM_TYPE.UFS, 3);
                             break;
                         default:
                             break;
                     }
                 }
-
-                //Старый алгоритм - не работает!
-                StringBuilder parsingLUN = new StringBuilder(output_FH);
-                //Обрезаем строку спереди
-                //parsingLUN.Remove(0, output_FH.IndexOf("\"storage_info\": {") + 17);
-                //Обрезаем строку сзади
-                //parsingLUN.Remove(parsingLUN.ToString().IndexOf('}'), parsingLUN.Length - parsingLUN.ToString().IndexOf('}'));
-                int[] parsLUN_int = { 0, 0, 1, 0 };//func.StorageInfo(parsingLUN.ToString());
-                Flash_Disk disk = new Flash_Disk(parsLUN_int[0], parsLUN_int[1], parsLUN_int[2]);
-                if (Flash_Params.Length < disk.Count_Lun) Array.Resize(ref Flash_Params, disk.Count_Lun);
+                //Заполняем данными глобальный массив дисков хранилища
+                if (Flash_Params.Length < parsLUN_int[2]) Array.Resize<Flash_Disk>(ref Flash_Params, parsLUN_int[2]);
                 for (int i = 0; i < Flash_Params.Length; i++)
                 {
                     if (Flash_Params[i] == null) Flash_Params.SetValue(flash_start, i);
                 }
+                Flash_Disk disk = new Flash_Disk(parsLUN_int[0], parsLUN_int[1], parsLUN_int[2]);
                 Flash_Params.SetValue(disk, lun_numder);
-                if (comboBox_lun_count.Items.Count > 0) comboBox_lun_count.Items.Clear();
-                for (int i = 0; i < Flash_Params[lun_numder].Count_Lun; i++)
+                if (comboBox_lun_count.Items.Count != Flash_Params[lun_numder].Count_Lun)
                 {
-                    comboBox_lun_count.Items.Add("Диск " + i.ToString());
+                    comboBox_lun_count.Items.Clear();
+                    for (int i = 0; i < Flash_Params[lun_numder].Count_Lun; i++)
+                    {
+                        comboBox_lun_count.Items.Add("Диск " + i.ToString());
+                    }
                 }
+                //Переключаем выбор типа памяти
                 switch (parsLUN_int[3])
                 {
                     case (int)Guide.MEM_TYPE.eMMC:
@@ -541,11 +544,10 @@ namespace FirehoseFinder
                         radioButton_mem_emmc.Checked = true;
                         break;
                 }
-
                 //При неправильном парсинге отправляем лог в канал при согласии пользователя.
                 if (Flash_Params[lun_numder].Sector_Size == 0 && Flash_Params[lun_numder].Total_Sectors == 0)
                 {
-                    Flash_Params[lun_numder].Sector_Size = 512;
+                    Flash_Params[lun_numder].Sector_Size = 512; //Чтоб отрабатывал парсинг GPT
                     DialogResult dr = MessageBox.Show("Ответ телефона на запрос данных хранилища обработан некорректно. " +
                         "Нажимая кнопку \"Ok\", вы разрешаете отправить в публичный телеграм-канал разрабтчикам лог ответа телефона для исправления этой ошибки. " +
                         "Кнопка \"Отмена\" просто закроет это окно, без отправки данных.",
@@ -556,8 +558,12 @@ namespace FirehoseFinder
                         BotSendMes(textBox_soft_term.Text, Assembly.GetExecutingAssembly().GetName().Version.ToString());
                     }
                 }
-                label_total_blocks.Text = Flash_Params[lun_numder].Total_Sectors.ToString("### ### ### ##0");
-                label_block_size.Text = Flash_Params[lun_numder].Sector_Size.ToString();
+                if (comboBox_lun_count.SelectedIndex != lun_numder) comboBox_lun_count.SelectedIndex = lun_numder;
+                else
+                {
+                    label_total_blocks.Text = Flash_Params[lun_numder].Total_Sectors.ToString("### ### ### ##0");
+                    label_block_size.Text = Flash_Params[lun_numder].Sector_Size.ToString();
+                }
             }
         }
 
@@ -937,10 +943,10 @@ namespace FirehoseFinder
         private void BackgroundWorker_Read_File_DoWork(object sender, DoWorkEventArgs e)
         {
             KeyValuePair<string, long> FileToRead = (KeyValuePair<string, long>)e.Argument;
-            int len = Convert.ToInt32(FileToRead.Value);
-            StringBuilder dumptext = new StringBuilder(len);
-            if (len > 4)
+            StringBuilder dumptext = new StringBuilder(string.Empty);
+            if (FileToRead.Value > 4 && FileToRead.Value < 2000000000)
             {
+                int len = Convert.ToInt32(FileToRead.Value);
                 byte[] chunk = new byte[len];
                 using (var stream = File.OpenRead(FileToRead.Key))
                 {
@@ -1645,7 +1651,7 @@ namespace FirehoseFinder
                 .Replace("*", "\\*")
                 .Replace("[", "\\[")
                 .Replace("'", "\\'")
-                .Replace("\"", "");
+                .Replace("\"", "``");
             string correct_mess = message_not_mark;
             //Ограничение на размер сообщения. Оставляем только конец.
             if (message_not_mark.Length > 4096)
@@ -1903,7 +1909,7 @@ namespace FirehoseFinder
         {
             string newfilename = e.UserState.ToString();
             progressBar_phone.Value = e.ProgressPercentage;
-            textBox_soft_term.AppendText("Сохраняем " + newfilename + " ..." + Environment.NewLine);
+            textBox_soft_term.AppendText("Сохраняем " + newfilename + " ... ");
             if (File.Exists(newfilename))
             {
                 try
@@ -1917,6 +1923,7 @@ namespace FirehoseFinder
                 }
                 File.Delete(newfilename);
             }
+            textBox_soft_term.AppendText("Готово." + Environment.NewLine);
         }
 
         private void BackgroundWorker_dump_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
