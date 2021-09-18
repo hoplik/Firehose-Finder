@@ -464,10 +464,11 @@ namespace FirehoseFinder
         {
             if (output_FH.Contains("TARGET SAID: '"))
             {
-                string[] splitstr = { "TARGET SAID: '" };
+                string[] splitstr = { "TARGET SAID: '", "\n" };
                 string[] parLun = output_FH.Split(splitstr, StringSplitOptions.RemoveEmptyEntries);
                 int[] parsLUN_int = new int[] { 0, 0, 1, 0 }; //Значения по-умолчанию в случае некорректного парсинга
                 List<string> goodparLun = new List<string>();
+                //Обрезаем с конца все данные массива ответов таргет сэд
                 foreach (string strparLun in parLun)
                 {
                     if (strparLun.Contains("'")) goodparLun.Add(strparLun.Substring(0, strparLun.IndexOf("'")));
@@ -475,44 +476,47 @@ namespace FirehoseFinder
                 //Парсим ответ и раскидываем результат в массив
                 foreach (string item in goodparLun)
                 {
-                    string parstr;
-                    switch (item.Substring(0, 16))
+                    if (item.Length > 16)
                     {
-                        case "Device Total Log":
-                            parstr = item.Substring(item.IndexOf(": ") + 2);
-                            parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 0);
-                            break;
-                        case "num_partition_se":
-                            parstr = item.Substring(item.IndexOf('=') + 1);
-                            parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 0);
-                            break;
-                        case "Device Block Siz":
-                            parstr = item.Substring(item.IndexOf(": ") + 2);
-                            parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 1);
-                            break;
-                        case "SECTOR_SIZE_IN_B":
-                            parstr = item.Substring(item.IndexOf('=') + 1);
-                            parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 1);
-                            break;
-                        case "Device Total Phy":
-                            parstr = item.Substring(item.IndexOf(": ") + 2);
-                            parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 2);
-                            break;
-                        case "num_physical_par":
-                            parstr = item.Substring(item.IndexOf('=') + 1);
-                            parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 2);
-                            break;
-                        case "eMMC_RAW_DATA [0":
-                            parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
-                            break;
-                        case "{\"storage_info":
-                            parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
-                            parstr = item.Substring(item.IndexOf("mem_type\":\"") + 11);
-                            string m_type = parstr.Substring(0, parstr.IndexOf("\","));
-                            if (m_type.Equals("UFS")) parsLUN_int.SetValue((int)Guide.MEM_TYPE.UFS, 3);
-                            break;
-                        default:
-                            break;
+                        string parstr;
+                        switch (item.Substring(0, 16))
+                        {
+                            case "Device Total Log":
+                                parstr = item.Substring(item.IndexOf(": ") + 2);
+                                parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 0);
+                                break;
+                            case "num_partition_se":
+                                parstr = item.Substring(item.IndexOf('=') + 1);
+                                parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 0);
+                                break;
+                            case "Device Block Siz":
+                                parstr = item.Substring(item.IndexOf(": ") + 2);
+                                parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 1);
+                                break;
+                            case "SECTOR_SIZE_IN_B":
+                                parstr = item.Substring(item.IndexOf('=') + 1);
+                                parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 1);
+                                break;
+                            case "Device Total Phy":
+                                parstr = item.Substring(item.IndexOf(": ") + 2);
+                                parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 2);
+                                break;
+                            case "num_physical_par":
+                                parstr = item.Substring(item.IndexOf('=') + 1);
+                                parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 2);
+                                break;
+                            case "eMMC_RAW_DATA [0":
+                                parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
+                                break;
+                            case "{\"storage_info\":":
+                                parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
+                                parstr = item.Substring(item.IndexOf("mem_type\":\"") + 11);
+                                string m_type = parstr.Substring(0, parstr.IndexOf("\","));
+                                if (m_type.Equals("UFS")) parsLUN_int.SetValue((int)Guide.MEM_TYPE.UFS, 3);
+                                break;
+                            default:
+                                break;
+                        }
                     }
                 }
                 //Заполняем данными глобальный массив дисков хранилища
