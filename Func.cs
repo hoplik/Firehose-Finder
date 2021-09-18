@@ -313,6 +313,12 @@ namespace FirehoseFinder
             return SC7.ToString();
         }
 
+        /// <summary>
+        /// Парсинг таблицы GPT
+        /// </summary>
+        /// <param name="GPT_File">Файл таблицы для парсинга</param>
+        /// <param name="block_size">Размер блока</param>
+        /// <returns>Массив структуры данных таблицы GPT</returns>
         internal List<GPT_Table> Parsing_GPT_main(string GPT_File, int block_size)
         {
             List<GPT_Table> GPT = new List<GPT_Table>();
@@ -418,17 +424,23 @@ namespace FirehoseFinder
                 if (!string.IsNullOrEmpty(GPT_Items.StartLBA) && !string.IsNullOrEmpty(GPT_Items.EndLBA))
                 {
                     uint blocks_count = Convert.ToUInt32(GPT_Items.EndLBA, 16) - Convert.ToUInt32(GPT_Items.StartLBA, 16) + 1;
-                    GPT_Items.BlockLength = BytesToMB(blocks_count, block_size);
+                    GPT_Items.BlockBytes = (blocks_count * block_size).ToString();
+                    GPT_Items.BlockLength = blocks_count.ToString() + " (" + Bytes_KB_MB(GPT_Items.BlockBytes) + ")";
                     GPT.Add(GPT_Items);
                 }
             }
             return GPT;
         }
 
-        internal string BytesToMB(uint blocks, int block_size)
+        /// <summary>
+        /// Конвертируем строковое значение байт в килобайты, мегабайты и гигабайты
+        /// </summary>
+        /// <param name="bytestoconvert">Строковое значение байт</param>
+        /// <returns>Строковое значение в килобайтах, мегабайтах и гигабайтах</returns>
+        internal string Bytes_KB_MB(string bytestoconvert)
         {
             string byte_type = "b";
-            double total_size = blocks * block_size;
+            double total_size = Convert.ToDouble(bytestoconvert);
             if (total_size >= 1024)
             {
                 total_size /= 1024.00;
@@ -444,7 +456,7 @@ namespace FirehoseFinder
                     }
                 }
             }
-            return string.Format("{0} ({1} {2})", blocks.ToString("N0", CultureInfo.CreateSpecificCulture("sv-SE")), total_size.ToString("N2", CultureInfo.CreateSpecificCulture("sv-SE")), byte_type);
+            return string.Format("{0} {1}", total_size.ToString("N2", CultureInfo.CreateSpecificCulture("sv-SE")), byte_type);
         }
     }
 }

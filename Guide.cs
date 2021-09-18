@@ -180,12 +180,15 @@ namespace FirehoseFinder
 
         public string BlockLength;
 
-        public GPT_Table(string startLBA, string endLBA, string blockname, string blocklength)
+        public string BlockBytes;
+
+        public GPT_Table(string startLBA, string endLBA, string blockname, string blocklength, string blockbytes)
         {
             StartLBA = startLBA;
             EndLBA = endLBA;
             BlockName = blockname;
             BlockLength = blocklength;
+            BlockBytes = blockbytes;
         }
         public GPT_Table()
         {

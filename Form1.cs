@@ -587,6 +587,7 @@ namespace FirehoseFinder
                         gpt_item.SubItems.Add(gpt_array[i].EndLBA); //сабитем1
                         gpt_item.SubItems.Add(gpt_array[i].BlockName); //сабитем2
                         gpt_item.SubItems.Add(gpt_array[i].BlockLength); //сабитем3
+                        gpt_item.SubItems.Add(gpt_array[i].BlockBytes); //сабитем4
                         listView_GPT.Items.Add(gpt_item);
                     }
                     label_total_gpt.Text = gpt_array.Count.ToString();
@@ -1771,6 +1772,7 @@ namespace FirehoseFinder
 
         private void Label_select_gpt_TextChanged(object sender, EventArgs e)
         {
+            long selbytes = 0; //Размер выбранных секторов в байтах
             if (label_select_gpt.Text.Equals(listView_GPT.Items.Count.ToString())) contextMenuStrip_gpt.Items[6].Enabled = false;
             else
             {
@@ -1783,11 +1785,21 @@ namespace FirehoseFinder
             }
             else
             {
+                foreach (ListViewItem item in listView_GPT.CheckedItems)
+                {
+                    selbytes += Convert.ToInt64(item.SubItems[4].Text);
+                }
                 contextMenuStrip_gpt.Items[4].Enabled = true;
                 contextMenuStrip_gpt.Items[7].Enabled = true;
             }
+            label_GPT_bytes.Text = func.Bytes_KB_MB(selbytes.ToString());
         }
 
+        /// <summary>
+        /// Меняем статус кнопок меню при изменении количества доступных разделов GPT для слива
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Label_total_gpt_TextChanged(object sender, EventArgs e)
         {
             if (label_total_gpt.Text.Equals("0"))
@@ -1807,6 +1819,11 @@ namespace FirehoseFinder
             }
         }
 
+        /// <summary>
+        /// Меняем статус кнопок меню при изменении количества доступных секторов для слива
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Label_total_blocks_TextChanged(object sender, EventArgs e)
         {
             if (Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors == 0) contextMenuStrip_gpt.Items[1].Enabled = false;
@@ -1982,6 +1999,16 @@ namespace FirehoseFinder
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        /// <summary>
+        /// Оставляем столбец скрытым при попытке изменения размера
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListView_GPT_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        {
+            if (listView_GPT.Columns[4].Width > 0) listView_GPT.Columns[4].Width = 0;
         }
     }
 }
