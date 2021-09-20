@@ -1974,15 +1974,19 @@ namespace FirehoseFinder
             Process process = new Process();
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.FileName = "fastboot.exe";
             process.StartInfo.Arguments = fb_command;
             textBox_soft_term.AppendText("Отправили: " + fb_command + Environment.NewLine);
             try
             {
+
                 process.Start();
-                StreamReader sreader = process.StandardOutput;
-                textBox_soft_term.AppendText("Получили: " + sreader.ReadToEnd() + Environment.NewLine);
+                string exstr = process.StandardError.ReadToEnd();
+                string normstr = process.StandardOutput.ReadToEnd();
+                if (!string.IsNullOrEmpty(normstr)) textBox_soft_term.AppendText("Получили: " + normstr + Environment.NewLine);
+                if (!string.IsNullOrEmpty(exstr)) textBox_soft_term.AppendText("Получили(ex): " + exstr + Environment.NewLine);
                 process.WaitForExit();
                 process.Close();
             }
@@ -1996,11 +2000,20 @@ namespace FirehoseFinder
         {
             Fastboot_commands("devices -l");
             button_fb_com_start.Enabled = true;
+            groupBox_fb_commands.Enabled = true;
         }
 
         private void Button_fb_com_start_Click(object sender, EventArgs e)
         {
+            string Com_String = textBox_ADB_commandstring.Text;
             if (radioButton_fb_reboot_normal.Checked) Fastboot_commands("reboot");
+            if (radioButton_fb_rebootbootloader.Checked) Fastboot_commands("reboot bootloader");
+            if (radioButton_fb_rebootedl.Checked) Fastboot_commands("oem reboot-edl");
+            if (radioButton_fb_getvar.Checked) Fastboot_commands("getvar all");
+            if (radioButton_fb_devinfo.Checked) Fastboot_commands("oem device-info");
+            if (radioButton_fb_unlock.Checked) Fastboot_commands("flashing unlock");
+            if (radioButton_fb_lock.Checked) Fastboot_commands("flashing lock");
+            if (radioButton_fb_commandline.Checked && !string.IsNullOrEmpty(Com_String)) Fastboot_commands(Com_String);
         }
 
         /// <summary>
@@ -2011,6 +2024,22 @@ namespace FirehoseFinder
         private void ListView_GPT_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
         {
             if (listView_GPT.Columns[4].Width > 0) listView_GPT.Columns[4].Width = 0;
+        }
+
+        private void RadioButton_fb_commandline_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_fb_commandline.Checked) textBox_fb_commandline.Enabled = true;
+            else
+            {
+                textBox_fb_commandline.Enabled = false;
+                textBox_fb_commandline.Text = string.Empty;
+            }
+        }
+
+        private void TextBox_fb_commandline_KeyUp(object sender, KeyEventArgs e)
+        {
+            string Com_String = textBox_fb_commandline.Text;
+            if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(Com_String)) Fastboot_commands(Com_String);
         }
     }
 }
