@@ -246,6 +246,24 @@ namespace FirehoseFinder
                              .ToArray();
         }
 
+        internal string SaharaCommand1()
+        {
+            StringBuilder SC1 = new StringBuilder();
+            byte[] comfilebytes = { };
+            if (File.Exists("commandop01.bin"))
+            {
+                comfilebytes = File.ReadAllBytes("commandop01.bin");
+                //File.Delete("commandop01.bin");
+            }
+            string backstr = BitConverter.ToString(comfilebytes).Replace("-", "");
+            //Читаем с конца  в начало
+            for (int i = backstr.Length - 1; i > 0; i -= 2)
+            {
+                SC1.Append(backstr.Substring(i - 1, 2));
+            }
+            return SC1.ToString();
+        }
+
         /// <summary>
         /// Парсинг результата работы команды Сахары 02
         /// </summary>
@@ -261,6 +279,7 @@ namespace FirehoseFinder
                 File.Delete("commandop02.bin");
             }
             string backstr = BitConverter.ToString(comfilebytes).Replace("-", "");
+            //Читаем с конца в начало
             for (int i = backstr.Length - 1; i > 0; i -= 2)
             {
                 SC2.Append(backstr.Substring(i - 1, 2));
@@ -284,6 +303,7 @@ namespace FirehoseFinder
                 SC3.Append(BitConverter.ToString(File.ReadAllBytes("commandop03.bin")).Replace("-", ""));
                 File.Delete("commandop03.bin");
             }
+            //Читаем с начала до конца
             int strlen = SC3.Length / 3;
             for (int i = 0; i < 3; i++) compareresult[i] = SC3.ToString().Substring(i * strlen, strlen);
             return compareresult[0];
@@ -303,6 +323,7 @@ namespace FirehoseFinder
             {
                 string strbyte = BitConverter.ToString(File.ReadAllBytes("commandop07.bin")).Replace("-", "");
                 byte count = (byte)strbyte.Length;
+                //Читаем с конца в начало
                 while (count > 0)
                 {
                     SC7.Append(strbyte.Substring(count - 2, 2));

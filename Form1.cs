@@ -24,6 +24,7 @@ namespace FirehoseFinder
         bool NeedReset = false; //Требуется ли перезагрузка устройства после работы с Сахарой
         Flash_Disk flash_start = new Flash_Disk(0, 0, 1);
         internal Flash_Disk[] Flash_Params = new Flash_Disk[1];
+        internal DeviceData Global_ADB_Device = new DeviceData();
 
         /// <summary>
         /// Инициализация компонентов
@@ -283,8 +284,7 @@ namespace FirehoseFinder
         private void Button_ADB_comstart_Click(object sender, EventArgs e)
         {
             AdbClient client = new AdbClient();
-            List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
-            var device = devices[0];
+            DeviceData device = Global_ADB_Device;
             string Com_String = textBox_ADB_commandstring.Text;
             try
             {
@@ -293,7 +293,7 @@ namespace FirehoseFinder
                 {
                     textBox_soft_term.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
                     client.Reboot("edl", device);
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
                     StopAdb();
                     tabControl_soft.SelectedTab = tabPage_sahara;
                 }
@@ -302,7 +302,7 @@ namespace FirehoseFinder
                 {
                     textBox_soft_term.AppendText("Устройство перегружается в режим загрузчика" + Environment.NewLine);
                     client.Reboot("bootloader", device);
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
                     StopAdb();
                     tabControl_soft.SelectedTab = tabPage_fb;
                 }
@@ -1223,6 +1223,11 @@ namespace FirehoseFinder
             button_ADB_clear.Enabled = false;
             groupBox_adb_commands.Enabled = false;
             button_ADB_comstart.Enabled = false;
+            if (listView_ADB_devices.Items.Count > 0)
+            {
+                listView_ADB_devices.Items.Clear();
+                listView_ADB_devices.Enabled = false;
+            }
             try
             {
                 client.KillAdb();
@@ -1243,8 +1248,7 @@ namespace FirehoseFinder
         {
             AdbClient client = new AdbClient();
             var receiver = new ConsoleOutputReceiver();
-            List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
-            var device = devices[0];
+            DeviceData device = Global_ADB_Device;
             textBox_soft_term.AppendText(Com_String + Environment.NewLine);
             textBox_ADB_commandstring.Text = string.Empty;
             try
@@ -1423,25 +1427,32 @@ namespace FirehoseFinder
             textBox_soft_term.AppendText("Запускаем сервер ADB ..." + Environment.NewLine);
             textBox_main_term.AppendText("Запускаем сервер ADB ..." + Environment.NewLine);
             AdbServer server = new AdbServer();
-            var result = server.StartServer("adb.exe", restartServerIfNewer: false);
+            StartServerResult result = server.StartServer("adb.exe", restartServerIfNewer: false);
+            textBox_soft_term.AppendText(result.ToString() + Environment.NewLine);
+            textBox_main_term.AppendText(result.ToString() + Environment.NewLine);
             //Подключаем клиента (устройства)
             AdbClient client = new AdbClient();
             List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
-            textBox_soft_term.AppendText(result.ToString() + Environment.NewLine);
-            textBox_main_term.AppendText(result.ToString() + Environment.NewLine);
+            //Заполнили листвью наименованием и транспортом
+            foreach (DeviceData dev in devices)
+            {
+                ListViewItem viewItem = new ListViewItem(dev.TransportId);
+                viewItem.SubItems.Add(dev.Model);
+                listView_ADB_devices.Items.Add(viewItem);
+            }
+            //Пометили первый попавшийся и активировали если больше одного
+            if (listView_ADB_devices.Items.Count > 0)
+            {
+                listView_ADB_devices.Items[0].Checked = true;
+                if (listView_ADB_devices.Items.Count > 1) listView_ADB_devices.Enabled = true;
+            }
             button_ADB_start.Enabled = false;
             foreach (var device in devices)
             {
                 textBox_soft_term.AppendText("Подключено устройство: " + device + Environment.NewLine);
                 textBox_main_term.AppendText("Подключено устройство: " + device + Environment.NewLine);
             }
-            if (devices.Count > 1)
-            {
-                textBox_soft_term.AppendText("Подключено более одного андройд-устройства. Пожалуйста, оставьте подключённым только то устройство, с которым планируется дальнейшая работа." + Environment.NewLine);
-                textBox_main_term.AppendText("Подключено более одного андройд-устройства. Пожалуйста, оставьте подключённым только то устройство, с которым планируется дальнейшая работа." + Environment.NewLine);
-                return false;
-            }
-            else if (devices.Count == 0)
+            if (devices.Count == 0)
             {
                 textBox_soft_term.AppendText("Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли \"Отладка по USB\" в разделе \"Система\" - \"Для разработчиков\"" + Environment.NewLine);
                 textBox_main_term.AppendText("Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли \"Отладка по USB\" в разделе \"Система\" - \"Для разработчиков\"" + Environment.NewLine);
@@ -1450,6 +1461,7 @@ namespace FirehoseFinder
             else
             {
                 groupBox_adb_commands.Enabled = true;
+                button_ADB_comstart.Enabled = true;
                 return true;
             }
         }
@@ -1462,8 +1474,7 @@ namespace FirehoseFinder
         {
             AdbClient client = new AdbClient();
             var receiver = new ConsoleOutputReceiver();
-            List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
-            var device = devices[0];
+            DeviceData device = Global_ADB_Device;
             List<string> adbcommands = new List<string>() {
                 "getprop | grep ro.product.name",
                 "getprop | grep ro.product.manufacturer",
@@ -1494,6 +1505,7 @@ namespace FirehoseFinder
             label_altname.Text = results[0];
             label_tm.Text = results[1];
             label_model.Text = results[2];
+            label_sernum.Text = device.Serial;
             textBox_soft_term.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
                 "Модель: " + label_model.Text + Environment.NewLine +
                 "Альтернативное наименование: " + label_altname.Text + Environment.NewLine);
@@ -1513,7 +1525,7 @@ namespace FirehoseFinder
                     textBox_soft_term.AppendText(ex.Message + Environment.NewLine + "Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную." + Environment.NewLine);
                     textBox_main_term.AppendText(ex.Message + Environment.NewLine + "Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную." + Environment.NewLine);
                 }
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
                 StopAdb();
             }
         }
@@ -1535,7 +1547,7 @@ namespace FirehoseFinder
             //Выполняем запрос HWID-OEMID (command02, 03, 07)
             Process process = new Process();
             process.StartInfo.FileName = "QSaharaServer.exe";
-            process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 2 -c 3 -c 7";
+            process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 1 -c 2 -c 3 -c 7";
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.CreateNoWindow = true;
@@ -1562,6 +1574,7 @@ namespace FirehoseFinder
                 textBox_oemid.Text = HWOEMIDs.Substring(8, 4);
                 textBox_modelid.Text = HWOEMIDs.Substring(12, 4);
             }
+            textBox_soft_term.AppendText("Получили S/N устройства - " + func.SaharaCommand1() + Environment.NewLine);
             textBox_oemhash.Text = func.SaharaCommand3();
             label_SW_Ver.Text = func.SaharaCommand7();
             //Переходим на вкладку Работа с файлами
@@ -2040,6 +2053,28 @@ namespace FirehoseFinder
         {
             string Com_String = textBox_fb_commandline.Text;
             if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(Com_String)) Fastboot_commands(Com_String);
+        }
+
+        /// <summary>
+        /// Происходит при изменении маркера на транспорте
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListView_ADB_devices_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            if (e.Item.Checked)
+            {
+                AdbClient client = new AdbClient();
+                List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
+                foreach (DeviceData dev in devices)
+                {
+                    if (dev.TransportId.Equals(e.Item.Text)) Global_ADB_Device = dev;
+                }
+                foreach (ListViewItem item in listView_ADB_devices.Items)
+                {
+                    if (!item.Equals(e.Item)) item.Checked = false;
+                }
+            }
         }
     }
 }

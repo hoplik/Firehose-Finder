@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-09-18T11:47:33">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-09-21T11:18:36">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -2209,6 +2209,15 @@
 <AltName>i7s</AltName>
 </ForFilter>
 <ForFilter>
+<HWID>001360E1</HWID>
+<OEMID>02E8</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>ABBCC86FE393B13D59E2A2EC944AF26DA3FA3D4B2A1CCD2FB383C73E0FFFC30DC1736DCB2752E955A61421C349974F90</HASHID>
+<Trademark>Motorola</Trademark>
+<Model>moto E7 Plus</Model>
+<AltName>XT2081-2</AltName>
+</ForFilter>
+<ForFilter>
 <HWID>0009A0E1</HWID>
 <FullName>Snapdragon 450</FullName>
 <OEMID>0368</OEMID>
@@ -2219,24 +2228,24 @@
 <AltName>ali, Moto G6, Moto G (2018) 6th Gen, XT1925 Blaine</AltName>
 </ForFilter>
 <ForFilter>
-<HWID>008140E1</HWID>
-<FullName>Snapdragon 200</FullName>
-<OEMID>02C8</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>2201BBA0E6233F9BEDE802D8B87560CD0E9727D26E313F4B9ABC2681C2A34A96</HASHID>
-<Trademark>Motorola</Trademark>
-<Model>MotoE2</Model>
-<AltName>otus_reteu_ds</AltName>
-</ForFilter>
-<ForFilter>
 <HWID>007B40E1</HWID>
 <FullName>Snapdragon 801</FullName>
 <OEMID>01C8</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>8C694C4263AB8FDFF1C385D9A12E406705B22453771910317C63F58E5E675CB8</HASHID>
 <Trademark>Motorola</Trademark>
-<Model>XT1096</Model>
-<AltName>Moto X (2nd Gen)</AltName>
+<Model>moto X (2nd Gen)</Model>
+<AltName>XT1096</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>008140E1</HWID>
+<FullName>Snapdragon 200</FullName>
+<OEMID>02C8</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>2201BBA0E6233F9BEDE802D8B87560CD0E9727D26E313F4B9ABC2681C2A34A96</HASHID>
+<Trademark>Motorola</Trademark>
+<Model>motoE2</Model>
+<AltName>otus_reteu_ds</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>000940E1</HWID>
@@ -2309,7 +2318,7 @@
 <FullName>Snapdragon 430</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>F5F4192A33B2830974B400119BAB728CC9FE911011F928625C2AED0DA441AC97</HASHID>
+<HASHID>D18EF172D0D45AACC294212A45FBA91D8A8431CC686B164C6F0E522D476735E9</HASHID>
 <Trademark>Nokia</Trademark>
 <Model>TA-1053</Model>
 <AltName>5</AltName>
@@ -2319,7 +2328,7 @@
 <FullName>Snapdragon 430</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>D18EF172D0D45AACC294212A45FBA91D8A8431CC686B164C6F0E522D476735E9</HASHID>
+<HASHID>F5F4192A33B2830974B400119BAB728CC9FE911011F928625C2AED0DA441AC97</HASHID>
 <Trademark>Nokia</Trademark>
 <Model>TA-1053</Model>
 <AltName>5</AltName>
@@ -2641,6 +2650,16 @@
 <Trademark>Samsung</Trademark>
 <Model>SM-N910C</Model>
 <AltName>Galaxy Note 4</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>009010E1</HWID>
+<FullName>Snapdragon 805</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>0787BEB0AE821DCB5FBFC35225CBE89C22C6B35205B6E7A4870C92F2C32D42C0</HASHID>
+<Trademark>Samsung</Trademark>
+<Model>SM-N910T</Model>
+<AltName>Galaxy Note 4 (USA)</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>000BE0E1</HWID>
