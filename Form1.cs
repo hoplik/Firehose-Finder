@@ -26,6 +26,8 @@ namespace FirehoseFinder
         internal Flash_Disk[] Flash_Params = new Flash_Disk[1];
         internal DeviceData Global_ADB_Device = new DeviceData();
         internal string Global_FB_Device = string.Empty;
+        internal Dictionary<string, string> Connected_Devices = new Dictionary<string, string>();//Список подключённых ADB устройств
+
         /// <summary>
         /// Инициализация компонентов
         /// </summary>
@@ -103,6 +105,15 @@ namespace FirehoseFinder
                 Greeting greeting = new Greeting();
                 greeting.ShowDialog();
             }
+            //Закрываем запущенные процессы, если есть
+            foreach (Process adb_proc in Process.GetProcessesByName("adb"))
+            {
+                adb_proc.Kill();
+            }
+            foreach (Process fb_proc in Process.GetProcessesByName("fastboot"))
+            {
+                fb_proc.Kill();
+            }
         }
 
         /// <summary>
@@ -118,6 +129,14 @@ namespace FirehoseFinder
                 foreach (string cleanfile in guide.FilesToClean)
                 {
                     if (File.Exists(cleanfile)) File.Delete(cleanfile);
+                }
+                foreach (Process adb_proc in Process.GetProcessesByName("adb"))
+                {
+                    adb_proc.Kill();
+                }
+                foreach (Process fb_proc in Process.GetProcessesByName("fastboot"))
+                {
+                    fb_proc.Kill();
                 }
             }
             catch (Exception)
@@ -1436,9 +1455,10 @@ namespace FirehoseFinder
             //Заполнили листвью наименованием и транспортом
             foreach (DeviceData dev in devices)
             {
-                ListViewItem viewItem = new ListViewItem(dev.TransportId);
+                ListViewItem viewItem = new ListViewItem(dev.Serial);
                 viewItem.SubItems.Add(dev.Model);
                 listView_ADB_devices.Items.Add(viewItem);
+                if (!Connected_Devices.ContainsKey(dev.Serial)) Connected_Devices.Add(dev.Serial, dev.Model);
             }
             //Пометили первый попавшийся и активировали если больше одного
             if (listView_ADB_devices.Items.Count > 0)
@@ -1505,7 +1525,6 @@ namespace FirehoseFinder
             label_altname.Text = results[0];
             label_tm.Text = results[1];
             label_model.Text = results[2];
-            label_sernum.Text = device.Serial;
             textBox_soft_term.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
                 "Модель: " + label_model.Text + Environment.NewLine +
                 "Альтернативное наименование: " + label_altname.Text + Environment.NewLine);
@@ -1982,7 +2001,7 @@ namespace FirehoseFinder
         {
             Process process = new Process();
             process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardError = true;
+            process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.FileName = "fastboot.exe";
             process.StartInfo.Arguments = "devices -l";
@@ -1991,20 +2010,21 @@ namespace FirehoseFinder
             {
 
                 process.Start();
-                string exstr = process.StandardError.ReadToEnd();
-                if (!string.IsNullOrEmpty(exstr))
+                string normstr = process.StandardOutput.ReadToEnd();
+                if (!string.IsNullOrEmpty(normstr))
                 {
-                    Pars_FB_Dev(exstr);
-                    textBox_soft_term.AppendText("Получили(ex): " + exstr + Environment.NewLine);
+                    Pars_FB_Dev(normstr);//Разбираем полученный массив на список устройств
+                    textBox_soft_term.AppendText("Получили: " + normstr + Environment.NewLine);
                 }
                 process.WaitForExit();
                 process.Close();
+                return true;
             }
             catch (Exception ex)
             {
                 textBox_soft_term.AppendText(ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine);
+                return false;
             }
-            return false;
         }
 
         /// <summary>
@@ -2022,10 +2042,9 @@ namespace FirehoseFinder
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.FileName = "fastboot.exe";
             process.StartInfo.Arguments = real_command;
-            textBox_soft_term.AppendText("Отправили: " + fb_command + Environment.NewLine);
+            textBox_soft_term.AppendText("Отправили: " + real_command + Environment.NewLine);
             try
             {
-
                 process.Start();
                 string exstr = process.StandardError.ReadToEnd();
                 string normstr = process.StandardOutput.ReadToEnd();
@@ -2042,18 +2061,30 @@ namespace FirehoseFinder
 
         private void Pars_FB_Dev(string parsing_string)
         {
-            string[] pars_separator = { "fastboot" };
-            string[] fb_devices = parsing_string.Split(pars_separator, StringSplitOptions.RemoveEmptyEntries);
-            if (fb_devices.Length > 0)
+            string temp_str = parsing_string; //Временная строка для разбора
+            if (listView_fb_devices.Items.Count > 0) listView_fb_devices.Items.Clear();
+            Global_FB_Device = string.Empty;
+            while (temp_str.Contains("fastboot"))
             {
-                if (listView_fb_devices.Items.Count > 0) listView_fb_devices.Items.Clear();
-                foreach (string fb_dev in fb_devices)
+                char[] for_trim = { ' ', '\t', '\n', '\r' };
+                int cut_str = temp_str.IndexOf("fastboot");
+                string fb_device = temp_str.Substring(0, cut_str).Trim(for_trim);
+                if (!string.IsNullOrEmpty(fb_device))
                 {
-                    listView_fb_devices.Items.Add(fb_dev.TrimEnd(' '));
+                    ListViewItem new_device = new ListViewItem(fb_device);
+                    if (Connected_Devices.ContainsKey(fb_device)) new_device.SubItems.Add(Connected_Devices[fb_device]);
+                    listView_fb_devices.Items.Add(new_device);
                 }
-                listView_fb_devices.Items[0].Text = Global_FB_Device;
+                temp_str = temp_str.Substring(cut_str + 8);
+            }
+            if (listView_fb_devices.Items.Count > 0)
+            {
+                Global_FB_Device = listView_fb_devices.Items[0].Text;
                 listView_fb_devices.Items[0].Checked = true;
-                listView_fb_devices.Enabled = true;
+                if (listView_fb_devices.Items.Count > 1)
+                {
+                    listView_fb_devices.Enabled = true;
+                }
             }
         }
 
@@ -2107,7 +2138,7 @@ namespace FirehoseFinder
         }
 
         /// <summary>
-        /// Происходит при изменении маркера на транспорте
+        /// Оставляем только один маркер на устройствах ADB
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -2119,7 +2150,7 @@ namespace FirehoseFinder
                 List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
                 foreach (DeviceData dev in devices)
                 {
-                    if (dev.TransportId.Equals(e.Item.Text)) Global_ADB_Device = dev;
+                    if (dev.Serial.Equals(e.Item.Text)) Global_ADB_Device = dev;
                 }
                 foreach (ListViewItem item in listView_ADB_devices.Items)
                 {
@@ -2128,12 +2159,20 @@ namespace FirehoseFinder
             }
         }
 
+        /// <summary>
+        /// Оставляем только один маркер на устройствах Fastboot
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListView_fb_devices_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
-            if (e.Item.Checked) Global_FB_Device = e.Item.Text;
-            foreach (ListViewItem item in listView_fb_devices.Items)
+            if (e.Item.Checked)
             {
-                if (!item.Text.Equals(e.Item.Text)) item.Checked = false;
+                Global_FB_Device = e.Item.Text;
+                foreach (ListViewItem item in listView_fb_devices.Items)
+                {
+                    if (!item.Text.Equals(e.Item.Text)) item.Checked = false;
+                }
             }
         }
     }
