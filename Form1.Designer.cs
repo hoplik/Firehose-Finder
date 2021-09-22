@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfhf));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataSet1 = new System.Data.DataSet();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
@@ -183,7 +183,6 @@
             this.label_Sahara_fhf = new System.Windows.Forms.Label();
             this.tabPage_fb = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel_fb = new System.Windows.Forms.TableLayoutPanel();
-            this.button_fb_com_start = new System.Windows.Forms.Button();
             this.button_fb_check = new System.Windows.Forms.Button();
             this.groupBox_fb_commands = new System.Windows.Forms.GroupBox();
             this.radioButton_fb_rebootedl = new System.Windows.Forms.RadioButton();
@@ -195,6 +194,9 @@
             this.radioButton_fb_lock = new System.Windows.Forms.RadioButton();
             this.radioButton_fb_devinfo = new System.Windows.Forms.RadioButton();
             this.radioButton_fb_reboot_normal = new System.Windows.Forms.RadioButton();
+            this.button_fb_com_start = new System.Windows.Forms.Button();
+            this.listView_fb_devices = new System.Windows.Forms.ListView();
+            this.columnHeader_sernum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox_term_buttons = new System.Windows.Forms.GroupBox();
             this.button_term_clear = new System.Windows.Forms.Button();
             this.button_term_save = new System.Windows.Forms.Button();
@@ -278,7 +280,7 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1369, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1369, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -401,23 +403,23 @@
             this.dataGridView_collection.AllowUserToOrderColumns = true;
             this.dataGridView_collection.AllowUserToResizeRows = false;
             this.dataGridView_collection.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_collection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_collection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_collection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_collection.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_collection.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_collection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_collection.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_collection.MultiSelect = false;
@@ -580,18 +582,18 @@
             // 
             this.dataGridView_final.AllowUserToAddRows = false;
             this.dataGridView_final.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_final.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_final.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_final.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_final.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_final.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_final.ColumnHeadersHeight = 29;
             this.dataGridView_final.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column_Sel,
@@ -602,14 +604,14 @@
             this.Column_SW_type,
             this.Column_Comp});
             this.dataGridView_final.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_final.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_final.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView_final.Dock = System.Windows.Forms.DockStyle.Right;
             this.dataGridView_final.Location = new System.Drawing.Point(409, 0);
             this.dataGridView_final.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -629,8 +631,8 @@
             // Column_Sel
             // 
             this.Column_Sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle25.NullValue = false;
-            this.Column_Sel.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle5.NullValue = false;
+            this.Column_Sel.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column_Sel.HeaderText = "Выбор";
             this.Column_Sel.MinimumWidth = 6;
             this.Column_Sel.Name = "Column_Sel";
@@ -638,9 +640,9 @@
             // 
             // Column_Name
             // 
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column_Name.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column_Name.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column_Name.HeaderText = "Файл";
             this.Column_Name.MinimumWidth = 6;
             this.Column_Name.Name = "Column_Name";
@@ -670,9 +672,9 @@
             // 
             // Column_SW_type
             // 
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column_SW_type.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column_SW_type.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column_SW_type.HeaderText = "Тип ПО";
             this.Column_SW_type.MinimumWidth = 6;
             this.Column_SW_type.Name = "Column_SW_type";
@@ -1054,23 +1056,23 @@
             // 
             this.dataGridView_FInd_Server.AllowUserToAddRows = false;
             this.dataGridView_FInd_Server.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_FInd_Server.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_FInd_Server.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView_FInd_Server.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_FInd_Server.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_FInd_Server.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView_FInd_Server.Location = new System.Drawing.Point(166, 253);
             this.dataGridView_FInd_Server.Name = "dataGridView_FInd_Server";
             this.dataGridView_FInd_Server.ReadOnly = true;
@@ -1085,7 +1087,7 @@
             this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
             this.tabPage_phone.Name = "tabPage_phone";
             this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_phone.Size = new System.Drawing.Size(1361, 625);
+            this.tabPage_phone.Size = new System.Drawing.Size(1361, 627);
             this.tabPage_phone.TabIndex = 2;
             this.tabPage_phone.Text = "Работа с устройством";
             this.tabPage_phone.UseVisualStyleBackColor = true;
@@ -1106,7 +1108,7 @@
             this.tableLayoutPanel_phone.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_phone.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel_phone.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel_phone.Size = new System.Drawing.Size(1355, 619);
+            this.tableLayoutPanel_phone.Size = new System.Drawing.Size(1355, 621);
             this.tableLayoutPanel_phone.TabIndex = 8;
             // 
             // groupBox_terminal
@@ -1115,7 +1117,7 @@
             this.groupBox_terminal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_terminal.Location = new System.Drawing.Point(3, 3);
             this.groupBox_terminal.Name = "groupBox_terminal";
-            this.groupBox_terminal.Size = new System.Drawing.Size(394, 533);
+            this.groupBox_terminal.Size = new System.Drawing.Size(394, 535);
             this.groupBox_terminal.TabIndex = 7;
             this.groupBox_terminal.TabStop = false;
             this.groupBox_terminal.Text = "Terminal";
@@ -1127,7 +1129,7 @@
             this.textBox_soft_term.Multiline = true;
             this.textBox_soft_term.Name = "textBox_soft_term";
             this.textBox_soft_term.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_soft_term.Size = new System.Drawing.Size(388, 512);
+            this.textBox_soft_term.Size = new System.Drawing.Size(388, 514);
             this.textBox_soft_term.TabIndex = 1;
             this.textBox_soft_term.TextChanged += new System.EventHandler(this.TextBox_soft_term_TextChanged);
             // 
@@ -1138,7 +1140,7 @@
             this.groupBox_soft.Location = new System.Drawing.Point(403, 3);
             this.groupBox_soft.Name = "groupBox_soft";
             this.tableLayoutPanel_phone.SetRowSpan(this.groupBox_soft, 3);
-            this.groupBox_soft.Size = new System.Drawing.Size(949, 613);
+            this.groupBox_soft.Size = new System.Drawing.Size(949, 615);
             this.groupBox_soft.TabIndex = 8;
             this.groupBox_soft.TabStop = false;
             this.groupBox_soft.Text = "Soft";
@@ -1152,7 +1154,7 @@
             this.tabControl_soft.Location = new System.Drawing.Point(3, 18);
             this.tabControl_soft.Name = "tabControl_soft";
             this.tabControl_soft.SelectedIndex = 0;
-            this.tabControl_soft.Size = new System.Drawing.Size(943, 592);
+            this.tabControl_soft.Size = new System.Drawing.Size(943, 594);
             this.tabControl_soft.TabIndex = 0;
             // 
             // tabPage_adb
@@ -1161,7 +1163,7 @@
             this.tabPage_adb.Location = new System.Drawing.Point(4, 25);
             this.tabPage_adb.Name = "tabPage_adb";
             this.tabPage_adb.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_adb.Size = new System.Drawing.Size(935, 563);
+            this.tabPage_adb.Size = new System.Drawing.Size(935, 565);
             this.tabPage_adb.TabIndex = 0;
             this.tabPage_adb.Text = "ADB (Android Debug Bridge)";
             this.tabPage_adb.UseVisualStyleBackColor = true;
@@ -1184,7 +1186,7 @@
             this.tableLayoutPanel_adb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel_adb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel_adb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_adb.Size = new System.Drawing.Size(929, 557);
+            this.tableLayoutPanel_adb.Size = new System.Drawing.Size(929, 559);
             this.tableLayoutPanel_adb.TabIndex = 8;
             // 
             // button_ADB_start
@@ -1220,7 +1222,7 @@
             this.groupBox_adb_commands.Enabled = false;
             this.groupBox_adb_commands.Location = new System.Drawing.Point(3, 133);
             this.groupBox_adb_commands.Name = "groupBox_adb_commands";
-            this.groupBox_adb_commands.Size = new System.Drawing.Size(923, 421);
+            this.groupBox_adb_commands.Size = new System.Drawing.Size(923, 423);
             this.groupBox_adb_commands.TabIndex = 7;
             this.groupBox_adb_commands.TabStop = false;
             this.groupBox_adb_commands.Text = "Команды ADB";
@@ -1768,7 +1770,7 @@
             this.tabPage_fb.Controls.Add(this.tableLayoutPanel_fb);
             this.tabPage_fb.Location = new System.Drawing.Point(4, 25);
             this.tabPage_fb.Name = "tabPage_fb";
-            this.tabPage_fb.Size = new System.Drawing.Size(935, 563);
+            this.tabPage_fb.Size = new System.Drawing.Size(935, 565);
             this.tabPage_fb.TabIndex = 2;
             this.tabPage_fb.Text = "Fastboot (bootloader)";
             this.tabPage_fb.UseVisualStyleBackColor = true;
@@ -1779,28 +1781,20 @@
             this.tableLayoutPanel_fb.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel_fb.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel_fb.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_fb.Controls.Add(this.button_fb_com_start, 1, 0);
             this.tableLayoutPanel_fb.Controls.Add(this.button_fb_check, 0, 0);
-            this.tableLayoutPanel_fb.Controls.Add(this.groupBox_fb_commands, 0, 1);
+            this.tableLayoutPanel_fb.Controls.Add(this.groupBox_fb_commands, 0, 2);
+            this.tableLayoutPanel_fb.Controls.Add(this.button_fb_com_start, 2, 1);
+            this.tableLayoutPanel_fb.Controls.Add(this.listView_fb_devices, 0, 1);
             this.tableLayoutPanel_fb.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_fb.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel_fb.Name = "tableLayoutPanel_fb";
-            this.tableLayoutPanel_fb.RowCount = 2;
+            this.tableLayoutPanel_fb.RowCount = 3;
             this.tableLayoutPanel_fb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel_fb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel_fb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_fb.Size = new System.Drawing.Size(935, 563);
+            this.tableLayoutPanel_fb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_fb.Size = new System.Drawing.Size(935, 565);
             this.tableLayoutPanel_fb.TabIndex = 0;
-            // 
-            // button_fb_com_start
-            // 
-            this.button_fb_com_start.Enabled = false;
-            this.button_fb_com_start.Location = new System.Drawing.Point(203, 3);
-            this.button_fb_com_start.Name = "button_fb_com_start";
-            this.button_fb_com_start.Size = new System.Drawing.Size(188, 23);
-            this.button_fb_com_start.TabIndex = 1;
-            this.button_fb_com_start.Text = "Выполнить команду";
-            this.button_fb_com_start.UseVisualStyleBackColor = true;
-            this.button_fb_com_start.Click += new System.EventHandler(this.Button_fb_com_start_Click);
             // 
             // button_fb_check
             // 
@@ -1827,9 +1821,9 @@
             this.groupBox_fb_commands.Controls.Add(this.radioButton_fb_reboot_normal);
             this.groupBox_fb_commands.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_fb_commands.Enabled = false;
-            this.groupBox_fb_commands.Location = new System.Drawing.Point(3, 33);
+            this.groupBox_fb_commands.Location = new System.Drawing.Point(3, 133);
             this.groupBox_fb_commands.Name = "groupBox_fb_commands";
-            this.groupBox_fb_commands.Size = new System.Drawing.Size(929, 527);
+            this.groupBox_fb_commands.Size = new System.Drawing.Size(929, 429);
             this.groupBox_fb_commands.TabIndex = 1;
             this.groupBox_fb_commands.TabStop = false;
             this.groupBox_fb_commands.Text = "Команды Fastboot";
@@ -1926,12 +1920,49 @@
             this.radioButton_fb_reboot_normal.Text = "Перегрузить в нормальный режим";
             this.radioButton_fb_reboot_normal.UseVisualStyleBackColor = true;
             // 
+            // button_fb_com_start
+            // 
+            this.button_fb_com_start.Enabled = false;
+            this.button_fb_com_start.Location = new System.Drawing.Point(403, 33);
+            this.button_fb_com_start.Name = "button_fb_com_start";
+            this.button_fb_com_start.Size = new System.Drawing.Size(188, 23);
+            this.button_fb_com_start.TabIndex = 1;
+            this.button_fb_com_start.Text = "Выполнить команду";
+            this.button_fb_com_start.UseVisualStyleBackColor = true;
+            this.button_fb_com_start.Click += new System.EventHandler(this.Button_fb_com_start_Click);
+            // 
+            // listView_fb_devices
+            // 
+            this.listView_fb_devices.CheckBoxes = true;
+            this.listView_fb_devices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader_sernum});
+            this.tableLayoutPanel_fb.SetColumnSpan(this.listView_fb_devices, 2);
+            this.listView_fb_devices.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView_fb_devices.Enabled = false;
+            this.listView_fb_devices.FullRowSelect = true;
+            this.listView_fb_devices.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView_fb_devices.HideSelection = false;
+            this.listView_fb_devices.Location = new System.Drawing.Point(3, 33);
+            this.listView_fb_devices.MultiSelect = false;
+            this.listView_fb_devices.Name = "listView_fb_devices";
+            this.listView_fb_devices.ShowGroups = false;
+            this.listView_fb_devices.Size = new System.Drawing.Size(394, 94);
+            this.listView_fb_devices.TabIndex = 2;
+            this.listView_fb_devices.UseCompatibleStateImageBehavior = false;
+            this.listView_fb_devices.View = System.Windows.Forms.View.Details;
+            this.listView_fb_devices.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.ListView_fb_devices_ItemChecked);
+            // 
+            // columnHeader_sernum
+            // 
+            this.columnHeader_sernum.Text = "Серийный номер";
+            this.columnHeader_sernum.Width = 150;
+            // 
             // groupBox_term_buttons
             // 
             this.groupBox_term_buttons.Controls.Add(this.button_term_clear);
             this.groupBox_term_buttons.Controls.Add(this.button_term_save);
             this.groupBox_term_buttons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_term_buttons.Location = new System.Drawing.Point(3, 542);
+            this.groupBox_term_buttons.Location = new System.Drawing.Point(3, 544);
             this.groupBox_term_buttons.Name = "groupBox_term_buttons";
             this.groupBox_term_buttons.Size = new System.Drawing.Size(394, 54);
             this.groupBox_term_buttons.TabIndex = 9;
@@ -1966,7 +1997,7 @@
             // 
             this.progressBar_phone.Dock = System.Windows.Forms.DockStyle.Fill;
             this.progressBar_phone.ForeColor = System.Drawing.Color.LimeGreen;
-            this.progressBar_phone.Location = new System.Drawing.Point(3, 602);
+            this.progressBar_phone.Location = new System.Drawing.Point(3, 604);
             this.progressBar_phone.Name = "progressBar_phone";
             this.progressBar_phone.Size = new System.Drawing.Size(394, 14);
             this.progressBar_phone.Step = 1;
@@ -1979,11 +2010,11 @@
             this.tabControl1.Controls.Add(this.tabPage_firehose);
             this.tabControl1.Controls.Add(this.tabPage_collection);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 30);
+            this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1369, 654);
+            this.tabControl1.Size = new System.Drawing.Size(1369, 656);
             this.tabControl1.TabIndex = 0;
             // 
             // bindingSource_collection
@@ -2251,6 +2282,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader_TransID;
         private System.Windows.Forms.ColumnHeader columnHeader_Model;
         private System.Windows.Forms.Label label_sernum;
+        private System.Windows.Forms.ListView listView_fb_devices;
+        private System.Windows.Forms.ColumnHeader columnHeader_sernum;
     }
 }
 

@@ -25,7 +25,7 @@ namespace FirehoseFinder
         Flash_Disk flash_start = new Flash_Disk(0, 0, 1);
         internal Flash_Disk[] Flash_Params = new Flash_Disk[1];
         internal DeviceData Global_ADB_Device = new DeviceData();
-
+        internal string Global_FB_Device = string.Empty;
         /// <summary>
         /// Инициализация компонентов
         /// </summary>
@@ -1567,6 +1567,7 @@ namespace FirehoseFinder
             }
             NeedReset = true;
             //Обрабатываем запрос идентификаторов
+            //textBox_soft_term.AppendText("Получили S/N устройства - " + func.SaharaCommand1() + Environment.NewLine);
             string HWOEMIDs = func.SaharaCommand2();
             if (HWOEMIDs.Length == 16)
             {
@@ -1574,7 +1575,6 @@ namespace FirehoseFinder
                 textBox_oemid.Text = HWOEMIDs.Substring(8, 4);
                 textBox_modelid.Text = HWOEMIDs.Substring(12, 4);
             }
-            textBox_soft_term.AppendText("Получили S/N устройства - " + func.SaharaCommand1() + Environment.NewLine);
             textBox_oemhash.Text = func.SaharaCommand3();
             label_SW_Ver.Text = func.SaharaCommand7();
             //Переходим на вкладку Работа с файлами
@@ -1978,6 +1978,35 @@ namespace FirehoseFinder
             }
         }
 
+        private bool FB_Check()
+        {
+            Process process = new Process();
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardError = true;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.FileName = "fastboot.exe";
+            process.StartInfo.Arguments = "devices -l";
+            textBox_soft_term.AppendText("Отправили: devices -l" + Environment.NewLine);
+            try
+            {
+
+                process.Start();
+                string exstr = process.StandardError.ReadToEnd();
+                if (!string.IsNullOrEmpty(exstr))
+                {
+                    Pars_FB_Dev(exstr);
+                    textBox_soft_term.AppendText("Получили(ex): " + exstr + Environment.NewLine);
+                }
+                process.WaitForExit();
+                process.Close();
+            }
+            catch (Exception ex)
+            {
+                textBox_soft_term.AppendText(ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine);
+            }
+            return false;
+        }
+
         /// <summary>
         /// Отправка команды в режиме загрузчика
         /// </summary>
@@ -1985,12 +2014,14 @@ namespace FirehoseFinder
         private void Fastboot_commands(string fb_command)
         {
             Process process = new Process();
+            string real_command = fb_command;
+            if (!string.IsNullOrEmpty(Global_FB_Device)) real_command = "-s " + Global_FB_Device + " " + fb_command;
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.RedirectStandardError = true;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.FileName = "fastboot.exe";
-            process.StartInfo.Arguments = fb_command;
+            process.StartInfo.Arguments = real_command;
             textBox_soft_term.AppendText("Отправили: " + fb_command + Environment.NewLine);
             try
             {
@@ -2009,11 +2040,31 @@ namespace FirehoseFinder
             }
         }
 
+        private void Pars_FB_Dev(string parsing_string)
+        {
+            string[] pars_separator = { "fastboot" };
+            string[] fb_devices = parsing_string.Split(pars_separator, StringSplitOptions.RemoveEmptyEntries);
+            if (fb_devices.Length > 0)
+            {
+                if (listView_fb_devices.Items.Count > 0) listView_fb_devices.Items.Clear();
+                foreach (string fb_dev in fb_devices)
+                {
+                    listView_fb_devices.Items.Add(fb_dev.TrimEnd(' '));
+                }
+                listView_fb_devices.Items[0].Text = Global_FB_Device;
+                listView_fb_devices.Items[0].Checked = true;
+                listView_fb_devices.Enabled = true;
+            }
+        }
+
         private void Button_fb_check_Click(object sender, EventArgs e)
         {
-            Fastboot_commands("devices -l");
-            button_fb_com_start.Enabled = true;
-            groupBox_fb_commands.Enabled = true;
+            if (FB_Check())
+            {
+                button_fb_com_start.Enabled = true;
+                groupBox_fb_commands.Enabled = true;
+                if (listView_fb_devices.Items.Count > 1) listView_fb_devices.Enabled = true;
+            }
         }
 
         private void Button_fb_com_start_Click(object sender, EventArgs e)
@@ -2074,6 +2125,15 @@ namespace FirehoseFinder
                 {
                     if (!item.Equals(e.Item)) item.Checked = false;
                 }
+            }
+        }
+
+        private void ListView_fb_devices_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            if (e.Item.Checked) Global_FB_Device = e.Item.Text;
+            foreach (ListViewItem item in listView_fb_devices.Items)
+            {
+                if (!item.Text.Equals(e.Item.Text)) item.Checked = false;
             }
         }
     }
