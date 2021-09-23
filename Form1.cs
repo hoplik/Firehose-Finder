@@ -2175,5 +2175,47 @@ namespace FirehoseFinder
                 }
             }
         }
+
+        private void ListView_GPT_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Select_Partition(listView_GPT.SelectedItems[0]);
+        }
+
+        private void Select_Partition(ListViewItem selected_item)
+        {
+            //Сбросили выбор всех отмеченных галками разделов и открыли только один
+            foreach (ListViewItem item in listView_GPT.CheckedItems)
+            {
+                item.Checked = false;
+            }
+            MessageBox.Show("Открываем новое окно для - " + selected_item.SubItems[2].Text);
+
+            ManagePartition MP = new ManagePartition();
+            switch (MP.ShowDialog())
+            {
+                case DialogResult.OK:
+                    break;
+                case DialogResult.Cancel:
+                    textBox_soft_term.AppendText("Форма работы с разделом закрыта без изменений." + Environment.NewLine);
+                    break;
+                case DialogResult.Abort:
+                    break;
+                case DialogResult.Retry:
+                    break;
+                default:
+                    break;
+            }
+            listView_GPT.SelectedItems[0].Checked = true;
+        }
+
+        private void ListView_GPT_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) Select_Partition(listView_GPT.SelectedItems[0]);
+        }
+
+        private void ОткрытьДанныеРазделавНовомОкнеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Select_Partition(listView_GPT.SelectedItems[0]);
+        }
     }
 }
