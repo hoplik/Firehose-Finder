@@ -506,7 +506,9 @@ namespace FirehoseFinder
                     if (item.Length > 16)
                     {
                         string parstr;
-                        switch (item.Substring(0, 16))
+                        string correct_pars_str = item;
+                        if (item.StartsWith("INFO: ")) correct_pars_str = item.Substring(6);
+                        switch (correct_pars_str.Substring(0, 16))
                         {
                             case "Device Total Log":
                                 parstr = item.Substring(item.IndexOf(": ") + 2);
@@ -526,7 +528,9 @@ namespace FirehoseFinder
                                 break;
                             case "Device Total Phy":
                                 parstr = item.Substring(item.IndexOf(": ") + 2);
-                                parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 2);
+                                int dtp = Convert.ToInt32(parstr, 16);
+                                if (dtp <= 0) dtp = 1;
+                                parsLUN_int.SetValue(dtp, 2);
                                 break;
                             case "num_physical_par":
                                 parstr = item.Substring(item.IndexOf('=') + 1);
