@@ -2182,11 +2182,20 @@ namespace FirehoseFinder
             }
         }
 
+        /// <summary>
+        /// Открываем данные раздела по дабл-клику
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListView_GPT_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Select_Partition(listView_GPT.SelectedItems[0]);
         }
 
+        /// <summary>
+        /// Команда открытия данных раздела
+        /// </summary>
+        /// <param name="selected_item">Выбранный раздел</param>
         private void Select_Partition(ListViewItem selected_item)
         {
             //Сбросили выбор всех отмеченных галками разделов и открыли только один
@@ -2194,7 +2203,7 @@ namespace FirehoseFinder
             {
                 item.Checked = false;
             }
-            MessageBox.Show("Открываем новое окно для - " + selected_item.SubItems[2].Text);
+            //MessageBox.Show("Открываем новое окно для - " + selected_item.SubItems[2].Text);
 
             ManagePartition MP = new ManagePartition();
             switch (MP.ShowDialog())
@@ -2214,11 +2223,21 @@ namespace FirehoseFinder
             listView_GPT.SelectedItems[0].Checked = true;
         }
 
+        /// <summary>
+        /// Открываем данные раздела по энтеру
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListView_GPT_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) Select_Partition(listView_GPT.SelectedItems[0]);
         }
 
+        /// <summary>
+        /// Открываем данные раздела из контекстного меню
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ОткрытьДанныеРазделавНовомОкнеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Select_Partition(listView_GPT.SelectedItems[0]);
