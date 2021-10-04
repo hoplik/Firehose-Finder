@@ -1817,15 +1817,15 @@ namespace FirehoseFinder
         private void Label_select_gpt_TextChanged(object sender, EventArgs e)
         {
             long selbytes = 0; //Размер выбранных секторов в байтах
-            if (label_select_gpt.Text.Equals(listView_GPT.Items.Count.ToString())) contextMenuStrip_gpt.Items[6].Enabled = false;
+            if (label_select_gpt.Text.Equals(listView_GPT.Items.Count.ToString())) contextMenuStrip_gpt.Items[7].Enabled = false;
             else
             {
-                contextMenuStrip_gpt.Items[6].Enabled = true;
+                contextMenuStrip_gpt.Items[7].Enabled = true;
             }
             if (label_select_gpt.Text.Equals("0"))
             {
-                contextMenuStrip_gpt.Items[4].Enabled = false;
-                contextMenuStrip_gpt.Items[7].Enabled = false;
+                contextMenuStrip_gpt.Items[5].Enabled = false;
+                contextMenuStrip_gpt.Items[8].Enabled = false;
             }
             else
             {
@@ -1833,8 +1833,8 @@ namespace FirehoseFinder
                 {
                     selbytes += Convert.ToInt64(item.SubItems[4].Text);
                 }
-                contextMenuStrip_gpt.Items[4].Enabled = true;
-                contextMenuStrip_gpt.Items[7].Enabled = true;
+                contextMenuStrip_gpt.Items[5].Enabled = true;
+                contextMenuStrip_gpt.Items[8].Enabled = true;
             }
             label_GPT_bytes.Text = func.Bytes_KB_MB(selbytes.ToString());
         }
@@ -1849,17 +1849,19 @@ namespace FirehoseFinder
             if (label_total_gpt.Text.Equals("0"))
             {
                 contextMenuStrip_gpt.Items[0].Enabled = false;
+                contextMenuStrip_gpt.Items[1].Enabled = false;
                 contextMenuStrip_gpt.Items[3].Enabled = false;
-                contextMenuStrip_gpt.Items[4].Enabled = false;
-                contextMenuStrip_gpt.Items[6].Enabled = false;
+                contextMenuStrip_gpt.Items[5].Enabled = false;
                 contextMenuStrip_gpt.Items[7].Enabled = false;
+                contextMenuStrip_gpt.Items[8].Enabled = false;
             }
             else
             {
                 contextMenuStrip_gpt.Items[0].Enabled = true;
+                contextMenuStrip_gpt.Items[1].Enabled = true;
                 contextMenuStrip_gpt.Items[3].Enabled = true;
-                contextMenuStrip_gpt.Items[4].Enabled = true;
-                contextMenuStrip_gpt.Items[6].Enabled = true;
+                contextMenuStrip_gpt.Items[5].Enabled = true;
+                contextMenuStrip_gpt.Items[7].Enabled = true;
             }
         }
 
@@ -1870,8 +1872,8 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Label_total_blocks_TextChanged(object sender, EventArgs e)
         {
-            if (Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors == 0) contextMenuStrip_gpt.Items[1].Enabled = false;
-            else contextMenuStrip_gpt.Items[1].Enabled = true;
+            if (Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors == 0) contextMenuStrip_gpt.Items[4].Enabled = false;
+            else contextMenuStrip_gpt.Items[4].Enabled = true;
         }
 
         private void СохранитьСектораПоНомеруdumpSectorNumderToolStripMenuItem_Click(object sender, EventArgs e)
