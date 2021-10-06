@@ -2205,7 +2205,7 @@ namespace FirehoseFinder
             }
             //MessageBox.Show("Открываем новое окно для - " + selected_item.SubItems[2].Text);
 
-            ManagePartition MP = new ManagePartition();
+            ManagePartition MP = new ManagePartition(this);
             switch (MP.ShowDialog())
             {
                 case DialogResult.OK:

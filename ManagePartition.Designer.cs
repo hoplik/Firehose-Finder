@@ -67,7 +67,7 @@ namespace FirehoseFinder
             this.tableLayoutPanel_MP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_MP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel_MP.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel_MP.Size = new System.Drawing.Size(800, 424);
+            this.tableLayoutPanel_MP.Size = new System.Drawing.Size(959, 445);
             this.tableLayoutPanel_MP.TabIndex = 0;
             // 
             // label_MP_Titul
@@ -78,17 +78,18 @@ namespace FirehoseFinder
             this.label_MP_Titul.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_MP_Titul.Location = new System.Drawing.Point(3, 0);
             this.label_MP_Titul.Name = "label_MP_Titul";
-            this.label_MP_Titul.Size = new System.Drawing.Size(594, 70);
+            this.label_MP_Titul.Size = new System.Drawing.Size(711, 70);
             this.label_MP_Titul.TabIndex = 4;
-            this.label_MP_Titul.Text = "Внимание! Работа с разделом -\r\nДо завершения операции кнопки не активны.";
+            this.label_MP_Titul.Text = "Внимание! Сейчас проводится работа с разделом -\r\nДо завершения операции кнопки бу" +
+    "дут не активны.";
             // 
             // button_MP_Save
             // 
             this.button_MP_Save.BackColor = System.Drawing.Color.GreenYellow;
             this.button_MP_Save.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_MP_Save.Location = new System.Drawing.Point(3, 357);
+            this.button_MP_Save.Location = new System.Drawing.Point(3, 377);
             this.button_MP_Save.Name = "button_MP_Save";
-            this.button_MP_Save.Size = new System.Drawing.Size(194, 29);
+            this.button_MP_Save.Size = new System.Drawing.Size(233, 29);
             this.button_MP_Save.TabIndex = 0;
             this.button_MP_Save.Text = "Сохранить раздел";
             this.button_MP_Save.UseVisualStyleBackColor = false;
@@ -98,9 +99,9 @@ namespace FirehoseFinder
             // 
             this.button_MP_Erase.BackColor = System.Drawing.Color.Red;
             this.button_MP_Erase.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_MP_Erase.Location = new System.Drawing.Point(203, 357);
+            this.button_MP_Erase.Location = new System.Drawing.Point(242, 377);
             this.button_MP_Erase.Name = "button_MP_Erase";
-            this.button_MP_Erase.Size = new System.Drawing.Size(194, 29);
+            this.button_MP_Erase.Size = new System.Drawing.Size(233, 29);
             this.button_MP_Erase.TabIndex = 1;
             this.button_MP_Erase.Text = "Стереть раздел";
             this.button_MP_Erase.UseVisualStyleBackColor = false;
@@ -110,9 +111,9 @@ namespace FirehoseFinder
             // 
             this.button_MP_Load.BackColor = System.Drawing.SystemColors.Highlight;
             this.button_MP_Load.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_MP_Load.Location = new System.Drawing.Point(403, 357);
+            this.button_MP_Load.Location = new System.Drawing.Point(481, 377);
             this.button_MP_Load.Name = "button_MP_Load";
-            this.button_MP_Load.Size = new System.Drawing.Size(194, 29);
+            this.button_MP_Load.Size = new System.Drawing.Size(233, 29);
             this.button_MP_Load.TabIndex = 2;
             this.button_MP_Load.Text = "Записать из файла";
             this.button_MP_Load.UseVisualStyleBackColor = false;
@@ -121,9 +122,9 @@ namespace FirehoseFinder
             // button_MP_Cancel
             // 
             this.button_MP_Cancel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_MP_Cancel.Location = new System.Drawing.Point(603, 357);
+            this.button_MP_Cancel.Location = new System.Drawing.Point(720, 377);
             this.button_MP_Cancel.Name = "button_MP_Cancel";
-            this.button_MP_Cancel.Size = new System.Drawing.Size(194, 29);
+            this.button_MP_Cancel.Size = new System.Drawing.Size(236, 29);
             this.button_MP_Cancel.TabIndex = 3;
             this.button_MP_Cancel.Text = "Отмена";
             this.button_MP_Cancel.UseVisualStyleBackColor = true;
@@ -136,11 +137,12 @@ namespace FirehoseFinder
             this.checkBox_MP_Reboot.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tableLayoutPanel_MP.SetColumnSpan(this.checkBox_MP_Reboot, 4);
             this.checkBox_MP_Reboot.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox_MP_Reboot.Location = new System.Drawing.Point(3, 392);
+            this.checkBox_MP_Reboot.Location = new System.Drawing.Point(3, 412);
             this.checkBox_MP_Reboot.Name = "checkBox_MP_Reboot";
-            this.checkBox_MP_Reboot.Size = new System.Drawing.Size(794, 29);
+            this.checkBox_MP_Reboot.Size = new System.Drawing.Size(953, 30);
             this.checkBox_MP_Reboot.TabIndex = 5;
-            this.checkBox_MP_Reboot.Text = "После завершения операций перегрузить устройство в нормальный режим";
+            this.checkBox_MP_Reboot.Text = "После завершения операций  и нажатия кнопки \"Готово\" перегрузить устройство в нор" +
+    "мальный режим";
             this.checkBox_MP_Reboot.UseVisualStyleBackColor = true;
             // 
             // label_MP_Part
@@ -148,9 +150,9 @@ namespace FirehoseFinder
             this.label_MP_Part.AutoSize = true;
             this.label_MP_Part.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_MP_Part.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_MP_Part.Location = new System.Drawing.Point(603, 0);
+            this.label_MP_Part.Location = new System.Drawing.Point(720, 0);
             this.label_MP_Part.Name = "label_MP_Part";
-            this.label_MP_Part.Size = new System.Drawing.Size(194, 70);
+            this.label_MP_Part.Size = new System.Drawing.Size(236, 70);
             this.label_MP_Part.TabIndex = 6;
             this.label_MP_Part.Text = "***";
             // 
@@ -160,9 +162,9 @@ namespace FirehoseFinder
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel_MP,
             this.toolStripProgressBar_MP});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 424);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 445);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(959, 26);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -183,7 +185,7 @@ namespace FirehoseFinder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(959, 471);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel_MP);
             this.Controls.Add(this.statusStrip1);
