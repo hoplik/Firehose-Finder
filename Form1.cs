@@ -464,27 +464,10 @@ namespace FirehoseFinder
                     need_parsing_lun = true;
                     break;
             }
-            Process process2 = new Process();
-            process2.StartInfo.UseShellExecute = false;
-            process2.StartInfo.RedirectStandardOutput = true;
-            process2.StartInfo.CreateNoWindow = true;
-            process2.StartInfo.FileName = "fh_loader.exe";
-            process2.StartInfo.Arguments = fh_command_args.ToString();
-            try
-            {
-                process2.Start();
-                StreamReader reader2 = process2.StandardOutput;
-                string output_FH = reader2.ReadToEnd();
-                textBox_soft_term.AppendText(output_FH);
-                process2.WaitForExit();
-                process2.Close();
-                if (need_parsing_lun) NeedParsingLun(output_FH, lun_int);
-                if (getgpt) GetGPT(lun_int);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            string output_FH = func.FH_Commands(fh_command_args.ToString());
+            textBox_soft_term.AppendText(output_FH + Environment.NewLine);
+            if (need_parsing_lun) NeedParsingLun(output_FH, lun_int);
+            if (getgpt) GetGPT(lun_int);
         }
 
         private void NeedParsingLun(string output_FH, int lun_numder)
@@ -915,41 +898,6 @@ namespace FirehoseFinder
                 работаСУстройствомToolStripMenuItem.Checked = true;
                 tabControl1.SelectedTab = tabPage_phone;
                 tabControl_soft.SelectedTab = tabPage_sahara;
-            }
-        }
-
-        /// <summary>
-        /// Ставим галку на выбранной строке с программером
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGridView_final_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (!dataGridView_final.Rows[e.RowIndex].ReadOnly)
-                {
-                    if (Convert.ToBoolean(dataGridView_final["Column_Sel", e.RowIndex].Value) == true)
-                    {
-                        dataGridView_final["Column_Sel", e.RowIndex].Value = false;
-                        button_useSahara_fhf.Enabled = false;
-                        label_Sahara_fhf.Text = "Выберете программер на вкладке \"Работа с файлами\"";
-                    }
-                    else
-                    {
-                        for (int i = 0; i < dataGridView_final.Rows.Count; i++)
-                        {
-                            dataGridView_final["Column_Sel", i].Value = false;
-                        }
-                        dataGridView_final["Column_Sel", e.RowIndex].Value = true;
-                        button_useSahara_fhf.Enabled = true;
-                        label_Sahara_fhf.Text = dataGridView_final.SelectedRows[0].Cells[1].Value.ToString();
-                    }
-                }
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                MessageBox.Show("Стоит сначала выбрать рабочую директорию." + Environment.NewLine + ex.Message);
             }
         }
 
@@ -1747,6 +1695,8 @@ namespace FirehoseFinder
             label_total_blocks.Text = Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors.ToString("### ### ### ##0");
             label_total_gpt.Text = "0";
             label_select_gpt.Text = "0";
+            contextMenuStrip_gpt.Items[4].Enabled = false;
+            contextMenuStrip_gpt.Items[7].Enabled = false;
             listView_GPT.Items.Clear();
         }
         #endregion
@@ -2203,24 +2153,26 @@ namespace FirehoseFinder
             {
                 item.Checked = false;
             }
-            //MessageBox.Show("Открываем новое окно для - " + selected_item.SubItems[2].Text);
-
+            listView_GPT.SelectedItems[0].Checked = true;
             ManagePartition MP = new ManagePartition(this);
-            switch (MP.ShowDialog())
+            MP.ShowDialog();
+            switch (MP.button_MP_Cancel.Text)
             {
-                case DialogResult.OK:
+                case "Готово":
+                    textBox_soft_term.AppendText("Работа с разделом " + MP.label_MP_Part.Text + " завершена." + Environment.NewLine);
+                    if (MP.checkBox_MP_Reboot.Checked)
+                    {
+                        string fh_command_args = "--port=\\\\.\\" + serialPort1.PortName + " --noprompt --reset";
+                        textBox_soft_term.AppendText(func.FH_Commands(fh_command_args) + Environment.NewLine);
+                        StartStatus();
+                    }
                     break;
-                case DialogResult.Cancel:
-                    textBox_soft_term.AppendText("Форма работы с разделом закрыта без изменений." + Environment.NewLine);
-                    break;
-                case DialogResult.Abort:
-                    break;
-                case DialogResult.Retry:
+                case "Отмена":
+                    textBox_soft_term.AppendText("Форма работы с разделом " + MP.label_MP_Part.Text + " закрыта без изменений." + Environment.NewLine);
                     break;
                 default:
                     break;
             }
-            listView_GPT.SelectedItems[0].Checked = true;
         }
 
         /// <summary>
@@ -2241,6 +2193,46 @@ namespace FirehoseFinder
         private void ОткрытьДанныеРазделавНовомОкнеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Select_Partition(listView_GPT.SelectedItems[0]);
+        }
+
+        /// <summary>
+        /// Ставим галку на выбранной строке с программером
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGridView_final_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (!dataGridView_final.Rows[e.RowIndex].ReadOnly)
+                {
+                    if (Convert.ToBoolean(dataGridView_final["Column_Sel", e.RowIndex].Value) == true)
+                    {
+                        dataGridView_final["Column_Sel", e.RowIndex].Value = false;
+                        button_useSahara_fhf.Enabled = false;
+                        label_Sahara_fhf.Text = "Выберете программер на вкладке \"Работа с файлами\"";
+                    }
+                    else
+                    {
+                        for (int i = 0; i < dataGridView_final.Rows.Count; i++)
+                        {
+                            dataGridView_final["Column_Sel", i].Value = false;
+                        }
+                        dataGridView_final["Column_Sel", e.RowIndex].Value = true;
+                        button_useSahara_fhf.Enabled = true;
+                        label_Sahara_fhf.Text = dataGridView_final.SelectedRows[0].Cells[1].Value.ToString();
+                    }
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                //Просто игнорируем ошибку
+            }
+            catch (Exception ex)
+            {
+                textBox_main_term.AppendText(ex.Message + Environment.NewLine);
+                textBox_soft_term.AppendText(ex.Message + Environment.NewLine);
+            }
         }
     }
 }

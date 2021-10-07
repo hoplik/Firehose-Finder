@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -478,6 +479,35 @@ namespace FirehoseFinder
                 }
             }
             return string.Format("{0} {1}", total_size.ToString("N2", CultureInfo.CreateSpecificCulture("sv-SE")), byte_type);
+        }
+
+        /// <summary>
+        /// Выполнение FH_Loader с указанными параметрами
+        /// </summary>
+        /// <param name="com_args">Аргументы команды лоадеру</param>
+        /// <returns>Ответ лоадера по результатам исполнения команды</returns>
+        internal string FH_Commands(string com_args)
+        {
+            string output = string.Empty;
+            Process process = new Process();
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.FileName = "fh_loader.exe";
+            process.StartInfo.Arguments = com_args;
+            try
+            {
+                process.Start();
+                StreamReader reader = process.StandardOutput;
+                output = reader.ReadToEnd();
+                process.WaitForExit();
+                process.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return output;
         }
     }
 }
