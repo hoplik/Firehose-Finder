@@ -444,22 +444,49 @@ namespace FirehoseFinder
             switch (comboBox_fh_commands.SelectedIndex)
             {
                 case 0:
-                    textBox_soft_term.AppendText("Получаем информацию о запоминающем устройстве");
+                    textBox_soft_term.AppendText("Получаем информацию о запоминающем устройстве" + Environment.NewLine);
                     fh_command_args.Append(" --getstorageinfo=" + lun_int.ToString());
                     need_parsing_lun = true;
                     break;
                 case 1:
-                    textBox_soft_term.AppendText("Получаем таблицу разметки (GPT)");
+                    textBox_soft_term.AppendText("Получаем таблицу разметки (GPT)" + Environment.NewLine);
                     fh_command_args.Append(string.Format(" --getgptmainbackup=gpt_main{0}.bin --lun={0}", lun_int.ToString()));
                     getgpt = true;
                     break;
                 case 2:
-                    textBox_soft_term.AppendText("Перегружаем устройство в нормальный режим");
+                    textBox_soft_term.AppendText("Пишем/читаем байты по определённому адресу (peek&poke)" + Environment.NewLine);
+                    Peekpoke pp = new Peekpoke(this);
+                    pp.ShowDialog();
+                    //switch (pp.button_MP_Cancel.Text)
+                    //{
+                    //    case "Готово":
+                    //        textBox_soft_term.AppendText("Работа с разделом " + MP.label_MP_Part.Text + " завершена." + Environment.NewLine);
+                    //        if (MP.checkBox_MP_Reboot.Checked)
+                    //        {
+                    //            string fh_command_args = "--port=\\\\.\\" + serialPort1.PortName + " --noprompt --reset";
+                    //            textBox_soft_term.AppendText(func.FH_Commands(fh_command_args) + Environment.NewLine);
+                    //            StartStatus();
+                    //        }
+                    //        break;
+                    //    case "Отмена":
+                    //        textBox_soft_term.AppendText("Форма работы с разделом " + MP.label_MP_Part.Text + " закрыта без изменений." + Environment.NewLine);
+                    //        break;
+                    //    default:
+                    //        break;
+                    //}
+                    if (File.Exists("work.xml"))
+                    {
+                        fh_command_args.Append(string.Format(" --sendxml=work.xml –-search_path={0} --convertprogram2read --noprompt --showpercentagecomplete", Directory.GetCurrentDirectory()));
+                    }
+                    else textBox_soft_term.AppendText("XML-файл для работы не сформирован" + Environment.NewLine);
+                    break;
+                case 3:
+                    textBox_soft_term.AppendText("Перегружаем устройство в нормальный режим" + Environment.NewLine);
                     fh_command_args.Append(" --noprompt --reset");
                     StartStatus();
                     break;
                 default:
-                    textBox_soft_term.AppendText("Получаем информацию о запоминающем устройстве");
+                    textBox_soft_term.AppendText("Получаем информацию о запоминающем устройстве" + Environment.NewLine);
                     fh_command_args.Append(" --getstorageinfo=" + lun_int.ToString());
                     need_parsing_lun = true;
                     break;
