@@ -45,5 +45,19 @@ namespace FirehoseFinder
                 groupBox_poke.Enabled = true;
             }
         }
+
+        private void TextBox_poke_bytes_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox_poke_bytes.Text)) label_poke_cbytes.Text = "0";
+            else label_poke_cbytes.Text = (textBox_poke_bytes.Text.Length / 2).ToString();
+        }
+
+        private void TextBox_poke_bytes_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBox_poke_bytes.Text))
+            {
+                if (textBox_poke_bytes.Text.Length % 2 != 0) textBox_poke_bytes.Text.Insert(0, "0");
+            }
+        }
     }
 }

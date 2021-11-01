@@ -36,17 +36,17 @@ namespace FirehoseFinder
             this.radioButton_poke = new System.Windows.Forms.RadioButton();
             this.radioButton_peek = new System.Windows.Forms.RadioButton();
             this.groupBox_peek = new System.Windows.Forms.GroupBox();
-            this.groupBox_poke = new System.Windows.Forms.GroupBox();
-            this.label_peek_adr = new System.Windows.Forms.Label();
-            this.label_peek_cb = new System.Windows.Forms.Label();
-            this.textBox_peek_adr = new System.Windows.Forms.TextBox();
             this.textBox_peek_cb = new System.Windows.Forms.TextBox();
+            this.textBox_peek_adr = new System.Windows.Forms.TextBox();
+            this.label_peek_cb = new System.Windows.Forms.Label();
+            this.label_peek_adr = new System.Windows.Forms.Label();
+            this.groupBox_poke = new System.Windows.Forms.GroupBox();
+            this.label_poke_cbytes = new System.Windows.Forms.Label();
+            this.label_poke_cb = new System.Windows.Forms.Label();
             this.textBox_poke_bytes = new System.Windows.Forms.TextBox();
             this.textBox_poke_adr = new System.Windows.Forms.TextBox();
             this.label_poke_bytes = new System.Windows.Forms.Label();
             this.label_poke_adr = new System.Windows.Forms.Label();
-            this.label_poke_cb = new System.Windows.Forms.Label();
-            this.label_poke_cbytes = new System.Windows.Forms.Label();
             this.tableLayoutPanel_PP.SuspendLayout();
             this.panel_pp_select.SuspendLayout();
             this.groupBox_peek.SuspendLayout();
@@ -148,6 +148,42 @@ namespace FirehoseFinder
             this.groupBox_peek.TabStop = false;
             this.groupBox_peek.Text = "Читаем";
             // 
+            // textBox_peek_cb
+            // 
+            this.textBox_peek_cb.Location = new System.Drawing.Point(150, 69);
+            this.textBox_peek_cb.Name = "textBox_peek_cb";
+            this.textBox_peek_cb.Size = new System.Drawing.Size(100, 22);
+            this.textBox_peek_cb.TabIndex = 3;
+            this.textBox_peek_cb.Text = "1";
+            this.textBox_peek_cb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox_peek_adr
+            // 
+            this.textBox_peek_adr.Location = new System.Drawing.Point(150, 31);
+            this.textBox_peek_adr.Name = "textBox_peek_adr";
+            this.textBox_peek_adr.Size = new System.Drawing.Size(100, 22);
+            this.textBox_peek_adr.TabIndex = 2;
+            this.textBox_peek_adr.Text = "000000";
+            this.textBox_peek_adr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label_peek_cb
+            // 
+            this.label_peek_cb.AutoSize = true;
+            this.label_peek_cb.Location = new System.Drawing.Point(9, 74);
+            this.label_peek_cb.Name = "label_peek_cb";
+            this.label_peek_cb.Size = new System.Drawing.Size(125, 17);
+            this.label_peek_cb.TabIndex = 1;
+            this.label_peek_cb.Text = "Кол-во байт (dec)";
+            // 
+            // label_peek_adr
+            // 
+            this.label_peek_adr.AutoSize = true;
+            this.label_peek_adr.Location = new System.Drawing.Point(9, 36);
+            this.label_peek_adr.Name = "label_peek_adr";
+            this.label_peek_adr.Size = new System.Drawing.Size(106, 17);
+            this.label_peek_adr.TabIndex = 0;
+            this.label_peek_adr.Text = "Адрес (hex, 0x)";
+            // 
             // groupBox_poke
             // 
             this.groupBox_poke.Controls.Add(this.label_poke_cbytes);
@@ -165,37 +201,23 @@ namespace FirehoseFinder
             this.groupBox_poke.TabStop = false;
             this.groupBox_poke.Text = "Пишем";
             // 
-            // label_peek_adr
+            // label_poke_cbytes
             // 
-            this.label_peek_adr.AutoSize = true;
-            this.label_peek_adr.Location = new System.Drawing.Point(9, 36);
-            this.label_peek_adr.Name = "label_peek_adr";
-            this.label_peek_adr.Size = new System.Drawing.Size(106, 17);
-            this.label_peek_adr.TabIndex = 0;
-            this.label_peek_adr.Text = "Адрес (hex, 0x)";
+            this.label_poke_cbytes.AutoSize = true;
+            this.label_poke_cbytes.Location = new System.Drawing.Point(144, 74);
+            this.label_poke_cbytes.Name = "label_poke_cbytes";
+            this.label_poke_cbytes.Size = new System.Drawing.Size(16, 17);
+            this.label_poke_cbytes.TabIndex = 9;
+            this.label_poke_cbytes.Text = "0";
             // 
-            // label_peek_cb
+            // label_poke_cb
             // 
-            this.label_peek_cb.AutoSize = true;
-            this.label_peek_cb.Location = new System.Drawing.Point(9, 74);
-            this.label_peek_cb.Name = "label_peek_cb";
-            this.label_peek_cb.Size = new System.Drawing.Size(125, 17);
-            this.label_peek_cb.TabIndex = 1;
-            this.label_peek_cb.Text = "Кол-во байт (dec)";
-            // 
-            // textBox_peek_adr
-            // 
-            this.textBox_peek_adr.Location = new System.Drawing.Point(150, 31);
-            this.textBox_peek_adr.Name = "textBox_peek_adr";
-            this.textBox_peek_adr.Size = new System.Drawing.Size(100, 22);
-            this.textBox_peek_adr.TabIndex = 2;
-            // 
-            // textBox_peek_cb
-            // 
-            this.textBox_peek_cb.Location = new System.Drawing.Point(150, 69);
-            this.textBox_peek_cb.Name = "textBox_peek_cb";
-            this.textBox_peek_cb.Size = new System.Drawing.Size(100, 22);
-            this.textBox_peek_cb.TabIndex = 3;
+            this.label_poke_cb.AutoSize = true;
+            this.label_poke_cb.Location = new System.Drawing.Point(6, 74);
+            this.label_poke_cb.Name = "label_poke_cb";
+            this.label_poke_cb.Size = new System.Drawing.Size(125, 17);
+            this.label_poke_cb.TabIndex = 8;
+            this.label_poke_cb.Text = "Кол-во байт (dec)";
             // 
             // textBox_poke_bytes
             // 
@@ -203,6 +225,9 @@ namespace FirehoseFinder
             this.textBox_poke_bytes.Name = "textBox_poke_bytes";
             this.textBox_poke_bytes.Size = new System.Drawing.Size(238, 22);
             this.textBox_poke_bytes.TabIndex = 7;
+            this.textBox_poke_bytes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox_poke_bytes.TextChanged += new System.EventHandler(this.TextBox_poke_bytes_TextChanged);
+            this.textBox_poke_bytes.Leave += new System.EventHandler(this.TextBox_poke_bytes_Leave);
             // 
             // textBox_poke_adr
             // 
@@ -210,6 +235,7 @@ namespace FirehoseFinder
             this.textBox_poke_adr.Name = "textBox_poke_adr";
             this.textBox_poke_adr.Size = new System.Drawing.Size(100, 22);
             this.textBox_poke_adr.TabIndex = 6;
+            this.textBox_poke_adr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label_poke_bytes
             // 
@@ -228,24 +254,6 @@ namespace FirehoseFinder
             this.label_poke_adr.Size = new System.Drawing.Size(106, 17);
             this.label_poke_adr.TabIndex = 4;
             this.label_poke_adr.Text = "Адрес (hex, 0x)";
-            // 
-            // label_poke_cb
-            // 
-            this.label_poke_cb.AutoSize = true;
-            this.label_poke_cb.Location = new System.Drawing.Point(6, 74);
-            this.label_poke_cb.Name = "label_poke_cb";
-            this.label_poke_cb.Size = new System.Drawing.Size(125, 17);
-            this.label_poke_cb.TabIndex = 8;
-            this.label_poke_cb.Text = "Кол-во байт (dec)";
-            // 
-            // label_poke_cbytes
-            // 
-            this.label_poke_cbytes.AutoSize = true;
-            this.label_poke_cbytes.Location = new System.Drawing.Point(144, 74);
-            this.label_poke_cbytes.Name = "label_poke_cbytes";
-            this.label_poke_cbytes.Size = new System.Drawing.Size(16, 17);
-            this.label_poke_cbytes.TabIndex = 9;
-            this.label_poke_cbytes.Text = "0";
             // 
             // Peekpoke
             // 
