@@ -37,8 +37,20 @@ namespace FirehoseFinder
             this.radioButton_peek = new System.Windows.Forms.RadioButton();
             this.groupBox_peek = new System.Windows.Forms.GroupBox();
             this.groupBox_poke = new System.Windows.Forms.GroupBox();
+            this.label_peek_adr = new System.Windows.Forms.Label();
+            this.label_peek_cb = new System.Windows.Forms.Label();
+            this.textBox_peek_adr = new System.Windows.Forms.TextBox();
+            this.textBox_peek_cb = new System.Windows.Forms.TextBox();
+            this.textBox_poke_bytes = new System.Windows.Forms.TextBox();
+            this.textBox_poke_adr = new System.Windows.Forms.TextBox();
+            this.label_poke_bytes = new System.Windows.Forms.Label();
+            this.label_poke_adr = new System.Windows.Forms.Label();
+            this.label_poke_cb = new System.Windows.Forms.Label();
+            this.label_poke_cbytes = new System.Windows.Forms.Label();
             this.tableLayoutPanel_PP.SuspendLayout();
             this.panel_pp_select.SuspendLayout();
+            this.groupBox_peek.SuspendLayout();
+            this.groupBox_poke.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel_PP
@@ -124,6 +136,10 @@ namespace FirehoseFinder
             // 
             // groupBox_peek
             // 
+            this.groupBox_peek.Controls.Add(this.textBox_peek_cb);
+            this.groupBox_peek.Controls.Add(this.textBox_peek_adr);
+            this.groupBox_peek.Controls.Add(this.label_peek_cb);
+            this.groupBox_peek.Controls.Add(this.label_peek_adr);
             this.groupBox_peek.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_peek.Location = new System.Drawing.Point(3, 43);
             this.groupBox_peek.Name = "groupBox_peek";
@@ -134,6 +150,12 @@ namespace FirehoseFinder
             // 
             // groupBox_poke
             // 
+            this.groupBox_poke.Controls.Add(this.label_poke_cbytes);
+            this.groupBox_poke.Controls.Add(this.label_poke_cb);
+            this.groupBox_poke.Controls.Add(this.textBox_poke_bytes);
+            this.groupBox_poke.Controls.Add(this.textBox_poke_adr);
+            this.groupBox_poke.Controls.Add(this.label_poke_bytes);
+            this.groupBox_poke.Controls.Add(this.label_poke_adr);
             this.groupBox_poke.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_poke.Enabled = false;
             this.groupBox_poke.Location = new System.Drawing.Point(265, 43);
@@ -142,6 +164,88 @@ namespace FirehoseFinder
             this.groupBox_poke.TabIndex = 4;
             this.groupBox_poke.TabStop = false;
             this.groupBox_poke.Text = "Пишем";
+            // 
+            // label_peek_adr
+            // 
+            this.label_peek_adr.AutoSize = true;
+            this.label_peek_adr.Location = new System.Drawing.Point(9, 36);
+            this.label_peek_adr.Name = "label_peek_adr";
+            this.label_peek_adr.Size = new System.Drawing.Size(106, 17);
+            this.label_peek_adr.TabIndex = 0;
+            this.label_peek_adr.Text = "Адрес (hex, 0x)";
+            // 
+            // label_peek_cb
+            // 
+            this.label_peek_cb.AutoSize = true;
+            this.label_peek_cb.Location = new System.Drawing.Point(9, 74);
+            this.label_peek_cb.Name = "label_peek_cb";
+            this.label_peek_cb.Size = new System.Drawing.Size(125, 17);
+            this.label_peek_cb.TabIndex = 1;
+            this.label_peek_cb.Text = "Кол-во байт (dec)";
+            // 
+            // textBox_peek_adr
+            // 
+            this.textBox_peek_adr.Location = new System.Drawing.Point(150, 31);
+            this.textBox_peek_adr.Name = "textBox_peek_adr";
+            this.textBox_peek_adr.Size = new System.Drawing.Size(100, 22);
+            this.textBox_peek_adr.TabIndex = 2;
+            // 
+            // textBox_peek_cb
+            // 
+            this.textBox_peek_cb.Location = new System.Drawing.Point(150, 69);
+            this.textBox_peek_cb.Name = "textBox_peek_cb";
+            this.textBox_peek_cb.Size = new System.Drawing.Size(100, 22);
+            this.textBox_peek_cb.TabIndex = 3;
+            // 
+            // textBox_poke_bytes
+            // 
+            this.textBox_poke_bytes.Location = new System.Drawing.Point(9, 123);
+            this.textBox_poke_bytes.Name = "textBox_poke_bytes";
+            this.textBox_poke_bytes.Size = new System.Drawing.Size(238, 22);
+            this.textBox_poke_bytes.TabIndex = 7;
+            // 
+            // textBox_poke_adr
+            // 
+            this.textBox_poke_adr.Location = new System.Drawing.Point(147, 31);
+            this.textBox_poke_adr.Name = "textBox_poke_adr";
+            this.textBox_poke_adr.Size = new System.Drawing.Size(100, 22);
+            this.textBox_poke_adr.TabIndex = 6;
+            // 
+            // label_poke_bytes
+            // 
+            this.label_poke_bytes.AutoSize = true;
+            this.label_poke_bytes.Location = new System.Drawing.Point(6, 103);
+            this.label_poke_bytes.Name = "label_poke_bytes";
+            this.label_poke_bytes.Size = new System.Drawing.Size(186, 17);
+            this.label_poke_bytes.TabIndex = 5;
+            this.label_poke_bytes.Text = "Байты для записи (hex, 0x)";
+            // 
+            // label_poke_adr
+            // 
+            this.label_poke_adr.AutoSize = true;
+            this.label_poke_adr.Location = new System.Drawing.Point(6, 36);
+            this.label_poke_adr.Name = "label_poke_adr";
+            this.label_poke_adr.Size = new System.Drawing.Size(106, 17);
+            this.label_poke_adr.TabIndex = 4;
+            this.label_poke_adr.Text = "Адрес (hex, 0x)";
+            // 
+            // label_poke_cb
+            // 
+            this.label_poke_cb.AutoSize = true;
+            this.label_poke_cb.Location = new System.Drawing.Point(6, 74);
+            this.label_poke_cb.Name = "label_poke_cb";
+            this.label_poke_cb.Size = new System.Drawing.Size(125, 17);
+            this.label_poke_cb.TabIndex = 8;
+            this.label_poke_cb.Text = "Кол-во байт (dec)";
+            // 
+            // label_poke_cbytes
+            // 
+            this.label_poke_cbytes.AutoSize = true;
+            this.label_poke_cbytes.Location = new System.Drawing.Point(144, 74);
+            this.label_poke_cbytes.Name = "label_poke_cbytes";
+            this.label_poke_cbytes.Size = new System.Drawing.Size(16, 17);
+            this.label_poke_cbytes.TabIndex = 9;
+            this.label_poke_cbytes.Text = "0";
             // 
             // Peekpoke
             // 
@@ -154,6 +258,10 @@ namespace FirehoseFinder
             this.tableLayoutPanel_PP.ResumeLayout(false);
             this.panel_pp_select.ResumeLayout(false);
             this.panel_pp_select.PerformLayout();
+            this.groupBox_peek.ResumeLayout(false);
+            this.groupBox_peek.PerformLayout();
+            this.groupBox_poke.ResumeLayout(false);
+            this.groupBox_poke.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -168,5 +276,15 @@ namespace FirehoseFinder
         private System.Windows.Forms.RadioButton radioButton_peek;
         private System.Windows.Forms.GroupBox groupBox_peek;
         private System.Windows.Forms.GroupBox groupBox_poke;
+        private System.Windows.Forms.Label label_peek_cb;
+        private System.Windows.Forms.Label label_peek_adr;
+        private System.Windows.Forms.TextBox textBox_peek_cb;
+        private System.Windows.Forms.TextBox textBox_peek_adr;
+        private System.Windows.Forms.Label label_poke_cbytes;
+        private System.Windows.Forms.Label label_poke_cb;
+        private System.Windows.Forms.TextBox textBox_poke_bytes;
+        private System.Windows.Forms.TextBox textBox_poke_adr;
+        private System.Windows.Forms.Label label_poke_bytes;
+        private System.Windows.Forms.Label label_poke_adr;
     }
 }
