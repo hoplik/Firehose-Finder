@@ -22,10 +22,28 @@ namespace FirehoseFinder
             Hide();
         }
 
-        private void button_pp_ok_Click(object sender, EventArgs e)
+        private void Button_pp_ok_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Создали xml-файл");
             Hide();
+        }
+
+        private void RadioButton_peek_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_peek.Checked)
+            {
+                groupBox_peek.Enabled = true;
+                groupBox_poke.Enabled = false;
+            }
+        }
+
+        private void RadioButton_poke_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_poke.Checked)
+            {
+                groupBox_peek.Enabled = false;
+                groupBox_poke.Enabled = true;
+            }
         }
     }
 }
