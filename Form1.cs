@@ -56,9 +56,11 @@ namespace FirehoseFinder
                     case 0x8000: //Новое usb подключено
                         NeedReset = false;
                         CheckListPorts();
+                        ClearListViewDevices();
                         break;
                     case 0x0007: //Любое изменение конфигурации оборудования
                         CheckListPorts();
+                        ClearListViewDevices();
                         break;
                     default:
                         break;
@@ -1726,6 +1728,22 @@ namespace FirehoseFinder
             contextMenuStrip_gpt.Items[7].Enabled = false;
             listView_GPT.Items.Clear();
         }
+
+        /// <summary>
+        /// Очищаем список подключённых устройств
+        /// </summary>
+        private void ClearListViewDevices()
+        {
+            if(listView_ADB_devices.Items.Count>0) listView_ADB_devices.Items.Clear();
+            listView_ADB_devices.Enabled = false;
+            button_ADB_comstart.Enabled = false;
+            groupBox_adb_commands.Enabled = false;
+            if (listView_fb_devices.Items.Count > 0) listView_fb_devices.Items.Clear();
+            listView_fb_devices.Enabled = false;
+            button_fb_com_start.Enabled = false;
+            groupBox_fb_commands.Enabled = false;
+        }
+
         #endregion
 
         private void ВыбратьВсеРазделыToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1982,9 +2000,11 @@ namespace FirehoseFinder
 
         private bool FB_Check()
         {
+            bool goodjob = false;
             Process process = new Process();
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.FileName = "fastboot.exe";
             process.StartInfo.Arguments = "devices -l";
@@ -1994,20 +2014,30 @@ namespace FirehoseFinder
 
                 process.Start();
                 string normstr = process.StandardOutput.ReadToEnd();
+                string errstr = process.StandardError.ReadToEnd();
                 if (!string.IsNullOrEmpty(normstr))
                 {
                     Pars_FB_Dev(normstr);//Разбираем полученный массив на список устройств
                     textBox_soft_term.AppendText("Получили: " + normstr + Environment.NewLine);
+                    goodjob = true;
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(errstr))
+                    {
+                        Pars_FB_Dev(errstr);//Разбираем полученный массив на список устройств
+                        textBox_soft_term.AppendText("Получили er: " + errstr + Environment.NewLine);
+                        goodjob = true;
+                    }
                 }
                 process.WaitForExit();
                 process.Close();
-                return true;
             }
             catch (Exception ex)
             {
                 textBox_soft_term.AppendText(ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine);
-                return false;
             }
+            return goodjob;
         }
 
         /// <summary>
