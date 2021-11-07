@@ -145,6 +145,7 @@ namespace FirehoseFinder
             { "commandop02.bin" },
             { "commandop03.bin" },
             { "commandop07.bin" },
+            { "work.xml" },
             { "port_trace.txt" },
             { "gpt_backup0.bin" },
             { "gpt_main0.bin" }

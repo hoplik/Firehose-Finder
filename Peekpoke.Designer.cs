@@ -165,6 +165,7 @@ namespace FirehoseFinder
             this.textBox_peek_adr.TabIndex = 2;
             this.textBox_peek_adr.Text = "000000";
             this.textBox_peek_adr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox_peek_adr.TextChanged += new System.EventHandler(this.TextBox_peek_adr_TextChanged);
             // 
             // label_peek_cb
             // 
@@ -236,6 +237,7 @@ namespace FirehoseFinder
             this.textBox_poke_adr.Size = new System.Drawing.Size(100, 22);
             this.textBox_poke_adr.TabIndex = 6;
             this.textBox_poke_adr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox_poke_adr.TextChanged += new System.EventHandler(this.TextBox_poke_adr_TextChanged);
             // 
             // label_poke_bytes
             // 

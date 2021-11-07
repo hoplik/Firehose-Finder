@@ -458,29 +458,22 @@ namespace FirehoseFinder
                 case 2:
                     textBox_soft_term.AppendText("Пишем/читаем байты по определённому адресу (peek&poke)" + Environment.NewLine);
                     Peekpoke pp = new Peekpoke(this);
-                    pp.ShowDialog();
-                    //switch (pp.button_MP_Cancel.Text)
-                    //{
-                    //    case "Готово":
-                    //        textBox_soft_term.AppendText("Работа с разделом " + MP.label_MP_Part.Text + " завершена." + Environment.NewLine);
-                    //        if (MP.checkBox_MP_Reboot.Checked)
-                    //        {
-                    //            string fh_command_args = "--port=\\\\.\\" + serialPort1.PortName + " --noprompt --reset";
-                    //            textBox_soft_term.AppendText(func.FH_Commands(fh_command_args) + Environment.NewLine);
-                    //            StartStatus();
-                    //        }
-                    //        break;
-                    //    case "Отмена":
-                    //        textBox_soft_term.AppendText("Форма работы с разделом " + MP.label_MP_Part.Text + " закрыта без изменений." + Environment.NewLine);
-                    //        break;
-                    //    default:
-                    //        break;
-                    //}
-                    if (File.Exists("work.xml"))
+                    switch (pp.ShowDialog())
                     {
-                        fh_command_args.Append(string.Format(" --sendxml=work.xml –-search_path={0} --convertprogram2read --noprompt --showpercentagecomplete", Directory.GetCurrentDirectory()));
+                        case DialogResult.OK:
+                            textBox_soft_term.AppendText("Работа с формой чтения/записи байт завершена." + Environment.NewLine);
+                            if (File.Exists("work.xml"))
+                            {
+                                fh_command_args.Append(string.Format(" --sendxml=work.xml --search_path={0} --convertprogram2read --noprompt --showpercentagecomplete", Directory.GetCurrentDirectory()));
+                            }
+                            else textBox_soft_term.AppendText("XML-файл для работы не сформирован" + Environment.NewLine);
+                            break;
+                        case DialogResult.Cancel:
+                            textBox_soft_term.AppendText("Форма чтения/записи байт закрыта без изменений." + Environment.NewLine);
+                            break;
+                        default:
+                            break;
                     }
-                    else textBox_soft_term.AppendText("XML-файл для работы не сформирован" + Environment.NewLine);
                     break;
                 case 3:
                     textBox_soft_term.AppendText("Перегружаем устройство в нормальный режим" + Environment.NewLine);
@@ -1734,7 +1727,7 @@ namespace FirehoseFinder
         /// </summary>
         private void ClearListViewDevices()
         {
-            if(listView_ADB_devices.Items.Count>0) listView_ADB_devices.Items.Clear();
+            if (listView_ADB_devices.Items.Count > 0) listView_ADB_devices.Items.Clear();
             listView_ADB_devices.Enabled = false;
             button_ADB_comstart.Enabled = false;
             groupBox_adb_commands.Enabled = false;
