@@ -464,7 +464,8 @@ namespace FirehoseFinder
                             textBox_soft_term.AppendText("Работа с формой чтения/записи байт завершена." + Environment.NewLine);
                             if (File.Exists("work.xml"))
                             {
-                                fh_command_args.Append(string.Format(" --sendxml=work.xml --search_path={0} --convertprogram2read --noprompt --showpercentagecomplete", Directory.GetCurrentDirectory()));
+                                fh_command_args.Append(string.Format(" --sendxml=work.xml --search_path={0} --noprompt", Directory.GetCurrentDirectory()));
+                                if (pp.radioButton_peek.Checked) fh_command_args.Append(" --convertprogram2read");
                             }
                             else textBox_soft_term.AppendText("XML-файл для работы не сформирован" + Environment.NewLine);
                             break;

@@ -283,7 +283,6 @@ namespace FirehoseFinder
         private System.Windows.Forms.Button button_pp_cancel;
         private System.Windows.Forms.Panel panel_pp_select;
         private System.Windows.Forms.RadioButton radioButton_poke;
-        private System.Windows.Forms.RadioButton radioButton_peek;
         private System.Windows.Forms.GroupBox groupBox_peek;
         private System.Windows.Forms.GroupBox groupBox_poke;
         private System.Windows.Forms.Label label_peek_cb;
@@ -296,5 +295,6 @@ namespace FirehoseFinder
         private System.Windows.Forms.TextBox textBox_poke_adr;
         private System.Windows.Forms.Label label_poke_bytes;
         private System.Windows.Forms.Label label_poke_adr;
+        internal System.Windows.Forms.RadioButton radioButton_peek;
     }
 }
