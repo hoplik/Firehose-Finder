@@ -452,7 +452,7 @@ namespace FirehoseFinder
                     break;
                 case 1:
                     textBox_soft_term.AppendText("Получаем таблицу разметки (GPT)" + Environment.NewLine);
-                    fh_command_args.Append(string.Format(" --getgptmainbackup=gpt_main{0}.bin --lun={0}", lun_int.ToString()));
+                    fh_command_args.Append(" --getgptmainbackup=" + lun_int.ToString());
                     getgpt = true;
                     break;
                 case 2:

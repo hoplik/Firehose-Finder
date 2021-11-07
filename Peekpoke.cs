@@ -36,7 +36,7 @@ namespace FirehoseFinder
                 "</data>", textBox_peek_adr.Text, textBox_peek_cb.Text));
             //Если решили записать байт
             if (radioButton_poke.Checked) doc.LoadXml(string.Format("<data>" +
-                "<poke address64 =\"0x{0}\" size_in_bytes =\"{1}\" value=\"0x{3}\"/>" +
+                "<poke address64 =\"0x{0}\" size_in_bytes =\"{1}\" value64=\"0x{3}\"/>" +
                 "</data>", textBox_poke_adr.Text, label_poke_cbytes.Text, textBox_poke_bytes.Text));
             XmlElement root = doc.DocumentElement;
             doc.InsertBefore(xmldecl, root);
