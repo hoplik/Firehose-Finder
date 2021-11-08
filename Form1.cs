@@ -387,8 +387,8 @@ namespace FirehoseFinder
             process1.StartInfo.UseShellExecute = false;
             process1.StartInfo.RedirectStandardOutput = true;
             process1.StartInfo.CreateNoWindow = true;
-            StringBuilder sahara_command_args = new StringBuilder("-p \\\\.\\" + serialPort1.PortName + " -s 13:");
-            StringBuilder fh_command_args = new StringBuilder("--port=\\\\.\\");
+            StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -s 13:");
+            StringBuilder fh_command_args = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
             bool need_parsing_lun = false; //Необходимо ли парсить данные хранилища
             bool getgpt = false; //Необходимо ли получить таблицу GPT
             button_Sahara_Ids.Enabled = false;
@@ -401,8 +401,29 @@ namespace FirehoseFinder
                 return;
             }
             sahara_command_args.Append(label_Sahara_fhf.Text);
-            if (radioButton_shortlog.Checked) sahara_command_args.Append(" -v 0");
-            if (radioButton_fulllog.Checked) sahara_command_args.Append(" -v 1");
+            switch (comboBox_log.SelectedIndex)
+            {
+                case 0:
+                    sahara_command_args.Append(" -v 0");
+                    fh_command_args.Append(" --loglevel=1");
+                    break;
+                case 1:
+                    sahara_command_args.Append(" -v 0");
+                    fh_command_args.Append(" --loglevel=0");
+                    break;
+                case 2:
+                    sahara_command_args.Append(" -v 1");
+                    fh_command_args.Append(" --loglevel=2");
+                    break;
+                case 3:
+                    sahara_command_args.Append(" -v 2");
+                    fh_command_args.Append(" --loglevel=3");
+                    break;
+                default:
+                    sahara_command_args.Append(" -v 0");
+                    fh_command_args.Append(" --loglevel=1");
+                    break;
+            }
             if (!FHAlreadyLoaded)
             {
                 if (NeedReset)
@@ -435,11 +456,8 @@ namespace FirehoseFinder
             comboBox_fh_commands.Enabled = true;
             comboBox_lun_count.Enabled = true;
             groupBox_mem_type.Enabled = true;
-            fh_command_args.Append(serialPort1.PortName);
             if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs");
             else fh_command_args.Append(" --memoryname=emmc");
-            if (radioButton_shortlog.Checked) fh_command_args.Append(" --loglevel=1");
-            if (radioButton_fulllog.Checked) fh_command_args.Append(" --loglevel=2");
             int lun_int = 0;
             if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
             groupBox_LUN.Text = "Диск " + lun_int.ToString();
@@ -456,6 +474,11 @@ namespace FirehoseFinder
                     getgpt = true;
                     break;
                 case 2:
+                    textBox_soft_term.AppendText("Перегружаем устройство в нормальный режим" + Environment.NewLine);
+                    fh_command_args.Append(" --noprompt --reset");
+                    StartStatus();
+                    break;
+                case 4:
                     textBox_soft_term.AppendText("Пишем/читаем байты по определённому адресу (peek&poke)" + Environment.NewLine);
                     Peekpoke pp = new Peekpoke(this);
                     switch (pp.ShowDialog())
@@ -475,11 +498,6 @@ namespace FirehoseFinder
                         default:
                             break;
                     }
-                    break;
-                case 3:
-                    textBox_soft_term.AppendText("Перегружаем устройство в нормальный режим" + Environment.NewLine);
-                    fh_command_args.Append(" --noprompt --reset");
-                    StartStatus();
                     break;
                 default:
                     textBox_soft_term.AppendText("Получаем информацию о запоминающем устройстве" + Environment.NewLine);
@@ -1541,7 +1559,7 @@ namespace FirehoseFinder
             //Выполняем запрос HWID-OEMID (command02, 03, 07)
             Process process = new Process();
             process.StartInfo.FileName = "QSaharaServer.exe";
-            process.StartInfo.Arguments = "-p \\\\.\\" + serialPort1.PortName + " -c 1 -c 2 -c 3 -c 7";
+            process.StartInfo.Arguments = "-u " + serialPort1.PortName.Remove(0, 3) + " -c 1 -c 2 -c 3 -c 7";
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.CreateNoWindow = true;
