@@ -1736,8 +1736,8 @@ namespace FirehoseFinder
             label_total_blocks.Text = Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors.ToString("### ### ### ##0");
             label_total_gpt.Text = "0";
             label_select_gpt.Text = "0";
-            contextMenuStrip_gpt.Items[4].Enabled = false;
-            contextMenuStrip_gpt.Items[7].Enabled = false;
+            contextMenuStrip_gpt.Items[3].Enabled = false;
+            contextMenuStrip_gpt.Items[6].Enabled = false;
             listView_GPT.Items.Clear();
         }
 
@@ -1764,6 +1764,9 @@ namespace FirehoseFinder
             {
                 item.Checked = true;
             }
+            сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
+            стеретьВыбранныйРазделToolStripMenuItem.Enabled = false;
+            записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
         }
 
         private void СброситьВыборdeselectAllToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1772,20 +1775,39 @@ namespace FirehoseFinder
             {
                 item.Checked = false;
             }
+            сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
+            стеретьВыбранныйРазделToolStripMenuItem.Enabled = false;
+            записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
         }
 
         private void ListView_GPT_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
-            label_select_gpt.Text = listView_GPT.CheckedItems.Count.ToString();
+            int cp = listView_GPT.CheckedItems.Count;
+            label_select_gpt.Text = cp.ToString();
+            if (cp==1)
+            {
+                сохранитьВыбранныйРазделToolStripMenuItem.Enabled = true;
+                стеретьВыбранныйРазделToolStripMenuItem.Enabled = true;
+                записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
+                стеретьВыбранныйРазделToolStripMenuItem.Enabled = false;
+                записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
+            }
         }
 
         private void ВыбратьРазделToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (ListViewItem item in listView_GPT.SelectedItems)
+            foreach (ListViewItem item in listView_GPT.Items)
             {
-                if (item.Checked) item.Checked = false;
-                else item.Checked = true;
+                item.Checked = false;
             }
+            listView_GPT.SelectedItems[0].Checked = true;
+            сохранитьВыбранныйРазделToolStripMenuItem.Enabled = true;
+            стеретьВыбранныйРазделToolStripMenuItem.Enabled = true;
+            записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = true;
         }
 
         private void СохранитьТаблицуВФайлmainGPTbinToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1824,15 +1846,15 @@ namespace FirehoseFinder
         private void Label_select_gpt_TextChanged(object sender, EventArgs e)
         {
             long selbytes = 0; //Размер выбранных секторов в байтах
-            if (label_select_gpt.Text.Equals(listView_GPT.Items.Count.ToString())) contextMenuStrip_gpt.Items[7].Enabled = false;
+            if (label_select_gpt.Text.Equals(listView_GPT.Items.Count.ToString())) contextMenuStrip_gpt.Items[6].Enabled = false;
             else
             {
-                contextMenuStrip_gpt.Items[7].Enabled = true;
+                contextMenuStrip_gpt.Items[6].Enabled = true;
             }
             if (label_select_gpt.Text.Equals("0"))
             {
-                contextMenuStrip_gpt.Items[5].Enabled = false;
-                contextMenuStrip_gpt.Items[8].Enabled = false;
+                contextMenuStrip_gpt.Items[4].Enabled = false;
+                contextMenuStrip_gpt.Items[7].Enabled = false;
             }
             else
             {
@@ -1840,8 +1862,8 @@ namespace FirehoseFinder
                 {
                     selbytes += Convert.ToInt64(item.SubItems[4].Text);
                 }
-                contextMenuStrip_gpt.Items[5].Enabled = true;
-                contextMenuStrip_gpt.Items[8].Enabled = true;
+                contextMenuStrip_gpt.Items[4].Enabled = true;
+                contextMenuStrip_gpt.Items[7].Enabled = true;
             }
             label_GPT_bytes.Text = func.Bytes_KB_MB(selbytes.ToString());
         }
@@ -1856,19 +1878,17 @@ namespace FirehoseFinder
             if (label_total_gpt.Text.Equals("0"))
             {
                 contextMenuStrip_gpt.Items[0].Enabled = false;
-                contextMenuStrip_gpt.Items[1].Enabled = false;
-                contextMenuStrip_gpt.Items[3].Enabled = false;
-                contextMenuStrip_gpt.Items[5].Enabled = false;
+                contextMenuStrip_gpt.Items[2].Enabled = false;
+                contextMenuStrip_gpt.Items[4].Enabled = false;
+                contextMenuStrip_gpt.Items[6].Enabled = false;
                 contextMenuStrip_gpt.Items[7].Enabled = false;
-                contextMenuStrip_gpt.Items[8].Enabled = false;
             }
             else
             {
                 contextMenuStrip_gpt.Items[0].Enabled = true;
-                contextMenuStrip_gpt.Items[1].Enabled = true;
-                contextMenuStrip_gpt.Items[3].Enabled = true;
-                contextMenuStrip_gpt.Items[5].Enabled = true;
-                contextMenuStrip_gpt.Items[7].Enabled = true;
+                contextMenuStrip_gpt.Items[2].Enabled = true;
+                contextMenuStrip_gpt.Items[4].Enabled = true;
+                contextMenuStrip_gpt.Items[6].Enabled = true;
             }
         }
 
@@ -1879,8 +1899,8 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Label_total_blocks_TextChanged(object sender, EventArgs e)
         {
-            if (Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors == 0) contextMenuStrip_gpt.Items[4].Enabled = false;
-            else contextMenuStrip_gpt.Items[4].Enabled = true;
+            if (Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors == 0) contextMenuStrip_gpt.Items[3].Enabled = false;
+            else contextMenuStrip_gpt.Items[3].Enabled = true;
         }
 
         private void СохранитьСектораПоНомеруdumpSectorNumderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1905,10 +1925,9 @@ namespace FirehoseFinder
             DialogResult result = folderBrowserDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
-                StringBuilder fh_all_args = new StringBuilder("--port=\\\\.\\");
+                StringBuilder fh_all_args = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
                 List<string> argsfordump = new List<string>(); //Необходимые данные для параллельного потока
                 int lun_int = 0;
-                fh_all_args.Append(serialPort1.PortName);
                 fh_all_args.Append(" --convertprogram2read");
                 if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
                 fh_all_args.Append(string.Format(" --lun={0}", lun_int));
@@ -1947,34 +1966,16 @@ namespace FirehoseFinder
             BackgroundWorker worker = sender as BackgroundWorker;
             List<string> do_str = new List<string>((List<string>)e.Argument);
             string dump_results = string.Empty; //Отчёт
-            Process process = new Process();
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.FileName = "fh_loader.exe";
             int count = 1;
             foreach (string str in do_str)
             {
-                process.StartInfo.Arguments = str.ToString();
                 string endoffilename = str.Remove(0, str.IndexOf("--sendimage=dump_") + 12);
                 int endoffile = endoffilename.IndexOf(' ');
                 string userState = endoffilename.Substring(0, endoffile); //Имя файла
-                try
-                {
-                    process.Start();
-                    StreamReader reader = process.StandardOutput;
-                    string output_dump = reader.ReadToEnd();
-                    dump_results += output_dump + Environment.NewLine;
-                    process.WaitForExit();
-                    worker.ReportProgress(count * 100 / do_str.Count, userState);
-                    count++;
-                }
-                catch (Exception ex)
-                {
-                    dump_results += "Ошибка сохранения дампа" + Environment.NewLine + ex.Message + Environment.NewLine;
-                }
+                dump_results += func.FH_Commands(str.ToString()) + Environment.NewLine;
+                worker.ReportProgress(count * 100 / do_str.Count, userState);
+                count++;
             }
-            process.Close();
             e.Result = dump_results;
             Thread.Sleep(1);
         }
@@ -2202,69 +2203,6 @@ namespace FirehoseFinder
         }
 
         /// <summary>
-        /// Открываем данные раздела по дабл-клику
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ListView_GPT_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            Select_Partition(listView_GPT.SelectedItems[0]);
-        }
-
-        /// <summary>
-        /// Команда открытия данных раздела
-        /// </summary>
-        /// <param name="selected_item">Выбранный раздел</param>
-        private void Select_Partition(ListViewItem selected_item)
-        {
-            //Сбросили выбор всех отмеченных галками разделов и открыли только один
-            foreach (ListViewItem item in listView_GPT.CheckedItems)
-            {
-                item.Checked = false;
-            }
-            listView_GPT.SelectedItems[0].Checked = true;
-            ManagePartition MP = new ManagePartition(this);
-            MP.ShowDialog();
-            switch (MP.button_MP_Cancel.Text)
-            {
-                case "Готово":
-                    textBox_soft_term.AppendText("Работа с разделом " + MP.label_MP_Part.Text + " завершена." + Environment.NewLine);
-                    if (MP.checkBox_MP_Reboot.Checked)
-                    {
-                        string fh_command_args = "--port=\\\\.\\" + serialPort1.PortName + " --noprompt --reset";
-                        textBox_soft_term.AppendText(func.FH_Commands(fh_command_args) + Environment.NewLine);
-                        StartStatus();
-                    }
-                    break;
-                case "Отмена":
-                    textBox_soft_term.AppendText("Форма работы с разделом " + MP.label_MP_Part.Text + " закрыта без изменений." + Environment.NewLine);
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        /// <summary>
-        /// Открываем данные раздела по энтеру
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ListView_GPT_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter) Select_Partition(listView_GPT.SelectedItems[0]);
-        }
-
-        /// <summary>
-        /// Открываем данные раздела из контекстного меню
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ОткрытьДанныеРазделавНовомОкнеToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Select_Partition(listView_GPT.SelectedItems[0]);
-        }
-
-        /// <summary>
         /// Ставим галку на выбранной строке с программером
         /// </summary>
         /// <param name="sender"></param>
@@ -2301,6 +2239,37 @@ namespace FirehoseFinder
             {
                 textBox_main_term.AppendText(ex.Message + Environment.NewLine);
                 textBox_soft_term.AppendText(ex.Message + Environment.NewLine);
+            }
+        }
+
+        private void СохранитьВыбранныйРазделToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Сохранили раздел");
+        }
+
+        private void СтеретьВыбранныйРазделToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Стёрли раздел");
+        }
+
+        private void ЗаписатьФайлВВыбранныйРазделLoadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Записали файл в раздел");
+        }
+
+        private void ListView_GPT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView_GPT.SelectedIndices[0]==listView_GPT.CheckedIndices[0])
+            {
+                сохранитьВыбранныйРазделToolStripMenuItem.Enabled = true;
+                стеретьВыбранныйРазделToolStripMenuItem.Enabled = true;
+                записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
+                стеретьВыбранныйРазделToolStripMenuItem.Enabled = false;
+                записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
             }
         }
     }

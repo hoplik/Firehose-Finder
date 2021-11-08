@@ -178,12 +178,6 @@
     <Compile Include="InsertModelForm.Designer.cs">
       <DependentUpon>InsertModelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagePartition.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagePartition.Designer.cs">
-      <DependentUpon>ManagePartition.cs</DependentUpon>
-    </Compile>
     <Compile Include="Peekpoke.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,9 +201,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InsertModelForm.resx">
       <DependentUpon>InsertModelForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagePartition.resx">
-      <DependentUpon>ManagePartition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Peekpoke.resx">
       <DependentUpon>Peekpoke.cs</DependentUpon>
