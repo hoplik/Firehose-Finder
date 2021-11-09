@@ -12,6 +12,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace FirehoseFinder
 {
@@ -107,15 +108,8 @@ namespace FirehoseFinder
                 Greeting greeting = new Greeting();
                 greeting.ShowDialog();
             }
-            //Закрываем запущенные процессы, если есть
-            foreach (Process adb_proc in Process.GetProcessesByName("adb"))
-            {
-                adb_proc.Kill();
-            }
-            foreach (Process fb_proc in Process.GetProcessesByName("fastboot"))
-            {
-                fb_proc.Kill();
-            }
+            //Закрываем запущенные процессы и чистим файлы (если есть что)
+            CleanFilesProcess();
         }
 
         /// <summary>
@@ -126,24 +120,7 @@ namespace FirehoseFinder
         private void Formfhf_FormClosing(object sender, FormClosingEventArgs e)
         {
             Settings.Default.Save(); //Сохраняем настройки
-            try
-            {
-                foreach (string cleanfile in guide.FilesToClean)
-                {
-                    if (File.Exists(cleanfile)) File.Delete(cleanfile);
-                }
-                foreach (Process adb_proc in Process.GetProcessesByName("adb"))
-                {
-                    adb_proc.Kill();
-                }
-                foreach (Process fb_proc in Process.GetProcessesByName("fastboot"))
-                {
-                    fb_proc.Kill();
-                }
-            }
-            catch (Exception)
-            {
-            }
+            CleanFilesProcess();
         }
 
         #region Функции команд контролов меню программы
@@ -1784,7 +1761,7 @@ namespace FirehoseFinder
         {
             int cp = listView_GPT.CheckedItems.Count;
             label_select_gpt.Text = cp.ToString();
-            if (cp==1)
+            if (cp == 1)
             {
                 сохранитьВыбранныйРазделToolStripMenuItem.Enabled = true;
                 стеретьВыбранныйРазделToolStripMenuItem.Enabled = true;
@@ -2242,35 +2219,123 @@ namespace FirehoseFinder
             }
         }
 
+        /// <summary>
+        /// Блокируем видимость для всего, кроме единственного выбора
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListView_GPT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listView_GPT.CheckedIndices.Count == 1 && listView_GPT.SelectedItems.Count == 1)
+            {
+                if (listView_GPT.SelectedIndices[0] == listView_GPT.CheckedIndices[0])
+                {
+                    сохранитьВыбранныйРазделToolStripMenuItem.Enabled = true;
+                    стеретьВыбранныйРазделToolStripMenuItem.Enabled = true;
+                    записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = true;
+                }
+                else
+                {
+                    сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
+                    стеретьВыбранныйРазделToolStripMenuItem.Enabled = false;
+                    записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Очищаем рабочую папку от файлов и систему от запущенных процессов
+        /// </summary>
+        private void CleanFilesProcess()
+        {
+            try
+            {
+                foreach (string cleanfile in guide.FilesToClean)
+                {
+                    if (File.Exists(cleanfile)) File.Delete(cleanfile);
+                }
+                foreach (string processforclose in guide.ProcessToClean)
+                {
+                    foreach (Process pfc in Process.GetProcessesByName(processforclose))
+                    {
+                        pfc.Kill();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                //Просто игнорируем все ошибки
+            }
+        }
+
         private void СохранитьВыбранныйРазделToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Сохранили раздел");
+            FhXmltoRW(true);
+
+
+            //            2.Read back image files with the argument--convertprogram2read.
+            //fh_loader.exe--port =\\.\COM5--sendxml = rawprogram_unsparse.xml--
+            //search_path = C:\images--noprompt--showpercentagecomplete--
+            //memoryname = eMMC--convertprogram2read
+
+            //            <? xml version = "1.0" ?>
+            //< data >
+            // < read SECTOR_SIZE_IN_BYTES = "512" filename = "dummy.bin"
+            //num_partition_sectors = "4096" physical_partition_number = "0" start_sector = "0" />
+            //    </ data >
         }
 
         private void СтеретьВыбранныйРазделToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Стёрли раздел");
+            DialogResult dr = MessageBox.Show("Предпринимается попытка ",
+                "Внимание!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (dr == DialogResult.OK)
+            {
+                //Создаём xml-файл для стирания
+                func.FhXmltoErase(listView_GPT.CheckedItems[0].SubItems[0].Text, listView_GPT.CheckedItems[0].SubItems[1].Text);
+                //Создаём аргументы для лоадера
+                StringBuilder Argstoxml = new StringBuilder();
+                //            Erase the data block with the following command:
+                //fh_loader.exe--port =\\.\COM5--sendxml = erase.xml –search_path = C:\images--
+                //noprompt--showpercentagecomplete--memoryname = EMMC
+                //При наличии файла запускаем процесс стирания в отдельном потоке
+                if (!backgroundWorker_xml.IsBusy && File.Exists("erase.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
+            }
         }
 
         private void ЗаписатьФайлВВыбранныйРазделLoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Записали файл в раздел");
+            FhXmltoRW(false);
         }
 
-        private void ListView_GPT_SelectedIndexChanged(object sender, EventArgs e)
+        private void FhXmltoRW(bool reading)
         {
-            if (listView_GPT.SelectedIndices[0]==listView_GPT.CheckedIndices[0])
+            //            <? xml version = "1.0" ?>
+            //< data >
+            // < program SECTOR_SIZE_IN_BYTES = "512" filename = "dummy.bin"
+            //num_partition_sectors = "4096" physical_partition_number = "0" start_sector = "0" />
+            //    </ data >
+            if (reading)
             {
-                сохранитьВыбранныйРазделToolStripMenuItem.Enabled = true;
-                стеретьВыбранныйРазделToolStripMenuItem.Enabled = true;
-                записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = true;
+                //Готовим файл для чтения
+                MessageBox.Show("Сохранили раздел");
             }
             else
             {
-                сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
-                стеретьВыбранныйРазделToolStripMenuItem.Enabled = false;
-                записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
+                //Готовим файл для записи
+                MessageBox.Show("Записали раздел");
             }
+        }
+
+        private void BackgroundWorker_xml_DoWork(object sender, DoWorkEventArgs e)
+        {
+            e.Result = func.FH_Commands(e.Argument.ToString());
+        }
+
+        private void BackgroundWorker_xml_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine);
+            else textBox_soft_term.AppendText(e.Result + Environment.NewLine + "Выполнение команды лоадера успешно завершено." + Environment.NewLine);
         }
     }
 }

@@ -139,16 +139,28 @@ namespace FirehoseFinder
         /// <summary>
         /// Список файлов, которые нужно удалить после закрытия программы
         /// </summary>
-        internal readonly List<string> FilesToClean = new List<string>(7)
+        internal readonly List<string> FilesToClean = new List<string>(9)
         {
             { "commandop01.bin" },
             { "commandop02.bin" },
             { "commandop03.bin" },
             { "commandop07.bin" },
             { "work.xml" },
+            { "erase.xml" },
             { "port_trace.txt" },
             { "gpt_backup0.bin" },
             { "gpt_main0.bin" }
+        };
+
+        /// <summary>
+        /// Список процессов, которые необходимо подчистить
+        /// </summary>
+        internal readonly List<string> ProcessToClean = new List<string>(4)
+        {
+            {"qsaharaserver" },
+            {"fh_loader" },
+            {"adb" },
+            {"fastboot" }
         };
     }
 
