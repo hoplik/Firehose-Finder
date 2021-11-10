@@ -456,6 +456,30 @@ namespace FirehoseFinder
                     StartStatus();
                     break;
                 case 4:
+                    textBox_soft_term.AppendText("Записываем bin-файл в выбранные сектора" + Environment.NewLine);
+                    Write_Sectors ws = new Write_Sectors(this);
+                    if (ws.ShowDialog() == DialogResult.OK)
+                    {
+                        if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                        {
+                            //Определяем путь к файлу
+                            string loadpath = openFileDialog1.FileName.Remove(openFileDialog1.FileName.IndexOf(openFileDialog1.SafeFileName) - 1);
+                            //Создаём xml-файл для записи
+                            func.FhXmltoRW(
+                                false,
+                                ws.textBox_secsize_ws.Text,
+                                openFileDialog1.SafeFileName,
+                                ws.textBox_disk_ws.Text,
+                                ws.textBox_start_ws.Text,
+                               (Convert.ToInt32(ws.textBox_count_ws.Text) - 1).ToString());
+                            //Создаём аргументы для лоадера и при наличии файла запускаем процесс записи
+                            if (File.Exists("p_r.xml")) fh_command_args.Append(" --sendxml=p_r.xml --noprompt --search_path=" + loadpath);
+                        }
+                        else textBox_soft_term.AppendText("Запись файла в разделы отменена пользователем." + Environment.NewLine);
+                    }
+                    else textBox_soft_term.AppendText("Запись файла в разделы отменена пользователем." + Environment.NewLine);
+                    break;
+                case 6:
                     textBox_soft_term.AppendText("Пишем/читаем байты по определённому адресу (peek&poke)" + Environment.NewLine);
                     Peekpoke pp = new Peekpoke(this);
                     switch (pp.ShowDialog())
@@ -1948,7 +1972,7 @@ namespace FirehoseFinder
             {
                 string endoffilename = str.Remove(0, str.IndexOf("--sendimage=dump_") + 12);
                 int endoffile = endoffilename.IndexOf(".bin");
-                string userState = endoffilename.Substring(0, endoffile); //Имя файла
+                string userState = endoffilename.Substring(0, endoffile + 4); //Имя файла
                 dump_results += func.FH_Commands(str.ToString()) + Environment.NewLine;
                 worker.ReportProgress(count * 100 / do_str.Count, userState);
                 count++;
@@ -2287,7 +2311,7 @@ namespace FirehoseFinder
                     listView_GPT.CheckedItems[0].SubItems[0].Text,
                     listView_GPT.CheckedItems[0].SubItems[1].Text);
                 //Создаём аргументы для лоадера
-                StringBuilder Argstoxml = new StringBuilder("--port =\\\\.\\" + serialPort1.PortName);
+                StringBuilder Argstoxml = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
                 Argstoxml.Append(" --sendxml=p_r.xml --noprompt --search_path=" + folderBrowserDialog1.SelectedPath);
                 switch (comboBox_log.SelectedIndex)
                 {
@@ -2332,7 +2356,7 @@ namespace FirehoseFinder
                 //Создаём xml-файл для стирания
                 func.FhXmltoErase(listView_GPT.CheckedItems[0].SubItems[0].Text, listView_GPT.CheckedItems[0].SubItems[1].Text);
                 //Создаём аргументы для лоадера
-                StringBuilder Argstoxml = new StringBuilder("--port =\\\\.\\" + serialPort1.PortName);
+                StringBuilder Argstoxml = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
                 Argstoxml.Append(" --sendxml=erase.xml --noprompt");
                 switch (comboBox_log.SelectedIndex)
                 {
@@ -2354,11 +2378,16 @@ namespace FirehoseFinder
                 }
                 if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs");
                 else Argstoxml.Append(" --memoryname=emmc");
-                //При наличии файла запускаем процесс стирания в отдельном потоке
-                if (!backgroundWorker_xml.IsBusy && File.Exists("erase.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
+                //При наличии файла запускаем процесс стирания в отдельном потоке (всё стирает!!!)
+                //if (!backgroundWorker_xml.IsBusy && File.Exists("erase.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
             }
         }
 
+        /// <summary>
+        /// Выбор контексного меню на запись раздела
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ЗаписатьФайлВВыбранныйРазделLoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -2367,14 +2396,14 @@ namespace FirehoseFinder
                 string loadpath = openFileDialog1.FileName.Remove(openFileDialog1.FileName.IndexOf(openFileDialog1.SafeFileName) - 1);
                 //Создаём xml-файл для записи
                 func.FhXmltoRW(
-                    true,
+                    false,
                     label_block_size.Text,
                     openFileDialog1.SafeFileName,
                     groupBox_LUN.Text.Remove(0, 5),
                     listView_GPT.CheckedItems[0].SubItems[0].Text,
                     listView_GPT.CheckedItems[0].SubItems[1].Text);
                 //Создаём аргументы для лоадера
-                StringBuilder Argstoxml = new StringBuilder("--port =\\\\.\\" + serialPort1.PortName);
+                StringBuilder Argstoxml = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
                 Argstoxml.Append(" --sendxml=p_r.xml --noprompt --search_path=" + loadpath);
                 switch (comboBox_log.SelectedIndex)
                 {
@@ -2409,7 +2438,24 @@ namespace FirehoseFinder
         private void BackgroundWorker_xml_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine);
-            else textBox_soft_term.AppendText(e.Result.ToString() + Environment.NewLine + "Выполнение команды лоадера успешно завершено." + Environment.NewLine);
+            else
+            {
+                string newfilename = "dump_" + listView_GPT.CheckedItems[0].SubItems[2].Text + ".bin";
+                if (File.Exists(newfilename))
+                {
+                    try
+                    {
+                        File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                    }
+                    catch (IOException)
+                    {
+                        File.Delete(folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                        File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                    }
+                    File.Delete(newfilename);
+                }
+                textBox_soft_term.AppendText(e.Result.ToString() + Environment.NewLine + "Выполнение команды лоадера успешно завершено." + Environment.NewLine);
+            }
         }
     }
 }
