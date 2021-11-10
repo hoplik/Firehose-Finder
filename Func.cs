@@ -534,6 +534,40 @@ namespace FirehoseFinder
                 MessageBox.Show("Не удалось создать xml-файл стирания разделов" + Environment.NewLine + ex.Message);
             }
         }
+
+        /// <summary>
+        /// Создаём файл чтения/записи
+        /// </summary>
+        /// <param name="reading">Чтение - true, запись - false</param>
+        /// <param name="SECTOR_SIZE">Размер сектора (512 или 4096)</param>
+        /// <param name="filename">Имя итогового файла чтения/записи (*.bin)</param>
+        /// <param name="physical_partition">Номер диска</param>
+        /// <param name="StartLBA">Хекс стартового адреса сектора</param>
+        /// <param name="EndLBA">Хекс последнего адреса сектора</param>
+        internal void FhXmltoRW(bool reading, string SECTOR_SIZE, string filename, string physical_partition, string StartLBA, string EndLBA)
+        {
+            XmlDocument doc = new XmlDocument();
+            XmlDeclaration xmldecl;
+            StringBuilder xmlloadargs = new StringBuilder("<data>");
+            xmldecl = doc.CreateXmlDeclaration("1.0", string.Empty, null);
+            uint blocks_count = Convert.ToUInt32(EndLBA, 16) - Convert.ToUInt32(StartLBA, 16) + 1;
+            if (reading) xmlloadargs.Append("<read"); //Готовим файл для чтения
+            else xmlloadargs.Append("<program"); //Готовим файл для записи
+            xmlloadargs.Append(string.Format(" SECTOR_SIZE_IN_BYTES=\"{0}\" filename=\"{1}\" num_partition_sectors=\"{2}\" physical_partition_number=\"{3}\" start_sector=\"0x{4}\"/>",
+                SECTOR_SIZE, filename, blocks_count.ToString(), physical_partition, StartLBA));
+            xmlloadargs.Append("</data>");
+            doc.LoadXml(xmlloadargs.ToString());
+            XmlElement root = doc.DocumentElement;
+            doc.InsertBefore(xmldecl, root);
+            try
+            {
+                doc.Save("p_r.xml");
+            }
+            catch (XmlException ex)
+            {
+                MessageBox.Show("Не удалось создать xml-файл чтения/записи разделов" + Environment.NewLine + ex.Message);
+            }
+        }
     }
 }
 

@@ -1908,7 +1908,7 @@ namespace FirehoseFinder
                 fh_all_args.Append(" --convertprogram2read");
                 if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
                 fh_all_args.Append(string.Format(" --lun={0}", lun_int));
-                fh_all_args.Append(" --noprompt --zlpawarehost=1"); // --showpercentagecomplete
+                fh_all_args.Append(" --noprompt --zlpawarehost=1");
                 if (radioButton_mem_ufs.Checked) fh_all_args.Append(" --memoryname=ufs");
                 else fh_all_args.Append(" --memoryname=emmc");
                 switch (ByBlocks)
@@ -1917,7 +1917,7 @@ namespace FirehoseFinder
                         foreach (ListViewItem item in listView_GPT.CheckedItems)
                         {
                             StringBuilder fh_mass_args = new StringBuilder(fh_all_args.ToString());
-                            fh_mass_args.Append(string.Format(" --sendimage=dump_{0}", item.SubItems[2].Text));
+                            fh_mass_args.Append(string.Format(" --sendimage=dump_{0}.bin", item.SubItems[2].Text));
                             fh_mass_args.Append(string.Format(" --start_sector={0}", Convert.ToInt32(item.SubItems[0].Text, 16)));
                             int NumSec = Convert.ToInt32(item.SubItems[1].Text, 16) - Convert.ToInt32(item.SubItems[0].Text, 16) + 1;
                             fh_mass_args.Append(string.Format(" --num_sectors={0}", NumSec));
@@ -1925,7 +1925,7 @@ namespace FirehoseFinder
                         }
                         break;
                     case false: //Один запрос по секторам
-                        string newfilename = string.Format("dump_sectors{0}_{1}", StartSector, NumSectors);
+                        string newfilename = string.Format("dump_sectors{0}_{1}.bin", StartSector, NumSectors);
                         fh_all_args.Append(" --sendimage=" + newfilename);
                         fh_all_args.Append(string.Format(" --start_sector={0}", StartSector));
                         fh_all_args.Append(string.Format(" --num_sectors={0}", NumSectors));
@@ -1947,7 +1947,7 @@ namespace FirehoseFinder
             foreach (string str in do_str)
             {
                 string endoffilename = str.Remove(0, str.IndexOf("--sendimage=dump_") + 12);
-                int endoffile = endoffilename.IndexOf(' ');
+                int endoffile = endoffilename.IndexOf(".bin");
                 string userState = endoffilename.Substring(0, endoffile); //Имя файла
                 dump_results += func.FH_Commands(str.ToString()) + Environment.NewLine;
                 worker.ReportProgress(count * 100 / do_str.Count, userState);
@@ -2268,36 +2268,92 @@ namespace FirehoseFinder
             }
         }
 
+        /// <summary>
+        /// Выбор контекстного меню для сохранения выбранного раздела
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void СохранитьВыбранныйРазделToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FhXmltoRW(true);
-
-
-            //            2.Read back image files with the argument--convertprogram2read.
-            //fh_loader.exe--port =\\.\COM5--sendxml = rawprogram_unsparse.xml--
-            //search_path = C:\images--noprompt--showpercentagecomplete--
-            //memoryname = eMMC--convertprogram2read
-
-            //            <? xml version = "1.0" ?>
-            //< data >
-            // < read SECTOR_SIZE_IN_BYTES = "512" filename = "dummy.bin"
-            //num_partition_sectors = "4096" physical_partition_number = "0" start_sector = "0" />
-            //    </ data >
+            DialogResult dr = folderBrowserDialog1.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                //Создаём xml-файл для чтения
+                func.FhXmltoRW(
+                    true,
+                    label_block_size.Text,
+                    "dump_" + listView_GPT.CheckedItems[0].SubItems[2].Text + ".bin",
+                    groupBox_LUN.Text.Remove(0, 5),
+                    listView_GPT.CheckedItems[0].SubItems[0].Text,
+                    listView_GPT.CheckedItems[0].SubItems[1].Text);
+                //Создаём аргументы для лоадера
+                StringBuilder Argstoxml = new StringBuilder("--port =\\\\.\\" + serialPort1.PortName);
+                Argstoxml.Append(" --sendxml=p_r.xml --noprompt --search_path=" + folderBrowserDialog1.SelectedPath);
+                switch (comboBox_log.SelectedIndex)
+                {
+                    case 0:
+                        Argstoxml.Append(" --loglevel=1");
+                        break;
+                    case 1:
+                        Argstoxml.Append(" --loglevel=0");
+                        break;
+                    case 2:
+                        Argstoxml.Append(" --loglevel=2");
+                        break;
+                    case 3:
+                        Argstoxml.Append(" --loglevel=3");
+                        break;
+                    default:
+                        Argstoxml.Append(" --loglevel=1");
+                        break;
+                }
+                if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs");
+                else Argstoxml.Append(" --memoryname=emmc");
+                Argstoxml.Append(" --convertprogram2read"); //Добавляем для операции чтения
+                //При наличии файла запускаем процесс чтения в отдельном потоке
+                if (!backgroundWorker_xml.IsBusy && File.Exists("p_r.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
+            }
         }
 
+        /// <summary>
+        /// Выбор контекстного меню на стирание раздела
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void СтеретьВыбранныйРазделToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Предпринимается попытка ",
-                "Внимание!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult dr = MessageBox.Show("Предпринимается попытка удаления информации с раздела памяти." +
+                "Продолжение операции - \"Ок\", Отмена операции - \"Отмена\"." +
+                "В случае, если вы согласитесь на продолжение операции, информация на выбранном разделе будет стёрта (заменена на 0х00 или 0хFF)." +
+                "Пожалуйста, дождитесь выполнения операции, о чём будет написано в окне лога.",
+                "Внимание! Осуществляется запись!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (dr == DialogResult.OK)
             {
                 //Создаём xml-файл для стирания
                 func.FhXmltoErase(listView_GPT.CheckedItems[0].SubItems[0].Text, listView_GPT.CheckedItems[0].SubItems[1].Text);
                 //Создаём аргументы для лоадера
-                StringBuilder Argstoxml = new StringBuilder();
-                //            Erase the data block with the following command:
-                //fh_loader.exe--port =\\.\COM5--sendxml = erase.xml –search_path = C:\images--
-                //noprompt--showpercentagecomplete--memoryname = EMMC
+                StringBuilder Argstoxml = new StringBuilder("--port =\\\\.\\" + serialPort1.PortName);
+                Argstoxml.Append(" --sendxml=erase.xml --noprompt");
+                switch (comboBox_log.SelectedIndex)
+                {
+                    case 0:
+                        Argstoxml.Append(" --loglevel=1");
+                        break;
+                    case 1:
+                        Argstoxml.Append(" --loglevel=0");
+                        break;
+                    case 2:
+                        Argstoxml.Append(" --loglevel=2");
+                        break;
+                    case 3:
+                        Argstoxml.Append(" --loglevel=3");
+                        break;
+                    default:
+                        Argstoxml.Append(" --loglevel=1");
+                        break;
+                }
+                if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs");
+                else Argstoxml.Append(" --memoryname=emmc");
                 //При наличии файла запускаем процесс стирания в отдельном потоке
                 if (!backgroundWorker_xml.IsBusy && File.Exists("erase.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
             }
@@ -2305,25 +2361,43 @@ namespace FirehoseFinder
 
         private void ЗаписатьФайлВВыбранныйРазделLoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FhXmltoRW(false);
-        }
-
-        private void FhXmltoRW(bool reading)
-        {
-            //            <? xml version = "1.0" ?>
-            //< data >
-            // < program SECTOR_SIZE_IN_BYTES = "512" filename = "dummy.bin"
-            //num_partition_sectors = "4096" physical_partition_number = "0" start_sector = "0" />
-            //    </ data >
-            if (reading)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                //Готовим файл для чтения
-                MessageBox.Show("Сохранили раздел");
-            }
-            else
-            {
-                //Готовим файл для записи
-                MessageBox.Show("Записали раздел");
+                //Определяем путь к файлу
+                string loadpath = openFileDialog1.FileName.Remove(openFileDialog1.FileName.IndexOf(openFileDialog1.SafeFileName) - 1);
+                //Создаём xml-файл для записи
+                func.FhXmltoRW(
+                    true,
+                    label_block_size.Text,
+                    openFileDialog1.SafeFileName,
+                    groupBox_LUN.Text.Remove(0, 5),
+                    listView_GPT.CheckedItems[0].SubItems[0].Text,
+                    listView_GPT.CheckedItems[0].SubItems[1].Text);
+                //Создаём аргументы для лоадера
+                StringBuilder Argstoxml = new StringBuilder("--port =\\\\.\\" + serialPort1.PortName);
+                Argstoxml.Append(" --sendxml=p_r.xml --noprompt --search_path=" + loadpath);
+                switch (comboBox_log.SelectedIndex)
+                {
+                    case 0:
+                        Argstoxml.Append(" --loglevel=1");
+                        break;
+                    case 1:
+                        Argstoxml.Append(" --loglevel=0");
+                        break;
+                    case 2:
+                        Argstoxml.Append(" --loglevel=2");
+                        break;
+                    case 3:
+                        Argstoxml.Append(" --loglevel=3");
+                        break;
+                    default:
+                        Argstoxml.Append(" --loglevel=1");
+                        break;
+                }
+                if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs");
+                else Argstoxml.Append(" --memoryname=emmc");
+                //При наличии файла запускаем процесс записи в отдельном потоке
+                if (!backgroundWorker_xml.IsBusy && File.Exists("p_r.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
             }
         }
 
@@ -2335,7 +2409,7 @@ namespace FirehoseFinder
         private void BackgroundWorker_xml_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine);
-            else textBox_soft_term.AppendText(e.Result + Environment.NewLine + "Выполнение команды лоадера успешно завершено." + Environment.NewLine);
+            else textBox_soft_term.AppendText(e.Result.ToString() + Environment.NewLine + "Выполнение команды лоадера успешно завершено." + Environment.NewLine);
         }
     }
 }
