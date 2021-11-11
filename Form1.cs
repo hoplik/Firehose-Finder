@@ -464,6 +464,8 @@ namespace FirehoseFinder
                         {
                             //Определяем путь к файлу
                             string loadpath = openFileDialog1.FileName.Remove(openFileDialog1.FileName.IndexOf(openFileDialog1.SafeFileName) - 1);
+                            //Определяем последний сектор для записи
+                            uint lastsec = Convert.ToUInt32(ws.textBox_start_ws.Text, 16) + Convert.ToUInt32(ws.textBox_count_ws.Text, 10) - 1;
                             //Создаём xml-файл для записи
                             func.FhXmltoRW(
                                 false,
@@ -471,7 +473,7 @@ namespace FirehoseFinder
                                 openFileDialog1.SafeFileName,
                                 ws.textBox_disk_ws.Text,
                                 ws.textBox_start_ws.Text,
-                               (Convert.ToInt32(ws.textBox_count_ws.Text) - 1).ToString());
+                                Convert.ToString(lastsec, 16));
                             //Создаём аргументы для лоадера и при наличии файла запускаем процесс записи
                             if (File.Exists("p_r.xml")) fh_command_args.Append(" --sendxml=p_r.xml --noprompt --search_path=" + loadpath);
                         }
@@ -2378,9 +2380,8 @@ namespace FirehoseFinder
                 }
                 if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs");
                 else Argstoxml.Append(" --memoryname=emmc");
-                //При наличии файла запускаем процесс стирания в отдельном потоке (всё стирает!!!)
-                MessageBox.Show("Функция пока тестируется", "В разработке", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                //if (!backgroundWorker_xml.IsBusy && File.Exists("erase.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
+                //При наличии файла запускаем процесс стирания в отдельном потоке
+                if (!backgroundWorker_xml.IsBusy && File.Exists("erase.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
             }
         }
 

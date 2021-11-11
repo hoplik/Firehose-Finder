@@ -489,13 +489,13 @@ namespace FirehoseFinder
         /// <returns>Ответ лоадера по результатам исполнения команды</returns>
         internal string FH_Commands(string com_args)
         {
-            string output = string.Empty;
             Process process = new Process();
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.FileName = "fh_loader.exe";
             process.StartInfo.Arguments = com_args;
+            string output;
             try
             {
                 process.Start();
@@ -506,7 +506,7 @@ namespace FirehoseFinder
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Не удалось выполнить fh_loader с указанными параметрами" + Environment.NewLine + ex.Message);
+                output = "Не удалось выполнить fh_loader с указанными параметрами" + Environment.NewLine + ex.Message;
             }
             return output;
         }
@@ -514,15 +514,15 @@ namespace FirehoseFinder
         /// <summary>
         /// Создаём xml-файл стирания секторов
         /// </summary>
-        internal void FhXmltoErase(string StartLBA, string EndLBA)
+        internal void FhXmltoErase(string HexStartLBA, string HexEndLBA)
         {
             XmlDocument doc = new XmlDocument();
             XmlDeclaration xmldecl;
             xmldecl = doc.CreateXmlDeclaration("1.0", string.Empty, null);
-            uint blocks_count = Convert.ToUInt32(EndLBA, 16) - Convert.ToUInt32(StartLBA, 16) + 1;
+            uint blocks_count = Convert.ToUInt32(HexEndLBA, 16) - Convert.ToUInt32(HexStartLBA, 16) + 1;
             doc.LoadXml(string.Format("<data>" +
-                "<erase start_sector=\"0x{0}\" num_partition_sectors=\"{1}\"/>" +
-                "</data>", StartLBA, blocks_count.ToString()));
+                "<erase start_sector=\"{0}\" num_partition_sectors=\"{1}\"/>" +
+                "</data>", Convert.ToUInt32(HexStartLBA, 16).ToString(), blocks_count.ToString()));
             XmlElement root = doc.DocumentElement;
             doc.InsertBefore(xmldecl, root);
             try
@@ -542,19 +542,19 @@ namespace FirehoseFinder
         /// <param name="SECTOR_SIZE">Размер сектора (512 или 4096)</param>
         /// <param name="filename">Имя итогового файла чтения/записи (*.bin)</param>
         /// <param name="physical_partition">Номер диска</param>
-        /// <param name="StartLBA">Хекс стартового адреса сектора</param>
-        /// <param name="EndLBA">Хекс последнего адреса сектора</param>
-        internal void FhXmltoRW(bool reading, string SECTOR_SIZE, string filename, string physical_partition, string StartLBA, string EndLBA)
+        /// <param name="HexStartLBA">Хекс стартового адреса сектора</param>
+        /// <param name="HexEndLBA">Хекс последнего адреса сектора</param>
+        internal void FhXmltoRW(bool reading, string SECTOR_SIZE, string filename, string physical_partition, string HexStartLBA, string HexEndLBA)
         {
             XmlDocument doc = new XmlDocument();
             XmlDeclaration xmldecl;
             StringBuilder xmlloadargs = new StringBuilder("<data>");
             xmldecl = doc.CreateXmlDeclaration("1.0", string.Empty, null);
-            uint blocks_count = Convert.ToUInt32(EndLBA, 16) - Convert.ToUInt32(StartLBA, 16) + 1;
+            uint blocks_count = Convert.ToUInt32(HexEndLBA, 16) - Convert.ToUInt32(HexStartLBA, 16) + 1;
             if (reading) xmlloadargs.Append("<read"); //Готовим файл для чтения
             else xmlloadargs.Append("<program"); //Готовим файл для записи
-            xmlloadargs.Append(string.Format(" SECTOR_SIZE_IN_BYTES=\"{0}\" filename=\"{1}\" num_partition_sectors=\"{2}\" physical_partition_number=\"{3}\" start_sector=\"0x{4}\"/>",
-                SECTOR_SIZE, filename, blocks_count.ToString(), physical_partition, StartLBA));
+            xmlloadargs.Append(string.Format(" SECTOR_SIZE_IN_BYTES=\"{0}\" filename=\"{1}\" num_partition_sectors=\"{2}\" physical_partition_number=\"{3}\" start_sector=\"{4}\"/>",
+                SECTOR_SIZE, filename, blocks_count.ToString(), physical_partition, Convert.ToUInt32(HexStartLBA, 16).ToString()));
             xmlloadargs.Append("</data>");
             doc.LoadXml(xmlloadargs.ToString());
             XmlElement root = doc.DocumentElement;
