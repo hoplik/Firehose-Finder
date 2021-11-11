@@ -2381,7 +2381,8 @@ namespace FirehoseFinder
                 if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs");
                 else Argstoxml.Append(" --memoryname=emmc");
                 //При наличии файла запускаем процесс стирания в отдельном потоке
-                if (!backgroundWorker_xml.IsBusy && File.Exists("erase.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
+                MessageBox.Show("Функция в разработке");
+                //if (!backgroundWorker_xml.IsBusy && File.Exists("erase.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
             }
         }
 
@@ -2392,6 +2393,11 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void ЗаписатьФайлВВыбранныйРазделLoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show("Предпринимается попытка записи информации в разделы памяти." +
+                "Для удобства отслеживания завершения записи можно очистить окно лога, нажав \"Ок\", оставить текущий лог в окне терминала - \"Отмена\"." +
+                "Пожалуйста, дождитесь выполнения операции, о чём будет написано в окне лога.",
+                "Внимание! Осуществляется запись!", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (dr == DialogResult.OK) textBox_soft_term.Text = string.Empty;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 //Определяем путь к файлу

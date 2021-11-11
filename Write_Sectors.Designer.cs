@@ -60,7 +60,7 @@ namespace FirehoseFinder
             this.groupBox_ws.Controls.Add(this.label_start_ws);
             this.groupBox_ws.Location = new System.Drawing.Point(12, 48);
             this.groupBox_ws.Name = "groupBox_ws";
-            this.groupBox_ws.Size = new System.Drawing.Size(517, 87);
+            this.groupBox_ws.Size = new System.Drawing.Size(575, 87);
             this.groupBox_ws.TabIndex = 4;
             this.groupBox_ws.TabStop = false;
             this.groupBox_ws.Text = "Записать bin-файл в сектора";
@@ -68,7 +68,7 @@ namespace FirehoseFinder
             // label_ss_ws
             // 
             this.label_ss_ws.AutoSize = true;
-            this.label_ss_ws.Location = new System.Drawing.Point(468, 59);
+            this.label_ss_ws.Location = new System.Drawing.Point(501, 59);
             this.label_ss_ws.Name = "label_ss_ws";
             this.label_ss_ws.Size = new System.Drawing.Size(39, 17);
             this.label_ss_ws.TabIndex = 9;
@@ -76,9 +76,9 @@ namespace FirehoseFinder
             // 
             // textBox_secsize_ws
             // 
-            this.textBox_secsize_ws.Location = new System.Drawing.Point(402, 54);
+            this.textBox_secsize_ws.Location = new System.Drawing.Point(456, 54);
             this.textBox_secsize_ws.Name = "textBox_secsize_ws";
-            this.textBox_secsize_ws.Size = new System.Drawing.Size(60, 22);
+            this.textBox_secsize_ws.Size = new System.Drawing.Size(41, 22);
             this.textBox_secsize_ws.TabIndex = 8;
             this.textBox_secsize_ws.Text = "512";
             this.textBox_secsize_ws.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -86,7 +86,7 @@ namespace FirehoseFinder
             // label_secsize_ws
             // 
             this.label_secsize_ws.AutoSize = true;
-            this.label_secsize_ws.Location = new System.Drawing.Point(222, 59);
+            this.label_secsize_ws.Location = new System.Drawing.Point(276, 59);
             this.label_secsize_ws.Name = "label_secsize_ws";
             this.label_secsize_ws.Size = new System.Drawing.Size(178, 17);
             this.label_secsize_ws.TabIndex = 7;
@@ -112,9 +112,9 @@ namespace FirehoseFinder
             // 
             // textBox_count_ws
             // 
-            this.textBox_count_ws.Location = new System.Drawing.Point(402, 21);
+            this.textBox_count_ws.Location = new System.Drawing.Point(456, 21);
             this.textBox_count_ws.Name = "textBox_count_ws";
-            this.textBox_count_ws.Size = new System.Drawing.Size(60, 22);
+            this.textBox_count_ws.Size = new System.Drawing.Size(41, 22);
             this.textBox_count_ws.TabIndex = 4;
             this.textBox_count_ws.Text = "34";
             this.textBox_count_ws.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -122,16 +122,16 @@ namespace FirehoseFinder
             // label_count1
             // 
             this.label_count1.AutoSize = true;
-            this.label_count1.Location = new System.Drawing.Point(468, 24);
+            this.label_count1.Location = new System.Drawing.Point(501, 24);
             this.label_count1.Name = "label_count1";
-            this.label_count1.Size = new System.Drawing.Size(40, 17);
+            this.label_count1.Size = new System.Drawing.Size(68, 17);
             this.label_count1.TabIndex = 3;
-            this.label_count1.Text = "штук";
+            this.label_count1.Text = "секторов";
             // 
             // label_count_ws
             // 
             this.label_count_ws.AutoSize = true;
-            this.label_count_ws.Location = new System.Drawing.Point(264, 24);
+            this.label_count_ws.Location = new System.Drawing.Point(318, 24);
             this.label_count_ws.Name = "label_count_ws";
             this.label_count_ws.Size = new System.Drawing.Size(132, 17);
             this.label_count_ws.TabIndex = 2;
@@ -139,7 +139,7 @@ namespace FirehoseFinder
             // 
             // textBox_start_ws
             // 
-            this.textBox_start_ws.Location = new System.Drawing.Point(195, 21);
+            this.textBox_start_ws.Location = new System.Drawing.Point(250, 21);
             this.textBox_start_ws.Name = "textBox_start_ws";
             this.textBox_start_ws.Size = new System.Drawing.Size(63, 22);
             this.textBox_start_ws.TabIndex = 1;
@@ -150,9 +150,9 @@ namespace FirehoseFinder
             this.label_start_ws.AutoSize = true;
             this.label_start_ws.Location = new System.Drawing.Point(6, 24);
             this.label_start_ws.Name = "label_start_ws";
-            this.label_start_ws.Size = new System.Drawing.Size(186, 17);
+            this.label_start_ws.Size = new System.Drawing.Size(243, 17);
             this.label_start_ws.TabIndex = 0;
-            this.label_start_ws.Text = "начиная с номера (hex, 0x)";
+            this.label_start_ws.Text = "начиная с номера сектора (hex, 0x)";
             // 
             // button_ws_ok
             // 
@@ -166,7 +166,7 @@ namespace FirehoseFinder
             // 
             // button_ws_cancel
             // 
-            this.button_ws_cancel.Location = new System.Drawing.Point(444, 141);
+            this.button_ws_cancel.Location = new System.Drawing.Point(506, 141);
             this.button_ws_cancel.Name = "button_ws_cancel";
             this.button_ws_cancel.Size = new System.Drawing.Size(75, 23);
             this.button_ws_cancel.TabIndex = 6;
@@ -187,7 +187,7 @@ namespace FirehoseFinder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 182);
+            this.ClientSize = new System.Drawing.Size(599, 182);
             this.Controls.Add(this.label_storinfo_ws);
             this.Controls.Add(this.button_ws_cancel);
             this.Controls.Add(this.button_ws_ok);
