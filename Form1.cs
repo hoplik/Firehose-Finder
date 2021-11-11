@@ -2379,6 +2379,7 @@ namespace FirehoseFinder
                 if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs");
                 else Argstoxml.Append(" --memoryname=emmc");
                 //При наличии файла запускаем процесс стирания в отдельном потоке (всё стирает!!!)
+                MessageBox.Show("Функция пока тестируется", "В разработке", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 //if (!backgroundWorker_xml.IsBusy && File.Exists("erase.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
             }
         }

@@ -61,7 +61,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-11-10T20:48:16">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-11-11T12:57:44">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -156,7 +156,7 @@
 <OEM_FH>0000</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>7C6DCA9BF5674291AA39DD55760C0D4B65C7A4223097AAB1DB791E2192002DDF</HASH_FH>
-<Model>C20S</Model>
+<Model>Hisense C20S</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D49D14D4/prog_ufs_firehose_8996_ddr.elf#</Url>

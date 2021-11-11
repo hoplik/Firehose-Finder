@@ -30,6 +30,9 @@ namespace FirehoseFinder
         private void InitializeComponent()
         {
             this.groupBox_ws = new System.Windows.Forms.GroupBox();
+            this.label_ss_ws = new System.Windows.Forms.Label();
+            this.textBox_secsize_ws = new System.Windows.Forms.TextBox();
+            this.label_secsize_ws = new System.Windows.Forms.Label();
             this.textBox_disk_ws = new System.Windows.Forms.TextBox();
             this.label_disk_ws = new System.Windows.Forms.Label();
             this.textBox_count_ws = new System.Windows.Forms.TextBox();
@@ -39,9 +42,7 @@ namespace FirehoseFinder
             this.label_start_ws = new System.Windows.Forms.Label();
             this.button_ws_ok = new System.Windows.Forms.Button();
             this.button_ws_cancel = new System.Windows.Forms.Button();
-            this.label_secsize_ws = new System.Windows.Forms.Label();
-            this.textBox_secsize_ws = new System.Windows.Forms.TextBox();
-            this.label_ss_ws = new System.Windows.Forms.Label();
+            this.label_storinfo_ws = new System.Windows.Forms.Label();
             this.groupBox_ws.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,12 +58,38 @@ namespace FirehoseFinder
             this.groupBox_ws.Controls.Add(this.label_count_ws);
             this.groupBox_ws.Controls.Add(this.textBox_start_ws);
             this.groupBox_ws.Controls.Add(this.label_start_ws);
-            this.groupBox_ws.Location = new System.Drawing.Point(12, 12);
+            this.groupBox_ws.Location = new System.Drawing.Point(12, 48);
             this.groupBox_ws.Name = "groupBox_ws";
             this.groupBox_ws.Size = new System.Drawing.Size(443, 87);
             this.groupBox_ws.TabIndex = 4;
             this.groupBox_ws.TabStop = false;
             this.groupBox_ws.Text = "Записать bin-файл в сектора";
+            // 
+            // label_ss_ws
+            // 
+            this.label_ss_ws.AutoSize = true;
+            this.label_ss_ws.Location = new System.Drawing.Point(397, 59);
+            this.label_ss_ws.Name = "label_ss_ws";
+            this.label_ss_ws.Size = new System.Drawing.Size(39, 17);
+            this.label_ss_ws.TabIndex = 9;
+            this.label_ss_ws.Text = "байт";
+            // 
+            // textBox_secsize_ws
+            // 
+            this.textBox_secsize_ws.Location = new System.Drawing.Point(331, 54);
+            this.textBox_secsize_ws.Name = "textBox_secsize_ws";
+            this.textBox_secsize_ws.Size = new System.Drawing.Size(60, 22);
+            this.textBox_secsize_ws.TabIndex = 8;
+            this.textBox_secsize_ws.Text = "512";
+            // 
+            // label_secsize_ws
+            // 
+            this.label_secsize_ws.AutoSize = true;
+            this.label_secsize_ws.Location = new System.Drawing.Point(184, 59);
+            this.label_secsize_ws.Name = "label_secsize_ws";
+            this.label_secsize_ws.Size = new System.Drawing.Size(141, 17);
+            this.label_secsize_ws.TabIndex = 7;
+            this.label_secsize_ws.Text = "с размером сектора";
             // 
             // textBox_disk_ws
             // 
@@ -126,7 +153,7 @@ namespace FirehoseFinder
             // 
             // button_ws_ok
             // 
-            this.button_ws_ok.Location = new System.Drawing.Point(12, 105);
+            this.button_ws_ok.Location = new System.Drawing.Point(12, 141);
             this.button_ws_ok.Name = "button_ws_ok";
             this.button_ws_ok.Size = new System.Drawing.Size(75, 23);
             this.button_ws_ok.TabIndex = 5;
@@ -136,45 +163,29 @@ namespace FirehoseFinder
             // 
             // button_ws_cancel
             // 
-            this.button_ws_cancel.Location = new System.Drawing.Point(380, 105);
+            this.button_ws_cancel.Location = new System.Drawing.Point(380, 141);
             this.button_ws_cancel.Name = "button_ws_cancel";
             this.button_ws_cancel.Size = new System.Drawing.Size(75, 23);
             this.button_ws_cancel.TabIndex = 6;
             this.button_ws_cancel.Text = "Отмена";
             this.button_ws_cancel.UseVisualStyleBackColor = true;
-            this.button_ws_cancel.Click += new System.EventHandler(this.button_ws_cancel_Click);
+            this.button_ws_cancel.Click += new System.EventHandler(this.Button_ws_cancel_Click);
             // 
-            // label_secsize_ws
+            // label_storinfo_ws
             // 
-            this.label_secsize_ws.AutoSize = true;
-            this.label_secsize_ws.Location = new System.Drawing.Point(184, 59);
-            this.label_secsize_ws.Name = "label_secsize_ws";
-            this.label_secsize_ws.Size = new System.Drawing.Size(141, 17);
-            this.label_secsize_ws.TabIndex = 7;
-            this.label_secsize_ws.Text = "с размером сектора";
-            // 
-            // textBox_secsize_ws
-            // 
-            this.textBox_secsize_ws.Location = new System.Drawing.Point(331, 54);
-            this.textBox_secsize_ws.Name = "textBox_secsize_ws";
-            this.textBox_secsize_ws.Size = new System.Drawing.Size(60, 22);
-            this.textBox_secsize_ws.TabIndex = 8;
-            this.textBox_secsize_ws.Text = "512";
-            // 
-            // label_ss_ws
-            // 
-            this.label_ss_ws.AutoSize = true;
-            this.label_ss_ws.Location = new System.Drawing.Point(397, 59);
-            this.label_ss_ws.Name = "label_ss_ws";
-            this.label_ss_ws.Size = new System.Drawing.Size(39, 17);
-            this.label_ss_ws.TabIndex = 9;
-            this.label_ss_ws.Text = "байт";
+            this.label_storinfo_ws.AutoSize = true;
+            this.label_storinfo_ws.Location = new System.Drawing.Point(21, 13);
+            this.label_storinfo_ws.Name = "label_storinfo_ws";
+            this.label_storinfo_ws.Size = new System.Drawing.Size(265, 17);
+            this.label_storinfo_ws.TabIndex = 7;
+            this.label_storinfo_ws.Text = "Размер сектора {0}, всего секторов {1}";
             // 
             // Write_Sectors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 136);
+            this.ClientSize = new System.Drawing.Size(472, 182);
+            this.Controls.Add(this.label_storinfo_ws);
             this.Controls.Add(this.button_ws_cancel);
             this.Controls.Add(this.button_ws_ok);
             this.Controls.Add(this.groupBox_ws);
@@ -182,9 +193,11 @@ namespace FirehoseFinder
             this.MinimizeBox = false;
             this.Name = "Write_Sectors";
             this.Text = "Записать сектора";
+            this.Shown += new System.EventHandler(this.Write_Sectors_Shown);
             this.groupBox_ws.ResumeLayout(false);
             this.groupBox_ws.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -203,5 +216,6 @@ namespace FirehoseFinder
         private System.Windows.Forms.Label label_ss_ws;
         internal System.Windows.Forms.TextBox textBox_secsize_ws;
         private System.Windows.Forms.Label label_secsize_ws;
+        private System.Windows.Forms.Label label_storinfo_ws;
     }
 }
