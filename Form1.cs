@@ -432,11 +432,12 @@ namespace FirehoseFinder
             //После первой выполненной команды по получению инфо хранилища делаем доступным выбор других команд
             comboBox_fh_commands.Enabled = true;
             comboBox_lun_count.Enabled = true;
+            comboBox_log.Enabled = true;
             groupBox_mem_type.Enabled = true;
-            if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs");
-            else fh_command_args.Append(" --memoryname=emmc");
             int lun_int = 0;
             if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
+            if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs --lun=" + lun_int.ToString());
+            else fh_command_args.Append(" --memoryname=emmc");
             groupBox_LUN.Text = "Диск " + lun_int.ToString();
             switch (comboBox_fh_commands.SelectedIndex)
             {
@@ -1731,6 +1732,7 @@ namespace FirehoseFinder
             comboBox_lun_count.SelectedIndex = 0;
             comboBox_lun_count.Text = comboBox_lun_count.SelectedItem.ToString();
             comboBox_lun_count.Enabled = false;
+            comboBox_log.Enabled = false;
             comboBox_fh_commands.SelectedIndex = 0;
             comboBox_fh_commands.Text = comboBox_fh_commands.SelectedItem.ToString();
             comboBox_fh_commands.Enabled = false;
@@ -1933,7 +1935,7 @@ namespace FirehoseFinder
                 int lun_int = 0;
                 fh_all_args.Append(" --convertprogram2read");
                 if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
-                fh_all_args.Append(string.Format(" --lun={0}", lun_int));
+                fh_all_args.Append(" --lun=" + lun_int);
                 fh_all_args.Append(" --noprompt --zlpawarehost=1");
                 if (radioButton_mem_ufs.Checked) fh_all_args.Append(" --memoryname=ufs");
                 else fh_all_args.Append(" --memoryname=emmc");
@@ -2333,7 +2335,7 @@ namespace FirehoseFinder
                         Argstoxml.Append(" --loglevel=1");
                         break;
                 }
-                if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs");
+                if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs --lun=" + groupBox_LUN.Text.Remove(0, 5));
                 else Argstoxml.Append(" --memoryname=emmc");
                 Argstoxml.Append(" --convertprogram2read"); //Добавляем для операции чтения
                 //При наличии файла запускаем процесс чтения в отдельном потоке
@@ -2378,11 +2380,11 @@ namespace FirehoseFinder
                         Argstoxml.Append(" --loglevel=1");
                         break;
                 }
-                if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs");
+                if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs --lun=" + groupBox_LUN.Text.Remove(0, 5));
                 else Argstoxml.Append(" --memoryname=emmc");
                 //При наличии файла запускаем процесс стирания в отдельном потоке
-                MessageBox.Show("Функция в разработке");
-                //if (!backgroundWorker_xml.IsBusy && File.Exists("erase.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
+                //MessageBox.Show("Функция в разработке");
+                if (!backgroundWorker_xml.IsBusy && File.Exists("erase.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
             }
         }
 
@@ -2431,7 +2433,7 @@ namespace FirehoseFinder
                         Argstoxml.Append(" --loglevel=1");
                         break;
                 }
-                if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs");
+                if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs --lun=" + groupBox_LUN.Text.Remove(0, 5));
                 else Argstoxml.Append(" --memoryname=emmc");
                 //При наличии файла запускаем процесс записи в отдельном потоке
                 if (!backgroundWorker_xml.IsBusy && File.Exists("p_r.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
