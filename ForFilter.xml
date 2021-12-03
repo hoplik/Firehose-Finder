@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-12-03T20:55:46">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-12-03T21:04:44">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -3276,7 +3276,7 @@
 <FullName>Snapdragon 855</FullName>
 <OEMID>0144</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>8362111A15F700DC4CDA0A4FE33942A67A462F1E293B93E65B12CD505CD0E637</HASHID>
+<HASHID>8362111A15F700DC4CDA0A4FE33942A67A462F1E293B93E65B12CD505CD0E6379286505FD4871FF0278DC7FC621D3BFA</HASHID>
 <Trademark>Xiaomi</Trademark>
 <Model>Black Shark 2</Model>
 <AltName>SKW-H0</AltName>
