@@ -512,30 +512,6 @@ namespace FirehoseFinder
         }
 
         /// <summary>
-        /// Создаём xml-файл стирания секторов
-        /// </summary>
-        internal void FhXmltoErase(string HexStartLBA, string HexEndLBA)
-        {
-            XmlDocument doc = new XmlDocument();
-            XmlDeclaration xmldecl;
-            xmldecl = doc.CreateXmlDeclaration("1.0", string.Empty, null);
-            uint blocks_count = Convert.ToUInt32(HexEndLBA, 16) - Convert.ToUInt32(HexStartLBA, 16) + 1;
-            doc.LoadXml(string.Format("<data>" +
-                "<erase start_sector=\"{0}\" num_partition_sectors=\"{1}\"/>" +
-                "</data>", Convert.ToUInt32(HexStartLBA, 16).ToString(), blocks_count.ToString()));
-            XmlElement root = doc.DocumentElement;
-            doc.InsertBefore(xmldecl, root);
-            try
-            {
-                doc.Save("erase.xml");
-            }
-            catch (XmlException ex)
-            {
-                MessageBox.Show("Не удалось создать xml-файл стирания разделов" + Environment.NewLine + ex.Message);
-            }
-        }
-
-        /// <summary>
         /// Создаём файл чтения/записи
         /// </summary>
         /// <param name="reading">Чтение - true, запись - false</param>

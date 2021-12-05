@@ -482,6 +482,19 @@ namespace FirehoseFinder
                     }
                     else textBox_soft_term.AppendText("Запись файла в разделы отменена пользователем." + Environment.NewLine);
                     break;
+                case 5:
+                    textBox_soft_term.AppendText("Стираем всю память!" + Environment.NewLine);
+                    if (MessageBox.Show("Осторожно, вы предпринимаете попытку стереть всю информацию из памяти устройства." +
+                        " Будут удалены (заменены на 0х00) все данные на флеш-памяти, включая таблицу разметки и все доступные пользователю разделы." +
+                        " Нажимая кнопку \"Ok\", вы подтверждаете выполнение операции. Это последнее предупреждение." +
+                        " Если вы не сделали резервной копии устройства, то сейчас самое время отменить операцию и заняться бэкапом.",
+                        "Внимание, удаление всей информации из памяти!",
+                        MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Warning,
+                        MessageBoxDefaultButton.Button2,
+                        MessageBoxOptions.DefaultDesktopOnly) == DialogResult.OK) fh_command_args.Append(" --noprompt --erase=" + lun_int.ToString());
+                    else textBox_soft_term.AppendText("Стирание всей памяти отменено пользователем." + Environment.NewLine);
+                    break;
                 case 6:
                     textBox_soft_term.AppendText("Пишем/читаем байты по определённому адресу (peek&poke)" + Environment.NewLine);
                     Peekpoke pp = new Peekpoke(this);
@@ -1770,7 +1783,6 @@ namespace FirehoseFinder
                 item.Checked = true;
             }
             сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
-            стеретьВыбранныйРазделToolStripMenuItem.Enabled = false;
             записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
         }
 
@@ -1781,7 +1793,6 @@ namespace FirehoseFinder
                 item.Checked = false;
             }
             сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
-            стеретьВыбранныйРазделToolStripMenuItem.Enabled = false;
             записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
         }
 
@@ -1792,13 +1803,11 @@ namespace FirehoseFinder
             if (cp == 1)
             {
                 сохранитьВыбранныйРазделToolStripMenuItem.Enabled = true;
-                стеретьВыбранныйРазделToolStripMenuItem.Enabled = true;
                 записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = true;
             }
             else
             {
                 сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
-                стеретьВыбранныйРазделToolStripMenuItem.Enabled = false;
                 записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
             }
         }
@@ -1811,20 +1820,19 @@ namespace FirehoseFinder
             }
             listView_GPT.SelectedItems[0].Checked = true;
             сохранитьВыбранныйРазделToolStripMenuItem.Enabled = true;
-            стеретьВыбранныйРазделToolStripMenuItem.Enabled = true;
             записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = true;
         }
 
         private void СохранитьТаблицуВФайлmainGPTbinToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (File.Exists("gpt_main0.bin"))
+            if (File.Exists("gpt_main0.bin") && File.Exists("gpt_backup0.bin"))
             {
-                DialogResult result = folderBrowserDialog1.ShowDialog();
-                if (result == DialogResult.OK)
+                if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
                 {
                     try
                     {
                         File.Copy("gpt_main0.bin", folderBrowserDialog1.SelectedPath + "\\gpt_main0.bin");
+                        File.Copy("gpt_backup0.bin", folderBrowserDialog1.SelectedPath + "\\gpt_backup0.bin");
                         textBox_soft_term.AppendText("Сохранение файла таблицы разметки в выбранную папку прошло успешно." + Environment.NewLine);
                     }
                     catch (Exception ex)
@@ -2259,13 +2267,11 @@ namespace FirehoseFinder
                 if (listView_GPT.SelectedIndices[0] == listView_GPT.CheckedIndices[0])
                 {
                     сохранитьВыбранныйРазделToolStripMenuItem.Enabled = true;
-                    стеретьВыбранныйРазделToolStripMenuItem.Enabled = true;
                     записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = true;
                 }
                 else
                 {
                     сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
-                    стеретьВыбранныйРазделToolStripMenuItem.Enabled = false;
                     записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
                 }
             }
@@ -2340,51 +2346,6 @@ namespace FirehoseFinder
                 Argstoxml.Append(" --convertprogram2read"); //Добавляем для операции чтения
                 //При наличии файла запускаем процесс чтения в отдельном потоке
                 if (!backgroundWorker_xml.IsBusy && File.Exists("p_r.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
-            }
-        }
-
-        /// <summary>
-        /// Выбор контекстного меню на стирание раздела
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void СтеретьВыбранныйРазделToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Предпринимается попытка удаления информации с раздела памяти." +
-                "Продолжение операции - \"Ок\", Отмена операции - \"Отмена\"." +
-                "В случае, если вы согласитесь на продолжение операции, информация на выбранном разделе будет стёрта (заменена на 0х00 или 0хFF)." +
-                "Пожалуйста, дождитесь выполнения операции, о чём будет написано в окне лога.",
-                "Внимание! Осуществляется запись!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if (dr == DialogResult.OK)
-            {
-                //Создаём xml-файл для стирания
-                func.FhXmltoErase(listView_GPT.CheckedItems[0].SubItems[0].Text, listView_GPT.CheckedItems[0].SubItems[1].Text);
-                //Создаём аргументы для лоадера
-                StringBuilder Argstoxml = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
-                Argstoxml.Append(" --sendxml=erase.xml --noprompt");
-                switch (comboBox_log.SelectedIndex)
-                {
-                    case 0:
-                        Argstoxml.Append(" --loglevel=1");
-                        break;
-                    case 1:
-                        Argstoxml.Append(" --loglevel=0");
-                        break;
-                    case 2:
-                        Argstoxml.Append(" --loglevel=2");
-                        break;
-                    case 3:
-                        Argstoxml.Append(" --loglevel=3");
-                        break;
-                    default:
-                        Argstoxml.Append(" --loglevel=1");
-                        break;
-                }
-                if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs --lun=" + groupBox_LUN.Text.Remove(0, 5));
-                else Argstoxml.Append(" --memoryname=emmc");
-                //При наличии файла запускаем процесс стирания в отдельном потоке
-                //MessageBox.Show("Функция в разработке");
-                if (!backgroundWorker_xml.IsBusy && File.Exists("erase.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
             }
         }
 

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -32,11 +25,11 @@ namespace FirehoseFinder
             xmldecl = doc.CreateXmlDeclaration("1.0", string.Empty, null);
             //Если решили прочитать байт
             if (radioButton_peek.Checked) doc.LoadXml(string.Format("<data>" +
-                "<peek address64 =\"0x{0}\" size_in_bytes =\"{1}\"/>" +
+                "<peek address64=\"0x{0}\" size_in_bytes=\"{1}\"/>" +
                 "</data>", textBox_peek_adr.Text, textBox_peek_cb.Text));
             //Если решили записать байт
             if (radioButton_poke.Checked) doc.LoadXml(string.Format("<data>" +
-                "<poke address64 =\"0x{0}\" size_in_bytes =\"{1}\" value64=\"0x{3}\"/>" +
+                "<poke address64=\"0x{0}\" size_in_bytes=\"{1}\" value64=\"0x{3}\"/>" +
                 "</data>", textBox_poke_adr.Text, label_poke_cbytes.Text, textBox_poke_bytes.Text));
             XmlElement root = doc.DocumentElement;
             doc.InsertBefore(xmldecl, root);
