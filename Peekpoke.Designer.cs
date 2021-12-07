@@ -150,11 +150,11 @@ namespace FirehoseFinder
             // 
             // textBox_peek_cb
             // 
-            this.textBox_peek_cb.Location = new System.Drawing.Point(150, 69);
+            this.textBox_peek_cb.Location = new System.Drawing.Point(161, 69);
             this.textBox_peek_cb.Name = "textBox_peek_cb";
-            this.textBox_peek_cb.Size = new System.Drawing.Size(100, 22);
+            this.textBox_peek_cb.Size = new System.Drawing.Size(89, 22);
             this.textBox_peek_cb.TabIndex = 3;
-            this.textBox_peek_cb.Text = "1";
+            this.textBox_peek_cb.Text = "8";
             this.textBox_peek_cb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox_peek_adr
@@ -163,7 +163,7 @@ namespace FirehoseFinder
             this.textBox_peek_adr.Name = "textBox_peek_adr";
             this.textBox_peek_adr.Size = new System.Drawing.Size(100, 22);
             this.textBox_peek_adr.TabIndex = 2;
-            this.textBox_peek_adr.Text = "000000";
+            this.textBox_peek_adr.Text = "10000";
             this.textBox_peek_adr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox_peek_adr.TextChanged += new System.EventHandler(this.TextBox_peek_adr_TextChanged);
             // 
@@ -172,9 +172,9 @@ namespace FirehoseFinder
             this.label_peek_cb.AutoSize = true;
             this.label_peek_cb.Location = new System.Drawing.Point(9, 74);
             this.label_peek_cb.Name = "label_peek_cb";
-            this.label_peek_cb.Size = new System.Drawing.Size(125, 17);
+            this.label_peek_cb.Size = new System.Drawing.Size(146, 17);
             this.label_peek_cb.TabIndex = 1;
-            this.label_peek_cb.Text = "Кол-во байт (dec)";
+            this.label_peek_cb.Text = "Кол-во байт (hex, 0x)";
             // 
             // label_peek_adr
             // 
@@ -205,7 +205,7 @@ namespace FirehoseFinder
             // label_poke_cbytes
             // 
             this.label_poke_cbytes.AutoSize = true;
-            this.label_poke_cbytes.Location = new System.Drawing.Point(144, 74);
+            this.label_poke_cbytes.Location = new System.Drawing.Point(154, 74);
             this.label_poke_cbytes.Name = "label_poke_cbytes";
             this.label_poke_cbytes.Size = new System.Drawing.Size(16, 17);
             this.label_poke_cbytes.TabIndex = 9;
@@ -216,9 +216,9 @@ namespace FirehoseFinder
             this.label_poke_cb.AutoSize = true;
             this.label_poke_cb.Location = new System.Drawing.Point(6, 74);
             this.label_poke_cb.Name = "label_poke_cb";
-            this.label_poke_cb.Size = new System.Drawing.Size(125, 17);
+            this.label_poke_cb.Size = new System.Drawing.Size(146, 17);
             this.label_poke_cb.TabIndex = 8;
-            this.label_poke_cb.Text = "Кол-во байт (dec)";
+            this.label_poke_cb.Text = "Кол-во байт (hex, 0x)";
             // 
             // textBox_poke_bytes
             // 

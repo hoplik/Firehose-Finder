@@ -501,13 +501,13 @@ namespace FirehoseFinder
                     switch (pp.ShowDialog())
                     {
                         case DialogResult.OK:
-                            textBox_soft_term.AppendText("Работа с формой чтения/записи байт завершена." + Environment.NewLine);
                             if (File.Exists("work.xml"))
                             {
                                 fh_command_args.Append(string.Format(" --sendxml=work.xml --search_path={0} --noprompt", Directory.GetCurrentDirectory()));
                                 if (pp.radioButton_peek.Checked) fh_command_args.Append(" --convertprogram2read");
                             }
                             else textBox_soft_term.AppendText("XML-файл для работы не сформирован" + Environment.NewLine);
+                            textBox_soft_term.AppendText("Работа с формой чтения/записи байт завершена." + Environment.NewLine);
                             break;
                         case DialogResult.Cancel:
                             textBox_soft_term.AppendText("Форма чтения/записи байт закрыта без изменений." + Environment.NewLine);
@@ -1596,7 +1596,8 @@ namespace FirehoseFinder
             }
             NeedReset = true;
             //Обрабатываем запрос идентификаторов
-            //textBox_soft_term.AppendText("Получили S/N устройства - " + func.SaharaCommand1() + Environment.NewLine);
+            textBox_main_term.AppendText("Получили S/N CPU - " + func.SaharaCommand1() + Environment.NewLine);
+            textBox_soft_term.AppendText("Получили S/N CPU - " + func.SaharaCommand1() + Environment.NewLine);
             string HWOEMIDs = func.SaharaCommand2();
             if (HWOEMIDs.Length == 16)
             {
