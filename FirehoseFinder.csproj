@@ -172,6 +172,12 @@
       <DependentUpon>Greeting.cs</DependentUpon>
     </Compile>
     <Compile Include="Guide.cs" />
+    <Compile Include="Hex_Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hex_Search.Designer.cs">
+      <DependentUpon>Hex_Search.cs</DependentUpon>
+    </Compile>
     <Compile Include="InsertModelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,10 @@
     <Compile Include="Write_Sectors.Designer.cs">
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </Compile>
+    <None Include="Resources\Fh_Image.bmp" />
+    <EmbeddedResource Include="Hex_Search.resx">
+      <DependentUpon>Hex_Search.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Write_Sectors.resx">
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </EmbeddedResource>

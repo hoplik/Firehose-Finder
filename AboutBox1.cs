@@ -113,5 +113,17 @@ namespace FirehoseFinder
             ProcessStartInfo psinfo = new ProcessStartInfo("https://t.me/firehosefinder");
             Process.Start(psinfo);
         }
+
+        private void Button_donate_ymoney_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo psinfo = new ProcessStartInfo("https://yoomoney.ru/to/410011108517314");
+            Process.Start(psinfo);
+        }
+
+        private void Button_donate_pp_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo psinfo = new ProcessStartInfo("https://my.qiwi.com/Aleksandr-SFr4nxtZ1E");
+            Process.Start(psinfo);
+        }
     }
 }

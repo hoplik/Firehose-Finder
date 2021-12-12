@@ -70,6 +70,16 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Fh_Image {
+            get {
+                object obj = ResourceManager.GetObject("Fh_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на 			Краткий инструктаж.
         ///
         ///	Основной функционал приложения - поиск подходящего программера (firehose, пожарный шланг, шланг и т.п.) под определённое устройство.

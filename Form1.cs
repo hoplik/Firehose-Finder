@@ -2429,5 +2429,11 @@ namespace FirehoseFinder
                 textBox_soft_term.AppendText(e.Result.ToString() + Environment.NewLine + "Выполнение команды лоадера успешно завершено." + Environment.NewLine);
             }
         }
+
+        private void ПоискМаскиБайтToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hex_Search hsearch = new Hex_Search();
+            hsearch.ShowDialog();
+        }
     }
 }
