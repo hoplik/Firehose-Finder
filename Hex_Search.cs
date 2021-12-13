@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -64,12 +65,14 @@ namespace FirehoseFinder
         {
             string[] hex_search = (string[])e.Argument;
             FileInfo fi = new FileInfo(hex_search[0]);
-            List<string> addr_value_file = new List<string>
+            Dictionary<string, string> addr_value_file = new Dictionary<string, string>
             {
-                fi.Name
+                { "File", fi.Name }
             };
             if (fi.Length >= hex_search[1].Length / 2) //Длина файла должна быть не менее длины строки поиска
             {
+                int frontdump = 4; //Количество байт перед строкой поиска
+                int reardump = 4; //Количество байт после строки поиска
                 var chunk = new byte[hex_search[1].Length / 2];
                 using (var stream = File.OpenRead(hex_search[0]))
                 {
@@ -89,12 +92,12 @@ namespace FirehoseFinder
 
         private void BackgroundWorker_hex_search_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            List<string> result = (List<string>)e.Result;
-            if (result.Count > 1)
+            Dictionary<string, string> result = (Dictionary<string, string>)e.Result;
+            if (result.Count == 1)
             {
                 //По исполнению заполняем листвью списком совпадений
                 //ListViewGroup group = new ListViewGroup(filesafename);
-                ListViewItem hsearchres = new ListViewItem(new string[] { "0x10000", "****" + textBox_hexsearch.Text + "****", result[0] }); //Потом тут будет результат поиска
+                ListViewItem hsearchres = new ListViewItem(new string[] { "0x10000", "****" + textBox_hexsearch.Text + "****", result["File"] }); //Потом тут будет результат поиска
                 listView_hex_search.Items.Add(hsearchres);
             }
             else

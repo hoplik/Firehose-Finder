@@ -29,16 +29,13 @@ namespace FirehoseFinder
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Файл", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Файл", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hex_Search));
             this.label_hello = new System.Windows.Forms.Label();
             this.textBox_hexsearch = new System.Windows.Forms.TextBox();
             this.radioButton_file = new System.Windows.Forms.RadioButton();
             this.radioButton_dir = new System.Windows.Forms.RadioButton();
             this.button_start_search = new System.Windows.Forms.Button();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripProgressBar_hex_search = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripStatusLabel_search = new System.Windows.Forms.ToolStripStatusLabel();
             this.listView_hex_search = new System.Windows.Forms.ListView();
             this.columnHeader_adress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader_result = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,7 +43,10 @@ namespace FirehoseFinder
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker_hex_search = new System.ComponentModel.BackgroundWorker();
-            this.statusStrip1.SuspendLayout();
+            this.statusStrip_search = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBar_search = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabel_search = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip_search.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_hello
@@ -99,29 +99,6 @@ namespace FirehoseFinder
             this.button_start_search.UseVisualStyleBackColor = true;
             this.button_start_search.Click += new System.EventHandler(this.Button_start_search_Click);
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 218);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(993, 26);
-            this.statusStrip1.TabIndex = 5;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripProgressBar_hex_search
-            // 
-            this.toolStripProgressBar_hex_search.ForeColor = System.Drawing.Color.LimeGreen;
-            this.toolStripProgressBar_hex_search.Name = "toolStripProgressBar_hex_search";
-            this.toolStripProgressBar_hex_search.Size = new System.Drawing.Size(100, 18);
-            this.toolStripProgressBar_hex_search.Step = 1;
-            this.toolStripProgressBar_hex_search.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            // 
-            // toolStripStatusLabel_search
-            // 
-            this.toolStripStatusLabel_search.Name = "toolStripStatusLabel_search";
-            this.toolStripStatusLabel_search.Size = new System.Drawing.Size(100, 20);
-            this.toolStripStatusLabel_search.Text = "Оповещение";
-            // 
             // listView_hex_search
             // 
             this.listView_hex_search.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -129,10 +106,10 @@ namespace FirehoseFinder
             this.columnHeader_result,
             this.columnHeader_file});
             this.listView_hex_search.FullRowSelect = true;
-            listViewGroup2.Header = "Файл";
-            listViewGroup2.Name = "listViewGroup1";
+            listViewGroup1.Header = "Файл";
+            listViewGroup1.Name = "listViewGroup1";
             this.listView_hex_search.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup2});
+            listViewGroup1});
             this.listView_hex_search.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView_hex_search.HideSelection = false;
             this.listView_hex_search.Location = new System.Drawing.Point(12, 51);
@@ -156,7 +133,7 @@ namespace FirehoseFinder
             // columnHeader_file
             // 
             this.columnHeader_file.Text = "Файл";
-            this.columnHeader_file.Width = 736;
+            this.columnHeader_file.Width = 500;
             // 
             // folderBrowserDialog1
             // 
@@ -172,13 +149,39 @@ namespace FirehoseFinder
             this.backgroundWorker_hex_search.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_hex_search_DoWork);
             this.backgroundWorker_hex_search.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_hex_search_RunWorkerCompleted);
             // 
+            // statusStrip_search
+            // 
+            this.statusStrip_search.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip_search.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar_search,
+            this.toolStripStatusLabel_search});
+            this.statusStrip_search.Location = new System.Drawing.Point(0, 218);
+            this.statusStrip_search.Name = "statusStrip_search";
+            this.statusStrip_search.Size = new System.Drawing.Size(993, 26);
+            this.statusStrip_search.TabIndex = 7;
+            this.statusStrip_search.Text = "statusStrip1";
+            // 
+            // toolStripProgressBar_search
+            // 
+            this.toolStripProgressBar_search.ForeColor = System.Drawing.Color.LimeGreen;
+            this.toolStripProgressBar_search.Name = "toolStripProgressBar_search";
+            this.toolStripProgressBar_search.Size = new System.Drawing.Size(100, 18);
+            this.toolStripProgressBar_search.Step = 1;
+            this.toolStripProgressBar_search.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            // 
+            // toolStripStatusLabel_search
+            // 
+            this.toolStripStatusLabel_search.Name = "toolStripStatusLabel_search";
+            this.toolStripStatusLabel_search.Size = new System.Drawing.Size(100, 20);
+            this.toolStripStatusLabel_search.Text = "Оповещения";
+            // 
             // Hex_Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 244);
+            this.Controls.Add(this.statusStrip_search);
             this.Controls.Add(this.listView_hex_search);
-            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button_start_search);
             this.Controls.Add(this.radioButton_dir);
             this.Controls.Add(this.radioButton_file);
@@ -187,8 +190,8 @@ namespace FirehoseFinder
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Hex_Search";
             this.Text = "Hex_Search";
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.statusStrip_search.ResumeLayout(false);
+            this.statusStrip_search.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,8 +204,6 @@ namespace FirehoseFinder
         private System.Windows.Forms.RadioButton radioButton_file;
         private System.Windows.Forms.RadioButton radioButton_dir;
         private System.Windows.Forms.Button button_start_search;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar_hex_search;
         private System.Windows.Forms.ListView listView_hex_search;
         private System.Windows.Forms.ColumnHeader columnHeader_adress;
         private System.Windows.Forms.ColumnHeader columnHeader_result;
@@ -210,6 +211,8 @@ namespace FirehoseFinder
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ColumnHeader columnHeader_file;
         private System.ComponentModel.BackgroundWorker backgroundWorker_hex_search;
+        private System.Windows.Forms.StatusStrip statusStrip_search;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar_search;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_search;
     }
 }
