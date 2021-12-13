@@ -64,11 +64,13 @@ namespace FirehoseFinder
         {
             string[] hex_search = (string[])e.Argument;
             FileInfo fi = new FileInfo(hex_search[0]);
-            List<string> addr_value_file = new List<string>();
-            addr_value_file.Add(fi.Name);
+            List<string> addr_value_file = new List<string>
+            {
+                fi.Name
+            };
             if (fi.Length >= hex_search[1].Length / 2) //Длина файла должна быть не менее длины строки поиска
             {
-                byte[] chunk = new byte[hex_search[1].Length / 2];
+                var chunk = new byte[hex_search[1].Length / 2];
                 using (var stream = File.OpenRead(hex_search[0]))
                 {
                     //int byteschunk = stream.Read(chunk, 0, 4);

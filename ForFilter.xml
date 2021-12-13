@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-12-13T20:47:35">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-12-13T21:21:02">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -4502,6 +4502,16 @@
 <OEMID>0004</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>776C7351DC296C9F0ACA048D39247FEA559972CD61E6182BF1BBDD3F98D1E750857929A2A035D28D951615032DBD07EC</HASHID>
+<Trademark>ZTE</Trademark>
+<Model>ZTE A2322</Model>
+<AltName>CN_P870A01, Axon 30 5G</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000C30E1</HWID>
+<FullName>Snapdragon 865</FullName>
+<OEMID>0004</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>D40EEE56F3194665574109A39267724AE7944134CD53CB767E293D3C40497955BC8A4519FF992B031FADC6355015AC87</HASHID>
 <Trademark>ZTE</Trademark>
 <Model>ZTE A2322</Model>
 <AltName>CN_P870A01, Axon 30 5G</AltName>

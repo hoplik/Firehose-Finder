@@ -67,7 +67,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>fh.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\fh.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -280,7 +280,7 @@
     <Content Include="AdbWinUsbApi.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="fh.ico" />
+    <Content Include="Resources\fh.ico" />
     <Content Include="fh_loader.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

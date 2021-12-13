@@ -29,6 +29,7 @@ namespace FirehoseFinder
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dump_Sectors));
             this.button_dump_ok = new System.Windows.Forms.Button();
             this.button_dump_cancel = new System.Windows.Forms.Button();
             this.label_dump_max = new System.Windows.Forms.Label();
@@ -139,6 +140,7 @@ namespace FirehoseFinder
             this.Controls.Add(this.label_dump_max);
             this.Controls.Add(this.button_dump_cancel);
             this.Controls.Add(this.button_dump_ok);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Dump_Sectors";
