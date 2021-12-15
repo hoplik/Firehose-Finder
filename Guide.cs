@@ -51,7 +51,7 @@ namespace FirehoseFinder
         /// <summary>
         /// Дубликаты CPU
         /// </summary>
-        internal readonly Dictionary<string, string> Double_CPU = new Dictionary<string, string>(44)
+        internal readonly Dictionary<string, string> Double_CPU = new Dictionary<string, string>(48)
         {
             { "009F00E1", "APQ8056" },
             { "009710E1", "APQ8056" },

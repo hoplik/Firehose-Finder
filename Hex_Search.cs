@@ -54,8 +54,7 @@ namespace FirehoseFinder
             {
                 foreach (KeyValuePair<string, long> filename in filestosearch)
                 {
-                    //Передаём имя файла и строку поиска в паралельный поток
-                    string[] inputsearch = new string[2] { filename.Key, textBox_hexsearch.Text };
+                    string[] inputsearch = new string[2] { filename.Key, textBox_hexsearch.Text }; //Передаём полное имя файла и строку поиска в паралельный поток
                     if (!backgroundWorker_hex_search.IsBusy) backgroundWorker_hex_search.RunWorkerAsync(inputsearch);
                 }
             }
