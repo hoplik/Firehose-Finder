@@ -222,4 +222,28 @@ namespace FirehoseFinder
             Count_Lun = count_lun;
         }
     }
+
+    class Search_Hex
+    {
+        public List<string> FullFileNames;
+        public string SearchString;
+        public Search_Hex(List<string> fullfilenames, string searchstring)
+        {
+            FullFileNames = fullfilenames;
+            SearchString = searchstring;
+        }
+    }
+
+    class Search_Result
+    {
+        public string Adress_hex;
+        public string Result_String;
+        public string File_Name;
+        public Search_Result(string adress_hex, string result_string, string file_name)
+        {
+            Adress_hex = adress_hex;
+            Result_String = result_string;
+            File_Name = file_name;
+        }
+    }
 }

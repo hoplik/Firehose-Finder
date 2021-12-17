@@ -146,7 +146,9 @@ namespace FirehoseFinder
             // backgroundWorker_hex_search
             // 
             this.backgroundWorker_hex_search.WorkerReportsProgress = true;
+            this.backgroundWorker_hex_search.WorkerSupportsCancellation = true;
             this.backgroundWorker_hex_search.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_hex_search_DoWork);
+            this.backgroundWorker_hex_search.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_hex_search_ProgressChanged);
             this.backgroundWorker_hex_search.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_hex_search_RunWorkerCompleted);
             // 
             // statusStrip_search

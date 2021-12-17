@@ -52,57 +52,86 @@ namespace FirehoseFinder
             }
             if (filestosearch.Count > 0)
             {
+                List<string> inputsearch = new List<string>();
                 foreach (KeyValuePair<string, long> filename in filestosearch)
                 {
-                    string[] inputsearch = new string[2] { filename.Key, textBox_hexsearch.Text }; //Передаём полное имя файла и строку поиска в паралельный поток
-                    if (!backgroundWorker_hex_search.IsBusy) backgroundWorker_hex_search.RunWorkerAsync(inputsearch);
+                    inputsearch.Add(filename.Key);
+                }
+                if (backgroundWorker_hex_search.IsBusy)
+                {
+                    //Если поток ещё выполняется, предлагаем его остановить
+                }
+                else
+                {
+                    Search_Hex sh = new Search_Hex(inputsearch, textBox_hexsearch.Text); //Создаём сущность Словарь+поиск и её отправляем в поток
+                    backgroundWorker_hex_search.RunWorkerAsync(sh);
                 }
             }
         }
 
         private void BackgroundWorker_hex_search_DoWork(object sender, DoWorkEventArgs e)
         {
-            string[] hex_search = (string[])e.Argument;
-            FileInfo fi = new FileInfo(hex_search[0]);
-            Dictionary<string, string> addr_value_file = new Dictionary<string, string>
+            Search_Hex hex_search = (Search_Hex)e.Argument;
+            List<Search_Result> addr_value_file = new List<Search_Result>();
+            foreach (string fullfilename in hex_search.FullFileNames)
             {
-                { "File", fi.Name }
-            };
-            if (fi.Length >= hex_search[1].Length / 2) //Длина файла должна быть не менее длины строки поиска
-            {
-                int frontdump = 4; //Количество байт перед строкой поиска
-                int reardump = 4; //Количество байт после строки поиска
-                var chunk = new byte[hex_search[1].Length / 2];
-                using (var stream = File.OpenRead(hex_search[0]))
+                FileInfo fi = new FileInfo(fullfilename);
+                Search_Result sr = new Search_Result(string.Empty, string.Empty, fi.Name);
+                if (fi.Length >= hex_search.SearchString.Length / 2) //Длина файла должна быть не менее длины строки поиска
                 {
-                    //int byteschunk = stream.Read(chunk, 0, 4);
-                    //for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, string.Format("{0:X2}", (int)chunk[i]));
-                    //if (Enum.IsDefined(typeof(Guide.FH_magic_numbers), Convert.ToUInt32(dumptext.ToString(), 16)))
-                    //{
-                    //    dumptext.Clear();
-                    //    stream.Position = 0;
-                    //    byteschunk = stream.Read(chunk, 0, len);
-                    //    for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, string.Format("{0:X2}", (int)chunk[i]));
-                    //}
+                    int frontdump = 4; //Количество байт перед строкой поиска (потом поменять на динамические)
+                    int reardump = 4; //Количество байт после строки поиска (потом поменять на динамические)
+                    var chunk = new byte[hex_search.SearchString.Length / 2];
+                    using (var stream = File.OpenRead(fullfilename))
+                    {
+                        //int byteschunk = stream.Read(chunk, 0, 4);
+                        //for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, string.Format("{0:X2}", (int)chunk[i]));
+                        //if (Enum.IsDefined(typeof(Guide.FH_magic_numbers), Convert.ToUInt32(dumptext.ToString(), 16)))
+                        //{
+                        //    dumptext.Clear();
+                        //    stream.Position = 0;
+                        //    byteschunk = stream.Read(chunk, 0, len);
+                        //    for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, string.Format("{0:X2}", (int)chunk[i]));
+                        //}
+                    }
                 }
+                sr.Adress_hex = "0x10000";
+                sr.Result_String = "****" + hex_search.SearchString + "****";
+                addr_value_file.Add(sr);
             }
             e.Result = addr_value_file;
         }
 
         private void BackgroundWorker_hex_search_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            Dictionary<string, string> result = (Dictionary<string, string>)e.Result;
-            if (result.Count == 1)
-            {
-                //По исполнению заполняем листвью списком совпадений
-                //ListViewGroup group = new ListViewGroup(filesafename);
-                ListViewItem hsearchres = new ListViewItem(new string[] { "0x10000", "****" + textBox_hexsearch.Text + "****", result["File"] }); //Потом тут будет результат поиска
-                listView_hex_search.Items.Add(hsearchres);
-            }
+            if (e.Error != null) toolStripStatusLabel_search.Text = e.Error.Message;
             else
             {
-                toolStripStatusLabel_search.Text = "Совпадения не найдены";
+                toolStripProgressBar_search.Value = 0;
+                List<Search_Result> result = (List<Search_Result>)e.Result;
+                if (result.Count > 1)
+                {
+                    //По исполнению заполняем листвью списком совпадений
+                    //ListViewGroup group = new ListViewGroup(filesafename);
+                    foreach (Search_Result sr in result)
+                    {
+                        ListViewItem hsearchres = new ListViewItem(sr.Adress_hex);
+                        hsearchres.SubItems.Add(sr.Result_String);
+                        hsearchres.SubItems.Add(sr.File_Name);
+                        listView_hex_search.Items.Add(hsearchres);
+                    }
+                }
+                else
+                {
+                    toolStripStatusLabel_search.Text = "Совпадения не найдены";
+                }
             }
+        }
+
+        private void BackgroundWorker_hex_search_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            toolStripProgressBar_search.Value = e.ProgressPercentage;
+            toolStripStatusLabel_search.Text = "Обрабатывается файл " + e.UserState.ToString();
         }
     }
 }
