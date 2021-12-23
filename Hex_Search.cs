@@ -145,7 +145,7 @@ namespace FirehoseFinder
                     }
                 }
                 //Завершающие процедуры для одного файла из списка
-                worker.ReportProgress(countfile * 100 / currfiles, string.Format("{0} из {1}", countfile, currfiles));
+                worker.ReportProgress(countfile * 100 / currfiles, string.Format("{0} - {1} из {2}", fi.Name, countfile, currfiles));
                 countfile++;
             }
             e.Result = addr_value_file;
@@ -178,7 +178,7 @@ namespace FirehoseFinder
         private void BackgroundWorker_hex_search_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             toolStripProgressBar_search.Value = e.ProgressPercentage;
-            toolStripStatusLabel_search.Text = "Обрабатывается файл " + e.UserState.ToString();
+            toolStripStatusLabel_search.Text = "Последний обработанный файл " + e.UserState.ToString();
         }
 
         private void TextBox_hexsearch_KeyUp(object sender, KeyEventArgs e)
