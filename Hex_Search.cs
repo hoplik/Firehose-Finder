@@ -120,26 +120,22 @@ namespace FirehoseFinder
                             int frontdump = 4; //Количество байт перед строкой поиска (потом поменять на динамические)
                             int reardump = 4; //Количество байт после строки поиска (потом поменять на динамические)
                             int addr = tempstringsearch.ToString().LastIndexOf(hex_search.SearchString);
-                            if (addr % 2 != 0)
+                            if (addr == -1) tempstringsearch.Clear();
+                            else
                             {
-                                tempstringsearch.Remove(addr + 1, tempstringsearch.Length - (addr + 1));
-                            }
-                            switch (addr)
-                            {
-                                case -1://Совпадений нет
-                                    tempstringsearch.Clear();
-                                    break;
-                                default:
-                                    sr.Adress_hex = Convert.ToString(addr / 2, 16);
-                                    //Меняем количество символов для чтения пред и после поиска
-                                    if (addr - (2 * frontdump) < 0) frontdump = addr / 2;
-                                    if (addr + hex_search.SearchString.Length + (2 * reardump) > fi.Length * 2) reardump = Convert.ToInt32(fi.Length - (addr / 2)) - (hex_search.SearchString.Length / 2);
-                                    int reslen = (2 * frontdump) + hex_search.SearchString.Length + (2 * reardump);
-                                    sr.Result_String = tempstringsearch.ToString().Substring(addr - (2 * frontdump), reslen);
-                                    if (tempstringsearch.Length >= reslen - (2 * frontdump)) tempstringsearch.Remove(addr, tempstringsearch.Length - addr);
-                                    else tempstringsearch.Clear();
-                                    addr_value_file.Insert(0, sr);
-                                    break;
+                                if (addr % 2 != 0)
+                                {
+                                    tempstringsearch.Remove(addr + 1, tempstringsearch.Length - (addr + 1));
+                                }
+                                sr.Adress_hex = Convert.ToString(addr / 2, 16);
+                                //Меняем количество символов для чтения пред и после поиска
+                                if (addr - (2 * frontdump) < 0) frontdump = addr / 2;
+                                if (addr + hex_search.SearchString.Length + (2 * reardump) > fi.Length * 2) reardump = Convert.ToInt32(fi.Length - (addr / 2)) - (hex_search.SearchString.Length / 2);
+                                int reslen = (2 * frontdump) + hex_search.SearchString.Length + (2 * reardump);
+                                sr.Result_String = tempstringsearch.ToString().Substring(addr - (2 * frontdump), reslen);
+                                if (tempstringsearch.Length >= reslen - (2 * frontdump)) tempstringsearch.Remove(addr, tempstringsearch.Length - addr);
+                                else tempstringsearch.Clear();
+                                addr_value_file.Insert(0, sr);
                             }
                         } while (tempstringsearch.Length > hex_search.SearchString.Length);
                     }
@@ -160,10 +156,10 @@ namespace FirehoseFinder
                 List<Search_Result> result = (List<Search_Result>)e.Result;
                 //По исполнению заполняем листвью списком совпадений
                 //ListViewGroup group = new ListViewGroup(filesafename);
-                foreach (Search_Result sr in result)
+                if (result.Count == 0) toolStripStatusLabel_search.Text = "Совпадений не найдено";
+                else
                 {
-                    if (string.IsNullOrEmpty(sr.Adress_hex)) toolStripStatusLabel_search.Text = "Совпадений не найдено";
-                    else
+                    foreach (Search_Result sr in result)
                     {
                         ListViewItem hsearchres = new ListViewItem("0x" + sr.Adress_hex.ToUpper());
                         hsearchres.SubItems.Add(sr.Result_String);
