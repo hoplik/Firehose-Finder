@@ -29,76 +29,28 @@ namespace FirehoseFinder
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Файлы", System.Windows.Forms.HorizontalAlignment.Left);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hex_Search));
-            this.label_hello = new System.Windows.Forms.Label();
-            this.textBox_hexsearch = new System.Windows.Forms.TextBox();
-            this.radioButton_file = new System.Windows.Forms.RadioButton();
-            this.radioButton_dir = new System.Windows.Forms.RadioButton();
-            this.button_start_search = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker_hex_search = new System.ComponentModel.BackgroundWorker();
             this.statusStrip_search = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar_search = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel_search = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tableLayoutPanel_hs = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox_hexsearch = new System.Windows.Forms.TextBox();
+            this.groupBox_hs = new System.Windows.Forms.GroupBox();
+            this.radioButton_file = new System.Windows.Forms.RadioButton();
+            this.radioButton_dir = new System.Windows.Forms.RadioButton();
+            this.button_start_search = new System.Windows.Forms.Button();
             this.listView_search = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.statusStrip_search.SuspendLayout();
+            this.tableLayoutPanel_hs.SuspendLayout();
+            this.groupBox_hs.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label_hello
-            // 
-            this.label_hello.AutoSize = true;
-            this.label_hello.Location = new System.Drawing.Point(13, 13);
-            this.label_hello.Name = "label_hello";
-            this.label_hello.Size = new System.Drawing.Size(222, 17);
-            this.label_hello.TabIndex = 0;
-            this.label_hello.Text = "Ищем последовательность байт";
-            // 
-            // textBox_hexsearch
-            // 
-            this.textBox_hexsearch.Location = new System.Drawing.Point(242, 13);
-            this.textBox_hexsearch.Name = "textBox_hexsearch";
-            this.textBox_hexsearch.Size = new System.Drawing.Size(215, 22);
-            this.textBox_hexsearch.TabIndex = 1;
-            this.textBox_hexsearch.TextChanged += new System.EventHandler(this.TextBox_hexsearch_TextChanged);
-            this.textBox_hexsearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBox_hexsearch_KeyUp);
-            // 
-            // radioButton_file
-            // 
-            this.radioButton_file.AutoSize = true;
-            this.radioButton_file.Checked = true;
-            this.radioButton_file.Location = new System.Drawing.Point(479, 13);
-            this.radioButton_file.Name = "radioButton_file";
-            this.radioButton_file.Size = new System.Drawing.Size(83, 21);
-            this.radioButton_file.TabIndex = 2;
-            this.radioButton_file.TabStop = true;
-            this.radioButton_file.Text = "в файле";
-            this.radioButton_file.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_dir
-            // 
-            this.radioButton_dir.AutoSize = true;
-            this.radioButton_dir.Location = new System.Drawing.Point(568, 12);
-            this.radioButton_dir.Name = "radioButton_dir";
-            this.radioButton_dir.Size = new System.Drawing.Size(79, 21);
-            this.radioButton_dir.TabIndex = 3;
-            this.radioButton_dir.Text = "в папке";
-            this.radioButton_dir.UseVisualStyleBackColor = true;
-            // 
-            // button_start_search
-            // 
-            this.button_start_search.Enabled = false;
-            this.button_start_search.Location = new System.Drawing.Point(654, 11);
-            this.button_start_search.Name = "button_start_search";
-            this.button_start_search.Size = new System.Drawing.Size(255, 23);
-            this.button_start_search.TabIndex = 4;
-            this.button_start_search.Text = "по пути";
-            this.button_start_search.UseVisualStyleBackColor = true;
-            this.button_start_search.Click += new System.EventHandler(this.Button_start_search_Click);
             // 
             // folderBrowserDialog1
             // 
@@ -122,7 +74,7 @@ namespace FirehoseFinder
             this.statusStrip_search.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar_search,
             this.toolStripStatusLabel_search});
-            this.statusStrip_search.Location = new System.Drawing.Point(0, 218);
+            this.statusStrip_search.Location = new System.Drawing.Point(0, 313);
             this.statusStrip_search.Name = "statusStrip_search";
             this.statusStrip_search.Size = new System.Drawing.Size(993, 26);
             this.statusStrip_search.TabIndex = 7;
@@ -142,75 +94,161 @@ namespace FirehoseFinder
             this.toolStripStatusLabel_search.Size = new System.Drawing.Size(100, 20);
             this.toolStripStatusLabel_search.Text = "Оповещения";
             // 
+            // tableLayoutPanel_hs
+            // 
+            this.tableLayoutPanel_hs.ColumnCount = 3;
+            this.tableLayoutPanel_hs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
+            this.tableLayoutPanel_hs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_hs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel_hs.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel_hs.Controls.Add(this.textBox_hexsearch, 1, 0);
+            this.tableLayoutPanel_hs.Controls.Add(this.groupBox_hs, 2, 0);
+            this.tableLayoutPanel_hs.Controls.Add(this.button_start_search, 2, 1);
+            this.tableLayoutPanel_hs.Controls.Add(this.listView_search, 0, 1);
+            this.tableLayoutPanel_hs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_hs.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel_hs.Name = "tableLayoutPanel_hs";
+            this.tableLayoutPanel_hs.RowCount = 2;
+            this.tableLayoutPanel_hs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel_hs.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_hs.Size = new System.Drawing.Size(993, 313);
+            this.tableLayoutPanel_hs.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(244, 60);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Ищем последовательность байт";
+            // 
+            // textBox_hexsearch
+            // 
+            this.textBox_hexsearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_hexsearch.Location = new System.Drawing.Point(253, 3);
+            this.textBox_hexsearch.Name = "textBox_hexsearch";
+            this.textBox_hexsearch.Size = new System.Drawing.Size(537, 22);
+            this.textBox_hexsearch.TabIndex = 1;
+            this.textBox_hexsearch.TextChanged += new System.EventHandler(this.TextBox_hexsearch_TextChanged);
+            this.textBox_hexsearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBox_hexsearch_KeyUp);
+            // 
+            // groupBox_hs
+            // 
+            this.groupBox_hs.Controls.Add(this.radioButton_dir);
+            this.groupBox_hs.Controls.Add(this.radioButton_file);
+            this.groupBox_hs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox_hs.Location = new System.Drawing.Point(796, 3);
+            this.groupBox_hs.Name = "groupBox_hs";
+            this.groupBox_hs.Size = new System.Drawing.Size(194, 54);
+            this.groupBox_hs.TabIndex = 2;
+            this.groupBox_hs.TabStop = false;
+            this.groupBox_hs.Text = "Область поиска";
+            // 
+            // radioButton_file
+            // 
+            this.radioButton_file.AutoSize = true;
+            this.radioButton_file.Checked = true;
+            this.radioButton_file.Location = new System.Drawing.Point(7, 28);
+            this.radioButton_file.Name = "radioButton_file";
+            this.radioButton_file.Size = new System.Drawing.Size(63, 20);
+            this.radioButton_file.TabIndex = 0;
+            this.radioButton_file.TabStop = true;
+            this.radioButton_file.Text = "Файл";
+            this.radioButton_file.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_dir
+            // 
+            this.radioButton_dir.AutoSize = true;
+            this.radioButton_dir.Location = new System.Drawing.Point(82, 28);
+            this.radioButton_dir.Name = "radioButton_dir";
+            this.radioButton_dir.Size = new System.Drawing.Size(69, 20);
+            this.radioButton_dir.TabIndex = 1;
+            this.radioButton_dir.TabStop = true;
+            this.radioButton_dir.Text = "Папка";
+            this.radioButton_dir.UseVisualStyleBackColor = true;
+            // 
+            // button_start_search
+            // 
+            this.button_start_search.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_start_search.Location = new System.Drawing.Point(796, 63);
+            this.button_start_search.Name = "button_start_search";
+            this.button_start_search.Size = new System.Drawing.Size(194, 23);
+            this.button_start_search.TabIndex = 3;
+            this.button_start_search.Text = "путь поиска";
+            this.button_start_search.UseVisualStyleBackColor = true;
+            this.button_start_search.Click += new System.EventHandler(this.Button_start_search_Click);
+            // 
             // listView_search
             // 
             this.listView_search.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            this.listView_search.Dock = System.Windows.Forms.DockStyle.Bottom;
-            listViewGroup1.Header = "Файлы";
-            listViewGroup1.Name = "listViewGroup1";
-            this.listView_search.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1});
+            this.tableLayoutPanel_hs.SetColumnSpan(this.listView_search, 2);
+            this.listView_search.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView_search.FullRowSelect = true;
+            this.listView_search.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView_search.HideSelection = false;
-            this.listView_search.Location = new System.Drawing.Point(0, 41);
+            this.listView_search.Location = new System.Drawing.Point(3, 63);
+            this.listView_search.MultiSelect = false;
             this.listView_search.Name = "listView_search";
-            this.listView_search.Size = new System.Drawing.Size(993, 177);
-            this.listView_search.TabIndex = 8;
+            this.listView_search.Size = new System.Drawing.Size(787, 247);
+            this.listView_search.TabIndex = 4;
             this.listView_search.UseCompatibleStateImageBehavior = false;
             this.listView_search.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Адрес (hex, 0x)";
-            this.columnHeader1.Width = 200;
+            this.columnHeader1.Width = 150;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Значение";
+            this.columnHeader2.Text = "Совпадения";
             this.columnHeader2.Width = 300;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Файл";
-            this.columnHeader3.Width = 300;
+            this.columnHeader3.Width = 200;
             // 
             // Hex_Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(993, 244);
-            this.Controls.Add(this.listView_search);
+            this.ClientSize = new System.Drawing.Size(993, 339);
+            this.Controls.Add(this.tableLayoutPanel_hs);
             this.Controls.Add(this.statusStrip_search);
-            this.Controls.Add(this.button_start_search);
-            this.Controls.Add(this.radioButton_dir);
-            this.Controls.Add(this.radioButton_file);
-            this.Controls.Add(this.textBox_hexsearch);
-            this.Controls.Add(this.label_hello);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Hex_Search";
             this.Text = "Hex_Search";
             this.statusStrip_search.ResumeLayout(false);
             this.statusStrip_search.PerformLayout();
+            this.tableLayoutPanel_hs.ResumeLayout(false);
+            this.tableLayoutPanel_hs.PerformLayout();
+            this.groupBox_hs.ResumeLayout(false);
+            this.groupBox_hs.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label_hello;
-        private System.Windows.Forms.TextBox textBox_hexsearch;
-        private System.Windows.Forms.RadioButton radioButton_file;
-        private System.Windows.Forms.RadioButton radioButton_dir;
-        private System.Windows.Forms.Button button_start_search;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.ComponentModel.BackgroundWorker backgroundWorker_hex_search;
         private System.Windows.Forms.StatusStrip statusStrip_search;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar_search;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_search;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_hs;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox_hexsearch;
+        private System.Windows.Forms.GroupBox groupBox_hs;
+        private System.Windows.Forms.RadioButton radioButton_dir;
+        private System.Windows.Forms.RadioButton radioButton_file;
+        private System.Windows.Forms.Button button_start_search;
         private System.Windows.Forms.ListView listView_search;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
