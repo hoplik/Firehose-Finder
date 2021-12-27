@@ -282,7 +282,7 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1369, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1369, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -291,7 +291,7 @@
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // выходToolStripMenuItem
@@ -311,7 +311,7 @@
             this.toolStripSeparator2,
             this.внестиПроизводителяМодельToolStripMenuItem});
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
-            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.видToolStripMenuItem.Text = "Вид";
             // 
             // приветствиеToolStripMenuItem
@@ -370,7 +370,7 @@
             this.поискМаскиБайтToolStripMenuItem,
             this.распаковкаОднобиновойПрошивкиToolStripMenuItem});
             this.инструментыToolStripMenuItem.Name = "инструментыToolStripMenuItem";
-            this.инструментыToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
+            this.инструментыToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
             this.инструментыToolStripMenuItem.Text = "Инструменты";
             // 
             // поискМаскиБайтToolStripMenuItem
@@ -393,7 +393,7 @@
             this.вопросОтветToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 26);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // вопросОтветToolStripMenuItem
@@ -578,7 +578,7 @@
             this.tabPage_firehose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage_firehose.Name = "tabPage_firehose";
             this.tabPage_firehose.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage_firehose.Size = new System.Drawing.Size(1361, 625);
+            this.tabPage_firehose.Size = new System.Drawing.Size(1361, 627);
             this.tabPage_firehose.TabIndex = 0;
             this.tabPage_firehose.Text = "Работа с файлами";
             this.tabPage_firehose.UseVisualStyleBackColor = true;
@@ -590,7 +590,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 180);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1355, 421);
+            this.panel2.Size = new System.Drawing.Size(1355, 423);
             this.panel2.TabIndex = 18;
             // 
             // textBox_main_term
@@ -600,7 +600,7 @@
             this.textBox_main_term.Multiline = true;
             this.textBox_main_term.Name = "textBox_main_term";
             this.textBox_main_term.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_main_term.Size = new System.Drawing.Size(409, 421);
+            this.textBox_main_term.Size = new System.Drawing.Size(409, 423);
             this.textBox_main_term.TabIndex = 16;
             // 
             // dataGridView_final
@@ -648,7 +648,7 @@
             this.dataGridView_final.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView_final.RowTemplate.Height = 24;
             this.dataGridView_final.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_final.Size = new System.Drawing.Size(946, 421);
+            this.dataGridView_final.Size = new System.Drawing.Size(946, 423);
             this.dataGridView_final.TabIndex = 15;
             this.dataGridView_final.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellContentClick);
             this.dataGridView_final.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellDoubleClick);
@@ -661,7 +661,7 @@
             this.Column_Sel.HeaderText = "Выбор";
             this.Column_Sel.MinimumWidth = 6;
             this.Column_Sel.Name = "Column_Sel";
-            this.Column_Sel.Width = 57;
+            this.Column_Sel.Width = 55;
             // 
             // Column_Name
             // 
@@ -759,7 +759,7 @@
             this.checkBox_Find_Local.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_Find_Local.Location = new System.Drawing.Point(142, 30);
             this.checkBox_Find_Local.Name = "checkBox_Find_Local";
-            this.checkBox_Find_Local.Size = new System.Drawing.Size(94, 21);
+            this.checkBox_Find_Local.Size = new System.Drawing.Size(92, 20);
             this.checkBox_Find_Local.TabIndex = 13;
             this.checkBox_Find_Local.Text = "Локально";
             this.checkBox_Find_Local.UseVisualStyleBackColor = true;
@@ -770,7 +770,7 @@
             this.checkBox_Find_Server.AutoSize = true;
             this.checkBox_Find_Server.Location = new System.Drawing.Point(7, 30);
             this.checkBox_Find_Server.Name = "checkBox_Find_Server";
-            this.checkBox_Find_Server.Size = new System.Drawing.Size(106, 21);
+            this.checkBox_Find_Server.Size = new System.Drawing.Size(105, 20);
             this.checkBox_Find_Server.TabIndex = 12;
             this.checkBox_Find_Server.Text = "На сервере";
             this.checkBox_Find_Server.UseVisualStyleBackColor = true;
@@ -782,7 +782,7 @@
             this.radioButton_alldir.Checked = true;
             this.radioButton_alldir.Location = new System.Drawing.Point(7, 106);
             this.radioButton_alldir.Name = "radioButton_alldir";
-            this.radioButton_alldir.Size = new System.Drawing.Size(206, 21);
+            this.radioButton_alldir.Size = new System.Drawing.Size(203, 20);
             this.radioButton_alldir.TabIndex = 11;
             this.radioButton_alldir.TabStop = true;
             this.radioButton_alldir.Text = "включая вложенные папки";
@@ -793,7 +793,7 @@
             this.radioButton_topdir.AutoSize = true;
             this.radioButton_topdir.Location = new System.Drawing.Point(7, 57);
             this.radioButton_topdir.Name = "radioButton_topdir";
-            this.radioButton_topdir.Size = new System.Drawing.Size(151, 38);
+            this.radioButton_topdir.Size = new System.Drawing.Size(148, 36);
             this.radioButton_topdir.TabIndex = 10;
             this.radioButton_topdir.Text = "только выбранная\r\nпапка";
             this.radioButton_topdir.UseVisualStyleBackColor = true;
@@ -826,7 +826,7 @@
             this.label_model.AutoSize = true;
             this.label_model.Location = new System.Drawing.Point(178, 21);
             this.label_model.Name = "label_model";
-            this.label_model.Size = new System.Drawing.Size(23, 17);
+            this.label_model.Size = new System.Drawing.Size(19, 16);
             this.label_model.TabIndex = 22;
             this.label_model.Text = "---";
             // 
@@ -835,7 +835,7 @@
             this.label_altname.AutoSize = true;
             this.label_altname.Location = new System.Drawing.Point(382, 21);
             this.label_altname.Name = "label_altname";
-            this.label_altname.Size = new System.Drawing.Size(23, 17);
+            this.label_altname.Size = new System.Drawing.Size(19, 16);
             this.label_altname.TabIndex = 23;
             this.label_altname.Text = "---";
             // 
@@ -844,7 +844,7 @@
             this.label_tm.AutoSize = true;
             this.label_tm.Location = new System.Drawing.Point(6, 21);
             this.label_tm.Name = "label_tm";
-            this.label_tm.Size = new System.Drawing.Size(23, 17);
+            this.label_tm.Size = new System.Drawing.Size(19, 16);
             this.label_tm.TabIndex = 21;
             this.label_tm.Text = "---";
             // 
@@ -865,7 +865,7 @@
             this.radioButton_adb_reset.Checked = true;
             this.radioButton_adb_reset.Location = new System.Drawing.Point(123, 21);
             this.radioButton_adb_reset.Name = "radioButton_adb_reset";
-            this.radioButton_adb_reset.Size = new System.Drawing.Size(140, 21);
+            this.radioButton_adb_reset.Size = new System.Drawing.Size(139, 20);
             this.radioButton_adb_reset.TabIndex = 1;
             this.radioButton_adb_reset.TabStop = true;
             this.radioButton_adb_reset.Text = "Средствами ADB";
@@ -876,7 +876,7 @@
             this.radioButton_man_reset.AutoSize = true;
             this.radioButton_man_reset.Location = new System.Drawing.Point(7, 22);
             this.radioButton_man_reset.Name = "radioButton_man_reset";
-            this.radioButton_man_reset.Size = new System.Drawing.Size(86, 21);
+            this.radioButton_man_reset.Size = new System.Drawing.Size(87, 20);
             this.radioButton_man_reset.TabIndex = 0;
             this.radioButton_man_reset.Text = "Вручную";
             this.radioButton_man_reset.UseVisualStyleBackColor = true;
@@ -888,7 +888,7 @@
             this.checkBox_send.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_send.Location = new System.Drawing.Point(168, 4);
             this.checkBox_send.Name = "checkBox_send";
-            this.checkBox_send.Size = new System.Drawing.Size(207, 38);
+            this.checkBox_send.Size = new System.Drawing.Size(203, 36);
             this.checkBox_send.TabIndex = 27;
             this.checkBox_send.Text = "Отправить в Справочник\r\nданные, при их отсутствии";
             this.checkBox_send.UseVisualStyleBackColor = true;
@@ -898,7 +898,7 @@
             this.label_log.AutoSize = true;
             this.label_log.Location = new System.Drawing.Point(10, 97);
             this.label_log.Name = "label_log";
-            this.label_log.Size = new System.Drawing.Size(0, 17);
+            this.label_log.Size = new System.Drawing.Size(0, 16);
             this.label_log.TabIndex = 26;
             // 
             // checkBox_Log
@@ -906,7 +906,7 @@
             this.checkBox_Log.AutoSize = true;
             this.checkBox_Log.Location = new System.Drawing.Point(168, 42);
             this.checkBox_Log.Name = "checkBox_Log";
-            this.checkBox_Log.Size = new System.Drawing.Size(217, 38);
+            this.checkBox_Log.Size = new System.Drawing.Size(214, 36);
             this.checkBox_Log.TabIndex = 25;
             this.checkBox_Log.Text = "Сохранить идентификаторы\r\nи марку/модель в файл";
             this.checkBox_Log.UseVisualStyleBackColor = true;
@@ -927,7 +927,7 @@
             this.label_SW_Ver.AutoSize = true;
             this.label_SW_Ver.Location = new System.Drawing.Point(984, 64);
             this.label_SW_Ver.Name = "label_SW_Ver";
-            this.label_SW_Ver.Size = new System.Drawing.Size(72, 17);
+            this.label_SW_Ver.Size = new System.Drawing.Size(63, 16);
             this.label_SW_Ver.TabIndex = 19;
             this.label_SW_Ver.Text = "00000000";
             // 
@@ -936,7 +936,7 @@
             this.label_swid.AutoSize = true;
             this.label_swid.Location = new System.Drawing.Point(875, 64);
             this.label_swid.Name = "label_swid";
-            this.label_swid.Size = new System.Drawing.Size(99, 17);
+            this.label_swid.Size = new System.Drawing.Size(92, 16);
             this.label_swid.TabIndex = 18;
             this.label_swid.Text = "Image id (ver.)";
             // 
@@ -945,7 +945,7 @@
             this.label_hwid.AutoSize = true;
             this.label_hwid.Location = new System.Drawing.Point(400, 64);
             this.label_hwid.Name = "label_hwid";
-            this.label_hwid.Size = new System.Drawing.Size(56, 17);
+            this.label_hwid.Size = new System.Drawing.Size(53, 16);
             this.label_hwid.TabIndex = 1;
             this.label_hwid.Text = "Jtag_ID";
             // 
@@ -977,7 +977,7 @@
             this.label_modelid.AutoSize = true;
             this.label_modelid.Location = new System.Drawing.Point(719, 64);
             this.label_modelid.Name = "label_modelid";
-            this.label_modelid.Size = new System.Drawing.Size(78, 17);
+            this.label_modelid.Size = new System.Drawing.Size(74, 16);
             this.label_modelid.TabIndex = 3;
             this.label_modelid.Text = "MODEL_ID";
             // 
@@ -997,7 +997,7 @@
             this.label_oemid.AutoSize = true;
             this.label_oemid.Location = new System.Drawing.Point(587, 64);
             this.label_oemid.Name = "label_oemid";
-            this.label_oemid.Size = new System.Drawing.Size(60, 17);
+            this.label_oemid.Size = new System.Drawing.Size(57, 16);
             this.label_oemid.TabIndex = 5;
             this.label_oemid.Text = "OEM_ID";
             // 
@@ -1020,7 +1020,7 @@
             this.label_oemhash.AutoSize = true;
             this.label_oemhash.Location = new System.Drawing.Point(400, 99);
             this.label_oemhash.Name = "label_oemhash";
-            this.label_oemhash.Size = new System.Drawing.Size(65, 34);
+            this.label_oemhash.Size = new System.Drawing.Size(61, 32);
             this.label_oemhash.TabIndex = 7;
             this.label_oemhash.Text = "OEM_PK\r\n_HASH";
             // 
@@ -1038,7 +1038,7 @@
             // statusStrip_firehose
             // 
             this.statusStrip_firehose.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip_firehose.Location = new System.Drawing.Point(3, 601);
+            this.statusStrip_firehose.Location = new System.Drawing.Point(3, 603);
             this.statusStrip_firehose.Name = "statusStrip_firehose";
             this.statusStrip_firehose.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
             this.statusStrip_firehose.Size = new System.Drawing.Size(1355, 22);
@@ -1101,7 +1101,7 @@
             this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
             this.tabPage_phone.Name = "tabPage_phone";
             this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_phone.Size = new System.Drawing.Size(1361, 625);
+            this.tabPage_phone.Size = new System.Drawing.Size(1361, 627);
             this.tabPage_phone.TabIndex = 2;
             this.tabPage_phone.Text = "Работа с устройством";
             this.tabPage_phone.UseVisualStyleBackColor = true;
@@ -1122,7 +1122,7 @@
             this.tableLayoutPanel_phone.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_phone.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel_phone.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel_phone.Size = new System.Drawing.Size(1355, 619);
+            this.tableLayoutPanel_phone.Size = new System.Drawing.Size(1355, 621);
             this.tableLayoutPanel_phone.TabIndex = 8;
             // 
             // groupBox_terminal
@@ -1131,7 +1131,7 @@
             this.groupBox_terminal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_terminal.Location = new System.Drawing.Point(3, 3);
             this.groupBox_terminal.Name = "groupBox_terminal";
-            this.groupBox_terminal.Size = new System.Drawing.Size(394, 533);
+            this.groupBox_terminal.Size = new System.Drawing.Size(394, 535);
             this.groupBox_terminal.TabIndex = 7;
             this.groupBox_terminal.TabStop = false;
             this.groupBox_terminal.Text = "Terminal";
@@ -1143,7 +1143,7 @@
             this.textBox_soft_term.Multiline = true;
             this.textBox_soft_term.Name = "textBox_soft_term";
             this.textBox_soft_term.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_soft_term.Size = new System.Drawing.Size(388, 512);
+            this.textBox_soft_term.Size = new System.Drawing.Size(388, 514);
             this.textBox_soft_term.TabIndex = 1;
             this.textBox_soft_term.TextChanged += new System.EventHandler(this.TextBox_soft_term_TextChanged);
             // 
@@ -1154,7 +1154,7 @@
             this.groupBox_soft.Location = new System.Drawing.Point(403, 3);
             this.groupBox_soft.Name = "groupBox_soft";
             this.tableLayoutPanel_phone.SetRowSpan(this.groupBox_soft, 3);
-            this.groupBox_soft.Size = new System.Drawing.Size(949, 613);
+            this.groupBox_soft.Size = new System.Drawing.Size(949, 615);
             this.groupBox_soft.TabIndex = 8;
             this.groupBox_soft.TabStop = false;
             this.groupBox_soft.Text = "Soft";
@@ -1168,7 +1168,7 @@
             this.tabControl_soft.Location = new System.Drawing.Point(3, 18);
             this.tabControl_soft.Name = "tabControl_soft";
             this.tabControl_soft.SelectedIndex = 0;
-            this.tabControl_soft.Size = new System.Drawing.Size(943, 592);
+            this.tabControl_soft.Size = new System.Drawing.Size(943, 594);
             this.tabControl_soft.TabIndex = 0;
             // 
             // tabPage_adb
@@ -1177,7 +1177,7 @@
             this.tabPage_adb.Location = new System.Drawing.Point(4, 25);
             this.tabPage_adb.Name = "tabPage_adb";
             this.tabPage_adb.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_adb.Size = new System.Drawing.Size(935, 563);
+            this.tabPage_adb.Size = new System.Drawing.Size(935, 565);
             this.tabPage_adb.TabIndex = 0;
             this.tabPage_adb.Text = "ADB (Android Debug Bridge)";
             this.tabPage_adb.UseVisualStyleBackColor = true;
@@ -1200,7 +1200,7 @@
             this.tableLayoutPanel_adb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel_adb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel_adb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_adb.Size = new System.Drawing.Size(929, 557);
+            this.tableLayoutPanel_adb.Size = new System.Drawing.Size(929, 559);
             this.tableLayoutPanel_adb.TabIndex = 8;
             // 
             // button_ADB_start
@@ -1236,7 +1236,7 @@
             this.groupBox_adb_commands.Enabled = false;
             this.groupBox_adb_commands.Location = new System.Drawing.Point(3, 133);
             this.groupBox_adb_commands.Name = "groupBox_adb_commands";
-            this.groupBox_adb_commands.Size = new System.Drawing.Size(923, 421);
+            this.groupBox_adb_commands.Size = new System.Drawing.Size(923, 423);
             this.groupBox_adb_commands.TabIndex = 7;
             this.groupBox_adb_commands.TabStop = false;
             this.groupBox_adb_commands.Text = "Команды ADB";
@@ -1246,7 +1246,7 @@
             this.radioButton_reboot_fastboot.AutoSize = true;
             this.radioButton_reboot_fastboot.Location = new System.Drawing.Point(300, 48);
             this.radioButton_reboot_fastboot.Name = "radioButton_reboot_fastboot";
-            this.radioButton_reboot_fastboot.Size = new System.Drawing.Size(397, 21);
+            this.radioButton_reboot_fastboot.Size = new System.Drawing.Size(391, 20);
             this.radioButton_reboot_fastboot.TabIndex = 10;
             this.radioButton_reboot_fastboot.Text = "Перегрузить в режим загрузчика (Fastboot - Bootloader)";
             this.radioButton_reboot_fastboot.UseVisualStyleBackColor = true;
@@ -1256,7 +1256,7 @@
             this.radioButton_adb_com.AutoSize = true;
             this.radioButton_adb_com.Location = new System.Drawing.Point(6, 48);
             this.radioButton_adb_com.Name = "radioButton_adb_com";
-            this.radioButton_adb_com.Size = new System.Drawing.Size(229, 21);
+            this.radioButton_adb_com.Size = new System.Drawing.Size(220, 20);
             this.radioButton_adb_com.TabIndex = 9;
             this.radioButton_adb_com.Text = "Командная строка (ADB Shell)";
             this.radioButton_adb_com.UseVisualStyleBackColor = true;
@@ -1268,7 +1268,7 @@
             this.radioButton_adb_IDs.Checked = true;
             this.radioButton_adb_IDs.Location = new System.Drawing.Point(6, 21);
             this.radioButton_adb_IDs.Name = "radioButton_adb_IDs";
-            this.radioButton_adb_IDs.Size = new System.Drawing.Size(265, 21);
+            this.radioButton_adb_IDs.Size = new System.Drawing.Size(266, 20);
             this.radioButton_adb_IDs.TabIndex = 8;
             this.radioButton_adb_IDs.TabStop = true;
             this.radioButton_adb_IDs.Text = "Получить марку/модель устройства";
@@ -1280,7 +1280,7 @@
             this.radioButton_reboot_edl.AutoSize = true;
             this.radioButton_reboot_edl.Location = new System.Drawing.Point(300, 21);
             this.radioButton_reboot_edl.Name = "radioButton_reboot_edl";
-            this.radioButton_reboot_edl.Size = new System.Drawing.Size(512, 21);
+            this.radioButton_reboot_edl.Size = new System.Drawing.Size(493, 20);
             this.radioButton_reboot_edl.TabIndex = 7;
             this.radioButton_reboot_edl.Text = "Перегрузить в аварийный режим (Emergency Download - EDL - PID#9008)";
             this.radioButton_reboot_edl.UseVisualStyleBackColor = true;
@@ -1463,7 +1463,7 @@
             this.radioButton_mem_ufs.AutoSize = true;
             this.radioButton_mem_ufs.Location = new System.Drawing.Point(139, 20);
             this.radioButton_mem_ufs.Name = "radioButton_mem_ufs";
-            this.radioButton_mem_ufs.Size = new System.Drawing.Size(56, 21);
+            this.radioButton_mem_ufs.Size = new System.Drawing.Size(55, 20);
             this.radioButton_mem_ufs.TabIndex = 2;
             this.radioButton_mem_ufs.Text = "UFS";
             this.radioButton_mem_ufs.UseVisualStyleBackColor = true;
@@ -1474,7 +1474,7 @@
             this.radioButton_mem_emmc.Checked = true;
             this.radioButton_mem_emmc.Location = new System.Drawing.Point(7, 20);
             this.radioButton_mem_emmc.Name = "radioButton_mem_emmc";
-            this.radioButton_mem_emmc.Size = new System.Drawing.Size(68, 21);
+            this.radioButton_mem_emmc.Size = new System.Drawing.Size(67, 20);
             this.radioButton_mem_emmc.TabIndex = 1;
             this.radioButton_mem_emmc.TabStop = true;
             this.radioButton_mem_emmc.Text = "eMMC";
@@ -1510,9 +1510,9 @@
             // 
             this.label_GPT_bytes.AutoSize = true;
             this.label_GPT_bytes.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label_GPT_bytes.Location = new System.Drawing.Point(166, 18);
+            this.label_GPT_bytes.Location = new System.Drawing.Point(169, 18);
             this.label_GPT_bytes.Name = "label_GPT_bytes";
-            this.label_GPT_bytes.Size = new System.Drawing.Size(28, 17);
+            this.label_GPT_bytes.Size = new System.Drawing.Size(25, 16);
             this.label_GPT_bytes.TabIndex = 1;
             this.label_GPT_bytes.Text = "0 b";
             // 
@@ -1522,7 +1522,7 @@
             this.label_select_gpt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_select_gpt.Location = new System.Drawing.Point(3, 18);
             this.label_select_gpt.Name = "label_select_gpt";
-            this.label_select_gpt.Size = new System.Drawing.Size(16, 17);
+            this.label_select_gpt.Size = new System.Drawing.Size(14, 16);
             this.label_select_gpt.TabIndex = 0;
             this.label_select_gpt.Text = "0";
             this.label_select_gpt.TextChanged += new System.EventHandler(this.Label_select_gpt_TextChanged);
@@ -1543,7 +1543,7 @@
             this.label_total_gpt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_total_gpt.Location = new System.Drawing.Point(3, 18);
             this.label_total_gpt.Name = "label_total_gpt";
-            this.label_total_gpt.Size = new System.Drawing.Size(16, 17);
+            this.label_total_gpt.Size = new System.Drawing.Size(14, 16);
             this.label_total_gpt.TabIndex = 0;
             this.label_total_gpt.Text = "0";
             this.label_total_gpt.TextChanged += new System.EventHandler(this.Label_total_gpt_TextChanged);
@@ -1717,7 +1717,7 @@
             this.label_block_size.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_block_size.Location = new System.Drawing.Point(3, 18);
             this.label_block_size.Name = "label_block_size";
-            this.label_block_size.Size = new System.Drawing.Size(16, 17);
+            this.label_block_size.Size = new System.Drawing.Size(14, 16);
             this.label_block_size.TabIndex = 0;
             this.label_block_size.Text = "0";
             // 
@@ -1737,7 +1737,7 @@
             this.label_total_blocks.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_total_blocks.Location = new System.Drawing.Point(3, 18);
             this.label_total_blocks.Name = "label_total_blocks";
-            this.label_total_blocks.Size = new System.Drawing.Size(16, 17);
+            this.label_total_blocks.Size = new System.Drawing.Size(14, 16);
             this.label_total_blocks.TabIndex = 0;
             this.label_total_blocks.Text = "0";
             this.label_total_blocks.TextChanged += new System.EventHandler(this.Label_total_blocks_TextChanged);
@@ -1773,7 +1773,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(287, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(363, 17);
+            this.label4.Size = new System.Drawing.Size(354, 16);
             this.label4.TabIndex = 5;
             this.label4.Text = "Для выполнения этой команды программер не нужен";
             // 
@@ -1793,7 +1793,7 @@
             this.label_Sahara_fhf.AutoSize = true;
             this.label_Sahara_fhf.Location = new System.Drawing.Point(6, 140);
             this.label_Sahara_fhf.Name = "label_Sahara_fhf";
-            this.label_Sahara_fhf.Size = new System.Drawing.Size(371, 17);
+            this.label_Sahara_fhf.Size = new System.Drawing.Size(365, 16);
             this.label_Sahara_fhf.TabIndex = 2;
             this.label_Sahara_fhf.Text = "Выберете программер на вкладке \"Работа с файлами\"";
             // 
@@ -1865,7 +1865,7 @@
             this.radioButton_fb_rebootedl.AutoSize = true;
             this.radioButton_fb_rebootedl.Location = new System.Drawing.Point(7, 68);
             this.radioButton_fb_rebootedl.Name = "radioButton_fb_rebootedl";
-            this.radioButton_fb_rebootedl.Size = new System.Drawing.Size(512, 21);
+            this.radioButton_fb_rebootedl.Size = new System.Drawing.Size(493, 20);
             this.radioButton_fb_rebootedl.TabIndex = 8;
             this.radioButton_fb_rebootedl.Text = "Перегрузить в аварийный режим (Emergency Download - EDL - PID#9008)";
             this.radioButton_fb_rebootedl.UseVisualStyleBackColor = true;
@@ -1875,7 +1875,7 @@
             this.radioButton_fb_getvar.AutoSize = true;
             this.radioButton_fb_getvar.Location = new System.Drawing.Point(566, 22);
             this.radioButton_fb_getvar.Name = "radioButton_fb_getvar";
-            this.radioButton_fb_getvar.Size = new System.Drawing.Size(285, 21);
+            this.radioButton_fb_getvar.Size = new System.Drawing.Size(277, 20);
             this.radioButton_fb_getvar.TabIndex = 7;
             this.radioButton_fb_getvar.Text = "Информация об устройстве (getvar all)";
             this.radioButton_fb_getvar.UseVisualStyleBackColor = true;
@@ -1894,7 +1894,7 @@
             this.radioButton_fb_commandline.AutoSize = true;
             this.radioButton_fb_commandline.Location = new System.Drawing.Point(7, 91);
             this.radioButton_fb_commandline.Name = "radioButton_fb_commandline";
-            this.radioButton_fb_commandline.Size = new System.Drawing.Size(217, 21);
+            this.radioButton_fb_commandline.Size = new System.Drawing.Size(207, 20);
             this.radioButton_fb_commandline.TabIndex = 5;
             this.radioButton_fb_commandline.Text = "Командная строка (fastboot)";
             this.radioButton_fb_commandline.UseVisualStyleBackColor = true;
@@ -1905,7 +1905,7 @@
             this.radioButton_fb_rebootbootloader.AutoSize = true;
             this.radioButton_fb_rebootbootloader.Location = new System.Drawing.Point(7, 45);
             this.radioButton_fb_rebootbootloader.Name = "radioButton_fb_rebootbootloader";
-            this.radioButton_fb_rebootbootloader.Size = new System.Drawing.Size(377, 21);
+            this.radioButton_fb_rebootbootloader.Size = new System.Drawing.Size(373, 20);
             this.radioButton_fb_rebootbootloader.TabIndex = 4;
             this.radioButton_fb_rebootbootloader.Text = "Перегрузить режим загрузчика (Fastboot-bootloader)";
             this.radioButton_fb_rebootbootloader.UseVisualStyleBackColor = true;
@@ -1915,7 +1915,7 @@
             this.radioButton_fb_unlock.AutoSize = true;
             this.radioButton_fb_unlock.Location = new System.Drawing.Point(566, 68);
             this.radioButton_fb_unlock.Name = "radioButton_fb_unlock";
-            this.radioButton_fb_unlock.Size = new System.Drawing.Size(261, 21);
+            this.radioButton_fb_unlock.Size = new System.Drawing.Size(260, 20);
             this.radioButton_fb_unlock.TabIndex = 3;
             this.radioButton_fb_unlock.Text = "Разблокировать загрузчик (unlock)";
             this.radioButton_fb_unlock.UseVisualStyleBackColor = true;
@@ -1925,7 +1925,7 @@
             this.radioButton_fb_lock.AutoSize = true;
             this.radioButton_fb_lock.Location = new System.Drawing.Point(566, 91);
             this.radioButton_fb_lock.Name = "radioButton_fb_lock";
-            this.radioButton_fb_lock.Size = new System.Drawing.Size(238, 21);
+            this.radioButton_fb_lock.Size = new System.Drawing.Size(238, 20);
             this.radioButton_fb_lock.TabIndex = 2;
             this.radioButton_fb_lock.Text = "Заблокировать загрузчик (lock)";
             this.radioButton_fb_lock.UseVisualStyleBackColor = true;
@@ -1935,7 +1935,7 @@
             this.radioButton_fb_devinfo.AutoSize = true;
             this.radioButton_fb_devinfo.Location = new System.Drawing.Point(566, 45);
             this.radioButton_fb_devinfo.Name = "radioButton_fb_devinfo";
-            this.radioButton_fb_devinfo.Size = new System.Drawing.Size(326, 21);
+            this.radioButton_fb_devinfo.Size = new System.Drawing.Size(320, 20);
             this.radioButton_fb_devinfo.TabIndex = 1;
             this.radioButton_fb_devinfo.Text = "Проверка состояния загрузчика (device-info)";
             this.radioButton_fb_devinfo.UseVisualStyleBackColor = true;
@@ -1946,7 +1946,7 @@
             this.radioButton_fb_reboot_normal.Checked = true;
             this.radioButton_fb_reboot_normal.Location = new System.Drawing.Point(7, 22);
             this.radioButton_fb_reboot_normal.Name = "radioButton_fb_reboot_normal";
-            this.radioButton_fb_reboot_normal.Size = new System.Drawing.Size(255, 21);
+            this.radioButton_fb_reboot_normal.Size = new System.Drawing.Size(254, 20);
             this.radioButton_fb_reboot_normal.TabIndex = 0;
             this.radioButton_fb_reboot_normal.TabStop = true;
             this.radioButton_fb_reboot_normal.Text = "Перегрузить в нормальный режим";
@@ -2000,7 +2000,7 @@
             this.groupBox_term_buttons.Controls.Add(this.button_term_clear);
             this.groupBox_term_buttons.Controls.Add(this.button_term_save);
             this.groupBox_term_buttons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_term_buttons.Location = new System.Drawing.Point(3, 542);
+            this.groupBox_term_buttons.Location = new System.Drawing.Point(3, 544);
             this.groupBox_term_buttons.Name = "groupBox_term_buttons";
             this.groupBox_term_buttons.Size = new System.Drawing.Size(394, 54);
             this.groupBox_term_buttons.TabIndex = 9;
@@ -2035,7 +2035,7 @@
             // 
             this.progressBar_phone.Dock = System.Windows.Forms.DockStyle.Fill;
             this.progressBar_phone.ForeColor = System.Drawing.Color.LimeGreen;
-            this.progressBar_phone.Location = new System.Drawing.Point(3, 602);
+            this.progressBar_phone.Location = new System.Drawing.Point(3, 604);
             this.progressBar_phone.Name = "progressBar_phone";
             this.progressBar_phone.Size = new System.Drawing.Size(394, 14);
             this.progressBar_phone.Step = 1;
@@ -2048,11 +2048,11 @@
             this.tabControl1.Controls.Add(this.tabPage_firehose);
             this.tabControl1.Controls.Add(this.tabPage_collection);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 30);
+            this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1369, 654);
+            this.tabControl1.Size = new System.Drawing.Size(1369, 656);
             this.tabControl1.TabIndex = 0;
             // 
             // bindingSource_collection

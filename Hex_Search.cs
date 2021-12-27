@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FirehoseFinder
@@ -21,12 +16,27 @@ namespace FirehoseFinder
             InitializeComponent();
         }
 
-        private void TextBox_hexsearch_TextChanged(object sender, EventArgs e)
+        private void TextBox_byte_search_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox_hexsearch.Text)) button_start_search.Enabled = false;
+            if (string.IsNullOrEmpty(textBox_byte_search.Text)) button_start_search.Enabled = false;
             else button_start_search.Enabled = true;
         }
 
+        private void TextBox_byte_search_KeyUp(object sender, KeyEventArgs e)
+        {
+            textBox_byte_search.Text = textBox_byte_search.Text.ToUpper();
+            textBox_byte_search.SelectionStart = textBox_byte_search.Text.Length;
+        }
+        private void TextBox_hexsearch_TextChanged(object sender, EventArgs e)
+        {
+            textBox_byte_search.Text = string.Empty;
+            byte[] convstrtobyte = new byte[textBox_hexsearch.Text.Count()];
+            for (int i = 0; i < convstrtobyte.Length; i++)
+            {
+                convstrtobyte[i] = (byte)textBox_hexsearch.Text[i];
+                textBox_byte_search.Text += string.Format("{0:X2}", convstrtobyte[i]);
+            }
+        }
         private void Button_start_search_Click(object sender, EventArgs e)
         {
             Dictionary<string, long> filestosearch = new Dictionary<string, long>();
@@ -49,7 +59,7 @@ namespace FirehoseFinder
             }
             listView_search.Items.Clear();
             toolStripStatusLabel_search.Text = string.Empty;
-            if (textBox_hexsearch.Text.Length % 2 != 0) textBox_hexsearch.Text = "0" + textBox_hexsearch.Text;
+            if (textBox_byte_search.Text.Length % 2 != 0) textBox_byte_search.Text = "0" + textBox_byte_search.Text;
             if (radioButton_file.Checked)
             {
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -75,7 +85,7 @@ namespace FirehoseFinder
                     inputsearch.Add(filename.Key);
                 }
                 //Создаём сущность Словарь+поиск и её отправляем в поток
-                backgroundWorker_hex_search.RunWorkerAsync(new Search_Hex(inputsearch, textBox_hexsearch.Text));
+                backgroundWorker_hex_search.RunWorkerAsync(new Search_Hex(inputsearch, textBox_byte_search.Text));
             }
         }
 
@@ -109,54 +119,6 @@ namespace FirehoseFinder
                         //Ищем совпадения и фиксируем адрес и значение
                         foreach (Search_Result sr in CompareBytes(maxbytes, chunkarray, fi.Name)) addr_value_file.Add(sr);
                     }
-                    /*
-                                                            using (FileStream stream = File.OpenRead(fullfilename))
-                                                            {
-                                                                //Перегнали файл в массив байт
-                                                                byte[] bytes = new byte[fi.Length];
-                                                                int numBytesToRead = (int)fi.Length;
-                                                                int sector = 512;
-                                                                int numBytesRead = 0;
-                                                                do
-                                                                {
-                                                                    if (numBytesToRead < sector) sector = numBytesToRead;
-                                                                    int n = stream.Read(bytes, numBytesRead, sector);
-                                                                    numBytesRead += n;
-                                                                    numBytesToRead -= n;
-                                                                } while (numBytesToRead > 0);
-                                                                //Перегоним массив байт в стрингбилдер
-                                                                StringBuilder tempstringsearch = new StringBuilder();
-                                                                for (int i = 0; i < bytes.Length; i++)
-                                                                {
-                                                                    tempstringsearch.Append(string.Format("{0:X2}", (int)bytes[i]));
-                                                                }
-                                                                //Ищем совпадения и фиксируем адрес и значение
-                                                                do
-                                                                {
-                                                                    Search_Result sr = new Search_Result(string.Empty, string.Empty, fi.Name);
-                                                                    int frontdump = 4; //Количество байт перед строкой поиска (потом поменять на динамические)
-                                                                    int reardump = 4; //Количество байт после строки поиска (потом поменять на динамические)
-                                                                    int addr = tempstringsearch.ToString().LastIndexOf(hex_search.SearchString);
-                                                                    if (addr == -1) tempstringsearch.Clear();
-                                                                    else
-                                                                    {
-                                                                        if (addr % 2 != 0)
-                                                                        {
-                                                                            tempstringsearch.Remove(addr + 1, tempstringsearch.Length - (addr + 1));
-                                                                        }
-                                                                        sr.Adress_hex = Convert.ToString(addr / 2, 16);
-                                                                        //Меняем количество символов для чтения пред и после поиска
-                                                                        if (addr - (2 * frontdump) < 0) frontdump = addr / 2;
-                                                                        if (addr + hex_search.SearchString.Length + (2 * reardump) > fi.Length * 2) reardump = Convert.ToInt32(fi.Length - (addr / 2)) - (hex_search.SearchString.Length / 2);
-                                                                        int reslen = (2 * frontdump) + hex_search.SearchString.Length + (2 * reardump);
-                                                                        sr.Result_String = tempstringsearch.ToString().Substring(addr - (2 * frontdump), reslen);
-                                                                        if (tempstringsearch.Length >= reslen - (2 * frontdump)) tempstringsearch.Remove(addr, tempstringsearch.Length - addr);
-                                                                        else tempstringsearch.Clear();
-                                                                        addr_value_file.Insert(0, sr);
-                                                                    }
-                                                                } while (tempstringsearch.Length > hex_search.SearchString.Length);
-                                                            }
-                     */
                 }
                 //Завершающие процедуры для одного файла из списка
                 worker.ReportProgress(countfile * 100 / currfiles, string.Format("{0} - {1} из {2}", fi.Name, countfile, currfiles));
@@ -196,35 +158,74 @@ namespace FirehoseFinder
             toolStripStatusLabel_search.Text = "Последний обработанный файл " + e.UserState.ToString();
         }
 
-        private void TextBox_hexsearch_KeyUp(object sender, KeyEventArgs e)
-        {
-            textBox_hexsearch.Text = textBox_hexsearch.Text.ToUpper();
-            textBox_hexsearch.SelectionStart = textBox_hexsearch.Text.Length;
-        }
 
         private List<Search_Result> CompareBytes(int maxbytes, SortedList<int, byte[]> dumpbytes, string filename)
         {
-            Search_Result sr = new Search_Result(string.Empty, string.Empty, filename);
             List<Search_Result> search_Results = new List<Search_Result>();
-            byte[] searchstringinbytes = new byte[textBox_hexsearch.Text.Length / 2];
-            for (int i = 0; i < textBox_hexsearch.Text.Length / 2; i++)
+            byte[] searchstringinbytes = new byte[textBox_byte_search.Text.Length / 2];
+            int comparecount = 0; //Счётчик для положения байт строки поиска
+            for (int i = 0; i < textBox_byte_search.Text.Length / 2; i++)
             {
-                searchstringinbytes[i] = Convert.ToByte(textBox_hexsearch.Text.Substring(i * 2, 2), 16);
+                searchstringinbytes[i] = Convert.ToByte(textBox_byte_search.Text.Substring(i * 2, 2), 16);
             }
             //Цикл для совпадений
             foreach (KeyValuePair<int, byte[]> item in dumpbytes)
             {
-                for (int i = 0; i < item.Value.Length; i++)
+                //Выполняется для одиночного массива из списка массивов
+                for (int i = 0; i < item.Value.Count(); i++)
                 {
-                    if (item.Value[i].Equals(searchstringinbytes[i])) sr.Adress_hex = Convert.ToString((item.Key * maxbytes) + i, 16);
+                    if (item.Value[i].Equals(searchstringinbytes[comparecount]))
+                    {
+                        comparecount++;
+                        if (comparecount >= searchstringinbytes.Length)
+                        {
+                            //Получили совпадение
+                            int frontdump = Convert.ToInt32(textBox_addfirst.Text); //Количество байт перед строкой поиска
+                            int reardump = Convert.ToInt32(textBox_addlast.Text); //Количество байт после строки поиска
+                            int addr = (item.Key * maxbytes) + (i - (searchstringinbytes.Length - 1));
+                            Search_Result sr = new Search_Result(Convert.ToString(addr, 16), string.Empty, filename);
+                            //Меняем количество символов для чтения пред и после поиска
+                            if (addr - frontdump < 0) frontdump = addr;
+                            if (addr + searchstringinbytes.Length + reardump > item.Value.Count()) reardump = Convert.ToInt32(item.Value.Count() - (addr + searchstringinbytes.Length));
+                            int reslen = frontdump + searchstringinbytes.Length + reardump;
+                            for (int c = addr - frontdump; c < reslen; c++)
+                            {
+                                sr.Result_String += string.Format("{0:X2}", item.Value[c]);
+                            }
+                            //Сбросили счётчик совпадений
+                            comparecount = 0;
+                            search_Results.Add(sr);
+                        }
+                    }
+                    else comparecount = 0;
                 }
             }
-            for (int i = 0; i < searchstringinbytes.Length; i++)
-            {
-                sr.Result_String += string.Format("{0:X2}", searchstringinbytes[i]);
-            }
-            search_Results.Add(sr);
             return search_Results;
+        }
+
+        private void ListView_search_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Clipboard.Clear();
+            Clipboard.SetText(listView_search.SelectedItems[0].Text);
+            toolStripStatusLabel_search.Text = "Адрес скопирован в буфер обмена";
+        }
+
+        private void RadioButton_search_text_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_search_text.Checked == true)
+            {
+                textBox_byte_search.Enabled = false;
+                textBox_hexsearch.Enabled = true;
+            }
+        }
+
+        private void RadioButton_byte_search_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_byte_search.Checked == true)
+            {
+                textBox_byte_search.Enabled = true;
+                textBox_hexsearch.Enabled = false;
+            }
         }
     }
 }

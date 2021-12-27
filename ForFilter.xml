@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-12-23T23:20:29">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2021-12-27T21:04:48">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -263,7 +263,7 @@
 <FullName>Snapdragon 400/410</FullName>
 <OEMID>0042</OEMID>
 <MODELID>0018</MODELID>
-<HASHID>FAF5C7A62884B4DB6EDC3CE226D53492552769004007683913983594441B0608</HASHID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>6039Y</Model>
 </ForFilter>
@@ -272,7 +272,7 @@
 <FullName>Snapdragon 400/410</FullName>
 <OEMID>0042</OEMID>
 <MODELID>0018</MODELID>
-<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<HASHID>FAF5C7A62884B4DB6EDC3CE226D53492552769004007683913983594441B0608</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>6039Y</Model>
 </ForFilter>
@@ -660,8 +660,8 @@
 <AltName>ZenFone 3</AltName>
 </ForFilter>
 <ForFilter>
-<HWID>0090B0E1</HWID>
-<FullName>Snapdragon 615</FullName>
+<HWID>007050E1</HWID>
+<FullName>Snapdragon 400/410</FullName>
 <OEMID>1111</OEMID>
 <MODELID>2222</MODELID>
 <HASHID>F069A87F6D4364EFCDFECFCD34BD5201F4126990D38424FCF7F21724F9EC0BF2</HASHID>
@@ -670,8 +670,8 @@
 <AltName>Zenfone 2 Laser</AltName>
 </ForFilter>
 <ForFilter>
-<HWID>007050E1</HWID>
-<FullName>Snapdragon 400/410</FullName>
+<HWID>0090B0E1</HWID>
+<FullName>Snapdragon 615</FullName>
 <OEMID>1111</OEMID>
 <MODELID>2222</MODELID>
 <HASHID>F069A87F6D4364EFCDFECFCD34BD5201F4126990D38424FCF7F21724F9EC0BF2</HASHID>
@@ -1020,6 +1020,16 @@
 <Trademark>Google</Trademark>
 <Model>Pixel OG</Model>
 <AltName>sailfish</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Snapdragon 425</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<Trademark>Hiby</Trademark>
+<Model>R5</Model>
+<AltName>R5Int, Hi-Res Плеер</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -2108,22 +2118,22 @@
 <ForFilter>
 <HWID>001060E1</HWID>
 <FullName>215 Mobile Platform</FullName>
-<OEMID>0031</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
-<Trademark>LGE</Trademark>
-<Model>LM-K200</Model>
-<AltName>dh0lm_dish_us</AltName>
-</ForFilter>
-<ForFilter>
-<HWID>001060E1</HWID>
-<FullName>215 Mobile Platform</FullName>
 <OEMID>1808</OEMID>
 <MODELID>0001</MODELID>
 <HASHID>CB904587B35A050D999CA77F65590E0C66BB85E630AF5172197464F912179A0D</HASHID>
 <Trademark>LGE</Trademark>
 <Model>LM-K200</Model>
 <AltName>dh0lm</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>001060E1</HWID>
+<FullName>215 Mobile Platform</FullName>
+<OEMID>0031</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
+<Trademark>LGE</Trademark>
+<Model>LM-K200</Model>
+<AltName>dh0lm_dish_us</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -3933,6 +3943,16 @@
 <AltName>scorpio</AltName>
 </ForFilter>
 <ForFilter>
+<HWID>0008C0E1</HWID>
+<FullName>Snapdragon 660</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi Note 3</Model>
+<AltName>jason</AltName>
+</ForFilter>
+<ForFilter>
 <HWID>009B00E1</HWID>
 <FullName>Snapdragon 650</FullName>
 <OEMID>0000</OEMID>
@@ -3942,16 +3962,6 @@
 <Model>Redmi Note 3</Model>
 <AltName>aosp_kenzo</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/prog_emmc_firehose_8976_ddr.mbn#</Url>
-</ForFilter>
-<ForFilter>
-<HWID>0008C0E1</HWID>
-<FullName>Snapdragon 660</FullName>
-<OEMID>0000</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
-<Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 3</Model>
-<AltName>jason</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>009B00E1</HWID>
