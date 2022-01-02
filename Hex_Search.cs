@@ -121,10 +121,10 @@ namespace FirehoseFinder
                     }
                 }
                 //Завершающие процедуры для одного файла из списка
-                worker.ReportProgress(countfile * 100 / currfiles, string.Format("{0} - {1} из {2}", fi.Name, countfile, currfiles));
+                worker.ReportProgress(countfile * 100 / currfiles, addr_value_file);//string.Format("{0} - {1} из {2}", fi.Name, countfile, currfiles)
                 countfile++;
             }
-            e.Result = addr_value_file;
+            //e.Result = addr_value_file;
         }
 
         private void BackgroundWorker_hex_search_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -133,29 +133,30 @@ namespace FirehoseFinder
             else
             {
                 toolStripProgressBar_search.Value = 0;
-                List<Search_Result> result = (List<Search_Result>)e.Result;
-                //По исполнению заполняем листвью списком совпадений
+                //По исполнению группируем
                 //ListViewGroup group = new ListViewGroup(filesafename);
-                if (result.Count == 0) toolStripStatusLabel_search.Text = "Совпадений не найдено";
-                else
-                {
-                    foreach (Search_Result sr in result)
-                    {
-                        ListViewItem hsearchres = new ListViewItem("0x" + sr.Adress_hex.ToUpper());
-                        hsearchres.SubItems.Add(sr.Result_String);
-                        hsearchres.SubItems.Add(sr.File_Name);
-                        listView_search.Items.Add(hsearchres);
-                        toolStripStatusLabel_search.Text = string.Format("Найдено {0} совпадений в {1} файлах", result.Count, "счётчик группы");
-                    }
-                    for (int i = 0; i < listView_search.Columns.Count; i++) listView_search.Columns[i].Width = -1;
-                }
             }
         }
 
         private void BackgroundWorker_hex_search_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             toolStripProgressBar_search.Value = e.ProgressPercentage;
-            toolStripStatusLabel_search.Text = "Последний обработанный файл " + e.UserState.ToString();
+            //toolStripStatusLabel_search.Text = "Последний обработанный файл " + e.UserState.ToString();
+            List<Search_Result> result = (List<Search_Result>)e.UserState;
+            //Заполняем листвью списком совпадений
+            if (result.Count == 0) toolStripStatusLabel_search.Text = "Совпадений не найдено";
+            else
+            {
+                foreach (Search_Result sr in result)
+                {
+                    ListViewItem hsearchres = new ListViewItem("0x" + sr.Adress_hex.ToUpper());
+                    hsearchres.SubItems.Add(sr.Result_String);
+                    hsearchres.SubItems.Add(sr.File_Name);
+                    listView_search.Items.Add(hsearchres);
+                    toolStripStatusLabel_search.Text = string.Format("Найдено {0} совпадений в файле {1}.", result.Count, sr.File_Name);
+                }
+                for (int i = 0; i < listView_search.Columns.Count; i++) listView_search.Columns[i].Width = -1;
+            }
         }
 
 

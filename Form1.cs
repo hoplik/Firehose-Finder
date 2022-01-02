@@ -833,7 +833,7 @@ namespace FirehoseFinder
             dataGridView_final.Rows.Clear();
             button_useSahara_fhf.Enabled = false;
             toolStripStatusLabel_filescompleted.Text = string.Empty;
-            toolStripStatusLabel_vol.Text = string.Empty;
+            //toolStripStatusLabel_dowork.Text = string.Empty;
             toolStripProgressBar_filescompleted.Value = 0;
             //Ищем локально или на сервере
             if (checkBox_Find_Local.Checked)
@@ -1305,7 +1305,7 @@ namespace FirehoseFinder
             if (currreadfiles == totalreadfiles)
             {
                 button_path.Enabled = true;
-                toolStripStatusLabel_vol.Text = string.Empty;
+                toolStripStatusLabel_dowork.Text = string.Empty;
                 toolStripProgressBar_filescompleted.Value = 0;
                 if (currreadfiles > 0) dataGridView_final.Rows[0].Selected = true;
                 return;
@@ -1321,7 +1321,7 @@ namespace FirehoseFinder
                 string shortfilename = Path.GetFileName(unreadfiles.Key); //Получили название файла
                 if (!ReadedFiles.Contains(unreadfiles.Key))
                 {
-                    toolStripStatusLabel_vol.Text = "Сейчас обрабатывается файл - " + shortfilename;
+                    toolStripStatusLabel_dowork.Text = "Сейчас обрабатывается файл - " + shortfilename;
                     statusStrip_firehose.Refresh();
                     dataGridView_final["Column_Name", currreadfiles].Value = unreadfiles.Key;
                     backgroundWorker_Read_File.RunWorkerAsync(unreadfiles); //Запускаем цикл обработки отдельно каждого необработанного файла в папке
