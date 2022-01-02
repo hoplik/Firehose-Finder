@@ -189,16 +189,25 @@ namespace FirehoseFinder
                             if (addr - frontdump < 0) frontdump = addr;
                             if (addr + searchstringinbytes.Length + reardump > item.Value.Count()) reardump = Convert.ToInt32(item.Value.Count() - (addr + searchstringinbytes.Length));
                             int reslen = frontdump + searchstringinbytes.Length + reardump;
-                            for (int c = addr - frontdump; c < reslen; c++)
-                            {
-                                sr.Result_String += string.Format("{0:X2}", item.Value[c]);
-                            }
+                            sr.Result_String = (addr-frontdump).ToString() + "_"+reslen.ToString();
                             //Сбросили счётчик совпадений
                             comparecount = 0;
                             search_Results.Add(sr);
                         }
                     }
                     else comparecount = 0;
+                }
+                if (search_Results.Count>0)
+                {
+                    //Преобразуем сдвиг_длина в строку данных
+                    foreach (Search_Result sri in search_Results)
+                    {
+                        string[] resarray = sri.Result_String.Split('\u005F');
+                        for (int i = Convert.ToInt32(resarray[0]); i < Convert.ToInt32(resarray[1]); i++)
+                        {
+                            sri.Result_String += item.Value[i];
+                        }
+                    }
                 }
             }
             return search_Results;
