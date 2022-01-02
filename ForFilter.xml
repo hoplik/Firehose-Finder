@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-01-01T20:40:36">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-01-02T18:23:48">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -2981,6 +2981,7 @@
 <Trademark>Samsung</Trademark>
 <Model>SM-A115F</Model>
 <AltName>Galaxy A11</AltName>
+<Url>https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/CBAA55ED/prog_emmc_firehose_8953_ddr.mbn#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/CBAA55ED/prog_emmc_firehose_8953_ddr.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>0009A0E1</HWID>
