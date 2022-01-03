@@ -29,6 +29,10 @@ namespace FirehoseFinder
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Файл1", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Файл2", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Тест1");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Тест2");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hex_Search));
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -38,10 +42,6 @@ namespace FirehoseFinder
             this.toolStripStatusLabel_search = new System.Windows.Forms.ToolStripStatusLabel();
             this.tableLayoutPanel_hs = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox_hs = new System.Windows.Forms.GroupBox();
-            this.radioButton_dir = new System.Windows.Forms.RadioButton();
-            this.radioButton_file = new System.Windows.Forms.RadioButton();
-            this.button_start_search = new System.Windows.Forms.Button();
             this.listView_search = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -51,15 +51,19 @@ namespace FirehoseFinder
             this.textBox_byte_search = new System.Windows.Forms.TextBox();
             this.radioButton_search_text = new System.Windows.Forms.RadioButton();
             this.radioButton_byte_search = new System.Windows.Forms.RadioButton();
+            this.button_start_search = new System.Windows.Forms.Button();
+            this.groupBox_hs = new System.Windows.Forms.GroupBox();
+            this.radioButton_dir = new System.Windows.Forms.RadioButton();
+            this.radioButton_file = new System.Windows.Forms.RadioButton();
             this.groupBox_addbytes = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox_addfirst = new System.Windows.Forms.TextBox();
             this.textBox_addlast = new System.Windows.Forms.TextBox();
+            this.textBox_addfirst = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.statusStrip_search.SuspendLayout();
             this.tableLayoutPanel_hs.SuspendLayout();
-            this.groupBox_hs.SuspendLayout();
             this.groupBox_byte_text.SuspendLayout();
+            this.groupBox_hs.SuspendLayout();
             this.groupBox_addbytes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,52 +141,6 @@ namespace FirehoseFinder
             this.label1.TabIndex = 0;
             this.label1.Text = "Ищем последовательность";
             // 
-            // groupBox_hs
-            // 
-            this.groupBox_hs.Controls.Add(this.radioButton_dir);
-            this.groupBox_hs.Controls.Add(this.radioButton_file);
-            this.groupBox_hs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_hs.Location = new System.Drawing.Point(796, 93);
-            this.groupBox_hs.Name = "groupBox_hs";
-            this.groupBox_hs.Size = new System.Drawing.Size(194, 84);
-            this.groupBox_hs.TabIndex = 2;
-            this.groupBox_hs.TabStop = false;
-            this.groupBox_hs.Text = "Область поиска";
-            // 
-            // radioButton_dir
-            // 
-            this.radioButton_dir.AutoSize = true;
-            this.radioButton_dir.Location = new System.Drawing.Point(81, 45);
-            this.radioButton_dir.Name = "radioButton_dir";
-            this.radioButton_dir.Size = new System.Drawing.Size(69, 20);
-            this.radioButton_dir.TabIndex = 1;
-            this.radioButton_dir.TabStop = true;
-            this.radioButton_dir.Text = "Папка";
-            this.radioButton_dir.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_file
-            // 
-            this.radioButton_file.AutoSize = true;
-            this.radioButton_file.Checked = true;
-            this.radioButton_file.Location = new System.Drawing.Point(6, 45);
-            this.radioButton_file.Name = "radioButton_file";
-            this.radioButton_file.Size = new System.Drawing.Size(63, 20);
-            this.radioButton_file.TabIndex = 0;
-            this.radioButton_file.TabStop = true;
-            this.radioButton_file.Text = "Файл";
-            this.radioButton_file.UseVisualStyleBackColor = true;
-            // 
-            // button_start_search
-            // 
-            this.button_start_search.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_start_search.Location = new System.Drawing.Point(796, 183);
-            this.button_start_search.Name = "button_start_search";
-            this.button_start_search.Size = new System.Drawing.Size(194, 23);
-            this.button_start_search.TabIndex = 3;
-            this.button_start_search.Text = "путь поиска";
-            this.button_start_search.UseVisualStyleBackColor = true;
-            this.button_start_search.Click += new System.EventHandler(this.Button_start_search_Click);
-            // 
             // listView_search
             // 
             this.listView_search.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -192,8 +150,20 @@ namespace FirehoseFinder
             this.tableLayoutPanel_hs.SetColumnSpan(this.listView_search, 2);
             this.listView_search.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView_search.FullRowSelect = true;
+            listViewGroup1.Header = "Файл1";
+            listViewGroup1.Name = "Файл1";
+            listViewGroup2.Header = "Файл2";
+            listViewGroup2.Name = "Файл2";
+            this.listView_search.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
+            listViewGroup1,
+            listViewGroup2});
             this.listView_search.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView_search.HideSelection = false;
+            listViewItem1.Group = listViewGroup1;
+            listViewItem2.Group = listViewGroup2;
+            this.listView_search.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2});
             this.listView_search.Location = new System.Drawing.Point(3, 93);
             this.listView_search.MultiSelect = false;
             this.listView_search.Name = "listView_search";
@@ -275,6 +245,52 @@ namespace FirehoseFinder
             this.radioButton_byte_search.UseVisualStyleBackColor = true;
             this.radioButton_byte_search.CheckedChanged += new System.EventHandler(this.RadioButton_byte_search_CheckedChanged);
             // 
+            // button_start_search
+            // 
+            this.button_start_search.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_start_search.Location = new System.Drawing.Point(796, 183);
+            this.button_start_search.Name = "button_start_search";
+            this.button_start_search.Size = new System.Drawing.Size(194, 23);
+            this.button_start_search.TabIndex = 3;
+            this.button_start_search.Text = "путь поиска";
+            this.button_start_search.UseVisualStyleBackColor = true;
+            this.button_start_search.Click += new System.EventHandler(this.Button_start_search_Click);
+            // 
+            // groupBox_hs
+            // 
+            this.groupBox_hs.Controls.Add(this.radioButton_dir);
+            this.groupBox_hs.Controls.Add(this.radioButton_file);
+            this.groupBox_hs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox_hs.Location = new System.Drawing.Point(796, 93);
+            this.groupBox_hs.Name = "groupBox_hs";
+            this.groupBox_hs.Size = new System.Drawing.Size(194, 84);
+            this.groupBox_hs.TabIndex = 2;
+            this.groupBox_hs.TabStop = false;
+            this.groupBox_hs.Text = "Область поиска";
+            // 
+            // radioButton_dir
+            // 
+            this.radioButton_dir.AutoSize = true;
+            this.radioButton_dir.Location = new System.Drawing.Point(81, 45);
+            this.radioButton_dir.Name = "radioButton_dir";
+            this.radioButton_dir.Size = new System.Drawing.Size(69, 20);
+            this.radioButton_dir.TabIndex = 1;
+            this.radioButton_dir.TabStop = true;
+            this.radioButton_dir.Text = "Папка";
+            this.radioButton_dir.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_file
+            // 
+            this.radioButton_file.AutoSize = true;
+            this.radioButton_file.Checked = true;
+            this.radioButton_file.Location = new System.Drawing.Point(6, 45);
+            this.radioButton_file.Name = "radioButton_file";
+            this.radioButton_file.Size = new System.Drawing.Size(63, 20);
+            this.radioButton_file.TabIndex = 0;
+            this.radioButton_file.TabStop = true;
+            this.radioButton_file.Text = "Файл";
+            this.radioButton_file.UseVisualStyleBackColor = true;
+            // 
             // groupBox_addbytes
             // 
             this.groupBox_addbytes.Controls.Add(this.textBox_addlast);
@@ -288,14 +304,21 @@ namespace FirehoseFinder
             this.groupBox_addbytes.TabStop = false;
             this.groupBox_addbytes.Text = "Добавить байты";
             // 
-            // label2
+            // textBox_addlast
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "в начале";
+            this.textBox_addlast.Location = new System.Drawing.Point(85, 56);
+            this.textBox_addlast.Name = "textBox_addlast";
+            this.textBox_addlast.Size = new System.Drawing.Size(100, 22);
+            this.textBox_addlast.TabIndex = 3;
+            this.textBox_addlast.Text = "4";
+            // 
+            // textBox_addfirst
+            // 
+            this.textBox_addfirst.Location = new System.Drawing.Point(85, 27);
+            this.textBox_addfirst.Name = "textBox_addfirst";
+            this.textBox_addfirst.Size = new System.Drawing.Size(100, 22);
+            this.textBox_addfirst.TabIndex = 2;
+            this.textBox_addfirst.Text = "4";
             // 
             // label3
             // 
@@ -306,21 +329,14 @@ namespace FirehoseFinder
             this.label3.TabIndex = 1;
             this.label3.Text = "в конце";
             // 
-            // textBox_addfirst
+            // label2
             // 
-            this.textBox_addfirst.Location = new System.Drawing.Point(85, 27);
-            this.textBox_addfirst.Name = "textBox_addfirst";
-            this.textBox_addfirst.Size = new System.Drawing.Size(100, 22);
-            this.textBox_addfirst.TabIndex = 2;
-            this.textBox_addfirst.Text = "4";
-            // 
-            // textBox_addlast
-            // 
-            this.textBox_addlast.Location = new System.Drawing.Point(85, 56);
-            this.textBox_addlast.Name = "textBox_addlast";
-            this.textBox_addlast.Size = new System.Drawing.Size(100, 22);
-            this.textBox_addlast.TabIndex = 3;
-            this.textBox_addlast.Text = "4";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 16);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "в начале";
             // 
             // Hex_Search
             // 
@@ -336,10 +352,10 @@ namespace FirehoseFinder
             this.statusStrip_search.PerformLayout();
             this.tableLayoutPanel_hs.ResumeLayout(false);
             this.tableLayoutPanel_hs.PerformLayout();
-            this.groupBox_hs.ResumeLayout(false);
-            this.groupBox_hs.PerformLayout();
             this.groupBox_byte_text.ResumeLayout(false);
             this.groupBox_byte_text.PerformLayout();
+            this.groupBox_hs.ResumeLayout(false);
+            this.groupBox_hs.PerformLayout();
             this.groupBox_addbytes.ResumeLayout(false);
             this.groupBox_addbytes.PerformLayout();
             this.ResumeLayout(false);

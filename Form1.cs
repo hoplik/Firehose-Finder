@@ -219,6 +219,7 @@ namespace FirehoseFinder
                     label_tm.Text = "---";
                     label_model.Text = "---";
                     label_altname.Text = "---";
+                    label_chip_sn.Text = "---";
                     break;
                 default:
                     label_tm.Text = "\"" + imf.comboBox_tm_insert.Text + "\""; //Если Производитель пришёл в кавычках, значит вводили вручную
@@ -833,7 +834,7 @@ namespace FirehoseFinder
             dataGridView_final.Rows.Clear();
             button_useSahara_fhf.Enabled = false;
             toolStripStatusLabel_filescompleted.Text = string.Empty;
-            //toolStripStatusLabel_dowork.Text = string.Empty;
+            toolStripStatusLabel_dowork.Text = string.Empty;
             toolStripProgressBar_filescompleted.Value = 0;
             //Ищем локально или на сервере
             if (checkBox_Find_Local.Checked)
@@ -1596,8 +1597,9 @@ namespace FirehoseFinder
             }
             NeedReset = true;
             //Обрабатываем запрос идентификаторов
-            textBox_main_term.AppendText("Получили S/N CPU - " + func.SaharaCommand1() + Environment.NewLine);
-            textBox_soft_term.AppendText("Получили S/N CPU - " + func.SaharaCommand1() + Environment.NewLine);
+            label_chip_sn.Text = func.SaharaCommand1();
+            textBox_main_term.AppendText("Получили S/N CPU - " + label_chip_sn.Text + Environment.NewLine);
+            textBox_soft_term.AppendText("Получили S/N CPU - " + label_chip_sn.Text + Environment.NewLine);
             string HWOEMIDs = func.SaharaCommand2();
             if (HWOEMIDs.Length == 16)
             {
@@ -1621,6 +1623,7 @@ namespace FirehoseFinder
                             label_tm.Text = "---";
                             label_model.Text = "---";
                             label_altname.Text = "---";
+                            label_chip_sn.Text = "---";
                             toolStripStatusLabel_filescompleted.Text = "Не все идентификаторы получены, отправка данных отменена";
                             checkBox_send.Checked = false;
                             break;
@@ -1632,7 +1635,15 @@ namespace FirehoseFinder
                     }
                 }
             }
-            string logstr = label_tm.Text + "<>" + label_model.Text + "<>" + label_altname.Text + Environment.NewLine + textBox_hwid.Text + textBox_oemid.Text + textBox_modelid.Text + "<>" + textBox_oemhash.Text + "<>" + label_SW_Ver.Text;
+            string logstr = label_tm.Text + "<>" + label_model.Text + "<>" + label_altname.Text +
+                Environment.NewLine +
+                string.Format("Chip s/n - {0}", label_chip_sn.Text) +
+                Environment.NewLine +
+                string.Format("HWID - {0}{1}{2}", textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text) +
+                Environment.NewLine +
+                string.Format("OEM_PK_HASH - {0}", textBox_oemhash.Text) +
+                Environment.NewLine+
+                string.Format("SBL SW (Version) - {0}", label_SW_Ver.Text);
             if (checkBox_Log.Checked)
             {
                 try

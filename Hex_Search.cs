@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace FirehoseFinder
@@ -57,7 +56,8 @@ namespace FirehoseFinder
                     toolStripProgressBar_search.Value = 0;
                 }
             }
-            listView_search.Items.Clear();
+            listView_search.Items.Clear(); //Очищаем элементы
+            listView_search.Groups.Clear(); //Очищаем группы элементов
             toolStripStatusLabel_search.Text = string.Empty;
             if (textBox_byte_search.Text.Length % 2 != 0) textBox_byte_search.Text = "0" + textBox_byte_search.Text;
             if (radioButton_file.Checked)
@@ -82,7 +82,23 @@ namespace FirehoseFinder
                 List<string> inputsearch = new List<string>();
                 foreach (KeyValuePair<string, long> filename in filestosearch)
                 {
+                    FileInfo fileInfo = new FileInfo(filename.Key);
                     inputsearch.Add(filename.Key);
+                    //Создаём группы по именам файлов
+                    bool grouphere = false;
+                    foreach (ListViewGroup item in listView_search.Groups)
+                    {
+                        if (item.Header.Equals(fileInfo.Name))
+                        {
+                            grouphere=true;
+                            break;
+                        }
+                    }
+                    if (!grouphere)
+                    {
+                        ListViewGroup group = new ListViewGroup(fileInfo.Name, HorizontalAlignment.Left);
+                        listView_search.Groups.Add(group);
+                    }
                 }
                 //Создаём сущность Словарь+поиск и её отправляем в поток
                 backgroundWorker_hex_search.RunWorkerAsync(new Search_Hex(inputsearch, textBox_byte_search.Text));
@@ -134,9 +150,8 @@ namespace FirehoseFinder
                 if (listView_search.Items.Count==0) toolStripStatusLabel_search.Text = "Совпадений не найдено";
                 else
                 {
-                    //По исполнению группируем
-                    //ListViewGroup group = new ListViewGroup(filesafename);
-                    toolStripStatusLabel_search.Text =string.Format("Найдено {0} совпадений в {1} файлах.", listView_search.Items.Count, "группировка");
+                    int countgroups = 0;
+                    toolStripStatusLabel_search.Text =string.Format("Найдено {0} совпадений в {1} из {2} файлах.", listView_search.Items.Count,countgroups, listView_search.Groups.Count);
                 }
             }
         }
@@ -154,6 +169,14 @@ namespace FirehoseFinder
                     if (!string.IsNullOrEmpty(sr.Adress_hex))
                     {
                         ListViewItem hsearchres = new ListViewItem("0x" + sr.Adress_hex.ToUpper());
+                        foreach (ListViewGroup item in listView_search.Groups)
+                        {
+                            if (item.Header.Equals(sr.File_Name))
+                            {
+                                hsearchres.Group=item;
+                                break;
+                            }
+                        }
                         hsearchres.SubItems.Add(sr.Result_String);
                         hsearchres.SubItems.Add(sr.File_Name);
                         listView_search.Items.Add(hsearchres);
