@@ -15,6 +15,15 @@ namespace FirehoseFinder
     class Func
     {
         /// <summary>
+        /// Система исчисления, применяемая к строке знаков
+        /// </summary>
+        internal enum System_Count
+        {
+            dex,
+            hex
+        }
+
+        /// <summary>
         /// Создаём список файлов с размером из указанной директории
         /// </summary>
         public Dictionary<string, long> WFiles(string WorkDir, bool allFiles)
@@ -82,7 +91,7 @@ namespace FirehoseFinder
                                 HStr[counth] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
                                 counth++;
                             }
-                            certarray[i] = String.Join(string.Empty, HStr);
+                            certarray[i] = string.Join(string.Empty, HStr);
                             break;
                         case 1: // Вытягиваем производителя
                             string[] OStr = new string[4];
@@ -92,7 +101,7 @@ namespace FirehoseFinder
                                 OStr[counto] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
                                 counto++;
                             }
-                            certarray[i] = String.Join(string.Empty, OStr);
+                            certarray[i] = string.Join(string.Empty, OStr);
                             break;
                         case 2: // Вытягиваем номер модели
                             string[] MStr = new string[4];
@@ -102,7 +111,7 @@ namespace FirehoseFinder
                                 MStr[countm] = Convert.ToString((char)int.Parse(HWID.Substring(j, 2), NumberStyles.HexNumber));
                                 countm++;
                             }
-                            certarray[i] = String.Join(string.Empty, MStr);
+                            certarray[i] = string.Join(string.Empty, MStr);
                             break;
                         case 3: // Расчитываем хеш
                             if (string.IsNullOrEmpty(CertExtr(dumpfile))) certarray[i] = "?"; else certarray[i] = CertExtr(dumpfile);
@@ -115,7 +124,7 @@ namespace FirehoseFinder
                                 SNStr[countn] = Convert.ToString((char)int.Parse(SWID.Substring(j, 2), NumberStyles.HexNumber));
                                 countn++;
                             }
-                            string nstr = String.Join(string.Empty, SNStr);
+                            string nstr = string.Join(string.Empty, SNStr);
                             string nend;
                             switch (nstr)
                             {
@@ -139,7 +148,7 @@ namespace FirehoseFinder
                                 SWStr[countv] = Convert.ToString((char)int.Parse(SWID.Substring(j, 2), NumberStyles.HexNumber));
                                 countv++;
                             }
-                            string verstr = String.Join(string.Empty, SWStr);
+                            string verstr = string.Join(string.Empty, SWStr);
                             string verend;
                             switch (verstr)
                             {
@@ -247,7 +256,11 @@ namespace FirehoseFinder
                              .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
                              .ToArray();
         }
-
+        
+        /// <summary>
+        /// Парсинг результата работы команды Сахары 01
+        /// </summary>
+        /// <returns></returns>
         internal string SaharaCommand1()
         {
             StringBuilder SC1 = new StringBuilder();
@@ -543,6 +556,125 @@ namespace FirehoseFinder
             {
                 MessageBox.Show("Не удалось создать xml-файл чтения/записи разделов" + Environment.NewLine + ex.Message);
             }
+        }
+
+        /// <summary>
+        /// Удаляем некорректные символы из строки в зависимости от системы исчисления
+        /// </summary>
+        /// <param name="value">Исходное значение анализируемой строки</param>
+        /// <param name="sys_count">Система исчисления (10, 16)</param>
+        /// <returns>Возвращаем строку с изменёнными или удалёнными некорректными символами</returns>
+        internal string DelUnknownChars(string value, System_Count sys_count)
+        {
+            StringBuilder GoodStr = new StringBuilder(value);
+            string[] Dex_str = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+            for (int i = 0; i < GoodStr.Length; i++)
+            {
+                if (sys_count == System_Count.dex)
+                {
+                    if (!Dex_str.Contains(GoodStr[i].ToString())) GoodStr.Remove(i, 1);
+                }
+                else
+                {
+                    switch (GoodStr[i].ToString())
+                    {
+                        case "0": break;
+                        case "1": break;
+                        case "2": break;
+                        case "3": break;
+                        case "4": break;
+                        case "5": break;
+                        case "6": break;
+                        case "7": break;
+                        case "8": break;
+                        case "9": break;
+                        case "A": break;
+                        case "B": break;
+                        case "C": break;
+                        case "D": break;
+                        case "E": break;
+                        case "F": break;
+                        case "a":
+                            GoodStr.Replace("a", "A");
+                            break;
+                        case "b":
+                            GoodStr.Replace("b", "B");
+                            break;
+                        case "c":
+                            GoodStr.Replace("c", "C");
+                            break;
+                        case "d":
+                            GoodStr.Replace("d", "D");
+                            break;
+                        case "e":
+                            GoodStr.Replace("e", "E");
+                            break;
+                        case "f":
+                            GoodStr.Replace("f", "F");
+                            break;
+                        default:
+                            GoodStr.Remove(i, 1);
+                            break;
+                    }
+                }
+            }
+            return GoodStr.ToString();
+        }
+
+        /// <summary>
+        /// Преобразовываем строку байт в список символов в байтах и ASCII
+        /// </summary>
+        /// <param name="charbyte">Массив байт, считанных из шапки прошивки</param>
+        /// <param name="all_read_chars">Количество байт для анализа</param>
+        /// <param name="chars_to_string">Количество символов в строке для разбора массива</param>
+        /// <returns></returns>
+        internal string ByEight(byte[] charbyte, int chars_to_string)
+        {
+            int all_read_chars = charbyte.Length;
+            int full_str = ((all_read_chars / chars_to_string) * (chars_to_string * 5 + 2)) + ((chars_to_string * 5) + 2);
+            StringBuilder str_by_eight = new StringBuilder(full_str);
+            int count_char_place = 0;
+            int count_full_char_string = 0;
+            //int count_string = 0;
+            for (int i = 0; i < all_read_chars; i++)
+            {
+                if (str_by_eight.Length < (count_char_place * 3) + count_full_char_string)
+                {
+                    str_by_eight.Append(string.Format("{0:X2} ", charbyte[i]));
+                }
+                else
+                {
+                    str_by_eight.Insert((count_char_place * 3) + count_full_char_string, string.Format("{0:X2} ", charbyte[i]));
+                }
+                char prt_char = (char)charbyte[i];
+                if (char.IsWhiteSpace(prt_char) || char.IsControl(prt_char))
+                {
+                    prt_char = '.'; // Заменяем нечитаемые символы точкой
+                }
+                str_by_eight.Append(string.Format(" {0}", prt_char));
+                count_char_place++;
+                if (count_char_place == chars_to_string) // Достигли конца полной строки
+                {
+                    str_by_eight.Insert(count_char_place * 3 + count_full_char_string, "\t|");
+                    count_char_place = 0;
+                    count_full_char_string += chars_to_string * 5 + 2; // 24 - hex+" ", 2 - "tab|", 16 - " "+ascii - это для 8 знаков в строке
+                }
+            }
+            if (count_char_place > 0) // Последняя неполная строка. Добиваем пробелами до полной.
+            {
+                for (int i = count_char_place; i < chars_to_string; i++)
+                {
+                    str_by_eight.Insert(i * 3 + count_full_char_string, "   ");
+                }
+                str_by_eight.Insert(chars_to_string * 3 + count_full_char_string, "\t|");
+            }
+            while ((count_full_char_string / chars_to_string * 5 + 2) > 1) // Расставляем переносы для удобства чтения
+            {
+                //count_string++;
+                str_by_eight.Insert(count_full_char_string, Environment.NewLine);
+                count_full_char_string -= chars_to_string * 5 + 2;
+            }
+            return str_by_eight.ToString();
         }
     }
 }

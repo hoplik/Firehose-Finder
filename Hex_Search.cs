@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -10,6 +11,7 @@ namespace FirehoseFinder
     public partial class Hex_Search : Form
     {
         Func func = new Func();
+        Hashtable TableGroups = new Hashtable();
         public Hex_Search()
         {
             InitializeComponent();
@@ -18,14 +20,14 @@ namespace FirehoseFinder
         private void TextBox_byte_search_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBox_byte_search.Text)) button_start_search.Enabled = false;
-            else button_start_search.Enabled = true;
+            else
+            {
+                textBox_byte_search.Text = func.DelUnknownChars(textBox_byte_search.Text, Func.System_Count.hex);
+                textBox_byte_search.SelectionStart = textBox_byte_search.Text.Length;
+                button_start_search.Enabled = true;
+            }
         }
 
-        private void TextBox_byte_search_KeyUp(object sender, KeyEventArgs e)
-        {
-            textBox_byte_search.Text = textBox_byte_search.Text.ToUpper();
-            textBox_byte_search.SelectionStart = textBox_byte_search.Text.Length;
-        }
         private void TextBox_hexsearch_TextChanged(object sender, EventArgs e)
         {
             textBox_byte_search.Text = string.Empty;
@@ -36,6 +38,34 @@ namespace FirehoseFinder
                 textBox_byte_search.Text += string.Format("{0:X2}", convstrtobyte[i]);
             }
         }
+
+        private void ListView_search_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Clipboard.Clear();
+            Clipboard.SetText(listView_search.SelectedItems[0].Text);
+            toolStripStatusLabel_search.Text = "Адрес скопирован в буфер обмена";
+        }
+
+        private void RadioButton_search_text_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_search_text.Checked == true)
+            {
+                textBox_byte_search.Enabled = false;
+                textBox_hexsearch.Enabled = true;
+                textBox_hexsearch.Text=string.Empty;
+            }
+        }
+
+        private void RadioButton_byte_search_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_byte_search.Checked == true)
+            {
+                textBox_byte_search.Enabled = true;
+                textBox_byte_search.Text=string.Empty;
+                textBox_hexsearch.Enabled = false;
+            }
+        }
+
         private void Button_start_search_Click(object sender, EventArgs e)
         {
             Dictionary<string, long> filestosearch = new Dictionary<string, long>();
@@ -58,6 +88,7 @@ namespace FirehoseFinder
             }
             listView_search.Items.Clear(); //Очищаем элементы
             listView_search.Groups.Clear(); //Очищаем группы элементов
+            TableGroups.Clear();//Очищаем таблицу групп
             toolStripStatusLabel_search.Text = string.Empty;
             if (textBox_byte_search.Text.Length % 2 != 0) textBox_byte_search.Text = "0" + textBox_byte_search.Text;
             if (radioButton_file.Checked)
@@ -85,22 +116,10 @@ namespace FirehoseFinder
                     FileInfo fileInfo = new FileInfo(filename.Key);
                     inputsearch.Add(filename.Key);
                     //Создаём группы по именам файлов
-                    bool grouphere = false;
-                    foreach (ListViewGroup item in listView_search.Groups)
-                    {
-                        if (item.Header.Equals(fileInfo.Name))
-                        {
-                            grouphere=true;
-                            break;
-                        }
-                    }
-                    if (!grouphere)
-                    {
-                        ListViewGroup group = new ListViewGroup(fileInfo.Name, HorizontalAlignment.Left);
-                        listView_search.Groups.Add(group);
-                    }
+                    CreateTableGroups(fileInfo.Name);
                 }
                 //Создаём сущность Словарь+поиск и её отправляем в поток
+                toolStripStatusLabel_search.Text = "Обработка запроса ...";
                 backgroundWorker_hex_search.RunWorkerAsync(new Search_Hex(inputsearch, textBox_byte_search.Text));
             }
         }
@@ -130,6 +149,7 @@ namespace FirehoseFinder
                         {
                             chunk = reader.ReadBytes(maxbytes);
                             chunkarray[i] = chunk;
+                            if (countarray!=0) worker.ReportProgress(i*100/countarray);
                         }
                         //Ищем совпадения и фиксируем адрес и значение
                         addr_value_file.AddRange(CompareBytes(maxbytes, chunkarray, fi.Name));
@@ -148,45 +168,41 @@ namespace FirehoseFinder
             {
                 toolStripProgressBar_search.Value = 0;
                 if (listView_search.Items.Count==0) toolStripStatusLabel_search.Text = "Совпадений не найдено";
-                else
-                {
-                    int countgroups = 0;
-                    toolStripStatusLabel_search.Text =string.Format("Найдено {0} совпадений в {1} из {2} файлах.", listView_search.Items.Count,countgroups, listView_search.Groups.Count);
-                }
+                else toolStripStatusLabel_search.Text =string.Format("Найдено {0} совпадений в {1} из {2} файлах.", listView_search.Items.Count, listView_search.Groups.Count, TableGroups.Count);
             }
         }
 
         private void BackgroundWorker_hex_search_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            toolStripProgressBar_search.Value = e.ProgressPercentage;
-            List<Search_Result> result = (List<Search_Result>)e.UserState;
-            //Заполняем листвью списком совпадений
-            if (result.Count == 1) toolStripStatusLabel_search.Text =string.Format("Совпадений в файле {0} не найдено - {1}% обработано.", result[0].File_Name, e.ProgressPercentage);
-            else
+            if (e.UserState!=null)
             {
-                foreach (Search_Result sr in result)
+                List<Search_Result> result = (List<Search_Result>)e.UserState;
+                //Заполняем листвью списком совпадений
+                if (result.Count == 1) toolStripStatusLabel_search.Text =string.Format("Совпадений в файле {0} не найдено - {1}% обработано.", result[0].File_Name, e.ProgressPercentage);
+                else
                 {
-                    if (!string.IsNullOrEmpty(sr.Adress_hex))
+                    foreach (Search_Result sr in result)
                     {
-                        ListViewItem hsearchres = new ListViewItem("0x" + sr.Adress_hex.ToUpper());
-                        foreach (ListViewGroup item in listView_search.Groups)
+                        if (!string.IsNullOrEmpty(sr.Adress_hex))
                         {
-                            if (item.Header.Equals(sr.File_Name))
+                            //Проверяем наличие группы
+                            if (!listView_search.Groups.Contains((ListViewGroup)TableGroups[sr.File_Name]))
                             {
-                                hsearchres.Group=item;
-                                break;
+                                listView_search.Groups.Add((ListViewGroup)TableGroups[sr.File_Name]);
                             }
+                            ListViewItem hsearchres = new ListViewItem("0x" + sr.Adress_hex.ToUpper());
+                            hsearchres.SubItems.Add(sr.Result_String);
+                            hsearchres.SubItems.Add(sr.File_Name);
+                            hsearchres.Group=(ListViewGroup)TableGroups[sr.File_Name];
+                            listView_search.Items.Add(hsearchres);
+                            toolStripStatusLabel_search.Text = string.Format("Обработан файл {0}, найдено {1} совпадений.", sr.File_Name, listView_search.Items.Count);
                         }
-                        hsearchres.SubItems.Add(sr.Result_String);
-                        hsearchres.SubItems.Add(sr.File_Name);
-                        listView_search.Items.Add(hsearchres);
-                        toolStripStatusLabel_search.Text = string.Format("Обработан файл {0}, найдено {1} совпадений.", sr.File_Name, listView_search.Items.Count);
                     }
+                    for (int i = 0; i < listView_search.Columns.Count; i++) listView_search.Columns[i].Width = -1;
                 }
-                for (int i = 0; i < listView_search.Columns.Count; i++) listView_search.Columns[i].Width = -1;
             }
+            toolStripProgressBar_search.Value = e.ProgressPercentage;
         }
-
 
         private List<Search_Result> CompareBytes(int maxbytes, SortedList<int, byte[]> dumpbytes, string filename)
         {
@@ -220,7 +236,12 @@ namespace FirehoseFinder
                             if (addr - frontdump < 0) frontdump = addr;
                             if (addr + searchstringinbytes.Length + reardump > item.Value.Count()) reardump = Convert.ToInt32(item.Value.Count() - (addr + searchstringinbytes.Length));
                             int reslen = frontdump + searchstringinbytes.Length + reardump;
-                            sr.Result_String = BitConverter.ToString(item.Value, addr-frontdump, reslen);
+                            byte[] bytetores = new byte[reslen];
+                            for (int br = 0; br < reslen; br++)
+                            {
+                                bytetores[br] = item.Value[addr-frontdump+br];
+                            }
+                            sr.Result_String = func.ByEight(bytetores, reslen);//BitConverter.ToString(item.Value, addr-frontdump, reslen);
                             //Сбросили счётчик совпадений
                             comparecount = 0;
                             search_Results.Add(sr);
@@ -232,29 +253,20 @@ namespace FirehoseFinder
             return search_Results;
         }
 
-        private void ListView_search_MouseDoubleClick(object sender, MouseEventArgs e)
+        private Hashtable CreateTableGroups(string subitemstr)
         {
-            Clipboard.Clear();
-            Clipboard.SetText(listView_search.SelectedItems[0].Text);
-            toolStripStatusLabel_search.Text = "Адрес скопирован в буфер обмена";
+            Hashtable groups = new Hashtable();
+            if (!TableGroups.ContainsKey(subitemstr))
+            {
+                ListViewGroup group = new ListViewGroup(subitemstr, HorizontalAlignment.Left);
+                TableGroups.Add(subitemstr, group);
+            }
+            return groups;
         }
 
-        private void RadioButton_search_text_CheckedChanged(object sender, EventArgs e)
+        private void Hex_Search_Load(object sender, EventArgs e)
         {
-            if (radioButton_search_text.Checked == true)
-            {
-                textBox_byte_search.Enabled = false;
-                textBox_hexsearch.Enabled = true;
-            }
-        }
-
-        private void RadioButton_byte_search_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton_byte_search.Checked == true)
-            {
-                textBox_byte_search.Enabled = true;
-                textBox_hexsearch.Enabled = false;
-            }
+            listView_search.ShowGroups=true;
         }
     }
 }

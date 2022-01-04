@@ -29,10 +29,6 @@ namespace FirehoseFinder
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Файл1", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Файл2", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Тест1");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Тест2");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hex_Search));
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -87,8 +83,8 @@ namespace FirehoseFinder
             // 
             this.statusStrip_search.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip_search.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar_search,
-            this.toolStripStatusLabel_search});
+            this.toolStripStatusLabel_search,
+            this.toolStripProgressBar_search});
             this.statusStrip_search.Location = new System.Drawing.Point(0, 313);
             this.statusStrip_search.Name = "statusStrip_search";
             this.statusStrip_search.Size = new System.Drawing.Size(993, 26);
@@ -150,20 +146,8 @@ namespace FirehoseFinder
             this.tableLayoutPanel_hs.SetColumnSpan(this.listView_search, 2);
             this.listView_search.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView_search.FullRowSelect = true;
-            listViewGroup1.Header = "Файл1";
-            listViewGroup1.Name = "Файл1";
-            listViewGroup2.Header = "Файл2";
-            listViewGroup2.Name = "Файл2";
-            this.listView_search.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2});
             this.listView_search.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView_search.HideSelection = false;
-            listViewItem1.Group = listViewGroup1;
-            listViewItem2.Group = listViewGroup2;
-            this.listView_search.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
             this.listView_search.Location = new System.Drawing.Point(3, 93);
             this.listView_search.MultiSelect = false;
             this.listView_search.Name = "listView_search";
@@ -181,7 +165,7 @@ namespace FirehoseFinder
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Совпадения";
+            this.columnHeader2.Text = "Bytes | ASCII";
             this.columnHeader2.Width = 92;
             // 
             // columnHeader3
@@ -219,7 +203,6 @@ namespace FirehoseFinder
             this.textBox_byte_search.Size = new System.Drawing.Size(507, 22);
             this.textBox_byte_search.TabIndex = 2;
             this.textBox_byte_search.TextChanged += new System.EventHandler(this.TextBox_byte_search_TextChanged);
-            this.textBox_byte_search.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBox_byte_search_KeyUp);
             // 
             // radioButton_search_text
             // 
@@ -348,6 +331,7 @@ namespace FirehoseFinder
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Hex_Search";
             this.Text = "Hex_Search";
+            this.Load += new System.EventHandler(this.Hex_Search_Load);
             this.statusStrip_search.ResumeLayout(false);
             this.statusStrip_search.PerformLayout();
             this.tableLayoutPanel_hs.ResumeLayout(false);
