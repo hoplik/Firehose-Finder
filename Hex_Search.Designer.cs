@@ -34,8 +34,8 @@ namespace FirehoseFinder
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker_hex_search = new System.ComponentModel.BackgroundWorker();
             this.statusStrip_search = new System.Windows.Forms.StatusStrip();
-            this.toolStripProgressBar_search = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel_search = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar_search = new System.Windows.Forms.ToolStripProgressBar();
             this.tableLayoutPanel_hs = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.listView_search = new System.Windows.Forms.ListView();
@@ -74,7 +74,6 @@ namespace FirehoseFinder
             // backgroundWorker_hex_search
             // 
             this.backgroundWorker_hex_search.WorkerReportsProgress = true;
-            this.backgroundWorker_hex_search.WorkerSupportsCancellation = true;
             this.backgroundWorker_hex_search.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_hex_search_DoWork);
             this.backgroundWorker_hex_search.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_hex_search_ProgressChanged);
             this.backgroundWorker_hex_search.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_hex_search_RunWorkerCompleted);
@@ -83,27 +82,27 @@ namespace FirehoseFinder
             // 
             this.statusStrip_search.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip_search.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel_search,
-            this.toolStripProgressBar_search});
+            this.toolStripProgressBar_search,
+            this.toolStripStatusLabel_search});
             this.statusStrip_search.Location = new System.Drawing.Point(0, 313);
             this.statusStrip_search.Name = "statusStrip_search";
             this.statusStrip_search.Size = new System.Drawing.Size(993, 26);
             this.statusStrip_search.TabIndex = 7;
             this.statusStrip_search.Text = "statusStrip1";
             // 
-            // toolStripProgressBar_search
-            // 
-            this.toolStripProgressBar_search.ForeColor = System.Drawing.Color.LimeGreen;
-            this.toolStripProgressBar_search.Name = "toolStripProgressBar_search";
-            this.toolStripProgressBar_search.Size = new System.Drawing.Size(100, 18);
-            this.toolStripProgressBar_search.Step = 1;
-            this.toolStripProgressBar_search.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            // 
             // toolStripStatusLabel_search
             // 
             this.toolStripStatusLabel_search.Name = "toolStripStatusLabel_search";
             this.toolStripStatusLabel_search.Size = new System.Drawing.Size(100, 20);
             this.toolStripStatusLabel_search.Text = "Оповещения";
+            // 
+            // toolStripProgressBar_search
+            // 
+            this.toolStripProgressBar_search.ForeColor = System.Drawing.Color.LimeGreen;
+            this.toolStripProgressBar_search.Name = "toolStripProgressBar_search";
+            this.toolStripProgressBar_search.Size = new System.Drawing.Size(200, 18);
+            this.toolStripProgressBar_search.Step = 1;
+            this.toolStripProgressBar_search.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // tableLayoutPanel_hs
             // 
@@ -145,6 +144,7 @@ namespace FirehoseFinder
             this.columnHeader3});
             this.tableLayoutPanel_hs.SetColumnSpan(this.listView_search, 2);
             this.listView_search.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView_search.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.listView_search.FullRowSelect = true;
             this.listView_search.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView_search.HideSelection = false;
@@ -331,7 +331,6 @@ namespace FirehoseFinder
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Hex_Search";
             this.Text = "Hex_Search";
-            this.Load += new System.EventHandler(this.Hex_Search_Load);
             this.statusStrip_search.ResumeLayout(false);
             this.statusStrip_search.PerformLayout();
             this.tableLayoutPanel_hs.ResumeLayout(false);

@@ -149,7 +149,7 @@ namespace FirehoseFinder
                         {
                             chunk = reader.ReadBytes(maxbytes);
                             chunkarray[i] = chunk;
-                            if (countarray!=0) worker.ReportProgress(i*100/countarray);
+                            if (countarray!=0&&hex_search.FullFileNames.Count==1) worker.ReportProgress(i*100/countarray);
                         }
                         //Ищем совпадения и фиксируем адрес и значение
                         addr_value_file.AddRange(CompareBytes(maxbytes, chunkarray, fi.Name));
@@ -262,11 +262,6 @@ namespace FirehoseFinder
                 TableGroups.Add(subitemstr, group);
             }
             return groups;
-        }
-
-        private void Hex_Search_Load(object sender, EventArgs e)
-        {
-            listView_search.ShowGroups=true;
         }
     }
 }

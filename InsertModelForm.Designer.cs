@@ -47,6 +47,7 @@ namespace FirehoseFinder
             "Acer",
             "AGM",
             "Alcatel",
+            "Archos",
             "Ark",
             "Artel",
             "ASUS",
@@ -55,14 +56,17 @@ namespace FirehoseFinder
             "Bluebird",
             "BQ",
             "Caterpillar",
+            "China Mobile",
             "Coolpad",
             "Dexp",
             "Discovery",
             "Essential Phone",
             "Foxda",
             "General Mobile",
+            "Gigaset",
             "Gionee",
             "Google",
+            "Hiby",
             "Highscreen",
             "Hisense",
             "Honeywell",
@@ -73,22 +77,22 @@ namespace FirehoseFinder
             "Kyocera",
             "LeEco",
             "LENOVO",
-            "LG",
+            "LGE",
             "LT",
             "Meizu",
             "Micromax",
+            "Microsoft",
             "MOQI",
             "Motorola",
             "Nextbit",
-            "Nexus",
             "Nokia",
             "OnePlus",
-            "OPPO",
+            "oppo",
             "Phicomm",
             "Prestigio",
             "Protruly",
             "Razer",
-            "Realme",
+            "realme",
             "RED",
             "Samsung",
             "Santin",
@@ -122,7 +126,7 @@ namespace FirehoseFinder
             this.label_tm_insert.AutoSize = true;
             this.label_tm_insert.Location = new System.Drawing.Point(13, 12);
             this.label_tm_insert.Name = "label_tm_insert";
-            this.label_tm_insert.Size = new System.Drawing.Size(119, 17);
+            this.label_tm_insert.Size = new System.Drawing.Size(119, 16);
             this.label_tm_insert.TabIndex = 3;
             this.label_tm_insert.Text = "Производитель *";
             // 
@@ -131,7 +135,7 @@ namespace FirehoseFinder
             this.label_model_insert.AutoSize = true;
             this.label_model_insert.Location = new System.Drawing.Point(13, 42);
             this.label_model_insert.Name = "label_model_insert";
-            this.label_model_insert.Size = new System.Drawing.Size(58, 17);
+            this.label_model_insert.Size = new System.Drawing.Size(57, 16);
             this.label_model_insert.TabIndex = 4;
             this.label_model_insert.Text = "Модель";
             // 
@@ -140,7 +144,7 @@ namespace FirehoseFinder
             this.label_altname_insert.AutoSize = true;
             this.label_altname_insert.Location = new System.Drawing.Point(13, 72);
             this.label_altname_insert.Name = "label_altname_insert";
-            this.label_altname_insert.Size = new System.Drawing.Size(117, 34);
+            this.label_altname_insert.Size = new System.Drawing.Size(117, 32);
             this.label_altname_insert.TabIndex = 5;
             this.label_altname_insert.Text = "Альтернативное\r\nнаименование";
             // 

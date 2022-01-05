@@ -256,7 +256,7 @@ namespace FirehoseFinder
                              .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
                              .ToArray();
         }
-        
+
         /// <summary>
         /// Парсинг результата работы команды Сахары 01
         /// </summary>
@@ -567,50 +567,86 @@ namespace FirehoseFinder
         internal string DelUnknownChars(string value, System_Count sys_count)
         {
             StringBuilder GoodStr = new StringBuilder(value);
-            string[] Dex_str = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+            char[] Dex_str = { '\u0030', '\u0031', '\u0032', '\u0033', '\u0034', '\u0035', '\u0036', '\u0037', '\u0038', '\u0039' };
             for (int i = 0; i < GoodStr.Length; i++)
             {
                 if (sys_count == System_Count.dex)
                 {
-                    if (!Dex_str.Contains(GoodStr[i].ToString())) GoodStr.Remove(i, 1);
+                    if (!Dex_str.Contains(GoodStr[i])) GoodStr.Remove(i, 1);
                 }
                 else
                 {
-                    switch (GoodStr[i].ToString())
+                    switch (GoodStr[i])
                     {
-                        case "0": break;
-                        case "1": break;
-                        case "2": break;
-                        case "3": break;
-                        case "4": break;
-                        case "5": break;
-                        case "6": break;
-                        case "7": break;
-                        case "8": break;
-                        case "9": break;
-                        case "A": break;
-                        case "B": break;
-                        case "C": break;
-                        case "D": break;
-                        case "E": break;
-                        case "F": break;
-                        case "a":
-                            GoodStr.Replace("a", "A");
+                        case '\u0030': break;
+                        case '\u0031': break;
+                        case '\u0032': break;
+                        case '\u0033': break;
+                        case '\u0034': break;
+                        case '\u0035': break;
+                        case '\u0036': break;
+                        case '\u0037': break;
+                        case '\u0038': break;
+                        case '\u0039': break;
+                        case '\u0041': break; //A
+                        case '\u0061': //a
+                            GoodStr.Replace('\u0061', '\u0041');
                             break;
-                        case "b":
-                            GoodStr.Replace("b", "B");
+                        case '\u0424': //Ф
+                            GoodStr.Replace('\u0424', '\u0041');
                             break;
-                        case "c":
-                            GoodStr.Replace("c", "C");
+                        case '\u0444': //ф
+                            GoodStr.Replace('\u0444', '\u0041');
                             break;
-                        case "d":
-                            GoodStr.Replace("d", "D");
+                        case '\u0042': break; //B
+                        case '\u0062': //b
+                            GoodStr.Replace('\u0062', '\u0042');
                             break;
-                        case "e":
-                            GoodStr.Replace("e", "E");
+                        case '\u0418': //И
+                            GoodStr.Replace('\u0418', '\u0042');
                             break;
-                        case "f":
-                            GoodStr.Replace("f", "F");
+                        case '\u0438': //и
+                            GoodStr.Replace('\u0438', '\u0042');
+                            break;
+                        case '\u0043': break; //C
+                        case '\u0063': //c
+                            GoodStr.Replace('\u0063', '\u0043');
+                            break;
+                        case '\u0421': //С
+                            GoodStr.Replace('\u0421', '\u0043');
+                            break;
+                        case '\u0441': //с
+                            GoodStr.Replace('\u0441', '\u0043');
+                            break;
+                        case '\u0044': break; //D
+                        case '\u0064': //d
+                            GoodStr.Replace('\u0064', '\u0044');
+                            break;
+                        case '\u0412': //В
+                            GoodStr.Replace('\u0412', '\u0044');
+                            break;
+                        case '\u0432': //в
+                            GoodStr.Replace('\u0432', '\u0044');
+                            break;
+                        case '\u0045': break; //E
+                        case '\u0065': //e
+                            GoodStr.Replace('\u0065', '\u0045');
+                            break;
+                        case '\u0423': //У
+                            GoodStr.Replace('\u0423', '\u0045');
+                            break;
+                        case '\u0443': //у
+                            GoodStr.Replace('\u0443', '\u0045');
+                            break;
+                        case '\u0046': break; //F
+                        case '\u0066': //f
+                            GoodStr.Replace('\u0066', '\u0046');
+                            break;
+                        case '\u0410': //А
+                            GoodStr.Replace('\u0410', '\u0046');
+                            break;
+                        case '\u0430': //а
+                            GoodStr.Replace('\u0430', '\u0046');
                             break;
                         default:
                             GoodStr.Remove(i, 1);

@@ -76,10 +76,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTextBox_find = new System.Windows.Forms.ToolStripTextBox();
             this.tabPage_firehose = new System.Windows.Forms.TabPage();
-            this.statusStrip_firehose = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel_filescompleted = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripProgressBar_filescompleted = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripStatusLabel_dowork = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox_main_term = new System.Windows.Forms.TextBox();
             this.dataGridView_final = new System.Windows.Forms.DataGridView();
@@ -98,6 +94,7 @@
             this.radioButton_topdir = new System.Windows.Forms.RadioButton();
             this.button_path = new System.Windows.Forms.Button();
             this.groupBox_tm_model = new System.Windows.Forms.GroupBox();
+            this.label_chip_sn = new System.Windows.Forms.Label();
             this.label_model = new System.Windows.Forms.Label();
             this.label_altname = new System.Windows.Forms.Label();
             this.label_tm = new System.Windows.Forms.Label();
@@ -120,6 +117,10 @@
             this.label_oemhash = new System.Windows.Forms.Label();
             this.textBox_modelid = new System.Windows.Forms.TextBox();
             this.dataGridView_FInd_Server = new System.Windows.Forms.DataGridView();
+            this.statusStrip_firehose = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel_filescompleted = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar_filescompleted = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabel_dowork = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabPage_phone = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel_phone = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox_terminal = new System.Windows.Forms.GroupBox();
@@ -212,7 +213,6 @@
             this.backgroundWorker_dump = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker_xml = new System.ComponentModel.BackgroundWorker();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label_chip_sn = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabPage_collection.SuspendLayout();
@@ -220,7 +220,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_collection)).BeginInit();
             this.bindingNavigator_collection.SuspendLayout();
             this.tabPage_firehose.SuspendLayout();
-            this.statusStrip_firehose.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_final)).BeginInit();
             this.panel1.SuspendLayout();
@@ -228,6 +227,7 @@
             this.groupBox_tm_model.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_FInd_Server)).BeginInit();
+            this.statusStrip_firehose.SuspendLayout();
             this.tabPage_phone.SuspendLayout();
             this.tableLayoutPanel_phone.SuspendLayout();
             this.groupBox_terminal.SuspendLayout();
@@ -284,7 +284,7 @@
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1369, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1369, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -293,7 +293,7 @@
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // выходToolStripMenuItem
@@ -313,7 +313,7 @@
             this.toolStripSeparator2,
             this.внестиПроизводителяМодельToolStripMenuItem});
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
-            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.видToolStripMenuItem.Text = "Вид";
             // 
             // приветствиеToolStripMenuItem
@@ -372,7 +372,7 @@
             this.поискМаскиБайтToolStripMenuItem,
             this.распаковкаОднобиновойПрошивкиToolStripMenuItem});
             this.инструментыToolStripMenuItem.Name = "инструментыToolStripMenuItem";
-            this.инструментыToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
+            this.инструментыToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
             this.инструментыToolStripMenuItem.Text = "Инструменты";
             // 
             // поискМаскиБайтToolStripMenuItem
@@ -395,7 +395,7 @@
             this.вопросОтветToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 26);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // вопросОтветToolStripMenuItem
@@ -584,39 +584,6 @@
             this.tabPage_firehose.TabIndex = 0;
             this.tabPage_firehose.Text = "Работа с файлами";
             this.tabPage_firehose.UseVisualStyleBackColor = true;
-            // 
-            // statusStrip_firehose
-            // 
-            this.statusStrip_firehose.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip_firehose.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel_filescompleted,
-            this.toolStripProgressBar_filescompleted,
-            this.toolStripStatusLabel_dowork});
-            this.statusStrip_firehose.Location = new System.Drawing.Point(3, 597);
-            this.statusStrip_firehose.Name = "statusStrip_firehose";
-            this.statusStrip_firehose.Size = new System.Drawing.Size(1355, 26);
-            this.statusStrip_firehose.TabIndex = 20;
-            this.statusStrip_firehose.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel_filescompleted
-            // 
-            this.toolStripStatusLabel_filescompleted.Name = "toolStripStatusLabel_filescompleted";
-            this.toolStripStatusLabel_filescompleted.Size = new System.Drawing.Size(52, 20);
-            this.toolStripStatusLabel_filescompleted.Text = "Статус";
-            // 
-            // toolStripProgressBar_filescompleted
-            // 
-            this.toolStripProgressBar_filescompleted.ForeColor = System.Drawing.Color.LimeGreen;
-            this.toolStripProgressBar_filescompleted.Name = "toolStripProgressBar_filescompleted";
-            this.toolStripProgressBar_filescompleted.Size = new System.Drawing.Size(200, 18);
-            this.toolStripProgressBar_filescompleted.Step = 1;
-            this.toolStripProgressBar_filescompleted.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            // 
-            // toolStripStatusLabel_dowork
-            // 
-            this.toolStripStatusLabel_dowork.Name = "toolStripStatusLabel_dowork";
-            this.toolStripStatusLabel_dowork.Size = new System.Drawing.Size(57, 20);
-            this.toolStripStatusLabel_dowork.Text = "Готово";
             // 
             // panel2
             // 
@@ -856,6 +823,15 @@
             this.groupBox_tm_model.TabIndex = 30;
             this.groupBox_tm_model.TabStop = false;
             this.groupBox_tm_model.Text = "Для устройства";
+            // 
+            // label_chip_sn
+            // 
+            this.label_chip_sn.AutoSize = true;
+            this.label_chip_sn.Location = new System.Drawing.Point(513, 21);
+            this.label_chip_sn.Name = "label_chip_sn";
+            this.label_chip_sn.Size = new System.Drawing.Size(19, 16);
+            this.label_chip_sn.TabIndex = 24;
+            this.label_chip_sn.Text = "---";
             // 
             // label_model
             // 
@@ -1099,6 +1075,39 @@
             this.dataGridView_FInd_Server.RowTemplate.Height = 24;
             this.dataGridView_FInd_Server.Size = new System.Drawing.Size(186, 96);
             this.dataGridView_FInd_Server.TabIndex = 19;
+            // 
+            // statusStrip_firehose
+            // 
+            this.statusStrip_firehose.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip_firehose.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel_filescompleted,
+            this.toolStripProgressBar_filescompleted,
+            this.toolStripStatusLabel_dowork});
+            this.statusStrip_firehose.Location = new System.Drawing.Point(3, 597);
+            this.statusStrip_firehose.Name = "statusStrip_firehose";
+            this.statusStrip_firehose.Size = new System.Drawing.Size(1355, 26);
+            this.statusStrip_firehose.TabIndex = 20;
+            this.statusStrip_firehose.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel_filescompleted
+            // 
+            this.toolStripStatusLabel_filescompleted.Name = "toolStripStatusLabel_filescompleted";
+            this.toolStripStatusLabel_filescompleted.Size = new System.Drawing.Size(52, 20);
+            this.toolStripStatusLabel_filescompleted.Text = "Статус";
+            // 
+            // toolStripProgressBar_filescompleted
+            // 
+            this.toolStripProgressBar_filescompleted.ForeColor = System.Drawing.Color.LimeGreen;
+            this.toolStripProgressBar_filescompleted.Name = "toolStripProgressBar_filescompleted";
+            this.toolStripProgressBar_filescompleted.Size = new System.Drawing.Size(200, 18);
+            this.toolStripProgressBar_filescompleted.Step = 1;
+            this.toolStripProgressBar_filescompleted.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            // 
+            // toolStripStatusLabel_dowork
+            // 
+            this.toolStripStatusLabel_dowork.Name = "toolStripStatusLabel_dowork";
+            this.toolStripStatusLabel_dowork.Size = new System.Drawing.Size(57, 20);
+            this.toolStripStatusLabel_dowork.Text = "Готово";
             // 
             // tabPage_phone
             // 
@@ -2053,11 +2062,11 @@
             this.tabControl1.Controls.Add(this.tabPage_firehose);
             this.tabControl1.Controls.Add(this.tabPage_collection);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 30);
+            this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1369, 654);
+            this.tabControl1.Size = new System.Drawing.Size(1369, 656);
             this.tabControl1.TabIndex = 0;
             // 
             // bindingSource_collection
@@ -2091,15 +2100,6 @@
             this.openFileDialog1.Filter = "Бинарные файлы (*.bin)|*.bin|Все файлы (*.*)|*.*";
             this.openFileDialog1.Title = "Выбор файла для загрузки";
             // 
-            // label_chip_sn
-            // 
-            this.label_chip_sn.AutoSize = true;
-            this.label_chip_sn.Location = new System.Drawing.Point(513, 21);
-            this.label_chip_sn.Name = "label_chip_sn";
-            this.label_chip_sn.Size = new System.Drawing.Size(19, 16);
-            this.label_chip_sn.TabIndex = 24;
-            this.label_chip_sn.Text = "---";
-            // 
             // Formfhf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2125,8 +2125,6 @@
             this.bindingNavigator_collection.PerformLayout();
             this.tabPage_firehose.ResumeLayout(false);
             this.tabPage_firehose.PerformLayout();
-            this.statusStrip_firehose.ResumeLayout(false);
-            this.statusStrip_firehose.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_final)).EndInit();
@@ -2139,6 +2137,8 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_FInd_Server)).EndInit();
+            this.statusStrip_firehose.ResumeLayout(false);
+            this.statusStrip_firehose.PerformLayout();
             this.tabPage_phone.ResumeLayout(false);
             this.tableLayoutPanel_phone.ResumeLayout(false);
             this.groupBox_terminal.ResumeLayout(false);
