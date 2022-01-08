@@ -268,7 +268,7 @@ namespace FirehoseFinder
             if (File.Exists("commandop01.bin"))
             {
                 comfilebytes = File.ReadAllBytes("commandop01.bin");
-                //File.Delete("commandop01.bin");
+                File.Delete("commandop01.bin");
             }
             string backstr = BitConverter.ToString(comfilebytes).Replace("-", "");
             //Читаем с конца  в начало

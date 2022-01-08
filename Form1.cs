@@ -1509,8 +1509,8 @@ namespace FirehoseFinder
             List<string> adbcommands = new List<string>() {
                 "getprop | grep ro.product.name",
                 "getprop | grep ro.product.manufacturer",
-                "getprop | grep ro.product.model"};
-            string[] results = new string[adbcommands.Count];
+                "getprop | grep ro.product.model",
+                "cat /sys/bus/soc/devices/soc0/serial_number"};
             for (int i = 0; i < adbcommands.Count; i++)
             {
                 try
@@ -1522,26 +1522,46 @@ namespace FirehoseFinder
                     textBox_soft_term.AppendText(ex.AdbError + Environment.NewLine);
                     textBox_main_term.AppendText(ex.AdbError + Environment.NewLine);
                 }
-                string[] adbstr = receiver.ToString().Split('[');
-                foreach (string item in adbstr)
+            }
+            string[] adbstr = receiver.ToString().Split('\u000A'); //Перевод строки
+            long chipsn = 0;
+            foreach (string item in adbstr)
+            {
+                if (!string.IsNullOrEmpty(item))
                 {
-                    if (!item.StartsWith("ro.product.m") || !item.StartsWith("ro.emmc"))
+                    if (item.Length<14) chipsn = Convert.ToInt64(item);
+                    else
                     {
-                        if (item.Contains("]")) results[i] = item.Remove(item.IndexOf(']'));
+                        int start = item.LastIndexOf('\u005B')+1; //[
+                        int end = item.LastIndexOf('\u005D'); //]
+                        switch (item.Substring(0, 14))
+                        {
+                            case "[ro.product.ma":
+                                label_tm.Text = item.Substring(start, end-start);
+                                break;
+                            case "[ro.product.mo":
+                                label_model.Text = item.Substring(start, end-start);
+                                break;
+                            case "[ro.product.na":
+                                label_altname.Text = item.Substring(start, end-start);
+                                break;
+                            default:
+                                chipsn = Convert.ToInt64(item);
+                                break;
+                        }
                     }
                 }
-                if (string.IsNullOrEmpty(results[i])) results[i] = string.Empty;
-                receiver.Flush();
             }
-            label_altname.Text = results[0];
-            label_tm.Text = results[1];
-            label_model.Text = results[2];
+            if (chipsn==0) label_chip_sn.Text = "---";
+            else label_chip_sn.Text = Convert.ToString(chipsn, 16).ToUpper();
             textBox_soft_term.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
                 "Модель: " + label_model.Text + Environment.NewLine +
-                "Альтернативное наименование: " + label_altname.Text + Environment.NewLine);
+                "Альтернативное наименование: " + label_altname.Text + Environment.NewLine+
+                "Серийный номер процессора: " + label_chip_sn.Text + Environment.NewLine);
             textBox_main_term.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
                 "Модель: " + label_model.Text + Environment.NewLine +
-                "Альтернативное наименование: " + label_altname.Text + Environment.NewLine);
+                "Альтернативное наименование: " + label_altname.Text + Environment.NewLine +
+                "Серийный номер процессора: " + label_chip_sn.Text + Environment.NewLine);
             if (reset)
             {
                 textBox_soft_term.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
@@ -1597,9 +1617,14 @@ namespace FirehoseFinder
             }
             NeedReset = true;
             //Обрабатываем запрос идентификаторов
-            label_chip_sn.Text = func.SaharaCommand1();
-            textBox_main_term.AppendText("Получили S/N CPU - " + label_chip_sn.Text + Environment.NewLine);
-            textBox_soft_term.AppendText("Получили S/N CPU - " + label_chip_sn.Text + Environment.NewLine);
+            string chip_sn = func.SaharaCommand1();
+            textBox_main_term.AppendText("Получили S/N CPU - " + chip_sn + Environment.NewLine);
+            textBox_soft_term.AppendText("Получили S/N CPU - " + chip_sn + Environment.NewLine);
+            if (chip_sn.Equals(label_chip_sn.Text))
+            {
+                textBox_main_term.AppendText("Номера чипов из ADB и Sahara совпадают" + Environment.NewLine);
+                textBox_soft_term.AppendText("Номера чипов из ADB и Sahara совпадают" + Environment.NewLine);
+            }
             string HWOEMIDs = func.SaharaCommand2();
             if (HWOEMIDs.Length == 16)
             {
@@ -1635,14 +1660,10 @@ namespace FirehoseFinder
                     }
                 }
             }
-            string logstr = label_tm.Text + "<>" + label_model.Text + "<>" + label_altname.Text +
-                Environment.NewLine +
-                string.Format("Chip s/n - {0}", label_chip_sn.Text) +
-                Environment.NewLine +
-                string.Format("HWID - {0}{1}{2}", textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text) +
-                Environment.NewLine +
-                string.Format("OEM PK Hash - {0}", textBox_oemhash.Text) +
-                Environment.NewLine+
+            string logstr = label_tm.Text + "<>" + label_model.Text + "<>" + label_altname.Text + "<>"+ label_chip_sn.Text + Environment.NewLine +
+                string.Format("Chip s/n - {0}", chip_sn) + Environment.NewLine +
+                string.Format("HWID - {0}{1}{2}", textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text) + Environment.NewLine +
+                string.Format("OEM PK Hash - {0}", textBox_oemhash.Text) + Environment.NewLine +
                 string.Format("SBL SW (Version) - {0}", label_SW_Ver.Text);
             if (checkBox_Log.Checked)
             {
