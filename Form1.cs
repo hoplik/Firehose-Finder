@@ -1641,7 +1641,7 @@ namespace FirehoseFinder
                 Environment.NewLine +
                 string.Format("HWID - {0}{1}{2}", textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text) +
                 Environment.NewLine +
-                string.Format("OEM_PK_HASH - {0}", textBox_oemhash.Text) +
+                string.Format("OEM PK Hash - {0}", textBox_oemhash.Text) +
                 Environment.NewLine+
                 string.Format("SBL SW (Version) - {0}", label_SW_Ver.Text);
             if (checkBox_Log.Checked)
