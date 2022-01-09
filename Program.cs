@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
-using static System.Windows.Forms.ListView;
 
 namespace FirehoseFinder
 {
@@ -12,9 +14,14 @@ namespace FirehoseFinder
         [STAThread]
         static void Main()
         {
-            //Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Formfhf());
+            _ = new Mutex(true, Marshal.GetTypeLibGuidForAssembly(Assembly.GetExecutingAssembly()).ToString(), out bool onlyone);
+            if (onlyone)
+            {
+                //Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Formfhf());
+            }
+            else MessageBox.Show("Один экземпляр приложения уже запущен");
         }
     }
 }
