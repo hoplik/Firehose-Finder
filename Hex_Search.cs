@@ -23,7 +23,7 @@ namespace FirehoseFinder
             else
             {
                 textBox_byte_search.Text = func.DelUnknownChars(textBox_byte_search.Text, Func.System_Count.hex);
-                textBox_byte_search.SelectionStart = textBox_byte_search.Text.Length;
+                textBox_byte_search.SelectionStart = textBox_byte_search.TextLength;
                 button_start_search.Enabled = true;
             }
         }

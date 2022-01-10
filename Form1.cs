@@ -2462,10 +2462,27 @@ namespace FirehoseFinder
             }
         }
 
+        #region Инструменты
+        /// <summary>
+        /// Открываем новое окно для осуществления бинарного поиска по маске
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ПоискМаскиБайтToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hex_Search hsearch = new Hex_Search();
             hsearch.ShowDialog();
         }
+        /// <summary>
+        /// Открываем новое окно для распаковки и декодирования прошивки
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void РаспаковкаОднобиновойПрошивкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AGMRepacker repacker = new AGMRepacker();
+            repacker.ShowDialog();
+        }
+        #endregion
     }
 }

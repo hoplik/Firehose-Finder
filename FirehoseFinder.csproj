@@ -153,6 +153,12 @@
     <Compile Include="AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
+    <Compile Include="AGMRepacker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AGMRepacker.Designer.cs">
+      <DependentUpon>AGMRepacker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dump_Sectors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </Compile>
     <None Include="Resources\Fh_Image.bmp" />
+    <EmbeddedResource Include="AGMRepacker.resx">
+      <DependentUpon>AGMRepacker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hex_Search.resx">
       <DependentUpon>Hex_Search.cs</DependentUpon>
     </EmbeddedResource>

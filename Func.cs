@@ -22,6 +22,38 @@ namespace FirehoseFinder
             dex,
             hex
         }
+        
+        /// <summary>
+        /// Строка из 0x40 символов (64 байт)
+        /// </summary>
+        internal enum Parsing_Header_String_Bytes
+        {
+            Packer_Version = 0, // 0х0 Версия упаковщика
+            Phone_Version = 64, // 0x40 Версия телефона
+            Image_Version = 576, // 0x240 Версия прошивки
+            Author = 1096, // 0x448 Автор прошивки (8 байт)
+            Header_Len = 1612 // 0x64c Размер шапки (2 байта)
+        }
+
+        /// <summary>
+        /// Четыре байта на цифру
+        /// </summary>
+        internal enum Parsing_Header_Four_Bytes
+        {
+            Config_Files = 1088, // 0x440 Количество конфигурационных файлов внутри прошивки в хекс (кодируются)
+            Bin_Files = 1092, // 0x444 Количество bin файлов внутри прошивки в хекс (не кодируются)
+            Bin_Number = 1608 // 0x648 Количество bin файлов прошивки (должен быть 1, иначе аварийное завершение)
+        }
+
+        /// <summary>
+        /// Количество байт для чтения при разных режимах
+        /// </summary>
+        internal enum Parsing_Bytes
+        {
+            String_parse = 64, // 0x40 Количество знаков для строковых значений
+            Long_number = 8, // Количество знаков для длинных цифр в информации о файле
+            File_info = 160 // Суммарное количество знаков для описания файла
+        }
 
         /// <summary>
         /// Создаём список файлов с размером из указанной директории
@@ -711,6 +743,37 @@ namespace FirehoseFinder
                 count_full_char_string -= chars_to_string * 5 + 2;
             }
             return str_by_eight.ToString();
+        }
+
+        /// <summary>
+        /// Расшифровываем из потока памяти массив байт синхронно ключом и выводим результат массивом байт.
+        /// </summary>
+        /// <param name="value">Массив зашифрованных байт</param>
+        /// <param name="key">Код шифрования в виде массива байт</param>
+        /// <returns>Массив байт в расшифрованном виде</returns>
+        internal byte[] Decoder(byte[] value, byte[] key)
+        {
+            MemoryStream mStream = new MemoryStream(value);
+            DES DESalg = new DESCryptoServiceProvider
+            {
+                Mode = CipherMode.ECB,
+                Key = key,
+                Padding = PaddingMode.None
+            };
+            ICryptoTransform transform = DESalg.CreateDecryptor();
+            byte[] decode_bytes = new byte[value.Length];
+            CryptoStream cStream = new CryptoStream(mStream, transform, CryptoStreamMode.Read);
+            try
+            {
+                int db = cStream.Read(decode_bytes, 0, decode_bytes.Length);
+                if (db > 0) return decode_bytes;
+                else return null;
+            }
+            catch (CryptographicException Ex)
+            {
+                MessageBox.Show(Ex.Message);
+                return null;
+            }
         }
     }
 }

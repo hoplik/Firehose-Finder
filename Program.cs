@@ -17,7 +17,7 @@ namespace FirehoseFinder
             _ = new Mutex(true, Marshal.GetTypeLibGuidForAssembly(Assembly.GetExecutingAssembly()).ToString(), out bool onlyone);
             if (onlyone)
             {
-                //Application.EnableVisualStyles();
+                Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new Formfhf());
             }
