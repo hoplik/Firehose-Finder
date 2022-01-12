@@ -51,6 +51,7 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker_readheader = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker_decodeheader = new System.ComponentModel.BackgroundWorker();
             this.statusStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox_controls.SuspendLayout();
@@ -156,7 +157,7 @@
             this.textBox_keycode.Location = new System.Drawing.Point(475, 56);
             this.textBox_keycode.Name = "textBox_keycode";
             this.textBox_keycode.Size = new System.Drawing.Size(145, 22);
-            this.textBox_keycode.TabIndex = 4;
+            this.textBox_keycode.TabIndex = 1;
             this.textBox_keycode.Text = "0123456789ABCDEF";
             this.textBox_keycode.TextChanged += new System.EventHandler(this.TextBox_keycode_TextChanged);
             // 
@@ -177,7 +178,7 @@
             this.button_repack.Location = new System.Drawing.Point(475, 161);
             this.button_repack.Name = "button_repack";
             this.button_repack.Size = new System.Drawing.Size(145, 27);
-            this.button_repack.TabIndex = 2;
+            this.button_repack.TabIndex = 5;
             this.button_repack.Text = "Распаковать";
             this.button_repack.UseVisualStyleBackColor = true;
             // 
@@ -186,7 +187,7 @@
             this.button_dirrepack.Location = new System.Drawing.Point(6, 161);
             this.button_dirrepack.Name = "button_dirrepack";
             this.button_dirrepack.Size = new System.Drawing.Size(428, 27);
-            this.button_dirrepack.TabIndex = 1;
+            this.button_dirrepack.TabIndex = 4;
             this.button_dirrepack.Text = "Директория для распаковки";
             this.button_dirrepack.UseVisualStyleBackColor = true;
             // 
@@ -209,7 +210,7 @@
             this.groupBox_orig.Size = new System.Drawing.Size(633, 316);
             this.groupBox_orig.TabIndex = 4;
             this.groupBox_orig.TabStop = false;
-            this.groupBox_orig.Text = "Оригинальный заголовок прошивки (BYTES | ASCII)";
+            this.groupBox_orig.Text = "Начало оригинального заголовка прошивки (BYTES | ASCII)";
             // 
             // textBox_orig
             // 
@@ -230,7 +231,7 @@
             this.groupBox_decode.Size = new System.Drawing.Size(634, 316);
             this.groupBox_decode.TabIndex = 5;
             this.groupBox_decode.TabStop = false;
-            this.groupBox_decode.Text = "Декодированный заголовок прошивки (BYTES | ASCII)";
+            this.groupBox_decode.Text = "Декодированная часть заголовка прошивки (BYTES | ASCII)";
             // 
             // textBox_decode
             // 
@@ -271,8 +272,17 @@
             // 
             // backgroundWorker_readheader
             // 
+            this.backgroundWorker_readheader.WorkerReportsProgress = true;
             this.backgroundWorker_readheader.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_readheader_DoWork);
+            this.backgroundWorker_readheader.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_readheader_ProgressChanged);
             this.backgroundWorker_readheader.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_readheader_RunWorkerCompleted);
+            // 
+            // backgroundWorker_decodeheader
+            // 
+            this.backgroundWorker_decodeheader.WorkerReportsProgress = true;
+            this.backgroundWorker_decodeheader.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_decodeheader_DoWork);
+            this.backgroundWorker_decodeheader.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_decodeheader_ProgressChanged);
+            this.backgroundWorker_decodeheader.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_decodeheader_RunWorkerCompleted);
             // 
             // AGMRepacker
             // 
@@ -324,5 +334,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_keycode;
         private System.ComponentModel.BackgroundWorker backgroundWorker_readheader;
+        private System.ComponentModel.BackgroundWorker backgroundWorker_decodeheader;
     }
 }

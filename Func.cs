@@ -703,7 +703,6 @@ namespace FirehoseFinder
             StringBuilder str_by_eight = new StringBuilder(full_str);
             int count_char_place = 0;
             int count_full_char_string = 0;
-            //int count_string = 0;
             for (int i = 0; i < all_read_chars; i++)
             {
                 if (str_by_eight.Length < (count_char_place * 3) + count_full_char_string)

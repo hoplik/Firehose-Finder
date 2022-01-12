@@ -61,7 +61,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-01-08T22:29:22">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-01-12T21:16:22">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -276,7 +276,7 @@
 <OEM_FH>0000</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASH_FH>
-<Model>Mi A1</Model>
+<Model>MI A1</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCADFE3/prog_emmc_firehose_Sm6125_ddr.elf#</Url>
@@ -402,7 +402,7 @@
 <OEM_FH>0031</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>E746E34F737403F40212CF29F0C0CAB9F1038AA8BCE6C097E82CC93213020EDBCB967BFE180AE14C9AFB4DAC9C83E2B0</HASH_FH>
-<Model>V40</Model>
+<Model>LM-V400N</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A441AC97/E2M-0-113F-prog_emmc_firehose_8917_ddr.mbn#</Url>
@@ -418,7 +418,7 @@
 <OEM_FH>0000</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASH_FH>
-<Model>Mi 4i</Model>
+<Model>MI 4i</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/05-04-2021_10-58-09_prog_emmc_firehose_8953_ddr.mbn#</Url>
@@ -426,7 +426,7 @@
 <OEM_FH>0000</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASH_FH>
-<Model>Mi 5x</Model>
+<Model>MI 5x</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/57E3C370/Xiaomi_Mi_6.elf#</Url>
@@ -434,7 +434,7 @@
 <OEM_FH>0000</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASH_FH>
-<Model>Mi 6</Model>
+<Model>MI 6</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/3_emmc_ddr.mbn#</Url>
