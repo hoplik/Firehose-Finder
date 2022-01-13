@@ -34,8 +34,8 @@ namespace FirehoseFinder
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker_hex_search = new System.ComponentModel.BackgroundWorker();
             this.statusStrip_search = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel_search = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar_search = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabel_search = new System.Windows.Forms.ToolStripStatusLabel();
             this.tableLayoutPanel_hs = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.listView_search = new System.Windows.Forms.ListView();
@@ -90,12 +90,6 @@ namespace FirehoseFinder
             this.statusStrip_search.TabIndex = 7;
             this.statusStrip_search.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel_search
-            // 
-            this.toolStripStatusLabel_search.Name = "toolStripStatusLabel_search";
-            this.toolStripStatusLabel_search.Size = new System.Drawing.Size(100, 20);
-            this.toolStripStatusLabel_search.Text = "Оповещения";
-            // 
             // toolStripProgressBar_search
             // 
             this.toolStripProgressBar_search.ForeColor = System.Drawing.Color.LimeGreen;
@@ -103,6 +97,12 @@ namespace FirehoseFinder
             this.toolStripProgressBar_search.Size = new System.Drawing.Size(200, 18);
             this.toolStripProgressBar_search.Step = 1;
             this.toolStripProgressBar_search.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            // 
+            // toolStripStatusLabel_search
+            // 
+            this.toolStripStatusLabel_search.Name = "toolStripStatusLabel_search";
+            this.toolStripStatusLabel_search.Size = new System.Drawing.Size(100, 20);
+            this.toolStripStatusLabel_search.Text = "Оповещения";
             // 
             // tableLayoutPanel_hs
             // 
@@ -301,7 +301,7 @@ namespace FirehoseFinder
             this.textBox_addfirst.Name = "textBox_addfirst";
             this.textBox_addfirst.Size = new System.Drawing.Size(100, 22);
             this.textBox_addfirst.TabIndex = 2;
-            this.textBox_addfirst.Text = "4";
+            this.textBox_addfirst.Text = "10";
             // 
             // label3
             // 

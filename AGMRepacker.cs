@@ -367,7 +367,7 @@ namespace FirehoseFinder
         {
             toolStripProgressBar1.Value = e.ProgressPercentage;
             toolStripStatusLabel1.Text = $"Распаковка файлов прошивки выполнена на {e.ProgressPercentage}%";
-            if (e.ProgressPercentage > 1) toolStripSplitButton_explorer.Visible = true;
+            if (e.ProgressPercentage > 5) toolStripSplitButton_explorer.Visible = true;
             File_info_bytes F_I_B = (File_info_bytes)e.UserState;
             textBox_parse.AppendText(string.Format(
                 Environment.NewLine + "Файл {0}, адрес {1}, размер {2}, контрольная сумма {3}",
