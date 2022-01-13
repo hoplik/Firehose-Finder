@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AGMRepacker));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSplitButton_explorer = new System.Windows.Forms.ToolStripSplitButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox_controls = new System.Windows.Forms.GroupBox();
             this.comboBox_charsinrow = new System.Windows.Forms.ComboBox();
@@ -52,6 +54,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker_readheader = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker_decodeheader = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker_unpacker = new System.ComponentModel.BackgroundWorker();
+            this.toolTip_Dir = new System.Windows.Forms.ToolTip(this.components);
             this.statusStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox_controls.SuspendLayout();
@@ -65,7 +69,8 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar1,
-            this.toolStripStatusLabel1});
+            this.toolStripStatusLabel1,
+            this.toolStripSplitButton_explorer});
             this.statusStrip1.Location = new System.Drawing.Point(0, 522);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1279, 26);
@@ -85,6 +90,18 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(414, 20);
             this.toolStripStatusLabel1.Text = "Выберите путь к прошивке и директорию для распаковки";
+            // 
+            // toolStripSplitButton_explorer
+            // 
+            this.toolStripSplitButton_explorer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripSplitButton_explorer.DropDownButtonWidth = 0;
+            this.toolStripSplitButton_explorer.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton_explorer.Image")));
+            this.toolStripSplitButton_explorer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton_explorer.Name = "toolStripSplitButton_explorer";
+            this.toolStripSplitButton_explorer.Size = new System.Drawing.Size(82, 24);
+            this.toolStripSplitButton_explorer.Text = "Отменить";
+            this.toolStripSplitButton_explorer.Visible = false;
+            this.toolStripSplitButton_explorer.Click += new System.EventHandler(this.ToolStripSplitButton_explorer_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -127,7 +144,9 @@
             this.comboBox_charsinrow.FormattingEnabled = true;
             this.comboBox_charsinrow.Items.AddRange(new object[] {
             "8",
-            "16"});
+            "10",
+            "16",
+            "32"});
             this.comboBox_charsinrow.Location = new System.Drawing.Point(475, 85);
             this.comboBox_charsinrow.Name = "comboBox_charsinrow";
             this.comboBox_charsinrow.Size = new System.Drawing.Size(144, 24);
@@ -155,6 +174,7 @@
             // textBox_keycode
             // 
             this.textBox_keycode.Location = new System.Drawing.Point(475, 56);
+            this.textBox_keycode.MaxLength = 16;
             this.textBox_keycode.Name = "textBox_keycode";
             this.textBox_keycode.Size = new System.Drawing.Size(145, 22);
             this.textBox_keycode.TabIndex = 1;
@@ -181,6 +201,8 @@
             this.button_repack.TabIndex = 5;
             this.button_repack.Text = "Распаковать";
             this.button_repack.UseVisualStyleBackColor = true;
+            this.button_repack.Visible = false;
+            this.button_repack.Click += new System.EventHandler(this.Button_repack_Click);
             // 
             // button_dirrepack
             // 
@@ -190,6 +212,7 @@
             this.button_dirrepack.TabIndex = 4;
             this.button_dirrepack.Text = "Директория для распаковки";
             this.button_dirrepack.UseVisualStyleBackColor = true;
+            this.button_dirrepack.Click += new System.EventHandler(this.Button_dirrepack_Click);
             // 
             // button_rampath
             // 
@@ -210,7 +233,7 @@
             this.groupBox_orig.Size = new System.Drawing.Size(633, 316);
             this.groupBox_orig.TabIndex = 4;
             this.groupBox_orig.TabStop = false;
-            this.groupBox_orig.Text = "Начало оригинального заголовка прошивки (BYTES | ASCII)";
+            this.groupBox_orig.Text = "Начало оригинального заголовка файла (BYTES | ASCII)";
             // 
             // textBox_orig
             // 
@@ -218,6 +241,7 @@
             this.textBox_orig.Location = new System.Drawing.Point(3, 18);
             this.textBox_orig.Multiline = true;
             this.textBox_orig.Name = "textBox_orig";
+            this.textBox_orig.ReadOnly = true;
             this.textBox_orig.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox_orig.Size = new System.Drawing.Size(627, 295);
             this.textBox_orig.TabIndex = 0;
@@ -231,7 +255,7 @@
             this.groupBox_decode.Size = new System.Drawing.Size(634, 316);
             this.groupBox_decode.TabIndex = 5;
             this.groupBox_decode.TabStop = false;
-            this.groupBox_decode.Text = "Декодированная часть заголовка прошивки (BYTES | ASCII)";
+            this.groupBox_decode.Text = "Декодированная часть заголовка файла (BYTES | ASCII)";
             // 
             // textBox_decode
             // 
@@ -239,6 +263,7 @@
             this.textBox_decode.Location = new System.Drawing.Point(3, 18);
             this.textBox_decode.Multiline = true;
             this.textBox_decode.Name = "textBox_decode";
+            this.textBox_decode.ReadOnly = true;
             this.textBox_decode.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox_decode.Size = new System.Drawing.Size(628, 295);
             this.textBox_decode.TabIndex = 0;
@@ -252,7 +277,7 @@
             this.groupBox_parse.Size = new System.Drawing.Size(634, 194);
             this.groupBox_parse.TabIndex = 6;
             this.groupBox_parse.TabStop = false;
-            this.groupBox_parse.Text = "Парсинг декодированного заголовка";
+            this.groupBox_parse.Text = "Парсинг прошивки";
             // 
             // textBox_parse
             // 
@@ -260,6 +285,7 @@
             this.textBox_parse.Location = new System.Drawing.Point(3, 18);
             this.textBox_parse.Multiline = true;
             this.textBox_parse.Name = "textBox_parse";
+            this.textBox_parse.ReadOnly = true;
             this.textBox_parse.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox_parse.Size = new System.Drawing.Size(628, 173);
             this.textBox_parse.TabIndex = 0;
@@ -284,6 +310,14 @@
             this.backgroundWorker_decodeheader.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_decodeheader_ProgressChanged);
             this.backgroundWorker_decodeheader.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_decodeheader_RunWorkerCompleted);
             // 
+            // backgroundWorker_unpacker
+            // 
+            this.backgroundWorker_unpacker.WorkerReportsProgress = true;
+            this.backgroundWorker_unpacker.WorkerSupportsCancellation = true;
+            this.backgroundWorker_unpacker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_unpacker_DoWork);
+            this.backgroundWorker_unpacker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_unpacker_ProgressChanged);
+            this.backgroundWorker_unpacker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_unpacker_RunWorkerCompleted);
+            // 
             // AGMRepacker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -294,6 +328,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AGMRepacker";
             this.Text = "Декодер-распаковщик однобиновой прошивки для AGM";
+            this.Load += new System.EventHandler(this.AGMRepacker_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -335,5 +370,8 @@
         private System.Windows.Forms.TextBox textBox_keycode;
         private System.ComponentModel.BackgroundWorker backgroundWorker_readheader;
         private System.ComponentModel.BackgroundWorker backgroundWorker_decodeheader;
+        private System.ComponentModel.BackgroundWorker backgroundWorker_unpacker;
+        private System.Windows.Forms.ToolTip toolTip_Dir;
+        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton_explorer;
     }
 }
