@@ -7,7 +7,7 @@ namespace FirehoseFinder
         ///<summary>
         ///Справочник типов программного обеспечения из сертификата
         ///</summary>
-        internal readonly Dictionary<string, string> SW_ID_type = new Dictionary<string, string>(28)
+        /*internal readonly Dictionary<string, string> SW_ID_type = new Dictionary<string, string>(28)
         {
             { "0", "SBL1 image" },
             { "1", "MBA image" },
@@ -38,7 +38,7 @@ namespace FirehoseFinder
             { "1C", "Reserved" },
             { "200", "Debug Policy" }
         };
-
+        */
         /// <summary>
         /// Справочник типов памяти
         /// </summary>
@@ -125,7 +125,7 @@ namespace FirehoseFinder
         }
 
         /// <summary>
-        /// Признак сертификата в коде программера
+        /// Признак алгоритма подписи сертификата в коде программера
         /// </summary>
         internal readonly Dictionary<string, int> SHA_magic_numbers = new Dictionary<string, int>(5)
         {

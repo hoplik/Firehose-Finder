@@ -89,6 +89,7 @@ namespace FirehoseFinder
             bindingSource_firehose.DataSource = dataSet_Find.Tables[1];
             dataGridView_FInd_Server.DataSource = bindingSource_firehose;
             //Настройки отображения справочника
+            dataGridView_collection.Columns["Trust"].Visible=false;
             dataGridView_collection.Columns["HASHID"].HeaderText = "OEM Private Key Hash";
             dataGridView_collection.Columns["OEMID"].HeaderText = "OEM";
             dataGridView_collection.Columns["MODELID"].HeaderText = "Model";
@@ -157,36 +158,23 @@ namespace FirehoseFinder
             {
                 tabControl1.TabPages.Insert(tabControl1.TabPages.Count, tabPage_collection);
                 tabControl1.SelectedTab = tabPage_collection;
-                if (!ProofAllToolStripMenuItem.Checked)
+                //Отображаем только подтверждённые данные
+                string strfil = string.Format("Trust = '{0}'", "full trust");
+                if (реальноПодключённыеУстройстваToolStripMenuItem.Checked)
                 {
-                    //Отображаем только подтверждённые данные
-                    bindingSource_collection.Filter = "Url is Not Null";
+                    strfil+=string.Format(" AND Trust = '{0}'", "real dev");
                 }
+                if (устройстваСПрограммерамиToolStripMenuItem.Checked)
+                {
+                    strfil+=string.Format(" AND Url is Not Null");
+                }
+                bindingSource_collection.Filter = strfil;
             }
             else
             {
                 tabControl1.TabPages.Remove(tabPage_collection);
-                ProofAllToolStripMenuItem.Checked = false;
-            }
-        }
-
-        /// <summary>
-        /// Применяем фильтр к Справочнику для неподтверждённых данных
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void НеподтверждённыеДанныеToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (ProofAllToolStripMenuItem.Checked)
-            {
-                CollectionToolStripMenuItem.Checked = true;
-                //отображаем все данные справочника. Пруфы красим бледно-зелёным
-                bindingSource_collection.Filter = null;
-            }
-            else
-            {
-                //Отображаем только подтверждённые данные
-                bindingSource_collection.Filter = "Url is Not Null";
+                реальноПодключённыеУстройстваToolStripMenuItem.Checked = false;
+                устройстваСПрограммерамиToolStripMenuItem.Checked = false;
             }
         }
 
@@ -1179,12 +1167,24 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void TextBox_find_TextChanged(object sender, EventArgs e)
         {
+            string strfil = string.Format("Trust = '{0}'", "full trust");
             if (string.IsNullOrEmpty(toolStripTextBox_find.Text))
             {
-                if (!ProofAllToolStripMenuItem.Checked) bindingSource_collection.Filter = "Url is Not Null";
-                else bindingSource_collection.Filter = null;
+                if (реальноПодключённыеУстройстваToolStripMenuItem.Checked)
+                {
+                    strfil="Trust is Not Null";
+                }
+                if (устройстваСПрограммерамиToolStripMenuItem.Checked)
+                {
+                    strfil+=string.Format(" AND Url is Not Null");
+                }
             }
-            else bindingSource_collection.Filter = string.Format("HWID LIKE '%{0}%' OR FullName LIKE '%{0}%' OR OEMID LIKE '%{0}%' OR MODELID LIKE '%{0}%' OR HASHID LIKE '%{0}%' OR Trademark LIKE '%{0}%' OR Model LIKE '%{0}%' OR AltName LIKE '%{0}%'", toolStripTextBox_find.Text);
+            else strfil = string.Format("HWID LIKE '%{0}%' OR FullName LIKE '%{0}%' OR OEMID LIKE '%{0}%' OR MODELID LIKE '%{0}%' OR HASHID LIKE '%{0}%' OR Trademark LIKE '%{0}%' OR Model LIKE '%{0}%' OR AltName LIKE '%{0}%'", toolStripTextBox_find.Text);
+            bindingSource_collection.Filter = strfil;
+            for (int i = 0; i < dataGridView_collection.Rows.Count; i++)
+            {
+                if (string.IsNullOrEmpty(dataGridView_collection["Trust", i].Value.ToString())) dataGridView_collection.Rows[i].DefaultCellStyle.BackColor=Color.IndianRed;
+            }
         }
 
         #endregion
@@ -1339,18 +1339,18 @@ namespace FirehoseFinder
         private byte Rating(string[] id_str, int Currnum)
         {
             byte gross = 0; //Рейтинг файла
-            string sw_type = string.Empty;
+            //string sw_type = string.Empty;
             string oemhash;
             if (id_str[3].Length < 8) oemhash = id_str[3];
             else oemhash = id_str[3].Substring(id_str[3].Length - 8);
-            dataGridView_final["Column_id", Currnum].Value = id_str[0] + "-" + id_str[1] + "-" + id_str[2] + "-" + oemhash + "-" + id_str[4] + id_str[5];
-            if (guide.SW_ID_type.ContainsKey(id_str[4])) sw_type = guide.SW_ID_type[id_str[4]];
-            dataGridView_final["Column_SW_type", Currnum].Value = sw_type;
+            dataGridView_final["Column_id", Currnum].Value = id_str[0] + "-" + id_str[1] + "-" + id_str[2] + "-" + oemhash;// + "-" + id_str[4] + id_str[5];
+            //if (guide.SW_ID_type.ContainsKey(id_str[4])) sw_type = guide.SW_ID_type[id_str[4]];
+            //dataGridView_final["Column_SW_type", Currnum].Value = sw_type;
             dataGridView_final["Column_Full", Currnum].Value = "Jtag_ID (процессор) - " + id_str[0] + Environment.NewLine +
                 "OEM_ID (производитель) - " + id_str[1] + Environment.NewLine +
                 "MODEL_ID (модель) - " + id_str[2] + Environment.NewLine +
-                "OEM_PK_HASH (хеш корневого сертификата) - " + id_str[3] + Environment.NewLine +
-                "SW_ID (тип программы (версия)) - " + id_str[4] + id_str[5] + " - " + sw_type;
+                "OEM_PK_HASH (хеш корневого сертификата) - " + id_str[3];
+            //+ Environment.NewLine + "SW_ID (тип программы (версия)) - " + id_str[4] + id_str[5] + " - " + sw_type;
             if (guide.Double_CPU.ContainsKey(id_str[0])) //HWID два или более
             {
                 StringBuilder comp_model = new StringBuilder(string.Empty);
@@ -1653,9 +1653,10 @@ namespace FirehoseFinder
                             checkBox_send.Checked = false;
                             break;
                         default:
-                            label_tm.Text = "\"" + fr.comboBox_tm_insert.Text + "\""; //Если Производитель пришёл в кавычках, значит вводили вручную
+                            label_tm.Text = fr.comboBox_tm_insert.Text;
                             label_model.Text = fr.textBox_model_insert.Text;
                             label_altname.Text = fr.textBox_alt_insert.Text;
+                            //Если отчёт пришёл без серийного номера, значит вводили вручную
                             break;
                     }
                 }
@@ -1695,7 +1696,7 @@ namespace FirehoseFinder
             //Проводим две проверки: 
             //Все четыре идентификатора Сахары совпадают 
             bindingSource_collection.Filter = string.Format(
-                 "HWID LIKE '{0}' AND OEMID LIKE '{1}' AND MODELID LIKE '{2}' AND HASHID LIKE '{3}'",
+                 "Trust is Not Null AND HWID LIKE '{0}' AND OEMID LIKE '{1}' AND MODELID LIKE '{2}' AND HASHID LIKE '{3}'",
                  textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text, textBox_oemhash.Text);
             if (dataGridView_collection.Rows.Count > 0) //Есть устройство с такими идентификаторами
             {
@@ -2484,5 +2485,50 @@ namespace FirehoseFinder
             repacker.ShowDialog();
         }
         #endregion
+
+        private void РеальноПодключённыеУстройстваToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+            string strfil = string.Format("Trust = '{0}'", "full trust");
+            if (реальноПодключённыеУстройстваToolStripMenuItem.Checked)
+            {
+                strfil = "Trust is Not Null";
+                if (устройстваСПрограммерамиToolStripMenuItem.Checked)
+                {
+                    strfil += " AND Url is Not Null";
+                }
+            }
+            else
+            {
+                if (устройстваСПрограммерамиToolStripMenuItem.Checked)
+                {
+                    strfil += " AND Url is Not Null";
+                }
+            }
+            bindingSource_collection.Filter=strfil;
+        }
+
+        private void УстройстваСПрограммерамиToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+            string strfil = string.Format("Trust = '{0}'", "full trust");
+            if (устройстваСПрограммерамиToolStripMenuItem.Checked)
+            {
+                if (реальноПодключённыеУстройстваToolStripMenuItem.Checked)
+                {
+                    strfil = "Trust is Not Null AND Url is Not Null";
+                }
+                else
+                {
+                    strfil+=" AND Url is Not Null";
+                }
+            }
+            else
+            {
+                if (реальноПодключённыеУстройстваToolStripMenuItem.Checked)
+                {
+                    strfil = "Trust is Not Null";
+                }
+            }
+            bindingSource_collection.Filter=strfil;
+        }
     }
 }
