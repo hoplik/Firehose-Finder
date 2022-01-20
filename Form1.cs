@@ -2492,18 +2492,10 @@ namespace FirehoseFinder
             if (реальноПодключённыеУстройстваToolStripMenuItem.Checked)
             {
                 strfil = "Trust is Not Null";
-                if (устройстваСПрограммерамиToolStripMenuItem.Checked)
-                {
-                    strfil += " AND Url is Not Null";
-                }
+                if (!CollectionToolStripMenuItem.Checked) CollectionToolStripMenuItem.Checked=true;
+                if (устройстваСПрограммерамиToolStripMenuItem.Checked) strfil += " AND Url is Not Null";
             }
-            else
-            {
-                if (устройстваСПрограммерамиToolStripMenuItem.Checked)
-                {
-                    strfil += " AND Url is Not Null";
-                }
-            }
+            else if (устройстваСПрограммерамиToolStripMenuItem.Checked) strfil += " AND Url is Not Null";
             bindingSource_collection.Filter=strfil;
         }
 
@@ -2512,22 +2504,11 @@ namespace FirehoseFinder
             string strfil = string.Format("Trust = '{0}'", "full trust");
             if (устройстваСПрограммерамиToolStripMenuItem.Checked)
             {
-                if (реальноПодключённыеУстройстваToolStripMenuItem.Checked)
-                {
-                    strfil = "Trust is Not Null AND Url is Not Null";
-                }
-                else
-                {
-                    strfil+=" AND Url is Not Null";
-                }
+                if (!CollectionToolStripMenuItem.Checked) CollectionToolStripMenuItem.Checked=true;
+                if (реальноПодключённыеУстройстваToolStripMenuItem.Checked) strfil = "Trust is Not Null AND Url is Not Null";
+                else strfil+=" AND Url is Not Null";
             }
-            else
-            {
-                if (реальноПодключённыеУстройстваToolStripMenuItem.Checked)
-                {
-                    strfil = "Trust is Not Null";
-                }
-            }
+            else if (реальноПодключённыеУстройстваToolStripMenuItem.Checked) strfil = "Trust is Not Null";
             bindingSource_collection.Filter=strfil;
         }
     }
