@@ -61,7 +61,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-01-19T21:18:07">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-01-21T00:43:38">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -309,6 +309,14 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>2A9630BD810BA7B60EE2750C46A10D3F55E8D0E9B8B36D75632053F4CBAA55ED</HASH_FH>
 <Model>SM-A115F</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D7D6A1C7/prog_emmc_firehose_8996_ddr_zuk.elf#</Url>
+<HW_FH>009470E1</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>CAB02552DC28F562E8C5BEFA75BC4A97B90AAB1C91A3C186EC51F3D3D7D6A1C7</HASH_FH>
+<Model>Z2 Plus</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A758CF6D/prog_emmc_firehose_8917.mbn#</Url>

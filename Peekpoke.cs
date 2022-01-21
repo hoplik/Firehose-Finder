@@ -6,36 +6,50 @@ namespace FirehoseFinder
 {
     public partial class Peekpoke : Form
     {
+        Func func = new Func();
         public Peekpoke(Formfhf formfhf)
         {
             InitializeComponent();
         }
 
-        private void Button_pp_cancel_Click(object sender, EventArgs e)
+        /// <summary>
+        /// При загрузке формы определяем подсказки для контролов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Peekpoke_Load(object sender, EventArgs e)
         {
-            Hide();
-            DialogResult = DialogResult.Cancel;
+            toolTip_pp.SetToolTip(groupBox_fh_aarch, "Если в логе появляется ошибка о некорректном значении команды (HANDLE_PEEK_FAILURE)," +
+                " попробуйте изменить выбор архитектуры программера.");
         }
 
         private void Button_pp_ok_Click(object sender, EventArgs e)
         {
+            string sib = "SizeInBytes"; //По-умолчанию архитектура программера 32 бита
+            if (radioButton_aarch64.Checked) sib = "size_in_bytes";
             //Создали xml-файл
             XmlDocument doc = new XmlDocument();
             XmlDeclaration xmldecl;
             xmldecl = doc.CreateXmlDeclaration("1.0", string.Empty, null);
             //Если решили прочитать байт
             if (radioButton_peek.Checked) doc.LoadXml(string.Format("<data>" +
-                "<peek address64=\"0x{0}\" size_in_bytes=\"0x{1}\"/>" +
-                "</data>", textBox_peek_adr.Text, textBox_peek_cb.Text));
+                "<peek address64=\"0x{0}\" {1}=\"0x{2}\"/>" +
+                "</data>", textBox_peek_adr.Text, sib, textBox_peek_cb.Text));
             //Если решили записать байт
             if (radioButton_poke.Checked) doc.LoadXml(string.Format("<data>" +
-                "<poke address64=\"0x{0}\" size_in_bytes=\"0x{1}\" value64=\"0x{2}\"/>" +
-                "</data>", textBox_poke_adr.Text, label_poke_cbytes.Text, textBox_poke_bytes.Text));
+                "<poke address64=\"0x{0}\" {1}=\"0x{2}\" value64=\"0x{3}\"/>" +
+                "</data>", textBox_poke_adr.Text, sib, label_poke_cbytes.Text, textBox_poke_bytes.Text));
             XmlElement root = doc.DocumentElement;
             doc.InsertBefore(xmldecl, root);
             doc.Save("work.xml");
             Hide();
             DialogResult = DialogResult.OK;
+        }
+
+        private void Button_pp_cancel_Click(object sender, EventArgs e)
+        {
+            Hide();
+            DialogResult = DialogResult.Cancel;
         }
 
         private void RadioButton_peek_CheckedChanged(object sender, EventArgs e)
@@ -56,12 +70,44 @@ namespace FirehoseFinder
             }
         }
 
+        private void TextBox_peek_adr_TextChanged(object sender, EventArgs e)
+        {
+            //Переводим все символы в верхний регистр
+            if (!string.IsNullOrEmpty(textBox_peek_adr.Text))
+            {
+                textBox_peek_adr.Text = func.DelUnknownChars(textBox_peek_adr.Text, Func.System_Count.hex);
+                textBox_peek_adr.SelectionStart = textBox_peek_adr.TextLength;
+            }
+        }
+
+        private void TextBox_peek_cb_TextChanged(object sender, EventArgs e)
+        {
+            //Переводим все символы в верхний регистр
+            if (!string.IsNullOrEmpty(textBox_peek_cb.Text))
+            {
+                textBox_peek_cb.Text = func.DelUnknownChars(textBox_peek_cb.Text, Func.System_Count.hex);
+                textBox_peek_cb.SelectionStart = textBox_peek_cb.TextLength;
+            }
+        }
+
+        private void TextBox_poke_adr_TextChanged(object sender, EventArgs e)
+        {
+            //Переводим все символы в верхний регистр
+            if (!string.IsNullOrEmpty(textBox_poke_adr.Text))
+            {
+                textBox_poke_adr.Text = func.DelUnknownChars(textBox_poke_adr.Text, Func.System_Count.hex);
+                textBox_poke_adr.SelectionStart = textBox_poke_adr.TextLength;
+            }
+        }
+
         private void TextBox_poke_bytes_TextChanged(object sender, EventArgs e)
         {
             //Подсчёт количества байт для записи
             if (string.IsNullOrEmpty(textBox_poke_bytes.Text)) label_poke_cbytes.Text = "0";
             else
             {
+                textBox_poke_bytes.Text = func.DelUnknownChars(textBox_poke_bytes.Text, Func.System_Count.hex);
+                textBox_poke_bytes.SelectionStart = textBox_poke_bytes.TextLength;
                 int cb = textBox_poke_bytes.Text.Length;
                 if (cb % 2 != 0) cb = cb / 2 + 1;
                 else cb /= 2;
@@ -81,18 +127,6 @@ namespace FirehoseFinder
                 //Если знаков для байт нечётное число, то добавляем спереди нуль
                 if (textBox_poke_bytes.Text.Length % 2 != 0) textBox_poke_bytes.Text = textBox_poke_bytes.Text.Insert(0, "0");
             }
-        }
-
-        private void TextBox_peek_adr_TextChanged(object sender, EventArgs e)
-        {
-            //Переводим все символы в верхний регистр
-            if (!string.IsNullOrEmpty(textBox_peek_adr.Text)) textBox_peek_adr.Text = textBox_peek_adr.Text.ToUpper();
-        }
-
-        private void TextBox_poke_adr_TextChanged(object sender, EventArgs e)
-        {
-            //Переводим все символы в верхний регистр
-            if (!string.IsNullOrEmpty(textBox_poke_adr.Text)) textBox_poke_adr.Text = textBox_poke_adr.Text.ToUpper();
         }
     }
 }

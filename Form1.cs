@@ -485,7 +485,7 @@ namespace FirehoseFinder
                     else textBox_soft_term.AppendText("Стирание всей памяти отменено пользователем." + Environment.NewLine);
                     break;
                 case 6:
-                    textBox_soft_term.AppendText("Пишем/читаем байты по определённому адресу (peek&poke)" + Environment.NewLine);
+                    textBox_soft_term.AppendText("Читаем/пишем байты по определённому адресу (peek&poke)" + Environment.NewLine);
                     Peekpoke pp = new Peekpoke(this);
                     switch (pp.ShowDialog())
                     {

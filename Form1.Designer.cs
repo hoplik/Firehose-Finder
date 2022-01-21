@@ -1126,7 +1126,7 @@
             this.tabPage_phone.Location = new System.Drawing.Point(4, 25);
             this.tabPage_phone.Name = "tabPage_phone";
             this.tabPage_phone.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_phone.Size = new System.Drawing.Size(1361, 627);
+            this.tabPage_phone.Size = new System.Drawing.Size(1361, 625);
             this.tabPage_phone.TabIndex = 2;
             this.tabPage_phone.Text = "Работа с устройством";
             this.tabPage_phone.UseVisualStyleBackColor = true;
@@ -1147,7 +1147,7 @@
             this.tableLayoutPanel_phone.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_phone.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel_phone.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel_phone.Size = new System.Drawing.Size(1355, 621);
+            this.tableLayoutPanel_phone.Size = new System.Drawing.Size(1355, 619);
             this.tableLayoutPanel_phone.TabIndex = 8;
             // 
             // groupBox_terminal
@@ -1156,7 +1156,7 @@
             this.groupBox_terminal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox_terminal.Location = new System.Drawing.Point(3, 3);
             this.groupBox_terminal.Name = "groupBox_terminal";
-            this.groupBox_terminal.Size = new System.Drawing.Size(394, 535);
+            this.groupBox_terminal.Size = new System.Drawing.Size(394, 533);
             this.groupBox_terminal.TabIndex = 7;
             this.groupBox_terminal.TabStop = false;
             this.groupBox_terminal.Text = "Terminal";
@@ -1168,7 +1168,7 @@
             this.textBox_soft_term.Multiline = true;
             this.textBox_soft_term.Name = "textBox_soft_term";
             this.textBox_soft_term.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_soft_term.Size = new System.Drawing.Size(388, 514);
+            this.textBox_soft_term.Size = new System.Drawing.Size(388, 512);
             this.textBox_soft_term.TabIndex = 1;
             this.textBox_soft_term.TextChanged += new System.EventHandler(this.TextBox_soft_term_TextChanged);
             // 
@@ -1179,7 +1179,7 @@
             this.groupBox_soft.Location = new System.Drawing.Point(403, 3);
             this.groupBox_soft.Name = "groupBox_soft";
             this.tableLayoutPanel_phone.SetRowSpan(this.groupBox_soft, 3);
-            this.groupBox_soft.Size = new System.Drawing.Size(949, 615);
+            this.groupBox_soft.Size = new System.Drawing.Size(949, 613);
             this.groupBox_soft.TabIndex = 8;
             this.groupBox_soft.TabStop = false;
             this.groupBox_soft.Text = "Soft";
@@ -1193,7 +1193,7 @@
             this.tabControl_soft.Location = new System.Drawing.Point(3, 18);
             this.tabControl_soft.Name = "tabControl_soft";
             this.tabControl_soft.SelectedIndex = 0;
-            this.tabControl_soft.Size = new System.Drawing.Size(943, 594);
+            this.tabControl_soft.Size = new System.Drawing.Size(943, 592);
             this.tabControl_soft.TabIndex = 0;
             // 
             // tabPage_adb
@@ -1202,7 +1202,7 @@
             this.tabPage_adb.Location = new System.Drawing.Point(4, 25);
             this.tabPage_adb.Name = "tabPage_adb";
             this.tabPage_adb.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_adb.Size = new System.Drawing.Size(935, 565);
+            this.tabPage_adb.Size = new System.Drawing.Size(935, 563);
             this.tabPage_adb.TabIndex = 0;
             this.tabPage_adb.Text = "ADB (Android Debug Bridge)";
             this.tabPage_adb.UseVisualStyleBackColor = true;
@@ -1225,7 +1225,7 @@
             this.tableLayoutPanel_adb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel_adb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel_adb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_adb.Size = new System.Drawing.Size(929, 559);
+            this.tableLayoutPanel_adb.Size = new System.Drawing.Size(929, 557);
             this.tableLayoutPanel_adb.TabIndex = 8;
             // 
             // button_ADB_start
@@ -1261,7 +1261,7 @@
             this.groupBox_adb_commands.Enabled = false;
             this.groupBox_adb_commands.Location = new System.Drawing.Point(3, 133);
             this.groupBox_adb_commands.Name = "groupBox_adb_commands";
-            this.groupBox_adb_commands.Size = new System.Drawing.Size(923, 423);
+            this.groupBox_adb_commands.Size = new System.Drawing.Size(923, 421);
             this.groupBox_adb_commands.TabIndex = 7;
             this.groupBox_adb_commands.TabStop = false;
             this.groupBox_adb_commands.Text = "Команды ADB";
@@ -1378,7 +1378,7 @@
             this.tabPage_sahara.Location = new System.Drawing.Point(4, 25);
             this.tabPage_sahara.Name = "tabPage_sahara";
             this.tabPage_sahara.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_sahara.Size = new System.Drawing.Size(935, 565);
+            this.tabPage_sahara.Size = new System.Drawing.Size(935, 563);
             this.tabPage_sahara.TabIndex = 1;
             this.tabPage_sahara.Text = "Sahara & Firehose_loader";
             this.tabPage_sahara.UseVisualStyleBackColor = true;
@@ -1429,7 +1429,8 @@
             "Перегрузить устройство в нормальный режим (reset)",
             "=======Осторожно, запись!===================",
             "Записать файл в сектора (load)",
-            "Стереть всю память (erase all)"});
+            "Стереть всю память (erase all)",
+            "Читаем/пишем байты по определённому адресу (peek&poke)"});
             this.comboBox_fh_commands.Location = new System.Drawing.Point(6, 26);
             this.comboBox_fh_commands.Name = "comboBox_fh_commands";
             this.comboBox_fh_commands.Size = new System.Drawing.Size(419, 24);
@@ -1513,7 +1514,7 @@
             this.groupBox_LUN.Controls.Add(this.groupBox_block_size);
             this.groupBox_LUN.Controls.Add(this.groupBox_total_blocks);
             this.groupBox_LUN.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox_LUN.Location = new System.Drawing.Point(3, 223);
+            this.groupBox_LUN.Location = new System.Drawing.Point(3, 221);
             this.groupBox_LUN.Name = "groupBox_LUN";
             this.groupBox_LUN.Size = new System.Drawing.Size(929, 339);
             this.groupBox_LUN.TabIndex = 15;
@@ -1827,7 +1828,7 @@
             this.tabPage_fb.Controls.Add(this.tableLayoutPanel_fb);
             this.tabPage_fb.Location = new System.Drawing.Point(4, 25);
             this.tabPage_fb.Name = "tabPage_fb";
-            this.tabPage_fb.Size = new System.Drawing.Size(935, 565);
+            this.tabPage_fb.Size = new System.Drawing.Size(935, 563);
             this.tabPage_fb.TabIndex = 2;
             this.tabPage_fb.Text = "Fastboot (bootloader)";
             this.tabPage_fb.UseVisualStyleBackColor = true;
@@ -1850,7 +1851,7 @@
             this.tableLayoutPanel_fb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel_fb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_fb.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel_fb.Size = new System.Drawing.Size(935, 565);
+            this.tableLayoutPanel_fb.Size = new System.Drawing.Size(935, 563);
             this.tableLayoutPanel_fb.TabIndex = 0;
             // 
             // button_fb_check
@@ -1880,7 +1881,7 @@
             this.groupBox_fb_commands.Enabled = false;
             this.groupBox_fb_commands.Location = new System.Drawing.Point(3, 133);
             this.groupBox_fb_commands.Name = "groupBox_fb_commands";
-            this.groupBox_fb_commands.Size = new System.Drawing.Size(929, 429);
+            this.groupBox_fb_commands.Size = new System.Drawing.Size(929, 427);
             this.groupBox_fb_commands.TabIndex = 1;
             this.groupBox_fb_commands.TabStop = false;
             this.groupBox_fb_commands.Text = "Команды Fastboot";
@@ -2025,7 +2026,7 @@
             this.groupBox_term_buttons.Controls.Add(this.button_term_clear);
             this.groupBox_term_buttons.Controls.Add(this.button_term_save);
             this.groupBox_term_buttons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_term_buttons.Location = new System.Drawing.Point(3, 544);
+            this.groupBox_term_buttons.Location = new System.Drawing.Point(3, 542);
             this.groupBox_term_buttons.Name = "groupBox_term_buttons";
             this.groupBox_term_buttons.Size = new System.Drawing.Size(394, 54);
             this.groupBox_term_buttons.TabIndex = 9;
@@ -2060,7 +2061,7 @@
             // 
             this.progressBar_phone.Dock = System.Windows.Forms.DockStyle.Fill;
             this.progressBar_phone.ForeColor = System.Drawing.Color.LimeGreen;
-            this.progressBar_phone.Location = new System.Drawing.Point(3, 604);
+            this.progressBar_phone.Location = new System.Drawing.Point(3, 602);
             this.progressBar_phone.Name = "progressBar_phone";
             this.progressBar_phone.Size = new System.Drawing.Size(394, 14);
             this.progressBar_phone.Step = 1;
