@@ -1339,17 +1339,17 @@ namespace FirehoseFinder
         private byte Rating(string[] id_str, int Currnum)
         {
             byte gross = 0; //Рейтинг файла
-            //string sw_type = string.Empty;
+            string sw_type = string.Empty;
             string oemhash;
             if (id_str[3].Length < 8) oemhash = id_str[3];
             else oemhash = id_str[3].Substring(id_str[3].Length - 8);
             dataGridView_final["Column_id", Currnum].Value = id_str[0] + "-" + id_str[1] + "-" + id_str[2] + "-" + oemhash;// + "-" + id_str[4] + id_str[5];
-            //if (guide.SW_ID_type.ContainsKey(id_str[4])) sw_type = guide.SW_ID_type[id_str[4]];
-            //dataGridView_final["Column_SW_type", Currnum].Value = sw_type;
+            if (guide.SW_ID_type.ContainsKey(id_str[4])) sw_type = guide.SW_ID_type[id_str[4]];
+            dataGridView_final["Column_SW_type", Currnum].Value = sw_type;
             dataGridView_final["Column_Full", Currnum].Value = "Jtag_ID (процессор) - " + id_str[0] + Environment.NewLine +
                 "OEM_ID (производитель) - " + id_str[1] + Environment.NewLine +
                 "MODEL_ID (модель) - " + id_str[2] + Environment.NewLine +
-                "OEM_PK_HASH (хеш корневого сертификата) - " + id_str[3];
+                "OEM_PK_HASH (хеш корневого сертификата " + id_str[3].Length.ToString() + " знаков) - " + id_str[3];
             //+ Environment.NewLine + "SW_ID (тип программы (версия)) - " + id_str[4] + id_str[5] + " - " + sw_type;
             if (guide.Double_CPU.ContainsKey(id_str[0])) //HWID два или более
             {

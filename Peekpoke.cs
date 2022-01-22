@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -7,9 +8,11 @@ namespace FirehoseFinder
     public partial class Peekpoke : Form
     {
         Func func = new Func();
+        private string fh_path = string.Empty; //Полный путь к программеру
         public Peekpoke(Formfhf formfhf)
         {
             InitializeComponent();
+            fh_path = formfhf.label_Sahara_fhf.Text;
         }
 
         /// <summary>
@@ -20,7 +23,22 @@ namespace FirehoseFinder
         private void Peekpoke_Load(object sender, EventArgs e)
         {
             toolTip_pp.SetToolTip(groupBox_fh_aarch, "Если в логе появляется ошибка о некорректном значении команды (HANDLE_PEEK_FAILURE)," +
-                " попробуйте изменить выбор архитектуры программера.");
+                " попробуйте изменить выбор архитектуры процессора для этого программера.");
+            using (BinaryReader reader = new BinaryReader(File.Open(fh_path, FileMode.Open)))
+            {
+                reader.BaseStream.Position = 4;
+                switch (reader.ReadByte())
+                {
+                    case (byte)Guide.ELF_AArch.bit32:
+                        radioButton_aarch32.Checked = true;
+                        break;
+                    case (byte)Guide.ELF_AArch.bit64:
+                        radioButton_aarch64.Checked = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
         private void Button_pp_ok_Click(object sender, EventArgs e)
@@ -37,7 +55,7 @@ namespace FirehoseFinder
                 "</data>", textBox_peek_adr.Text, sib, textBox_peek_cb.Text));
             //Если решили записать байт
             if (radioButton_poke.Checked) doc.LoadXml(string.Format("<data>" +
-                "<poke address64=\"0x{0}\" {1}=\"0x{2}\" value64=\"0x{3}\"/>" +
+                "<poke address64=\"0x{0}\" {1}=\"{2}\" value64=\"0x{3}\"/>" +
                 "</data>", textBox_poke_adr.Text, sib, label_poke_cbytes.Text, textBox_poke_bytes.Text));
             XmlElement root = doc.DocumentElement;
             doc.InsertBefore(xmldecl, root);

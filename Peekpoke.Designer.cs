@@ -33,9 +33,6 @@ namespace FirehoseFinder
             this.tableLayoutPanel_PP = new System.Windows.Forms.TableLayoutPanel();
             this.button_pp_ok = new System.Windows.Forms.Button();
             this.button_pp_cancel = new System.Windows.Forms.Button();
-            this.panel_pp_select = new System.Windows.Forms.Panel();
-            this.radioButton_poke = new System.Windows.Forms.RadioButton();
-            this.radioButton_peek = new System.Windows.Forms.RadioButton();
             this.groupBox_peek = new System.Windows.Forms.GroupBox();
             this.textBox_peek_cb = new System.Windows.Forms.TextBox();
             this.textBox_peek_adr = new System.Windows.Forms.TextBox();
@@ -48,14 +45,17 @@ namespace FirehoseFinder
             this.textBox_poke_adr = new System.Windows.Forms.TextBox();
             this.label_poke_bytes = new System.Windows.Forms.Label();
             this.label_poke_adr = new System.Windows.Forms.Label();
+            this.panel_pp_select = new System.Windows.Forms.Panel();
+            this.radioButton_poke = new System.Windows.Forms.RadioButton();
+            this.radioButton_peek = new System.Windows.Forms.RadioButton();
             this.groupBox_fh_aarch = new System.Windows.Forms.GroupBox();
-            this.radioButton_aarch32 = new System.Windows.Forms.RadioButton();
             this.radioButton_aarch64 = new System.Windows.Forms.RadioButton();
+            this.radioButton_aarch32 = new System.Windows.Forms.RadioButton();
             this.toolTip_pp = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel_PP.SuspendLayout();
-            this.panel_pp_select.SuspendLayout();
             this.groupBox_peek.SuspendLayout();
             this.groupBox_poke.SuspendLayout();
+            this.panel_pp_select.SuspendLayout();
             this.groupBox_fh_aarch.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,45 +102,6 @@ namespace FirehoseFinder
             this.button_pp_cancel.Text = "Отмена";
             this.button_pp_cancel.UseVisualStyleBackColor = true;
             this.button_pp_cancel.Click += new System.EventHandler(this.Button_pp_cancel_Click);
-            // 
-            // panel_pp_select
-            // 
-            this.tableLayoutPanel_PP.SetColumnSpan(this.panel_pp_select, 2);
-            this.panel_pp_select.Controls.Add(this.radioButton_poke);
-            this.panel_pp_select.Controls.Add(this.radioButton_peek);
-            this.panel_pp_select.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_pp_select.Location = new System.Drawing.Point(3, 53);
-            this.panel_pp_select.Name = "panel_pp_select";
-            this.panel_pp_select.Size = new System.Drawing.Size(519, 30);
-            this.panel_pp_select.TabIndex = 2;
-            // 
-            // radioButton_poke
-            // 
-            this.radioButton_poke.AutoSize = true;
-            this.radioButton_poke.BackColor = System.Drawing.Color.Red;
-            this.radioButton_poke.Dock = System.Windows.Forms.DockStyle.Right;
-            this.radioButton_poke.Location = new System.Drawing.Point(335, 0);
-            this.radioButton_poke.Name = "radioButton_poke";
-            this.radioButton_poke.Size = new System.Drawing.Size(184, 30);
-            this.radioButton_poke.TabIndex = 1;
-            this.radioButton_poke.Text = "Пишем байты по адресу";
-            this.radioButton_poke.UseVisualStyleBackColor = false;
-            this.radioButton_poke.CheckedChanged += new System.EventHandler(this.RadioButton_poke_CheckedChanged);
-            // 
-            // radioButton_peek
-            // 
-            this.radioButton_peek.AutoSize = true;
-            this.radioButton_peek.BackColor = System.Drawing.Color.GreenYellow;
-            this.radioButton_peek.Checked = true;
-            this.radioButton_peek.Dock = System.Windows.Forms.DockStyle.Left;
-            this.radioButton_peek.Location = new System.Drawing.Point(0, 0);
-            this.radioButton_peek.Name = "radioButton_peek";
-            this.radioButton_peek.Size = new System.Drawing.Size(189, 30);
-            this.radioButton_peek.TabIndex = 0;
-            this.radioButton_peek.TabStop = true;
-            this.radioButton_peek.Text = "Читаем байты по адресу";
-            this.radioButton_peek.UseVisualStyleBackColor = false;
-            this.radioButton_peek.CheckedChanged += new System.EventHandler(this.RadioButton_peek_CheckedChanged);
             // 
             // groupBox_peek
             // 
@@ -225,9 +186,9 @@ namespace FirehoseFinder
             this.label_poke_cb.AutoSize = true;
             this.label_poke_cb.Location = new System.Drawing.Point(6, 74);
             this.label_poke_cb.Name = "label_poke_cb";
-            this.label_poke_cb.Size = new System.Drawing.Size(136, 16);
+            this.label_poke_cb.Size = new System.Drawing.Size(119, 16);
             this.label_poke_cb.TabIndex = 8;
-            this.label_poke_cb.Text = "Кол-во байт (hex, 0x)";
+            this.label_poke_cb.Text = "Кол-во байт (dec)";
             // 
             // textBox_poke_bytes
             // 
@@ -266,6 +227,45 @@ namespace FirehoseFinder
             this.label_poke_adr.TabIndex = 4;
             this.label_poke_adr.Text = "Адрес (hex, 0x)";
             // 
+            // panel_pp_select
+            // 
+            this.tableLayoutPanel_PP.SetColumnSpan(this.panel_pp_select, 2);
+            this.panel_pp_select.Controls.Add(this.radioButton_poke);
+            this.panel_pp_select.Controls.Add(this.radioButton_peek);
+            this.panel_pp_select.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_pp_select.Location = new System.Drawing.Point(3, 53);
+            this.panel_pp_select.Name = "panel_pp_select";
+            this.panel_pp_select.Size = new System.Drawing.Size(519, 30);
+            this.panel_pp_select.TabIndex = 2;
+            // 
+            // radioButton_poke
+            // 
+            this.radioButton_poke.AutoSize = true;
+            this.radioButton_poke.BackColor = System.Drawing.Color.Red;
+            this.radioButton_poke.Dock = System.Windows.Forms.DockStyle.Right;
+            this.radioButton_poke.Location = new System.Drawing.Point(335, 0);
+            this.radioButton_poke.Name = "radioButton_poke";
+            this.radioButton_poke.Size = new System.Drawing.Size(184, 30);
+            this.radioButton_poke.TabIndex = 1;
+            this.radioButton_poke.Text = "Пишем байты по адресу";
+            this.radioButton_poke.UseVisualStyleBackColor = false;
+            this.radioButton_poke.CheckedChanged += new System.EventHandler(this.RadioButton_poke_CheckedChanged);
+            // 
+            // radioButton_peek
+            // 
+            this.radioButton_peek.AutoSize = true;
+            this.radioButton_peek.BackColor = System.Drawing.Color.GreenYellow;
+            this.radioButton_peek.Checked = true;
+            this.radioButton_peek.Dock = System.Windows.Forms.DockStyle.Left;
+            this.radioButton_peek.Location = new System.Drawing.Point(0, 0);
+            this.radioButton_peek.Name = "radioButton_peek";
+            this.radioButton_peek.Size = new System.Drawing.Size(189, 30);
+            this.radioButton_peek.TabIndex = 0;
+            this.radioButton_peek.TabStop = true;
+            this.radioButton_peek.Text = "Читаем байты по адресу";
+            this.radioButton_peek.UseVisualStyleBackColor = false;
+            this.radioButton_peek.CheckedChanged += new System.EventHandler(this.RadioButton_peek_CheckedChanged);
+            // 
             // groupBox_fh_aarch
             // 
             this.tableLayoutPanel_PP.SetColumnSpan(this.groupBox_fh_aarch, 2);
@@ -277,7 +277,17 @@ namespace FirehoseFinder
             this.groupBox_fh_aarch.Size = new System.Drawing.Size(519, 44);
             this.groupBox_fh_aarch.TabIndex = 5;
             this.groupBox_fh_aarch.TabStop = false;
-            this.groupBox_fh_aarch.Text = "Выбор архитектуры сборки программера";
+            this.groupBox_fh_aarch.Text = "Выбор архитектуры процессора";
+            // 
+            // radioButton_aarch64
+            // 
+            this.radioButton_aarch64.AutoSize = true;
+            this.radioButton_aarch64.Location = new System.Drawing.Point(151, 21);
+            this.radioButton_aarch64.Name = "radioButton_aarch64";
+            this.radioButton_aarch64.Size = new System.Drawing.Size(78, 20);
+            this.radioButton_aarch64.TabIndex = 1;
+            this.radioButton_aarch64.Text = "AArch64";
+            this.radioButton_aarch64.UseVisualStyleBackColor = true;
             // 
             // radioButton_aarch32
             // 
@@ -285,21 +295,11 @@ namespace FirehoseFinder
             this.radioButton_aarch32.Checked = true;
             this.radioButton_aarch32.Location = new System.Drawing.Point(7, 22);
             this.radioButton_aarch32.Name = "radioButton_aarch32";
-            this.radioButton_aarch32.Size = new System.Drawing.Size(76, 20);
+            this.radioButton_aarch32.Size = new System.Drawing.Size(78, 20);
             this.radioButton_aarch32.TabIndex = 0;
             this.radioButton_aarch32.TabStop = true;
-            this.radioButton_aarch32.Text = "aarch32";
+            this.radioButton_aarch32.Text = "AArch32";
             this.radioButton_aarch32.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_aarch64
-            // 
-            this.radioButton_aarch64.AutoSize = true;
-            this.radioButton_aarch64.Location = new System.Drawing.Point(151, 21);
-            this.radioButton_aarch64.Name = "radioButton_aarch64";
-            this.radioButton_aarch64.Size = new System.Drawing.Size(76, 20);
-            this.radioButton_aarch64.TabIndex = 1;
-            this.radioButton_aarch64.Text = "aarch64";
-            this.radioButton_aarch64.UseVisualStyleBackColor = true;
             // 
             // Peekpoke
             // 
@@ -311,12 +311,12 @@ namespace FirehoseFinder
             this.Text = "Работаем с памятью процессора";
             this.Load += new System.EventHandler(this.Peekpoke_Load);
             this.tableLayoutPanel_PP.ResumeLayout(false);
-            this.panel_pp_select.ResumeLayout(false);
-            this.panel_pp_select.PerformLayout();
             this.groupBox_peek.ResumeLayout(false);
             this.groupBox_peek.PerformLayout();
             this.groupBox_poke.ResumeLayout(false);
             this.groupBox_poke.PerformLayout();
+            this.panel_pp_select.ResumeLayout(false);
+            this.panel_pp_select.PerformLayout();
             this.groupBox_fh_aarch.ResumeLayout(false);
             this.groupBox_fh_aarch.PerformLayout();
             this.ResumeLayout(false);

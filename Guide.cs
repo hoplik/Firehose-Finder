@@ -7,7 +7,7 @@ namespace FirehoseFinder
         ///<summary>
         ///Справочник типов программного обеспечения из сертификата
         ///</summary>
-        /*internal readonly Dictionary<string, string> SW_ID_type = new Dictionary<string, string>(28)
+        internal readonly Dictionary<string, string> SW_ID_type = new Dictionary<string, string>(32)
         {
             { "0", "SBL1 image" },
             { "1", "MBA image" },
@@ -25,20 +25,24 @@ namespace FirehoseFinder
             { "D", "Pronto/WCN image" },
             { "E", "Venus image" },
             { "F", "Reserved" },
+            { "11", "STI image" },
             { "12", "System debug image" },
-            { "13", "Reserved" },
+            { "13", "ACPI image" },
             { "14", "GPU Microcode" },
             { "15", "Hypervisor image" },
             { "16", "PMIC" },
             { "17", "Reserved" },
-            { "18", "SLPI" },
+            { "18", "Sensor Low Power Island (SLPI)" },
             { "19", "EOS firmware image" },
             { "1A", "Validated image programmer (VIP)" },
-            { "1B", "EFS TAR" },
-            { "1C", "Reserved" },
+            { "1B", "EFS TARfile" },
+            { "1C", "ABL image" },
+            { "1D", "IPA firmware" },
+            { "1E", "TrustZone TEE" },
+            { "1F", "TrustZone LIB" },
             { "200", "Debug Policy" }
         };
-        */
+
         /// <summary>
         /// Справочник типов памяти
         /// </summary>
@@ -122,6 +126,16 @@ namespace FirehoseFinder
             XiUFSEnc = 2358991973, //8C9B5C65 - Xiaomi закодированный UFS программер
             OLDasus = 930790575, //377ABCAF - Старый Асус программер
             OLDESTasus = 1347093252 //504B0304 - Ещё один старый Асус программер
+        }
+
+        /// <summary>
+        /// Список признаков типа архитектуры эльф-файла
+        /// </summary>
+        internal enum ELF_AArch : byte
+        {
+            Invalid,
+            bit32,
+            bit64
         }
 
         /// <summary>
