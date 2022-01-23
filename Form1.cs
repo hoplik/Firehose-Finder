@@ -428,6 +428,7 @@ namespace FirehoseFinder
             if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs --lun=" + lun_int.ToString());
             else fh_command_args.Append(" --memoryname=emmc");
             groupBox_LUN.Text = "Диск " + lun_int.ToString();
+            Peekpoke pp = new Peekpoke(this);
             switch (comboBox_fh_commands.SelectedIndex)
             {
                 case 0:
@@ -486,7 +487,6 @@ namespace FirehoseFinder
                     break;
                 case 6:
                     textBox_soft_term.AppendText("Читаем/пишем байты по определённому адресу (peek&poke)" + Environment.NewLine);
-                    Peekpoke pp = new Peekpoke(this);
                     switch (pp.ShowDialog())
                     {
                         case DialogResult.OK:
@@ -515,6 +515,15 @@ namespace FirehoseFinder
             textBox_soft_term.AppendText(output_FH + Environment.NewLine);
             if (need_parsing_lun) NeedParsingLun(output_FH, lun_int);
             if (getgpt) GetGPT(lun_int);
+            if (pp.checkBox_output.Checked)
+            {
+                string peektofile = pp.checkBox_output.Text;
+                uint bytecontrol = Convert.ToUInt32(pp.textBox_peek_cb.Text, 16);
+                using (BinaryWriter writer = new BinaryWriter(File.OpenWrite(peektofile)))
+                {
+                    writer.Write(func.Parse_peek_res(output_FH, bytecontrol));
+                }
+            }
         }
 
         private void NeedParsingLun(string output_FH, int lun_numder)

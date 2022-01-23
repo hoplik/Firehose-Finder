@@ -34,6 +34,8 @@ namespace FirehoseFinder
             this.button_pp_ok = new System.Windows.Forms.Button();
             this.button_pp_cancel = new System.Windows.Forms.Button();
             this.groupBox_peek = new System.Windows.Forms.GroupBox();
+            this.groupBox_output = new System.Windows.Forms.GroupBox();
+            this.checkBox_output = new System.Windows.Forms.CheckBox();
             this.textBox_peek_cb = new System.Windows.Forms.TextBox();
             this.textBox_peek_adr = new System.Windows.Forms.TextBox();
             this.label_peek_cb = new System.Windows.Forms.Label();
@@ -52,8 +54,10 @@ namespace FirehoseFinder
             this.radioButton_aarch64 = new System.Windows.Forms.RadioButton();
             this.radioButton_aarch32 = new System.Windows.Forms.RadioButton();
             this.toolTip_pp = new System.Windows.Forms.ToolTip(this.components);
+            this.saveFileDialog_output = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel_PP.SuspendLayout();
             this.groupBox_peek.SuspendLayout();
+            this.groupBox_output.SuspendLayout();
             this.groupBox_poke.SuspendLayout();
             this.panel_pp_select.SuspendLayout();
             this.groupBox_fh_aarch.SuspendLayout();
@@ -105,6 +109,7 @@ namespace FirehoseFinder
             // 
             // groupBox_peek
             // 
+            this.groupBox_peek.Controls.Add(this.groupBox_output);
             this.groupBox_peek.Controls.Add(this.textBox_peek_cb);
             this.groupBox_peek.Controls.Add(this.textBox_peek_adr);
             this.groupBox_peek.Controls.Add(this.label_peek_cb);
@@ -116,6 +121,26 @@ namespace FirehoseFinder
             this.groupBox_peek.TabIndex = 3;
             this.groupBox_peek.TabStop = false;
             this.groupBox_peek.Text = "Читаем";
+            // 
+            // groupBox_output
+            // 
+            this.groupBox_output.Controls.Add(this.checkBox_output);
+            this.groupBox_output.Location = new System.Drawing.Point(0, 93);
+            this.groupBox_output.Name = "groupBox_output";
+            this.groupBox_output.Size = new System.Drawing.Size(256, 53);
+            this.groupBox_output.TabIndex = 4;
+            this.groupBox_output.TabStop = false;
+            this.groupBox_output.Text = "Вывод результата в файл";
+            // 
+            // checkBox_output
+            // 
+            this.checkBox_output.AutoSize = true;
+            this.checkBox_output.Location = new System.Drawing.Point(7, 33);
+            this.checkBox_output.Name = "checkBox_output";
+            this.checkBox_output.Size = new System.Drawing.Size(18, 17);
+            this.checkBox_output.TabIndex = 0;
+            this.checkBox_output.UseVisualStyleBackColor = true;
+            this.checkBox_output.CheckedChanged += new System.EventHandler(this.CheckBox_output_CheckedChanged);
             // 
             // textBox_peek_cb
             // 
@@ -301,6 +326,12 @@ namespace FirehoseFinder
             this.radioButton_aarch32.Text = "AArch32";
             this.radioButton_aarch32.UseVisualStyleBackColor = true;
             // 
+            // saveFileDialog_output
+            // 
+            this.saveFileDialog_output.DefaultExt = "bin";
+            this.saveFileDialog_output.FileName = "peek.bin";
+            this.saveFileDialog_output.Filter = "Бинарные файлы (*.bin)|*.bin|Все файлы (*.*)|*.*";
+            // 
             // Peekpoke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -313,6 +344,8 @@ namespace FirehoseFinder
             this.tableLayoutPanel_PP.ResumeLayout(false);
             this.groupBox_peek.ResumeLayout(false);
             this.groupBox_peek.PerformLayout();
+            this.groupBox_output.ResumeLayout(false);
+            this.groupBox_output.PerformLayout();
             this.groupBox_poke.ResumeLayout(false);
             this.groupBox_poke.PerformLayout();
             this.panel_pp_select.ResumeLayout(false);
@@ -334,7 +367,6 @@ namespace FirehoseFinder
         private System.Windows.Forms.GroupBox groupBox_poke;
         private System.Windows.Forms.Label label_peek_cb;
         private System.Windows.Forms.Label label_peek_adr;
-        private System.Windows.Forms.TextBox textBox_peek_cb;
         private System.Windows.Forms.TextBox textBox_peek_adr;
         private System.Windows.Forms.Label label_poke_cbytes;
         private System.Windows.Forms.Label label_poke_cb;
@@ -347,5 +379,9 @@ namespace FirehoseFinder
         private System.Windows.Forms.RadioButton radioButton_aarch64;
         private System.Windows.Forms.RadioButton radioButton_aarch32;
         private System.Windows.Forms.ToolTip toolTip_pp;
+        private System.Windows.Forms.GroupBox groupBox_output;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog_output;
+        internal System.Windows.Forms.CheckBox checkBox_output;
+        internal System.Windows.Forms.TextBox textBox_peek_cb;
     }
 }

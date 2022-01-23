@@ -146,5 +146,20 @@ namespace FirehoseFinder
                 if (textBox_poke_bytes.Text.Length % 2 != 0) textBox_poke_bytes.Text = textBox_poke_bytes.Text.Insert(0, "0");
             }
         }
+
+        /// <summary>
+        /// Дублирование вывода в файл
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckBox_output_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_output.Checked)
+            {
+                if (saveFileDialog_output.ShowDialog() == DialogResult.OK) checkBox_output.Text = saveFileDialog_output.FileName;
+                else checkBox_output.Checked = false;
+            }
+            else checkBox_output.Text = string.Empty;
+        }
     }
 }

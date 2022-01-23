@@ -22,7 +22,7 @@ namespace FirehoseFinder
             dex,
             hex
         }
-        
+
         /// <summary>
         /// Строка из 0x40 символов (64 байт)
         /// </summary>
@@ -771,6 +771,24 @@ namespace FirehoseFinder
                 MessageBox.Show(Ex.Message);
                 return null;
             }
+        }
+
+        /// <summary>
+        /// Парсим строковый ответ в массив байт
+        /// </summary>
+        /// <param name="outputres">Вывод строки отчёта</param>
+        /// <param name="bytescontrol">Количество символов (байт)</param>
+        /// <returns>Массив байт для записи в файл</returns>
+        internal byte[] Parse_peek_res(string outputres, uint bytescontrol)
+        {
+            byte[] PPR = new byte[bytescontrol];
+            string pattern = "0x.{2} "; //Бинарный признак сертификата с его длиной в середине (3082-4 знака-3082)
+            MatchCollection matchs = Regex.Matches(outputres, pattern);
+            for (int i = 0; i < matchs.Count; i++)
+            {
+                PPR[i] = StringToByteArray(matchs[i].Value.Substring(2,2))[0];
+            }
+            return PPR;
         }
     }
 }
