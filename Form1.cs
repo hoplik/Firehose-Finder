@@ -1670,11 +1670,11 @@ namespace FirehoseFinder
                     }
                 }
             }
-            string logstr = label_tm.Text + "<>" + label_model.Text + "<>" + label_altname.Text + "<>"+ label_chip_sn.Text + Environment.NewLine +
-                string.Format("Chip s/n - {0}", chip_sn) + Environment.NewLine +
-                string.Format("HWID - {0}{1}{2}", textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text) + Environment.NewLine +
-                string.Format("OEM PK Hash - {0}", textBox_oemhash.Text) + Environment.NewLine +
-                string.Format("SBL SW (Version) - {0}", label_SW_Ver.Text);
+            string logstr = label_tm.Text + "^" + label_model.Text + "^" + label_altname.Text + "^"+ label_chip_sn.Text + Environment.NewLine +
+                string.Format("Chip s/n: {0}", chip_sn) + Environment.NewLine +
+                string.Format("HWID: {0}{1}{2}", textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text) + Environment.NewLine +
+                string.Format("OEM PK Hash: {0}", textBox_oemhash.Text) + Environment.NewLine +
+                string.Format("SBL SW Version: {0}", label_SW_Ver.Text);
             if (checkBox_Log.Checked)
             {
                 try
@@ -1717,7 +1717,7 @@ namespace FirehoseFinder
                     }
                 }
                 //Исправить/добавить название/модель если 1 совпадает, а 2 нет
-                BotSendMes("Добавить/исправить модель >" + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                BotSendMes("Добавить/исправить модель: " + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
             }
             //Устройства нет, надо добавить в автосообщение
             else
@@ -1727,7 +1727,7 @@ namespace FirehoseFinder
                     !string.IsNullOrEmpty(textBox_modelid.Text) &&
                     !string.IsNullOrEmpty(textBox_oemhash.Text))
                 {
-                    BotSendMes("Добавить устройство >" + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                    BotSendMes("Добавить устройство: " + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
                 }
                 else
                 {
@@ -1748,15 +1748,32 @@ namespace FirehoseFinder
             string message_not_mark = send_message.Replace("_", "\\_")
                 .Replace("*", "\\*")
                 .Replace("[", "\\[")
-                .Replace("'", "\\'")
-                .Replace("\"", "``");
+                .Replace("`", "\\`")
+                .Replace("]", "\\]")
+                .Replace("(", "\\(")
+                .Replace(")", "\\)")
+                .Replace("~", "\\~")
+                .Replace(">", "\\>")
+                .Replace("#", "\\#")
+                .Replace("+", "\\+")
+                .Replace("-", "\\-")
+                .Replace("=", "\\=")
+                .Replace("|", "\\|")
+                .Replace("{", "\\{")
+                .Replace("}", "\\}")
+                .Replace(".", "\\.")
+                .Replace("!", "\\!")
+                .Replace("\"", "\\\"");
             string correct_mess = message_not_mark;
             //Ограничение на размер сообщения. Оставляем только конец.
-            if (message_not_mark.Length > 4096)
+            if (message_not_mark.Length >= 4096)
             {
-                correct_mess = message_not_mark.Remove(0, message_not_mark.Length - 4092)
+                correct_mess = message_not_mark.Remove(0, message_not_mark.Length - 4078)
                     .Insert(0, "...");
             }
+            //Устанавливаем моношрифт
+            correct_mess=correct_mess.Insert(0, "```")
+                .Insert(correct_mess.LastIndexOf('\u000A')+2, "```");
             var mybot = new TelegramBotApi.TelegramBotClient(Resources.bot);
             long chat = -1001227261414;
             try
