@@ -1768,12 +1768,12 @@ namespace FirehoseFinder
             //Ограничение на размер сообщения. Оставляем только конец.
             if (message_not_mark.Length >= 4096)
             {
-                correct_mess = message_not_mark.Remove(0, message_not_mark.Length - 4078)
+                correct_mess = message_not_mark.Remove(0, message_not_mark.Length - 4090)
                     .Insert(0, "...");
             }
             //Устанавливаем моношрифт
-            correct_mess=correct_mess.Insert(0, "```")
-                .Insert(correct_mess.LastIndexOf('\u000A')+2, "```");
+            correct_mess=correct_mess.Insert(0, "`")
+                .Insert(correct_mess.LastIndexOf('\u000A'), "`");
             var mybot = new TelegramBotApi.TelegramBotClient(Resources.bot);
             long chat = -1001227261414;
             try
