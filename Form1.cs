@@ -27,7 +27,7 @@ namespace FirehoseFinder
         internal Flash_Disk[] Flash_Params = new Flash_Disk[1];
         internal DeviceData Global_ADB_Device = new DeviceData();
         internal string Global_FB_Device = string.Empty;
-        internal Dictionary<string, string> Connected_Devices = new Dictionary<string, string>();//Список подключённых ADB устройств
+        internal Dictionary<string, string> Connected_Devices = new Dictionary<string, string>(); //Список подключённых ADB устройств
 
         /// <summary>
         /// Инициализация компонентов
@@ -200,7 +200,7 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void ВнестиПроизводителяМодельToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InsertModelForm imf = new InsertModelForm();
+            InsertModelForm imf = new InsertModelForm(this);
             switch (imf.ShowDialog())
             {
                 case DialogResult.Cancel:
@@ -210,7 +210,7 @@ namespace FirehoseFinder
                     label_chip_sn.Text = "---";
                     break;
                 default:
-                    label_tm.Text = "\"" + imf.comboBox_tm_insert.Text + "\""; //Если Производитель пришёл в кавычках, значит вводили вручную
+                    label_tm.Text = imf.comboBox_tm_insert.Text;
                     label_model.Text = imf.textBox_model_insert.Text;
                     label_altname.Text = imf.textBox_alt_insert.Text;
                     break;
@@ -1650,7 +1650,7 @@ namespace FirehoseFinder
             {
                 if (label_tm.Text.StartsWith("---") || label_model.Text.StartsWith("---"))
                 {
-                    InsertModelForm fr = new InsertModelForm();
+                    InsertModelForm fr = new InsertModelForm(this);
                     switch (fr.ShowDialog())
                     {
                         case DialogResult.Cancel:

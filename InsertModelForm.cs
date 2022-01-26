@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,9 +7,23 @@ namespace FirehoseFinder
 {
     public partial class InsertModelForm : Form
     {
-        public InsertModelForm()
+        List<string> manuflist = new List<string>();
+        public InsertModelForm(Formfhf formfhf)
         {
             InitializeComponent();
+            for (int i = 0; i < formfhf.dataGridView_collection.Rows.Count; i++)
+            {
+                string celltoadd = formfhf.dataGridView_collection["Trademark", i].Value.ToString();
+                if (!manuflist.Contains(celltoadd)) manuflist.Add(celltoadd);
+            }
+        }
+
+        private void InsertModelForm_Load(object sender, EventArgs e)
+        {
+            foreach (string item in manuflist)
+            {
+                comboBox_tm_insert.Items.Add(item);
+            }
         }
 
         /// <summary>

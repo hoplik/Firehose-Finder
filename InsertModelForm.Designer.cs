@@ -43,81 +43,10 @@ namespace FirehoseFinder
             // comboBox_tm_insert
             // 
             this.comboBox_tm_insert.FormattingEnabled = true;
-            this.comboBox_tm_insert.Items.AddRange(new object[] {
-            "Acer",
-            "AGM",
-            "Alcatel",
-            "Archos",
-            "Ark",
-            "Artel",
-            "ASUS",
-            "BenQ",
-            "Billion",
-            "Bluebird",
-            "BQ",
-            "Caterpillar",
-            "China Mobile",
-            "Coolpad",
-            "Dexp",
-            "Discovery",
-            "Essential Phone",
-            "Foxda",
-            "General Mobile",
-            "Gigaset",
-            "Gionee",
-            "Google",
-            "Hiby",
-            "Highscreen",
-            "Hisense",
-            "Honeywell",
-            "HP",
-            "HTC",
-            "Huawei",
-            "Hytera",
-            "Kyocera",
-            "LeEco",
-            "LENOVO",
-            "LGE",
-            "LT",
-            "Meizu",
-            "Micromax",
-            "Microsoft",
-            "MOQI",
-            "Motorola",
-            "Nextbit",
-            "Nokia",
-            "OnePlus",
-            "oppo",
-            "Phicomm",
-            "Prestigio",
-            "Protruly",
-            "Razer",
-            "realme",
-            "RED",
-            "Samsung",
-            "Santin",
-            "Sharp",
-            "Smartisan",
-            "SONY",
-            "Stream",
-            "TCL",
-            "Tplink",
-            "UNIPRO",
-            "UniStrong",
-            "Vertex",
-            "vivo",
-            "vsmart",
-            "Wileyfox",
-            "Xiaomi",
-            "Yandex",
-            "Yota Devices Limited",
-            "ZTE",
-            "ZUK",
-            "Билайн",
-            "Мегафон"});
             this.comboBox_tm_insert.Location = new System.Drawing.Point(136, 12);
             this.comboBox_tm_insert.Name = "comboBox_tm_insert";
             this.comboBox_tm_insert.Size = new System.Drawing.Size(179, 24);
+            this.comboBox_tm_insert.Sorted = true;
             this.comboBox_tm_insert.TabIndex = 0;
             this.comboBox_tm_insert.TextChanged += new System.EventHandler(this.ComboBox_tm_insert_TextChanged);
             // 
@@ -203,6 +132,7 @@ namespace FirehoseFinder
             this.MinimizeBox = false;
             this.Name = "InsertModelForm";
             this.Text = "Внесение модели устройства";
+            this.Load += new System.EventHandler(this.InsertModelForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
