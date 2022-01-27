@@ -236,6 +236,9 @@
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </Compile>
     <None Include="Resources\Fh_Image.bmp" />
+    <EmbeddedResource Include="AboutBox1.en.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AGMRepacker.resx">
       <DependentUpon>AGMRepacker.cs</DependentUpon>
     </EmbeddedResource>

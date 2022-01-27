@@ -293,8 +293,14 @@
   <data name="tabPage_firehose.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="textBox_soft_term.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 512</value>
+  </data>
   <data name="textBox_soft_term.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="groupBox_terminal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>394, 533</value>
   </data>
   <data name="groupBox_terminal.ToolTip" xml:space="preserve">
     <value />
@@ -320,6 +326,9 @@
   <data name="textBox_ADB_commandstring.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="groupBox_adb_commands.Size" type="System.Drawing.Size, System.Drawing">
+    <value>923, 421</value>
+  </data>
   <data name="groupBox_adb_commands.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -329,8 +338,14 @@
   <data name="button_ADB_comstart.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="tableLayoutPanel_adb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>929, 557</value>
+  </data>
   <data name="tableLayoutPanel_adb.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="tabPage_adb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>935, 563</value>
   </data>
   <data name="tabPage_adb.ToolTip" xml:space="preserve">
     <value />
@@ -476,8 +491,14 @@
   <data name="tabPage_fb.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="tabControl_soft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>943, 592</value>
+  </data>
   <data name="tabControl_soft.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="groupBox_soft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>949, 613</value>
   </data>
   <data name="groupBox_soft.ToolTip" xml:space="preserve">
     <value />
@@ -488,14 +509,26 @@
   <data name="button_term_save.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="groupBox_term_buttons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 542</value>
+  </data>
   <data name="groupBox_term_buttons.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="progressBar_phone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 602</value>
   </data>
   <data name="progressBar_phone.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="tableLayoutPanel_phone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1355, 619</value>
+  </data>
   <data name="tableLayoutPanel_phone.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="tabPage_phone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1361, 625</value>
   </data>
   <data name="tabPage_phone.ToolTip" xml:space="preserve">
     <value />
