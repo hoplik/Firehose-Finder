@@ -118,20 +118,83 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="выходToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 26</value>
+  </data>
+  <data name="выходToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
   <data name="файлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 26</value>
+    <value>46, 24</value>
+  </data>
+  <data name="файлToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="приветствиеToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 26</value>
+  </data>
+  <data name="приветствиеToolStripMenuItem.Text" xml:space="preserve">
+    <value>Greeting</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 6</value>
+  </data>
+  <data name="работаСУстройствомToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 26</value>
+  </data>
+  <data name="работаСУстройствомToolStripMenuItem.Text" xml:space="preserve">
+    <value>Work with device</value>
+  </data>
+  <data name="CollectionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 26</value>
+  </data>
+  <data name="CollectionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Device collection</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 6</value>
+  </data>
+  <data name="внестиПроизводителяМодельToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 26</value>
+  </data>
+  <data name="внестиПроизводителяМодельToolStripMenuItem.Text" xml:space="preserve">
+    <value>Insert model</value>
   </data>
   <data name="видToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 26</value>
+    <value>55, 24</value>
+  </data>
+  <data name="видToolStripMenuItem.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="поискМаскиБайтToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 26</value>
+  </data>
+  <data name="поискМаскиБайтToolStripMenuItem.Text" xml:space="preserve">
+    <value>Binary search</value>
+  </data>
+  <data name="распаковкаОднобиновойПрошивкиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 26</value>
+  </data>
+  <data name="распаковкаОднобиновойПрошивкиToolStripMenuItem.Text" xml:space="preserve">
+    <value>Decode and repack ROM (AGM)</value>
   </data>
   <data name="инструментыToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 26</value>
+    <value>99, 24</value>
+  </data>
+  <data name="инструментыToolStripMenuItem.Text" xml:space="preserve">
+    <value>Instruments</value>
+  </data>
+  <data name="вопросОтветToolStripMenuItem.Text" xml:space="preserve">
+    <value>View help</value>
+  </data>
+  <data name="оПрограммеToolStripMenuItem.Text" xml:space="preserve">
+    <value>About</value>
   </data>
   <data name="справкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 26</value>
+    <value>55, 24</value>
   </data>
-  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1369, 30</value>
+  <data name="справкаToolStripMenuItem.Text" xml:space="preserve">
+    <value>Help</value>
   </data>
   <data name="menuStrip1.ToolTip" xml:space="preserve">
     <value />
@@ -293,14 +356,8 @@
   <data name="tabPage_firehose.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="textBox_soft_term.Size" type="System.Drawing.Size, System.Drawing">
-    <value>388, 512</value>
-  </data>
   <data name="textBox_soft_term.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="groupBox_terminal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 533</value>
   </data>
   <data name="groupBox_terminal.ToolTip" xml:space="preserve">
     <value />
@@ -326,9 +383,6 @@
   <data name="textBox_ADB_commandstring.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="groupBox_adb_commands.Size" type="System.Drawing.Size, System.Drawing">
-    <value>923, 421</value>
-  </data>
   <data name="groupBox_adb_commands.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -338,14 +392,8 @@
   <data name="button_ADB_comstart.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="tableLayoutPanel_adb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>929, 557</value>
-  </data>
   <data name="tableLayoutPanel_adb.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="tabPage_adb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 563</value>
   </data>
   <data name="tabPage_adb.ToolTip" xml:space="preserve">
     <value />
@@ -410,9 +458,6 @@
   <data name="groupBox_total_blocks.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="groupBox_LUN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 223</value>
-  </data>
   <data name="groupBox_LUN.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -430,9 +475,6 @@
   </data>
   <data name="label_Sahara_fhf.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="tabPage_sahara.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 565</value>
   </data>
   <data name="tabPage_sahara.ToolTip" xml:space="preserve">
     <value />
@@ -467,9 +509,6 @@
   <data name="radioButton_fb_reboot_normal.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="groupBox_fb_commands.Size" type="System.Drawing.Size, System.Drawing">
-    <value>929, 429</value>
-  </data>
   <data name="groupBox_fb_commands.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -479,26 +518,14 @@
   <data name="listView_fb_devices.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="tableLayoutPanel_fb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 565</value>
-  </data>
   <data name="tableLayoutPanel_fb.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="tabPage_fb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 565</value>
   </data>
   <data name="tabPage_fb.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="tabControl_soft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>943, 592</value>
-  </data>
   <data name="tabControl_soft.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="groupBox_soft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>949, 613</value>
   </data>
   <data name="groupBox_soft.ToolTip" xml:space="preserve">
     <value />
@@ -509,35 +536,17 @@
   <data name="button_term_save.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="groupBox_term_buttons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 542</value>
-  </data>
   <data name="groupBox_term_buttons.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="progressBar_phone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 602</value>
   </data>
   <data name="progressBar_phone.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="tableLayoutPanel_phone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 619</value>
-  </data>
   <data name="tableLayoutPanel_phone.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="tabPage_phone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 625</value>
-  </data>
   <data name="tabPage_phone.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 30</value>
-  </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1369, 654</value>
   </data>
   <data name="tabControl1.ToolTip" xml:space="preserve">
     <value />

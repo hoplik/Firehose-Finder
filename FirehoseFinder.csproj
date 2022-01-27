@@ -14,29 +14,28 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>C:\Users\serge\Desktop\Publishing\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Background</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://fhf.mywebcommunity.org/</InstallUrl>
     <SupportUrl>https://github.com/hoplik/Firehose-Finder/</SupportUrl>
     <ErrorReportUrl>https://github.com/hoplik/Firehose-Finder/issues</ErrorReportUrl>
     <TargetCulture>ru</TargetCulture>
     <ProductName>Firehose-Finder</ProductName>
     <PublisherName>hoplik</PublisherName>
     <MinimumRequiredVersion>3.1.0.4</MinimumRequiredVersion>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>22.01.23.0</ApplicationVersion>
+    <ApplicationVersion>22.01.28.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -244,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.en.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Greeting.en.resx">
+      <DependentUpon>Greeting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hex_Search.resx">
       <DependentUpon>Hex_Search.cs</DependentUpon>
