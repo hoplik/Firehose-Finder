@@ -228,6 +228,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Write_Sectors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +238,9 @@
     <None Include="Resources\Fh_Image.bmp" />
     <EmbeddedResource Include="AGMRepacker.resx">
       <DependentUpon>AGMRepacker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.en.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hex_Search.resx">
       <DependentUpon>Hex_Search.cs</DependentUpon>

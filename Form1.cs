@@ -90,6 +90,7 @@ namespace FirehoseFinder
             dataGridView_FInd_Server.DataSource = bindingSource_firehose;
             //Настройки отображения справочника
             dataGridView_collection.Columns["Trust"].Visible=false;
+            dataGridView_collection.Columns["LASTKNOWNSBLVER"].HeaderText = "SW Ver";
             dataGridView_collection.Columns["HASHID"].HeaderText = "OEM Private Key Hash";
             dataGridView_collection.Columns["OEMID"].HeaderText = "OEM";
             dataGridView_collection.Columns["MODELID"].HeaderText = "Model";
@@ -1711,9 +1712,9 @@ namespace FirehoseFinder
             {
                 for (int i = 0; i < dataGridView_collection.Rows.Count; i++)
                 {
-                    if (dataGridView_collection["Model", i].Value.ToString().Equals(label_model.Text)) //Проверяем модель на наличие
+                    if (Convert.ToByte(dataGridView_collection["LASTKNOWNSBLVER", i].Value.ToString(), 16) >= Convert.ToByte(label_SW_Ver.Text, 16))
                     {
-                        return;
+                        if (dataGridView_collection["Model", i].Value.ToString().Equals(label_model.Text)) return; //Проверяем модель на наличие
                     }
                 }
                 //Исправить/добавить название/модель если 1 совпадает, а 2 нет
