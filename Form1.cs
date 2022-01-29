@@ -12,7 +12,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using System.Xml;
+using System.Globalization;
 
 namespace FirehoseFinder
 {
@@ -34,6 +34,7 @@ namespace FirehoseFinder
         /// </summary>
         public Formfhf()
         {
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
             InitializeComponent();
         }
 
@@ -2537,6 +2538,12 @@ namespace FirehoseFinder
             }
             else if (реальноПодключённыеУстройстваToolStripMenuItem.Checked) strfil = "Trust is Not Null";
             bindingSource_collection.Filter=strfil;
+        }
+
+        private void ПредложитьПереводToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo offertrans = new ProcessStartInfo("https://t.me/+Suwc1u6h8PYzM2Qy");
+            Process.Start(offertrans);
         }
     }
 }

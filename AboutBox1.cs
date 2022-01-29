@@ -2,17 +2,20 @@
 using System.Diagnostics;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Resources;
 
 namespace FirehoseFinder
 {
     partial class AboutBox1 : Form
-    {
+    {         
+        ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(AboutBox1).Assembly);
+
         public AboutBox1()
         {
             InitializeComponent();
-            Text = string.Format("О программе {0}", AssemblyTitle);
+            Text = string.Format("{0} {1}", LocRes.GetString("about"), AssemblyTitle);
             labelProductName.Text = AssemblyProduct;
-            labelVersion.Text = string.Format("Версия {0}", AssemblyVersion);
+            labelVersion.Text = string.Format("{0} {1}",LocRes.GetString("version"), AssemblyVersion);
             labelCopyright.Text = AssemblyCopyright;
             textBoxDescription.Text = AssemblyDescription;
         }

@@ -118,28 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="about" xml:space="preserve">
-    <value>О программе</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="bot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bot.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
-  </data>
-  <data name="fh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\fh.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Fh_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fh_Image.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Greeting.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
-  </data>
-  <data name="russia_flags_flag_17058" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\russia_flags_flag_17058.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="united_kingdom_flags_flag_17079" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\united_kingdom_flags_flag_17079.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>About</value>
+    <comment>О программе</comment>
   </data>
   <data name="version" xml:space="preserve">
-    <value>Версия</value>
+    <value>Version</value>
+    <comment>Версия</comment>
   </data>
 </root>

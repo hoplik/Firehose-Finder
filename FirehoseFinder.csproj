@@ -234,6 +234,8 @@
     <Compile Include="Write_Sectors.Designer.cs">
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </Compile>
+    <Content Include="Resources\russia_flags_flag_17058.png" />
+    <Content Include="Resources\united_kingdom_flags_flag_17079.png" />
     <None Include="Resources\Fh_Image.bmp" />
     <EmbeddedResource Include="AboutBox1.en.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
@@ -250,6 +252,7 @@
     <EmbeddedResource Include="Hex_Search.resx">
       <DependentUpon>Hex_Search.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.en.resx" />
     <EmbeddedResource Include="Write_Sectors.resx">
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </EmbeddedResource>
