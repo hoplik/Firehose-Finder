@@ -61,7 +61,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-01-27T21:43:24">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-02-03T20:32:46">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -317,6 +317,14 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>CAB02552DC28F562E8C5BEFA75BC4A97B90AAB1C91A3C186EC51F3D3D7D6A1C7</HASH_FH>
 <Model>Z2 Plus</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F6955368/Honor50_NTH-NX9_SM7325_ufs.mbn#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>01A4</OEM_FH>
+<MODEL_FH>0002</MODEL_FH>
+<HASH_FH>AD5B862DFA03DBFAD2EAB816A259183EDDACB346799833D781DE8321DE553657ADB1321B078A8462E49AFFB7F6955368</HASH_FH>
+<Model>NTH-NX9</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A758CF6D/prog_emmc_firehose_8917.mbn#</Url>

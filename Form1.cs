@@ -7,12 +7,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using System.Globalization;
 
 namespace FirehoseFinder
 {
@@ -28,13 +29,18 @@ namespace FirehoseFinder
         internal DeviceData Global_ADB_Device = new DeviceData();
         internal string Global_FB_Device = string.Empty;
         internal Dictionary<string, string> Connected_Devices = new Dictionary<string, string>(); //Список подключённых ADB устройств
+        ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
 
         /// <summary>
         /// Инициализация компонентов
         /// </summary>
         public Formfhf()
         {
-            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+            //Устанавливаем язык приложения
+            if (!string.IsNullOrEmpty(Settings.Default.local_lang))
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.local_lang);
+            }
             InitializeComponent();
         }
 
@@ -110,6 +116,19 @@ namespace FirehoseFinder
             {
                 Greeting greeting = new Greeting();
                 greeting.ShowDialog();
+            }
+            //Устанавливаем индикатор языка
+            switch (Settings.Default.local_lang)
+            {
+                case "ru":
+                    русскийToolStripMenuItem.Checked=true;
+                    break;
+                case "en":
+                    englishToolStripMenuItem.Checked=true;
+                    break;
+                default:
+                    автоматическиToolStripMenuItem.Checked=true;
+                    break;
             }
             //Закрываем запущенные процессы и чистим файлы (если есть что)
             CleanFilesProcess();
@@ -2540,6 +2559,75 @@ namespace FirehoseFinder
             bindingSource_collection.Filter=strfil;
         }
 
+
+        /// <summary>
+        /// Переключились на автоматический выбор языка
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void АвтоматическиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (автоматическиToolStripMenuItem.Checked)
+            {
+                Settings.Default.local_lang=string.Empty;
+                if (русскийToolStripMenuItem.Checked) русскийToolStripMenuItem.Checked=false;
+                if (englishToolStripMenuItem.Checked) englishToolStripMenuItem.Checked=false;
+                if (MessageBox.Show(LocRes.GetString("message_body_need_restart"),
+                    LocRes.GetString("message_title_need_restart"), 
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+                {
+                    Application.Restart();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Переключились на русский независимо от языка системы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void РусскийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (русскийToolStripMenuItem.Checked)
+            {
+                Settings.Default.local_lang="ru";
+                if (автоматическиToolStripMenuItem.Checked) автоматическиToolStripMenuItem.Checked=false;
+                if (englishToolStripMenuItem.Checked) englishToolStripMenuItem.Checked=false;
+                if (MessageBox.Show(LocRes.GetString("message_body_need_restart"),
+                    LocRes.GetString("message_title_need_restart"),
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+                {
+                    Application.Restart();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Переключились на английский независимо от языка системы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EnglishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (englishToolStripMenuItem.Checked)
+            {
+                Settings.Default.local_lang="en";
+                if (автоматическиToolStripMenuItem.Checked) автоматическиToolStripMenuItem.Checked=false;
+                if (русскийToolStripMenuItem.Checked) русскийToolStripMenuItem.Checked=false;
+                if (MessageBox.Show(LocRes.GetString("message_body_need_restart"),
+                    LocRes.GetString("message_title_need_restart"),
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+                {
+                    Application.Restart();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Отправили в чат предлагать перевод
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ПредложитьПереводToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProcessStartInfo offertrans = new ProcessStartInfo("https://t.me/+Suwc1u6h8PYzM2Qy");

@@ -111,6 +111,24 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Для вступления в силу изменения выбранного языка требуется перезапуск приложения. Нажмите &quot;Ок&quot; для перезагрузки приложения сейчас или &quot;Отмена&quot; для вступления изменений в силу при следующем запуске..
+        /// </summary>
+        internal static string message_body_need_restart {
+            get {
+                return ResourceManager.GetString("message_body_need_restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Требуется перезапуск приложения!.
+        /// </summary>
+        internal static string message_title_need_restart {
+            get {
+                return ResourceManager.GetString("message_title_need_restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap russia_flags_flag_17058 {

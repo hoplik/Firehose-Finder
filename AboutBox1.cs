@@ -7,7 +7,7 @@ using System.Resources;
 namespace FirehoseFinder
 {
     partial class AboutBox1 : Form
-    {         
+    {
         ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(AboutBox1).Assembly);
 
         public AboutBox1()
@@ -15,7 +15,7 @@ namespace FirehoseFinder
             InitializeComponent();
             Text = string.Format("{0} {1}", LocRes.GetString("about"), AssemblyTitle);
             labelProductName.Text = AssemblyProduct;
-            labelVersion.Text = string.Format("{0} {1}",LocRes.GetString("version"), AssemblyVersion);
+            labelVersion.Text = string.Format("{0} {1}", LocRes.GetString("version"), AssemblyVersion);
             labelCopyright.Text = AssemblyCopyright;
             textBoxDescription.Text = AssemblyDescription;
         }
@@ -127,6 +127,13 @@ namespace FirehoseFinder
         {
             ProcessStartInfo psinfo = new ProcessStartInfo("https://my.qiwi.com/Aleksandr-SFr4nxtZ1E");
             Process.Start(psinfo);
+        }
+
+        private void logoPictureBox_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Application.StartupPath);
+            Clipboard.Clear();
+            Clipboard.SetText(Application.StartupPath);
         }
     }
 }
