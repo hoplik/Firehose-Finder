@@ -15,7 +15,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://fhf.mywebcommunity.org/fhf.mywebcommunity.org/</PublishUrl>
+    <PublishUrl>C:\Users\serge\Desktop\Publishing\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -36,8 +36,8 @@
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>22.2.3.2</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>22.2.4.1</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -114,6 +114,7 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
@@ -236,8 +237,8 @@
     <Compile Include="Write_Sectors.Designer.cs">
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </Compile>
-    <Content Include="Resources\russia_flags_flag_17058.png" />
-    <Content Include="Resources\united_kingdom_flags_flag_17079.png" />
+    <None Include="Resources\russia_flags_flag_17058.png" />
+    <None Include="Resources\united_kingdom_flags_flag_17079.png" />
     <None Include="Resources\Fh_Image.bmp" />
     <EmbeddedResource Include="AboutBox1.en.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
@@ -333,7 +334,7 @@
     <Content Include="AdbWinUsbApi.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\fh.ico" />
+    <None Include="Resources\fh.ico" />
     <Content Include="fh_loader.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -346,6 +347,16 @@
     <Resource Include="Resources\bot.txt" />
   </ItemGroup>
   <ItemGroup>
+    <PublishFile Include="en\FirehoseFinder.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
     <PublishFile Include="ForFilter.xml">
       <Visible>False</Visible>
       <Group>

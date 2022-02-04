@@ -1769,7 +1769,7 @@ namespace FirehoseFinder
             string message_not_mark = send_message.Replace("_", "\\_")
                 .Replace("*", "\\*")
                 .Replace("[", "\\[")
-                .Replace("`", "\\`")
+                .Replace("`", "\\`");/*
                 .Replace("]", "\\]")
                 .Replace("(", "\\(")
                 .Replace(")", "\\)")
@@ -1784,7 +1784,7 @@ namespace FirehoseFinder
                 .Replace("}", "\\}")
                 .Replace(".", "\\.")
                 .Replace("!", "\\!")
-                .Replace("\"", "\\\"");
+                .Replace("\"", "\\\"");*/
             string correct_mess = message_not_mark;
             //Ограничение на размер сообщения. Оставляем только конец.
             if (message_not_mark.Length >= 4096)
@@ -1793,8 +1793,8 @@ namespace FirehoseFinder
                     .Insert(0, "...");
             }
             //Устанавливаем моношрифт
-            correct_mess=correct_mess.Insert(0, "`")
-                .Insert(correct_mess.LastIndexOf('\u000A'), "`");
+            //correct_mess=correct_mess.Insert(0, "`")
+            //    .Insert(correct_mess.LastIndexOf('\u000A'), "`");
             var mybot = new TelegramBotApi.TelegramBotClient(Resources.bot);
             long chat = -1001227261414;
             try

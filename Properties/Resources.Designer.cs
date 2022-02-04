@@ -70,11 +70,29 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Путь установки программы.
+        /// </summary>
+        internal static string app_path {
+            get {
+                return ResourceManager.GetString("app_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на 1577249282:AAFIZncf-90YpwMk_I7ad_YNwh4tnr5FXHo.
         /// </summary>
         internal static string bot {
             get {
                 return ResourceManager.GetString("bot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Скопировано в буфер.
+        /// </summary>
+        internal static string copy_clip {
+            get {
+                return ResourceManager.GetString("copy_clip", resourceCulture);
             }
         }
         

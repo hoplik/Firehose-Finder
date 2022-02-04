@@ -120,9 +120,15 @@
   <data name="about" xml:space="preserve">
     <value>О программе</value>
   </data>
+  <data name="app_path" xml:space="preserve">
+    <value>Путь установки программы</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="bot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bot.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="copy_clip" xml:space="preserve">
+    <value>Скопировано в буфер</value>
   </data>
   <data name="fh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\fh.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

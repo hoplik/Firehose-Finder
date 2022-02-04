@@ -129,9 +129,14 @@ namespace FirehoseFinder
             Process.Start(psinfo);
         }
 
-        private void logoPictureBox_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Путь к расположению программы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LogoPictureBox_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Application.StartupPath);
+            MessageBox.Show(LocRes.GetString("copy_clip") + Environment.NewLine + Application.StartupPath,LocRes.GetString("app_path"));
             Clipboard.Clear();
             Clipboard.SetText(Application.StartupPath);
         }

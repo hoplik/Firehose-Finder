@@ -121,6 +121,14 @@
     <value>About</value>
     <comment>О программе</comment>
   </data>
+  <data name="app_path" xml:space="preserve">
+    <value>Workdir application</value>
+    <comment>Путь установки программы</comment>
+  </data>
+  <data name="copy_clip" xml:space="preserve">
+    <value>Copy to clipboard</value>
+    <comment>Скопировано в буфер</comment>
+  </data>
   <data name="message_body_need_restart" xml:space="preserve">
     <value>A restart of the application is required for the change of the selected language to take effect. Click "Ok" to restart the application now or "Cancel" for the changes to take effect at the next launch.</value>
     <comment>Для вступления в силу изменения выбранного языка требуется перезапуск приложения. Нажмите "Ок" для перезагрузки приложения сейчас или "Отмена" для вступления изменений в силу при следующем запуске.</comment>

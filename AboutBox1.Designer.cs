@@ -76,7 +76,7 @@ namespace FirehoseFinder
             this.logoPictureBox.Name = "logoPictureBox";
             this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 4);
             this.logoPictureBox.TabStop = false;
-            this.logoPictureBox.Click += new System.EventHandler(this.logoPictureBox_Click);
+            this.logoPictureBox.Click += new System.EventHandler(this.LogoPictureBox_Click);
             // 
             // labelProductName
             // 
