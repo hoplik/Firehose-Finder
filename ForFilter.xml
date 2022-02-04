@@ -96,7 +96,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-02-04T18:30:25">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-02-04T19:06:26">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -3352,6 +3352,48 @@
 <AltName>SKW-H0</AltName>
 </ForFilter>
 <ForFilter>
+<HWID>000CC0E1</HWID>
+<FullName>Snapdragon 630/636</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>M1803E7SH</Model>
+<AltName>whyred,  Redmi Note 5 Pro, Redmi Note 5</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/57E3C370/prog_emmc_firehose_Sdm660_ddr.mbn#</Url>
+</ForFilter>
+<ForFilter>
+<HWID>000C30E1</HWID>
+<FullName>Snapdragon 865</FullName>
+<OEMID>0072</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>M2004J11G</Model>
+<AltName>Redmi K30 Pro</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000C30E1</HWID>
+<FullName>Snapdragon 865</FullName>
+<OEMID>0072</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
+<LASTKNOWNSBLVER>00000001</LASTKNOWNSBLVER>
+<Trademark>Xiaomi</Trademark>
+<Model>M2007J35G</Model>
+<AltName>MI 10T Pro, Apollo Pro</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>000A50E1</HWID>
+<FullName>Snapdragon 855</FullName>
+<OEMID>0072</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
+<Trademark>Xiaomi</Trademark>
+<Model>M2102J20SG</Model>
+<AltName>VAYU, Poco X3 Pro</AltName>
+</ForFilter>
+<ForFilter>
 <HWID>000C30E1</HWID>
 <FullName>Snapdragon 865</FullName>
 <OEMID>0072</OEMID>
@@ -3370,17 +3412,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>MI 10S</Model>
 <AltName>thyme</AltName>
-</ForFilter>
-<ForFilter>
-<HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
-<OEMID>0072</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
-<LASTKNOWNSBLVER>00000001</LASTKNOWNSBLVER>
-<Trademark>Xiaomi</Trademark>
-<Model>MI 10T Pro</Model>
-<AltName>M2007J35G, Apollo Pro</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>007B00E1</HWID>
@@ -3412,8 +3443,8 @@
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/prog_emmc_firehose1_8936.mbn#</Url>
 </ForFilter>
 <ForFilter>
-<HWID>007B60E1</HWID>
-<FullName>Snapdragon 801</FullName>
+<HWID>0006C0E1</HWID>
+<FullName>Snapdragon 828</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
@@ -3422,8 +3453,8 @@
 <AltName>cancro</AltName>
 </ForFilter>
 <ForFilter>
-<HWID>0006C0E1</HWID>
-<FullName>Snapdragon 828</FullName>
+<HWID>007B60E1</HWID>
+<FullName>Snapdragon 801</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
@@ -3720,16 +3751,6 @@
 <AltName>Surya</AltName>
 </ForFilter>
 <ForFilter>
-<HWID>000A50E1</HWID>
-<FullName>Snapdragon 855</FullName>
-<OEMID>0072</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
-<Trademark>Xiaomi</Trademark>
-<Model>Poco X3 Pro</Model>
-<AltName>VAYU, M2102J20SG</AltName>
-</ForFilter>
-<ForFilter>
 <HWID>0008B0E1</HWID>
 <FullName>Snapdragon 845</FullName>
 <OEMID>0072</OEMID>
@@ -3875,26 +3896,6 @@
 <AltName>phoenix</AltName>
 </ForFilter>
 <ForFilter>
-<HWID>0011E0E1</HWID>
-<FullName>Snapdragon 765G</FullName>
-<OEMID>0072</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
-<Trademark>Xiaomi</Trademark>
-<Model>Redmi K30 5G</Model>
-<AltName>picasso</AltName>
-</ForFilter>
-<ForFilter>
-<HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
-<OEMID>0072</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
-<Trademark>Xiaomi</Trademark>
-<Model>Redmi K30 Pro</Model>
-<AltName>M2004J11G</AltName>
-</ForFilter>
-<ForFilter>
 <HWID>0005F0E1</HWID>
 <FullName>Snapdragon 821</FullName>
 <OEMID>0000</OEMID>
@@ -3903,17 +3904,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 2</Model>
 <AltName>scorpio</AltName>
-</ForFilter>
-<ForFilter>
-<HWID>009B00E1</HWID>
-<FullName>Snapdragon 650</FullName>
-<OEMID>0000</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
-<Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 3</Model>
-<AltName>aosp_kenzo</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/prog_emmc_firehose_8976_ddr.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -3932,19 +3922,19 @@
 <MODELID>0000</MODELID>
 <HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 3 SE</Model>
-<AltName>kate</AltName>
+<Model>Redmi Note 3</Model>
+<AltName>aosp_kenzo</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/prog_emmc_firehose_8976_ddr.mbn#</Url>
 </ForFilter>
 <ForFilter>
-<HWID>000CC0E1</HWID>
-<FullName>Snapdragon 630/636</FullName>
+<HWID>009B00E1</HWID>
+<FullName>Snapdragon 650</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>A7B8B82545A98ECA23D6E9105FB464568D1B5828264903441BDEF0CD57E3C370</HASHID>
+<HASHID>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASHID>
 <Trademark>Xiaomi</Trademark>
-<Model>Redmi Note 5</Model>
-<AltName>whyred,  Redmi Note 5 Pro, M1803E7SH</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/57E3C370/prog_emmc_firehose_Sdm660_ddr.mbn#</Url>
+<Model>Redmi Note 3 SE</Model>
+<AltName>kate</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -4617,6 +4607,18 @@
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>
+<HWID>0014D0E1</HWID>
+<FullName>Snapdragon 662</FullName>
+<OEMID>0072</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
+<LASTKNOWNSBLVER>00000001</LASTKNOWNSBLVER>
+<Trademark>Xiaomi</Trademark>
+<Model>M2010J19SY</Model>
+<AltName>lemon_ru, Redmi 9T, Redmi 9 Power, Redmi Note 9 4G</AltName>
+</ForFilter>
+<ForFilter>
+<Trust>full trust</Trust>
 <HWID>009470E1</HWID>
 <FullName>Snapdragon 820</FullName>
 <OEMID>0000</OEMID>
@@ -4715,6 +4717,18 @@
 <Model>Redmi 8</Model>
 <AltName>olive_ru</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/prog_emmc_firehose_8937_ddr.mbn#</Url>
+</ForFilter>
+<ForFilter>
+<Trust>full trust</Trust>
+<HWID>0011E0E1</HWID>
+<FullName>Snapdragon 765G</FullName>
+<OEMID>0072</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
+<LASTKNOWNSBLVER>00000001</LASTKNOWNSBLVER>
+<Trademark>Xiaomi</Trademark>
+<Model>Redmi K30 5G</Model>
+<AltName>picasso</AltName>
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>
@@ -4848,18 +4862,6 @@
 <Trademark>Xiaomi</Trademark>
 <Model>MI MIX3</Model>
 <AltName>perseus</AltName>
-</ForFilter>
-<ForFilter>
-<Trust>real dev</Trust>
-<HWID>0014D0E1</HWID>
-<FullName>Snapdragon 662</FullName>
-<OEMID>0072</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
-<LASTKNOWNSBLVER>00000001</LASTKNOWNSBLVER>
-<Trademark>Xiaomi</Trademark>
-<Model>Redmi 9T</Model>
-<AltName>lime, Redmi 9 Power, Redmi Note 9 4G</AltName>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
