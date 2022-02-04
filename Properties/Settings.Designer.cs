@@ -46,5 +46,17 @@ namespace FirehoseFinder.Properties {
                 this["local_lang"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
+        public string db_font {
+            get {
+                return ((string)(this["db_font"]));
+            }
+            set {
+                this["db_font"] = value;
+            }
+        }
     }
 }

@@ -101,6 +101,13 @@ namespace FirehoseFinder
             dataGridView_collection.Columns["HASHID"].HeaderText = "OEM Private Key Hash";
             dataGridView_collection.Columns["OEMID"].HeaderText = "OEM";
             dataGridView_collection.Columns["MODELID"].HeaderText = "Model";
+            //Устанавливаем размер шрифта в Справочнике
+            using (Font font = new Font(
+                dataGridView_collection.DefaultCellStyle.Font.FontFamily, float.Parse(Settings.Default.db_font, CultureInfo.InvariantCulture)))
+            {
+                dataGridView_collection.DefaultCellStyle.Font = font;
+            }
+            toolStripLabel_font.Text=Settings.Default.db_font;
             //Закрываем специализированные закладки
             tabControl1.TabPages.Remove(tabPage_collection);
             tabControl1.TabPages.Remove(tabPage_phone);
@@ -1691,7 +1698,7 @@ namespace FirehoseFinder
                     }
                 }
             }
-            string logstr = label_tm.Text + "^" + label_model.Text + "^" + label_altname.Text + "^"+ label_chip_sn.Text + Environment.NewLine +
+            string logstr = label_tm.Text + "\u261F" + label_model.Text + "\u261F" + label_altname.Text + "\u261F"+ label_chip_sn.Text + Environment.NewLine +
                 string.Format("Chip s/n: {0}", chip_sn) + Environment.NewLine +
                 string.Format("HWID: {0}{1}{2}", textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text) + Environment.NewLine +
                 string.Format("OEM PK Hash: {0}", textBox_oemhash.Text) + Environment.NewLine +
@@ -2573,7 +2580,7 @@ namespace FirehoseFinder
                 if (русскийToolStripMenuItem.Checked) русскийToolStripMenuItem.Checked=false;
                 if (englishToolStripMenuItem.Checked) englishToolStripMenuItem.Checked=false;
                 if (MessageBox.Show(LocRes.GetString("message_body_need_restart"),
-                    LocRes.GetString("message_title_need_restart"), 
+                    LocRes.GetString("message_title_need_restart"),
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
                 {
                     Application.Restart();
@@ -2632,6 +2639,34 @@ namespace FirehoseFinder
         {
             ProcessStartInfo offertrans = new ProcessStartInfo("https://t.me/+Suwc1u6h8PYzM2Qy");
             Process.Start(offertrans);
+        }
+
+        private void ToolStripButton_small_font_Click(object sender, EventArgs e)
+        {
+            float newsizefont = float.Parse(Settings.Default.db_font, CultureInfo.InvariantCulture)-1;
+            if (newsizefont<1) newsizefont=1;
+            //Устанавливаем размер шрифта в Справочнике
+            using (Font font = new Font(
+                dataGridView_collection.DefaultCellStyle.Font.FontFamily, newsizefont))
+            {
+                dataGridView_collection.DefaultCellStyle.Font = font;
+            }
+            toolStripLabel_font.Text=Convert.ToInt32(newsizefont).ToString();
+            Settings.Default.db_font = toolStripLabel_font.Text;
+        }
+
+        private void ToolStripButton_large_font_Click(object sender, EventArgs e)
+        {
+            float newsizefont = float.Parse(Settings.Default.db_font, CultureInfo.InvariantCulture)+1;
+            if (newsizefont>20) newsizefont=20;
+            //Устанавливаем размер шрифта в Справочнике
+            using (Font font = new Font(
+                dataGridView_collection.DefaultCellStyle.Font.FontFamily, newsizefont))
+            {
+                dataGridView_collection.DefaultCellStyle.Font = font;
+            }
+            toolStripLabel_font.Text=Convert.ToInt32(newsizefont).ToString();
+            Settings.Default.db_font = toolStripLabel_font.Text;
         }
     }
 }

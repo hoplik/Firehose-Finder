@@ -118,15 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="файлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 24</value>
-  </data>
-  <data name="файлToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <data name="выборЯзыкаToolStripMenuItem.Text" xml:space="preserve">
-    <value>Change language</value>
-  </data>
   <data name="автоматическиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 26</value>
   </data>
@@ -151,50 +142,74 @@
   <data name="предложитьПереводToolStripMenuItem.Text" xml:space="preserve">
     <value>Offer the translation</value>
   </data>
+  <data name="выборЯзыкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 26</value>
+  </data>
+  <data name="выборЯзыкаToolStripMenuItem.Text" xml:space="preserve">
+    <value>Change language</value>
+  </data>
+  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 6</value>
+  </data>
+  <data name="выходToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 26</value>
+  </data>
   <data name="выходToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="видToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 24</value>
+  <data name="файлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 26</value>
   </data>
-  <data name="видToolStripMenuItem.Text" xml:space="preserve">
-    <value>View</value>
+  <data name="файлToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
   </data>
   <data name="приветствиеToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 26</value>
+    <value>224, 26</value>
   </data>
   <data name="приветствиеToolStripMenuItem.Text" xml:space="preserve">
     <value>Greeting</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 6</value>
+    <value>221, 6</value>
   </data>
   <data name="работаСУстройствомToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 26</value>
+    <value>224, 26</value>
   </data>
   <data name="работаСУстройствомToolStripMenuItem.Text" xml:space="preserve">
     <value>Work with device</value>
   </data>
+  <data name="реальноПодключённыеУстройстваToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 26</value>
+  </data>
+  <data name="реальноПодключённыеУстройстваToolStripMenuItem.Text" xml:space="preserve">
+    <value>Real connected devices</value>
+  </data>
+  <data name="устройстваСПрограммерамиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 26</value>
+  </data>
+  <data name="устройстваСПрограммерамиToolStripMenuItem.Text" xml:space="preserve">
+    <value>Devices with firehose</value>
+  </data>
   <data name="CollectionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 26</value>
+    <value>224, 26</value>
   </data>
   <data name="CollectionToolStripMenuItem.Text" xml:space="preserve">
     <value>Device collection</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 6</value>
+    <value>221, 6</value>
   </data>
   <data name="внестиПроизводителяМодельToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 26</value>
+    <value>224, 26</value>
   </data>
   <data name="внестиПроизводителяМодельToolStripMenuItem.Text" xml:space="preserve">
     <value>Insert model</value>
   </data>
-  <data name="инструментыToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 24</value>
+  <data name="видToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 26</value>
   </data>
-  <data name="инструментыToolStripMenuItem.Text" xml:space="preserve">
-    <value>Instruments</value>
+  <data name="видToolStripMenuItem.Text" xml:space="preserve">
+    <value>View</value>
   </data>
   <data name="поискМаскиБайтToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>305, 26</value>
@@ -208,11 +223,11 @@
   <data name="распаковкаОднобиновойПрошивкиToolStripMenuItem.Text" xml:space="preserve">
     <value>Decode and repack ROM (AGM)</value>
   </data>
-  <data name="справкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 24</value>
+  <data name="инструментыToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 26</value>
   </data>
-  <data name="справкаToolStripMenuItem.Text" xml:space="preserve">
-    <value>Help</value>
+  <data name="инструментыToolStripMenuItem.Text" xml:space="preserve">
+    <value>Instruments</value>
   </data>
   <data name="вопросОтветToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 26</value>
@@ -225,6 +240,24 @@
   </data>
   <data name="оПрограммеToolStripMenuItem.Text" xml:space="preserve">
     <value>About</value>
+  </data>
+  <data name="справкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 26</value>
+  </data>
+  <data name="справкаToolStripMenuItem.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1369, 30</value>
+  </data>
+  <data name="menuStrip1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dataGridView_collection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1361, 593</value>
+  </data>
+  <data name="dataGridView_collection.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="bindingNavigatorMoveFirstItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -265,6 +298,408 @@
         WOTd+W9TcAVDMwiA5FL7X8O9hBUYZt3GqhkEQHJhLS//6wbPw22ATtoNnJIgOb/qh/81fKfhNgAfcMq9
         8l/FYwIYQ4UGBWBgAAC+0b+zuQxOnAAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="toolStripButton_small_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
+        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
+        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
+        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
+        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
+        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
+        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
+        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
+        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripButton_small_font.ToolTipText" xml:space="preserve">
+    <value>Reduce font size</value>
+  </data>
+  <data name="toolStripLabel_font.ToolTipText" xml:space="preserve">
+    <value>Current font size</value>
+  </data>
+  <data name="toolStripButton_large_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
+        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
+        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
+        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
+        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
+        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
+        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
+        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
+        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripButton_large_font.ToolTipText" xml:space="preserve">
+    <value>Enlarge the font size</value>
+  </data>
+  <data name="bindingNavigator_collection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 593</value>
+  </data>
+  <data name="bindingNavigator_collection.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage_collection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1361, 625</value>
+  </data>
+  <data name="tabPage_collection.Text" xml:space="preserve">
+    <value>Reference book of devices</value>
+  </data>
+  <data name="tabPage_collection.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_main_term.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dataGridView_final.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_Find_Local.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_Find_Server.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_alldir.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_topdir.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_path.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_fh_sel_path.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_chip_sn.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_model.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_altname.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_tm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_tm_model.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_adb_reset.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_man_reset.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_send.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_log.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_Log.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_findIDs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_SW_Ver.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_swid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_hwid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_useSahara_fhf.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_oemid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_modelid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_hwid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_oemid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_oemhash.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_oemhash.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_modelid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dataGridView_FInd_Server.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="statusStrip_firehose.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage_firehose.Text" xml:space="preserve">
+    <value>Work with files</value>
+  </data>
+  <data name="tabPage_firehose.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_soft_term.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 512</value>
+  </data>
+  <data name="textBox_soft_term.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_terminal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>394, 533</value>
+  </data>
+  <data name="groupBox_terminal.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_ADB_start.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_ADB_clear.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_reboot_fastboot.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_adb_com.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_adb_IDs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_reboot_edl.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_ADB_commandstring.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_adb_commands.Size" type="System.Drawing.Size, System.Drawing">
+    <value>923, 421</value>
+  </data>
+  <data name="groupBox_adb_commands.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="listView_ADB_devices.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_ADB_comstart.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tableLayoutPanel_adb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>929, 557</value>
+  </data>
+  <data name="tableLayoutPanel_adb.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage_adb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>935, 563</value>
+  </data>
+  <data name="tabPage_adb.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="listView_comport.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_fh_commands.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_Sahara_CommandStart.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_fh_commands.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_lun_count.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_lun_count.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_mem_ufs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_mem_emmc.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_mem_type.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_GPT_bytes.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_select_gpt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_select_gpt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_total_gpt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_total_gpt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="contextMenuStrip_gpt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="listView_GPT.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_block_size.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_block_size.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_total_blocks.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_total_blocks.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_LUN.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_log.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_logs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_Sahara_Ids.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_Sahara_fhf.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage_sahara.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_fb_check.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_rebootedl.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_getvar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_fb_commandline.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_commandline.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_rebootbootloader.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_unlock.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_lock.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_devinfo.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_reboot_normal.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_fb_commands.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_fb_com_start.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="listView_fb_devices.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tableLayoutPanel_fb.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage_fb.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabControl_soft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>943, 592</value>
+  </data>
+  <data name="tabControl_soft.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_soft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>949, 613</value>
+  </data>
+  <data name="groupBox_soft.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_term_clear.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_term_save.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_term_buttons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 542</value>
+  </data>
+  <data name="groupBox_term_buttons.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="progressBar_phone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 602</value>
+  </data>
+  <data name="progressBar_phone.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tableLayoutPanel_phone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1355, 619</value>
+  </data>
+  <data name="tableLayoutPanel_phone.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage_phone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1361, 625</value>
+  </data>
+  <data name="tabPage_phone.Text" xml:space="preserve">
+    <value>Work with device</value>
+  </data>
+  <data name="tabPage_phone.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 30</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1369, 654</value>
+  </data>
+  <data name="tabControl1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2709,5 +3144,8 @@
         poQQQgghZC+gYUoIIYQQQvYCGqaEEELIHvIn9z/KPLPk0kHDlBBCCNlPmGeWXDr+fw9DftBtgZ3sAAAA
         AElFTkSuQmCC
 </value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

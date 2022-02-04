@@ -83,6 +83,9 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTextBox_find = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton_small_font = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel_font = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton_large_font = new System.Windows.Forms.ToolStripButton();
             this.tabPage_firehose = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox_main_term = new System.Windows.Forms.TextBox();
@@ -492,7 +495,7 @@
             this.dataGridView_collection.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Courier New", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -528,7 +531,10 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.toolStripTextBox_find});
+            this.toolStripTextBox_find,
+            this.toolStripButton_small_font,
+            this.toolStripLabel_font,
+            this.toolStripButton_large_font});
             this.bindingNavigator_collection.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator_collection.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator_collection.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -591,6 +597,25 @@
             resources.ApplyResources(this.toolStripTextBox_find, "toolStripTextBox_find");
             this.toolStripTextBox_find.Name = "toolStripTextBox_find";
             this.toolStripTextBox_find.TextChanged += new System.EventHandler(this.TextBox_find_TextChanged);
+            // 
+            // toolStripButton_small_font
+            // 
+            this.toolStripButton_small_font.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.toolStripButton_small_font, "toolStripButton_small_font");
+            this.toolStripButton_small_font.Name = "toolStripButton_small_font";
+            this.toolStripButton_small_font.Click += new System.EventHandler(this.ToolStripButton_small_font_Click);
+            // 
+            // toolStripLabel_font
+            // 
+            this.toolStripLabel_font.Name = "toolStripLabel_font";
+            resources.ApplyResources(this.toolStripLabel_font, "toolStripLabel_font");
+            // 
+            // toolStripButton_large_font
+            // 
+            this.toolStripButton_large_font.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.toolStripButton_large_font, "toolStripButton_large_font");
+            this.toolStripButton_large_font.Name = "toolStripButton_large_font";
+            this.toolStripButton_large_font.Click += new System.EventHandler(this.ToolStripButton_large_font_Click);
             // 
             // tabPage_firehose
             // 
@@ -1910,6 +1935,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem предложитьПереводToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton toolStripButton_small_font;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel_font;
+        private System.Windows.Forms.ToolStripButton toolStripButton_large_font;
     }
 }
 
