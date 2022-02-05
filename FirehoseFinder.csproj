@@ -230,6 +230,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.en.resx</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Write_Sectors.cs">
       <SubType>Form</SubType>
@@ -237,6 +242,7 @@
     <Compile Include="Write_Sectors.Designer.cs">
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </Compile>
+    <None Include="Resources\Greeting_en.txt" />
     <None Include="Resources\russia_flags_flag_17058.png" />
     <None Include="Resources\united_kingdom_flags_flag_17079.png" />
     <None Include="Resources\Fh_Image.bmp" />
@@ -255,7 +261,10 @@
     <EmbeddedResource Include="Hex_Search.resx">
       <DependentUpon>Hex_Search.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.en.resx" />
+    <EmbeddedResource Include="Properties\Resources.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Write_Sectors.resx">
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </EmbeddedResource>

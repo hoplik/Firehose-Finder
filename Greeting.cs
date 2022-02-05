@@ -1,11 +1,13 @@
 ﻿using FirehoseFinder.Properties;
 using System;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace FirehoseFinder
 {
     public partial class Greeting : Form
     {
+        ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
         public Greeting()
         {
             InitializeComponent();
@@ -40,7 +42,7 @@ namespace FirehoseFinder
         private void Greeting_Load(object sender, EventArgs e)
         {
             checkBox_start.Checked = Settings.Default.CheckBox_start_Checked;
-            textBox_greeting.Text = Resources.Greeting;
+            textBox_greeting.Text = LocRes.GetObject("Greeting").ToString();//Resources.Greeting;
         }
     }
 }

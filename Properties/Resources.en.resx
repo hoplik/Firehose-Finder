@@ -129,6 +129,10 @@
     <value>Copy to clipboard</value>
     <comment>Скопировано в буфер</comment>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Greeting_en.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
   <data name="message_body_need_restart" xml:space="preserve">
     <value>A restart of the application is required for the change of the selected language to take effect. Click "Ok" to restart the application now or "Cancel" for the changes to take effect at the next launch.</value>
     <comment>Для вступления в силу изменения выбранного языка требуется перезапуск приложения. Нажмите "Ок" для перезагрузки приложения сейчас или "Отмена" для вступления изменений в силу при следующем запуске.</comment>
