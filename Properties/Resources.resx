@@ -139,8 +139,14 @@
   <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Greeting.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
+  <data name="message_body_need_fields" xml:space="preserve">
+    <value>Пожалуйста, выберите наименование производителя из списка или введите, при отсутствии подходящего значения.</value>
+  </data>
   <data name="message_body_need_restart" xml:space="preserve">
     <value>Для вступления в силу изменения выбранного языка требуется перезапуск приложения. Нажмите "Ок" для перезагрузки приложения сейчас или "Отмена" для вступления изменений в силу при следующем запуске.</value>
+  </data>
+  <data name="message_title_need_fields" xml:space="preserve">
+    <value>Пустые обязательные поля</value>
   </data>
   <data name="message_title_need_restart" xml:space="preserve">
     <value>Требуется перезапуск приложения!</value>

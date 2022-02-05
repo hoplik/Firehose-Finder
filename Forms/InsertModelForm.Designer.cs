@@ -42,83 +42,58 @@ namespace FirehoseFinder
             // 
             // comboBox_tm_insert
             // 
+            resources.ApplyResources(this.comboBox_tm_insert, "comboBox_tm_insert");
             this.comboBox_tm_insert.FormattingEnabled = true;
-            this.comboBox_tm_insert.Location = new System.Drawing.Point(136, 12);
             this.comboBox_tm_insert.Name = "comboBox_tm_insert";
-            this.comboBox_tm_insert.Size = new System.Drawing.Size(179, 24);
             this.comboBox_tm_insert.Sorted = true;
-            this.comboBox_tm_insert.TabIndex = 0;
             this.comboBox_tm_insert.TextChanged += new System.EventHandler(this.ComboBox_tm_insert_TextChanged);
             // 
             // label_tm_insert
             // 
-            this.label_tm_insert.AutoSize = true;
-            this.label_tm_insert.Location = new System.Drawing.Point(13, 12);
+            resources.ApplyResources(this.label_tm_insert, "label_tm_insert");
             this.label_tm_insert.Name = "label_tm_insert";
-            this.label_tm_insert.Size = new System.Drawing.Size(119, 16);
-            this.label_tm_insert.TabIndex = 3;
-            this.label_tm_insert.Text = "Производитель *";
             // 
             // label_model_insert
             // 
-            this.label_model_insert.AutoSize = true;
-            this.label_model_insert.Location = new System.Drawing.Point(13, 42);
+            resources.ApplyResources(this.label_model_insert, "label_model_insert");
             this.label_model_insert.Name = "label_model_insert";
-            this.label_model_insert.Size = new System.Drawing.Size(57, 16);
-            this.label_model_insert.TabIndex = 4;
-            this.label_model_insert.Text = "Модель";
             // 
             // label_altname_insert
             // 
-            this.label_altname_insert.AutoSize = true;
-            this.label_altname_insert.Location = new System.Drawing.Point(13, 72);
+            resources.ApplyResources(this.label_altname_insert, "label_altname_insert");
             this.label_altname_insert.Name = "label_altname_insert";
-            this.label_altname_insert.Size = new System.Drawing.Size(117, 32);
-            this.label_altname_insert.TabIndex = 5;
-            this.label_altname_insert.Text = "Альтернативное\r\nнаименование";
             // 
             // textBox_alt_insert
             // 
-            this.textBox_alt_insert.Location = new System.Drawing.Point(136, 72);
+            resources.ApplyResources(this.textBox_alt_insert, "textBox_alt_insert");
             this.textBox_alt_insert.Name = "textBox_alt_insert";
-            this.textBox_alt_insert.Size = new System.Drawing.Size(179, 22);
-            this.textBox_alt_insert.TabIndex = 6;
             this.textBox_alt_insert.TextChanged += new System.EventHandler(this.TextBox_alt_insert_TextChanged);
             // 
             // button_ok_insert
             // 
-            this.button_ok_insert.Location = new System.Drawing.Point(16, 118);
+            resources.ApplyResources(this.button_ok_insert, "button_ok_insert");
             this.button_ok_insert.Name = "button_ok_insert";
-            this.button_ok_insert.Size = new System.Drawing.Size(75, 23);
-            this.button_ok_insert.TabIndex = 7;
-            this.button_ok_insert.Text = "ОК";
             this.button_ok_insert.UseVisualStyleBackColor = true;
             this.button_ok_insert.Click += new System.EventHandler(this.Button_ok_insert_Click);
             // 
             // button_cancel_insert
             // 
+            resources.ApplyResources(this.button_cancel_insert, "button_cancel_insert");
             this.button_cancel_insert.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button_cancel_insert.Location = new System.Drawing.Point(240, 118);
             this.button_cancel_insert.Name = "button_cancel_insert";
-            this.button_cancel_insert.Size = new System.Drawing.Size(75, 23);
-            this.button_cancel_insert.TabIndex = 8;
-            this.button_cancel_insert.Text = "Отмена";
             this.button_cancel_insert.UseVisualStyleBackColor = true;
             this.button_cancel_insert.Click += new System.EventHandler(this.Button_cancel_insert_Click);
             // 
             // textBox_model_insert
             // 
-            this.textBox_model_insert.Location = new System.Drawing.Point(136, 42);
+            resources.ApplyResources(this.textBox_model_insert, "textBox_model_insert");
             this.textBox_model_insert.Name = "textBox_model_insert";
-            this.textBox_model_insert.Size = new System.Drawing.Size(179, 22);
-            this.textBox_model_insert.TabIndex = 9;
             this.textBox_model_insert.TextChanged += new System.EventHandler(this.TextBox_model_insert_TextChanged);
             // 
             // InsertModelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 153);
             this.Controls.Add(this.textBox_model_insert);
             this.Controls.Add(this.button_cancel_insert);
             this.Controls.Add(this.button_ok_insert);
@@ -127,11 +102,9 @@ namespace FirehoseFinder
             this.Controls.Add(this.label_model_insert);
             this.Controls.Add(this.label_tm_insert);
             this.Controls.Add(this.comboBox_tm_insert);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InsertModelForm";
-            this.Text = "Внесение модели устройства";
             this.Load += new System.EventHandler(this.InsertModelForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

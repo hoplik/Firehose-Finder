@@ -252,7 +252,17 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void ПросмотрСправкиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProcessStartInfo psin = new ProcessStartInfo("help_ru.pdf");
+            string helppath = Application.StartupPath;
+            switch (Settings.Default.local_lang)
+            {
+                case "en":
+                    helppath+="\\Resources\\help_en.pdf";
+                    break;
+                default:
+                    helppath+="\\Resources\\help_ru.pdf";
+                    break;
+            }
+            ProcessStartInfo psin = new ProcessStartInfo(helppath);
             Process.Start(psin);
         }
 
@@ -1701,7 +1711,7 @@ namespace FirehoseFinder
             string logstr = label_tm.Text + "\u261F" + label_model.Text + "\u261F" + label_altname.Text + "\u261F"+ label_chip_sn.Text + Environment.NewLine +
                 string.Format("Chip s/n: {0}", chip_sn) + Environment.NewLine +
                 string.Format("HWID: {0}{1}{2}", textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text) + Environment.NewLine +
-                string.Format("OEM PK Hash: {0}", textBox_oemhash.Text) + Environment.NewLine +
+                string.Format("OEM PK Hash ({0}): {1}", textBox_oemhash.TextLength, textBox_oemhash.Text) + Environment.NewLine +
                 string.Format("SBL SW Version: {0}", label_SW_Ver.Text);
             if (checkBox_Log.Checked)
             {

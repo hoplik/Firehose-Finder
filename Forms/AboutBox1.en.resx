@@ -117,6 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="linkLabel_telega.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
+    <value>82, 24</value>
+  </data>
+  <data name="linkLabel_telega.Text" xml:space="preserve">
+    <value>Do you have any questions, suggestions, comments?
+Write to the Telegram channel "Firehose - Finder issues"</value>
+  </data>
+  <data name="labelProductName.Text" xml:space="preserve">
+    <value>Product name</value>
+  </data>
+  <data name="labelVersion.Text" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="labelCopyright.Text" xml:space="preserve">
+    <value>Copyright</value>
+  </data>
+  <data name="textBoxDescription.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="linkLabel_forum.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
+    <value>12, 125</value>
+  </data>
+  <data name="linkLabel_forum.Text" xml:space="preserve">
+    <value>Topic 4PDA "Общие принципы восстановления загрузчиков на Qualcomm | HS - USB QDLoader 9008, HS - USB Diagnostics 9006, QHUSB_DLOAD и т.д."</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label_donate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 48</value>
+  </data>
+  <data name="label_donate.Text" xml:space="preserve">
+    <value>Did you have a desire to thank the author for the work done? Please use the buttons below to donate.</value>
+  </data>
+  <data name="button_donate_ymoney.Text" xml:space="preserve">
+    <value>ЮMoney - thank`s</value>
+  </data>
+  <data name="button_donate_pp.Text" xml:space="preserve">
+    <value>QiWi - many thank`s</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>About</value>
   </data>

@@ -119,12 +119,21 @@ namespace FirehoseFinder.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на 			Краткий инструктаж.
         ///
-        ///	Основной функционал приложения - поиск подходящего программера (firehose, пожарный шланг, шланг и т.п.) под определённое устройство.
-        ///	Так как устройств и шлангов много, то первым шагом и первой кнопкой является &quot;Опросить устройство с перезагрузкой в аварийный режим&quot;. Данная процедура необходима для получения идентификаторов устройства, по которым будет осуществляться подбор шланга. Все идентификаторы, иногда, не получается получить одним запросом. Для этого есть возможность внест [остаток строки не уместился]&quot;;.
+        ///	Основной функционал приложения - поиск подходящего программера (programmer, firehose, пожарный шланг и т.п.) под определённое устройство.
+        ///	Так как устройств и программеров много, то первым шагом и первой кнопкой является &quot;Опросить устройство с перезагрузкой в аварийный режим&quot;. Данная процедура необходима для получения идентификаторов устройства, по которым будет осуществляться подбор программера. Все идентификаторы, иногда, не получается получить одним запросом. Для этого есть во [остаток строки не уместился]&quot;;.
         /// </summary>
         internal static string Greeting {
             get {
                 return ResourceManager.GetString("Greeting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пожалуйста, выберите наименование производителя из списка или введите, при отсутствии подходящего значения..
+        /// </summary>
+        internal static string message_body_need_fields {
+            get {
+                return ResourceManager.GetString("message_body_need_fields", resourceCulture);
             }
         }
         
@@ -134,6 +143,15 @@ namespace FirehoseFinder.Properties {
         internal static string message_body_need_restart {
             get {
                 return ResourceManager.GetString("message_body_need_restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пустые обязательные поля.
+        /// </summary>
+        internal static string message_title_need_fields {
+            get {
+                return ResourceManager.GetString("message_title_need_fields", resourceCulture);
             }
         }
         

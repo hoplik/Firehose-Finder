@@ -42,7 +42,7 @@ namespace FirehoseFinder
         private void Greeting_Load(object sender, EventArgs e)
         {
             checkBox_start.Checked = Settings.Default.CheckBox_start_Checked;
-            textBox_greeting.Text = LocRes.GetObject("Greeting").ToString();//Resources.Greeting;
+            textBox_greeting.Text = LocRes.GetObject("Greeting").ToString();
         }
     }
 }

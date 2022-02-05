@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace FirehoseFinder
@@ -8,6 +9,8 @@ namespace FirehoseFinder
     public partial class InsertModelForm : Form
     {
         List<string> manuflist = new List<string>();
+        ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
+
         public InsertModelForm(Formfhf formfhf)
         {
             InitializeComponent();
@@ -36,7 +39,7 @@ namespace FirehoseFinder
             if (string.IsNullOrWhiteSpace(comboBox_tm_insert.Text))
             {
                 label_tm_insert.BackColor = Color.Red;
-                MessageBox.Show("Пожалуйста, выберите наименование производителя из списка или введите, при отсутствии подходящего значения.", "Пустые обязательные поля", MessageBoxButtons.OK);
+                MessageBox.Show(LocRes.GetString("message_body_need_fields"), LocRes.GetString("message_title_need_fields"), MessageBoxButtons.OK);
                 return;
             }
             Hide();

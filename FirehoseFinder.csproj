@@ -178,10 +178,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutBox1.cs">
+    <Compile Include="Forms\AboutBox1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutBox1.Designer.cs">
+    <Compile Include="Forms\AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
     <Compile Include="AGMRepacker.cs">
@@ -203,10 +203,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Func.cs" />
-    <Compile Include="Greeting.cs">
+    <Compile Include="Forms\Greeting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Greeting.Designer.cs">
+    <Compile Include="Forms\Greeting.Designer.cs">
       <DependentUpon>Greeting.cs</DependentUpon>
     </Compile>
     <Compile Include="Guide.cs" />
@@ -216,10 +216,10 @@
     <Compile Include="Hex_Search.Designer.cs">
       <DependentUpon>Hex_Search.cs</DependentUpon>
     </Compile>
-    <Compile Include="InsertModelForm.cs">
+    <Compile Include="Forms\InsertModelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InsertModelForm.Designer.cs">
+    <Compile Include="Forms\InsertModelForm.Designer.cs">
       <DependentUpon>InsertModelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Peekpoke.cs">
@@ -243,10 +243,13 @@
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </Compile>
     <None Include="Resources\Greeting_en.txt" />
+    <Content Include="Resources\help_en.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\russia_flags_flag_17058.png" />
     <None Include="Resources\united_kingdom_flags_flag_17079.png" />
     <None Include="Resources\Fh_Image.bmp" />
-    <EmbeddedResource Include="AboutBox1.en.resx">
+    <EmbeddedResource Include="Forms\AboutBox1.en.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AGMRepacker.resx">
@@ -255,11 +258,14 @@
     <EmbeddedResource Include="Form1.en.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Greeting.en.resx">
+    <EmbeddedResource Include="Forms\Greeting.en.resx">
       <DependentUpon>Greeting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hex_Search.resx">
       <DependentUpon>Hex_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InsertModelForm.en.resx">
+      <DependentUpon>InsertModelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -269,7 +275,7 @@
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Resources\Greeting.txt" />
-    <EmbeddedResource Include="AboutBox1.resx">
+    <EmbeddedResource Include="Forms\AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dump_Sectors.resx">
@@ -278,10 +284,10 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Greeting.resx">
+    <EmbeddedResource Include="Forms\Greeting.resx">
       <DependentUpon>Greeting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InsertModelForm.resx">
+    <EmbeddedResource Include="Forms\InsertModelForm.resx">
       <DependentUpon>InsertModelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Peekpoke.resx">
@@ -298,7 +304,7 @@
     <Content Include="ForFound.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="help_ru.pdf">
+    <Content Include="Resources\help_ru.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
@@ -387,6 +393,7 @@
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
