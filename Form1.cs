@@ -1593,7 +1593,14 @@ namespace FirehoseFinder
                                 label_altname.Text = item.Substring(start, end-start);
                                 break;
                             default:
-                                chipsn = Convert.ToInt64(item);
+                                try
+                                {
+                                    chipsn = Convert.ToInt64(item);
+                                }
+                                catch (FormatException)
+                                {
+                                    chipsn=0;
+                                }
                                 break;
                         }
                     }
