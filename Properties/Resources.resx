@@ -127,14 +127,41 @@
   <data name="bot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bot.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
+  <data name="button_dirrepack" xml:space="preserve">
+    <value>Директория для распаковки</value>
+  </data>
+  <data name="button_rampath" xml:space="preserve">
+    <value>Путь к файлу прошивки</value>
+  </data>
   <data name="copy_clip" xml:space="preserve">
     <value>Скопировано в буфер</value>
+  </data>
+  <data name="count_bin" xml:space="preserve">
+    <value>Количество bin файлов прошивки</value>
+  </data>
+  <data name="count_inside_bin" xml:space="preserve">
+    <value>Количество bin файлов внутри прошивки</value>
+  </data>
+  <data name="count_inside_conf" xml:space="preserve">
+    <value>Количество конфигурационных файлов внутри прошивки</value>
+  </data>
+  <data name="crc" xml:space="preserve">
+    <value>контрольная сумма</value>
   </data>
   <data name="fh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\fh.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Fh_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fh_Image.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="firmware_signer" xml:space="preserve">
+    <value>Подписант прошивки</value>
+  </data>
+  <data name="firmware_version" xml:space="preserve">
+    <value>Версия прошивки</value>
   </data>
   <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Greeting.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
@@ -151,11 +178,80 @@
   <data name="message_title_need_restart" xml:space="preserve">
     <value>Требуется перезапуск приложения!</value>
   </data>
+  <data name="offset" xml:space="preserve">
+    <value>адрес</value>
+  </data>
+  <data name="packer_version" xml:space="preserve">
+    <value>Версия упаковщика</value>
+  </data>
+  <data name="phone_version" xml:space="preserve">
+    <value>Версия телефона</value>
+  </data>
+  <data name="repack_parsing_header" xml:space="preserve">
+    <value>Параметры прошивки</value>
+  </data>
   <data name="russia_flags_flag_17058" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\russia_flags_flag_17058.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="size" xml:space="preserve">
+    <value>размер</value>
+  </data>
+  <data name="started_unpacking" xml:space="preserve">
+    <value>Начали распаковку ...</value>
+  </data>
+  <data name="status_decode" xml:space="preserve">
+    <value>Декодируем ...</value>
+  </data>
+  <data name="status_read" xml:space="preserve">
+    <value>Читаем ...</value>
+  </data>
+  <data name="status_repack_complete" xml:space="preserve">
+    <value>Заголовок прошивки считан успешно.</value>
+  </data>
+  <data name="status_repack_decoded" xml:space="preserve">
+    <value>Заголовок прошивки декодирован.</value>
+  </data>
+  <data name="status_repack_open_folder" xml:space="preserve">
+    <value>Открыть папку в Проводнике</value>
+  </data>
+  <data name="status_repack_parsing_header_complite" xml:space="preserve">
+    <value>Парсинг шапки прошивки завершился удачно</value>
+  </data>
+  <data name="status_repack_parsing_header_failed" xml:space="preserve">
+    <value>Парсинг шапки прошивки завершился неудачно</value>
+  </data>
+  <data name="status_repack_start" xml:space="preserve">
+    <value>Выберите путь к прошивке и директорию для распаковки</value>
+  </data>
+  <data name="status_repack_unpacked_failed" xml:space="preserve">
+    <value>Данная прошивка не может быть распакована, так как состоит не из одного файла, либо некорректно декодирована!</value>
+  </data>
+  <data name="status_repack_unpacking_cancel" xml:space="preserve">
+    <value>Операция распаковки файлов прошивки прервана пользователем</value>
+  </data>
+  <data name="status_repack_unpacking_complite" xml:space="preserve">
+    <value>Прошивка успешно распакована в указанную директорию</value>
+  </data>
+  <data name="status_repack_unpacking_complited" xml:space="preserve">
+    <value>Распаковка файлов прошивки выполнена на</value>
+  </data>
+  <data name="tip_cancel" xml:space="preserve">
+    <value>Для сброса нажмите кнопку и выберите "Отмена"</value>
+  </data>
+  <data name="tip_decode" xml:space="preserve">
+    <value>Система дешифровки - только DES. Количество знаков в ключе меньше 16 будет дополнено '0' в начале.</value>
+  </data>
+  <data name="tip_row" xml:space="preserve">
+    <value>Выберите из списка или введите вручную</value>
+  </data>
   <data name="united_kingdom_flags_flag_17079" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\united_kingdom_flags_flag_17079.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unknown" xml:space="preserve">
+    <value>Что-то непонятное</value>
+  </data>
+  <data name="userstate_show_first" xml:space="preserve">
+    <value>Отображаем блок первых символов ...</value>
   </data>
   <data name="version" xml:space="preserve">
     <value>Версия</value>

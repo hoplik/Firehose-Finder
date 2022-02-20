@@ -29,7 +29,7 @@ namespace FirehoseFinder
         internal DeviceData Global_ADB_Device = new DeviceData();
         internal string Global_FB_Device = string.Empty;
         internal Dictionary<string, string> Connected_Devices = new Dictionary<string, string>(); //Список подключённых ADB устройств
-        ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
+        readonly ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
 
         /// <summary>
         /// Инициализация компонентов

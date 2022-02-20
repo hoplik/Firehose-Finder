@@ -125,9 +125,45 @@
     <value>Workdir application</value>
     <comment>Путь установки программы</comment>
   </data>
+  <data name="button_dirrepack" xml:space="preserve">
+    <value>Dir for unpacking</value>
+    <comment>Директория для распаковки</comment>
+  </data>
+  <data name="button_rampath" xml:space="preserve">
+    <value>The path to the firmware file</value>
+    <comment>Путь к файлу прошивки</comment>
+  </data>
   <data name="copy_clip" xml:space="preserve">
     <value>Copy to clipboard</value>
     <comment>Скопировано в буфер</comment>
+  </data>
+  <data name="count_bin" xml:space="preserve">
+    <value>Number of firmware bin files</value>
+    <comment>Количество bin файлов прошивки</comment>
+  </data>
+  <data name="count_inside_bin" xml:space="preserve">
+    <value>Number of bin files inside the firmware</value>
+    <comment>Количество bin файлов внутри прошивки</comment>
+  </data>
+  <data name="count_inside_conf" xml:space="preserve">
+    <value>Number of configuration files inside the firmware</value>
+    <comment>Количество конфигурационных файлов внутри прошивки</comment>
+  </data>
+  <data name="crc" xml:space="preserve">
+    <value>CRC</value>
+    <comment>контрольная сумма</comment>
+  </data>
+  <data name="file" xml:space="preserve">
+    <value>File</value>
+    <comment>Файл</comment>
+  </data>
+  <data name="firmware_signer" xml:space="preserve">
+    <value>Firmware signer</value>
+    <comment>Подписант прошивки</comment>
+  </data>
+  <data name="firmware_version" xml:space="preserve">
+    <value>Firmware version</value>
+    <comment>Версия прошивки</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -148,6 +184,98 @@
   <data name="message_title_need_restart" xml:space="preserve">
     <value>Application restart required!</value>
     <comment>Требуется перезапуск приложения!</comment>
+  </data>
+  <data name="offset" xml:space="preserve">
+    <value>offset</value>
+    <comment>адрес</comment>
+  </data>
+  <data name="packer_version" xml:space="preserve">
+    <value>Packer version</value>
+    <comment>Версия упаковщика</comment>
+  </data>
+  <data name="phone_version" xml:space="preserve">
+    <value>Phone version</value>
+    <comment>Версия телефона</comment>
+  </data>
+  <data name="repack_parsing_header" xml:space="preserve">
+    <value>Firmware Parameters</value>
+    <comment>Параметры прошивки</comment>
+  </data>
+  <data name="size" xml:space="preserve">
+    <value>size</value>
+    <comment>размер</comment>
+  </data>
+  <data name="started_unpacking" xml:space="preserve">
+    <value>Started unpacking ...</value>
+    <comment>Начали распаковку ...</comment>
+  </data>
+  <data name="status_decode" xml:space="preserve">
+    <value>Decoding ...</value>
+    <comment>Декодируем ...</comment>
+  </data>
+  <data name="status_read" xml:space="preserve">
+    <value>Reading ...</value>
+    <comment>Читаем ...</comment>
+  </data>
+  <data name="status_repack_complete" xml:space="preserve">
+    <value>The firmware header was read successfully.</value>
+    <comment>Заголовок прошивки считан успешно.</comment>
+  </data>
+  <data name="status_repack_decoded" xml:space="preserve">
+    <value>The firmware header is decoded.</value>
+    <comment>Заголовок прошивки декодирован.</comment>
+  </data>
+  <data name="status_repack_open_folder" xml:space="preserve">
+    <value>Open a folder in Explorer</value>
+    <comment>Открыть папку в Проводнике</comment>
+  </data>
+  <data name="status_repack_parsing_header_complite" xml:space="preserve">
+    <value>Parsing of the firmware header ended successfully.</value>
+    <comment>Парсинг шапки прошивки завершился удачно</comment>
+  </data>
+  <data name="status_repack_parsing_header_failed" xml:space="preserve">
+    <value>Parsing of the firmware header failed</value>
+    <comment>Парсинг шапки прошивки завершился неудачно</comment>
+  </data>
+  <data name="status_repack_start" xml:space="preserve">
+    <value>Select the path to the firmware and the directory to unpack</value>
+    <comment>Выберите путь к прошивке и директорию для распаковки</comment>
+  </data>
+  <data name="status_repack_unpacked_failed" xml:space="preserve">
+    <value>This firmware cannot be unpacked, as it does not consist of a single file, or it is incorrectly decoded!</value>
+    <comment>Данная прошивка не может быть распакована, так как состоит не из одного файла, либо некорректно декодирована!</comment>
+  </data>
+  <data name="status_repack_unpacking_cancel" xml:space="preserve">
+    <value>The operation of unpacking firmware files was interrupted by the user</value>
+    <comment>Операция распаковки файлов прошивки прервана пользователем</comment>
+  </data>
+  <data name="status_repack_unpacking_complite" xml:space="preserve">
+    <value>The firmware has been successfully unpacked to the specified directory</value>
+    <comment>Прошивка успешно распакована в указанную директорию</comment>
+  </data>
+  <data name="status_repack_unpacking_complited" xml:space="preserve">
+    <value>Unpacking of firmware files is completed on</value>
+    <comment>Распаковка файлов прошивки выполнена на</comment>
+  </data>
+  <data name="tip_cancel" xml:space="preserve">
+    <value>To reset, press the button and select "Cancel"</value>
+    <comment>Для сброса нажмите кнопку и выберите "Отмена"</comment>
+  </data>
+  <data name="tip_decode" xml:space="preserve">
+    <value>The decryption system is DES only. The number of characters in the key less than 16 will be supplemented with '0' at the beginning.</value>
+    <comment>Система дешифровки - только DES. Количество знаков в ключе меньше 16 будет дополнено '0' в начале.</comment>
+  </data>
+  <data name="tip_row" xml:space="preserve">
+    <value>Select from the list or enter manually</value>
+    <comment>Выберите из списка или введите вручную</comment>
+  </data>
+  <data name="unknown" xml:space="preserve">
+    <value>Something unknown</value>
+    <comment>Что-то непонятное</comment>
+  </data>
+  <data name="userstate_show_first" xml:space="preserve">
+    <value>Displaying the block of the first characters ...</value>
+    <comment>Отображаем блок первых символов ...</comment>
   </data>
   <data name="version" xml:space="preserve">
     <value>Version</value>

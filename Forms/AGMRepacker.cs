@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -20,6 +21,7 @@ namespace FirehoseFinder
         internal byte[] bin_head_bytes = new byte[last_header_byte]; //Байты шапки прошивки
         byte[] key_decode = new byte[8]; // Ключ расшифровки 64 бит/8 байт/16 знаков
         Header_Info H_I = new Header_Info(); //Информация хедера прошивки
+        readonly ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
 
         public AGMRepacker()
         {
@@ -81,10 +83,10 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void AGMRepacker_Load(object sender, EventArgs e)
         {
-            toolTip_Dir.SetToolTip(button_rampath, "Для сброса нажмите кнопку и выберите \"Отмена\"");
-            toolTip_Dir.SetToolTip(button_dirrepack, "Для сброса нажмите кнопку и выберите \"Отмена\"");
-            toolTip_Dir.SetToolTip(comboBox_charsinrow, "Выберите из списка или введите вручную");
-            toolTip_Dir.SetToolTip(textBox_keycode, "Система дешифровки - только DES. Количество знаков в ключе меньше 16 будет дополнено '0' в начале.");
+            toolTip_Dir.SetToolTip(button_rampath, LocRes.GetString("tip_cancel"));
+            toolTip_Dir.SetToolTip(button_dirrepack, LocRes.GetString("tip_cancel"));
+            toolTip_Dir.SetToolTip(comboBox_charsinrow, LocRes.GetString("tip_row"));
+            toolTip_Dir.SetToolTip(textBox_keycode, LocRes.GetString("tip_decode"));
         }
 
         /// <summary>
@@ -116,14 +118,14 @@ namespace FirehoseFinder
             {
                 ROM_File_Path = openFileDialog1.FileName;
                 button_rampath.Text = ROM_File_Path;
-                toolStripStatusLabel1.Text="Читаем ...";
+                toolStripStatusLabel1.Text = LocRes.GetString("status_read");
                 if (!backgroundWorker_readheader.IsBusy) backgroundWorker_readheader.RunWorkerAsync(charsint);
             }
             else
             {
                 ROM_File_Path = string.Empty;
-                button_rampath.Text = "Путь к файлу прошивки";
-                toolStripStatusLabel1.Text = "Выберите путь к прошивке и директорию для распаковки";
+                button_rampath.Text = LocRes.GetString("button_rampath");
+                toolStripStatusLabel1.Text = LocRes.GetString("status_repack_start");
             }
         }
 
@@ -141,7 +143,7 @@ namespace FirehoseFinder
             bin_head_bytes=Array.Empty<byte>();
             Array.Resize(ref bin_head_bytes, bytes_to_read);
             byte[] bs = new byte[blocksize];
-            string us = "Отображаем блок первых символов ...";
+            string us = LocRes.GetString("userstate_show_first");
             using (BinaryReader reader = new BinaryReader(File.OpenRead(ROM_File_Path)))
             {
                 bin_head_bytes =  reader.ReadBytes(bytes_to_read);
@@ -163,7 +165,7 @@ namespace FirehoseFinder
             if (e.Error!=null) toolStripStatusLabel1.Text = e.Error.Message;
             else
             {
-                toolStripStatusLabel1.Text="Заголовок прошивки считан успешно.";
+                toolStripStatusLabel1.Text = LocRes.GetString("status_repack_complete");
                 string toshow = (string)e.Result;
                 toshow = toshow.TrimStart('\u000D');
                 if (toshow.Length>textBox_orig.MaxLength) toshow = toshow.Substring(0, textBox_orig.MaxLength);
@@ -183,7 +185,7 @@ namespace FirehoseFinder
             while (key_string.Length < 16) key_string.Insert(0, '\u0030');
             button_decode.Enabled = false;
             key_decode=Func.StringToByteArray(key_string.ToString());
-            toolStripStatusLabel1.Text="Декодируем ...";
+            toolStripStatusLabel1.Text = LocRes.GetString("status_decode");
             if (!backgroundWorker_decodeheader.IsBusy) backgroundWorker_decodeheader.RunWorkerAsync(charsint);
         }
 
@@ -196,7 +198,7 @@ namespace FirehoseFinder
             decode_header_bytes = Array.Empty<byte>();
             Array.Resize(ref decode_header_bytes, bin_head_bytes.Length);
             byte[] bs = new byte[blocksize];
-            string us = "Отображаем блок первых символов ...";
+            string us = LocRes.GetString("userstate_show_first");
             func.Decoder(bin_head_bytes, key_decode).CopyTo(decode_header_bytes, 0);
             worker.ReportProgress(50, us);
             Array.Copy(decode_header_bytes, 0, bs, 0, blocksize);
@@ -215,7 +217,7 @@ namespace FirehoseFinder
             if (e.Error!=null) toolStripStatusLabel1.Text = e.Error.Message;
             else
             {
-                toolStripStatusLabel1.Text="Заголовок прошивки декодирован";
+                toolStripStatusLabel1.Text = LocRes.GetString("status_repack_decoded");
                 string toshow = (string)e.Result;
                 toshow = toshow.TrimStart('\u000D');
                 if (toshow.Length>textBox_decode.MaxLength) toshow = toshow.Substring(0, textBox_decode.MaxLength);
@@ -234,7 +236,7 @@ namespace FirehoseFinder
         /// </summary>
         private string Parsing_Header(byte[] res_bytes)
         {
-            StringBuilder ParsingHeader = new StringBuilder("\t\t\t<-=Параметры прошивки=->" + Environment.NewLine + Environment.NewLine);
+            StringBuilder ParsingHeader = new StringBuilder(string.Format("\t\t\t<-={0}=->" + Environment.NewLine + Environment.NewLine, LocRes.GetString("repack_parsing_header")));
             //Заполняем хедер прошивки
             H_I.Bin_Nym = BitConverter.ToUInt32(res_bytes, (int)Func.Parsing_Header_Four_Bytes.Bin_Number);
             try
@@ -243,9 +245,9 @@ namespace FirehoseFinder
                 {
                     H_I.Conf_Files = BitConverter.ToUInt32(res_bytes, (int)Func.Parsing_Header_Four_Bytes.Config_Files);
                     H_I.Bin_Files = BitConverter.ToUInt32(res_bytes, (int)Func.Parsing_Header_Four_Bytes.Bin_Files);
-                    ParsingHeader.AppendLine($"Количество bin файлов прошивки - {H_I.Bin_Nym}" + Environment.NewLine +
-                        $"Количество bin файлов внутри прошивки - {H_I.Bin_Files}" + Environment.NewLine +
-                        $"Количество конфигурационных файлов внутри прошивки - {H_I.Conf_Files}");
+                    ParsingHeader.AppendLine(string.Format(LocRes.GetString("count_bin") + " - {0}" + Environment.NewLine +
+                        LocRes.GetString("count_inside_bin") + " - {1}" + Environment.NewLine +
+                        LocRes.GetString("count_inside_conf") + " - {2}", H_I.Bin_Nym, H_I.Bin_Files, H_I.Conf_Files));
                     try
                     {
                         H_I.Header_Len = BitConverter.ToString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Header_Len, 4).Replace("-", "");
@@ -253,32 +255,30 @@ namespace FirehoseFinder
                         H_I.Packer_Ver = new ASCIIEncoding().GetString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Packer_Version, (int)Func.Parsing_Bytes.String_parse).TrimEnd('\0');
                         H_I.Phone_Ver = new ASCIIEncoding().GetString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Phone_Version, (int)Func.Parsing_Bytes.String_parse).TrimEnd('\0');
                         H_I.Image_Ver = new ASCIIEncoding().GetString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Image_Version, (int)Func.Parsing_Bytes.String_parse).TrimEnd('\0');
-                        ParsingHeader.AppendLine($"Что-то непонятное - {H_I.Header_Len}" + Environment.NewLine+
-                            $"Подписант прошивки - {H_I.Author}" + Environment.NewLine+
-                            $"Версия упаковщика - {H_I.Packer_Ver}" + Environment.NewLine+
-                            $"Версия телефона - {H_I.Phone_Ver}" + Environment.NewLine+
-                            $"Версия прошивки - {H_I.Image_Ver}");
-                        toolStripStatusLabel1.Text = "Парсинг шапки прошивки завершился удачно.";
+                        ParsingHeader.AppendLine(string.Format(LocRes.GetString("unknown") + " - {0}" + Environment.NewLine+
+                            LocRes.GetString("firmware_signer") + " - {1}" + Environment.NewLine+
+                            LocRes.GetString("packer_version") + " - {2}" + Environment.NewLine+
+                            LocRes.GetString("phone_version") + " - {3}" + Environment.NewLine+
+                            LocRes.GetString("firmware_version") + " - {4}", H_I.Header_Len, H_I.Author, H_I.Packer_Ver, H_I.Phone_Ver, H_I.Image_Ver));
+                        toolStripStatusLabel1.Text = LocRes.GetString("status_repack_parsing_header_complite");
                     }
                     catch (ArgumentOutOfRangeException Ex)
                     {
-                        ParsingHeader.AppendLine("Парсинг оставшейся части шапки прошивки завершился неудачно. " +
-                                "Прошивка будет распакована, но возможны ошибки. Стоит проверить параметры в настройках!");
+                        ParsingHeader.AppendLine(LocRes.GetString("status_repack_parsing_header_failed"));
                         toolStripStatusLabel1.Text = Ex.Message;
                     }
                 }
                 else
                 {
                     ParsingHeader.Clear();
-                    ParsingHeader.AppendLine("Данная прошивка не может быть распакована, так как состоит не из одного файла, либо некорректно декодирована!");
-                    toolStripStatusLabel1.Text = "Парсинг шапки прошивки завершился с ошибками.";
+                    ParsingHeader.AppendLine(LocRes.GetString("status_repack_unpacked_failed"));
+                    toolStripStatusLabel1.Text = LocRes.GetString("status_repack_parsing_header_failed");
                 }
             }
             catch (ArgumentOutOfRangeException Ex)
             {
                 ParsingHeader.Clear();
-                ParsingHeader.AppendLine("Парсинг шапки прошивки завершился неудачно, возможно из-за маленького размера считываемых данных. " +
-                    "Прошивка не может быть распакована с такими параметрами в настройках!");
+                ParsingHeader.AppendLine(LocRes.GetString("status_repack_parsing_header_failed"));
                 toolStripStatusLabel1.Text = Ex.Message;
             }
             return ParsingHeader.ToString();
@@ -295,14 +295,14 @@ namespace FirehoseFinder
             {
                 Decode_ROM_Path = folderBrowserDialog1.SelectedPath;
                 button_dirrepack.Text = Decode_ROM_Path;
-                button_repack.Visible=true;
+                button_repack.Visible = true;
             }
             else
             {
-                button_dirrepack.Text = "Директория для распаковки";
-                toolStripStatusLabel1.Text = "Выберите путь к прошивке и директорию для распаковки";
+                button_dirrepack.Text = LocRes.GetString("button_dirrepack");
+                toolStripStatusLabel1.Text = LocRes.GetString("status_repack_start");
                 Decode_ROM_Path = string.Empty;
-                button_repack.Visible=false;
+                button_repack.Visible = false;
             }
         }
 
@@ -313,7 +313,7 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button_repack_Click(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text = "Начали распаковку ...";
+            toolStripStatusLabel1.Text = LocRes.GetString("started_unpacking");
             if (!backgroundWorker_unpacker.IsBusy) backgroundWorker_unpacker.RunWorkerAsync();
         }
 
@@ -366,12 +366,13 @@ namespace FirehoseFinder
         private void BackgroundWorker_unpacker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             toolStripProgressBar1.Value = e.ProgressPercentage;
-            toolStripStatusLabel1.Text = $"Распаковка файлов прошивки выполнена на {e.ProgressPercentage}%";
+            toolStripStatusLabel1.Text = string.Format(LocRes.GetString("status_repack_unpacking_complited") + " {0}%",e.ProgressPercentage);
             if (e.ProgressPercentage > 5) toolStripSplitButton_explorer.Visible = true;
             File_info_bytes F_I_B = (File_info_bytes)e.UserState;
             textBox_parse.AppendText(string.Format(
-                Environment.NewLine + "Файл {0}, адрес {1}, размер {2}, контрольная сумма {3}",
-                F_I_B.File_Name, F_I_B.Offset, F_I_B.Size, F_I_B.CRC));
+                Environment.NewLine + "{0} {1}, {2} {3}, {4} {5}, {6} {7}",
+                LocRes.GetString("file"), F_I_B.File_Name, LocRes.GetString("offset"), F_I_B.Offset, LocRes.GetString("size"), 
+                F_I_B.Size, LocRes.GetString("crc"), F_I_B.CRC));
         }
 
         private void BackgroundWorker_unpacker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -379,20 +380,20 @@ namespace FirehoseFinder
             toolStripProgressBar1.Value = 0;
             if (e.Cancelled)
             {
-                toolStripStatusLabel1.Text = "Операция распаковки файлов прошивки прервана пользователем или завершилась с ошибкой.";
+                toolStripStatusLabel1.Text = LocRes.GetString("status_repack_unpacking_cancel");
                 toolStripSplitButton_explorer.Visible = false;
             }
             else
             {
                 if (e.Error != null)
                 {
-                    toolStripStatusLabel1.Text = $"Операция распаковки файлов прошивки завершена с ошибкой {e.Error.Message}";
+                    toolStripStatusLabel1.Text = e.Error.Message;
                     toolStripSplitButton_explorer.Visible = false;
                 }
                 else
                 {
-                    toolStripStatusLabel1.Text = "Прошивка успешно распакована в указанную директорию.";
-                    toolStripSplitButton_explorer.Text = "Открыть папку в Проводнике";
+                    toolStripStatusLabel1.Text = LocRes.GetString("status_repack_unpacking_complite");
+                    toolStripSplitButton_explorer.Text = LocRes.GetString("status_repack_open_folder");
                     toolStripSplitButton_explorer.Visible = true;
                 }
             }
@@ -406,7 +407,7 @@ namespace FirehoseFinder
         private void ToolStripSplitButton_explorer_Click(object sender, EventArgs e)
         {
             if (backgroundWorker_unpacker.IsBusy) backgroundWorker_unpacker.CancelAsync();
-            if (toolStripSplitButton_explorer.Text.Contains("Проводник")) Process.Start("explorer.exe", Decode_ROM_Path);
+            if (toolStripSplitButton_explorer.Text.Equals(LocRes.GetString("status_repack_open_folder"))) Process.Start("explorer.exe", Decode_ROM_Path);
         }
     }
 }

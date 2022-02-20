@@ -66,63 +66,49 @@
             // 
             // statusStrip1
             // 
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar1,
             this.toolStripStatusLabel1,
             this.toolStripSplitButton_explorer});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 522);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1279, 26);
-            this.statusStrip1.TabIndex = 0;
-            this.statusStrip1.Text = "statusStrip1";
+            this.toolTip_Dir.SetToolTip(this.statusStrip1, resources.GetString("statusStrip1.ToolTip"));
             // 
             // toolStripProgressBar1
             // 
+            resources.ApplyResources(this.toolStripProgressBar1, "toolStripProgressBar1");
             this.toolStripProgressBar1.ForeColor = System.Drawing.Color.LimeGreen;
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(200, 18);
             this.toolStripProgressBar1.Step = 1;
             this.toolStripProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // toolStripStatusLabel1
             // 
+            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(414, 20);
-            this.toolStripStatusLabel1.Text = "Выберите путь к прошивке и директорию для распаковки";
             // 
             // toolStripSplitButton_explorer
             // 
+            resources.ApplyResources(this.toolStripSplitButton_explorer, "toolStripSplitButton_explorer");
             this.toolStripSplitButton_explorer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripSplitButton_explorer.DropDownButtonWidth = 0;
-            this.toolStripSplitButton_explorer.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton_explorer.Image")));
-            this.toolStripSplitButton_explorer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripSplitButton_explorer.Name = "toolStripSplitButton_explorer";
-            this.toolStripSplitButton_explorer.Size = new System.Drawing.Size(82, 24);
-            this.toolStripSplitButton_explorer.Text = "Отменить";
-            this.toolStripSplitButton_explorer.Visible = false;
             this.toolStripSplitButton_explorer.Click += new System.EventHandler(this.ToolStripSplitButton_explorer_Click);
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this.groupBox_controls, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupBox_orig, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupBox_decode, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupBox_parse, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1279, 522);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.toolTip_Dir.SetToolTip(this.tableLayoutPanel1, resources.GetString("tableLayoutPanel1.ToolTip"));
             // 
             // groupBox_controls
             // 
+            resources.ApplyResources(this.groupBox_controls, "groupBox_controls");
             this.groupBox_controls.Controls.Add(this.comboBox_charsinrow);
             this.groupBox_controls.Controls.Add(this.label2);
             this.groupBox_controls.Controls.Add(this.label1);
@@ -131,170 +117,127 @@
             this.groupBox_controls.Controls.Add(this.button_repack);
             this.groupBox_controls.Controls.Add(this.button_dirrepack);
             this.groupBox_controls.Controls.Add(this.button_rampath);
-            this.groupBox_controls.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_controls.Location = new System.Drawing.Point(3, 3);
             this.groupBox_controls.Name = "groupBox_controls";
-            this.groupBox_controls.Size = new System.Drawing.Size(633, 194);
-            this.groupBox_controls.TabIndex = 3;
             this.groupBox_controls.TabStop = false;
-            this.groupBox_controls.Text = "Управление";
+            this.toolTip_Dir.SetToolTip(this.groupBox_controls, resources.GetString("groupBox_controls.ToolTip"));
             // 
             // comboBox_charsinrow
             // 
+            resources.ApplyResources(this.comboBox_charsinrow, "comboBox_charsinrow");
             this.comboBox_charsinrow.FormattingEnabled = true;
             this.comboBox_charsinrow.Items.AddRange(new object[] {
-            "8",
-            "10",
-            "16",
-            "32"});
-            this.comboBox_charsinrow.Location = new System.Drawing.Point(475, 85);
+            resources.GetString("comboBox_charsinrow.Items"),
+            resources.GetString("comboBox_charsinrow.Items1"),
+            resources.GetString("comboBox_charsinrow.Items2"),
+            resources.GetString("comboBox_charsinrow.Items3")});
             this.comboBox_charsinrow.Name = "comboBox_charsinrow";
-            this.comboBox_charsinrow.Size = new System.Drawing.Size(144, 24);
-            this.comboBox_charsinrow.TabIndex = 7;
-            this.comboBox_charsinrow.Text = "16";
+            this.toolTip_Dir.SetToolTip(this.comboBox_charsinrow, resources.GetString("comboBox_charsinrow.ToolTip"));
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 88);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(211, 16);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Количество символов в строке";
+            this.toolTip_Dir.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 59);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(373, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Алгоритм шифрования DES-ECB (64 bit/8 байт/16 знаков)";
+            this.toolTip_Dir.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // textBox_keycode
             // 
-            this.textBox_keycode.Location = new System.Drawing.Point(475, 56);
-            this.textBox_keycode.MaxLength = 16;
+            resources.ApplyResources(this.textBox_keycode, "textBox_keycode");
             this.textBox_keycode.Name = "textBox_keycode";
-            this.textBox_keycode.Size = new System.Drawing.Size(145, 22);
-            this.textBox_keycode.TabIndex = 1;
-            this.textBox_keycode.Text = "0123456789ABCDEF";
+            this.toolTip_Dir.SetToolTip(this.textBox_keycode, resources.GetString("textBox_keycode.ToolTip"));
             this.textBox_keycode.TextChanged += new System.EventHandler(this.TextBox_keycode_TextChanged);
             // 
             // button_decode
             // 
-            this.button_decode.Enabled = false;
-            this.button_decode.Location = new System.Drawing.Point(475, 22);
+            resources.ApplyResources(this.button_decode, "button_decode");
             this.button_decode.Name = "button_decode";
-            this.button_decode.Size = new System.Drawing.Size(145, 27);
-            this.button_decode.TabIndex = 3;
-            this.button_decode.Text = "Декодировать";
+            this.toolTip_Dir.SetToolTip(this.button_decode, resources.GetString("button_decode.ToolTip"));
             this.button_decode.UseVisualStyleBackColor = true;
             this.button_decode.Click += new System.EventHandler(this.Button_decode_Click);
             // 
             // button_repack
             // 
-            this.button_repack.Enabled = false;
-            this.button_repack.Location = new System.Drawing.Point(475, 161);
+            resources.ApplyResources(this.button_repack, "button_repack");
             this.button_repack.Name = "button_repack";
-            this.button_repack.Size = new System.Drawing.Size(145, 27);
-            this.button_repack.TabIndex = 5;
-            this.button_repack.Text = "Распаковать";
+            this.toolTip_Dir.SetToolTip(this.button_repack, resources.GetString("button_repack.ToolTip"));
             this.button_repack.UseVisualStyleBackColor = true;
-            this.button_repack.Visible = false;
             this.button_repack.Click += new System.EventHandler(this.Button_repack_Click);
             // 
             // button_dirrepack
             // 
-            this.button_dirrepack.Location = new System.Drawing.Point(6, 161);
+            resources.ApplyResources(this.button_dirrepack, "button_dirrepack");
             this.button_dirrepack.Name = "button_dirrepack";
-            this.button_dirrepack.Size = new System.Drawing.Size(428, 27);
-            this.button_dirrepack.TabIndex = 4;
-            this.button_dirrepack.Text = "Директория для распаковки";
+            this.toolTip_Dir.SetToolTip(this.button_dirrepack, resources.GetString("button_dirrepack.ToolTip"));
             this.button_dirrepack.UseVisualStyleBackColor = true;
             this.button_dirrepack.Click += new System.EventHandler(this.Button_dirrepack_Click);
             // 
             // button_rampath
             // 
-            this.button_rampath.Location = new System.Drawing.Point(7, 22);
+            resources.ApplyResources(this.button_rampath, "button_rampath");
             this.button_rampath.Name = "button_rampath";
-            this.button_rampath.Size = new System.Drawing.Size(428, 27);
-            this.button_rampath.TabIndex = 0;
-            this.button_rampath.Text = "Путь к файлу прошивки";
+            this.toolTip_Dir.SetToolTip(this.button_rampath, resources.GetString("button_rampath.ToolTip"));
             this.button_rampath.UseVisualStyleBackColor = true;
             this.button_rampath.Click += new System.EventHandler(this.Button_rampath_Click);
             // 
             // groupBox_orig
             // 
+            resources.ApplyResources(this.groupBox_orig, "groupBox_orig");
             this.groupBox_orig.Controls.Add(this.textBox_orig);
-            this.groupBox_orig.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_orig.Location = new System.Drawing.Point(3, 203);
             this.groupBox_orig.Name = "groupBox_orig";
-            this.groupBox_orig.Size = new System.Drawing.Size(633, 316);
-            this.groupBox_orig.TabIndex = 4;
             this.groupBox_orig.TabStop = false;
-            this.groupBox_orig.Text = "Начало оригинального заголовка файла (BYTES | ASCII)";
+            this.toolTip_Dir.SetToolTip(this.groupBox_orig, resources.GetString("groupBox_orig.ToolTip"));
             // 
             // textBox_orig
             // 
-            this.textBox_orig.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_orig.Location = new System.Drawing.Point(3, 18);
-            this.textBox_orig.Multiline = true;
+            resources.ApplyResources(this.textBox_orig, "textBox_orig");
             this.textBox_orig.Name = "textBox_orig";
             this.textBox_orig.ReadOnly = true;
-            this.textBox_orig.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_orig.Size = new System.Drawing.Size(627, 295);
-            this.textBox_orig.TabIndex = 0;
+            this.toolTip_Dir.SetToolTip(this.textBox_orig, resources.GetString("textBox_orig.ToolTip"));
             // 
             // groupBox_decode
             // 
+            resources.ApplyResources(this.groupBox_decode, "groupBox_decode");
             this.groupBox_decode.Controls.Add(this.textBox_decode);
-            this.groupBox_decode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_decode.Location = new System.Drawing.Point(642, 203);
             this.groupBox_decode.Name = "groupBox_decode";
-            this.groupBox_decode.Size = new System.Drawing.Size(634, 316);
-            this.groupBox_decode.TabIndex = 5;
             this.groupBox_decode.TabStop = false;
-            this.groupBox_decode.Text = "Декодированная часть заголовка файла (BYTES | ASCII)";
+            this.toolTip_Dir.SetToolTip(this.groupBox_decode, resources.GetString("groupBox_decode.ToolTip"));
             // 
             // textBox_decode
             // 
-            this.textBox_decode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_decode.Location = new System.Drawing.Point(3, 18);
-            this.textBox_decode.Multiline = true;
+            resources.ApplyResources(this.textBox_decode, "textBox_decode");
             this.textBox_decode.Name = "textBox_decode";
             this.textBox_decode.ReadOnly = true;
-            this.textBox_decode.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_decode.Size = new System.Drawing.Size(628, 295);
-            this.textBox_decode.TabIndex = 0;
+            this.toolTip_Dir.SetToolTip(this.textBox_decode, resources.GetString("textBox_decode.ToolTip"));
             // 
             // groupBox_parse
             // 
+            resources.ApplyResources(this.groupBox_parse, "groupBox_parse");
             this.groupBox_parse.Controls.Add(this.textBox_parse);
-            this.groupBox_parse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox_parse.Location = new System.Drawing.Point(642, 3);
             this.groupBox_parse.Name = "groupBox_parse";
-            this.groupBox_parse.Size = new System.Drawing.Size(634, 194);
-            this.groupBox_parse.TabIndex = 6;
             this.groupBox_parse.TabStop = false;
-            this.groupBox_parse.Text = "Парсинг прошивки";
+            this.toolTip_Dir.SetToolTip(this.groupBox_parse, resources.GetString("groupBox_parse.ToolTip"));
             // 
             // textBox_parse
             // 
-            this.textBox_parse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_parse.Location = new System.Drawing.Point(3, 18);
-            this.textBox_parse.Multiline = true;
+            resources.ApplyResources(this.textBox_parse, "textBox_parse");
             this.textBox_parse.Name = "textBox_parse";
             this.textBox_parse.ReadOnly = true;
-            this.textBox_parse.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_parse.Size = new System.Drawing.Size(628, 173);
-            this.textBox_parse.TabIndex = 0;
+            this.toolTip_Dir.SetToolTip(this.textBox_parse, resources.GetString("textBox_parse.ToolTip"));
+            // 
+            // folderBrowserDialog1
+            // 
+            resources.ApplyResources(this.folderBrowserDialog1, "folderBrowserDialog1");
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.DefaultExt = "bin";
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "Бинарные файлы (*.bin)|*.bin|Все файлы (*.*)|*.*";
+            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
             // backgroundWorker_readheader
             // 
@@ -320,14 +263,12 @@
             // 
             // AGMRepacker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1279, 548);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.statusStrip1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AGMRepacker";
-            this.Text = "Декодер-распаковщик однобиновой прошивки для AGM";
+            this.toolTip_Dir.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.AGMRepacker_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

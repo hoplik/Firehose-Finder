@@ -37,7 +37,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>22.2.9.0</ApplicationVersion>
+    <ApplicationVersion>22.2.20.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -184,10 +184,10 @@
     <Compile Include="Forms\AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
-    <Compile Include="AGMRepacker.cs">
+    <Compile Include="Forms\AGMRepacker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AGMRepacker.Designer.cs">
+    <Compile Include="Forms\AGMRepacker.Designer.cs">
       <DependentUpon>AGMRepacker.cs</DependentUpon>
     </Compile>
     <Compile Include="Dump_Sectors.cs">
@@ -249,10 +249,13 @@
     <None Include="Resources\russia_flags_flag_17058.png" />
     <None Include="Resources\united_kingdom_flags_flag_17079.png" />
     <None Include="Resources\Fh_Image.bmp" />
+    <EmbeddedResource Include="Forms\AGMRepacker.en.resx">
+      <DependentUpon>AGMRepacker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutBox1.en.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AGMRepacker.resx">
+    <EmbeddedResource Include="Forms\AGMRepacker.resx">
       <DependentUpon>AGMRepacker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.en.resx">

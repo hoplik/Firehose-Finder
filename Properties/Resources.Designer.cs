@@ -88,11 +88,65 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Директория для распаковки.
+        /// </summary>
+        internal static string button_dirrepack {
+            get {
+                return ResourceManager.GetString("button_dirrepack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Путь к файлу прошивки.
+        /// </summary>
+        internal static string button_rampath {
+            get {
+                return ResourceManager.GetString("button_rampath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Скопировано в буфер.
         /// </summary>
         internal static string copy_clip {
             get {
                 return ResourceManager.GetString("copy_clip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Количество bin файлов прошивки.
+        /// </summary>
+        internal static string count_bin {
+            get {
+                return ResourceManager.GetString("count_bin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Количество bin файлов внутри прошивки.
+        /// </summary>
+        internal static string count_inside_bin {
+            get {
+                return ResourceManager.GetString("count_inside_bin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Количество конфигурационных файлов внутри прошивки.
+        /// </summary>
+        internal static string count_inside_conf {
+            get {
+                return ResourceManager.GetString("count_inside_conf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на контрольная сумма.
+        /// </summary>
+        internal static string crc {
+            get {
+                return ResourceManager.GetString("crc", resourceCulture);
             }
         }
         
@@ -113,6 +167,33 @@ namespace FirehoseFinder.Properties {
             get {
                 object obj = ResourceManager.GetObject("Fh_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Файл.
+        /// </summary>
+        internal static string file {
+            get {
+                return ResourceManager.GetString("file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Подписант прошивки.
+        /// </summary>
+        internal static string firmware_signer {
+            get {
+                return ResourceManager.GetString("firmware_signer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Версия прошивки.
+        /// </summary>
+        internal static string firmware_version {
+            get {
+                return ResourceManager.GetString("firmware_version", resourceCulture);
             }
         }
         
@@ -165,6 +246,42 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на адрес.
+        /// </summary>
+        internal static string offset {
+            get {
+                return ResourceManager.GetString("offset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Версия упаковщика.
+        /// </summary>
+        internal static string packer_version {
+            get {
+                return ResourceManager.GetString("packer_version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Версия телефона.
+        /// </summary>
+        internal static string phone_version {
+            get {
+                return ResourceManager.GetString("phone_version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Параметры прошивки.
+        /// </summary>
+        internal static string repack_parsing_header {
+            get {
+                return ResourceManager.GetString("repack_parsing_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap russia_flags_flag_17058 {
@@ -175,12 +292,183 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на размер.
+        /// </summary>
+        internal static string size {
+            get {
+                return ResourceManager.GetString("size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Начали распаковку ....
+        /// </summary>
+        internal static string started_unpacking {
+            get {
+                return ResourceManager.GetString("started_unpacking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Декодируем ....
+        /// </summary>
+        internal static string status_decode {
+            get {
+                return ResourceManager.GetString("status_decode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Читаем ....
+        /// </summary>
+        internal static string status_read {
+            get {
+                return ResourceManager.GetString("status_read", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Заголовок прошивки считан успешно..
+        /// </summary>
+        internal static string status_repack_complete {
+            get {
+                return ResourceManager.GetString("status_repack_complete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Заголовок прошивки декодирован..
+        /// </summary>
+        internal static string status_repack_decoded {
+            get {
+                return ResourceManager.GetString("status_repack_decoded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Открыть папку в Проводнике.
+        /// </summary>
+        internal static string status_repack_open_folder {
+            get {
+                return ResourceManager.GetString("status_repack_open_folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Парсинг шапки прошивки завершился удачно.
+        /// </summary>
+        internal static string status_repack_parsing_header_complite {
+            get {
+                return ResourceManager.GetString("status_repack_parsing_header_complite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Парсинг шапки прошивки завершился неудачно.
+        /// </summary>
+        internal static string status_repack_parsing_header_failed {
+            get {
+                return ResourceManager.GetString("status_repack_parsing_header_failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Выберите путь к прошивке и директорию для распаковки.
+        /// </summary>
+        internal static string status_repack_start {
+            get {
+                return ResourceManager.GetString("status_repack_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Данная прошивка не может быть распакована, так как состоит не из одного файла, либо некорректно декодирована!.
+        /// </summary>
+        internal static string status_repack_unpacked_failed {
+            get {
+                return ResourceManager.GetString("status_repack_unpacked_failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Операция распаковки файлов прошивки прервана пользователем.
+        /// </summary>
+        internal static string status_repack_unpacking_cancel {
+            get {
+                return ResourceManager.GetString("status_repack_unpacking_cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Прошивка успешно распакована в указанную директорию.
+        /// </summary>
+        internal static string status_repack_unpacking_complite {
+            get {
+                return ResourceManager.GetString("status_repack_unpacking_complite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Распаковка файлов прошивки выполнена на.
+        /// </summary>
+        internal static string status_repack_unpacking_complited {
+            get {
+                return ResourceManager.GetString("status_repack_unpacking_complited", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Для сброса нажмите кнопку и выберите &quot;Отмена&quot;.
+        /// </summary>
+        internal static string tip_cancel {
+            get {
+                return ResourceManager.GetString("tip_cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Система дешифровки - только DES. Количество знаков в ключе меньше 16 будет дополнено &apos;0&apos; в начале..
+        /// </summary>
+        internal static string tip_decode {
+            get {
+                return ResourceManager.GetString("tip_decode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Выберите из списка или введите вручную.
+        /// </summary>
+        internal static string tip_row {
+            get {
+                return ResourceManager.GetString("tip_row", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap united_kingdom_flags_flag_17079 {
             get {
                 object obj = ResourceManager.GetObject("united_kingdom_flags_flag_17079", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Что-то непонятное.
+        /// </summary>
+        internal static string unknown {
+            get {
+                return ResourceManager.GetString("unknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отображаем блок первых символов ....
+        /// </summary>
+        internal static string userstate_show_first {
+            get {
+                return ResourceManager.GetString("userstate_show_first", resourceCulture);
             }
         }
         
