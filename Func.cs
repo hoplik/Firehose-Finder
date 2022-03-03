@@ -261,6 +261,7 @@ namespace FirehoseFinder
                                 hashbytes = rsaPSS.ComputeHash(StringToByteArray(certs[rootcert - 1]));
                                 break;
                             default:
+                                //hashbytes = mysha256.ComputeHash(StringToByteArray(certs[rootcert - 1]));
                                 hashbytes = null;
                                 break;
                         }
@@ -270,7 +271,7 @@ namespace FirehoseFinder
                 {
                     SHAstr.Append(BitConverter.ToString(hashbytes));
                     SHAstr.Replace("-", string.Empty);
-                    while (SHAstr.Length < 64) SHAstr.Insert(0, "0");
+                    while (SHAstr.Length < 64) SHAstr.Insert(0, '0');
                 }
             }
             return SHAstr.ToString();
