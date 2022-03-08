@@ -117,7 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="button_dump_cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label_dump_max.Size" type="System.Drawing.Size, System.Drawing">
+    <value>310, 16</value>
+  </data>
+  <data name="label_dump_max.Text" xml:space="preserve">
+    <value>You can select no more than {0} sectors for Disk {1}</value>
+  </data>
+  <data name="textBox_count_dump.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 22</value>
+  </data>
+  <data name="label_count1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>383, 24</value>
+  </data>
+  <data name="label_count1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 16</value>
+  </data>
+  <data name="label_count1.Text" xml:space="preserve">
+    <value>apiece</value>
+  </data>
+  <data name="label_count_dump.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 24</value>
+  </data>
+  <data name="label_count_dump.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 16</value>
+  </data>
+  <data name="label_count_dump.Text" xml:space="preserve">
+    <value>in quantity</value>
+  </data>
+  <data name="textBox_start_dump.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 21</value>
+  </data>
+  <data name="label_start_dump.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 16</value>
+  </data>
+  <data name="label_start_dump.Text" xml:space="preserve">
+    <value>starting from the number</value>
+  </data>
+  <data name="groupBox_dump.Text" xml:space="preserve">
+    <value>Dump sectors</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAQAAEABACXOwIAFgAAAIlQTkcNChoKAAAADUlIRFIAAAKmAAACiggGAAAA7xWZ0gAAIABJ
@@ -2561,5 +2603,8 @@
         poQQQgghZC+gYUoIIYQQQvYCGqaEEELIHvIn9z/KPLPk0kHDlBBCCNlPmGeWXDr+fw9DftBtgZ3sAAAA
         AElFTkSuQmCC
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Sectors to dump</value>
   </data>
 </root>

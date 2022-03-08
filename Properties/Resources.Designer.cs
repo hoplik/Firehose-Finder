@@ -151,6 +151,33 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на  секторов для .
+        /// </summary>
+        internal static string dump_select_disc {
+            get {
+                return ResourceManager.GetString("dump_select_disc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы можете выбрать не более .
+        /// </summary>
+        internal static string dump_select_sec {
+            get {
+                return ResourceManager.GetString("dump_select_sec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы можете выбрать не более {0} секторов для Диск {1}.
+        /// </summary>
+        internal static string dump_select_sectors {
+            get {
+                return ResourceManager.GetString("dump_select_sectors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
         /// </summary>
         internal static System.Drawing.Icon fh {

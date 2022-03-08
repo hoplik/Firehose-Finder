@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace FirehoseFinder
@@ -7,6 +8,7 @@ namespace FirehoseFinder
     {
         int max_sectors; //Получили максимальное количество секторов для дампа с основной формы
         string selected_lun; //Выбранный диск
+        ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
 
         /// <summary>
         /// Инициализация контролов формы
@@ -35,7 +37,7 @@ namespace FirehoseFinder
         private void Button_dump_cancel_Click(object sender, EventArgs e)
         {
             Hide();
-            label_dump_max.Text = "Вы можете выбрать не более {0} секторов для Диск {1}";
+            label_dump_max.Text = LocRes.GetString("dump_select_sectors");
             textBox_start_dump.Text = "0";
             textBox_count_dump.Text = "0";
             DialogResult = DialogResult.Cancel;
@@ -79,7 +81,7 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Dump_Sectors_Shown(object sender, EventArgs e)
         {
-            label_dump_max.Text = string.Format("Вы можете выбрать не более {0} секторов для {1}", max_sectors, selected_lun);
+            label_dump_max.Text = LocRes.GetString("dump_select_sec") + max_sectors.ToString() + LocRes.GetString("dump_select_disc") + selected_lun;
             textBox_count_dump.Text = max_sectors.ToString();
         }
 

@@ -153,6 +153,18 @@
     <value>CRC</value>
     <comment>контрольная сумма</comment>
   </data>
+  <data name="dump_select_disc" xml:space="preserve">
+    <value> sectors for </value>
+    <comment> секторов для </comment>
+  </data>
+  <data name="dump_select_sec" xml:space="preserve">
+    <value>You can select no more than </value>
+    <comment>Вы можете выбрать не более</comment>
+  </data>
+  <data name="dump_select_sectors" xml:space="preserve">
+    <value>You can select no more than {0} sectors for Disk {1}</value>
+    <comment>Вы можете выбрать не более {0} секторов для Диск {1}</comment>
+  </data>
   <data name="file" xml:space="preserve">
     <value>File</value>
     <comment>Файл</comment>

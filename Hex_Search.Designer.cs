@@ -330,7 +330,7 @@ namespace FirehoseFinder
             this.Controls.Add(this.statusStrip_search);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Hex_Search";
-            this.Text = "Hex_Search";
+            this.Text = "Бинарный поиск";
             this.statusStrip_search.ResumeLayout(false);
             this.statusStrip_search.PerformLayout();
             this.tableLayoutPanel_hs.ResumeLayout(false);

@@ -148,6 +148,15 @@
   <data name="crc" xml:space="preserve">
     <value>контрольная сумма</value>
   </data>
+  <data name="dump_select_disc" xml:space="preserve">
+    <value> секторов для </value>
+  </data>
+  <data name="dump_select_sec" xml:space="preserve">
+    <value>Вы можете выбрать не более </value>
+  </data>
+  <data name="dump_select_sectors" xml:space="preserve">
+    <value>Вы можете выбрать не более {0} секторов для Диск {1}</value>
+  </data>
   <data name="fh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\fh.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
