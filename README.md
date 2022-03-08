@@ -3,4 +3,4 @@
 http://4pda.ru/forum/index.php?showtopic=643084
 
 Для получения полной справки по программе, пожалуйста, смотрите файл "help".
-https://github.com/hoplik/Firehose-Finder/blob/master/help_ru.pdf
+https://github.com/hoplik/Firehose-Finder/blob/master/Resources/help_ru.pdf
