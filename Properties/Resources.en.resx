@@ -166,8 +166,8 @@
     <comment>Вы можете выбрать не более {0} секторов для Диск {1}</comment>
   </data>
   <data name="file" xml:space="preserve">
-    <value>File</value>
-    <comment>Файл</comment>
+    <value>file</value>
+    <comment>файл</comment>
   </data>
   <data name="firmware_signer" xml:space="preserve">
     <value>Firmware signer</value>
@@ -180,6 +180,54 @@
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Greeting_en.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="hex_files" xml:space="preserve">
+    <value>files</value>
+    <comment>файлах</comment>
+  </data>
+  <data name="hex_found" xml:space="preserve">
+    <value>found</value>
+    <comment>найдено</comment>
+  </data>
+  <data name="hex_from" xml:space="preserve">
+    <value>from</value>
+    <comment>из</comment>
+  </data>
+  <data name="hex_in" xml:space="preserve">
+    <value>in</value>
+    <comment>в</comment>
+  </data>
+  <data name="hex_matches" xml:space="preserve">
+    <value>matches</value>
+    <comment>совпадений</comment>
+  </data>
+  <data name="hex_mess_stopoper" xml:space="preserve">
+    <value>Be careful, you are attempting to stop a lengthy search procedure. By pressing the "Ok" button, you confirm the operation.</value>
+    <comment>Осторожно, вы предпринимаете попытку остановить длительную процедуру поиска. Нажимая кнопку "Ok", вы подтверждаете выполнение операции.</comment>
+  </data>
+  <data name="hex_not" xml:space="preserve">
+    <value>not</value>
+    <comment>не</comment>
+  </data>
+  <data name="hex_note_cancelsearch" xml:space="preserve">
+    <value>The current search was canceled by the user</value>
+    <comment>Текущий поиск отменён пользователем</comment>
+  </data>
+  <data name="hex_note_copyoffset" xml:space="preserve">
+    <value>The address is copied to the clipboard</value>
+    <comment>Адрес скопирован в буфер обмена</comment>
+  </data>
+  <data name="hex_note_process" xml:space="preserve">
+    <value>Request processing ...</value>
+    <comment>Обработка запроса ...</comment>
+  </data>
+  <data name="hex_processed" xml:space="preserve">
+    <value>processed</value>
+    <comment>обработан</comment>
+  </data>
+  <data name="hex_warn_stopoper" xml:space="preserve">
+    <value>Attention, stopping a long operation!</value>
+    <comment>Внимание, остановка длительной операции!</comment>
   </data>
   <data name="message_body_need_fields" xml:space="preserve">
     <value>Please, select the manufacturer's name from the list or enter a new one, if there is no suitable value.</value>
@@ -268,6 +316,9 @@
   <data name="status_repack_unpacking_complited" xml:space="preserve">
     <value>Unpacking of firmware files is completed on</value>
     <comment>Распаковка файлов прошивки выполнена на</comment>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
   </data>
   <data name="tip_cancel" xml:space="preserve">
     <value>To reset, press the button and select "Cancel"</value>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace FirehoseFinder
@@ -12,6 +13,8 @@ namespace FirehoseFinder
     {
         Func func = new Func();
         Hashtable TableGroups = new Hashtable();
+        readonly ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
+
         public Hex_Search()
         {
             InitializeComponent();
@@ -43,7 +46,7 @@ namespace FirehoseFinder
         {
             Clipboard.Clear();
             Clipboard.SetText(listView_search.SelectedItems[0].Text);
-            toolStripStatusLabel_search.Text = "Адрес скопирован в буфер обмена";
+            toolStripStatusLabel_search.Text = LocRes.GetString("hex_note_copyoffset");
         }
 
         private void RadioButton_search_text_CheckedChanged(object sender, EventArgs e)
@@ -52,7 +55,7 @@ namespace FirehoseFinder
             {
                 textBox_byte_search.Enabled = false;
                 textBox_hexsearch.Enabled = true;
-                textBox_hexsearch.Text=string.Empty;
+                textBox_hexsearch.Text = string.Empty;
             }
         }
 
@@ -61,7 +64,7 @@ namespace FirehoseFinder
             if (radioButton_byte_search.Checked == true)
             {
                 textBox_byte_search.Enabled = true;
-                textBox_byte_search.Text=string.Empty;
+                textBox_byte_search.Text = string.Empty;
                 textBox_hexsearch.Enabled = false;
             }
         }
@@ -72,9 +75,8 @@ namespace FirehoseFinder
             if (backgroundWorker_hex_search.IsBusy)
             {
                 //Если паралельный поток ещё выполняется, предлагаем остановить
-                if (MessageBox.Show("Осторожно, вы предпринимаете попытку остановить длительную процедуру поиска" +
-                    " Нажимая кнопку \"Ok\", вы подтверждаете выполнение операции.",
-                    "Внимание, остановка длительной операции!",
+                if (MessageBox.Show(LocRes.GetString("hex_mess_stopoper"),
+                    LocRes.GetString("hex_warn_stopoper"),
                     MessageBoxButtons.OKCancel,
                     MessageBoxIcon.Warning,
                     MessageBoxDefaultButton.Button2,
@@ -82,7 +84,7 @@ namespace FirehoseFinder
                 {
 
                     backgroundWorker_hex_search.CancelAsync();
-                    toolStripStatusLabel_search.Text = "Текущий поиск отменён пользователем.";
+                    toolStripStatusLabel_search.Text = LocRes.GetString("hex_note_cancelsearch");
                     toolStripProgressBar_search.Value = 0;
                 }
             }
@@ -119,7 +121,7 @@ namespace FirehoseFinder
                     CreateTableGroups(fileInfo.Name);
                 }
                 //Создаём сущность Словарь+поиск и её отправляем в поток
-                toolStripStatusLabel_search.Text = "Обработка запроса ...";
+                toolStripStatusLabel_search.Text = LocRes.GetString("hex_note_process");
                 backgroundWorker_hex_search.RunWorkerAsync(new Search_Hex(inputsearch, textBox_byte_search.Text));
             }
         }
@@ -167,8 +169,17 @@ namespace FirehoseFinder
             else
             {
                 toolStripProgressBar_search.Value = 0;
-                if (listView_search.Items.Count==0) toolStripStatusLabel_search.Text = "Совпадений не найдено";
-                else toolStripStatusLabel_search.Text =string.Format("Найдено {0} совпадений в {1} из {2} файлах.", listView_search.Items.Count, listView_search.Groups.Count, TableGroups.Count);
+                if (listView_search.Items.Count==0) toolStripStatusLabel_search.Text = LocRes.GetString("hex_matches") + '\u0020' +
+                        LocRes.GetString("hex_not") + '\u0020' +
+                        LocRes.GetString("hex_found");
+                else toolStripStatusLabel_search.Text = LocRes.GetString("hex_found") + '\u0020' +
+                        listView_search.Items.Count.ToString() + '\u0020' +
+                        LocRes.GetString("hex_matches") + '\u0020' +
+                        LocRes.GetString("hex_in") + '\u0020' +
+                        listView_search.Groups.Count.ToString() + '\u0020' +
+                        LocRes.GetString("hex_from") + '\u0020' +
+                        TableGroups.Count.ToString() + '\u0020' +
+                        LocRes.GetString("hex_files");
             }
         }
 
@@ -178,7 +189,14 @@ namespace FirehoseFinder
             {
                 List<Search_Result> result = (List<Search_Result>)e.UserState;
                 //Заполняем листвью списком совпадений
-                if (result.Count == 1) toolStripStatusLabel_search.Text =string.Format("Совпадений в файле {0} не найдено - {1}% обработано.", result[0].File_Name, e.ProgressPercentage);
+                if (result.Count == 1) toolStripStatusLabel_search.Text = LocRes.GetString("hex_matches") + '\u0020' +
+                        LocRes.GetString("hex_in") + '\u0020' +
+                        LocRes.GetString("file") + '\u0020' +
+                        result[0].File_Name + '\u0020' +
+                        LocRes.GetString("hex_not") + '\u0020' +
+                        LocRes.GetString("hex_found") + '\u0020' + '\u002D' + '\u0020' +
+                        e.ProgressPercentage.ToString() + '\u0025' + '\u0020' +
+                        LocRes.GetString("hex_processed");
                 else
                 {
                     foreach (Search_Result sr in result)
@@ -195,7 +213,12 @@ namespace FirehoseFinder
                             hsearchres.SubItems.Add(sr.File_Name);
                             hsearchres.Group=(ListViewGroup)TableGroups[sr.File_Name];
                             listView_search.Items.Add(hsearchres);
-                            toolStripStatusLabel_search.Text = string.Format("Обработан файл {0}, найдено {1} совпадений.", sr.File_Name, listView_search.Items.Count);
+                            toolStripStatusLabel_search.Text = LocRes.GetString("hex_processed") + '\u0020' +
+                                LocRes.GetString("file") + '\u0020' +
+                                sr.File_Name + '\u002C' + '\u0020' +
+                                LocRes.GetString("hex_found") + '\u0020' +
+                                listView_search.Items.Count.ToString() + '\u0020' +
+                                LocRes.GetString("hex_matches");
                         }
                     }
                     for (int i = 0; i < listView_search.Columns.Count; i++) listView_search.Columns[i].Width = -1;

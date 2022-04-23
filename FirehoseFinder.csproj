@@ -37,7 +37,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>22.4.16.0</ApplicationVersion>
+    <ApplicationVersion>22.4.23.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -210,10 +210,10 @@
       <DependentUpon>Greeting.cs</DependentUpon>
     </Compile>
     <Compile Include="Guide.cs" />
-    <Compile Include="Hex_Search.cs">
+    <Compile Include="Forms\Hex_Search.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hex_Search.Designer.cs">
+    <Compile Include="Forms\Hex_Search.Designer.cs">
       <DependentUpon>Hex_Search.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\InsertModelForm.cs">
@@ -267,7 +267,10 @@
     <EmbeddedResource Include="Forms\Greeting.en.resx">
       <DependentUpon>Greeting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hex_Search.resx">
+    <EmbeddedResource Include="Forms\Hex_Search.en.resx">
+      <DependentUpon>Hex_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hex_Search.resx">
       <DependentUpon>Hex_Search.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InsertModelForm.en.resx">

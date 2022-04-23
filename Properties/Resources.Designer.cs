@@ -198,7 +198,7 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Файл.
+        ///   Ищет локализованную строку, похожую на файл.
         /// </summary>
         internal static string file {
             get {
@@ -233,6 +233,114 @@ namespace FirehoseFinder.Properties {
         internal static string Greeting {
             get {
                 return ResourceManager.GetString("Greeting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на файлах.
+        /// </summary>
+        internal static string hex_files {
+            get {
+                return ResourceManager.GetString("hex_files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на найдено.
+        /// </summary>
+        internal static string hex_found {
+            get {
+                return ResourceManager.GetString("hex_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на из.
+        /// </summary>
+        internal static string hex_from {
+            get {
+                return ResourceManager.GetString("hex_from", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на в.
+        /// </summary>
+        internal static string hex_in {
+            get {
+                return ResourceManager.GetString("hex_in", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на совпадений.
+        /// </summary>
+        internal static string hex_matches {
+            get {
+                return ResourceManager.GetString("hex_matches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Осторожно, вы предпринимаете попытку остановить длительную процедуру поиска. Нажимая кнопку &quot;Ok&quot;, вы подтверждаете выполнение операции..
+        /// </summary>
+        internal static string hex_mess_stopoper {
+            get {
+                return ResourceManager.GetString("hex_mess_stopoper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на не.
+        /// </summary>
+        internal static string hex_not {
+            get {
+                return ResourceManager.GetString("hex_not", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Текущий поиск отменён пользователем.
+        /// </summary>
+        internal static string hex_note_cancelsearch {
+            get {
+                return ResourceManager.GetString("hex_note_cancelsearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Адрес скопирован в буфер обмена.
+        /// </summary>
+        internal static string hex_note_copyoffset {
+            get {
+                return ResourceManager.GetString("hex_note_copyoffset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Обработка запроса ....
+        /// </summary>
+        internal static string hex_note_process {
+            get {
+                return ResourceManager.GetString("hex_note_process", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на обработан.
+        /// </summary>
+        internal static string hex_processed {
+            get {
+                return ResourceManager.GetString("hex_processed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Внимание, остановка длительной операции!.
+        /// </summary>
+        internal static string hex_warn_stopoper {
+            get {
+                return ResourceManager.GetString("hex_warn_stopoper", resourceCulture);
             }
         }
         

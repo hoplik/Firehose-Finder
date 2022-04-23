@@ -164,7 +164,7 @@
     <value>..\Resources\Fh_Image.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="file" xml:space="preserve">
-    <value>Файл</value>
+    <value>файл</value>
   </data>
   <data name="firmware_signer" xml:space="preserve">
     <value>Подписант прошивки</value>
@@ -174,6 +174,42 @@
   </data>
   <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Greeting.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="hex_files" xml:space="preserve">
+    <value>файлах</value>
+  </data>
+  <data name="hex_found" xml:space="preserve">
+    <value>найдено</value>
+  </data>
+  <data name="hex_from" xml:space="preserve">
+    <value>из</value>
+  </data>
+  <data name="hex_in" xml:space="preserve">
+    <value>в</value>
+  </data>
+  <data name="hex_matches" xml:space="preserve">
+    <value>совпадений</value>
+  </data>
+  <data name="hex_mess_stopoper" xml:space="preserve">
+    <value>Осторожно, вы предпринимаете попытку остановить длительную процедуру поиска. Нажимая кнопку "Ok", вы подтверждаете выполнение операции.</value>
+  </data>
+  <data name="hex_not" xml:space="preserve">
+    <value>не</value>
+  </data>
+  <data name="hex_note_cancelsearch" xml:space="preserve">
+    <value>Текущий поиск отменён пользователем</value>
+  </data>
+  <data name="hex_note_copyoffset" xml:space="preserve">
+    <value>Адрес скопирован в буфер обмена</value>
+  </data>
+  <data name="hex_note_process" xml:space="preserve">
+    <value>Обработка запроса ...</value>
+  </data>
+  <data name="hex_processed" xml:space="preserve">
+    <value>обработан</value>
+  </data>
+  <data name="hex_warn_stopoper" xml:space="preserve">
+    <value>Внимание, остановка длительной операции!</value>
   </data>
   <data name="message_body_need_fields" xml:space="preserve">
     <value>Пожалуйста, выберите наименование производителя из списка или введите, при отсутствии подходящего значения.</value>

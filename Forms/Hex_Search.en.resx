@@ -117,19 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>154, 17</value>
-  </metadata>
-  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>358, 17</value>
-  </metadata>
-  <metadata name="backgroundWorker_hex_search.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>525, 17</value>
-  </metadata>
-  <metadata name="statusStrip_search.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>794, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripStatusLabel_search.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 20</value>
+  </data>
+  <data name="toolStripStatusLabel_search.Text" xml:space="preserve">
+    <value>Alerts</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Looking for a sequence</value>
+  </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>Offset (hex, 0x)</value>
+  </data>
+  <data name="columnHeader3.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="radioButton_search_text.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 20</value>
+  </data>
+  <data name="radioButton_search_text.Text" xml:space="preserve">
+    <value>text</value>
+  </data>
+  <data name="radioButton_byte_search.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 20</value>
+  </data>
+  <data name="radioButton_byte_search.Text" xml:space="preserve">
+    <value>byte</value>
+  </data>
+  <data name="groupBox_byte_text.Text" xml:space="preserve">
+    <value>A set of characters to search for</value>
+  </data>
+  <data name="button_start_search.Text" xml:space="preserve">
+    <value>search path</value>
+  </data>
+  <data name="radioButton_dir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 20</value>
+  </data>
+  <data name="radioButton_dir.Text" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="radioButton_file.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="radioButton_file.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="groupBox_hs.Text" xml:space="preserve">
+    <value>Search area</value>
+  </data>
+  <data name="textBox_addlast.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 56</value>
+  </data>
+  <data name="textBox_addlast.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 22</value>
+  </data>
+  <data name="textBox_addfirst.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 27</value>
+  </data>
+  <data name="textBox_addfirst.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 22</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 16</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>at the end</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 16</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>at the beginning</value>
+  </data>
+  <data name="groupBox_addbytes.Text" xml:space="preserve">
+    <value>Add bytes</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAQAAEABACXOwIAFgAAAIlQTkcNChoKAAAADUlIRFIAAAKmAAACiggGAAAA7xWZ0gAAIABJ
@@ -2573,5 +2636,8 @@
         poQQQgghZC+gYUoIIYQQQvYCGqaEEELIHvIn9z/KPLPk0kHDlBBCCNlPmGeWXDr+fw9DftBtgZ3sAAAA
         AElFTkSuQmCC
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Binary search</value>
   </data>
 </root>
