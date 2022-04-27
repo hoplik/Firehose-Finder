@@ -117,4 +117,56 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label_ss_ws.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 16</value>
+  </data>
+  <data name="label_ss_ws.Text" xml:space="preserve">
+    <value>byte</value>
+  </data>
+  <data name="label_secsize_ws.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 16</value>
+  </data>
+  <data name="label_secsize_ws.Text" xml:space="preserve">
+    <value>with sector size (dec)</value>
+  </data>
+  <data name="label_disk_ws.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 16</value>
+  </data>
+  <data name="label_disk_ws.Text" xml:space="preserve">
+    <value>to disk number (dec)</value>
+  </data>
+  <data name="label_count1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 16</value>
+  </data>
+  <data name="label_count1.Text" xml:space="preserve">
+    <value>sectors</value>
+  </data>
+  <data name="label_count_ws.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 16</value>
+  </data>
+  <data name="label_count_ws.Text" xml:space="preserve">
+    <value>in quantity (dec)</value>
+  </data>
+  <data name="label_start_ws.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 16</value>
+  </data>
+  <data name="label_start_ws.Text" xml:space="preserve">
+    <value>starting from the sector number (hex, 0x)</value>
+  </data>
+  <data name="groupBox_ws.Text" xml:space="preserve">
+    <value>Write bin file to sectors</value>
+  </data>
+  <data name="button_ws_cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="label_storinfo_ws.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 16</value>
+  </data>
+  <data name="label_storinfo_ws.Text" xml:space="preserve">
+    <value>Current sector size, total sectors</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Write sectors</value>
+  </data>
 </root>

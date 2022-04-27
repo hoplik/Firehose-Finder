@@ -624,5 +624,23 @@ namespace FirehoseFinder.Properties {
                 return ResourceManager.GetString("version", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Текущий размер сектора.
+        /// </summary>
+        internal static string write_ss {
+            get {
+                return ResourceManager.GetString("write_ss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на всего секторов.
+        /// </summary>
+        internal static string write_ts {
+            get {
+                return ResourceManager.GetString("write_ts", resourceCulture);
+            }
+        }
     }
 }

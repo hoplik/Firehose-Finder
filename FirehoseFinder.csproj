@@ -236,10 +236,10 @@
       <DependentUpon>Resources.en.resx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="Write_Sectors.cs">
+    <Compile Include="Forms\Write_Sectors.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Write_Sectors.Designer.cs">
+    <Compile Include="Forms\Write_Sectors.Designer.cs">
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </Compile>
     <None Include="Resources\Greeting_en.txt" />
@@ -280,7 +280,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.en.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Write_Sectors.resx">
+    <EmbeddedResource Include="Forms\Write_Sectors.en.resx">
+      <DependentUpon>Write_Sectors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Write_Sectors.resx">
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Resources\Greeting.txt" />

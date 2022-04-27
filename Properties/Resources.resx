@@ -304,4 +304,10 @@
   <data name="version" xml:space="preserve">
     <value>Версия</value>
   </data>
+  <data name="write_ss" xml:space="preserve">
+    <value>Текущий размер сектора</value>
+  </data>
+  <data name="write_ts" xml:space="preserve">
+    <value>всего секторов</value>
+  </data>
 </root>

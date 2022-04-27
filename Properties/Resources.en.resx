@@ -345,4 +345,12 @@
     <value>Version</value>
     <comment>Версия</comment>
   </data>
+  <data name="write_ss" xml:space="preserve">
+    <value>Current sector size</value>
+    <comment>Текущий размер сектора</comment>
+  </data>
+  <data name="write_ts" xml:space="preserve">
+    <value>total sectors</value>
+    <comment>всего секторов</comment>
+  </data>
 </root>
