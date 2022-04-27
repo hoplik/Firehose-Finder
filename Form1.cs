@@ -76,6 +76,7 @@ namespace FirehoseFinder
             }
             catch (OverflowException)
             {
+                //Просто игнорируем ошибку
             }
         }
 
