@@ -8,7 +8,7 @@ namespace FirehoseFinder
 {
     partial class AboutBox1 : Form
     {
-        ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(AboutBox1).Assembly);
+        ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
 
         public AboutBox1()
         {
@@ -17,7 +17,7 @@ namespace FirehoseFinder
             labelProductName.Text = AssemblyProduct;
             labelVersion.Text = string.Format("{0} {1}", LocRes.GetString("version"), AssemblyVersion);
             labelCopyright.Text = AssemblyCopyright;
-            textBoxDescription.Text = AssemblyDescription;
+            textBoxDescription.Text = LocRes.GetString("about_deck");//AssemblyDescription;
         }
 
         #region Методы доступа к атрибутам сборки
@@ -136,7 +136,7 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void LogoPictureBox_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(LocRes.GetString("copy_clip") + Environment.NewLine + Application.StartupPath,LocRes.GetString("app_path"));
+            MessageBox.Show(LocRes.GetString("copy_clip") + Environment.NewLine + Application.StartupPath, LocRes.GetString("app_path"));
             Clipboard.Clear();
             Clipboard.SetText(Application.StartupPath);
         }

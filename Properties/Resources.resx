@@ -120,6 +120,9 @@
   <data name="about" xml:space="preserve">
     <value>О программе</value>
   </data>
+  <data name="about_deck" xml:space="preserve">
+    <value>Программа подбора программеров(firehose) для устройств на базе процессоров от Qualcomm.</value>
+  </data>
   <data name="app_path" xml:space="preserve">
     <value>Путь установки программы</value>
   </data>

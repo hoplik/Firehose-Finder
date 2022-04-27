@@ -70,6 +70,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Программа подбора программеров(firehose) для устройств на базе процессоров от Qualcomm..
+        /// </summary>
+        internal static string about_deck {
+            get {
+                return ResourceManager.GetString("about_deck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Путь установки программы.
         /// </summary>
         internal static string app_path {

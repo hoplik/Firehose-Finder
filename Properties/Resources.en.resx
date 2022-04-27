@@ -121,6 +121,10 @@
     <value>About</value>
     <comment>О программе</comment>
   </data>
+  <data name="about_deck" xml:space="preserve">
+    <value>The program of selection of programmers (firehose) for devices based on processors from Qualcomm.</value>
+    <comment>Программа подбора программеров(firehose) для устройств на базе процессоров от Qualcomm.</comment>
+  </data>
   <data name="app_path" xml:space="preserve">
     <value>Workdir application</value>
     <comment>Путь установки программы</comment>
@@ -316,9 +320,6 @@
   <data name="status_repack_unpacking_complited" xml:space="preserve">
     <value>Unpacking of firmware files is completed on</value>
     <comment>Распаковка файлов прошивки выполнена на</comment>
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value />
   </data>
   <data name="tip_cancel" xml:space="preserve">
     <value>To reset, press the button and select "Cancel"</value>
