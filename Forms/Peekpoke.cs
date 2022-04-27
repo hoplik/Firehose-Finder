@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Resources;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -8,11 +9,13 @@ namespace FirehoseFinder
     public partial class Peekpoke : Form
     {
         Func func = new Func();
+        ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
         private string fh_path = string.Empty; //Полный путь к программеру
+
         public Peekpoke(Formfhf formfhf)
         {
             InitializeComponent();
-            fh_path = formfhf.label_Sahara_fhf.Text;
+            fh_path = formfhf.label_Sahara_fhf.Text; //Копируем путь к программеру с основной формы
         }
 
         /// <summary>
@@ -22,8 +25,7 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Peekpoke_Load(object sender, EventArgs e)
         {
-            toolTip_pp.SetToolTip(groupBox_fh_aarch, "Если в логе появляется ошибка о некорректном значении команды (HANDLE_PEEK_FAILURE)," +
-                " попробуйте изменить выбор архитектуры процессора для этого программера.");
+            toolTip_pp.SetToolTip(groupBox_fh_aarch, LocRes.GetString("pp_note"));
             using (BinaryReader reader = new BinaryReader(File.Open(fh_path, FileMode.Open)))
             {
                 reader.BaseStream.Position = 4;

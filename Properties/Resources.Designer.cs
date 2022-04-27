@@ -417,6 +417,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Если в логе появляется ошибка о некорректном значении команды (HANDLE_PEEK_FAILURE), попробуйте изменить выбор архитектуры процессора для этого программера..
+        /// </summary>
+        internal static string pp_note {
+            get {
+                return ResourceManager.GetString("pp_note", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Параметры прошивки.
         /// </summary>
         internal static string repack_parsing_header {

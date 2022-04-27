@@ -261,6 +261,10 @@
     <value>Phone version</value>
     <comment>Версия телефона</comment>
   </data>
+  <data name="pp_note" xml:space="preserve">
+    <value>If an error appears in the log about an incorrect command value (HANDLE_SEEK_FAILURE), try changing the choice of processor architecture for this programmer.</value>
+    <comment>Если в логе появляется ошибка о некорректном значении команды (HANDLE_PEEK_FAILURE), попробуйте изменить выбор архитектуры процессора для этого программера.</comment>
+  </data>
   <data name="repack_parsing_header" xml:space="preserve">
     <value>Firmware Parameters</value>
     <comment>Параметры прошивки</comment>

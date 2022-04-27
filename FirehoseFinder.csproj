@@ -222,10 +222,10 @@
     <Compile Include="Forms\InsertModelForm.Designer.cs">
       <DependentUpon>InsertModelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Peekpoke.cs">
+    <Compile Include="Forms\Peekpoke.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Peekpoke.Designer.cs">
+    <Compile Include="Forms\Peekpoke.Designer.cs">
       <DependentUpon>Peekpoke.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -276,6 +276,9 @@
     <EmbeddedResource Include="Forms\InsertModelForm.en.resx">
       <DependentUpon>InsertModelForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Peekpoke.en.resx">
+      <DependentUpon>Peekpoke.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.en.Designer.cs</LastGenOutput>
@@ -302,7 +305,7 @@
     <EmbeddedResource Include="Forms\InsertModelForm.resx">
       <DependentUpon>InsertModelForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Peekpoke.resx">
+    <EmbeddedResource Include="Forms\Peekpoke.resx">
       <DependentUpon>Peekpoke.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -235,6 +235,9 @@
   <data name="phone_version" xml:space="preserve">
     <value>Версия телефона</value>
   </data>
+  <data name="pp_note" xml:space="preserve">
+    <value>Если в логе появляется ошибка о некорректном значении команды (HANDLE_PEEK_FAILURE), попробуйте изменить выбор архитектуры процессора для этого программера.</value>
+  </data>
   <data name="repack_parsing_header" xml:space="preserve">
     <value>Параметры прошивки</value>
   </data>
