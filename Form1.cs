@@ -19,8 +19,8 @@ namespace FirehoseFinder
 {
     public partial class Formfhf : Form
     {
-        Func func = new Func(); // Подключили функции
-        Guide guide = new Guide();
+        Func func = new Func(); //Подключили функции
+        Guide guide = new Guide(); //Подключили справочник
         bool waitSahara = false; //Ждём ли мы автоперезагрузку с получением ID Sahara
         bool FHAlreadyLoaded = false; //Был ли успешно загружен программер (не надо грузить повторно)
         bool NeedReset = false; //Требуется ли перезагрузка устройства после работы с Сахарой
@@ -29,6 +29,7 @@ namespace FirehoseFinder
         internal DeviceData Global_ADB_Device = new DeviceData();
         internal string Global_FB_Device = string.Empty;
         internal Dictionary<string, string> Connected_Devices = new Dictionary<string, string>(); //Список подключённых ADB устройств
+        //Подтянули перевод на другие языки
         readonly ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
 
         /// <summary>
@@ -115,7 +116,7 @@ namespace FirehoseFinder
             //Обнуляем глобальные переменные
             Flash_Params.SetValue(flash_start, 0);
             //Всплывающие подсказки к разным контролам
-            toolTip1.SetToolTip(button_findIDs, "Подключите устройство и нажмите для получения идентификаторов");
+            toolTip1.SetToolTip(button_findIDs, LocRes.GetString("tt_find"));
             toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
             toolTip1.SetToolTip(button_useSahara_fhf, "Нажмите для проверки выбранного программера");
             CheckListPorts();

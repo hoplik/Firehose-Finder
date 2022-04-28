@@ -598,6 +598,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Подключите устройство и нажмите для получения идентификаторов.
+        /// </summary>
+        internal static string tt_find {
+            get {
+                return ResourceManager.GetString("tt_find", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap united_kingdom_flags_flag_17079 {

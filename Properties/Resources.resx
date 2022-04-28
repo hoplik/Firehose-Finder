@@ -295,6 +295,9 @@
   <data name="tip_row" xml:space="preserve">
     <value>Выберите из списка или введите вручную</value>
   </data>
+  <data name="tt_find" xml:space="preserve">
+    <value>Подключите устройство и нажмите для получения идентификаторов</value>
+  </data>
   <data name="united_kingdom_flags_flag_17079" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\united_kingdom_flags_flag_17079.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

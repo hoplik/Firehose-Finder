@@ -2596,6 +2596,9 @@
   <data name="comboBox_lun_count.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="&gt;&gt;radioButton_fb_commandline.Name" xml:space="preserve">
+    <value>radioButton_fb_commandline</value>
+  </data>
   <data name="comboBox_log.ToolTip" xml:space="preserve">
     <value />
   </data>
@@ -2648,8 +2651,8 @@
   <data name="bindingNavigatorSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 32</value>
   </data>
-  <data name="textBox_fb_commandline.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="textBox_modelid.MaxLength" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="файлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 24</value>
@@ -2705,8 +2708,8 @@
   <data name="bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;groupBox_adb_commands.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>tabPage_firehose</value>
   </data>
   <data name="&gt;&gt;Column_SW_type.Name" xml:space="preserve">
     <value>Column_SW_type</value>
@@ -2731,8 +2734,8 @@
   <data name="radioButton_reboot_edl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radioButton_fb_commandline.Text" xml:space="preserve">
-    <value>Командная строка (fastboot)</value>
+  <data name="&gt;&gt;реальноПодключённыеУстройстваToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;radioButton_fb_reboot_normal.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2788,9 +2791,6 @@
   <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
     <value>toolStripSeparator1</value>
   </data>
-  <data name="label_modelid.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
@@ -2815,8 +2815,8 @@
   <data name="&gt;&gt;label_block_size.Parent" xml:space="preserve">
     <value>groupBox_block_size</value>
   </data>
-  <data name="&gt;&gt;radioButton_fb_devinfo.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="bindingNavigatorPositionItem.ToolTipText" xml:space="preserve">
+    <value>Текущее положение</value>
   </data>
   <data name="&gt;&gt;groupBox_fh_sel_path.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -3193,9 +3193,6 @@
   <data name="&gt;&gt;button_path.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tableLayoutPanel_fb.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="dataGridView_FInd_Server.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 96</value>
   </data>
@@ -3274,11 +3271,11 @@
   <data name="&gt;&gt;statusStrip_firehose.Parent" xml:space="preserve">
     <value>tabPage_firehose</value>
   </data>
-  <data name="label_total_blocks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 16</value>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>tabPage_sahara</value>
   </data>
-  <data name="&gt;&gt;columnHeader_FB_Model.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tabPage_phone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
   </data>
   <data name="groupBox_lun_count.Size" type="System.Drawing.Size, System.Drawing">
     <value>275, 47</value>
@@ -3331,10 +3328,13 @@
   <data name="button_term_clear.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
+  <data name="StartLBA.Width" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
   <data name="toolStripButton_small_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cgAAEnIBXmVb4wAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
+        cQAAEnEB89x6jgAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
         RUkUEZ0YRMS+DDI70MkTmzJnDc8iU8QT2mAEItnle90wHwTDyBduXnie5/rd133Q4ZKfAJqHFs9E08A8
         zD1emDpmYXjqRlnTFIrMk8iuGkNaxWekGEaQrHecBfw+/vPXODw6hj9whN2fh/Bt/8LSRgA3cxr/DeBZ
         9kvmTNMoHGNbIrYN+3Aj23IxgJkpds0doP3VstgmsNexhutZ9QrAms8T0zYzU5xXM46kcjsmvfvoeL2i
@@ -3394,6 +3394,9 @@
   <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;radioButton_fb_devinfo.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="groupBox_fb_commands.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -3420,9 +3423,6 @@
   </data>
   <data name="groupBox_mem_type.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="bindingNavigatorPositionItem.ToolTipText" xml:space="preserve">
-    <value>Текущее положение</value>
   </data>
   <data name="&gt;&gt;toolStripButton_small_font.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3572,6 +3572,9 @@
   <data name="groupBox_select_gpt.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="textBox_fb_commandline.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
   <data name="&gt;&gt;button_Sahara_CommandStart.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -3605,8 +3608,14 @@
   <data name="&gt;&gt;вопросОтветToolStripMenuItem.Name" xml:space="preserve">
     <value>вопросОтветToolStripMenuItem</value>
   </data>
+  <data name="&gt;&gt;groupBox_adb_commands.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="dataGridView_final.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
+  </data>
+  <data name="&gt;&gt;label_SW_Ver.Name" xml:space="preserve">
+    <value>label_SW_Ver</value>
   </data>
   <data name="сброситьВыборdeselectAllToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3647,8 +3656,11 @@
   <data name="label_total_gpt.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="&gt;&gt;radioButton_adb_reset.Parent" xml:space="preserve">
-    <value>groupBox4</value>
+  <data name="&gt;&gt;label_modelid.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="toolStripTextBox_find.ToolTipText" xml:space="preserve">
+    <value>Поиск по всем полям</value>
   </data>
   <data name="tableLayoutPanel_phone.ToolTip" xml:space="preserve">
     <value />
@@ -3680,6 +3692,9 @@
   <data name="&gt;&gt;button_ADB_start.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;textBox_soft_term.Parent" xml:space="preserve">
+    <value>groupBox_terminal</value>
+  </data>
   <data name="&gt;&gt;сохранитьСектораПоНомеруdumpSectorNumderToolStripMenuItem.Name" xml:space="preserve">
     <value>сохранитьСектораПоНомеруdumpSectorNumderToolStripMenuItem</value>
   </data>
@@ -3700,9 +3715,6 @@
   </data>
   <data name="&gt;&gt;radioButton_fb_unlock.Parent" xml:space="preserve">
     <value>groupBox_fb_commands</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>tabPage_sahara</value>
   </data>
   <data name="dataGridView_collection.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3881,6 +3893,9 @@
   <data name="radioButton_man_reset.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="button_fb_com_start.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="label_GPT_bytes.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -3943,9 +3958,6 @@
   </data>
   <data name="textBox_soft_term.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
     <value>Vertical</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
-    <value>tabControl1</value>
   </data>
   <data name="groupBox_terminal.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -4019,6 +4031,9 @@
   <data name="&gt;&gt;label_GPT_bytes.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;button_ADB_comstart.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="bindingNavigatorMovePreviousItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
@@ -4027,9 +4042,6 @@
         Puf3f/+ub/91Ct/9t0hYT3oY6Kec/29S9OK/Stan/8aRy0g3AAQMkk78l037+l83eB55BoCAfurl/xq+
         08g3AARUPCZQZsBgBQwMANAUYJgEulBVAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="textBox_modelid.MaxLength" type="System.Int32, mscorlib">
-    <value>4</value>
   </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4091,8 +4103,8 @@
   <data name="listView_GPT.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;label_select_gpt.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
+    <value>toolStripSeparator4</value>
   </data>
   <data name="groupBox_fh_sel_path.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 135</value>
@@ -4148,8 +4160,8 @@
   <data name="сохранитьВыбранныйРазделToolStripMenuItem.Text" xml:space="preserve">
     <value>Сохранить выбранный раздел (Save)</value>
   </data>
-  <data name="&gt;&gt;label_SW_Ver.Name" xml:space="preserve">
-    <value>label_SW_Ver</value>
+  <data name="&gt;&gt;bindingNavigatorSeparator2.Name" xml:space="preserve">
+    <value>bindingNavigatorSeparator2</value>
   </data>
   <data name="label_block_size.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4215,6 +4227,9 @@ _HASH</value>
   <data name="&gt;&gt;label_block_size.Name" xml:space="preserve">
     <value>label_block_size</value>
   </data>
+  <data name="&gt;&gt;label_select_gpt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;listView_GPT.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
@@ -4254,8 +4269,11 @@ _HASH</value>
   <data name="tabPage_sahara.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;label_modelid.ZOrder" xml:space="preserve">
-    <value>12</value>
+  <data name="&gt;&gt;groupBox_mem_type.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;radioButton_adb_reset.Parent" xml:space="preserve">
+    <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;comboBox_lun_count.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -4269,8 +4287,8 @@ _HASH</value>
   <data name="Column_Full.HeaderText" xml:space="preserve">
     <value>Full Ids</value>
   </data>
-  <data name="&gt;&gt;label_log.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;groupBox_lun_count.Name" xml:space="preserve">
+    <value>groupBox_lun_count</value>
   </data>
   <data name="&gt;&gt;radioButton_alldir.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -4350,8 +4368,8 @@ _HASH</value>
   <data name="оПрограммеToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 26</value>
   </data>
-  <data name="button_fb_com_start.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="groupBox_fh_sel_path.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
@@ -4592,9 +4610,6 @@ _HASH</value>
   <data name="&gt;&gt;comboBox_lun_count.Name" xml:space="preserve">
     <value>comboBox_lun_count</value>
   </data>
-  <data name="tableLayoutPanel_adb.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="&gt;&gt;radioButton_man_reset.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
@@ -4706,9 +4721,6 @@ _HASH</value>
   <data name="$this.Text" xml:space="preserve">
     <value>Firehose Finder</value>
   </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>tabPage_firehose</value>
-  </data>
   <data name="&gt;&gt;checkBox_Log.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -4756,6 +4768,9 @@ _HASH</value>
   </data>
   <data name="listView_ADB_devices.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;columnHeader_FB_Model.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="comboBox_fh_commands.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -4895,9 +4910,6 @@ _HASH</value>
   <data name="&gt;&gt;textBox_oemid.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;groupBox_lun_count.Name" xml:space="preserve">
-    <value>groupBox_lun_count</value>
-  </data>
   <data name="radioButton_reboot_edl.Size" type="System.Drawing.Size, System.Drawing">
     <value>493, 20</value>
   </data>
@@ -4994,9 +5006,6 @@ _HASH</value>
   <data name="bindingNavigator_collection.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
-    <value>toolStripSeparator4</value>
-  </data>
   <data name="&gt;&gt;groupBox_mem_type.Parent" xml:space="preserve">
     <value>tabPage_sahara</value>
   </data>
@@ -5089,9 +5098,6 @@ _HASH</value>
   </data>
   <data name="columnHeader_portname.Text" xml:space="preserve">
     <value>Наименование устройства</value>
-  </data>
-  <data name="tabPage_phone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
   </data>
   <data name="comboBox_log.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5275,6 +5281,9 @@ _HASH</value>
   </data>
   <data name="textBox_main_term.Size" type="System.Drawing.Size, System.Drawing">
     <value>409, 419</value>
+  </data>
+  <data name="&gt;&gt;label_log.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_total_gpt.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -5655,8 +5664,8 @@ _HASH</value>
   <data name="groupBox_fb_commands.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="tableLayoutPanel_phone.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="&gt;&gt;label_select_gpt.Name" xml:space="preserve">
+    <value>label_select_gpt</value>
   </data>
   <data name="&gt;&gt;radioButton_mem_emmc.Parent" xml:space="preserve">
     <value>groupBox_mem_type</value>
@@ -5751,8 +5760,8 @@ _HASH</value>
   <data name="сохранитьСектораПоНомеруdumpSectorNumderToolStripMenuItem.Text" xml:space="preserve">
     <value>Сохранить сектора по номеру (dump sector numder)</value>
   </data>
-  <data name="&gt;&gt;radioButton_fb_commandline.Name" xml:space="preserve">
-    <value>radioButton_fb_commandline</value>
+  <data name="&gt;&gt;label_total_blocks.Name" xml:space="preserve">
+    <value>label_total_blocks</value>
   </data>
   <data name="label_altname.Text" xml:space="preserve">
     <value>---</value>
@@ -5775,8 +5784,8 @@ _HASH</value>
   <data name="&gt;&gt;button_fb_com_start.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label_select_gpt.Name" xml:space="preserve">
-    <value>label_select_gpt</value>
+  <data name="tableLayoutPanel_fb.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="label_select_gpt.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5787,14 +5796,8 @@ _HASH</value>
   <data name="label_chip_sn.Text" xml:space="preserve">
     <value>---</value>
   </data>
-  <data name="groupBox_fh_sel_path.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="label_total_blocks.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;groupBox_mem_type.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="tabPage_collection.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -5844,8 +5847,8 @@ _HASH</value>
   <data name="bindingNavigator_collection.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="&gt;&gt;label_total_blocks.Name" xml:space="preserve">
-    <value>label_total_blocks</value>
+  <data name="tableLayoutPanel_adb.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="Column_rate.Width" type="System.Int32, mscorlib">
     <value>60</value>
@@ -5856,8 +5859,8 @@ _HASH</value>
   <data name="Column_Comp.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;textBox_soft_term.Parent" xml:space="preserve">
-    <value>groupBox_terminal</value>
+  <data name="label_modelid.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;comboBox_log.Name" xml:space="preserve">
     <value>comboBox_log</value>
@@ -6004,9 +6007,6 @@ _HASH</value>
   <data name="&gt;&gt;bindingNavigatorMoveNextItem.Name" xml:space="preserve">
     <value>bindingNavigatorMoveNextItem</value>
   </data>
-  <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
-    <value>openFileDialog1</value>
-  </data>
   <data name="&gt;&gt;backgroundWorker_xml.Name" xml:space="preserve">
     <value>backgroundWorker_xml</value>
   </data>
@@ -6142,9 +6142,6 @@ _HASH</value>
   <data name="&gt;&gt;button_path.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;bindingNavigatorSeparator2.Name" xml:space="preserve">
-    <value>bindingNavigatorSeparator2</value>
-  </data>
   <data name="Column_Name.Width" type="System.Int32, mscorlib">
     <value>200</value>
   </data>
@@ -6193,8 +6190,8 @@ _HASH</value>
   <data name="&gt;&gt;label_select_gpt.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;button_ADB_comstart.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="radioButton_fb_commandline.Text" xml:space="preserve">
+    <value>Командная строка (fastboot)</value>
   </data>
   <data name="&gt;&gt;checkBox_Log.Name" xml:space="preserve">
     <value>checkBox_Log</value>
@@ -6289,8 +6286,8 @@ _HASH</value>
   <data name="tableLayoutPanel_adb.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="toolStripTextBox_find.ToolTipText" xml:space="preserve">
-    <value>Поиск по всем полям</value>
+  <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
+    <value>openFileDialog1</value>
   </data>
   <data name="&gt;&gt;textBox_oemhash.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -6334,8 +6331,8 @@ _HASH</value>
   <data name="radioButton_mem_emmc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="StartLBA.Width" type="System.Int32, mscorlib">
-    <value>84</value>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
   </data>
   <data name="bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6355,7 +6352,7 @@ _HASH</value>
   <data name="toolStripButton_large_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cgAAEnIBXmVb4wAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
+        cQAAEnEB89x6jgAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
         RUkUEZ0YRMS+DDI70MkTmzJnDc8iU8QT2mAEItnle90wHwTDyBduXnie5/rd133Q4ZKfAJqHFs9E08A8
         zD1emDpmYXjqRlnTFIrMk8iuGkNaxWekGEaQrHecBfw+/vPXODw6hj9whN2fh/Bt/8LSRgA3cxr/DeBZ
         9kvmTNMoHGNbIrYN+3Aj23IxgJkpds0doP3VstgmsNexhutZ9QrAms8T0zYzU5xXM46kcjsmvfvoeL2i
@@ -6454,6 +6451,9 @@ _HASH</value>
   <data name="radioButton_mem_emmc.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 20</value>
   </data>
+  <data name="tableLayoutPanel_phone.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
   <data name="выбратьРазделToolStripMenuItem.Text" xml:space="preserve">
     <value>Выбрать раздел (single select)</value>
   </data>
@@ -6471,9 +6471,6 @@ _HASH</value>
   </data>
   <data name="&gt;&gt;bindingNavigatorMovePreviousItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;реальноПодключённыеУстройстваToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="columnHeader_ADB_SN.Width" type="System.Int32, mscorlib">
     <value>130</value>
@@ -6648,6 +6645,9 @@ _HASH</value>
   </data>
   <data name="groupBox_fh_commands.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
+  </data>
+  <data name="label_total_blocks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 16</value>
   </data>
   <data name="&gt;&gt;textBox_fb_commandline.Parent" xml:space="preserve">
     <value>groupBox_fb_commands</value>

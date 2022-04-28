@@ -337,6 +337,10 @@
     <value>Select from the list or enter manually</value>
     <comment>Выберите из списка или введите вручную</comment>
   </data>
+  <data name="tt_find" xml:space="preserve">
+    <value>Connect the device and click to get the IDs</value>
+    <comment>Подключите устройство и нажмите для получения идентификаторов</comment>
+  </data>
   <data name="unknown" xml:space="preserve">
     <value>Something unknown</value>
     <comment>Что-то непонятное</comment>
