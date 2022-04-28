@@ -117,8 +117,8 @@ namespace FirehoseFinder
             Flash_Params.SetValue(flash_start, 0);
             //Всплывающие подсказки к разным контролам
             toolTip1.SetToolTip(button_findIDs, LocRes.GetString("tt_find"));
-            toolTip1.SetToolTip(button_path, "Укажите путь к коллекции firehose");
-            toolTip1.SetToolTip(button_useSahara_fhf, "Нажмите для проверки выбранного программера");
+            toolTip1.SetToolTip(button_path, LocRes.GetString("tt_path"));
+            toolTip1.SetToolTip(button_useSahara_fhf, LocRes.GetString("tt_check"));
             CheckListPorts();
             //Открываем приветствие если новое или отмечено в настройках
             if (Settings.Default.CheckBox_start_Checked)
@@ -130,13 +130,13 @@ namespace FirehoseFinder
             switch (Settings.Default.local_lang)
             {
                 case "ru":
-                    русскийToolStripMenuItem.Checked=true;
+                    русскийToolStripMenuItem.Checked = true;
                     break;
                 case "en":
-                    englishToolStripMenuItem.Checked=true;
+                    englishToolStripMenuItem.Checked = true;
                     break;
                 default:
-                    автоматическиToolStripMenuItem.Checked=true;
+                    автоматическиToolStripMenuItem.Checked = true;
                     break;
             }
             //Закрываем запущенные процессы и чистим файлы (если есть что)
@@ -151,7 +151,7 @@ namespace FirehoseFinder
         private void Formfhf_FormClosing(object sender, FormClosingEventArgs e)
         {
             Settings.Default.Save(); //Сохраняем настройки
-            CleanFilesProcess();
+            CleanFilesProcess(); //Очищаем рабочие файлы и запущенные процессы
         }
 
         #region Функции команд контролов меню программы
@@ -318,7 +318,10 @@ namespace FirehoseFinder
                 if (radioButton_adb_IDs.Checked) GetADBIDs(false);
                 if (radioButton_reboot_edl.Checked)
                 {
-                    textBox_soft_term.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_reboot") + '\u0020' + 
+                        LocRes.GetString("hex_in") + '\u0020' +
+                        LocRes.GetString("tb_edl") + '\u0020' +
+                        Environment.NewLine);
                     client.Reboot("edl", device);
                     Thread.Sleep(500);
                     StopAdb();
@@ -327,7 +330,10 @@ namespace FirehoseFinder
                 if (radioButton_adb_com.Checked && !string.IsNullOrEmpty(Com_String)) Adb_Comm_String(Com_String);
                 if (radioButton_reboot_fastboot.Checked)
                 {
-                    textBox_soft_term.AppendText("Устройство перегружается в режим загрузчика" + Environment.NewLine);
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_reboot") + '\u0020' +
+                        LocRes.GetString("hex_in") + '\u0020' +
+                        LocRes.GetString("tb_blm") + '\u0020' +
+                        Environment.NewLine);
                     client.Reboot("bootloader", device);
                     Thread.Sleep(500);
                     StopAdb();
@@ -400,8 +406,8 @@ namespace FirehoseFinder
             button_Sahara_Ids.Enabled = false;
             if (!File.Exists(label_Sahara_fhf.Text))
             {
-                DialogResult dr = MessageBox.Show("Выберете программер на вкладке \"Работа с файлами\"",
-                    "Требуется указать корректный путь к файлу",
+                DialogResult dr = MessageBox.Show(LocRes.GetString("mb_note_sel_prog"),
+                    LocRes.GetString("mb_title_sel_prog"),
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 if (dr == DialogResult.OK) tabControl1.SelectedTab = tabPage_firehose;
                 return;
@@ -434,8 +440,10 @@ namespace FirehoseFinder
             {
                 if (NeedReset)
                 {
-                    MessageBox.Show("Для получения идентификаторов устройство должно быть переподключено!" + Environment.NewLine +
-                        "Пожалуйста, отключите устройство от компьютера, перезагрузите в аварийный режим (9008) и подключите повторно.", "Внимание!");
+                    MessageBox.Show(LocRes.GetString("mb_note_dev_recon") +
+                        Environment.NewLine +
+                        LocRes.GetString("mb_note_dev_recon2"),
+                        LocRes.GetString("mb_title_dev_recon"));
 
                     button_Sahara_Ids.Enabled = false;
                     button_Sahara_CommandStart.Enabled = false;
@@ -467,7 +475,7 @@ namespace FirehoseFinder
             if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
             if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs --lun=" + lun_int.ToString());
             else fh_command_args.Append(" --memoryname=emmc");
-            groupBox_LUN.Text = "Диск " + lun_int.ToString();
+            groupBox_LUN.Text = LocRes.GetString("gb_disk") + '\u0020' + lun_int.ToString();
             Peekpoke pp = new Peekpoke(this);
             switch (comboBox_fh_commands.SelectedIndex)
             {

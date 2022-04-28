@@ -2621,6 +2621,9 @@
   <data name="сохранитьТаблицуВФайлmainGPTbinToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
+  </data>
   <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
     <value>groupBox4</value>
   </data>
@@ -3659,8 +3662,8 @@
   <data name="&gt;&gt;label_modelid.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="toolStripTextBox_find.ToolTipText" xml:space="preserve">
-    <value>Поиск по всем полям</value>
+  <data name="&gt;&gt;radioButton_adb_reset.Parent" xml:space="preserve">
+    <value>groupBox4</value>
   </data>
   <data name="tableLayoutPanel_phone.ToolTip" xml:space="preserve">
     <value />
@@ -4271,9 +4274,6 @@ _HASH</value>
   </data>
   <data name="&gt;&gt;groupBox_mem_type.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;radioButton_adb_reset.Parent" xml:space="preserve">
-    <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;comboBox_lun_count.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -5625,9 +5625,6 @@ _HASH</value>
   <data name="&gt;&gt;radioButton_reboot_fastboot.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tabControl_soft.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="groupBox_fh_commands.Size" type="System.Drawing.Size, System.Drawing">
     <value>643, 56</value>
   </data>
@@ -5664,8 +5661,8 @@ _HASH</value>
   <data name="groupBox_fb_commands.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;label_select_gpt.Name" xml:space="preserve">
-    <value>label_select_gpt</value>
+  <data name="tableLayoutPanel_phone.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;radioButton_mem_emmc.Parent" xml:space="preserve">
     <value>groupBox_mem_type</value>
@@ -5910,6 +5907,9 @@ _HASH</value>
   <data name="groupBox_adb_commands.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="&gt;&gt;label_select_gpt.Name" xml:space="preserve">
+    <value>label_select_gpt</value>
+  </data>
   <data name="button_fb_check.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -6007,6 +6007,9 @@ _HASH</value>
   <data name="&gt;&gt;bindingNavigatorMoveNextItem.Name" xml:space="preserve">
     <value>bindingNavigatorMoveNextItem</value>
   </data>
+  <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
+    <value>openFileDialog1</value>
+  </data>
   <data name="&gt;&gt;backgroundWorker_xml.Name" xml:space="preserve">
     <value>backgroundWorker_xml</value>
   </data>
@@ -6088,8 +6091,8 @@ _HASH</value>
   <data name="button_ADB_comstart.Text" xml:space="preserve">
     <value>Выполнить команду</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
+  <data name="tabControl_soft.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="предложитьПереводToolStripMenuItem.Text" xml:space="preserve">
     <value>Предложить перевод</value>
@@ -6286,8 +6289,8 @@ _HASH</value>
   <data name="tableLayoutPanel_adb.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
-    <value>openFileDialog1</value>
+  <data name="toolStripTextBox_find.ToolTipText" xml:space="preserve">
+    <value>Поиск по всем полям</value>
   </data>
   <data name="&gt;&gt;textBox_oemhash.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -6450,9 +6453,6 @@ _HASH</value>
   </data>
   <data name="radioButton_mem_emmc.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 20</value>
-  </data>
-  <data name="tableLayoutPanel_phone.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
   </data>
   <data name="выбратьРазделToolStripMenuItem.Text" xml:space="preserve">
     <value>Выбрать раздел (single select)</value>

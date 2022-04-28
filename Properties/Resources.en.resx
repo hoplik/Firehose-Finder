@@ -181,6 +181,10 @@
     <value>Firmware version</value>
     <comment>Версия прошивки</comment>
   </data>
+  <data name="gb_disk" xml:space="preserve">
+    <value>Disk</value>
+    <comment>Диск</comment>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Greeting_en.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
@@ -232,6 +236,26 @@
   <data name="hex_warn_stopoper" xml:space="preserve">
     <value>Attention, stopping a long operation!</value>
     <comment>Внимание, остановка длительной операции!</comment>
+  </data>
+  <data name="mb_note_dev_recon" xml:space="preserve">
+    <value>To get the IDs, the device must be reconnected!</value>
+    <comment>Для получения идентификаторов устройство должно быть переподключено!</comment>
+  </data>
+  <data name="mb_note_dev_recon2" xml:space="preserve">
+    <value>Please disconnect the device from the computer, reboot into emergency download mode (9008) and reconnect it.</value>
+    <comment>Пожалуйста, отключите устройство от компьютера, перезагрузите в аварийный режим (9008) и подключите повторно.</comment>
+  </data>
+  <data name="mb_note_sel_prog" xml:space="preserve">
+    <value>Select the programmer on the "Work with files" tab</value>
+    <comment>Выберете программер на вкладке "Работа с файлами"</comment>
+  </data>
+  <data name="mb_title_dev_recon" xml:space="preserve">
+    <value>Attention!</value>
+    <comment>Внимание!</comment>
+  </data>
+  <data name="mb_title_sel_prog" xml:space="preserve">
+    <value>It is required to specify the correct path to the file</value>
+    <comment>Требуется указать корректный путь к файлу</comment>
   </data>
   <data name="message_body_need_fields" xml:space="preserve">
     <value>Please, select the manufacturer's name from the list or enter a new one, if there is no suitable value.</value>
@@ -325,6 +349,18 @@
     <value>Unpacking of firmware files is completed on</value>
     <comment>Распаковка файлов прошивки выполнена на</comment>
   </data>
+  <data name="tb_blm" xml:space="preserve">
+    <value>bootloader mode</value>
+    <comment>режим загрузчика</comment>
+  </data>
+  <data name="tb_edl" xml:space="preserve">
+    <value>emergency download mode</value>
+    <comment>аварийный режим</comment>
+  </data>
+  <data name="tb_reboot" xml:space="preserve">
+    <value>Device reboot</value>
+    <comment>Устройство перегружается</comment>
+  </data>
   <data name="tip_cancel" xml:space="preserve">
     <value>To reset, press the button and select "Cancel"</value>
     <comment>Для сброса нажмите кнопку и выберите "Отмена"</comment>
@@ -337,9 +373,17 @@
     <value>Select from the list or enter manually</value>
     <comment>Выберите из списка или введите вручную</comment>
   </data>
+  <data name="tt_check" xml:space="preserve">
+    <value>Click to check the selected programmer</value>
+    <comment>Нажмите для проверки выбранного программера</comment>
+  </data>
   <data name="tt_find" xml:space="preserve">
     <value>Connect the device and click to get the IDs</value>
     <comment>Подключите устройство и нажмите для получения идентификаторов</comment>
+  </data>
+  <data name="tt_path" xml:space="preserve">
+    <value>Specify the path to the firehose collection</value>
+    <comment>Укажите путь к коллекции firehose</comment>
   </data>
   <data name="unknown" xml:space="preserve">
     <value>Something unknown</value>

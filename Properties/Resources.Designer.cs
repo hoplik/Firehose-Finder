@@ -234,6 +234,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Диск.
+        /// </summary>
+        internal static string gb_disk {
+            get {
+                return ResourceManager.GetString("gb_disk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на 			Краткий инструктаж.
         ///
         ///	Основной функционал приложения - поиск подходящего программера (programmer, firehose, пожарный шланг и т.п.) под определённое устройство.
@@ -350,6 +359,51 @@ namespace FirehoseFinder.Properties {
         internal static string hex_warn_stopoper {
             get {
                 return ResourceManager.GetString("hex_warn_stopoper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Для получения идентификаторов устройство должно быть переподключено!.
+        /// </summary>
+        internal static string mb_note_dev_recon {
+            get {
+                return ResourceManager.GetString("mb_note_dev_recon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пожалуйста, отключите устройство от компьютера, перезагрузите в аварийный режим (9008) и подключите повторно..
+        /// </summary>
+        internal static string mb_note_dev_recon2 {
+            get {
+                return ResourceManager.GetString("mb_note_dev_recon2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Выберете программер на вкладке &quot;Работа с файлами&quot;.
+        /// </summary>
+        internal static string mb_note_sel_prog {
+            get {
+                return ResourceManager.GetString("mb_note_sel_prog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Внимание!.
+        /// </summary>
+        internal static string mb_title_dev_recon {
+            get {
+                return ResourceManager.GetString("mb_title_dev_recon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Требуется указать корректный путь к файлу.
+        /// </summary>
+        internal static string mb_title_sel_prog {
+            get {
+                return ResourceManager.GetString("mb_title_sel_prog", resourceCulture);
             }
         }
         
@@ -571,6 +625,33 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на режим загрузчика.
+        /// </summary>
+        internal static string tb_blm {
+            get {
+                return ResourceManager.GetString("tb_blm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на аварийный режим.
+        /// </summary>
+        internal static string tb_edl {
+            get {
+                return ResourceManager.GetString("tb_edl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Устройство перегружается.
+        /// </summary>
+        internal static string tb_reboot {
+            get {
+                return ResourceManager.GetString("tb_reboot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Для сброса нажмите кнопку и выберите &quot;Отмена&quot;.
         /// </summary>
         internal static string tip_cancel {
@@ -598,11 +679,29 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Нажмите для проверки выбранного программера.
+        /// </summary>
+        internal static string tt_check {
+            get {
+                return ResourceManager.GetString("tt_check", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Подключите устройство и нажмите для получения идентификаторов.
         /// </summary>
         internal static string tt_find {
             get {
                 return ResourceManager.GetString("tt_find", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Укажите путь к коллекции firehose.
+        /// </summary>
+        internal static string tt_path {
+            get {
+                return ResourceManager.GetString("tt_path", resourceCulture);
             }
         }
         
