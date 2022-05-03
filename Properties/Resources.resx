@@ -304,14 +304,41 @@
   <data name="status_repack_unpacking_complited" xml:space="preserve">
     <value>Распаковка файлов прошивки выполнена на</value>
   </data>
+  <data name="tbs_part_table" xml:space="preserve">
+    <value>Получаем таблицу разметки</value>
+  </data>
+  <data name="tbs_stor_dev" xml:space="preserve">
+    <value>Получаем информацию о запоминающем устройстве</value>
+  </data>
   <data name="tb_blm" xml:space="preserve">
     <value>режим загрузчика</value>
+  </data>
+  <data name="tb_body_att_del_mem" xml:space="preserve">
+    <value>Осторожно, вы предпринимаете попытку стереть всю информацию из памяти устройства. Будут удалены (заменены на 0х00) все данные на флеш-памяти, включая таблицу разметки и все доступные пользователю разделы. Нажимая кнопку "Ok", вы подтверждаете выполнение операции. Это последнее предупреждение. Если вы не сделали резервной копии устройства, то сейчас самое время отменить операцию и заняться бэкапом.</value>
+  </data>
+  <data name="tb_cancel_user" xml:space="preserve">
+    <value>отменено пользователем</value>
   </data>
   <data name="tb_edl" xml:space="preserve">
     <value>аварийный режим</value>
   </data>
+  <data name="tb_er_mem" xml:space="preserve">
+    <value>Стираем всю память</value>
+  </data>
+  <data name="tb_norm" xml:space="preserve">
+    <value>нормальный режим</value>
+  </data>
+  <data name="tb_note_att_del_mem" xml:space="preserve">
+    <value>Внимание, удаление всей информации из памяти!</value>
+  </data>
   <data name="tb_reboot" xml:space="preserve">
     <value>Устройство перегружается</value>
+  </data>
+  <data name="tb_write_cancel" xml:space="preserve">
+    <value>Запись файла в разделы отменена пользователем.</value>
+  </data>
+  <data name="tb_write_file_sectors" xml:space="preserve">
+    <value>Записываем bin-файл в выбранные сектора</value>
   </data>
   <data name="tip_cancel" xml:space="preserve">
     <value>Для сброса нажмите кнопку и выберите "Отмена"</value>

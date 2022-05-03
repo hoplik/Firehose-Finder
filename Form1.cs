@@ -480,22 +480,24 @@ namespace FirehoseFinder
             switch (comboBox_fh_commands.SelectedIndex)
             {
                 case 0:
-                    textBox_soft_term.AppendText("Получаем информацию о запоминающем устройстве" + Environment.NewLine);
+                    textBox_soft_term.AppendText(LocRes.GetString("tbs_stor_dev") + Environment.NewLine);
                     fh_command_args.Append(" --getstorageinfo=" + lun_int.ToString());
                     need_parsing_lun = true;
                     break;
                 case 1:
-                    textBox_soft_term.AppendText("Получаем таблицу разметки (GPT)" + Environment.NewLine);
+                    textBox_soft_term.AppendText(LocRes.GetString("tbs_part_table") + Environment.NewLine);
                     fh_command_args.Append(" --getgptmainbackup=" + lun_int.ToString());
                     getgpt = true;
                     break;
                 case 2:
-                    textBox_soft_term.AppendText("Перегружаем устройство в нормальный режим" + Environment.NewLine);
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_reboot") + '\u0020' +
+                        LocRes.GetString("hex_in") + '\u0020' +
+                        LocRes.GetString("tb_norm") + Environment.NewLine);
                     fh_command_args.Append(" --noprompt --reset");
                     StartStatus();
                     break;
                 case 4:
-                    textBox_soft_term.AppendText("Записываем bin-файл в выбранные сектора" + Environment.NewLine);
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_write_file_sectors") + Environment.NewLine);
                     Write_Sectors ws = new Write_Sectors(this);
                     if (ws.ShowDialog() == DialogResult.OK)
                     {
@@ -516,22 +518,20 @@ namespace FirehoseFinder
                             //Создаём аргументы для лоадера и при наличии файла запускаем процесс записи
                             if (File.Exists("p_r.xml")) fh_command_args.Append(" --sendxml=p_r.xml --noprompt --search_path=" + loadpath);
                         }
-                        else textBox_soft_term.AppendText("Запись файла в разделы отменена пользователем." + Environment.NewLine);
+                        else textBox_soft_term.AppendText(LocRes.GetString("tb_write_cancel") + Environment.NewLine);
                     }
-                    else textBox_soft_term.AppendText("Запись файла в разделы отменена пользователем." + Environment.NewLine);
+                    else textBox_soft_term.AppendText(LocRes.GetString("tb_write_cancel") + Environment.NewLine);
                     break;
                 case 5:
-                    textBox_soft_term.AppendText("Стираем всю память!" + Environment.NewLine);
-                    if (MessageBox.Show("Осторожно, вы предпринимаете попытку стереть всю информацию из памяти устройства." +
-                        " Будут удалены (заменены на 0х00) все данные на флеш-памяти, включая таблицу разметки и все доступные пользователю разделы." +
-                        " Нажимая кнопку \"Ok\", вы подтверждаете выполнение операции. Это последнее предупреждение." +
-                        " Если вы не сделали резервной копии устройства, то сейчас самое время отменить операцию и заняться бэкапом.",
-                        "Внимание, удаление всей информации из памяти!",
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_er_mem") + Environment.NewLine);
+                    if (MessageBox.Show(LocRes.GetString("tb_body_att_del_mem"),
+                        LocRes.GetString("tb_note_att_del_mem"),
                         MessageBoxButtons.OKCancel,
                         MessageBoxIcon.Warning,
                         MessageBoxDefaultButton.Button2,
                         MessageBoxOptions.DefaultDesktopOnly) == DialogResult.OK) fh_command_args.Append(" --noprompt --erase=" + lun_int.ToString());
-                    else textBox_soft_term.AppendText("Стирание всей памяти отменено пользователем." + Environment.NewLine);
+                    else textBox_soft_term.AppendText(LocRes.GetString("tb_er_mem") + '\u0020' +
+                        LocRes.GetString("tb_cancel_user") + Environment.NewLine);
                     break;
                 case 6:
                     textBox_soft_term.AppendText("Читаем/пишем байты по определённому адресу (peek&poke)" + Environment.NewLine);
@@ -554,7 +554,7 @@ namespace FirehoseFinder
                     }
                     break;
                 default:
-                    textBox_soft_term.AppendText("Получаем информацию о запоминающем устройстве" + Environment.NewLine);
+                    textBox_soft_term.AppendText(LocRes.GetString("tbs_stor_dev") + Environment.NewLine);
                     fh_command_args.Append(" --getstorageinfo=" + lun_int.ToString());
                     need_parsing_lun = true;
                     break;

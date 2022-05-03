@@ -634,6 +634,24 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Осторожно, вы предпринимаете попытку стереть всю информацию из памяти устройства. Будут удалены (заменены на 0х00) все данные на флеш-памяти, включая таблицу разметки и все доступные пользователю разделы. Нажимая кнопку &quot;Ok&quot;, вы подтверждаете выполнение операции. Это последнее предупреждение. Если вы не сделали резервной копии устройства, то сейчас самое время отменить операцию и заняться бэкапом..
+        /// </summary>
+        internal static string tb_body_att_del_mem {
+            get {
+                return ResourceManager.GetString("tb_body_att_del_mem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на отменено пользователем.
+        /// </summary>
+        internal static string tb_cancel_user {
+            get {
+                return ResourceManager.GetString("tb_cancel_user", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на аварийный режим.
         /// </summary>
         internal static string tb_edl {
@@ -643,11 +661,74 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Стираем всю память.
+        /// </summary>
+        internal static string tb_er_mem {
+            get {
+                return ResourceManager.GetString("tb_er_mem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на нормальный режим.
+        /// </summary>
+        internal static string tb_norm {
+            get {
+                return ResourceManager.GetString("tb_norm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Внимание, удаление всей информации из памяти!.
+        /// </summary>
+        internal static string tb_note_att_del_mem {
+            get {
+                return ResourceManager.GetString("tb_note_att_del_mem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Устройство перегружается.
         /// </summary>
         internal static string tb_reboot {
             get {
                 return ResourceManager.GetString("tb_reboot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Запись файла в разделы отменена пользователем..
+        /// </summary>
+        internal static string tb_write_cancel {
+            get {
+                return ResourceManager.GetString("tb_write_cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Записываем bin-файл в выбранные сектора.
+        /// </summary>
+        internal static string tb_write_file_sectors {
+            get {
+                return ResourceManager.GetString("tb_write_file_sectors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Получаем таблицу разметки.
+        /// </summary>
+        internal static string tbs_part_table {
+            get {
+                return ResourceManager.GetString("tbs_part_table", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Получаем информацию о запоминающем устройстве.
+        /// </summary>
+        internal static string tbs_stor_dev {
+            get {
+                return ResourceManager.GetString("tbs_stor_dev", resourceCulture);
             }
         }
         
