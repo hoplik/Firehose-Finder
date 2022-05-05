@@ -262,6 +262,9 @@
   <data name="mb_title_dev_recon" xml:space="preserve">
     <value>Внимание!</value>
   </data>
+  <data name="mb_title_mis" xml:space="preserve">
+    <value>Внимание! Ошибка!</value>
+  </data>
   <data name="mb_title_reboot" xml:space="preserve">
     <value>Ожидание перезагрузки</value>
   </data>
@@ -269,7 +272,7 @@
     <value>Требуется указать корректный путь к файлу</value>
   </data>
   <data name="mb_title_send" xml:space="preserve">
-    <value>Внимание! Ошибка! Можно отправить данные?</value>
+    <value>Можно отправить данные?</value>
   </data>
   <data name="mb_title_server_down" xml:space="preserve">
     <value>Загрузка файла с сервера</value>

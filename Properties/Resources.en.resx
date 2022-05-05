@@ -297,6 +297,10 @@
     <value>Attention!</value>
     <comment>Внимание!</comment>
   </data>
+  <data name="mb_title_mis" xml:space="preserve">
+    <value>Attention! Mistake!</value>
+    <comment>Внимание! Ошибка!</comment>
+  </data>
   <data name="mb_title_reboot" xml:space="preserve">
     <value>Waiting for a reboot</value>
     <comment>Ожидание перезагрузки</comment>
@@ -306,8 +310,8 @@
     <comment>Требуется указать корректный путь к файлу</comment>
   </data>
   <data name="mb_title_send" xml:space="preserve">
-    <value>Attention! Mistake! Can I send the data?</value>
-    <comment>Внимание! Ошибка! Можно отправить данные?</comment>
+    <value>Can I send the data?</value>
+    <comment>Можно отправить данные?</comment>
   </data>
   <data name="mb_title_server_down" xml:space="preserve">
     <value>Downloading a file from the server</value>

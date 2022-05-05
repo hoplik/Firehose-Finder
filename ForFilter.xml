@@ -96,7 +96,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-05-05T22:03:28">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-05-05T23:48:14">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -4276,7 +4276,7 @@
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
 <Trademark>vivo</Trademark>
 <Model>PD2034F_EX</Model>
-<AltName>2027N_RU</AltName>
+<AltName>2027N_RU, Y20, V2027</AltName>
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>

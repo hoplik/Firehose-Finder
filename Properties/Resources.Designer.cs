@@ -498,6 +498,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Внимание! Ошибка!.
+        /// </summary>
+        internal static string mb_title_mis {
+            get {
+                return ResourceManager.GetString("mb_title_mis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Ожидание перезагрузки.
         /// </summary>
         internal static string mb_title_reboot {
@@ -516,7 +525,7 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Внимание! Ошибка! Можно отправить данные?.
+        ///   Ищет локализованную строку, похожую на Можно отправить данные?.
         /// </summary>
         internal static string mb_title_send {
             get {

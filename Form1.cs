@@ -676,6 +676,7 @@ namespace FirehoseFinder
                 {
                     Flash_Params[lun_numder].Sector_Size = 512; //Чтоб отрабатывал парсинг GPT
                     DialogResult dr = MessageBox.Show(LocRes.GetString("mb_body_send"),
+                        LocRes.GetString("mb_title_mis") + '\u0020' +
                         LocRes.GetString("mb_title_send"),
                         MessageBoxButtons.OKCancel,
                         MessageBoxIcon.Exclamation);
@@ -1243,11 +1244,10 @@ namespace FirehoseFinder
             //Загружаем программер с сервера
             if (!string.IsNullOrEmpty(dataGridView_collection["Url", sel_row].Value.ToString()))
             {
-                DialogResult dr = MessageBox.Show("При подтверждении, с сервера будет загружен программер, который другие пользователи " +
-                    "смогли успешно использовать. Это не гарантирует того, что у вас с этим программером всё получится. Просто " +
-                    "это, с высокой долей вероятности, подходящий к выбранной вами модели файл.",
-                    "Загрузка файла с сервера",
-                    MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show(LocRes.GetString("mb_body_server_down"),
+                    LocRes.GetString("mb_title_server_down"),
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Information);
                 if (dr == DialogResult.OK) Process.Start(string.Format(dataGridView_collection["Url", sel_row].Value.ToString()).Trim('#'));
             }
         }
@@ -1326,7 +1326,7 @@ namespace FirehoseFinder
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Внимание! Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, LocRes.GetString("mb_title_mis"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             работаСУстройствомToolStripMenuItem.Checked = true;
