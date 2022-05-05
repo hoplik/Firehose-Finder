@@ -160,6 +160,9 @@
   <data name="dump_select_sectors" xml:space="preserve">
     <value>Вы можете выбрать не более {0} секторов для Диск {1}</value>
   </data>
+  <data name="encode" xml:space="preserve">
+    <value>закодирован</value>
+  </data>
   <data name="fh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\fh.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -217,6 +220,33 @@
   <data name="hex_warn_stopoper" xml:space="preserve">
     <value>Внимание, остановка длительной операции!</value>
   </data>
+  <data name="mb_body_check_fail" xml:space="preserve">
+    <value>Проверка корректности работы с устройством через ADB закончилась неудачно.</value>
+  </data>
+  <data name="mb_body_corr_er" xml:space="preserve">
+    <value>Пожалуйста, исправьте ошибки по данным лога и/или подключите устройство в режиме 9008 после перезагрузки вручную.</value>
+  </data>
+  <data name="mb_body_er_gpt" xml:space="preserve">
+    <value>Ошибка обработки таблицы GPT</value>
+  </data>
+  <data name="mb_body_gpt_not_formed" xml:space="preserve">
+    <value>Таблица GPT не сформирована</value>
+  </data>
+  <data name="mb_body_id_not_res" xml:space="preserve">
+    <value>Идентификаторы не получены. Пожалуйста, перезагрузите устройство в аварийный режим вручную.</value>
+  </data>
+  <data name="mb_body_id_res" xml:space="preserve">
+    <value>Идентификаторы получены частично. Пожалуйста, перезагрузите устройство в аварийный режим вручную.</value>
+  </data>
+  <data name="mb_body_save_clip" xml:space="preserve">
+    <value>Сохранить данные в буфер обмена?</value>
+  </data>
+  <data name="mb_body_send" xml:space="preserve">
+    <value>Ответ телефона на запрос данных хранилища обработан некорректно. Нажимая кнопку "Ok", вы разрешаете отправить в публичный телеграм-канал разрабтчикам лог ответа телефона для попытки исправления этой ошибки. Кнопка "Отмена" просто закроет это окно, без отправки данных.</value>
+  </data>
+  <data name="mb_body_server_down" xml:space="preserve">
+    <value>При подтверждении, с сервера будет загружен программер. Это не гарантирует того, что у вас с этим программером всё получится. Просто это, с высокой долей вероятности, подходящий к выбранной вами модели файл.</value>
+  </data>
   <data name="mb_note_dev_recon" xml:space="preserve">
     <value>Для получения идентификаторов устройство должно быть переподключено!</value>
   </data>
@@ -226,11 +256,23 @@
   <data name="mb_note_sel_prog" xml:space="preserve">
     <value>Выберете программер на вкладке "Работа с файлами"</value>
   </data>
+  <data name="mb_title_adb_er" xml:space="preserve">
+    <value>Ошибка ADB</value>
+  </data>
   <data name="mb_title_dev_recon" xml:space="preserve">
     <value>Внимание!</value>
   </data>
+  <data name="mb_title_reboot" xml:space="preserve">
+    <value>Ожидание перезагрузки</value>
+  </data>
   <data name="mb_title_sel_prog" xml:space="preserve">
     <value>Требуется указать корректный путь к файлу</value>
+  </data>
+  <data name="mb_title_send" xml:space="preserve">
+    <value>Внимание! Ошибка! Можно отправить данные?</value>
+  </data>
+  <data name="mb_title_server_down" xml:space="preserve">
+    <value>Загрузка файла с сервера</value>
   </data>
   <data name="message_body_need_fields" xml:space="preserve">
     <value>Пожалуйста, выберите наименование производителя из списка или введите, при отсутствии подходящего значения.</value>
@@ -243,6 +285,9 @@
   </data>
   <data name="message_title_need_restart" xml:space="preserve">
     <value>Требуется перезапуск приложения!</value>
+  </data>
+  <data name="not_elf" xml:space="preserve">
+    <value>не является ELF</value>
   </data>
   <data name="offset" xml:space="preserve">
     <value>адрес</value>
@@ -261,6 +306,12 @@
   </data>
   <data name="russia_flags_flag_17058" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\russia_flags_flag_17058.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="server_not_found" xml:space="preserve">
+    <value>На сервере не нашлось</value>
+  </data>
+  <data name="signs" xml:space="preserve">
+    <value>знаков</value>
   </data>
   <data name="size" xml:space="preserve">
     <value>размер</value>
@@ -325,20 +376,47 @@
   <data name="tb_er_mem" xml:space="preserve">
     <value>Стираем всю память</value>
   </data>
+  <data name="tb_er_write" xml:space="preserve">
+    <value>Ошибка записи</value>
+  </data>
+  <data name="tb_form_close" xml:space="preserve">
+    <value>Форма чтения/записи байт закрыта без изменений</value>
+  </data>
+  <data name="tb_form_comp" xml:space="preserve">
+    <value>Работа с формой чтения/записи байт завершена</value>
+  </data>
+  <data name="tb_log" xml:space="preserve">
+    <value>файла лога</value>
+  </data>
   <data name="tb_norm" xml:space="preserve">
     <value>нормальный режим</value>
   </data>
   <data name="tb_note_att_del_mem" xml:space="preserve">
     <value>Внимание, удаление всей информации из памяти!</value>
   </data>
+  <data name="tb_pass_suc" xml:space="preserve">
+    <value>прошло успешно</value>
+  </data>
+  <data name="tb_pp" xml:space="preserve">
+    <value>Читаем/пишем байты по определённому адресу (peek&amp;poke)</value>
+  </data>
   <data name="tb_reboot" xml:space="preserve">
     <value>Устройство перегружается</value>
+  </data>
+  <data name="tb_save" xml:space="preserve">
+    <value>Сохранение</value>
+  </data>
+  <data name="tb_send_conf" xml:space="preserve">
+    <value>Отправка лога подтверждена пользователем.</value>
   </data>
   <data name="tb_write_cancel" xml:space="preserve">
     <value>Запись файла в разделы отменена пользователем.</value>
   </data>
   <data name="tb_write_file_sectors" xml:space="preserve">
     <value>Записываем bin-файл в выбранные сектора</value>
+  </data>
+  <data name="tb_xml_not_gen" xml:space="preserve">
+    <value>XML-файл для работы не сформирован</value>
   </data>
   <data name="tip_cancel" xml:space="preserve">
     <value>Для сброса нажмите кнопку и выберите "Отмена"</value>

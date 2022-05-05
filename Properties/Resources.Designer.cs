@@ -187,6 +187,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на закодирован.
+        /// </summary>
+        internal static string encode {
+            get {
+                return ResourceManager.GetString("encode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
         /// </summary>
         internal static System.Drawing.Icon fh {
@@ -363,6 +372,87 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Проверка корректности работы с устройством через ADB закончилась неудачно..
+        /// </summary>
+        internal static string mb_body_check_fail {
+            get {
+                return ResourceManager.GetString("mb_body_check_fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пожалуйста, исправьте ошибки по данным лога и/или подключите устройство в режиме 9008 после перезагрузки вручную..
+        /// </summary>
+        internal static string mb_body_corr_er {
+            get {
+                return ResourceManager.GetString("mb_body_corr_er", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка обработки таблицы GPT.
+        /// </summary>
+        internal static string mb_body_er_gpt {
+            get {
+                return ResourceManager.GetString("mb_body_er_gpt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Таблица GPT не сформирована.
+        /// </summary>
+        internal static string mb_body_gpt_not_formed {
+            get {
+                return ResourceManager.GetString("mb_body_gpt_not_formed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Идентификаторы не получены. Пожалуйста, перезагрузите устройство в аварийный режим вручную..
+        /// </summary>
+        internal static string mb_body_id_not_res {
+            get {
+                return ResourceManager.GetString("mb_body_id_not_res", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Идентификаторы получены частично. Пожалуйста, перезагрузите устройство в аварийный режим вручную..
+        /// </summary>
+        internal static string mb_body_id_res {
+            get {
+                return ResourceManager.GetString("mb_body_id_res", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сохранить данные в буфер обмена?.
+        /// </summary>
+        internal static string mb_body_save_clip {
+            get {
+                return ResourceManager.GetString("mb_body_save_clip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ответ телефона на запрос данных хранилища обработан некорректно. Нажимая кнопку &quot;Ok&quot;, вы разрешаете отправить в публичный телеграм-канал разрабтчикам лог ответа телефона для попытки исправления этой ошибки. Кнопка &quot;Отмена&quot; просто закроет это окно, без отправки данных..
+        /// </summary>
+        internal static string mb_body_send {
+            get {
+                return ResourceManager.GetString("mb_body_send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на При подтверждении, с сервера будет загружен программер. Это не гарантирует того, что у вас с этим программером всё получится. Просто это, с высокой долей вероятности, подходящий к выбранной вами модели файл..
+        /// </summary>
+        internal static string mb_body_server_down {
+            get {
+                return ResourceManager.GetString("mb_body_server_down", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Для получения идентификаторов устройство должно быть переподключено!.
         /// </summary>
         internal static string mb_note_dev_recon {
@@ -390,6 +480,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка ADB.
+        /// </summary>
+        internal static string mb_title_adb_er {
+            get {
+                return ResourceManager.GetString("mb_title_adb_er", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Внимание!.
         /// </summary>
         internal static string mb_title_dev_recon {
@@ -399,11 +498,38 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Ожидание перезагрузки.
+        /// </summary>
+        internal static string mb_title_reboot {
+            get {
+                return ResourceManager.GetString("mb_title_reboot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Требуется указать корректный путь к файлу.
         /// </summary>
         internal static string mb_title_sel_prog {
             get {
                 return ResourceManager.GetString("mb_title_sel_prog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Внимание! Ошибка! Можно отправить данные?.
+        /// </summary>
+        internal static string mb_title_send {
+            get {
+                return ResourceManager.GetString("mb_title_send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Загрузка файла с сервера.
+        /// </summary>
+        internal static string mb_title_server_down {
+            get {
+                return ResourceManager.GetString("mb_title_server_down", resourceCulture);
             }
         }
         
@@ -440,6 +566,15 @@ namespace FirehoseFinder.Properties {
         internal static string message_title_need_restart {
             get {
                 return ResourceManager.GetString("message_title_need_restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на не является ELF.
+        /// </summary>
+        internal static string not_elf {
+            get {
+                return ResourceManager.GetString("not_elf", resourceCulture);
             }
         }
         
@@ -495,6 +630,24 @@ namespace FirehoseFinder.Properties {
             get {
                 object obj = ResourceManager.GetObject("russia_flags_flag_17058", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на На сервере не нашлось.
+        /// </summary>
+        internal static string server_not_found {
+            get {
+                return ResourceManager.GetString("server_not_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на знаков.
+        /// </summary>
+        internal static string signs {
+            get {
+                return ResourceManager.GetString("signs", resourceCulture);
             }
         }
         
@@ -670,6 +823,42 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка записи.
+        /// </summary>
+        internal static string tb_er_write {
+            get {
+                return ResourceManager.GetString("tb_er_write", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Форма чтения/записи байт закрыта без изменений.
+        /// </summary>
+        internal static string tb_form_close {
+            get {
+                return ResourceManager.GetString("tb_form_close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Работа с формой чтения/записи байт завершена.
+        /// </summary>
+        internal static string tb_form_comp {
+            get {
+                return ResourceManager.GetString("tb_form_comp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на файла лога.
+        /// </summary>
+        internal static string tb_log {
+            get {
+                return ResourceManager.GetString("tb_log", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на нормальный режим.
         /// </summary>
         internal static string tb_norm {
@@ -688,11 +877,47 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на прошло успешно.
+        /// </summary>
+        internal static string tb_pass_suc {
+            get {
+                return ResourceManager.GetString("tb_pass_suc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Читаем/пишем байты по определённому адресу (peek&amp;poke).
+        /// </summary>
+        internal static string tb_pp {
+            get {
+                return ResourceManager.GetString("tb_pp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Устройство перегружается.
         /// </summary>
         internal static string tb_reboot {
             get {
                 return ResourceManager.GetString("tb_reboot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сохранение.
+        /// </summary>
+        internal static string tb_save {
+            get {
+                return ResourceManager.GetString("tb_save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отправка лога подтверждена пользователем..
+        /// </summary>
+        internal static string tb_send_conf {
+            get {
+                return ResourceManager.GetString("tb_send_conf", resourceCulture);
             }
         }
         
@@ -711,6 +936,15 @@ namespace FirehoseFinder.Properties {
         internal static string tb_write_file_sectors {
             get {
                 return ResourceManager.GetString("tb_write_file_sectors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на XML-файл для работы не сформирован.
+        /// </summary>
+        internal static string tb_xml_not_gen {
+            get {
+                return ResourceManager.GetString("tb_xml_not_gen", resourceCulture);
             }
         }
         

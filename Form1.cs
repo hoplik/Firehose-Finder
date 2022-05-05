@@ -318,7 +318,7 @@ namespace FirehoseFinder
                 if (radioButton_adb_IDs.Checked) GetADBIDs(false);
                 if (radioButton_reboot_edl.Checked)
                 {
-                    textBox_soft_term.AppendText(LocRes.GetString("tb_reboot") + '\u0020' + 
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_reboot") + '\u0020' +
                         LocRes.GetString("hex_in") + '\u0020' +
                         LocRes.GetString("tb_edl") + '\u0020' +
                         Environment.NewLine);
@@ -534,7 +534,7 @@ namespace FirehoseFinder
                         LocRes.GetString("tb_cancel_user") + Environment.NewLine);
                     break;
                 case 6:
-                    textBox_soft_term.AppendText("Читаем/пишем байты по определённому адресу (peek&poke)" + Environment.NewLine);
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_pp") + Environment.NewLine);
                     switch (pp.ShowDialog())
                     {
                         case DialogResult.OK:
@@ -543,11 +543,11 @@ namespace FirehoseFinder
                                 fh_command_args.Append(string.Format(" --sendxml=work.xml --search_path={0} --noprompt", Directory.GetCurrentDirectory()));
                                 if (pp.radioButton_peek.Checked) fh_command_args.Append(" --convertprogram2read");
                             }
-                            else textBox_soft_term.AppendText("XML-файл для работы не сформирован" + Environment.NewLine);
-                            textBox_soft_term.AppendText("Работа с формой чтения/записи байт завершена." + Environment.NewLine);
+                            else textBox_soft_term.AppendText(LocRes.GetString("tb_xml_not_gen") + Environment.NewLine);
+                            textBox_soft_term.AppendText(LocRes.GetString("tb_form_comp") + Environment.NewLine);
                             break;
                         case DialogResult.Cancel:
-                            textBox_soft_term.AppendText("Форма чтения/записи байт закрыта без изменений." + Environment.NewLine);
+                            textBox_soft_term.AppendText(LocRes.GetString("tb_form_close") + Environment.NewLine);
                             break;
                         default:
                             break;
@@ -574,6 +574,11 @@ namespace FirehoseFinder
             }
         }
 
+        /// <summary>
+        /// Выполняется при необходимости разбора ответа памяти (хранилища)
+        /// </summary>
+        /// <param name="output_FH">Ответ хранилища</param>
+        /// <param name="lun_numder">Номер диска хранилища</param>
         private void NeedParsingLun(string output_FH, int lun_numder)
         {
             if (output_FH.Contains("TARGET SAID: '"))
@@ -670,13 +675,13 @@ namespace FirehoseFinder
                 if (Flash_Params[lun_numder].Sector_Size == 0 && Flash_Params[lun_numder].Total_Sectors == 0)
                 {
                     Flash_Params[lun_numder].Sector_Size = 512; //Чтоб отрабатывал парсинг GPT
-                    DialogResult dr = MessageBox.Show("Ответ телефона на запрос данных хранилища обработан некорректно. " +
-                        "Нажимая кнопку \"Ok\", вы разрешаете отправить в публичный телеграм-канал разрабтчикам лог ответа телефона для исправления этой ошибки. " +
-                        "Кнопка \"Отмена\" просто закроет это окно, без отправки данных.",
-                        "Внимание! Ошибка! Можно отправить данные?", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                    DialogResult dr = MessageBox.Show(LocRes.GetString("mb_body_send"),
+                        LocRes.GetString("mb_title_send"),
+                        MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Exclamation);
                     if (dr == DialogResult.OK)
                     {
-                        textBox_soft_term.AppendText("Отправка лога подтверждена пользователем." + Environment.NewLine);
+                        textBox_soft_term.AppendText(LocRes.GetString("tb_send_conf") + Environment.NewLine);
                         BotSendMes(textBox_soft_term.Text, Assembly.GetExecutingAssembly().GetName().Version.ToString());
                     }
                 }
@@ -689,6 +694,10 @@ namespace FirehoseFinder
             }
         }
 
+        /// <summary>
+        /// Получаем таблицу GPT для диска
+        /// </summary>
+        /// <param name="lun_number">Номер диска</param>
         private void GetGPT(int lun_number)
         {
             string gptmain = string.Format("gpt_main{0}.bin", lun_number.ToString());
@@ -696,7 +705,7 @@ namespace FirehoseFinder
             if (File.Exists(gptmain))
             {
                 List<GPT_Table> gpt_array = func.Parsing_GPT_main(gptmain, Convert.ToInt32(label_block_size.Text));
-                if (string.IsNullOrEmpty(gpt_array[0].EndLBA)) MessageBox.Show(gpt_array[0].StartLBA, "Ошибка обработки таблицы GPT");
+                if (string.IsNullOrEmpty(gpt_array[0].EndLBA)) MessageBox.Show(gpt_array[0].StartLBA, LocRes.GetString("mb_body_er_gpt"));
                 else //Заполняем листвью массивом итемов(разделов таблицы GPT)
                 {
                     for (int i = 0; i < gpt_array.Count; i++)
@@ -711,7 +720,7 @@ namespace FirehoseFinder
                     label_total_gpt.Text = gpt_array.Count.ToString();
                 }
             }
-            else MessageBox.Show("Таблица GPT не сформирована");
+            else MessageBox.Show(LocRes.GetString("mb_body_gpt_not_formed"));
         }
 
         /// <summary>
@@ -755,16 +764,24 @@ namespace FirehoseFinder
             {
                 try
                 {
-                    using (StreamWriter sw = new StreamWriter(folderBrowserDialog1.SelectedPath + "\\log_terminal_soft_" + DateTime.Now.ToString("mm_ss") + ".txt", false)) sw.Write(textBox_soft_term.Text + "Сохранение лога прошло успешно" + Environment.NewLine);
-                    textBox_soft_term.AppendText("Сохранение лога прошло успешно" + Environment.NewLine);
+                    using (StreamWriter sw = new StreamWriter(folderBrowserDialog1.SelectedPath + "\\log_terminal_soft_" + DateTime.Now.ToString("mm_ss") + ".txt", false))
+                        sw.Write(textBox_soft_term.Text + 
+                            LocRes.GetString("tb_save") + '\u0020' +
+                            LocRes.GetString("tb_log") + '\u0020' +
+                            LocRes.GetString("tb_pass_suc") + Environment.NewLine);
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_save") + '\u0020' +
+                            LocRes.GetString("tb_log") + '\u0020' +
+                            LocRes.GetString("tb_pass_suc") + Environment.NewLine);
                     button_term_save.Enabled = false;
                 }
                 catch (Exception ex)
                 {
-                    textBox_soft_term.AppendText("Ошибка записи файла лога" + ex.Message + Environment.NewLine);
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_er_write") + '\u0020' +
+                        LocRes.GetString("tb_log") + ex.Message + Environment.NewLine);
                 }
             }
-            else textBox_soft_term.AppendText("Сохранение отменено" + Environment.NewLine);
+            else textBox_soft_term.AppendText(LocRes.GetString("tb_save") + '\u0020' +
+                    LocRes.GetString("tb_cancel_user") + Environment.NewLine);
         }
 
         /// <summary>
@@ -833,16 +850,21 @@ namespace FirehoseFinder
             }
             if (!ADB_Check())
             {
-                MessageBox.Show("Проверка корректности работы с устройством через ADB закончилась неудачно." + Environment.NewLine +
-                    "Пожалуйста, исправьте ошибки по данным лога и/или подключите устройство в режиме 9008 после перезагрузки вручную", "Ошибка ADB", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(LocRes.GetString("mb_body_check_fail") + Environment.NewLine +
+                    LocRes.GetString("mb_body_corr_er"),
+                    LocRes.GetString("mb_title_adb_er"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
             if (radioButton_adb_reset.Checked) GetADBIDs(true);
             if (radioButton_man_reset.Checked)
             {
                 GetADBIDs(false);
-                if (label_model.Text.StartsWith("---")) MessageBox.Show("Идентификаторы не получены. Пожалуйста, перезагрузите устройство в аварийный режим вручную.", "Ожидание перезагрузки");
-                else MessageBox.Show("Идентификаторы получены частично. Пожалуйста, перезагрузите устройство в аварийный режим вручную.", "Ожидание перезагрузки");
+                if (label_model.Text.StartsWith("---")) MessageBox.Show(LocRes.GetString("mb_body_id_not_res"),
+                    LocRes.GetString("mb_title_reboot"));
+                else MessageBox.Show(LocRes.GetString("mb_body_id_res"),
+                    LocRes.GetString("mb_title_reboot"));
             }
             waitSahara = true; //Ждём подключения в аварийном режиме
         }
@@ -893,7 +915,7 @@ namespace FirehoseFinder
             }
             if (checkBox_Find_Server.Checked)
             {
-                object[] somerec = { false, "На сервере не нашлось", null, 0, null, null, null };
+                object[] somerec = { false, LocRes.GetString("server_not_found"), null, 0, null, null, null };
                 //Делаем фильтр
                 char[] filter_chr = { '0', '0', '0', '0' };
                 if (!string.IsNullOrEmpty(textBox_hwid.Text)) filter_chr[0] = '1';
@@ -975,7 +997,11 @@ namespace FirehoseFinder
                         dataGridView_final["Column_rate", 0].Value = 1 + Rating(id_str, 0);
                         dataGridView_final["Column_rate", 0].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     }
-                    toolStripStatusLabel_filescompleted.Text = "Обработано " + dataGridView_final.Rows.Count.ToString() + " файлов из " + dataGridView_final.Rows.Count.ToString();
+                    toolStripStatusLabel_filescompleted.Text = LocRes.GetString("hex_processed") + '\u0020' +
+                        dataGridView_final.Rows.Count.ToString() + '\u0020'+ 
+                        LocRes.GetString("hex_files")+ '\u0020'+
+                        LocRes.GetString("hex_from")+ '\u0020'+
+                        dataGridView_final.Rows.Count.ToString();
                 }
                 else dataGridView_final.Rows.Insert(0, somerec);
             }
@@ -990,11 +1016,10 @@ namespace FirehoseFinder
         {
             if (label_Sahara_fhf.Text.StartsWith("#"))
             {
-                DialogResult dr = MessageBox.Show("При подтверждении, с сервера будет загружен программер. " +
-                    "Это не гарантирует того, что у вас с этим программером всё получится. Просто " +
-                    "это, с высокой долей вероятности, подходящий к выбранной вами модели файл.",
-                    "Загрузка файла с сервера",
-                    MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show(LocRes.GetString("mb_body_server_down"),
+                    LocRes.GetString("mb_title_server_down"),
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Information);
                 if (dr == DialogResult.OK) Process.Start(string.Format(label_Sahara_fhf.Text.Trim('#')));
             }
             else
@@ -1014,7 +1039,11 @@ namespace FirehoseFinder
         {
             if (!dataGridView_final.Rows[e.RowIndex].ReadOnly)
             {
-                DialogResult dr = MessageBox.Show(dataGridView_final["Column_Full", e.RowIndex].Value.ToString(), "Сохранить данные в буфер обмена?", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                DialogResult dr = MessageBox.Show(dataGridView_final["Column_Full", e.RowIndex].Value.ToString(),
+                    LocRes.GetString("mb_body_save_clip"),
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1);
                 if (dr == DialogResult.OK)
                 {
                     Clipboard.Clear();
@@ -1076,7 +1105,8 @@ namespace FirehoseFinder
                         case Guide.FH_magic_numbers.ELE: //не совсем ELF
                             curfilerating++;
                             dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.PaleVioletRed;
-                            dataGridView_final["Column_Name", Currnum].ToolTipText = "Файл не является ELF!";
+                            dataGridView_final["Column_Name", Currnum].ToolTipText = LocRes.GetString("file") + '\u0020' +
+                                LocRes.GetString("not_elf");
                             break;
                         case Guide.FH_magic_numbers.OLD: //Старый программер
                             curfilerating++;
@@ -1105,12 +1135,14 @@ namespace FirehoseFinder
                         case Guide.FH_magic_numbers.UFSEncoding: //Закодированный UFS программер
                             curfilerating++;
                             dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.PaleVioletRed;
-                            dataGridView_final["Column_Name", Currnum].ToolTipText = "Файл закодирован!";
+                            dataGridView_final["Column_Name", Currnum].ToolTipText = LocRes.GetString("file") + '\u0020' +
+                                LocRes.GetString("encode");
                             break;
                         case Guide.FH_magic_numbers.XiUFSEnc: //Xiaomi закодированный UFS программер
                             curfilerating++;
                             dataGridView_final.Rows[Currnum].DefaultCellStyle.BackColor = Color.PaleVioletRed;
-                            dataGridView_final["Column_Name", Currnum].ToolTipText = "Файл закодирован!";
+                            dataGridView_final["Column_Name", Currnum].ToolTipText = LocRes.GetString("file") + '\u0020' +
+                                LocRes.GetString("encode");
                             break;
                         case Guide.FH_magic_numbers.OLDasus: //Старый Асус программер
                             curfilerating++;
@@ -1145,7 +1177,10 @@ namespace FirehoseFinder
         private void TextBox_oemhash_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox_oemhash.Text)) label_oemhash.Text = "OEM_PK" + Environment.NewLine + "_HASH";
-            else label_oemhash.Text = "OEM_PK" + Environment.NewLine + "_HASH" + Environment.NewLine + "(" + textBox_oemhash.Text.Length.ToString() + " знаков)";
+            else label_oemhash.Text = "OEM_PK" + Environment.NewLine +
+                    "_HASH" + Environment.NewLine + '\u0028' +
+                    textBox_oemhash.Text.Length.ToString() + '\u0020' +
+                    LocRes.GetString("signs") + '\u0029';
         }
 
         /// <summary>

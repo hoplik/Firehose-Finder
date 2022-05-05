@@ -169,6 +169,10 @@
     <value>You can select no more than {0} sectors for Disk {1}</value>
     <comment>Вы можете выбрать не более {0} секторов для Диск {1}</comment>
   </data>
+  <data name="encode" xml:space="preserve">
+    <value>encoded</value>
+    <comment>закодирован</comment>
+  </data>
   <data name="file" xml:space="preserve">
     <value>file</value>
     <comment>файл</comment>
@@ -237,6 +241,42 @@
     <value>Attention, stopping a long operation!</value>
     <comment>Внимание, остановка длительной операции!</comment>
   </data>
+  <data name="mb_body_check_fail" xml:space="preserve">
+    <value>Checking the correctness of working with the device via ADB failed.</value>
+    <comment>Проверка корректности работы с устройством через ADB закончилась неудачно.</comment>
+  </data>
+  <data name="mb_body_corr_er" xml:space="preserve">
+    <value>Please correct the errors according to the log data and/or connect the device in 9008 mode after manual reboot.</value>
+    <comment>Пожалуйста, исправьте ошибки по данным лога и/или подключите устройство в режиме 9008 после перезагрузки вручную.</comment>
+  </data>
+  <data name="mb_body_er_gpt" xml:space="preserve">
+    <value>Error processing the GPT table</value>
+    <comment>Ошибка обработки таблицы GPT</comment>
+  </data>
+  <data name="mb_body_gpt_not_formed" xml:space="preserve">
+    <value>The GPT table is not formed</value>
+    <comment>Таблица GPT не сформирована</comment>
+  </data>
+  <data name="mb_body_id_not_res" xml:space="preserve">
+    <value>IDs were not received. Please reboot the device into emergency download mode manually.</value>
+    <comment>Идентификаторы не получены. Пожалуйста, перезагрузите устройство в аварийный режим вручную.</comment>
+  </data>
+  <data name="mb_body_id_res" xml:space="preserve">
+    <value>IDs are partially received. Please reboot the device into emergency download mode manually.</value>
+    <comment>Идентификаторы получены частично. Пожалуйста, перезагрузите устройство в аварийный режим вручную.</comment>
+  </data>
+  <data name="mb_body_save_clip" xml:space="preserve">
+    <value>Save data to clipboard?</value>
+    <comment>Сохранить данные в буфер обмена?</comment>
+  </data>
+  <data name="mb_body_send" xml:space="preserve">
+    <value>The phone's response to the storage data request was processed incorrectly. By clicking the "Ok" button, you allow the developers to send the phone response log to the public telegram channel to try to correct this error. The "Cancel" button will simply close this window, without sending data.</value>
+    <comment>Ответ телефона на запрос данных хранилища обработан некорректно. Нажимая кнопку "Ok", вы разрешаете отправить в публичный телеграм-канал разрабтчикам лог ответа телефона для попытки исправления этой ошибки. Кнопка "Отмена" просто закроет это окно, без отправки данных.</comment>
+  </data>
+  <data name="mb_body_server_down" xml:space="preserve">
+    <value>Upon confirmation, the programmer will be downloaded from the server. This does not guarantee that you will succeed with this programmer. It's just that, with a high degree of probability, a file suitable for the model you have chosen.</value>
+    <comment>При подтверждении, с сервера будет загружен программер. Это не гарантирует того, что у вас с этим программером всё получится. Просто это, с высокой долей вероятности, подходящий к выбранной вами модели файл.</comment>
+  </data>
   <data name="mb_note_dev_recon" xml:space="preserve">
     <value>To get the IDs, the device must be reconnected!</value>
     <comment>Для получения идентификаторов устройство должно быть переподключено!</comment>
@@ -249,13 +289,29 @@
     <value>Select the programmer on the "Work with files" tab</value>
     <comment>Выберете программер на вкладке "Работа с файлами"</comment>
   </data>
+  <data name="mb_title_adb_er" xml:space="preserve">
+    <value>ADB error</value>
+    <comment>Ошибка ADB</comment>
+  </data>
   <data name="mb_title_dev_recon" xml:space="preserve">
     <value>Attention!</value>
     <comment>Внимание!</comment>
   </data>
+  <data name="mb_title_reboot" xml:space="preserve">
+    <value>Waiting for a reboot</value>
+    <comment>Ожидание перезагрузки</comment>
+  </data>
   <data name="mb_title_sel_prog" xml:space="preserve">
     <value>It is required to specify the correct path to the file</value>
     <comment>Требуется указать корректный путь к файлу</comment>
+  </data>
+  <data name="mb_title_send" xml:space="preserve">
+    <value>Attention! Mistake! Can I send the data?</value>
+    <comment>Внимание! Ошибка! Можно отправить данные?</comment>
+  </data>
+  <data name="mb_title_server_down" xml:space="preserve">
+    <value>Downloading a file from the server</value>
+    <comment>Загрузка файла с сервера</comment>
   </data>
   <data name="message_body_need_fields" xml:space="preserve">
     <value>Please, select the manufacturer's name from the list or enter a new one, if there is no suitable value.</value>
@@ -272,6 +328,10 @@
   <data name="message_title_need_restart" xml:space="preserve">
     <value>Application restart required!</value>
     <comment>Требуется перезапуск приложения!</comment>
+  </data>
+  <data name="not_elf" xml:space="preserve">
+    <value>is not an ELF</value>
+    <comment>не является ELF</comment>
   </data>
   <data name="offset" xml:space="preserve">
     <value>offset</value>
@@ -292,6 +352,14 @@
   <data name="repack_parsing_header" xml:space="preserve">
     <value>Firmware Parameters</value>
     <comment>Параметры прошивки</comment>
+  </data>
+  <data name="server_not_found" xml:space="preserve">
+    <value>Not found on the server</value>
+    <comment>На сервере не нашлось</comment>
+  </data>
+  <data name="signs" xml:space="preserve">
+    <value>signs</value>
+    <comment>знаков</comment>
   </data>
   <data name="size" xml:space="preserve">
     <value>size</value>
@@ -377,6 +445,22 @@
     <value>Erase all memory</value>
     <comment>Стираем всю память</comment>
   </data>
+  <data name="tb_er_write" xml:space="preserve">
+    <value>Error writing</value>
+    <comment>Ошибка записи</comment>
+  </data>
+  <data name="tb_form_close" xml:space="preserve">
+    <value>The byte read/write form is closed without changes</value>
+    <comment>Форма чтения/записи байт закрыта без изменений</comment>
+  </data>
+  <data name="tb_form_comp" xml:space="preserve">
+    <value>The work with the byte read/write form is completed</value>
+    <comment>Работа с формой чтения/записи байт завершена</comment>
+  </data>
+  <data name="tb_log" xml:space="preserve">
+    <value>log file</value>
+    <comment>файла лога</comment>
+  </data>
   <data name="tb_norm" xml:space="preserve">
     <value>normal mode</value>
     <comment>нормальный режим</comment>
@@ -385,9 +469,25 @@
     <value>Attention, deleting all information from memory!</value>
     <comment>Внимание, удаление всей информации из памяти!</comment>
   </data>
+  <data name="tb_pass_suc" xml:space="preserve">
+    <value>passed successfully</value>
+    <comment>прошло успешно</comment>
+  </data>
+  <data name="tb_pp" xml:space="preserve">
+    <value>Read/Write IMEM (peek&amp;poke)</value>
+    <comment>Читаем/пишем байты по определённому адресу (peek&amp;poke)</comment>
+  </data>
   <data name="tb_reboot" xml:space="preserve">
     <value>Device reboot</value>
     <comment>Устройство перегружается</comment>
+  </data>
+  <data name="tb_save" xml:space="preserve">
+    <value>Saving</value>
+    <comment>Сохранение</comment>
+  </data>
+  <data name="tb_send_conf" xml:space="preserve">
+    <value>Sending the log has been confirmed by the user.</value>
+    <comment>Отправка лога подтверждена пользователем.</comment>
   </data>
   <data name="tb_write_cancel" xml:space="preserve">
     <value>Writing a file to sections was canceled by the user.</value>
@@ -396,6 +496,10 @@
   <data name="tb_write_file_sectors" xml:space="preserve">
     <value>Writing the bin file to the selected sectors</value>
     <comment>Записываем bin-файл в выбранные сектора</comment>
+  </data>
+  <data name="tb_xml_not_gen" xml:space="preserve">
+    <value>The XML file has not been generated for the work</value>
+    <comment>XML-файл для работы не сформирован</comment>
   </data>
   <data name="tip_cancel" xml:space="preserve">
     <value>To reset, press the button and select "Cancel"</value>
