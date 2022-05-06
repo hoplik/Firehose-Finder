@@ -123,6 +123,12 @@
   <data name="about_deck" xml:space="preserve">
     <value>Программа подбора программеров(firehose) для устройств на базе процессоров от Qualcomm.</value>
   </data>
+  <data name="add_dev" xml:space="preserve">
+    <value>Добавить устройство</value>
+  </data>
+  <data name="add_model" xml:space="preserve">
+    <value>Добавить/исправить модель</value>
+  </data>
   <data name="alt_name" xml:space="preserve">
     <value>альтернативное наименование</value>
   </data>
@@ -160,6 +166,9 @@
   <data name="crc" xml:space="preserve">
     <value>контрольная сумма</value>
   </data>
+  <data name="done" xml:space="preserve">
+    <value>Готово.</value>
+  </data>
   <data name="dump_select_disc" xml:space="preserve">
     <value> секторов для </value>
   </data>
@@ -187,11 +196,17 @@
   <data name="firmware_version" xml:space="preserve">
     <value>Версия прошивки</value>
   </data>
+  <data name="free_space" xml:space="preserve">
+    <value>Обязательно убедитесь, что свободный размер диска больше суммарного объёма (всех выбранных разделов) сохраняемого дампа. Иначе возможны ошибки при сохранении или в процесе дальнейшей работы с сохранёнными разделами.</value>
+  </data>
   <data name="gb_disk" xml:space="preserve">
     <value>Диск</value>
   </data>
   <data name="get" xml:space="preserve">
     <value>Получили</value>
+  </data>
+  <data name="gpt_not_found" xml:space="preserve">
+    <value>Не найден базовый файл таблицы разметки - gpt_main0.bin</value>
   </data>
   <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Greeting.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
@@ -238,6 +253,9 @@
   <data name="manuf" xml:space="preserve">
     <value>производитель</value>
   </data>
+  <data name="mb_acc_er" xml:space="preserve">
+    <value>Ошибка доступа</value>
+  </data>
   <data name="mb_body_check_fail" xml:space="preserve">
     <value>Проверка корректности работы с устройством через ADB закончилась неудачно.</value>
   </data>
@@ -255,6 +273,9 @@
   </data>
   <data name="mb_body_id_res" xml:space="preserve">
     <value>Идентификаторы получены частично. Пожалуйста, перезагрузите устройство в аварийный режим вручную.</value>
+  </data>
+  <data name="mb_body_record" xml:space="preserve">
+    <value>Предпринимается попытка записи информации в разделы памяти. Для удобства отслеживания завершения записи можно очистить окно лога, нажав "Ок", оставить текущий лог в окне терминала - "Отмена". Пожалуйста, дождитесь выполнения операции, о чём будет написано в окне лога.</value>
   </data>
   <data name="mb_body_save_clip" xml:space="preserve">
     <value>Сохранить данные в буфер обмена?</value>
@@ -286,6 +307,9 @@
   <data name="mb_title_reboot" xml:space="preserve">
     <value>Ожидание перезагрузки</value>
   </data>
+  <data name="mb_title_record" xml:space="preserve">
+    <value>Осуществляется запись!</value>
+  </data>
   <data name="mb_title_sel_prog" xml:space="preserve">
     <value>Требуется указать корректный путь к файлу</value>
   </data>
@@ -313,6 +337,12 @@
   <data name="not_elf" xml:space="preserve">
     <value>не является ELF</value>
   </data>
+  <data name="not_send" xml:space="preserve">
+    <value>Не все идентификаторы указаны. Пока не отправляем.</value>
+  </data>
+  <data name="no_part_sel" xml:space="preserve">
+    <value>Не выбрано ни одного раздела для сохранения.</value>
+  </data>
   <data name="offset" xml:space="preserve">
     <value>адрес</value>
   </data>
@@ -330,6 +360,18 @@
   </data>
   <data name="russia_flags_flag_17058" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\russia_flags_flag_17058.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sectors" xml:space="preserve">
+    <value>секторов</value>
+  </data>
+  <data name="sel_fold" xml:space="preserve">
+    <value>выбранную папку</value>
+  </data>
+  <data name="sel_prog" xml:space="preserve">
+    <value>Выберете программер на вкладке "Работа с файлами"</value>
+  </data>
+  <data name="sent" xml:space="preserve">
+    <value>Отправили</value>
   </data>
   <data name="server_not_found" xml:space="preserve">
     <value>На сервере не нашлось</value>
@@ -430,6 +472,12 @@
   <data name="tb_form_comp" xml:space="preserve">
     <value>Работа с формой чтения/записи байт завершена</value>
   </data>
+  <data name="tb_gpt_save" xml:space="preserve">
+    <value>Сохранение файла таблицы разметки в выбранную папку прошло успешно.</value>
+  </data>
+  <data name="tb_loader_com" xml:space="preserve">
+    <value>Выполнение команды лоадера успешно завершено.</value>
+  </data>
   <data name="tb_log" xml:space="preserve">
     <value>файла лога</value>
   </data>
@@ -450,6 +498,9 @@
   </data>
   <data name="tb_reboot_fail" xml:space="preserve">
     <value>Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную.</value>
+  </data>
+  <data name="tb_rep_file" xml:space="preserve">
+    <value>файл отчёта</value>
   </data>
   <data name="tb_save" xml:space="preserve">
     <value>Сохранение</value>
@@ -478,8 +529,17 @@
   <data name="tt_check" xml:space="preserve">
     <value>Нажмите для проверки выбранного программера</value>
   </data>
+  <data name="tt_data_not_sent" xml:space="preserve">
+    <value>Данные не отправлены</value>
+  </data>
+  <data name="tt_data_sent" xml:space="preserve">
+    <value>Данные успешно отправлены</value>
+  </data>
   <data name="tt_find" xml:space="preserve">
     <value>Подключите устройство и нажмите для получения идентификаторов</value>
+  </data>
+  <data name="tt_id_empty" xml:space="preserve">
+    <value>Идентификаторы пусты. Нечего отправлять.</value>
   </data>
   <data name="tt_id_not_rec" xml:space="preserve">
     <value>Не все идентификаторы получены, отправка данных отменена</value>
@@ -504,6 +564,9 @@
   </data>
   <data name="version" xml:space="preserve">
     <value>Версия</value>
+  </data>
+  <data name="warn" xml:space="preserve">
+    <value>Предупреждение!</value>
   </data>
   <data name="write_ss" xml:space="preserve">
     <value>Текущий размер сектора</value>

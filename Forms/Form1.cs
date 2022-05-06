@@ -833,6 +833,36 @@ namespace FirehoseFinder
             listView_GPT.Items.Clear();
         }
 
+        /// <summary>
+        /// Выбор всех разделов таблицы GPT
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ВыбратьВсеРазделыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in listView_GPT.Items)
+            {
+                item.Checked = true;
+            }
+            сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
+            записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
+        }
+
+        /// <summary>
+        /// Сбросить выбор всех разделов таблицы GPT
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void СброситьВыборdeselectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in listView_GPT.Items)
+            {
+                item.Checked = false;
+            }
+            сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
+            записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
+        }
+
         #endregion
 
         #region Функции команд контролов вкладки Работа с файлами
@@ -1277,6 +1307,44 @@ namespace FirehoseFinder
             {
                 if (string.IsNullOrEmpty(dataGridView_collection["Trust", i].Value.ToString())) dataGridView_collection.Rows[i].DefaultCellStyle.BackColor=Color.IndianRed;
             }
+        }
+
+        /// <summary>
+        /// Уменьшаем размер шрифта в Справочнике на 1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripButton_small_font_Click(object sender, EventArgs e)
+        {
+            float newsizefont = float.Parse(Settings.Default.db_font, CultureInfo.InvariantCulture) - 1;
+            if (newsizefont<1) newsizefont=1;
+            //Устанавливаем размер шрифта в Справочнике
+            using (Font font = new Font(
+                dataGridView_collection.DefaultCellStyle.Font.FontFamily, newsizefont))
+            {
+                dataGridView_collection.DefaultCellStyle.Font = font;
+            }
+            toolStripLabel_font.Text = Convert.ToInt32(newsizefont).ToString();
+            Settings.Default.db_font = toolStripLabel_font.Text;
+        }
+
+        /// <summary>
+        /// Увеличиваем размер шрифта в Справочнике на 1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToolStripButton_large_font_Click(object sender, EventArgs e)
+        {
+            float newsizefont = float.Parse(Settings.Default.db_font, CultureInfo.InvariantCulture)+1;
+            if (newsizefont>20) newsizefont=20;
+            //Устанавливаем размер шрифта в Справочнике
+            using (Font font = new Font(
+                dataGridView_collection.DefaultCellStyle.Font.FontFamily, newsizefont))
+            {
+                dataGridView_collection.DefaultCellStyle.Font = font;
+            }
+            toolStripLabel_font.Text=Convert.ToInt32(newsizefont).ToString();
+            Settings.Default.db_font = toolStripLabel_font.Text;
         }
 
         #endregion
@@ -1790,7 +1858,8 @@ namespace FirehoseFinder
                 }
                 catch (Exception ex)
                 {
-                    toolStripStatusLabel_filescompleted.Text = "Ошибка записи файла отчёта: " + ex.Message;
+                    toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tb_er_write") + '\u0020' +
+                        LocRes.GetString("tb_rep_file") + '\u003A' + '\u0020' + ex.Message;
                 }
             }
             if (checkBox_send.Checked)
@@ -1798,7 +1867,7 @@ namespace FirehoseFinder
                 if (string.IsNullOrWhiteSpace(textBox_hwid.Text) && string.IsNullOrWhiteSpace(textBox_oemid.Text) &&
                     string.IsNullOrWhiteSpace(textBox_modelid.Text) && string.IsNullOrWhiteSpace(textBox_oemhash.Text))
                 {
-                    toolStripStatusLabel_filescompleted.Text = "Идентификаторы пусты. Нечего отправлять";
+                    toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_id_empty");
                 }
                 else CheckIDs(logstr);
             }
@@ -1824,7 +1893,7 @@ namespace FirehoseFinder
                     }
                 }
                 //Исправить/добавить название/модель если 1 совпадает, а 2 нет
-                BotSendMes("Добавить/исправить модель: " + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                BotSendMes(LocRes.GetString("add_model") + '\u003A' + '\u0020' + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
             }
             //Устройства нет, надо добавить в автосообщение
             else
@@ -1832,14 +1901,9 @@ namespace FirehoseFinder
                 if (!string.IsNullOrEmpty(textBox_hwid.Text) &&
                     !string.IsNullOrEmpty(textBox_oemid.Text) &&
                     !string.IsNullOrEmpty(textBox_modelid.Text) &&
-                    !string.IsNullOrEmpty(textBox_oemhash.Text))
-                {
-                    BotSendMes("Добавить устройство: " + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
-                }
-                else
-                {
-                    toolStripStatusLabel_filescompleted.Text = "Не все идентификаторы указаны. Пока не отправляем.";
-                }
+                    !string.IsNullOrEmpty(textBox_oemhash.Text)) BotSendMes(LocRes.GetString("add_dev") + '\u003A' + '\u0020' +
+                        send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                else toolStripStatusLabel_filescompleted.Text = LocRes.GetString("not_send");
             }
         }
 
@@ -1886,7 +1950,7 @@ namespace FirehoseFinder
             try
             {
                 mybot.SendTextMessage(chat, correct_mess);
-                toolStripStatusLabel_filescompleted.Text = "Данные успешно отправлены";
+                toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_data_sent");
             }
             catch (System.Runtime.Serialization.SerializationException)
             {
@@ -1894,8 +1958,8 @@ namespace FirehoseFinder
             }
             catch (Exception ex)
             {
-                textBox_soft_term.AppendText("Данные не отправлены." + ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine);
-                MessageBox.Show(ex.Message, "Данные не отправлены - " + ex.ToString());
+                textBox_soft_term.AppendText(LocRes.GetString("tt_data_not_sent") + '\u002E' + '\u0020' + ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine);
+                MessageBox.Show(ex.Message, LocRes.GetString("tt_data_not_sent") + '\u0020' + '\u002D' + '\u0020' + ex.ToString());
             }
             checkBox_send.Checked = false;
         }
@@ -1941,27 +2005,85 @@ namespace FirehoseFinder
             groupBox_fb_commands.Enabled = false;
         }
 
+        /// <summary>
+        /// Проверяем подключённые устройства в режиме загрузчика
+        /// </summary>
+        /// <returns>true - получен список подключённых устройств, false - устройство не подключено</returns>
+        private bool FB_Check()
+        {
+            bool goodjob = false;
+            Process process = new Process();
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.FileName = "fastboot.exe";
+            process.StartInfo.Arguments = "devices -l";
+            textBox_soft_term.AppendText(LocRes.GetString("sent") + ": devices -l" + Environment.NewLine);
+            try
+            {
+
+                process.Start();
+                string normstr = process.StandardOutput.ReadToEnd();
+                string errstr = process.StandardError.ReadToEnd();
+                if (!string.IsNullOrEmpty(normstr))
+                {
+                    Pars_FB_Dev(normstr);//Разбираем полученный массив на список устройств
+                    textBox_soft_term.AppendText(LocRes.GetString("get") + '\u003A' + '\u0020' + normstr + Environment.NewLine);
+                    goodjob = true;
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(errstr))
+                    {
+                        Pars_FB_Dev(errstr);//Разбираем полученный массив на список устройств
+                        textBox_soft_term.AppendText(LocRes.GetString("get") + " er: " + errstr + Environment.NewLine);
+                        goodjob = true;
+                    }
+                }
+                process.WaitForExit();
+                process.Close();
+            }
+            catch (Exception ex)
+            {
+                textBox_soft_term.AppendText(ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine);
+            }
+            return goodjob;
+        }
+
+        /// <summary>
+        /// Отправка команды в режиме загрузчика
+        /// </summary>
+        /// <param name="fb_command">Команда</param>
+        private void Fastboot_commands(string fb_command)
+        {
+            Process process = new Process();
+            string real_command = fb_command;
+            if (!string.IsNullOrEmpty(Global_FB_Device)) real_command = "-s " + Global_FB_Device + " " + fb_command;
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true;
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.FileName = "fastboot.exe";
+            process.StartInfo.Arguments = real_command;
+            textBox_soft_term.AppendText(LocRes.GetString("sent") + '\u003A' + '\u0020' + real_command + Environment.NewLine);
+            try
+            {
+                process.Start();
+                string exstr = process.StandardError.ReadToEnd();
+                string normstr = process.StandardOutput.ReadToEnd();
+                if (!string.IsNullOrEmpty(normstr)) textBox_soft_term.AppendText(LocRes.GetString("get") + '\u003A' + '\u0020' + normstr + Environment.NewLine);
+                if (!string.IsNullOrEmpty(exstr)) textBox_soft_term.AppendText(LocRes.GetString("get") + "(ex): " + exstr + Environment.NewLine);
+                process.WaitForExit();
+                process.Close();
+            }
+            catch (Exception ex)
+            {
+                textBox_soft_term.AppendText(ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine);
+            }
+        }
+
         #endregion
-
-        private void ВыбратьВсеРазделыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (ListViewItem item in listView_GPT.Items)
-            {
-                item.Checked = true;
-            }
-            сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
-            записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
-        }
-
-        private void СброситьВыборdeselectAllToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (ListViewItem item in listView_GPT.Items)
-            {
-                item.Checked = false;
-            }
-            сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
-            записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
-        }
 
         private void ListView_GPT_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
@@ -2000,24 +2122,37 @@ namespace FirehoseFinder
                     {
                         File.Copy("gpt_main0.bin", folderBrowserDialog1.SelectedPath + "\\gpt_main0.bin");
                         File.Copy("gpt_backup0.bin", folderBrowserDialog1.SelectedPath + "\\gpt_backup0.bin");
-                        textBox_soft_term.AppendText("Сохранение файла таблицы разметки в выбранную папку прошло успешно." + Environment.NewLine);
+                        textBox_soft_term.AppendText(LocRes.GetString("tb_gpt_save") + Environment.NewLine);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message, "Ошибка записи файла", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ex.Message,
+                            LocRes.GetString("tb_er_write") + '\u0020' +
+                            LocRes.GetString("file"),
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
                     }
                 }
             }
-            else MessageBox.Show("Не найден базовый файл таблицы разметки - gpt_main0.bin", "Ошибка доступа к файлу", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else MessageBox.Show(LocRes.GetString("gpt_not_found"),
+                LocRes.GetString("mb_acc_er") + '\u0020' +
+                LocRes.GetString("file"),
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
         }
 
         private void СохранитьВыбранныеРазделыdumpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Обязательно убедитесь, что свободный размер диска больше суммарного объёма (всех выбранных разделов) сохраняемого дампа. " +
-                "Иначе возможны ошибки при сохранении или в процесе дальнейшей работы с сохранёнными разделами.", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show(LocRes.GetString("free_space"),
+                LocRes.GetString("warn"),
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
             if (listView_GPT.CheckedItems.Count == 0)
             {
-                MessageBox.Show("Не выбрано ни одного раздела для сохранения.", "Предупреждение!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(LocRes.GetString("no_part_sel"),
+                    LocRes.GetString("warn"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
                 return;
             }
             DumpBySectors(true, 0, 0);
@@ -2092,7 +2227,9 @@ namespace FirehoseFinder
                     DumpBySectors(false, Convert.ToInt32(dump.textBox_start_dump.Text), Convert.ToInt32(dump.textBox_count_dump.Text));
                     break;
                 case DialogResult.Cancel:
-                    textBox_soft_term.AppendText("Сохранение секторов отменено пользователем" + Environment.NewLine);
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_save") + '\u0020' +
+                        LocRes.GetString("sectors") + '\u0020' +
+                        LocRes.GetString("tb_cancel_user") + Environment.NewLine);
                     break;
                 default:
                     break;
@@ -2164,7 +2301,7 @@ namespace FirehoseFinder
         {
             string newfilename = e.UserState.ToString();
             progressBar_phone.Value = e.ProgressPercentage;
-            textBox_soft_term.AppendText("Сохраняем " + newfilename + " ... ");
+            textBox_soft_term.AppendText(LocRes.GetString("tb_save") + '\u0020' + newfilename + " ... ");
             if (File.Exists(newfilename))
             {
                 try
@@ -2178,7 +2315,7 @@ namespace FirehoseFinder
                 }
                 File.Delete(newfilename);
             }
-            textBox_soft_term.AppendText("Готово." + Environment.NewLine);
+            textBox_soft_term.AppendText(LocRes.GetString("done") + Environment.NewLine);
         }
 
         private void BackgroundWorker_dump_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -2187,81 +2324,11 @@ namespace FirehoseFinder
             else
             {
                 progressBar_phone.Value = 0;
-                textBox_soft_term.AppendText(e.Result + Environment.NewLine + "Сохранение в выбранную папку прошло успешно." + Environment.NewLine);
-            }
-        }
-
-        private bool FB_Check()
-        {
-            bool goodjob = false;
-            Process process = new Process();
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.RedirectStandardError = true;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.FileName = "fastboot.exe";
-            process.StartInfo.Arguments = "devices -l";
-            textBox_soft_term.AppendText("Отправили: devices -l" + Environment.NewLine);
-            try
-            {
-
-                process.Start();
-                string normstr = process.StandardOutput.ReadToEnd();
-                string errstr = process.StandardError.ReadToEnd();
-                if (!string.IsNullOrEmpty(normstr))
-                {
-                    Pars_FB_Dev(normstr);//Разбираем полученный массив на список устройств
-                    textBox_soft_term.AppendText("Получили: " + normstr + Environment.NewLine);
-                    goodjob = true;
-                }
-                else
-                {
-                    if (!string.IsNullOrEmpty(errstr))
-                    {
-                        Pars_FB_Dev(errstr);//Разбираем полученный массив на список устройств
-                        textBox_soft_term.AppendText("Получили er: " + errstr + Environment.NewLine);
-                        goodjob = true;
-                    }
-                }
-                process.WaitForExit();
-                process.Close();
-            }
-            catch (Exception ex)
-            {
-                textBox_soft_term.AppendText(ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine);
-            }
-            return goodjob;
-        }
-
-        /// <summary>
-        /// Отправка команды в режиме загрузчика
-        /// </summary>
-        /// <param name="fb_command">Команда</param>
-        private void Fastboot_commands(string fb_command)
-        {
-            Process process = new Process();
-            string real_command = fb_command;
-            if (!string.IsNullOrEmpty(Global_FB_Device)) real_command = "-s " + Global_FB_Device + " " + fb_command;
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.RedirectStandardError = true;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.FileName = "fastboot.exe";
-            process.StartInfo.Arguments = real_command;
-            textBox_soft_term.AppendText("Отправили: " + real_command + Environment.NewLine);
-            try
-            {
-                process.Start();
-                string exstr = process.StandardError.ReadToEnd();
-                string normstr = process.StandardOutput.ReadToEnd();
-                if (!string.IsNullOrEmpty(normstr)) textBox_soft_term.AppendText("Получили: " + normstr + Environment.NewLine);
-                if (!string.IsNullOrEmpty(exstr)) textBox_soft_term.AppendText("Получили(ex): " + exstr + Environment.NewLine);
-                process.WaitForExit();
-                process.Close();
-            }
-            catch (Exception ex)
-            {
-                textBox_soft_term.AppendText(ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine);
+                textBox_soft_term.AppendText(e.Result + Environment.NewLine +
+                    LocRes.GetString("tb_save") + '\u0020' +
+                    LocRes.GetString("hex_in") + '\u0020' +
+                    LocRes.GetString("sel_fold") + '\u0020' +
+                    LocRes.GetString("tb_pass_suc") + Environment.NewLine);
             }
         }
 
@@ -2397,7 +2464,7 @@ namespace FirehoseFinder
                     {
                         dataGridView_final["Column_Sel", e.RowIndex].Value = false;
                         button_useSahara_fhf.Enabled = false;
-                        label_Sahara_fhf.Text = "Выберете программер на вкладке \"Работа с файлами\"";
+                        label_Sahara_fhf.Text = LocRes.GetString("sel_prog");
                     }
                     else
                     {
@@ -2523,10 +2590,11 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void ЗаписатьФайлВВыбранныйРазделLoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Предпринимается попытка записи информации в разделы памяти." +
-                "Для удобства отслеживания завершения записи можно очистить окно лога, нажав \"Ок\", оставить текущий лог в окне терминала - \"Отмена\"." +
-                "Пожалуйста, дождитесь выполнения операции, о чём будет написано в окне лога.",
-                "Внимание! Осуществляется запись!", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            DialogResult dr = MessageBox.Show(LocRes.GetString("mb_body_record"),
+                LocRes.GetString("mb_title_dev_recon") + '\u0020' +
+                LocRes.GetString("mb_title_record"),
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Exclamation);
             if (dr == DialogResult.OK) textBox_soft_term.Text = string.Empty;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -2592,7 +2660,8 @@ namespace FirehoseFinder
                     }
                     File.Delete(newfilename);
                 }
-                textBox_soft_term.AppendText(e.Result.ToString() + Environment.NewLine + "Выполнение команды лоадера успешно завершено." + Environment.NewLine);
+                textBox_soft_term.AppendText(e.Result.ToString() + Environment.NewLine +
+                    LocRes.GetString("tb_loader_com") + Environment.NewLine);
             }
         }
 
@@ -2718,34 +2787,6 @@ namespace FirehoseFinder
         {
             ProcessStartInfo offertrans = new ProcessStartInfo("https://t.me/+Suwc1u6h8PYzM2Qy");
             Process.Start(offertrans);
-        }
-
-        private void ToolStripButton_small_font_Click(object sender, EventArgs e)
-        {
-            float newsizefont = float.Parse(Settings.Default.db_font, CultureInfo.InvariantCulture)-1;
-            if (newsizefont<1) newsizefont=1;
-            //Устанавливаем размер шрифта в Справочнике
-            using (Font font = new Font(
-                dataGridView_collection.DefaultCellStyle.Font.FontFamily, newsizefont))
-            {
-                dataGridView_collection.DefaultCellStyle.Font = font;
-            }
-            toolStripLabel_font.Text=Convert.ToInt32(newsizefont).ToString();
-            Settings.Default.db_font = toolStripLabel_font.Text;
-        }
-
-        private void ToolStripButton_large_font_Click(object sender, EventArgs e)
-        {
-            float newsizefont = float.Parse(Settings.Default.db_font, CultureInfo.InvariantCulture)+1;
-            if (newsizefont>20) newsizefont=20;
-            //Устанавливаем размер шрифта в Справочнике
-            using (Font font = new Font(
-                dataGridView_collection.DefaultCellStyle.Font.FontFamily, newsizefont))
-            {
-                dataGridView_collection.DefaultCellStyle.Font = font;
-            }
-            toolStripLabel_font.Text=Convert.ToInt32(newsizefont).ToString();
-            Settings.Default.db_font = toolStripLabel_font.Text;
         }
     }
 }

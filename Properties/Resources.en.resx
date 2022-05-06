@@ -125,6 +125,14 @@
     <value>The program of selection of programmers (firehose) for devices based on processors from Qualcomm.</value>
     <comment>Программа подбора программеров(firehose) для устройств на базе процессоров от Qualcomm.</comment>
   </data>
+  <data name="add_dev" xml:space="preserve">
+    <value>Add device</value>
+    <comment>Добавить устройство</comment>
+  </data>
+  <data name="add_model" xml:space="preserve">
+    <value>Add/Fix a model</value>
+    <comment>Добавить/исправить модель</comment>
+  </data>
   <data name="alt_name" xml:space="preserve">
     <value>alternative name</value>
     <comment>альтернативное наименование</comment>
@@ -169,6 +177,10 @@
     <value>CRC</value>
     <comment>контрольная сумма</comment>
   </data>
+  <data name="done" xml:space="preserve">
+    <value>Done.</value>
+    <comment>Готово.</comment>
+  </data>
   <data name="dump_select_disc" xml:space="preserve">
     <value> sectors for </value>
     <comment> секторов для </comment>
@@ -197,13 +209,21 @@
     <value>Firmware version</value>
     <comment>Версия прошивки</comment>
   </data>
+  <data name="free_space" xml:space="preserve">
+    <value>Be sure to make sure that the free disk size is larger than the total volume (of all selected partitions) of the stored dump. Otherwise, errors may occur when saving or in the process of further work with saved partitions.</value>
+    <comment>Обязательно убедитесь, что свободный размер диска больше суммарного объёма (всех выбранных разделов) сохраняемого дампа. Иначе возможны ошибки при сохранении или в процесе дальнейшей работы с сохранёнными разделами.</comment>
+  </data>
   <data name="gb_disk" xml:space="preserve">
     <value>Disk</value>
     <comment>Диск</comment>
   </data>
   <data name="get" xml:space="preserve">
-    <value>Get</value>
+    <value>Received</value>
     <comment>Получили</comment>
+  </data>
+  <data name="gpt_not_found" xml:space="preserve">
+    <value>The basic GPT file - gpt_main0.bin was not found</value>
+    <comment>Не найден базовый файл таблицы разметки - gpt_main0.bin</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -265,6 +285,10 @@
     <value>manufacturer</value>
     <comment>производитель</comment>
   </data>
+  <data name="mb_acc_er" xml:space="preserve">
+    <value>Access error</value>
+    <comment>Ошибка доступа</comment>
+  </data>
   <data name="mb_body_check_fail" xml:space="preserve">
     <value>Checking the correctness of working with the device via ADB failed.</value>
     <comment>Проверка корректности работы с устройством через ADB закончилась неудачно.</comment>
@@ -288,6 +312,10 @@
   <data name="mb_body_id_res" xml:space="preserve">
     <value>IDs are partially received. Please reboot the device into emergency download mode manually.</value>
     <comment>Идентификаторы получены частично. Пожалуйста, перезагрузите устройство в аварийный режим вручную.</comment>
+  </data>
+  <data name="mb_body_record" xml:space="preserve">
+    <value>An attempt is being made to write information to memory partitions. For the convenience of tracking the completion of the recording, you can clear the log window by clicking "Ok", leave the current log in the terminal window - "Cancel". Please wait for the operation to be performed, as it will be written in the log window.</value>
+    <comment>Предпринимается попытка записи информации в разделы памяти. Для удобства отслеживания завершения записи можно очистить окно лога, нажав "Ок", оставить текущий лог в окне терминала - "Отмена". Пожалуйста, дождитесь выполнения операции, о чём будет написано в окне лога.</comment>
   </data>
   <data name="mb_body_save_clip" xml:space="preserve">
     <value>Save data to clipboard?</value>
@@ -329,6 +357,10 @@
     <value>Waiting for a reboot</value>
     <comment>Ожидание перезагрузки</comment>
   </data>
+  <data name="mb_title_record" xml:space="preserve">
+    <value>Recording is underway!</value>
+    <comment>Осуществляется запись!</comment>
+  </data>
   <data name="mb_title_sel_prog" xml:space="preserve">
     <value>It is required to specify the correct path to the file</value>
     <comment>Требуется указать корректный путь к файлу</comment>
@@ -365,6 +397,14 @@
     <value>is not an ELF</value>
     <comment>не является ELF</comment>
   </data>
+  <data name="not_send" xml:space="preserve">
+    <value>Not all IDs are specified. We are not sending it yet.</value>
+    <comment>Не все идентификаторы указаны. Пока не отправляем.</comment>
+  </data>
+  <data name="no_part_sel" xml:space="preserve">
+    <value>No partitions have been selected to save.</value>
+    <comment>Не выбрано ни одного раздела для сохранения.</comment>
+  </data>
   <data name="offset" xml:space="preserve">
     <value>offset</value>
     <comment>адрес</comment>
@@ -384,6 +424,22 @@
   <data name="repack_parsing_header" xml:space="preserve">
     <value>Firmware Parameters</value>
     <comment>Параметры прошивки</comment>
+  </data>
+  <data name="sectors" xml:space="preserve">
+    <value>sectors</value>
+    <comment>секторов</comment>
+  </data>
+  <data name="sel_fold" xml:space="preserve">
+    <value>selected folder</value>
+    <comment>выбранную папку</comment>
+  </data>
+  <data name="sel_prog" xml:space="preserve">
+    <value>Select the programmer on the "Work with files" tab</value>
+    <comment>Выберете программер на вкладке "Работа с файлами"</comment>
+  </data>
+  <data name="sent" xml:space="preserve">
+    <value>Sent</value>
+    <comment>Отправили</comment>
   </data>
   <data name="server_not_found" xml:space="preserve">
     <value>Not found on the server</value>
@@ -517,6 +573,14 @@
     <value>The work with the byte read/write form is completed</value>
     <comment>Работа с формой чтения/записи байт завершена</comment>
   </data>
+  <data name="tb_gpt_save" xml:space="preserve">
+    <value>Saving the markup table file to the selected folder was successful.</value>
+    <comment>Сохранение файла таблицы разметки в выбранную папку прошло успешно.</comment>
+  </data>
+  <data name="tb_loader_com" xml:space="preserve">
+    <value>The loader command execution has been completed successfully.</value>
+    <comment>Выполнение команды лоадера успешно завершено.</comment>
+  </data>
   <data name="tb_log" xml:space="preserve">
     <value>log file</value>
     <comment>файла лога</comment>
@@ -544,6 +608,10 @@
   <data name="tb_reboot_fail" xml:space="preserve">
     <value>Automatic reboot to emergency mode 9008 from ADB failed. Try it manually.</value>
     <comment>Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную.</comment>
+  </data>
+  <data name="tb_rep_file" xml:space="preserve">
+    <value>report file</value>
+    <comment>файл отчёта</comment>
   </data>
   <data name="tb_save" xml:space="preserve">
     <value>Saving</value>
@@ -581,9 +649,21 @@
     <value>Click to check the selected programmer</value>
     <comment>Нажмите для проверки выбранного программера</comment>
   </data>
+  <data name="tt_data_not_sent" xml:space="preserve">
+    <value>No data sent</value>
+    <comment>Данные не отправлены</comment>
+  </data>
+  <data name="tt_data_sent" xml:space="preserve">
+    <value>Data has been sent successfully</value>
+    <comment>Данные успешно отправлены</comment>
+  </data>
   <data name="tt_find" xml:space="preserve">
     <value>Connect the device and click to get the IDs</value>
     <comment>Подключите устройство и нажмите для получения идентификаторов</comment>
+  </data>
+  <data name="tt_id_empty" xml:space="preserve">
+    <value>The IDs are empty. There is nothing to send.</value>
+    <comment>Идентификаторы пусты. Нечего отправлять.</comment>
   </data>
   <data name="tt_id_not_rec" xml:space="preserve">
     <value>Not all IDs have been received, data sending has been canceled</value>
@@ -612,6 +692,10 @@
   <data name="version" xml:space="preserve">
     <value>Version</value>
     <comment>Версия</comment>
+  </data>
+  <data name="warn" xml:space="preserve">
+    <value>Warning!</value>
+    <comment>Предупреждение!</comment>
   </data>
   <data name="write_ss" xml:space="preserve">
     <value>Current sector size</value>

@@ -79,6 +79,24 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Добавить устройство.
+        /// </summary>
+        internal static string add_dev {
+            get {
+                return ResourceManager.GetString("add_dev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Добавить/исправить модель.
+        /// </summary>
+        internal static string add_model {
+            get {
+                return ResourceManager.GetString("add_model", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на альтернативное наименование.
         /// </summary>
         internal static string alt_name {
@@ -187,6 +205,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Готово..
+        /// </summary>
+        internal static string done {
+            get {
+                return ResourceManager.GetString("done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на  секторов для .
         /// </summary>
         internal static string dump_select_disc {
@@ -270,6 +297,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Обязательно убедитесь, что свободный размер диска больше суммарного объёма (всех выбранных разделов) сохраняемого дампа. Иначе возможны ошибки при сохранении или в процесе дальнейшей работы с сохранёнными разделами..
+        /// </summary>
+        internal static string free_space {
+            get {
+                return ResourceManager.GetString("free_space", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Диск.
         /// </summary>
         internal static string gb_disk {
@@ -284,6 +320,15 @@ namespace FirehoseFinder.Properties {
         internal static string get {
             get {
                 return ResourceManager.GetString("get", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не найден базовый файл таблицы разметки - gpt_main0.bin.
+        /// </summary>
+        internal static string gpt_not_found {
+            get {
+                return ResourceManager.GetString("gpt_not_found", resourceCulture);
             }
         }
         
@@ -426,6 +471,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка доступа.
+        /// </summary>
+        internal static string mb_acc_er {
+            get {
+                return ResourceManager.GetString("mb_acc_er", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Проверка корректности работы с устройством через ADB закончилась неудачно..
         /// </summary>
         internal static string mb_body_check_fail {
@@ -476,6 +530,15 @@ namespace FirehoseFinder.Properties {
         internal static string mb_body_id_res {
             get {
                 return ResourceManager.GetString("mb_body_id_res", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Предпринимается попытка записи информации в разделы памяти. Для удобства отслеживания завершения записи можно очистить окно лога, нажав &quot;Ок&quot;, оставить текущий лог в окне терминала - &quot;Отмена&quot;. Пожалуйста, дождитесь выполнения операции, о чём будет написано в окне лога..
+        /// </summary>
+        internal static string mb_body_record {
+            get {
+                return ResourceManager.GetString("mb_body_record", resourceCulture);
             }
         }
         
@@ -570,6 +633,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Осуществляется запись!.
+        /// </summary>
+        internal static string mb_title_record {
+            get {
+                return ResourceManager.GetString("mb_title_record", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Требуется указать корректный путь к файлу.
         /// </summary>
         internal static string mb_title_sel_prog {
@@ -642,11 +714,29 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Не выбрано ни одного раздела для сохранения..
+        /// </summary>
+        internal static string no_part_sel {
+            get {
+                return ResourceManager.GetString("no_part_sel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на не является ELF.
         /// </summary>
         internal static string not_elf {
             get {
                 return ResourceManager.GetString("not_elf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не все идентификаторы указаны. Пока не отправляем..
+        /// </summary>
+        internal static string not_send {
+            get {
+                return ResourceManager.GetString("not_send", resourceCulture);
             }
         }
         
@@ -702,6 +792,42 @@ namespace FirehoseFinder.Properties {
             get {
                 object obj = ResourceManager.GetObject("russia_flags_flag_17058", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на секторов.
+        /// </summary>
+        internal static string sectors {
+            get {
+                return ResourceManager.GetString("sectors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на выбранную папку.
+        /// </summary>
+        internal static string sel_fold {
+            get {
+                return ResourceManager.GetString("sel_fold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Выберете программер на вкладке &quot;Работа с файлами&quot;.
+        /// </summary>
+        internal static string sel_prog {
+            get {
+                return ResourceManager.GetString("sel_prog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отправили.
+        /// </summary>
+        internal static string sent {
+            get {
+                return ResourceManager.GetString("sent", resourceCulture);
             }
         }
         
@@ -985,6 +1111,24 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Сохранение файла таблицы разметки в выбранную папку прошло успешно..
+        /// </summary>
+        internal static string tb_gpt_save {
+            get {
+                return ResourceManager.GetString("tb_gpt_save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Выполнение команды лоадера успешно завершено..
+        /// </summary>
+        internal static string tb_loader_com {
+            get {
+                return ResourceManager.GetString("tb_loader_com", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на файла лога.
         /// </summary>
         internal static string tb_log {
@@ -1044,6 +1188,15 @@ namespace FirehoseFinder.Properties {
         internal static string tb_reboot_fail {
             get {
                 return ResourceManager.GetString("tb_reboot_fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на файл отчёта.
+        /// </summary>
+        internal static string tb_rep_file {
+            get {
+                return ResourceManager.GetString("tb_rep_file", resourceCulture);
             }
         }
         
@@ -1147,11 +1300,38 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Данные не отправлены.
+        /// </summary>
+        internal static string tt_data_not_sent {
+            get {
+                return ResourceManager.GetString("tt_data_not_sent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Данные успешно отправлены.
+        /// </summary>
+        internal static string tt_data_sent {
+            get {
+                return ResourceManager.GetString("tt_data_sent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Подключите устройство и нажмите для получения идентификаторов.
         /// </summary>
         internal static string tt_find {
             get {
                 return ResourceManager.GetString("tt_find", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Идентификаторы пусты. Нечего отправлять..
+        /// </summary>
+        internal static string tt_id_empty {
+            get {
+                return ResourceManager.GetString("tt_id_empty", resourceCulture);
             }
         }
         
@@ -1225,6 +1405,15 @@ namespace FirehoseFinder.Properties {
         internal static string version {
             get {
                 return ResourceManager.GetString("version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Предупреждение!.
+        /// </summary>
+        internal static string warn {
+            get {
+                return ResourceManager.GetString("warn", resourceCulture);
             }
         }
         
