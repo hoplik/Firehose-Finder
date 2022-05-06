@@ -863,6 +863,346 @@ namespace FirehoseFinder
             записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
         }
 
+        /// <summary>
+        /// Выбор элемента в списке разделов таблицы GPT
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListView_GPT_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            int cp = listView_GPT.CheckedItems.Count;
+            label_select_gpt.Text = cp.ToString();
+            if (cp == 1)
+            {
+                сохранитьВыбранныйРазделToolStripMenuItem.Enabled = true;
+                записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
+                записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
+            }
+        }
+
+        /// <summary>
+        /// Выбор единичного раздела в списке разделов таблицы GPT
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ВыбратьРазделToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in listView_GPT.Items)
+            {
+                item.Checked = false;
+            }
+            listView_GPT.SelectedItems[0].Checked = true;
+            сохранитьВыбранныйРазделToolStripMenuItem.Enabled = true;
+            записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = true;
+        }
+
+        /// <summary>
+        /// Сохраняем таблицу GPT и бэкап в файлы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void СохранитьТаблицуВФайлmainGPTbinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists("gpt_main0.bin") && File.Exists("gpt_backup0.bin"))
+            {
+                if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        File.Copy("gpt_main0.bin", folderBrowserDialog1.SelectedPath + "\\gpt_main0.bin");
+                        File.Copy("gpt_backup0.bin", folderBrowserDialog1.SelectedPath + "\\gpt_backup0.bin");
+                        textBox_soft_term.AppendText(LocRes.GetString("tb_gpt_save") + Environment.NewLine);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message,
+                            LocRes.GetString("tb_er_write") + '\u0020' +
+                            LocRes.GetString("file"),
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else MessageBox.Show(LocRes.GetString("gpt_not_found"),
+                LocRes.GetString("mb_acc_er") + '\u0020' +
+                LocRes.GetString("file"),
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+        }
+
+        /// <summary>
+        /// Запускаем процедуру сохранения выбранных разделов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void СохранитьВыбранныеРазделыdumpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(LocRes.GetString("free_space"),
+                LocRes.GetString("warn"),
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
+            if (listView_GPT.CheckedItems.Count == 0)
+            {
+                MessageBox.Show(LocRes.GetString("no_part_sel"),
+                    LocRes.GetString("warn"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                return;
+            }
+            DumpBySectors(true, 0, 0);
+        }
+
+        /// <summary>
+        /// Активизируем пункты меню в зависимости от количества выбранных разделов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Label_select_gpt_TextChanged(object sender, EventArgs e)
+        {
+            long selbytes = 0; //Размер выбранных секторов в байтах
+            if (label_select_gpt.Text.Equals(listView_GPT.Items.Count.ToString())) contextMenuStrip_gpt.Items[6].Enabled = false;
+            else contextMenuStrip_gpt.Items[6].Enabled = true;
+            if (label_select_gpt.Text.Equals("0"))
+            {
+                contextMenuStrip_gpt.Items[4].Enabled = false;
+                contextMenuStrip_gpt.Items[7].Enabled = false;
+            }
+            else
+            {
+                foreach (ListViewItem item in listView_GPT.CheckedItems)
+                {
+                    selbytes += Convert.ToInt64(item.SubItems[4].Text);
+                }
+                contextMenuStrip_gpt.Items[4].Enabled = true;
+                contextMenuStrip_gpt.Items[7].Enabled = true;
+            }
+            label_GPT_bytes.Text = func.Bytes_KB_MB(selbytes.ToString());
+        }
+
+        /// <summary>
+        /// Меняем статус кнопок меню при изменении количества доступных разделов GPT для слива
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Label_total_gpt_TextChanged(object sender, EventArgs e)
+        {
+            if (label_total_gpt.Text.Equals("0"))
+            {
+                contextMenuStrip_gpt.Items[0].Enabled = false;
+                contextMenuStrip_gpt.Items[2].Enabled = false;
+                contextMenuStrip_gpt.Items[4].Enabled = false;
+                contextMenuStrip_gpt.Items[6].Enabled = false;
+                contextMenuStrip_gpt.Items[7].Enabled = false;
+            }
+            else
+            {
+                contextMenuStrip_gpt.Items[0].Enabled = true;
+                contextMenuStrip_gpt.Items[2].Enabled = true;
+                contextMenuStrip_gpt.Items[4].Enabled = true;
+                contextMenuStrip_gpt.Items[6].Enabled = true;
+            }
+        }
+
+        /// <summary>
+        /// Меняем статус кнопок меню при изменении количества доступных секторов для слива
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Label_total_blocks_TextChanged(object sender, EventArgs e)
+        {
+            if (Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors == 0) contextMenuStrip_gpt.Items[3].Enabled = false;
+            else contextMenuStrip_gpt.Items[3].Enabled = true;
+        }
+
+        /// <summary>
+        /// Открываем форму для сохранения секторов по номеру
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void СохранитьСектораПоНомеруdumpSectorNumderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dump_Sectors dump = new Dump_Sectors(this);
+            switch (dump.ShowDialog())
+            {
+                case DialogResult.OK:
+                    DumpBySectors(false, Convert.ToInt32(dump.textBox_start_dump.Text), Convert.ToInt32(dump.textBox_count_dump.Text));
+                    break;
+                case DialogResult.Cancel:
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_save") + '\u0020' +
+                        LocRes.GetString("sectors") + '\u0020' +
+                        LocRes.GetString("tb_cancel_user") + Environment.NewLine);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void BackgroundWorker_dump_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            List<string> do_str = new List<string>((List<string>)e.Argument);
+            string dump_results = string.Empty; //Отчёт
+            int count = 1;
+            foreach (string str in do_str)
+            {
+                string endoffilename = str.Remove(0, str.IndexOf("--sendimage=dump_") + 12);
+                int endoffile = endoffilename.IndexOf(".bin");
+                string userState = endoffilename.Substring(0, endoffile + 4); //Имя файла
+                dump_results += func.FH_Commands(str.ToString()) + Environment.NewLine;
+                worker.ReportProgress(count * 100 / do_str.Count, userState);
+                count++;
+            }
+            e.Result = dump_results;
+            Thread.Sleep(1);
+        }
+
+        private void BackgroundWorker_dump_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            string newfilename = e.UserState.ToString();
+            progressBar_phone.Value = e.ProgressPercentage;
+            textBox_soft_term.AppendText(LocRes.GetString("tb_save") + '\u0020' + newfilename + " ... ");
+            if (File.Exists(newfilename))
+            {
+                try
+                {
+                    File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                }
+                catch (IOException)
+                {
+                    File.Delete(folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                    File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                }
+                File.Delete(newfilename);
+            }
+            textBox_soft_term.AppendText(LocRes.GetString("done") + Environment.NewLine);
+        }
+
+        private void BackgroundWorker_dump_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine);
+            else
+            {
+                progressBar_phone.Value = 0;
+                textBox_soft_term.AppendText(e.Result + Environment.NewLine +
+                    LocRes.GetString("tb_save") + '\u0020' +
+                    LocRes.GetString("hex_in") + '\u0020' +
+                    LocRes.GetString("sel_fold") + '\u0020' +
+                    LocRes.GetString("tb_pass_suc") + Environment.NewLine);
+            }
+        }
+
+        /// <summary>
+        /// Активизируем кнопку и группу при удачном подключении устройства в режиме загрузчика
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_fb_check_Click(object sender, EventArgs e)
+        {
+            if (FB_Check())
+            {
+                button_fb_com_start.Enabled = true;
+                groupBox_fb_commands.Enabled = true;
+                if (listView_fb_devices.Items.Count > 1) listView_fb_devices.Enabled = true;
+            }
+        }
+
+        /// <summary>
+        /// Выполняем команду в зависимости от выбранного контрола
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_fb_com_start_Click(object sender, EventArgs e)
+        {
+            string Com_String = textBox_ADB_commandstring.Text;
+            if (radioButton_fb_reboot_normal.Checked) Fastboot_commands("reboot");
+            if (radioButton_fb_rebootbootloader.Checked) Fastboot_commands("reboot bootloader");
+            if (radioButton_fb_rebootedl.Checked) Fastboot_commands("oem reboot-edl");
+            if (radioButton_fb_getvar.Checked) Fastboot_commands("getvar all");
+            if (radioButton_fb_devinfo.Checked) Fastboot_commands("oem device-info");
+            if (radioButton_fb_unlock.Checked) Fastboot_commands("flashing unlock");
+            if (radioButton_fb_lock.Checked) Fastboot_commands("flashing lock");
+            if (radioButton_fb_commandline.Checked && !string.IsNullOrEmpty(Com_String)) Fastboot_commands(Com_String);
+        }
+
+        /// <summary>
+        /// Оставляем столбец скрытым при попытке изменения размера
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListView_GPT_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        {
+            if (listView_GPT.Columns[4].Width > 0) listView_GPT.Columns[4].Width = 0;
+        }
+
+        /// <summary>
+        /// Активируем или закрываем форму ввода вручную команды для режима загрузчика
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RadioButton_fb_commandline_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_fb_commandline.Checked) textBox_fb_commandline.Enabled = true;
+            else
+            {
+                textBox_fb_commandline.Enabled = false;
+                textBox_fb_commandline.Text = string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// Отправляем команду на выполнение по энтеру
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_fb_commandline_KeyUp(object sender, KeyEventArgs e)
+        {
+            string Com_String = textBox_fb_commandline.Text;
+            if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(Com_String)) Fastboot_commands(Com_String);
+        }
+
+        /// <summary>
+        /// Оставляем только один маркер на устройствах ADB
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListView_ADB_devices_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            if (e.Item.Checked)
+            {
+                AdbClient client = new AdbClient();
+                List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
+                foreach (DeviceData dev in devices)
+                {
+                    if (dev.Serial.Equals(e.Item.Text)) Global_ADB_Device = dev;
+                }
+                foreach (ListViewItem item in listView_ADB_devices.Items)
+                {
+                    if (!item.Equals(e.Item)) item.Checked = false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Оставляем только один маркер на устройствах Fastboot
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ListView_fb_devices_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            if (e.Item.Checked)
+            {
+                Global_FB_Device = e.Item.Text;
+                foreach (ListViewItem item in listView_fb_devices.Items)
+                {
+                    if (!item.Text.Equals(e.Item.Text)) item.Checked = false;
+                }
+            }
+        }
+
         #endregion
 
         #region Функции команд контролов вкладки Работа с файлами
@@ -1249,6 +1589,46 @@ namespace FirehoseFinder
                 if (checkBox_Find_Local.Checked) checkBox_Find_Local.Checked = false;
             }
             else if (!checkBox_Find_Local.Checked) button_path.Enabled = false;
+        }
+
+        /// <summary>
+        /// Ставим галку на выбранной строке с программером
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DataGridView_final_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (!dataGridView_final.Rows[e.RowIndex].ReadOnly)
+                {
+                    if (Convert.ToBoolean(dataGridView_final["Column_Sel", e.RowIndex].Value) == true)
+                    {
+                        dataGridView_final["Column_Sel", e.RowIndex].Value = false;
+                        button_useSahara_fhf.Enabled = false;
+                        label_Sahara_fhf.Text = LocRes.GetString("sel_prog");
+                    }
+                    else
+                    {
+                        for (int i = 0; i < dataGridView_final.Rows.Count; i++)
+                        {
+                            dataGridView_final["Column_Sel", i].Value = false;
+                        }
+                        dataGridView_final["Column_Sel", e.RowIndex].Value = true;
+                        button_useSahara_fhf.Enabled = true;
+                        label_Sahara_fhf.Text = dataGridView_final.SelectedRows[0].Cells[1].Value.ToString();
+                    }
+                }
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                //Просто игнорируем ошибку
+            }
+            catch (Exception ex)
+            {
+                textBox_main_term.AppendText(ex.Message + Environment.NewLine);
+                textBox_soft_term.AppendText(ex.Message + Environment.NewLine);
+            }
         }
 
         #endregion
@@ -2083,159 +2463,12 @@ namespace FirehoseFinder
             }
         }
 
-        #endregion
-
-        private void ListView_GPT_ItemChecked(object sender, ItemCheckedEventArgs e)
-        {
-            int cp = listView_GPT.CheckedItems.Count;
-            label_select_gpt.Text = cp.ToString();
-            if (cp == 1)
-            {
-                сохранитьВыбранныйРазделToolStripMenuItem.Enabled = true;
-                записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = true;
-            }
-            else
-            {
-                сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
-                записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
-            }
-        }
-
-        private void ВыбратьРазделToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (ListViewItem item in listView_GPT.Items)
-            {
-                item.Checked = false;
-            }
-            listView_GPT.SelectedItems[0].Checked = true;
-            сохранитьВыбранныйРазделToolStripMenuItem.Enabled = true;
-            записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = true;
-        }
-
-        private void СохранитьТаблицуВФайлmainGPTbinToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (File.Exists("gpt_main0.bin") && File.Exists("gpt_backup0.bin"))
-            {
-                if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    try
-                    {
-                        File.Copy("gpt_main0.bin", folderBrowserDialog1.SelectedPath + "\\gpt_main0.bin");
-                        File.Copy("gpt_backup0.bin", folderBrowserDialog1.SelectedPath + "\\gpt_backup0.bin");
-                        textBox_soft_term.AppendText(LocRes.GetString("tb_gpt_save") + Environment.NewLine);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message,
-                            LocRes.GetString("tb_er_write") + '\u0020' +
-                            LocRes.GetString("file"),
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                    }
-                }
-            }
-            else MessageBox.Show(LocRes.GetString("gpt_not_found"),
-                LocRes.GetString("mb_acc_er") + '\u0020' +
-                LocRes.GetString("file"),
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-        }
-
-        private void СохранитьВыбранныеРазделыdumpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(LocRes.GetString("free_space"),
-                LocRes.GetString("warn"),
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Exclamation);
-            if (listView_GPT.CheckedItems.Count == 0)
-            {
-                MessageBox.Show(LocRes.GetString("no_part_sel"),
-                    LocRes.GetString("warn"),
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-                return;
-            }
-            DumpBySectors(true, 0, 0);
-        }
-
-        private void Label_select_gpt_TextChanged(object sender, EventArgs e)
-        {
-            long selbytes = 0; //Размер выбранных секторов в байтах
-            if (label_select_gpt.Text.Equals(listView_GPT.Items.Count.ToString())) contextMenuStrip_gpt.Items[6].Enabled = false;
-            else
-            {
-                contextMenuStrip_gpt.Items[6].Enabled = true;
-            }
-            if (label_select_gpt.Text.Equals("0"))
-            {
-                contextMenuStrip_gpt.Items[4].Enabled = false;
-                contextMenuStrip_gpt.Items[7].Enabled = false;
-            }
-            else
-            {
-                foreach (ListViewItem item in listView_GPT.CheckedItems)
-                {
-                    selbytes += Convert.ToInt64(item.SubItems[4].Text);
-                }
-                contextMenuStrip_gpt.Items[4].Enabled = true;
-                contextMenuStrip_gpt.Items[7].Enabled = true;
-            }
-            label_GPT_bytes.Text = func.Bytes_KB_MB(selbytes.ToString());
-        }
-
         /// <summary>
-        /// Меняем статус кнопок меню при изменении количества доступных разделов GPT для слива
+        /// Процедура запуска в паралельном потоке функции сохранения разделов
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Label_total_gpt_TextChanged(object sender, EventArgs e)
-        {
-            if (label_total_gpt.Text.Equals("0"))
-            {
-                contextMenuStrip_gpt.Items[0].Enabled = false;
-                contextMenuStrip_gpt.Items[2].Enabled = false;
-                contextMenuStrip_gpt.Items[4].Enabled = false;
-                contextMenuStrip_gpt.Items[6].Enabled = false;
-                contextMenuStrip_gpt.Items[7].Enabled = false;
-            }
-            else
-            {
-                contextMenuStrip_gpt.Items[0].Enabled = true;
-                contextMenuStrip_gpt.Items[2].Enabled = true;
-                contextMenuStrip_gpt.Items[4].Enabled = true;
-                contextMenuStrip_gpt.Items[6].Enabled = true;
-            }
-        }
-
-        /// <summary>
-        /// Меняем статус кнопок меню при изменении количества доступных секторов для слива
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Label_total_blocks_TextChanged(object sender, EventArgs e)
-        {
-            if (Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors == 0) contextMenuStrip_gpt.Items[3].Enabled = false;
-            else contextMenuStrip_gpt.Items[3].Enabled = true;
-        }
-
-        private void СохранитьСектораПоНомеруdumpSectorNumderToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Dump_Sectors dump = new Dump_Sectors(this);
-            switch (dump.ShowDialog())
-            {
-                case DialogResult.OK:
-                    DumpBySectors(false, Convert.ToInt32(dump.textBox_start_dump.Text), Convert.ToInt32(dump.textBox_count_dump.Text));
-                    break;
-                case DialogResult.Cancel:
-                    textBox_soft_term.AppendText(LocRes.GetString("tb_save") + '\u0020' +
-                        LocRes.GetString("sectors") + '\u0020' +
-                        LocRes.GetString("tb_cancel_user") + Environment.NewLine);
-                    break;
-                default:
-                    break;
-            }
-        }
-
+        /// <param name="ByBlocks">true - по именам разделов, false - по секторам</param>
+        /// <param name="StartSector">Начальный сектор</param>
+        /// <param name="NumSectors">Количество секторов</param>
         private void DumpBySectors(bool ByBlocks, int StartSector, int NumSectors)
         {
             //Запускаем диалог сохранения папки
@@ -2278,60 +2511,10 @@ namespace FirehoseFinder
             }
         }
 
-        private void BackgroundWorker_dump_DoWork(object sender, DoWorkEventArgs e)
-        {
-            BackgroundWorker worker = sender as BackgroundWorker;
-            List<string> do_str = new List<string>((List<string>)e.Argument);
-            string dump_results = string.Empty; //Отчёт
-            int count = 1;
-            foreach (string str in do_str)
-            {
-                string endoffilename = str.Remove(0, str.IndexOf("--sendimage=dump_") + 12);
-                int endoffile = endoffilename.IndexOf(".bin");
-                string userState = endoffilename.Substring(0, endoffile + 4); //Имя файла
-                dump_results += func.FH_Commands(str.ToString()) + Environment.NewLine;
-                worker.ReportProgress(count * 100 / do_str.Count, userState);
-                count++;
-            }
-            e.Result = dump_results;
-            Thread.Sleep(1);
-        }
-
-        private void BackgroundWorker_dump_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            string newfilename = e.UserState.ToString();
-            progressBar_phone.Value = e.ProgressPercentage;
-            textBox_soft_term.AppendText(LocRes.GetString("tb_save") + '\u0020' + newfilename + " ... ");
-            if (File.Exists(newfilename))
-            {
-                try
-                {
-                    File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
-                }
-                catch (IOException)
-                {
-                    File.Delete(folderBrowserDialog1.SelectedPath + "\\" + newfilename);
-                    File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
-                }
-                File.Delete(newfilename);
-            }
-            textBox_soft_term.AppendText(LocRes.GetString("done") + Environment.NewLine);
-        }
-
-        private void BackgroundWorker_dump_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine);
-            else
-            {
-                progressBar_phone.Value = 0;
-                textBox_soft_term.AppendText(e.Result + Environment.NewLine +
-                    LocRes.GetString("tb_save") + '\u0020' +
-                    LocRes.GetString("hex_in") + '\u0020' +
-                    LocRes.GetString("sel_fold") + '\u0020' +
-                    LocRes.GetString("tb_pass_suc") + Environment.NewLine);
-            }
-        }
-
+        /// <summary>
+        /// Разбираем ответ запроса подключённых устройств в режиме загрузчика
+        /// </summary>
+        /// <param name="parsing_string"></param>
         private void Pars_FB_Dev(string parsing_string)
         {
             string temp_str = parsing_string; //Временная строка для разбора
@@ -2361,133 +2544,7 @@ namespace FirehoseFinder
             }
         }
 
-        private void Button_fb_check_Click(object sender, EventArgs e)
-        {
-            if (FB_Check())
-            {
-                button_fb_com_start.Enabled = true;
-                groupBox_fb_commands.Enabled = true;
-                if (listView_fb_devices.Items.Count > 1) listView_fb_devices.Enabled = true;
-            }
-        }
-
-        private void Button_fb_com_start_Click(object sender, EventArgs e)
-        {
-            string Com_String = textBox_ADB_commandstring.Text;
-            if (radioButton_fb_reboot_normal.Checked) Fastboot_commands("reboot");
-            if (radioButton_fb_rebootbootloader.Checked) Fastboot_commands("reboot bootloader");
-            if (radioButton_fb_rebootedl.Checked) Fastboot_commands("oem reboot-edl");
-            if (radioButton_fb_getvar.Checked) Fastboot_commands("getvar all");
-            if (radioButton_fb_devinfo.Checked) Fastboot_commands("oem device-info");
-            if (radioButton_fb_unlock.Checked) Fastboot_commands("flashing unlock");
-            if (radioButton_fb_lock.Checked) Fastboot_commands("flashing lock");
-            if (radioButton_fb_commandline.Checked && !string.IsNullOrEmpty(Com_String)) Fastboot_commands(Com_String);
-        }
-
-        /// <summary>
-        /// Оставляем столбец скрытым при попытке изменения размера
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ListView_GPT_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
-        {
-            if (listView_GPT.Columns[4].Width > 0) listView_GPT.Columns[4].Width = 0;
-        }
-
-        private void RadioButton_fb_commandline_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton_fb_commandline.Checked) textBox_fb_commandline.Enabled = true;
-            else
-            {
-                textBox_fb_commandline.Enabled = false;
-                textBox_fb_commandline.Text = string.Empty;
-            }
-        }
-
-        private void TextBox_fb_commandline_KeyUp(object sender, KeyEventArgs e)
-        {
-            string Com_String = textBox_fb_commandline.Text;
-            if (e.KeyCode == Keys.Enter && !string.IsNullOrEmpty(Com_String)) Fastboot_commands(Com_String);
-        }
-
-        /// <summary>
-        /// Оставляем только один маркер на устройствах ADB
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ListView_ADB_devices_ItemChecked(object sender, ItemCheckedEventArgs e)
-        {
-            if (e.Item.Checked)
-            {
-                AdbClient client = new AdbClient();
-                List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
-                foreach (DeviceData dev in devices)
-                {
-                    if (dev.Serial.Equals(e.Item.Text)) Global_ADB_Device = dev;
-                }
-                foreach (ListViewItem item in listView_ADB_devices.Items)
-                {
-                    if (!item.Equals(e.Item)) item.Checked = false;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Оставляем только один маркер на устройствах Fastboot
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ListView_fb_devices_ItemChecked(object sender, ItemCheckedEventArgs e)
-        {
-            if (e.Item.Checked)
-            {
-                Global_FB_Device = e.Item.Text;
-                foreach (ListViewItem item in listView_fb_devices.Items)
-                {
-                    if (!item.Text.Equals(e.Item.Text)) item.Checked = false;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Ставим галку на выбранной строке с программером
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGridView_final_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (!dataGridView_final.Rows[e.RowIndex].ReadOnly)
-                {
-                    if (Convert.ToBoolean(dataGridView_final["Column_Sel", e.RowIndex].Value) == true)
-                    {
-                        dataGridView_final["Column_Sel", e.RowIndex].Value = false;
-                        button_useSahara_fhf.Enabled = false;
-                        label_Sahara_fhf.Text = LocRes.GetString("sel_prog");
-                    }
-                    else
-                    {
-                        for (int i = 0; i < dataGridView_final.Rows.Count; i++)
-                        {
-                            dataGridView_final["Column_Sel", i].Value = false;
-                        }
-                        dataGridView_final["Column_Sel", e.RowIndex].Value = true;
-                        button_useSahara_fhf.Enabled = true;
-                        label_Sahara_fhf.Text = dataGridView_final.SelectedRows[0].Cells[1].Value.ToString();
-                    }
-                }
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                //Просто игнорируем ошибку
-            }
-            catch (Exception ex)
-            {
-                textBox_main_term.AppendText(ex.Message + Environment.NewLine);
-                textBox_soft_term.AppendText(ex.Message + Environment.NewLine);
-            }
-        }
+        #endregion
 
         /// <summary>
         /// Блокируем видимость для всего, кроме единственного выбора
