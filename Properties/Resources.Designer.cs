@@ -79,6 +79,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на альтернативное наименование.
+        /// </summary>
+        internal static string alt_name {
+            get {
+                return ResourceManager.GetString("alt_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Путь установки программы.
         /// </summary>
         internal static string app_path {
@@ -111,6 +120,24 @@ namespace FirehoseFinder.Properties {
         internal static string button_rampath {
             get {
                 return ResourceManager.GetString("button_rampath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на процессор.
+        /// </summary>
+        internal static string chip {
+            get {
+                return ResourceManager.GetString("chip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на серийный номер процессора.
+        /// </summary>
+        internal static string chip_sn {
+            get {
+                return ResourceManager.GetString("chip_sn", resourceCulture);
             }
         }
         
@@ -252,6 +279,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Получили.
+        /// </summary>
+        internal static string get {
+            get {
+                return ResourceManager.GetString("get", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на 			Краткий инструктаж.
         ///
         ///	Основной функционал приложения - поиск подходящего программера (programmer, firehose, пожарный шланг и т.п.) под определённое устройство.
@@ -260,6 +296,15 @@ namespace FirehoseFinder.Properties {
         internal static string Greeting {
             get {
                 return ResourceManager.GetString("Greeting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на хеш корневого сертификата.
+        /// </summary>
+        internal static string hash {
+            get {
+                return ResourceManager.GetString("hash", resourceCulture);
             }
         }
         
@@ -368,6 +413,15 @@ namespace FirehoseFinder.Properties {
         internal static string hex_warn_stopoper {
             get {
                 return ResourceManager.GetString("hex_warn_stopoper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на производитель.
+        /// </summary>
+        internal static string manuf {
+            get {
+                return ResourceManager.GetString("manuf", resourceCulture);
             }
         }
         
@@ -575,6 +629,15 @@ namespace FirehoseFinder.Properties {
         internal static string message_title_need_restart {
             get {
                 return ResourceManager.GetString("message_title_need_restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на модель.
+        /// </summary>
+        internal static string model {
+            get {
+                return ResourceManager.GetString("model", resourceCulture);
             }
         }
         
@@ -787,6 +850,24 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на сеанс ADB.
+        /// </summary>
+        internal static string tb_adb_sess {
+            get {
+                return ResourceManager.GetString("tb_adb_sess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Запускаем сервер ADB ....
+        /// </summary>
+        internal static string tb_adb_start {
+            get {
+                return ResourceManager.GetString("tb_adb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на режим загрузчика.
         /// </summary>
         internal static string tb_blm {
@@ -810,6 +891,51 @@ namespace FirehoseFinder.Properties {
         internal static string tb_cancel_user {
             get {
                 return ResourceManager.GetString("tb_cancel_user", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Номера чипов из ADB и Sahara совпадают.
+        /// </summary>
+        internal static string tb_chip_same {
+            get {
+                return ResourceManager.GetString("tb_chip_same", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на завершён.
+        /// </summary>
+        internal static string tb_compl {
+            get {
+                return ResourceManager.GetString("tb_compl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Неудачное завершение.
+        /// </summary>
+        internal static string tb_compl_fail {
+            get {
+                return ResourceManager.GetString("tb_compl_fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Подключено устройство:.
+        /// </summary>
+        internal static string tb_dev_con {
+            get {
+                return ResourceManager.GetString("tb_dev_con", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли &quot;Отладка по USB&quot; в разделе &quot;Система&quot; - &quot;Для разработчиков&quot;..
+        /// </summary>
+        internal static string tb_dev_not_con {
+            get {
+                return ResourceManager.GetString("tb_dev_not_con", resourceCulture);
             }
         }
         
@@ -909,6 +1035,15 @@ namespace FirehoseFinder.Properties {
         internal static string tb_reboot {
             get {
                 return ResourceManager.GetString("tb_reboot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную..
+        /// </summary>
+        internal static string tb_reboot_fail {
+            get {
+                return ResourceManager.GetString("tb_reboot_fail", resourceCulture);
             }
         }
         
@@ -1021,11 +1156,38 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Не все идентификаторы получены, отправка данных отменена.
+        /// </summary>
+        internal static string tt_id_not_rec {
+            get {
+                return ResourceManager.GetString("tt_id_not_rec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Идентификаторы получены, устройство можно отключить и перезагрузить.
+        /// </summary>
+        internal static string tt_id_rec {
+            get {
+                return ResourceManager.GetString("tt_id_rec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Укажите путь к коллекции firehose.
         /// </summary>
         internal static string tt_path {
             get {
                 return ResourceManager.GetString("tt_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сейчас обрабатывается.
+        /// </summary>
+        internal static string tt_proc {
+            get {
+                return ResourceManager.GetString("tt_proc", resourceCulture);
             }
         }
         

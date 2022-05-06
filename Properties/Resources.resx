@@ -123,6 +123,9 @@
   <data name="about_deck" xml:space="preserve">
     <value>Программа подбора программеров(firehose) для устройств на базе процессоров от Qualcomm.</value>
   </data>
+  <data name="alt_name" xml:space="preserve">
+    <value>альтернативное наименование</value>
+  </data>
   <data name="app_path" xml:space="preserve">
     <value>Путь установки программы</value>
   </data>
@@ -135,6 +138,12 @@
   </data>
   <data name="button_rampath" xml:space="preserve">
     <value>Путь к файлу прошивки</value>
+  </data>
+  <data name="chip" xml:space="preserve">
+    <value>процессор</value>
+  </data>
+  <data name="chip_sn" xml:space="preserve">
+    <value>серийный номер процессора</value>
   </data>
   <data name="copy_clip" xml:space="preserve">
     <value>Скопировано в буфер</value>
@@ -181,8 +190,14 @@
   <data name="gb_disk" xml:space="preserve">
     <value>Диск</value>
   </data>
+  <data name="get" xml:space="preserve">
+    <value>Получили</value>
+  </data>
   <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Greeting.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="hash" xml:space="preserve">
+    <value>хеш корневого сертификата</value>
   </data>
   <data name="hex_files" xml:space="preserve">
     <value>файлах</value>
@@ -219,6 +234,9 @@
   </data>
   <data name="hex_warn_stopoper" xml:space="preserve">
     <value>Внимание, остановка длительной операции!</value>
+  </data>
+  <data name="manuf" xml:space="preserve">
+    <value>производитель</value>
   </data>
   <data name="mb_body_check_fail" xml:space="preserve">
     <value>Проверка корректности работы с устройством через ADB закончилась неудачно.</value>
@@ -288,6 +306,9 @@
   </data>
   <data name="message_title_need_restart" xml:space="preserve">
     <value>Требуется перезапуск приложения!</value>
+  </data>
+  <data name="model" xml:space="preserve">
+    <value>модель</value>
   </data>
   <data name="not_elf" xml:space="preserve">
     <value>не является ELF</value>
@@ -364,6 +385,12 @@
   <data name="tbs_stor_dev" xml:space="preserve">
     <value>Получаем информацию о запоминающем устройстве</value>
   </data>
+  <data name="tb_adb_sess" xml:space="preserve">
+    <value>сеанс ADB</value>
+  </data>
+  <data name="tb_adb_start" xml:space="preserve">
+    <value>Запускаем сервер ADB ...</value>
+  </data>
   <data name="tb_blm" xml:space="preserve">
     <value>режим загрузчика</value>
   </data>
@@ -372,6 +399,21 @@
   </data>
   <data name="tb_cancel_user" xml:space="preserve">
     <value>отменено пользователем</value>
+  </data>
+  <data name="tb_chip_same" xml:space="preserve">
+    <value>Номера чипов из ADB и Sahara совпадают</value>
+  </data>
+  <data name="tb_compl" xml:space="preserve">
+    <value>завершён</value>
+  </data>
+  <data name="tb_compl_fail" xml:space="preserve">
+    <value>Неудачное завершение</value>
+  </data>
+  <data name="tb_dev_con" xml:space="preserve">
+    <value>Подключено устройство:</value>
+  </data>
+  <data name="tb_dev_not_con" xml:space="preserve">
+    <value>Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли "Отладка по USB" в разделе "Система" - "Для разработчиков".</value>
   </data>
   <data name="tb_edl" xml:space="preserve">
     <value>аварийный режим</value>
@@ -406,6 +448,9 @@
   <data name="tb_reboot" xml:space="preserve">
     <value>Устройство перегружается</value>
   </data>
+  <data name="tb_reboot_fail" xml:space="preserve">
+    <value>Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную.</value>
+  </data>
   <data name="tb_save" xml:space="preserve">
     <value>Сохранение</value>
   </data>
@@ -436,8 +481,17 @@
   <data name="tt_find" xml:space="preserve">
     <value>Подключите устройство и нажмите для получения идентификаторов</value>
   </data>
+  <data name="tt_id_not_rec" xml:space="preserve">
+    <value>Не все идентификаторы получены, отправка данных отменена</value>
+  </data>
+  <data name="tt_id_rec" xml:space="preserve">
+    <value>Идентификаторы получены, устройство можно отключить и перезагрузить</value>
+  </data>
   <data name="tt_path" xml:space="preserve">
     <value>Укажите путь к коллекции firehose</value>
+  </data>
+  <data name="tt_proc" xml:space="preserve">
+    <value>Сейчас обрабатывается</value>
   </data>
   <data name="united_kingdom_flags_flag_17079" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\united_kingdom_flags_flag_17079.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

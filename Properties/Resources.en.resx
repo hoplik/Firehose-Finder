@@ -125,6 +125,10 @@
     <value>The program of selection of programmers (firehose) for devices based on processors from Qualcomm.</value>
     <comment>Программа подбора программеров(firehose) для устройств на базе процессоров от Qualcomm.</comment>
   </data>
+  <data name="alt_name" xml:space="preserve">
+    <value>alternative name</value>
+    <comment>альтернативное наименование</comment>
+  </data>
   <data name="app_path" xml:space="preserve">
     <value>Workdir application</value>
     <comment>Путь установки программы</comment>
@@ -136,6 +140,14 @@
   <data name="button_rampath" xml:space="preserve">
     <value>The path to the firmware file</value>
     <comment>Путь к файлу прошивки</comment>
+  </data>
+  <data name="chip" xml:space="preserve">
+    <value>chip</value>
+    <comment>процессор</comment>
+  </data>
+  <data name="chip_sn" xml:space="preserve">
+    <value>chip s/n</value>
+    <comment>серийный номер процессора</comment>
   </data>
   <data name="copy_clip" xml:space="preserve">
     <value>Copy to clipboard</value>
@@ -189,9 +201,17 @@
     <value>Disk</value>
     <comment>Диск</comment>
   </data>
+  <data name="get" xml:space="preserve">
+    <value>Get</value>
+    <comment>Получили</comment>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Greeting_en.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="hash" xml:space="preserve">
+    <value>hash of the root certificate</value>
+    <comment>хеш корневого сертификата</comment>
   </data>
   <data name="hex_files" xml:space="preserve">
     <value>files</value>
@@ -240,6 +260,10 @@
   <data name="hex_warn_stopoper" xml:space="preserve">
     <value>Attention, stopping a long operation!</value>
     <comment>Внимание, остановка длительной операции!</comment>
+  </data>
+  <data name="manuf" xml:space="preserve">
+    <value>manufacturer</value>
+    <comment>производитель</comment>
   </data>
   <data name="mb_body_check_fail" xml:space="preserve">
     <value>Checking the correctness of working with the device via ADB failed.</value>
@@ -332,6 +356,10 @@
   <data name="message_title_need_restart" xml:space="preserve">
     <value>Application restart required!</value>
     <comment>Требуется перезапуск приложения!</comment>
+  </data>
+  <data name="model" xml:space="preserve">
+    <value>model</value>
+    <comment>модель</comment>
   </data>
   <data name="not_elf" xml:space="preserve">
     <value>is not an ELF</value>
@@ -429,6 +457,14 @@
     <value>Getting information about the storage device</value>
     <comment>Получаем информацию о запоминающем устройстве</comment>
   </data>
+  <data name="tb_adb_sess" xml:space="preserve">
+    <value>ADB session</value>
+    <comment>сеанс ADB</comment>
+  </data>
+  <data name="tb_adb_start" xml:space="preserve">
+    <value>Starting the ADB server ...</value>
+    <comment>Запускаем сервер ADB ...</comment>
+  </data>
   <data name="tb_blm" xml:space="preserve">
     <value>bootloader mode</value>
     <comment>режим загрузчика</comment>
@@ -440,6 +476,26 @@
   <data name="tb_cancel_user" xml:space="preserve">
     <value>canceled by the user</value>
     <comment>отменено пользователем</comment>
+  </data>
+  <data name="tb_chip_same" xml:space="preserve">
+    <value>The chip numbers from ADB and Sahara are the same</value>
+    <comment>Номера чипов из ADB и Sahara совпадают</comment>
+  </data>
+  <data name="tb_compl" xml:space="preserve">
+    <value>completed</value>
+    <comment>завершён</comment>
+  </data>
+  <data name="tb_compl_fail" xml:space="preserve">
+    <value>Failed completion</value>
+    <comment>Неудачное завершение</comment>
+  </data>
+  <data name="tb_dev_con" xml:space="preserve">
+    <value>The device is connected:</value>
+    <comment>Подключено устройство:</comment>
+  </data>
+  <data name="tb_dev_not_con" xml:space="preserve">
+    <value>No connected devices were found. Please check in the device settings whether "USB Debugging" is allowed in the "System" - "For developers" section.</value>
+    <comment>Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли "Отладка по USB" в разделе "Система" - "Для разработчиков".</comment>
   </data>
   <data name="tb_edl" xml:space="preserve">
     <value>emergency download mode</value>
@@ -485,6 +541,10 @@
     <value>Device reboot</value>
     <comment>Устройство перегружается</comment>
   </data>
+  <data name="tb_reboot_fail" xml:space="preserve">
+    <value>Automatic reboot to emergency mode 9008 from ADB failed. Try it manually.</value>
+    <comment>Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную.</comment>
+  </data>
   <data name="tb_save" xml:space="preserve">
     <value>Saving</value>
     <comment>Сохранение</comment>
@@ -525,9 +585,21 @@
     <value>Connect the device and click to get the IDs</value>
     <comment>Подключите устройство и нажмите для получения идентификаторов</comment>
   </data>
+  <data name="tt_id_not_rec" xml:space="preserve">
+    <value>Not all IDs have been received, data sending has been canceled</value>
+    <comment>Не все идентификаторы получены, отправка данных отменена</comment>
+  </data>
+  <data name="tt_id_rec" xml:space="preserve">
+    <value>The IDs have been received, the device can be disconnected and restarted</value>
+    <comment>Идентификаторы получены, устройство можно отключить и перезагрузить</comment>
+  </data>
   <data name="tt_path" xml:space="preserve">
     <value>Specify the path to the firehose collection</value>
     <comment>Укажите путь к коллекции firehose</comment>
+  </data>
+  <data name="tt_proc" xml:space="preserve">
+    <value>Currently being processed</value>
+    <comment>Сейчас обрабатывается</comment>
   </data>
   <data name="unknown" xml:space="preserve">
     <value>Something unknown</value>

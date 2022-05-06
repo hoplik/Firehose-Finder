@@ -1353,12 +1353,16 @@ namespace FirehoseFinder
             try
             {
                 client.KillAdb();
-                textBox_soft_term.AppendText("Сеанс ADB завершён" + Environment.NewLine);
-                textBox_main_term.AppendText("Сеанс ADB завершён" + Environment.NewLine);
+                textBox_soft_term.AppendText(LocRes.GetString("tb_adb_sess") + '\u0020' +
+                    LocRes.GetString("tb_compl") + Environment.NewLine);
+                textBox_main_term.AppendText(LocRes.GetString("tb_adb_sess") + '\u0020' +
+                    LocRes.GetString("tb_compl") + Environment.NewLine);
             }
             catch (Exception ex)
             {
-                textBox_soft_term.AppendText("Неудачное завершение сеанса ADB" + Environment.NewLine + ex.Message + Environment.NewLine);
+                textBox_soft_term.AppendText(LocRes.GetString("tb_compl_fail") + '\u0020' +
+                    LocRes.GetString("tb_adb_sess") + Environment.NewLine +
+                    ex.Message + Environment.NewLine);
             }
         }
 
@@ -1393,7 +1397,11 @@ namespace FirehoseFinder
             Dictionary<string, long> Resfiles = func.WFiles(button_path.Text, radioButton_alldir.Checked); //Полный путь с именем файла и его объём для каждого файла в выбраной папке
             int currreadfiles = dataGridView_final.Rows.Count;
             int totalreadfiles = Resfiles.Count;
-            toolStripStatusLabel_filescompleted.Text = "Обработано " + currreadfiles.ToString() + " файлов из " + totalreadfiles.ToString();
+            toolStripStatusLabel_filescompleted.Text = LocRes.GetString("hex_processed") + '\u0020' +
+                currreadfiles.ToString() + '\u0020' +
+                LocRes.GetString("hex_files") + '\u0020' +
+                LocRes.GetString("hex_from") + '\u0020' +
+                totalreadfiles.ToString();
             //Либо 0, либо чтение всех файлов закончено, в грид всё добавлено - уходим
             if (currreadfiles == totalreadfiles)
             {
@@ -1414,7 +1422,9 @@ namespace FirehoseFinder
                 string shortfilename = Path.GetFileName(unreadfiles.Key); //Получили название файла
                 if (!ReadedFiles.Contains(unreadfiles.Key))
                 {
-                    toolStripStatusLabel_dowork.Text = "Сейчас обрабатывается файл - " + shortfilename;
+                    toolStripStatusLabel_dowork.Text = LocRes.GetString("tt_proc") + '\u0020' +
+                        LocRes.GetString("file") + '\u0020' + '\u002D' + '\u0020' +
+                        shortfilename;
                     statusStrip_firehose.Refresh();
                     dataGridView_final["Column_Name", currreadfiles].Value = unreadfiles.Key;
                     backgroundWorker_Read_File.RunWorkerAsync(unreadfiles); //Запускаем цикл обработки отдельно каждого необработанного файла в папке
@@ -1435,13 +1445,15 @@ namespace FirehoseFinder
             string oemhash;
             if (id_str[3].Length < 8) oemhash = id_str[3];
             else oemhash = id_str[3].Substring(id_str[3].Length - 8);
-            dataGridView_final["Column_id", Currnum].Value = id_str[0] + "-" + id_str[1] + "-" + id_str[2] + "-" + oemhash;// + "-" + id_str[4] + id_str[5];
+            dataGridView_final["Column_id", Currnum].Value = id_str[0] + '\u002D' + id_str[1] + '\u002D' + id_str[2] + '\u002D' + oemhash;// + "-" + id_str[4] + id_str[5];
             if (guide.SW_ID_type.ContainsKey(id_str[4])) sw_type = guide.SW_ID_type[id_str[4]];
             dataGridView_final["Column_SW_type", Currnum].Value = sw_type;
-            dataGridView_final["Column_Full", Currnum].Value = "Jtag_ID (процессор) - " + id_str[0] + Environment.NewLine +
-                "OEM_ID (производитель) - " + id_str[1] + Environment.NewLine +
-                "MODEL_ID (модель) - " + id_str[2] + Environment.NewLine +
-                "OEM_PK_HASH (хеш корневого сертификата " + id_str[3].Length.ToString() + " знаков) - " + id_str[3];
+            dataGridView_final["Column_Full", Currnum].Value = "Jtag_ID (" + LocRes.GetString("chip") + ") - " + id_str[0] + Environment.NewLine +
+                "OEM_ID (" + LocRes.GetString("manuf") + ") - " + id_str[1] + Environment.NewLine +
+                "MODEL_ID (" + LocRes.GetString("model") + ") - " + id_str[2] + Environment.NewLine +
+                "OEM_PK_HASH (" + LocRes.GetString("hash") + '\u0020' +
+                id_str[3].Length.ToString() + '\u0020' +
+                LocRes.GetString("signs") + ") - " + id_str[3];
             //+ Environment.NewLine + "SW_ID (тип программы (версия)) - " + id_str[4] + id_str[5] + " - " + sw_type;
             if (guide.Double_CPU.ContainsKey(id_str[0])) //HWID два или более
             {
@@ -1546,8 +1558,8 @@ namespace FirehoseFinder
         {
             button_ADB_clear.Enabled = true;
             //Стартуем сервер
-            textBox_soft_term.AppendText("Запускаем сервер ADB ..." + Environment.NewLine);
-            textBox_main_term.AppendText("Запускаем сервер ADB ..." + Environment.NewLine);
+            textBox_soft_term.AppendText(LocRes.GetString("tb_adb_start") + Environment.NewLine);
+            textBox_main_term.AppendText(LocRes.GetString("tb_adb_start") + Environment.NewLine);
             AdbServer server = new AdbServer();
             StartServerResult result = server.StartServer("adb.exe", restartServerIfNewer: false);
             textBox_soft_term.AppendText(result.ToString() + Environment.NewLine);
@@ -1572,13 +1584,13 @@ namespace FirehoseFinder
             button_ADB_start.Enabled = false;
             foreach (var device in devices)
             {
-                textBox_soft_term.AppendText("Подключено устройство: " + device + Environment.NewLine);
-                textBox_main_term.AppendText("Подключено устройство: " + device + Environment.NewLine);
+                textBox_soft_term.AppendText(LocRes.GetString("tb_dev_con") + '\u0020' + device + Environment.NewLine);
+                textBox_main_term.AppendText(LocRes.GetString("tb_dev_con") + '\u0020' + device + Environment.NewLine);
             }
             if (devices.Count == 0)
             {
-                textBox_soft_term.AppendText("Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли \"Отладка по USB\" в разделе \"Система\" - \"Для разработчиков\"" + Environment.NewLine);
-                textBox_main_term.AppendText("Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли \"Отладка по USB\" в разделе \"Система\" - \"Для разработчиков\"" + Environment.NewLine);
+                textBox_soft_term.AppendText(LocRes.GetString("tb_dev_not_con") + Environment.NewLine);
+                textBox_main_term.AppendText(LocRes.GetString("tb_dev_not_con") + Environment.NewLine);
                 return false;
             }
             else
@@ -1653,26 +1665,30 @@ namespace FirehoseFinder
             }
             if (chipsn==0) label_chip_sn.Text = "---";
             else label_chip_sn.Text = Convert.ToString(chipsn, 16).ToUpper();
-            textBox_soft_term.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
-                "Модель: " + label_model.Text + Environment.NewLine +
-                "Альтернативное наименование: " + label_altname.Text + Environment.NewLine+
-                "Серийный номер процессора: " + label_chip_sn.Text + Environment.NewLine);
-            textBox_main_term.AppendText("Производитель: " + label_tm.Text + Environment.NewLine +
-                "Модель: " + label_model.Text + Environment.NewLine +
-                "Альтернативное наименование: " + label_altname.Text + Environment.NewLine +
-                "Серийный номер процессора: " + label_chip_sn.Text + Environment.NewLine);
+            textBox_soft_term.AppendText(LocRes.GetString("manuf") + '\u003A' + '\u0020' + label_tm.Text + Environment.NewLine +
+                LocRes.GetString("model") + '\u003A' + '\u0020' + label_model.Text + Environment.NewLine +
+                LocRes.GetString("alt_name") + '\u003A' + '\u0020' + label_altname.Text + Environment.NewLine +
+                LocRes.GetString("chip_sn") + '\u003A' + '\u0020' + label_chip_sn.Text + Environment.NewLine);
+            textBox_main_term.AppendText(LocRes.GetString("manuf") + '\u003A' + '\u0020' + label_tm.Text + Environment.NewLine +
+                LocRes.GetString("model") + '\u003A' + '\u0020' + label_model.Text + Environment.NewLine +
+                LocRes.GetString("alt_name") + '\u003A' + '\u0020' + label_altname.Text + Environment.NewLine +
+                LocRes.GetString("chip_sn") + '\u003A' + '\u0020' + label_chip_sn.Text + Environment.NewLine);
             if (reset)
             {
-                textBox_soft_term.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
-                textBox_main_term.AppendText("Устройство перегружается в аварийный режим" + Environment.NewLine);
+                textBox_soft_term.AppendText(LocRes.GetString("tb_reboot") + '\u0020' +
+                    LocRes.GetString("hex_in") + '\u0020' +
+                    LocRes.GetString("tb_edl") + '\u0020' + Environment.NewLine);
+                textBox_main_term.AppendText(LocRes.GetString("tb_reboot") + '\u0020' +
+                    LocRes.GetString("hex_in") + '\u0020' +
+                    LocRes.GetString("tb_edl") + '\u0020' + Environment.NewLine);
                 try
                 {
                     client.Reboot("edl", device);
                 }
                 catch (Exception ex)
                 {
-                    textBox_soft_term.AppendText(ex.Message + Environment.NewLine + "Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную." + Environment.NewLine);
-                    textBox_main_term.AppendText(ex.Message + Environment.NewLine + "Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную." + Environment.NewLine);
+                    textBox_soft_term.AppendText(ex.Message + Environment.NewLine + LocRes.GetString("tb_reboot_fail") + Environment.NewLine);
+                    textBox_main_term.AppendText(ex.Message + Environment.NewLine + LocRes.GetString("tb_reboot_fail") + Environment.NewLine);
                 }
                 Thread.Sleep(500);
                 StopAdb();
@@ -1687,8 +1703,9 @@ namespace FirehoseFinder
             waitSahara = false;
             if (NeedReset)
             {
-                MessageBox.Show("Для получения идентификаторов устройство должно быть переподключено!" + Environment.NewLine +
-                    "Пожалуйста, отключите устройство от компьютера, перезагрузите в аварийный режим (9008) и подключите повторно.", "Внимание!");
+                MessageBox.Show(LocRes.GetString("mb_note_dev_recon") + Environment.NewLine +
+                    LocRes.GetString("mb_note_dev_recon2"),
+                    LocRes.GetString("mb_title_dev_recon"));
                 button_Sahara_Ids.Enabled = false;
                 button_Sahara_CommandStart.Enabled = false;
                 return;
@@ -1717,12 +1734,12 @@ namespace FirehoseFinder
             NeedReset = true;
             //Обрабатываем запрос идентификаторов
             string chip_sn = func.SaharaCommand1();
-            textBox_main_term.AppendText("Получили S/N CPU - " + chip_sn + Environment.NewLine);
-            textBox_soft_term.AppendText("Получили S/N CPU - " + chip_sn + Environment.NewLine);
+            textBox_main_term.AppendText(LocRes.GetString("get") + '\u0020' + "S/N CPU - " + chip_sn + Environment.NewLine);
+            textBox_soft_term.AppendText(LocRes.GetString("get") + '\u0020' + "S/N CPU - " + chip_sn + Environment.NewLine);
             if (chip_sn.Equals(label_chip_sn.Text))
             {
-                textBox_main_term.AppendText("Номера чипов из ADB и Sahara совпадают" + Environment.NewLine);
-                textBox_soft_term.AppendText("Номера чипов из ADB и Sahara совпадают" + Environment.NewLine);
+                textBox_main_term.AppendText(LocRes.GetString("tb_chip_same") + Environment.NewLine);
+                textBox_soft_term.AppendText(LocRes.GetString("tb_chip_same") + Environment.NewLine);
             }
             string HWOEMIDs = func.SaharaCommand2();
             if (HWOEMIDs.Length == 16)
@@ -1735,7 +1752,7 @@ namespace FirehoseFinder
             label_SW_Ver.Text = func.SaharaCommand7();
             //Переходим на вкладку Работа с файлами
             tabControl1.SelectedTab = tabPage_firehose;
-            toolStripStatusLabel_filescompleted.Text = "Идентификаторы получены, устройство можно отключить и перезагрузить";
+            toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_id_rec");
             if (checkBox_Log.Checked || checkBox_send.Checked)
             {
                 if (label_tm.Text.StartsWith("---") || label_model.Text.StartsWith("---"))
@@ -1748,7 +1765,7 @@ namespace FirehoseFinder
                             label_model.Text = "---";
                             label_altname.Text = "---";
                             label_chip_sn.Text = "---";
-                            toolStripStatusLabel_filescompleted.Text = "Не все идентификаторы получены, отправка данных отменена";
+                            toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_id_not_rec");
                             checkBox_send.Checked = false;
                             break;
                         default:
