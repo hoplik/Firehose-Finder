@@ -21,7 +21,8 @@ namespace FirehoseFinder
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new Formfhf());
             }
-            else MessageBox.Show("Один экземпляр приложения уже запущен");
+            else MessageBox.Show("One instance of the application is already running (en)" + Environment.NewLine +
+                "Один экземпляр приложения уже запущен (ru)");
         }
     }
 }
