@@ -250,6 +250,33 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось выполнить fh_loader с указанными параметрами.
+        /// </summary>
+        internal static string er_func_fhl_params {
+            get {
+                return ResourceManager.GetString("er_func_fhl_params", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка в функции WFiles.
+        /// </summary>
+        internal static string er_func_wfiles {
+            get {
+                return ResourceManager.GetString("er_func_wfiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось создать xml-файл чтения/записи разделов.
+        /// </summary>
+        internal static string er_func_xml {
+            get {
+                return ResourceManager.GetString("er_func_xml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
         /// </summary>
         internal static System.Drawing.Icon fh {
@@ -728,6 +755,15 @@ namespace FirehoseFinder.Properties {
         internal static string not_elf {
             get {
                 return ResourceManager.GetString("not_elf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Отсутствует признак хедера таблицы.
+        /// </summary>
+        internal static string not_gpt_header {
+            get {
+                return ResourceManager.GetString("not_gpt_header", resourceCulture);
             }
         }
         

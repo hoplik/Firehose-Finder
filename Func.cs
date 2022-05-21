@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -14,6 +15,8 @@ namespace FirehoseFinder
 {
     class Func
     {
+        ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
+
         /// <summary>
         /// Система исчисления, применяемая к строке знаков
         /// </summary>
@@ -71,7 +74,7 @@ namespace FirehoseFinder
             }
             catch (ArgumentException e)
             {
-                MessageBox.Show(e.Message + Environment.NewLine + "Ошибка в функции WFiles");
+                MessageBox.Show(e.Message, LocRes.GetString("er_func_wfiles"));
             }
             return WorkFiles;
         }
@@ -414,7 +417,7 @@ namespace FirehoseFinder
             {
                 GPT_Table GPT_Items = new GPT_Table()
                 {
-                    StartLBA = "Отсутствует признак хедера таблицы"
+                    StartLBA = LocRes.GetString("not_gpt_header")
                 };
                 GPT.Add(GPT_Items);
                 return GPT;
@@ -550,7 +553,7 @@ namespace FirehoseFinder
             }
             catch (Exception ex)
             {
-                output = "Не удалось выполнить fh_loader с указанными параметрами" + Environment.NewLine + ex.Message;
+                output = LocRes.GetString("er_func_fhl_params") + Environment.NewLine + ex.Message;
             }
             return output;
         }
@@ -585,7 +588,7 @@ namespace FirehoseFinder
             }
             catch (XmlException ex)
             {
-                MessageBox.Show("Не удалось создать xml-файл чтения/записи разделов" + Environment.NewLine + ex.Message);
+                MessageBox.Show(ex.Message, LocRes.GetString("er_func_xml"));
             }
         }
 

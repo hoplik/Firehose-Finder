@@ -197,6 +197,18 @@
     <value>encoded</value>
     <comment>закодирован</comment>
   </data>
+  <data name="er_func_fhl_params" xml:space="preserve">
+    <value>Failed to execute fh_loader with the specified parameters</value>
+    <comment>Не удалось выполнить fh_loader с указанными параметрами</comment>
+  </data>
+  <data name="er_func_wfiles" xml:space="preserve">
+    <value>Error in the WFiles function</value>
+    <comment>Ошибка в функции WFiles</comment>
+  </data>
+  <data name="er_func_xml" xml:space="preserve">
+    <value>Failed to create xml file for reading/writing sections</value>
+    <comment>Не удалось создать xml-файл чтения/записи разделов</comment>
+  </data>
   <data name="file" xml:space="preserve">
     <value>file</value>
     <comment>файл</comment>
@@ -396,6 +408,10 @@
   <data name="not_elf" xml:space="preserve">
     <value>is not an ELF</value>
     <comment>не является ELF</comment>
+  </data>
+  <data name="not_gpt_header" xml:space="preserve">
+    <value>There is no sign of a partition table header</value>
+    <comment>Отсутствует признак хедера таблицы</comment>
   </data>
   <data name="not_send" xml:space="preserve">
     <value>Not all IDs are specified. We are not sending it yet.</value>

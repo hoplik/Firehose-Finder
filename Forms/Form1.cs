@@ -655,7 +655,7 @@ namespace FirehoseFinder
                     comboBox_lun_count.Items.Clear();
                     for (int i = 0; i < Flash_Params[lun_numder].Count_Lun; i++)
                     {
-                        comboBox_lun_count.Items.Add("Диск " + i.ToString());
+                        comboBox_lun_count.Items.Add(LocRes.GetString("gb_disk") + '\u0020' + i.ToString());
                     }
                 }
                 //Переключаем выбор типа памяти

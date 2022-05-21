@@ -247,9 +247,6 @@
   <data name="справкаToolStripMenuItem.Text" xml:space="preserve">
     <value>Help</value>
   </data>
-  <data name="dataGridView_collection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 593</value>
-  </data>
   <data name="bindingNavigatorMoveFirstItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
@@ -329,17 +326,8 @@
   <data name="toolStripButton_large_font.ToolTipText" xml:space="preserve">
     <value>Enlarge the font size</value>
   </data>
-  <data name="bindingNavigator_collection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 593</value>
-  </data>
-  <data name="tabPage_collection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 625</value>
-  </data>
   <data name="tabPage_collection.Text" xml:space="preserve">
     <value>Reference book of devices</value>
-  </data>
-  <data name="textBox_main_term.Size" type="System.Drawing.Size, System.Drawing">
-    <value>409, 417</value>
   </data>
   <data name="Column_Sel.HeaderText" xml:space="preserve">
     <value>Select</value>
@@ -359,12 +347,6 @@
   </data>
   <data name="Column_Comp.HeaderText" xml:space="preserve">
     <value>Maybe suitable for:</value>
-  </data>
-  <data name="dataGridView_final.Size" type="System.Drawing.Size, System.Drawing">
-    <value>946, 417</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 417</value>
   </data>
   <data name="checkBox_Find_Local.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 20</value>
@@ -444,12 +426,6 @@ if there are none</value>
   </data>
   <data name="toolStripStatusLabel_dowork.Text" xml:space="preserve">
     <value>Done</value>
-  </data>
-  <data name="statusStrip_firehose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 597</value>
-  </data>
-  <data name="tabPage_firehose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 625</value>
   </data>
   <data name="tabPage_firehose.Text" xml:space="preserve">
     <value>Work with files</value>
@@ -709,9 +685,6 @@ if there are none</value>
   <data name="radioButton_fb_reboot_normal.Text" xml:space="preserve">
     <value>Reboot to normal mode</value>
   </data>
-  <data name="groupBox_fb_commands.Size" type="System.Drawing.Size, System.Drawing">
-    <value>929, 427</value>
-  </data>
   <data name="groupBox_fb_commands.Text" xml:space="preserve">
     <value>Fastboot commands</value>
   </data>
@@ -723,12 +696,6 @@ if there are none</value>
   </data>
   <data name="columnHeader_FB_Model.Text" xml:space="preserve">
     <value>Device model</value>
-  </data>
-  <data name="tableLayoutPanel_fb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 563</value>
-  </data>
-  <data name="tabPage_fb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 563</value>
   </data>
   <data name="button_term_clear.Text" xml:space="preserve">
     <value>Clear the terminal window</value>

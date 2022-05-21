@@ -181,6 +181,15 @@
   <data name="encode" xml:space="preserve">
     <value>закодирован</value>
   </data>
+  <data name="er_func_fhl_params" xml:space="preserve">
+    <value>Не удалось выполнить fh_loader с указанными параметрами</value>
+  </data>
+  <data name="er_func_wfiles" xml:space="preserve">
+    <value>Ошибка в функции WFiles</value>
+  </data>
+  <data name="er_func_xml" xml:space="preserve">
+    <value>Не удалось создать xml-файл чтения/записи разделов</value>
+  </data>
   <data name="fh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\fh.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -336,6 +345,9 @@
   </data>
   <data name="not_elf" xml:space="preserve">
     <value>не является ELF</value>
+  </data>
+  <data name="not_gpt_header" xml:space="preserve">
+    <value>Отсутствует признак хедера таблицы</value>
   </data>
   <data name="not_send" xml:space="preserve">
     <value>Не все идентификаторы указаны. Пока не отправляем.</value>
