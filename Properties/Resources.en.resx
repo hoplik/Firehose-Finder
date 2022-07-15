@@ -141,6 +141,14 @@
     <value>Workdir application</value>
     <comment>Путь установки программы</comment>
   </data>
+  <data name="auth_body" xml:space="preserve">
+    <value>Authorization is required to use the selected programmer. This program does not support working with programmers who require authorization. Try to find an alternative programmer, or use other software to work.</value>
+    <comment>Для использования выбранного программера требуется авторизация. Эта программа не поддерживает работу с программерами, для которых необходима авторизация. Попробуйте найти альтернативный программер, либо используйте для работы другое ПО.</comment>
+  </data>
+  <data name="auth_title" xml:space="preserve">
+    <value>Authorization is required!</value>
+    <comment>Требуется авторизация!</comment>
+  </data>
   <data name="button_dirrepack" xml:space="preserve">
     <value>Dir for unpacking</value>
     <comment>Директория для распаковки</comment>

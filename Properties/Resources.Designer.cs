@@ -115,6 +115,24 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Для использования выбранного программера требуется авторизация. Эта программа не поддерживает работу с программерами, для которых необходима авторизация. Попробуйте найти альтернативный программер, либо используйте для работы другое ПО..
+        /// </summary>
+        internal static string auth_body {
+            get {
+                return ResourceManager.GetString("auth_body", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Требуется авторизация!.
+        /// </summary>
+        internal static string auth_title {
+            get {
+                return ResourceManager.GetString("auth_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на 1577249282:AAFIZncf-90YpwMk_I7ad_YNwh4tnr5FXHo.
         /// </summary>
         internal static string bot {

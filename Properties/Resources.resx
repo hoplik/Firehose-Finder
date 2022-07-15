@@ -135,6 +135,12 @@
   <data name="app_path" xml:space="preserve">
     <value>Путь установки программы</value>
   </data>
+  <data name="auth_body" xml:space="preserve">
+    <value>Для использования выбранного программера требуется авторизация. Эта программа не поддерживает работу с программерами, для которых необходима авторизация. Попробуйте найти альтернативный программер, либо используйте для работы другое ПО.</value>
+  </data>
+  <data name="auth_title" xml:space="preserve">
+    <value>Требуется авторизация!</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="bot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bot.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
