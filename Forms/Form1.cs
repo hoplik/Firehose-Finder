@@ -640,11 +640,10 @@ namespace FirehoseFinder
                             case "ERROR: Only nop ":
                                 if (item.EndsWith("authentication."))
                                 {
-                                    textBox_soft_term.AppendText("Опять подключили шланг с авторкой." + Environment.NewLine);
+                                    textBox_soft_term.AppendText(LocRes.GetString("auth_body") + Environment.NewLine);
                                     parsLUN_int.SetValue(512, 1); //Чтоб корректно отрабатывало ошибку
                                     MessageBox.Show(LocRes.GetString("auth_body"), LocRes.GetString("auth_title"));
                                 }
-                                BotSendMes(textBox_soft_term.Text, Assembly.GetExecutingAssembly().GetName().Version.ToString());
                                 break;
                             default:
                                 break;
