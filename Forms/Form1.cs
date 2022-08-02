@@ -2178,8 +2178,8 @@ namespace FirehoseFinder
                 process.Start();
                 StreamReader reader = process.StandardOutput;
                 string output = reader.ReadToEnd();
-                textBox_soft_term.AppendText(output);
-                textBox_main_term.AppendText(output);
+                textBox_soft_term.AppendText(output + Environment.NewLine);
+                textBox_main_term.AppendText(output + Environment.NewLine);
                 process.WaitForExit();
                 process.Close();
             }
@@ -2197,6 +2197,7 @@ namespace FirehoseFinder
                 textBox_main_term.AppendText(LocRes.GetString("tb_chip_same") + Environment.NewLine);
                 textBox_soft_term.AppendText(LocRes.GetString("tb_chip_same") + Environment.NewLine);
             }
+
             string HWOEMIDs = func.SaharaCommand2();
             if (HWOEMIDs.Length == 16)
             {
@@ -2204,8 +2205,19 @@ namespace FirehoseFinder
                 textBox_oemid.Text = HWOEMIDs.Substring(8, 4);
                 textBox_modelid.Text = HWOEMIDs.Substring(12, 4);
             }
-            textBox_oemhash.Text = func.SaharaCommand3();
-            label_SW_Ver.Text = func.SaharaCommand7();
+            textBox_soft_term.AppendText("HWID - " + HWOEMIDs + Environment.NewLine);
+            textBox_main_term.AppendText("HWID - " + HWOEMIDs + Environment.NewLine);
+
+            string PK_HASH = func.SaharaCommand3();
+            textBox_oemhash.Text = PK_HASH;
+            textBox_soft_term.AppendText("OEM_PK_HASH (" + PK_HASH.Length.ToString() + ") - " + PK_HASH + Environment.NewLine);
+            textBox_main_term.AppendText("OEM_PK_HASH (" + PK_HASH.Length.ToString() + ") - " + PK_HASH + Environment.NewLine);
+
+            string SW_VER = func.SaharaCommand7();
+            label_SW_Ver.Text = SW_VER;
+            textBox_soft_term.AppendText("SBL SW Ver. - " + SW_VER + Environment.NewLine);
+            textBox_main_term.AppendText("SBL SW Ver. - " + SW_VER + Environment.NewLine);
+
             //Переходим на вкладку Работа с файлами
             tabControl1.SelectedTab = tabPage_firehose;
             toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_id_rec");
@@ -2277,7 +2289,7 @@ namespace FirehoseFinder
                 {
                     if (Convert.ToByte(dataGridView_collection["LASTKNOWNSBLVER", i].Value.ToString(), 16) >= Convert.ToByte(label_SW_Ver.Text, 16))
                     {
-                        if (dataGridView_collection["Model", i].Value.ToString().Equals(label_model.Text)) return; //Проверяем модель на наличие
+                        if (dataGridView_collection["Model", i].Value.ToString().Contains(label_model.Text)) return; //Проверяем модель на наличие
                     }
                 }
                 //Исправить/добавить название/модель если 1 совпадает, а 2 нет

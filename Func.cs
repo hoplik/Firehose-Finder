@@ -299,20 +299,17 @@ namespace FirehoseFinder
         /// <returns></returns>
         internal string SaharaCommand1()
         {
-            StringBuilder SC1 = new StringBuilder();
-            byte[] comfilebytes = { };
             if (File.Exists("commandop01.bin"))
             {
-                comfilebytes = File.ReadAllBytes("commandop01.bin");
+                StringBuilder SC1 = new StringBuilder();
+                byte[] comfilebytes = File.ReadAllBytes("commandop01.bin");
+                string backstr = BitConverter.ToString(comfilebytes).Replace("-", "");
+                //Читаем с конца  в начало
+                for (int i = backstr.Length - 1; i > 0; i -= 2) SC1.Append(backstr.Substring(i - 1, 2));
                 File.Delete("commandop01.bin");
+                return SC1.ToString();
             }
-            string backstr = BitConverter.ToString(comfilebytes).Replace("-", "");
-            //Читаем с конца  в начало
-            for (int i = backstr.Length - 1; i > 0; i -= 2)
-            {
-                SC1.Append(backstr.Substring(i - 1, 2));
-            }
-            return SC1.ToString();
+            else return LocRes.GetString("file") + " commandop01.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");
         }
 
         /// <summary>
@@ -321,24 +318,24 @@ namespace FirehoseFinder
         /// <returns>Проверенная строка идентификаторов HWID_OEMID_MODELID</returns>
         internal string SaharaCommand2()
         {
-            StringBuilder SC2 = new StringBuilder();
-            byte[] comfilebytes = { };
-            string[] compareresult = { string.Empty, string.Empty, string.Empty };
             if (File.Exists("commandop02.bin"))
             {
-                comfilebytes = File.ReadAllBytes("commandop02.bin");
+                StringBuilder SC2 = new StringBuilder();
+                string[] compareresult = { string.Empty, string.Empty, string.Empty };
+                byte[] comfilebytes = File.ReadAllBytes("commandop02.bin");
+                string backstr = BitConverter.ToString(comfilebytes).Replace("-", "");
+                //Читаем с конца в начало
+                for (int i = backstr.Length - 1; i > 0; i -= 2)
+                {
+                    SC2.Append(backstr.Substring(i - 1, 2));
+                }
+                int strlen = SC2.Length / 3;
+                for (int i = 0; i < 3; i++) compareresult[i] = SC2.ToString().Substring(i * strlen, strlen);
                 File.Delete("commandop02.bin");
+                if (compareresult[0].Equals(compareresult[1]) && compareresult[1].Equals(compareresult[2])) return compareresult[0];
+                else return SC2.ToString();
             }
-            string backstr = BitConverter.ToString(comfilebytes).Replace("-", "");
-            //Читаем с конца в начало
-            for (int i = backstr.Length - 1; i > 0; i -= 2)
-            {
-                SC2.Append(backstr.Substring(i - 1, 2));
-            }
-            int strlen = SC2.Length / 3;
-            for (int i = 0; i < 3; i++) compareresult[i] = SC2.ToString().Substring(i * strlen, strlen);
-            if (compareresult[0].Equals(compareresult[1]) && compareresult[1].Equals(compareresult[2])) return compareresult[0];
-            else return SC2.ToString();
+            else return LocRes.GetString("file") + " commandop02.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");
         }
 
         /// <summary>
@@ -347,18 +344,19 @@ namespace FirehoseFinder
         /// <returns>Проверенная строка идентификатора OEM_HASH</returns>
         internal string SaharaCommand3()
         {
-            StringBuilder SC3 = new StringBuilder();
-            string[] compareresult = { string.Empty, string.Empty, string.Empty };
             if (File.Exists("commandop03.bin"))
             {
+                StringBuilder SC3 = new StringBuilder();
+                string[] compareresult = { string.Empty, string.Empty, string.Empty };
                 SC3.Append(BitConverter.ToString(File.ReadAllBytes("commandop03.bin")).Replace("-", ""));
+                //Читаем с начала до конца
+                int strlen = SC3.Length / 3;
+                for (int i = 0; i < 3; i++) compareresult[i] = SC3.ToString().Substring(i * strlen, strlen);
                 File.Delete("commandop03.bin");
+                return compareresult[0];
+                //NOTE From revision 2.4, PK Hash returns three hashes for APPS, MBA, and MSS code segments for B - family chips.
             }
-            //Читаем с начала до конца
-            int strlen = SC3.Length / 3;
-            for (int i = 0; i < 3; i++) compareresult[i] = SC3.ToString().Substring(i * strlen, strlen);
-            return compareresult[0];
-            //NOTE From revision 2.4, PK Hash returns three hashes for APPS, MBA, and MSS code segments for B - family chips.
+            else return LocRes.GetString("file") + " commandop03.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");
         }
 
         /// <summary>
@@ -367,9 +365,9 @@ namespace FirehoseFinder
         /// <returns>Строка идентификатора SW SBL1 в little endian</returns>
         internal string SaharaCommand7()
         {
-            StringBuilder SC7 = new StringBuilder();
             if (File.Exists("commandop07.bin"))
             {
+                StringBuilder SC7 = new StringBuilder();
                 string strbyte = BitConverter.ToString(File.ReadAllBytes("commandop07.bin")).Replace("-", "");
                 byte count = (byte)strbyte.Length;
                 //Читаем с конца в начало
@@ -379,8 +377,9 @@ namespace FirehoseFinder
                     count -= 2;
                 }
                 File.Delete("commandop07.bin");
+                return SC7.ToString();
             }
-            return SC7.ToString();
+            else return LocRes.GetString("file") + " commandop07.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");
         }
 
         /// <summary>
@@ -790,7 +789,7 @@ namespace FirehoseFinder
             MatchCollection matchs = Regex.Matches(outputres, pattern);
             for (int i = 0; i < matchs.Count; i++)
             {
-                PPR[i] = StringToByteArray(matchs[i].Value.Substring(2,2))[0];
+                PPR[i] = StringToByteArray(matchs[i].Value.Substring(2, 2))[0];
             }
             return PPR;
         }
