@@ -306,7 +306,7 @@ namespace FirehoseFinder
                 string backstr = BitConverter.ToString(comfilebytes).Replace("-", "");
                 //Читаем с конца  в начало
                 for (int i = backstr.Length - 1; i > 0; i -= 2) SC1.Append(backstr.Substring(i - 1, 2));
-                File.Delete("commandop01.bin");
+                //File.Delete("commandop01.bin");
                 return SC1.ToString();
             }
             else return LocRes.GetString("file") + " commandop01.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");
@@ -331,7 +331,7 @@ namespace FirehoseFinder
                 }
                 int strlen = SC2.Length / 3;
                 for (int i = 0; i < 3; i++) compareresult[i] = SC2.ToString().Substring(i * strlen, strlen);
-                File.Delete("commandop02.bin");
+                //File.Delete("commandop02.bin");
                 if (compareresult[0].Equals(compareresult[1]) && compareresult[1].Equals(compareresult[2])) return compareresult[0];
                 else return SC2.ToString();
             }
@@ -352,7 +352,7 @@ namespace FirehoseFinder
                 //Читаем с начала до конца
                 int strlen = SC3.Length / 3;
                 for (int i = 0; i < 3; i++) compareresult[i] = SC3.ToString().Substring(i * strlen, strlen);
-                File.Delete("commandop03.bin");
+                //File.Delete("commandop03.bin");
                 return compareresult[0];
                 //NOTE From revision 2.4, PK Hash returns three hashes for APPS, MBA, and MSS code segments for B - family chips.
             }
@@ -376,7 +376,7 @@ namespace FirehoseFinder
                     SC7.Append(strbyte.Substring(count - 2, 2));
                     count -= 2;
                 }
-                File.Delete("commandop07.bin");
+                //File.Delete("commandop07.bin");
                 return SC7.ToString();
             }
             else return LocRes.GetString("file") + " commandop07.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");

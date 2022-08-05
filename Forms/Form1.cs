@@ -2166,7 +2166,8 @@ namespace FirehoseFinder
                 button_Sahara_CommandStart.Enabled = false;
                 return;
             }
-            //Выполняем запрос HWID-OEMID (command02, 03, 07)
+            MessageBox.Show("Выполняем запрос HWID-OEMID (command01, 02, 03, 07)");
+            //Выполняем запрос HWID-OEMID (command01, 02, 03, 07)
             Process process = new Process();
             process.StartInfo.FileName = "QSaharaServer.exe";
             process.StartInfo.Arguments = "-u " + serialPort1.PortName.Remove(0, 3) + " -c 1 -c 2 -c 3 -c 7";
@@ -2188,6 +2189,7 @@ namespace FirehoseFinder
                 MessageBox.Show(ex.Message);
             }
             NeedReset = true;
+            MessageBox.Show("Обрабатываем запрос идентификатора 1");
             //Обрабатываем запрос идентификаторов
             string chip_sn = func.SaharaCommand1();
             textBox_main_term.AppendText(LocRes.GetString("get") + '\u0020' + "S/N CPU - " + chip_sn + Environment.NewLine);
@@ -2197,7 +2199,7 @@ namespace FirehoseFinder
                 textBox_main_term.AppendText(LocRes.GetString("tb_chip_same") + Environment.NewLine);
                 textBox_soft_term.AppendText(LocRes.GetString("tb_chip_same") + Environment.NewLine);
             }
-
+            MessageBox.Show("Обрабатываем запрос идентификатора 2");
             string HWOEMIDs = func.SaharaCommand2();
             if (HWOEMIDs.Length == 16)
             {
@@ -2207,12 +2209,12 @@ namespace FirehoseFinder
             }
             textBox_soft_term.AppendText("HWID - " + HWOEMIDs + Environment.NewLine);
             textBox_main_term.AppendText("HWID - " + HWOEMIDs + Environment.NewLine);
-
+            MessageBox.Show("Обрабатываем запрос идентификатора 3");
             string PK_HASH = func.SaharaCommand3();
             textBox_oemhash.Text = PK_HASH;
             textBox_soft_term.AppendText("OEM_PK_HASH (" + PK_HASH.Length.ToString() + ") - " + PK_HASH + Environment.NewLine);
             textBox_main_term.AppendText("OEM_PK_HASH (" + PK_HASH.Length.ToString() + ") - " + PK_HASH + Environment.NewLine);
-
+            MessageBox.Show("Обрабатываем запрос идентификатора 7");
             string SW_VER = func.SaharaCommand7();
             label_SW_Ver.Text = SW_VER;
             textBox_soft_term.AppendText("SBL SW Ver. - " + SW_VER + Environment.NewLine);

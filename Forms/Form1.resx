@@ -2724,7 +2724,7 @@ _HASH</value>
     <value>Bottom</value>
   </data>
   <data name="groupBox_LUN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 221</value>
+    <value>3, 223</value>
   </data>
   <data name="groupBox_LUN.Size" type="System.Drawing.Size, System.Drawing">
     <value>929, 339</value>
@@ -2901,7 +2901,7 @@ _HASH</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage_sahara.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 563</value>
+    <value>935, 565</value>
   </data>
   <data name="tabPage_sahara.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3201,7 +3201,7 @@ _HASH</value>
     <value>3, 133</value>
   </data>
   <data name="groupBox_fb_commands.Size" type="System.Drawing.Size, System.Drawing">
-    <value>929, 427</value>
+    <value>929, 429</value>
   </data>
   <data name="groupBox_fb_commands.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3297,7 +3297,7 @@ _HASH</value>
     <value>3</value>
   </data>
   <data name="tableLayoutPanel_fb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 563</value>
+    <value>935, 565</value>
   </data>
   <data name="tableLayoutPanel_fb.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3321,7 +3321,7 @@ _HASH</value>
     <value>4, 25</value>
   </data>
   <data name="tabPage_fb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 563</value>
+    <value>935, 565</value>
   </data>
   <data name="tabPage_fb.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

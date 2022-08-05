@@ -153,12 +153,12 @@ namespace FirehoseFinder
         /// <summary>
         /// Список файлов, которые нужно удалить после закрытия программы
         /// </summary>
-        internal readonly List<string> FilesToClean = new List<string>(9)
+        internal readonly List<string> FilesToClean = new List<string>(5)
         {
-            {"commandop01.bin" },
-            {"commandop02.bin" },
-            {"commandop03.bin" },
-            {"commandop07.bin" },
+            //{"commandop01.bin" },
+            //{"commandop02.bin" },
+            //{"commandop03.bin" },
+            //{"commandop07.bin" },
             {"work.xml" },
             {"p_r.xml" },
             {"port_trace.txt" },
