@@ -588,9 +588,9 @@ namespace FirehoseFinder
                 string[] parLun = output_FH.Split(splitstr, StringSplitOptions.RemoveEmptyEntries);
                 /*Значения по-умолчанию в случае некорректного парсинга
                  * 
-                 * 1 (0) - всего логических дисков
+                 * 1 (0) - всего блоков для выбранного диска
                  * 2 (0) - размер блока в байтах (512 или 4096)
-                 * 3 (1) - всего блоков для выбранного диска
+                 * 3 (1) - всего логических дисков
                  * 4 (0) - тип памяти (еммс - 0, ufs - 1)
                  */
                 int[] parsLUN_int = new int[] { 0, 0, 1, 0 };
@@ -614,7 +614,7 @@ namespace FirehoseFinder
                         {
                             switch (correct_pars_str.Substring(0, 16))
                             {
-                                //Количество дисков
+                                //Всего блоков для выбранного диска
                                 case "Device Total Log":
                                     parstr = correct_pars_str.Substring(correct_pars_str.IndexOf(": ") + 2);
                                     parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 0);
@@ -632,10 +632,10 @@ namespace FirehoseFinder
                                     parstr = correct_pars_str.Substring(correct_pars_str.IndexOf('=') + 1);
                                     parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 1);
                                     break;
-                                //Всего блоков для выбранного диска
+                                //Количество дисков
                                 case "Device Total Phy":
                                     parstr = correct_pars_str.Substring(correct_pars_str.IndexOf(": ") + 2);
-                                    int dtp = 1;// Convert.ToInt32(parstr, 16);
+                                    int dtp = Convert.ToInt32(parstr, 16);
                                     if (dtp <= 0) dtp = 1;
                                     parsLUN_int.SetValue(dtp, 2);
                                     break;
