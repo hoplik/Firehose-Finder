@@ -657,9 +657,19 @@ namespace FirehoseFinder
                                     break;
                             }
                         }
-                        catch (FormatException ex)
+                        catch (Exception ex)
                         {
-                            BotSendMes(ex.Message + Environment.NewLine + textBox_soft_term.Text, "beta_test");
+                            textBox_soft_term.AppendText(ex.Message + Environment.NewLine);
+                            if (MessageBox.Show(LocRes.GetString("mb_body_send"),
+                                    LocRes.GetString("mb_title_mis") + '\u0020' +
+                                    LocRes.GetString("mb_title_send"),
+                                MessageBoxButtons.OKCancel,
+                                MessageBoxIcon.Exclamation,
+                                MessageBoxDefaultButton.Button1)==DialogResult.OK)
+                            {
+                                textBox_soft_term.AppendText(LocRes.GetString("tb_send_conf") + Environment.NewLine);
+                                BotSendMes(textBox_soft_term.Text, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                            }
                         }
                     }
                 }
