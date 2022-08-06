@@ -332,9 +332,9 @@ namespace FirehoseFinder
                 int strlen = SC2.Length / 3; //Базово должно быть 16 знаков
                 for (int i = 0; i < 3; i++) compareresult[i] = SC2.ToString().Substring(i * strlen, strlen); //Заполняем строковым значением
                 File.Delete("commandop02.bin");
-                if (compareresult[2].Equals(compareresult[0]) || compareresult[0].Equals("00000000"))
+                if (compareresult[2].Equals(compareresult[0]) || compareresult[0].Equals("0000000000000000"))
                 {
-                    if (compareresult[2].Equals(compareresult[1]) || compareresult[1].Equals("00000000")) return compareresult[2];
+                    if (compareresult[2].Equals(compareresult[1]) || compareresult[1].Equals("0000000000000000")) return compareresult[2];
                     else return SC2.ToString();
                 }
                 else return SC2.ToString();
