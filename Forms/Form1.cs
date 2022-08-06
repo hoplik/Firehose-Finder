@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Text;
@@ -592,107 +593,97 @@ namespace FirehoseFinder
                  * 3 (1) - всего блоков для выбранного диска
                  * 4 (0) - тип памяти (еммс - 0, ufs - 1)
                  */
-                int[] parsLUN_int = new int[] { 0, 0, 1, 0 }; //
+                int[] parsLUN_int = new int[] { 0, 0, 1, 0 };
                 List<string> goodparLun = new List<string>();
-                //Обрезаем с конца все данные массива ответов таргет сэд
+                //Отрезаем с конца все данные массива ответов таргет сэд по символу '
                 foreach (string strparLun in parLun)
                 {
-                    if (strparLun.Contains("'")) goodparLun.Add(strparLun.Substring(0, strparLun.IndexOf("'")));
+                    //if (strparLun.Contains("'")) goodparLun.Add(strparLun.Substring(0, strparLun.IndexOf("'")));
+                    if (strparLun.Contains('\u0027')) goodparLun.Add(strparLun.Remove(strparLun.LastIndexOf('\u0027')));
                 }
                 //Парсим ответ и раскидываем результат в массив
                 foreach (string item in goodparLun)
                 {
-                    if (item.Length > 16)
+                    if (item.Length > 23)
                     {
                         string parstr;
                         string correct_pars_str = item;
-                        //Если ответ устройства корректен, то отрабатываем инфо
-                        if (item.StartsWith("INFO: "))
+                        if (item.StartsWith("INFO: ")) correct_pars_str = item.Substring(6); //Если строка ответа устройства начинается с инфо
+                        if (item.StartsWith("ERROR: ")) correct_pars_str = item.Substring(7); //Если строка ответа начинается с еррор
+                        try
                         {
-                            correct_pars_str = item.Substring(6);
-                            try
+                            switch (correct_pars_str.Substring(0, 16))
                             {
-                                switch (correct_pars_str.Substring(0, 16))
-                                {
-                                    case "Device Total Log":
-                                        parstr = item.Substring(item.IndexOf(": ") + 2);
-                                        parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 0);
-                                        break;
-                                    case "num_partition_se":
-                                        parstr = item.Substring(item.IndexOf('=') + 1);
-                                        parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 0);
-                                        break;
-                                    case "Device Block Siz":
-                                        parstr = item.Substring(item.IndexOf(": ") + 2);
-                                        parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 1);
-                                        break;
-                                    case "SECTOR_SIZE_IN_B":
-                                        parstr = item.Substring(item.IndexOf('=') + 1);
-                                        parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 1);
-                                        break;
-                                    case "Device Total Phy":
-                                        parstr = item.Substring(item.IndexOf(": ") + 2);
-                                        int dtp = Convert.ToInt32(parstr, 16);
-                                        if (dtp <= 0) dtp = 1;
-                                        parsLUN_int.SetValue(dtp, 2);
-                                        break;
-                                    case "num_physical_par":
-                                        parstr = item.Substring(item.IndexOf('=') + 1);
-                                        parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 2);
-                                        break;
-                                    case "eMMC_RAW_DATA [0":
-                                        parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
-                                        break;
-                                    case "{\"storage_info\":":
-                                        parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
-                                        parstr = item.Substring(item.IndexOf("mem_type\":\"") + 11);
-                                        string m_type = parstr.Substring(0, parstr.IndexOf("\","));
-                                        if (m_type.Equals("UFS")) parsLUN_int.SetValue((int)Guide.MEM_TYPE.UFS, 3);
-                                        break;
-                                    default:
-                                        break;
-                                }
-                            }
-                            catch (Exception ex)
-                            {
-                                textBox_soft_term.AppendText(ex.Message + Environment.NewLine);
-                                if (MessageBox.Show(LocRes.GetString("mb_body_send"),
-                                        LocRes.GetString("mb_title_mis") + '\u0020' +
-                                        LocRes.GetString("mb_title_send"),
-                                    MessageBoxButtons.OKCancel,
-                                    MessageBoxIcon.Exclamation,
-                                    MessageBoxDefaultButton.Button1)==DialogResult.OK)
-                                {
-                                    textBox_soft_term.AppendText(LocRes.GetString("tb_send_conf") + Environment.NewLine);
-                                    BotSendMes(textBox_soft_term.Text, Assembly.GetExecutingAssembly().GetName().Version.ToString());
-                                }
+                                //Количество дисков
+                                case "Device Total Log":
+                                    parstr = correct_pars_str.Substring(correct_pars_str.IndexOf(": ") + 2);
+                                    parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 0);
+                                    break;
+                                case "num_partition_se":
+                                    parstr = correct_pars_str.Substring(correct_pars_str.IndexOf('=') + 1);
+                                    parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 0);
+                                    break;
+                                //Размер блока
+                                case "Device Block Siz":
+                                    parstr = correct_pars_str.Substring(correct_pars_str.IndexOf(": ") + 2);
+                                    parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 1);
+                                    break;
+                                case "SECTOR_SIZE_IN_B":
+                                    parstr = correct_pars_str.Substring(correct_pars_str.IndexOf('=') + 1);
+                                    parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 1);
+                                    break;
+                                //Всего блоков для выбранного диска
+                                case "Device Total Phy":
+                                    parstr = correct_pars_str.Substring(correct_pars_str.IndexOf(": ") + 2);
+                                    int dtp = 1;// Convert.ToInt32(parstr, 16);
+                                    if (dtp <= 0) dtp = 1;
+                                    parsLUN_int.SetValue(dtp, 2);
+                                    break;
+                                case "num_physical_par":
+                                    parstr = correct_pars_str.Substring(correct_pars_str.IndexOf('=') + 1);
+                                    parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 2);
+                                    break;
+                                //Тип памяти
+                                case "eMMC_RAW_DATA [0":
+                                    parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
+                                    break;
+                                case "{\"storage_info\":":
+                                    parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
+                                    parstr = item.Substring(item.IndexOf("mem_type\":\"") + 11);
+                                    string m_type = parstr.Substring(0, parstr.IndexOf("\","));
+                                    if (m_type.Equals("UFS")) parsLUN_int.SetValue((int)Guide.MEM_TYPE.UFS, 3);
+                                    break;
+                                //Используется программер с авторизацией
+                                case "Only nop and sig":
+                                    //if (item.EndsWith("authentication."))
+                                    //{
+                                    textBox_soft_term.AppendText(LocRes.GetString("auth_body") + Environment.NewLine);
+                                    parsLUN_int.SetValue(512, 1); //Чтоб корректно отрабатывало ошибку
+                                    MessageBox.Show(LocRes.GetString("auth_body"), LocRes.GetString("auth_title"));
+                                    //}
+                                    break;
+                                //Неправильно выбран тип памяти (еммс вместо ufs)
+                                case "Failed to open d":
+                                    textBox_soft_term.AppendText(LocRes.GetString("mb_body_memtype") + Environment.NewLine);
+                                    parsLUN_int.SetValue(4096, 1); //Чтоб корректно отрабатывало ошибку
+                                    MessageBox.Show(LocRes.GetString("mb_body_memtype"), LocRes.GetString("mb_title_mis"));
+                                    break;
+                                default:
+                                    break;
                             }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            string error_pars_str = item;
-                            if (item.StartsWith("ERROR: ")) error_pars_str = item.Substring(7);
+                            textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                            if (MessageBox.Show(LocRes.GetString("mb_body_send"),
+                                    LocRes.GetString("mb_title_mis") + '\u0020' +
+                                    LocRes.GetString("mb_title_send"),
+                                MessageBoxButtons.OKCancel,
+                                MessageBoxIcon.Exclamation,
+                                MessageBoxDefaultButton.Button1)==DialogResult.OK)
                             {
-                                switch (error_pars_str.Substring(0, 16))
-                                {
-                                    //Используется программер с авторизацией
-                                    case "Only nop and sig":
-                                        //if (item.EndsWith("authentication."))
-                                        //{
-                                            textBox_soft_term.AppendText(LocRes.GetString("auth_body") + Environment.NewLine);
-                                            parsLUN_int.SetValue(512, 1); //Чтоб корректно отрабатывало ошибку
-                                            MessageBox.Show(LocRes.GetString("auth_body"), LocRes.GetString("auth_title"));
-                                        //}
-                                        break;
-                                    //Неправильно выбран тип памяти (еммс вместо ufs)
-                                    case "Failed to open d":
-                                        textBox_soft_term.AppendText(LocRes.GetString("mb_body_memtype") + Environment.NewLine);
-                                        parsLUN_int.SetValue(4096, 1); //Чтоб корректно отрабатывало ошибку
-                                        MessageBox.Show(LocRes.GetString("mb_body_memtype"), LocRes.GetString("mb_title_mis"));
-                                        break;
-                                    default:
-                                        break;
-                                }
+                                textBox_soft_term.AppendText(LocRes.GetString("tb_send_conf") + Environment.NewLine);
+                                BotSendMes(textBox_soft_term.Text, Assembly.GetExecutingAssembly().GetName().Version.ToString());
                             }
                         }
                     }
