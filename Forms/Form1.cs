@@ -470,10 +470,12 @@ namespace FirehoseFinder
             comboBox_fh_commands.Enabled = true;
             comboBox_lun_count.Enabled = true;
             comboBox_log.Enabled = true;
-            groupBox_mem_type.Enabled = true;
             int lun_int = 0;
             if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
             groupBox_LUN.Text = LocRes.GetString("gb_disk") + '\u0020' + lun_int.ToString();
+            //Выбираем тип памяти для лоадера
+            if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs --lun=" + lun_int.ToString());
+            else fh_command_args.Append(" --memoryname=emmc");
             Peekpoke pp = new Peekpoke(this);
             switch (comboBox_fh_commands.SelectedIndex)
             {
@@ -485,8 +487,6 @@ namespace FirehoseFinder
                 case 1:
                     textBox_soft_term.AppendText(LocRes.GetString("tbs_part_table") + Environment.NewLine);
                     fh_command_args.Append(" --getgptmainbackup=" + lun_int.ToString());
-                    if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs --lun=" + lun_int.ToString());
-                    else fh_command_args.Append(" --memoryname=emmc");
                     getgpt = true;
                     break;
                 case 2:
@@ -497,8 +497,6 @@ namespace FirehoseFinder
                     StartStatus();
                     break;
                 case 4:
-                    if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs --lun=" + lun_int.ToString());
-                    else fh_command_args.Append(" --memoryname=emmc");
                     textBox_soft_term.AppendText(LocRes.GetString("tb_write_file_sectors") + Environment.NewLine);
                     Write_Sectors ws = new Write_Sectors(this);
                     if (ws.ShowDialog() == DialogResult.OK)
@@ -525,8 +523,6 @@ namespace FirehoseFinder
                     else textBox_soft_term.AppendText(LocRes.GetString("tb_write_cancel") + Environment.NewLine);
                     break;
                 case 5:
-                    if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs --lun=" + lun_int.ToString());
-                    else fh_command_args.Append(" --memoryname=emmc");
                     textBox_soft_term.AppendText(LocRes.GetString("tb_er_mem") + Environment.NewLine);
                     if (MessageBox.Show(LocRes.GetString("tb_body_att_del_mem"),
                         LocRes.GetString("tb_note_att_del_mem"),
@@ -538,8 +534,6 @@ namespace FirehoseFinder
                         LocRes.GetString("tb_cancel_user") + Environment.NewLine);
                     break;
                 case 6:
-                    if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs --lun=" + lun_int.ToString());
-                    else fh_command_args.Append(" --memoryname=emmc");
                     textBox_soft_term.AppendText(LocRes.GetString("tb_pp") + Environment.NewLine);
                     switch (pp.ShowDialog())
                     {
@@ -591,7 +585,14 @@ namespace FirehoseFinder
             {
                 string[] splitstr = { "TARGET SAID: '", "\n" };
                 string[] parLun = output_FH.Split(splitstr, StringSplitOptions.RemoveEmptyEntries);
-                int[] parsLUN_int = new int[] { 0, 0, 1, 0 }; //Значения по-умолчанию в случае некорректного парсинга
+                /*Значения по-умолчанию в случае некорректного парсинга
+                 * 
+                 * 1 (0) - всего логических дисков
+                 * 2 (0) - размер блока в байтах (512 или 4096)
+                 * 3 (1) - всего блоков для выбранного диска
+                 * 4 (0) - тип памяти (еммс - 0, ufs - 1)
+                 */
+                int[] parsLUN_int = new int[] { 0, 0, 1, 0 }; //
                 List<string> goodparLun = new List<string>();
                 //Обрезаем с конца все данные массива ответов таргет сэд
                 foreach (string strparLun in parLun)
@@ -605,70 +606,93 @@ namespace FirehoseFinder
                     {
                         string parstr;
                         string correct_pars_str = item;
-                        if (item.StartsWith("INFO: ")) correct_pars_str = item.Substring(6);
-                        try
+                        //Если ответ устройства корректен, то отрабатываем инфо
+                        if (item.StartsWith("INFO: "))
                         {
-                            switch (correct_pars_str.Substring(0, 16))
+                            correct_pars_str = item.Substring(6);
+                            try
                             {
-                                case "Device Total Log":
-                                    parstr = item.Substring(item.IndexOf(": ") + 2);
-                                    parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 0);
-                                    break;
-                                case "num_partition_se":
-                                    parstr = item.Substring(item.IndexOf('=') + 1);
-                                    parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 0);
-                                    break;
-                                case "Device Block Siz":
-                                    parstr = item.Substring(item.IndexOf(": ") + 2);
-                                    parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 1);
-                                    break;
-                                case "SECTOR_SIZE_IN_B":
-                                    parstr = item.Substring(item.IndexOf('=') + 1);
-                                    parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 1);
-                                    break;
-                                case "Device Total Phy":
-                                    parstr = item.Substring(item.IndexOf(": ") + 2);
-                                    int dtp = Convert.ToInt32(parstr, 16);
-                                    if (dtp <= 0) dtp = 1;
-                                    parsLUN_int.SetValue(dtp, 2);
-                                    break;
-                                case "num_physical_par":
-                                    parstr = item.Substring(item.IndexOf('=') + 1);
-                                    parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 2);
-                                    break;
-                                case "eMMC_RAW_DATA [0":
-                                    parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
-                                    break;
-                                case "{\"storage_info\":":
-                                    parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
-                                    parstr = item.Substring(item.IndexOf("mem_type\":\"") + 11);
-                                    string m_type = parstr.Substring(0, parstr.IndexOf("\","));
-                                    if (m_type.Equals("UFS")) parsLUN_int.SetValue((int)Guide.MEM_TYPE.UFS, 3);
-                                    break;
-                                case "ERROR: Only nop ":
-                                    if (item.EndsWith("authentication."))
-                                    {
-                                        textBox_soft_term.AppendText(LocRes.GetString("auth_body") + Environment.NewLine);
-                                        parsLUN_int.SetValue(512, 1); //Чтоб корректно отрабатывало ошибку
-                                        MessageBox.Show(LocRes.GetString("auth_body"), LocRes.GetString("auth_title"));
-                                    }
-                                    break;
-                                default:
-                                    break;
+                                switch (correct_pars_str.Substring(0, 16))
+                                {
+                                    case "Device Total Log":
+                                        parstr = item.Substring(item.IndexOf(": ") + 2);
+                                        parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 0);
+                                        break;
+                                    case "num_partition_se":
+                                        parstr = item.Substring(item.IndexOf('=') + 1);
+                                        parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 0);
+                                        break;
+                                    case "Device Block Siz":
+                                        parstr = item.Substring(item.IndexOf(": ") + 2);
+                                        parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 1);
+                                        break;
+                                    case "SECTOR_SIZE_IN_B":
+                                        parstr = item.Substring(item.IndexOf('=') + 1);
+                                        parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 1);
+                                        break;
+                                    case "Device Total Phy":
+                                        parstr = item.Substring(item.IndexOf(": ") + 2);
+                                        int dtp = Convert.ToInt32(parstr, 16);
+                                        if (dtp <= 0) dtp = 1;
+                                        parsLUN_int.SetValue(dtp, 2);
+                                        break;
+                                    case "num_physical_par":
+                                        parstr = item.Substring(item.IndexOf('=') + 1);
+                                        parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 2);
+                                        break;
+                                    case "eMMC_RAW_DATA [0":
+                                        parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
+                                        break;
+                                    case "{\"storage_info\":":
+                                        parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
+                                        parstr = item.Substring(item.IndexOf("mem_type\":\"") + 11);
+                                        string m_type = parstr.Substring(0, parstr.IndexOf("\","));
+                                        if (m_type.Equals("UFS")) parsLUN_int.SetValue((int)Guide.MEM_TYPE.UFS, 3);
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                textBox_soft_term.AppendText(ex.Message + Environment.NewLine);
+                                if (MessageBox.Show(LocRes.GetString("mb_body_send"),
+                                        LocRes.GetString("mb_title_mis") + '\u0020' +
+                                        LocRes.GetString("mb_title_send"),
+                                    MessageBoxButtons.OKCancel,
+                                    MessageBoxIcon.Exclamation,
+                                    MessageBoxDefaultButton.Button1)==DialogResult.OK)
+                                {
+                                    textBox_soft_term.AppendText(LocRes.GetString("tb_send_conf") + Environment.NewLine);
+                                    BotSendMes(textBox_soft_term.Text, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                                }
                             }
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            textBox_soft_term.AppendText(ex.Message + Environment.NewLine);
-                            if (MessageBox.Show(LocRes.GetString("mb_body_send"),
-                                    LocRes.GetString("mb_title_mis") + '\u0020' +
-                                    LocRes.GetString("mb_title_send"),
-                                MessageBoxButtons.OKCancel,
-                                MessageBoxIcon.Exclamation,
-                                MessageBoxDefaultButton.Button1)==DialogResult.OK)
+                            string error_pars_str = item;
+                            if (item.StartsWith("ERROR: ")) error_pars_str = item.Substring(7);
                             {
-                                textBox_soft_term.AppendText(LocRes.GetString("tb_send_conf") + Environment.NewLine);
-                                BotSendMes(textBox_soft_term.Text, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                                switch (error_pars_str.Substring(0, 16))
+                                {
+                                    //Используется программер с авторизацией
+                                    case "Only nop and sig":
+                                        //if (item.EndsWith("authentication."))
+                                        //{
+                                            textBox_soft_term.AppendText(LocRes.GetString("auth_body") + Environment.NewLine);
+                                            parsLUN_int.SetValue(512, 1); //Чтоб корректно отрабатывало ошибку
+                                            MessageBox.Show(LocRes.GetString("auth_body"), LocRes.GetString("auth_title"));
+                                        //}
+                                        break;
+                                    //Неправильно выбран тип памяти (еммс вместо ufs)
+                                    case "Failed to open d":
+                                        textBox_soft_term.AppendText(LocRes.GetString("mb_body_memtype") + Environment.NewLine);
+                                        parsLUN_int.SetValue(4096, 1); //Чтоб корректно отрабатывало ошибку
+                                        MessageBox.Show(LocRes.GetString("mb_body_memtype"), LocRes.GetString("mb_title_mis"));
+                                        break;
+                                    default:
+                                        break;
+                                }
                             }
                         }
                     }
@@ -2393,7 +2417,6 @@ namespace FirehoseFinder
         {
             button_Sahara_CommandStart.Enabled = false;
             button_Sahara_Ids.Enabled = false;
-            groupBox_mem_type.Enabled = false;
             radioButton_mem_emmc.Checked = true;
             comboBox_lun_count.SelectedIndex = 0;
             comboBox_lun_count.Text = comboBox_lun_count.SelectedItem.ToString();
@@ -2677,7 +2700,7 @@ namespace FirehoseFinder
                 if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs --lun=" + groupBox_LUN.Text.Remove(0, 5));
                 else Argstoxml.Append(" --memoryname=emmc");
                 Argstoxml.Append(" --convertprogram2read"); //Добавляем для операции чтения
-                //При наличии файла запускаем процесс чтения в отдельном потоке
+                                                            //При наличии файла запускаем процесс чтения в отдельном потоке
                 if (!backgroundWorker_xml.IsBusy && File.Exists("p_r.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
             }
         }

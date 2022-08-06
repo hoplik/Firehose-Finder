@@ -333,6 +333,10 @@
     <value>IDs are partially received. Please reboot the device into emergency download mode manually.</value>
     <comment>Идентификаторы получены частично. Пожалуйста, перезагрузите устройство в аварийный режим вручную.</comment>
   </data>
+  <data name="mb_body_memtype" xml:space="preserve">
+    <value>The memory type is probably incorrectly selected. If the eMMC type is specified, then try changing it to UFS and repeat the request.</value>
+    <comment>Вероятно, неправильно выбран тип памяти. Если указан тип eMMC, то попробуйте изменить на UFS и повторить запрос.</comment>
+  </data>
   <data name="mb_body_record" xml:space="preserve">
     <value>An attempt is being made to write information to memory partitions. For the convenience of tracking the completion of the recording, you can clear the log window by clicking "Ok", leave the current log in the terminal window - "Cancel". Please wait for the operation to be performed, as it will be written in the log window.</value>
     <comment>Предпринимается попытка записи информации в разделы памяти. Для удобства отслеживания завершения записи можно очистить окно лога, нажав "Ок", оставить текущий лог в окне терминала - "Отмена". Пожалуйста, дождитесь выполнения операции, о чём будет написано в окне лога.</comment>

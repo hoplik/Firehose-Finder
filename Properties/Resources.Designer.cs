@@ -579,6 +579,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Вероятно, неправильно выбран тип памяти. Если указан тип eMMC, то попробуйте изменить на UFS и повторить запрос..
+        /// </summary>
+        internal static string mb_body_memtype {
+            get {
+                return ResourceManager.GetString("mb_body_memtype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Предпринимается попытка записи информации в разделы памяти. Для удобства отслеживания завершения записи можно очистить окно лога, нажав &quot;Ок&quot;, оставить текущий лог в окне терминала - &quot;Отмена&quot;. Пожалуйста, дождитесь выполнения операции, о чём будет написано в окне лога..
         /// </summary>
         internal static string mb_body_record {
