@@ -473,8 +473,6 @@ namespace FirehoseFinder
             groupBox_mem_type.Enabled = true;
             int lun_int = 0;
             if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
-            if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs --lun=" + lun_int.ToString());
-            else fh_command_args.Append(" --memoryname=emmc");
             groupBox_LUN.Text = LocRes.GetString("gb_disk") + '\u0020' + lun_int.ToString();
             Peekpoke pp = new Peekpoke(this);
             switch (comboBox_fh_commands.SelectedIndex)
@@ -487,6 +485,8 @@ namespace FirehoseFinder
                 case 1:
                     textBox_soft_term.AppendText(LocRes.GetString("tbs_part_table") + Environment.NewLine);
                     fh_command_args.Append(" --getgptmainbackup=" + lun_int.ToString());
+                    if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs --lun=" + lun_int.ToString());
+                    else fh_command_args.Append(" --memoryname=emmc");
                     getgpt = true;
                     break;
                 case 2:
@@ -497,6 +497,8 @@ namespace FirehoseFinder
                     StartStatus();
                     break;
                 case 4:
+                    if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs --lun=" + lun_int.ToString());
+                    else fh_command_args.Append(" --memoryname=emmc");
                     textBox_soft_term.AppendText(LocRes.GetString("tb_write_file_sectors") + Environment.NewLine);
                     Write_Sectors ws = new Write_Sectors(this);
                     if (ws.ShowDialog() == DialogResult.OK)
@@ -523,6 +525,8 @@ namespace FirehoseFinder
                     else textBox_soft_term.AppendText(LocRes.GetString("tb_write_cancel") + Environment.NewLine);
                     break;
                 case 5:
+                    if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs --lun=" + lun_int.ToString());
+                    else fh_command_args.Append(" --memoryname=emmc");
                     textBox_soft_term.AppendText(LocRes.GetString("tb_er_mem") + Environment.NewLine);
                     if (MessageBox.Show(LocRes.GetString("tb_body_att_del_mem"),
                         LocRes.GetString("tb_note_att_del_mem"),
@@ -534,6 +538,8 @@ namespace FirehoseFinder
                         LocRes.GetString("tb_cancel_user") + Environment.NewLine);
                     break;
                 case 6:
+                    if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs --lun=" + lun_int.ToString());
+                    else fh_command_args.Append(" --memoryname=emmc");
                     textBox_soft_term.AppendText(LocRes.GetString("tb_pp") + Environment.NewLine);
                     switch (pp.ShowDialog())
                     {
@@ -600,53 +606,60 @@ namespace FirehoseFinder
                         string parstr;
                         string correct_pars_str = item;
                         if (item.StartsWith("INFO: ")) correct_pars_str = item.Substring(6);
-                        switch (correct_pars_str.Substring(0, 16))
+                        try
                         {
-                            case "Device Total Log":
-                                parstr = item.Substring(item.IndexOf(": ") + 2);
-                                parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 0);
-                                break;
-                            case "num_partition_se":
-                                parstr = item.Substring(item.IndexOf('=') + 1);
-                                parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 0);
-                                break;
-                            case "Device Block Siz":
-                                parstr = item.Substring(item.IndexOf(": ") + 2);
-                                parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 1);
-                                break;
-                            case "SECTOR_SIZE_IN_B":
-                                parstr = item.Substring(item.IndexOf('=') + 1);
-                                parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 1);
-                                break;
-                            case "Device Total Phy":
-                                parstr = item.Substring(item.IndexOf(": ") + 2);
-                                int dtp = Convert.ToInt32(parstr, 16);
-                                if (dtp <= 0) dtp = 1;
-                                parsLUN_int.SetValue(dtp, 2);
-                                break;
-                            case "num_physical_par":
-                                parstr = item.Substring(item.IndexOf('=') + 1);
-                                parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 2);
-                                break;
-                            case "eMMC_RAW_DATA [0":
-                                parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
-                                break;
-                            case "{\"storage_info\":":
-                                parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
-                                parstr = item.Substring(item.IndexOf("mem_type\":\"") + 11);
-                                string m_type = parstr.Substring(0, parstr.IndexOf("\","));
-                                if (m_type.Equals("UFS")) parsLUN_int.SetValue((int)Guide.MEM_TYPE.UFS, 3);
-                                break;
-                            case "ERROR: Only nop ":
-                                if (item.EndsWith("authentication."))
-                                {
-                                    textBox_soft_term.AppendText(LocRes.GetString("auth_body") + Environment.NewLine);
-                                    parsLUN_int.SetValue(512, 1); //Чтоб корректно отрабатывало ошибку
-                                    MessageBox.Show(LocRes.GetString("auth_body"), LocRes.GetString("auth_title"));
-                                }
-                                break;
-                            default:
-                                break;
+                            switch (correct_pars_str.Substring(0, 16))
+                            {
+                                case "Device Total Log":
+                                    parstr = item.Substring(item.IndexOf(": ") + 2);
+                                    parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 0);
+                                    break;
+                                case "num_partition_se":
+                                    parstr = item.Substring(item.IndexOf('=') + 1);
+                                    parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 0);
+                                    break;
+                                case "Device Block Siz":
+                                    parstr = item.Substring(item.IndexOf(": ") + 2);
+                                    parsLUN_int.SetValue(Convert.ToInt32(parstr, 16), 1);
+                                    break;
+                                case "SECTOR_SIZE_IN_B":
+                                    parstr = item.Substring(item.IndexOf('=') + 1);
+                                    parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 1);
+                                    break;
+                                case "Device Total Phy":
+                                    parstr = item.Substring(item.IndexOf(": ") + 2);
+                                    int dtp = Convert.ToInt32(parstr, 16);
+                                    if (dtp <= 0) dtp = 1;
+                                    parsLUN_int.SetValue(dtp, 2);
+                                    break;
+                                case "num_physical_par":
+                                    parstr = item.Substring(item.IndexOf('=') + 1);
+                                    parsLUN_int.SetValue(Convert.ToInt32(parstr, 10), 2);
+                                    break;
+                                case "eMMC_RAW_DATA [0":
+                                    parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
+                                    break;
+                                case "{\"storage_info\":":
+                                    parsLUN_int.SetValue((int)Guide.MEM_TYPE.eMMC, 3);
+                                    parstr = item.Substring(item.IndexOf("mem_type\":\"") + 11);
+                                    string m_type = parstr.Substring(0, parstr.IndexOf("\","));
+                                    if (m_type.Equals("UFS")) parsLUN_int.SetValue((int)Guide.MEM_TYPE.UFS, 3);
+                                    break;
+                                case "ERROR: Only nop ":
+                                    if (item.EndsWith("authentication."))
+                                    {
+                                        textBox_soft_term.AppendText(LocRes.GetString("auth_body") + Environment.NewLine);
+                                        parsLUN_int.SetValue(512, 1); //Чтоб корректно отрабатывало ошибку
+                                        MessageBox.Show(LocRes.GetString("auth_body"), LocRes.GetString("auth_title"));
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        catch (FormatException ex)
+                        {
+                            BotSendMes(ex.Message + Environment.NewLine + textBox_soft_term.Text, "beta_test");
                         }
                     }
                 }
@@ -774,7 +787,7 @@ namespace FirehoseFinder
                 try
                 {
                     using (StreamWriter sw = new StreamWriter(folderBrowserDialog1.SelectedPath + "\\log_terminal_soft_" + DateTime.Now.ToString("mm_ss") + ".txt", false))
-                        sw.Write(textBox_soft_term.Text + 
+                        sw.Write(textBox_soft_term.Text +
                             LocRes.GetString("tb_save") + '\u0020' +
                             LocRes.GetString("tb_log") + '\u0020' +
                             LocRes.GetString("tb_pass_suc") + Environment.NewLine);
@@ -1377,7 +1390,7 @@ namespace FirehoseFinder
                         dataGridView_final["Column_rate", 0].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     }
                     toolStripStatusLabel_filescompleted.Text = LocRes.GetString("hex_processed") + '\u0020' +
-                        dataGridView_final.Rows.Count.ToString() + '\u0020'+ 
+                        dataGridView_final.Rows.Count.ToString() + '\u0020'+
                         LocRes.GetString("hex_files")+ '\u0020'+
                         LocRes.GetString("hex_from")+ '\u0020'+
                         dataGridView_final.Rows.Count.ToString();
@@ -2166,7 +2179,6 @@ namespace FirehoseFinder
                 button_Sahara_CommandStart.Enabled = false;
                 return;
             }
-            MessageBox.Show("Выполняем запрос HWID-OEMID (command01, 02, 03, 07)");
             //Выполняем запрос HWID-OEMID (command01, 02, 03, 07)
             Process process = new Process();
             process.StartInfo.FileName = "QSaharaServer.exe";
@@ -2189,8 +2201,7 @@ namespace FirehoseFinder
                 MessageBox.Show(ex.Message);
             }
             NeedReset = true;
-            MessageBox.Show("Обрабатываем запрос идентификатора 1");
-            //Обрабатываем запрос идентификаторов
+            //Обрабатываем запрос идентификатора 1
             string chip_sn = func.SaharaCommand1();
             textBox_main_term.AppendText(LocRes.GetString("get") + '\u0020' + "S/N CPU - " + chip_sn + Environment.NewLine);
             textBox_soft_term.AppendText(LocRes.GetString("get") + '\u0020' + "S/N CPU - " + chip_sn + Environment.NewLine);
@@ -2199,7 +2210,7 @@ namespace FirehoseFinder
                 textBox_main_term.AppendText(LocRes.GetString("tb_chip_same") + Environment.NewLine);
                 textBox_soft_term.AppendText(LocRes.GetString("tb_chip_same") + Environment.NewLine);
             }
-            MessageBox.Show("Обрабатываем запрос идентификатора 2");
+            //Обрабатываем запрос идентификатора 2
             string HWOEMIDs = func.SaharaCommand2();
             if (HWOEMIDs.Length == 16)
             {
@@ -2209,17 +2220,16 @@ namespace FirehoseFinder
             }
             textBox_soft_term.AppendText("HWID - " + HWOEMIDs + Environment.NewLine);
             textBox_main_term.AppendText("HWID - " + HWOEMIDs + Environment.NewLine);
-            MessageBox.Show("Обрабатываем запрос идентификатора 3");
+            //Обрабатываем запрос идентификатора 3
             string PK_HASH = func.SaharaCommand3();
             textBox_oemhash.Text = PK_HASH;
             textBox_soft_term.AppendText("OEM_PK_HASH (" + PK_HASH.Length.ToString() + ") - " + PK_HASH + Environment.NewLine);
             textBox_main_term.AppendText("OEM_PK_HASH (" + PK_HASH.Length.ToString() + ") - " + PK_HASH + Environment.NewLine);
-            MessageBox.Show("Обрабатываем запрос идентификатора 7");
+            //Обрабатываем запрос идентификатора 7
             string SW_VER = func.SaharaCommand7();
             label_SW_Ver.Text = SW_VER;
             textBox_soft_term.AppendText("SBL SW Ver. - " + SW_VER + Environment.NewLine);
             textBox_main_term.AppendText("SBL SW Ver. - " + SW_VER + Environment.NewLine);
-
             //Переходим на вкладку Работа с файлами
             tabControl1.SelectedTab = tabPage_firehose;
             toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_id_rec");

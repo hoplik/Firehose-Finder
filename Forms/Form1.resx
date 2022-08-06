@@ -1656,7 +1656,7 @@ _HASH</value>
     <value>Vertical</value>
   </data>
   <data name="textBox_soft_term.Size" type="System.Drawing.Size, System.Drawing">
-    <value>388, 514</value>
+    <value>388, 512</value>
   </data>
   <data name="textBox_soft_term.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1680,7 +1680,7 @@ _HASH</value>
     <value>3, 3</value>
   </data>
   <data name="groupBox_terminal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 535</value>
+    <value>394, 533</value>
   </data>
   <data name="groupBox_terminal.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1896,7 +1896,7 @@ _HASH</value>
     <value>3, 133</value>
   </data>
   <data name="groupBox_adb_commands.Size" type="System.Drawing.Size, System.Drawing">
-    <value>923, 423</value>
+    <value>923, 421</value>
   </data>
   <data name="groupBox_adb_commands.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1992,7 +1992,7 @@ _HASH</value>
     <value>3</value>
   </data>
   <data name="tableLayoutPanel_adb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>929, 559</value>
+    <value>929, 557</value>
   </data>
   <data name="tableLayoutPanel_adb.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -2019,7 +2019,7 @@ _HASH</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage_adb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 565</value>
+    <value>935, 563</value>
   </data>
   <data name="tabPage_adb.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2724,7 +2724,7 @@ _HASH</value>
     <value>Bottom</value>
   </data>
   <data name="groupBox_LUN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 223</value>
+    <value>3, 221</value>
   </data>
   <data name="groupBox_LUN.Size" type="System.Drawing.Size, System.Drawing">
     <value>929, 339</value>
@@ -2901,7 +2901,7 @@ _HASH</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage_sahara.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 565</value>
+    <value>935, 563</value>
   </data>
   <data name="tabPage_sahara.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3348,7 +3348,7 @@ _HASH</value>
     <value>3, 18</value>
   </data>
   <data name="tabControl_soft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>943, 594</value>
+    <value>943, 592</value>
   </data>
   <data name="tabControl_soft.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3372,7 +3372,7 @@ _HASH</value>
     <value>403, 3</value>
   </data>
   <data name="groupBox_soft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>949, 615</value>
+    <value>949, 613</value>
   </data>
   <data name="groupBox_soft.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3456,7 +3456,7 @@ _HASH</value>
     <value>Fill</value>
   </data>
   <data name="groupBox_term_buttons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 544</value>
+    <value>3, 542</value>
   </data>
   <data name="groupBox_term_buttons.Size" type="System.Drawing.Size, System.Drawing">
     <value>394, 54</value>
@@ -3483,7 +3483,7 @@ _HASH</value>
     <value>Fill</value>
   </data>
   <data name="progressBar_phone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 604</value>
+    <value>3, 602</value>
   </data>
   <data name="progressBar_phone.Size" type="System.Drawing.Size, System.Drawing">
     <value>394, 14</value>
@@ -3513,7 +3513,7 @@ _HASH</value>
     <value>3</value>
   </data>
   <data name="tableLayoutPanel_phone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 621</value>
+    <value>1355, 619</value>
   </data>
   <data name="tableLayoutPanel_phone.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3540,7 +3540,7 @@ _HASH</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage_phone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 627</value>
+    <value>1361, 625</value>
   </data>
   <data name="tabPage_phone.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
