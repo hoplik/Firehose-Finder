@@ -247,6 +247,12 @@
   <data name="справкаToolStripMenuItem.Text" xml:space="preserve">
     <value>Help</value>
   </data>
+  <data name="menuStrip1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dataGridView_collection.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="bindingNavigatorMoveFirstItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
@@ -326,8 +332,17 @@
   <data name="toolStripButton_large_font.ToolTipText" xml:space="preserve">
     <value>Enlarge the font size</value>
   </data>
+  <data name="bindingNavigator_collection.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="tabPage_collection.Text" xml:space="preserve">
     <value>Reference book of devices</value>
+  </data>
+  <data name="tabPage_collection.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_main_term.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="Column_Sel.HeaderText" xml:space="preserve">
     <value>Select</value>
@@ -348,11 +363,20 @@
   <data name="Column_Comp.HeaderText" xml:space="preserve">
     <value>Maybe suitable for:</value>
   </data>
+  <data name="dataGridView_final.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_Find_Local.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 20</value>
   </data>
   <data name="checkBox_Find_Local.Text" xml:space="preserve">
     <value>Local</value>
+  </data>
+  <data name="checkBox_Find_Local.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_Find_Server.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 20</value>
@@ -360,11 +384,17 @@
   <data name="checkBox_Find_Server.Text" xml:space="preserve">
     <value>Server</value>
   </data>
+  <data name="checkBox_Find_Server.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="radioButton_alldir.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 20</value>
   </data>
   <data name="radioButton_alldir.Text" xml:space="preserve">
     <value>with included folders</value>
+  </data>
+  <data name="radioButton_alldir.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="radioButton_topdir.Size" type="System.Drawing.Size, System.Drawing">
     <value>145, 20</value>
@@ -372,14 +402,38 @@
   <data name="radioButton_topdir.Text" xml:space="preserve">
     <value>selected folder only</value>
   </data>
+  <data name="radioButton_topdir.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_path.Text" xml:space="preserve">
     <value>Search</value>
+  </data>
+  <data name="button_path.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="groupBox_fh_sel_path.Text" xml:space="preserve">
     <value>Programmer search</value>
   </data>
+  <data name="groupBox_fh_sel_path.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_chip_sn.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_model.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_altname.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_tm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="groupBox_tm_model.Text" xml:space="preserve">
     <value>For device</value>
+  </data>
+  <data name="groupBox_tm_model.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="radioButton_adb_reset.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 20</value>
@@ -387,14 +441,23 @@
   <data name="radioButton_adb_reset.Text" xml:space="preserve">
     <value>By ADB</value>
   </data>
+  <data name="radioButton_adb_reset.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="radioButton_man_reset.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 20</value>
   </data>
   <data name="radioButton_man_reset.Text" xml:space="preserve">
     <value>Manually</value>
   </data>
+  <data name="radioButton_man_reset.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>Reboot into emergency mode</value>
+  </data>
+  <data name="groupBox4.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBox_send.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 36</value>
@@ -403,17 +466,68 @@
     <value>Send data to the RefBook,
 if there are none</value>
   </data>
+  <data name="checkBox_send.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_log.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="checkBox_Log.Size" type="System.Drawing.Size, System.Drawing">
     <value>196, 20</value>
   </data>
   <data name="checkBox_Log.Text" xml:space="preserve">
     <value>Save IDs and model to a file</value>
   </data>
+  <data name="checkBox_Log.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_findIDs.Text" xml:space="preserve">
     <value>Poll the device with a reboot into emergency mode</value>
   </data>
+  <data name="button_findIDs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_SW_Ver.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_swid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_hwid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_useSahara_fhf.Text" xml:space="preserve">
     <value>Check selected programmer</value>
+  </data>
+  <data name="button_useSahara_fhf.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_oemid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_modelid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_hwid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_oemid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_oemhash.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_oemhash.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_modelid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dataGridView_FInd_Server.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="toolStripStatusLabel_filescompleted.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 20</value>
@@ -427,14 +541,32 @@ if there are none</value>
   <data name="toolStripStatusLabel_dowork.Text" xml:space="preserve">
     <value>Done</value>
   </data>
+  <data name="statusStrip_firehose.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="tabPage_firehose.Text" xml:space="preserve">
     <value>Work with files</value>
+  </data>
+  <data name="tabPage_firehose.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_soft_term.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_terminal.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="button_ADB_start.Text" xml:space="preserve">
     <value>Start ADB</value>
   </data>
+  <data name="button_ADB_start.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_ADB_clear.Text" xml:space="preserve">
     <value>Close ADB session</value>
+  </data>
+  <data name="button_ADB_clear.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="radioButton_reboot_fastboot.Size" type="System.Drawing.Size, System.Drawing">
     <value>335, 20</value>
@@ -442,11 +574,17 @@ if there are none</value>
   <data name="radioButton_reboot_fastboot.Text" xml:space="preserve">
     <value>Reboot to bootloader mode (Fastboot - Bootloader)</value>
   </data>
+  <data name="radioButton_reboot_fastboot.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="radioButton_adb_com.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 20</value>
   </data>
   <data name="radioButton_adb_com.Text" xml:space="preserve">
     <value>Command line (ADB Shell)</value>
+  </data>
+  <data name="radioButton_adb_com.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="radioButton_adb_IDs.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 20</value>
@@ -454,14 +592,26 @@ if there are none</value>
   <data name="radioButton_adb_IDs.Text" xml:space="preserve">
     <value>Get the model of the device</value>
   </data>
+  <data name="radioButton_adb_IDs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="radioButton_reboot_edl.Size" type="System.Drawing.Size, System.Drawing">
     <value>443, 20</value>
   </data>
   <data name="radioButton_reboot_edl.Text" xml:space="preserve">
     <value>Reboot to emergency mode (Emergency Download - EDL - PID#9008)</value>
   </data>
+  <data name="radioButton_reboot_edl.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_ADB_commandstring.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="groupBox_adb_commands.Text" xml:space="preserve">
     <value>ADB commands</value>
+  </data>
+  <data name="groupBox_adb_commands.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="columnHeader_ADB_SN.Text" xml:space="preserve">
     <value>Serial number</value>
@@ -469,14 +619,29 @@ if there are none</value>
   <data name="columnHeader_ADB_Model.Text" xml:space="preserve">
     <value>Device model</value>
   </data>
+  <data name="listView_ADB_devices.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_ADB_comstart.Text" xml:space="preserve">
     <value>Run command</value>
+  </data>
+  <data name="button_ADB_comstart.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tableLayoutPanel_adb.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage_adb.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="columnHeader_portnum.Text" xml:space="preserve">
     <value>Port</value>
   </data>
   <data name="columnHeader_portname.Text" xml:space="preserve">
     <value>Device name</value>
+  </data>
+  <data name="listView_comport.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="comboBox_fh_commands.Items" xml:space="preserve">
     <value>Storage info</value>
@@ -494,19 +659,31 @@ if there are none</value>
     <value>Write file in sectors (load)</value>
   </data>
   <data name="comboBox_fh_commands.Items5" xml:space="preserve">
-    <value>Erase all</value>
+    <value>Batch recording of firmware according to rawprogram data (qpst format)</value>
   </data>
   <data name="comboBox_fh_commands.Items6" xml:space="preserve">
+    <value>Erase all</value>
+  </data>
+  <data name="comboBox_fh_commands.Items7" xml:space="preserve">
     <value>Read/Write IMEM (peek&amp;poke)</value>
   </data>
   <data name="comboBox_fh_commands.Text" xml:space="preserve">
     <value>Storage info</value>
   </data>
+  <data name="comboBox_fh_commands.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_Sahara_CommandStart.Text" xml:space="preserve">
     <value>Run command</value>
   </data>
+  <data name="button_Sahara_CommandStart.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="groupBox_fh_commands.Text" xml:space="preserve">
     <value>Available firehose commands</value>
+  </data>
+  <data name="groupBox_fh_commands.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="comboBox_lun_count.Items" xml:space="preserve">
     <value>Disk 0</value>
@@ -514,17 +691,47 @@ if there are none</value>
   <data name="comboBox_lun_count.Text" xml:space="preserve">
     <value>Disk 0</value>
   </data>
+  <data name="comboBox_lun_count.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="groupBox_lun_count.Text" xml:space="preserve">
     <value>List of available disks</value>
+  </data>
+  <data name="groupBox_lun_count.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_mem_ufs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_mem_emmc.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="groupBox_mem_type.Text" xml:space="preserve">
     <value>Memory type</value>
   </data>
+  <data name="groupBox_mem_type.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_GPT_bytes.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_select_gpt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="groupBox_select_gpt.Text" xml:space="preserve">
     <value>Selected GPT partitions</value>
   </data>
+  <data name="groupBox_select_gpt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_total_gpt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="groupBox_total_gpt.Text" xml:space="preserve">
     <value>Total GPT partitions</value>
+  </data>
+  <data name="groupBox_total_gpt.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="Block_Name.Text" xml:space="preserve">
     <value>Partition name</value>
@@ -592,14 +799,35 @@ if there are none</value>
   <data name="contextMenuStrip_gpt.Size" type="System.Drawing.Size, System.Drawing">
     <value>387, 160</value>
   </data>
+  <data name="contextMenuStrip_gpt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="listView_GPT.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_block_size.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="groupBox_block_size.Text" xml:space="preserve">
     <value>Sector size</value>
+  </data>
+  <data name="groupBox_block_size.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_total_blocks.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="groupBox_total_blocks.Text" xml:space="preserve">
     <value>Total sectors</value>
   </data>
+  <data name="groupBox_total_blocks.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="groupBox_LUN.Text" xml:space="preserve">
     <value>Disk 0</value>
+  </data>
+  <data name="groupBox_LUN.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="comboBox_log.Items" xml:space="preserve">
     <value>Standart</value>
@@ -616,8 +844,14 @@ if there are none</value>
   <data name="comboBox_log.Text" xml:space="preserve">
     <value>Standart</value>
   </data>
+  <data name="comboBox_log.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="groupBox_logs.Text" xml:space="preserve">
     <value>Log output to the terminal</value>
+  </data>
+  <data name="groupBox_logs.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>335, 16</value>
@@ -625,8 +859,14 @@ if there are none</value>
   <data name="label4.Text" xml:space="preserve">
     <value>You don't need a programmer to execute this command</value>
   </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_Sahara_Ids.Text" xml:space="preserve">
     <value>Get device IDs</value>
+  </data>
+  <data name="button_Sahara_Ids.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="label_Sahara_fhf.Size" type="System.Drawing.Size, System.Drawing">
     <value>301, 16</value>
@@ -634,8 +874,17 @@ if there are none</value>
   <data name="label_Sahara_fhf.Text" xml:space="preserve">
     <value>Select the programmer on the "Work with files" tab</value>
   </data>
+  <data name="label_Sahara_fhf.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage_sahara.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_fb_check.Text" xml:space="preserve">
     <value>Check the connection</value>
+  </data>
+  <data name="button_fb_check.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="radioButton_fb_rebootedl.Size" type="System.Drawing.Size, System.Drawing">
     <value>443, 20</value>
@@ -643,11 +892,20 @@ if there are none</value>
   <data name="radioButton_fb_rebootedl.Text" xml:space="preserve">
     <value>Reboot to emergency mode (Emergency Download - EDL - PID#9008)</value>
   </data>
+  <data name="radioButton_fb_rebootedl.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="radioButton_fb_getvar.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 20</value>
   </data>
   <data name="radioButton_fb_getvar.Text" xml:space="preserve">
     <value>Device information (getvar all)</value>
+  </data>
+  <data name="radioButton_fb_getvar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_fb_commandline.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="radioButton_fb_commandline.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 20</value>
@@ -655,11 +913,17 @@ if there are none</value>
   <data name="radioButton_fb_commandline.Text" xml:space="preserve">
     <value>Command line (fastboot)</value>
   </data>
+  <data name="radioButton_fb_commandline.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="radioButton_fb_rebootbootloader.Size" type="System.Drawing.Size, System.Drawing">
     <value>335, 20</value>
   </data>
   <data name="radioButton_fb_rebootbootloader.Text" xml:space="preserve">
     <value>Reboot to bootloader mode (Fastboot - Bootloader)</value>
+  </data>
+  <data name="radioButton_fb_rebootbootloader.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="radioButton_fb_unlock.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 20</value>
@@ -667,11 +931,17 @@ if there are none</value>
   <data name="radioButton_fb_unlock.Text" xml:space="preserve">
     <value>Unlock bootloader (unlock)</value>
   </data>
+  <data name="radioButton_fb_unlock.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="radioButton_fb_lock.Size" type="System.Drawing.Size, System.Drawing">
     <value>162, 20</value>
   </data>
   <data name="radioButton_fb_lock.Text" xml:space="preserve">
     <value>Lock bootloader (lock)</value>
+  </data>
+  <data name="radioButton_fb_lock.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="radioButton_fb_devinfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 20</value>
@@ -679,17 +949,29 @@ if there are none</value>
   <data name="radioButton_fb_devinfo.Text" xml:space="preserve">
     <value>Check bootloader status (device-info)</value>
   </data>
+  <data name="radioButton_fb_devinfo.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="radioButton_fb_reboot_normal.Size" type="System.Drawing.Size, System.Drawing">
     <value>169, 20</value>
   </data>
   <data name="radioButton_fb_reboot_normal.Text" xml:space="preserve">
     <value>Reboot to normal mode</value>
   </data>
+  <data name="radioButton_fb_reboot_normal.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="groupBox_fb_commands.Text" xml:space="preserve">
     <value>Fastboot commands</value>
   </data>
+  <data name="groupBox_fb_commands.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_fb_com_start.Text" xml:space="preserve">
     <value>Run command</value>
+  </data>
+  <data name="button_fb_com_start.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="columnHeader_FB_sernum.Text" xml:space="preserve">
     <value>Serial number</value>
@@ -697,17 +979,53 @@ if there are none</value>
   <data name="columnHeader_FB_Model.Text" xml:space="preserve">
     <value>Device model</value>
   </data>
+  <data name="listView_fb_devices.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tableLayoutPanel_fb.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage_fb.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabControl_soft.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_soft.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_term_clear.Text" xml:space="preserve">
     <value>Clear the terminal window</value>
+  </data>
+  <data name="button_term_clear.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="button_term_save.Text" xml:space="preserve">
     <value>Save log</value>
   </data>
+  <data name="button_term_save.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="groupBox_term_buttons.Text" xml:space="preserve">
     <value>Terminal management</value>
   </data>
+  <data name="groupBox_term_buttons.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="progressBar_phone.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tableLayoutPanel_phone.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="tabPage_phone.Text" xml:space="preserve">
     <value>Work with device</value>
+  </data>
+  <data name="tabPage_phone.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabControl1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>Bin files (*.bin)|*.bin|All files (*.*)|*.*</value>
@@ -3158,5 +3476,8 @@ if there are none</value>
         poQQQgghZC+gYUoIIYQQQvYCGqaEEELIHvIn9z/KPLPk0kHDlBBCCNlPmGeWXDr+fw9DftBtgZ3sAAAA
         AElFTkSuQmCC
 </value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

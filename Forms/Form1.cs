@@ -344,6 +344,7 @@ namespace FirehoseFinder
             catch (SharpAdbClient.Exceptions.AdbException ex)
             {
                 textBox_soft_term.AppendText(ex.AdbError + Environment.NewLine);
+                SendErrorInChat();
             }
         }
 
@@ -464,7 +465,8 @@ namespace FirehoseFinder
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                    SendErrorInChat();
                 }
             }
             //После первой выполненной команды по получению инфо хранилища делаем доступным выбор других команд
@@ -480,24 +482,25 @@ namespace FirehoseFinder
             Peekpoke pp = new Peekpoke(this);
             switch (comboBox_fh_commands.SelectedIndex)
             {
-                case 0:
+                case 0: //Информация хранилища
                     textBox_soft_term.AppendText(LocRes.GetString("tbs_stor_dev") + Environment.NewLine);
                     fh_command_args.Append(" --getstorageinfo=" + lun_int.ToString());
                     need_parsing_lun = true;
                     break;
-                case 1:
+                case 1: //Получить таблицу разметки
                     textBox_soft_term.AppendText(LocRes.GetString("tbs_part_table") + Environment.NewLine);
                     fh_command_args.Append(" --getgptmainbackup=" + lun_int.ToString());
                     getgpt = true;
                     break;
-                case 2:
+                case 2: //Перезагрузка устройства
                     textBox_soft_term.AppendText(LocRes.GetString("tb_reboot") + '\u0020' +
                         LocRes.GetString("hex_in") + '\u0020' +
                         LocRes.GetString("tb_norm") + Environment.NewLine);
                     fh_command_args.Append(" --noprompt --reset");
                     StartStatus();
                     break;
-                case 4:
+                //case 3 - разделитель "Внимание, запись!"
+                case 4: //Запись секторов
                     textBox_soft_term.AppendText(LocRes.GetString("tb_write_file_sectors") + Environment.NewLine);
                     Write_Sectors ws = new Write_Sectors(this);
                     if (ws.ShowDialog() == DialogResult.OK)
@@ -523,7 +526,10 @@ namespace FirehoseFinder
                     }
                     else textBox_soft_term.AppendText(LocRes.GetString("tb_write_cancel") + Environment.NewLine);
                     break;
-                case 5:
+                case 5: //Пакетная запись прошивки
+
+                    break;
+                case 6: //Стереть диск полностью
                     textBox_soft_term.AppendText(LocRes.GetString("tb_er_mem") + Environment.NewLine);
                     if (MessageBox.Show(LocRes.GetString("tb_body_att_del_mem"),
                         LocRes.GetString("tb_note_att_del_mem"),
@@ -534,7 +540,7 @@ namespace FirehoseFinder
                     else textBox_soft_term.AppendText(LocRes.GetString("tb_er_mem") + '\u0020' +
                         LocRes.GetString("tb_cancel_user") + Environment.NewLine);
                     break;
-                case 6:
+                case 7: //Читать/писать IMEM
                     textBox_soft_term.AppendText(LocRes.GetString("tb_pp") + Environment.NewLine);
                     switch (pp.ShowDialog())
                     {
@@ -675,16 +681,7 @@ namespace FirehoseFinder
                         catch (Exception ex)
                         {
                             textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
-                            if (MessageBox.Show(LocRes.GetString("mb_body_send"),
-                                    LocRes.GetString("mb_title_mis") + '\u0020' +
-                                    LocRes.GetString("mb_title_send"),
-                                MessageBoxButtons.OKCancel,
-                                MessageBoxIcon.Exclamation,
-                                MessageBoxDefaultButton.Button1)==DialogResult.OK)
-                            {
-                                textBox_soft_term.AppendText(LocRes.GetString("tb_send_conf") + Environment.NewLine);
-                                BotSendMes(textBox_soft_term.Text, Assembly.GetExecutingAssembly().GetName().Version.ToString());
-                            }
+                            SendErrorInChat();
                         }
                     }
                 }
@@ -721,16 +718,7 @@ namespace FirehoseFinder
                 if (Flash_Params[lun_numder].Sector_Size == 0 && Flash_Params[lun_numder].Total_Sectors == 0)
                 {
                     Flash_Params[lun_numder].Sector_Size = 512; //Чтоб отрабатывал парсинг GPT
-                    DialogResult dr = MessageBox.Show(LocRes.GetString("mb_body_send"),
-                        LocRes.GetString("mb_title_mis") + '\u0020' +
-                        LocRes.GetString("mb_title_send"),
-                        MessageBoxButtons.OKCancel,
-                        MessageBoxIcon.Exclamation);
-                    if (dr == DialogResult.OK)
-                    {
-                        textBox_soft_term.AppendText(LocRes.GetString("tb_send_conf") + Environment.NewLine);
-                        BotSendMes(textBox_soft_term.Text, Assembly.GetExecutingAssembly().GetName().Version.ToString());
-                    }
+                    SendErrorInChat();
                 }
                 if (comboBox_lun_count.SelectedIndex != lun_numder) comboBox_lun_count.SelectedIndex = lun_numder;
                 else
@@ -824,7 +812,8 @@ namespace FirehoseFinder
                 catch (Exception ex)
                 {
                     textBox_soft_term.AppendText(LocRes.GetString("tb_er_write") + '\u0020' +
-                        LocRes.GetString("tb_log") + ex.Message + Environment.NewLine);
+                        LocRes.GetString("tb_log") + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                    SendErrorInChat();
                 }
             }
             else textBox_soft_term.AppendText(LocRes.GetString("tb_save") + '\u0020' +
@@ -965,11 +954,8 @@ namespace FirehoseFinder
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message,
-                            LocRes.GetString("tb_er_write") + '\u0020' +
-                            LocRes.GetString("file"),
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
+                        textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                        SendErrorInChat();
                     }
                 }
             }
@@ -1672,8 +1658,9 @@ namespace FirehoseFinder
             }
             catch (Exception ex)
             {
-                textBox_main_term.AppendText(ex.Message + Environment.NewLine);
-                textBox_soft_term.AppendText(ex.Message + Environment.NewLine);
+                textBox_main_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                SendErrorInChat();
             }
         }
 
@@ -1820,7 +1807,8 @@ namespace FirehoseFinder
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, LocRes.GetString("mb_title_mis"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                    SendErrorInChat();
                 }
             }
             работаСУстройствомToolStripMenuItem.Checked = true;
@@ -1856,7 +1844,8 @@ namespace FirehoseFinder
             {
                 textBox_soft_term.AppendText(LocRes.GetString("tb_compl_fail") + '\u0020' +
                     LocRes.GetString("tb_adb_sess") + Environment.NewLine +
-                    ex.Message + Environment.NewLine);
+                    ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                SendErrorInChat();
             }
         }
 
@@ -1879,6 +1868,7 @@ namespace FirehoseFinder
             catch (SharpAdbClient.Exceptions.AdbException ex)
             {
                 textBox_soft_term.AppendText(ex.AdbError + Environment.NewLine);
+                SendErrorInChat();
             }
         }
 
@@ -2119,6 +2109,7 @@ namespace FirehoseFinder
                 {
                     textBox_soft_term.AppendText(ex.AdbError + Environment.NewLine);
                     textBox_main_term.AppendText(ex.AdbError + Environment.NewLine);
+                    SendErrorInChat();
                 }
             }
             string[] adbstr = receiver.ToString().Split('\u000A'); //Перевод строки
@@ -2181,8 +2172,11 @@ namespace FirehoseFinder
                 }
                 catch (Exception ex)
                 {
-                    textBox_soft_term.AppendText(ex.Message + Environment.NewLine + LocRes.GetString("tb_reboot_fail") + Environment.NewLine);
-                    textBox_main_term.AppendText(ex.Message + Environment.NewLine + LocRes.GetString("tb_reboot_fail") + Environment.NewLine);
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_reboot_fail") + Environment.NewLine + 
+                        ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                    textBox_main_term.AppendText(LocRes.GetString("tb_reboot_fail") + Environment.NewLine + 
+                        ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                    SendErrorInChat();
                 }
                 Thread.Sleep(500);
                 StopAdb();
@@ -2223,7 +2217,8 @@ namespace FirehoseFinder
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                SendErrorInChat();
             }
             NeedReset = true;
             //Обрабатываем запрос идентификатора 1
@@ -2297,6 +2292,8 @@ namespace FirehoseFinder
                 {
                     toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tb_er_write") + '\u0020' +
                         LocRes.GetString("tb_rep_file") + '\u003A' + '\u0020' + ex.Message;
+                    textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                    SendErrorInChat();
                 }
             }
             if (checkBox_send.Checked)
@@ -2482,7 +2479,8 @@ namespace FirehoseFinder
             }
             catch (Exception ex)
             {
-                textBox_soft_term.AppendText(ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine);
+                textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                SendErrorInChat();
             }
             return goodjob;
         }
@@ -2515,7 +2513,8 @@ namespace FirehoseFinder
             }
             catch (Exception ex)
             {
-                textBox_soft_term.AppendText(ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine);
+                textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                SendErrorInChat();
             }
         }
 
@@ -2597,6 +2596,23 @@ namespace FirehoseFinder
                 {
                     listView_fb_devices.Enabled = true;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Отправляем лог в чат с согласия пользователя
+        /// </summary>
+        private void SendErrorInChat()
+        {
+            if (MessageBox.Show(LocRes.GetString("mb_body_send"),
+                    LocRes.GetString("mb_title_mis") + '\u0020' +
+                    LocRes.GetString("mb_title_send"),
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Exclamation,
+                MessageBoxDefaultButton.Button1)==DialogResult.OK)
+            {
+                textBox_soft_term.AppendText(LocRes.GetString("tb_send_conf") + Environment.NewLine);
+                BotSendMes(textBox_soft_term.Text, Assembly.GetExecutingAssembly().GetName().Version.ToString());
             }
         }
 
