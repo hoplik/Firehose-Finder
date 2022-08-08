@@ -477,7 +477,7 @@ namespace FirehoseFinder
             if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
             groupBox_LUN.Text = LocRes.GetString("gb_disk") + '\u0020' + lun_int.ToString();
             //Выбираем тип памяти для лоадера
-            if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs --lun=" + lun_int.ToString());
+            if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --memoryname=ufs");
             else fh_command_args.Append(" --memoryname=emmc");
             Peekpoke pp = new Peekpoke(this);
             switch (comboBox_fh_commands.SelectedIndex)
@@ -527,7 +527,7 @@ namespace FirehoseFinder
                     else textBox_soft_term.AppendText(LocRes.GetString("tb_write_cancel") + Environment.NewLine);
                     break;
                 case 5: //Пакетная запись прошивки
-
+                    MessageBox.Show("В процессе подготовки");
                     break;
                 case 6: //Стереть диск полностью
                     textBox_soft_term.AppendText(LocRes.GetString("tb_er_mem") + Environment.NewLine);
@@ -942,14 +942,17 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void СохранитьТаблицуВФайлmainGPTbinToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (File.Exists("gpt_main0.bin") && File.Exists("gpt_backup0.bin"))
+            int lunnum = comboBox_lun_count.SelectedIndex;
+            string gptmain = string.Format("gpt_main{0}.bin", lunnum);
+            string gptbackup = string.Format("gpt_backup{0}.bin", lunnum);
+            if (File.Exists(gptmain) && File.Exists(gptbackup))
             {
                 if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
                 {
                     try
                     {
-                        File.Copy("gpt_main0.bin", folderBrowserDialog1.SelectedPath + "\\gpt_main0.bin");
-                        File.Copy("gpt_backup0.bin", folderBrowserDialog1.SelectedPath + "\\gpt_backup0.bin");
+                        File.Copy(gptmain, folderBrowserDialog1.SelectedPath + "\\" + gptmain);
+                        File.Copy(gptbackup, folderBrowserDialog1.SelectedPath + "\\" + gptbackup);
                         textBox_soft_term.AppendText(LocRes.GetString("tb_gpt_save") + Environment.NewLine);
                     }
                     catch (Exception ex)
@@ -2172,9 +2175,9 @@ namespace FirehoseFinder
                 }
                 catch (Exception ex)
                 {
-                    textBox_soft_term.AppendText(LocRes.GetString("tb_reboot_fail") + Environment.NewLine + 
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_reboot_fail") + Environment.NewLine +
                         ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
-                    textBox_main_term.AppendText(LocRes.GetString("tb_reboot_fail") + Environment.NewLine + 
+                    textBox_main_term.AppendText(LocRes.GetString("tb_reboot_fail") + Environment.NewLine +
                         ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
                     SendErrorInChat();
                 }

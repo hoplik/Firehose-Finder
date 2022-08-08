@@ -767,7 +767,7 @@ if there are none</value>
     <value>386, 24</value>
   </data>
   <data name="сохранитьТаблицуВФайлmainGPTbinToolStripMenuItem.Text" xml:space="preserve">
-    <value>Save table in file (gpt_main0.bin)</value>
+    <value>Save table in file (gpt_main.bin)</value>
   </data>
   <data name="сохранитьСектораПоНомеруdumpSectorNumderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>386, 24</value>

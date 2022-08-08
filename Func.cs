@@ -556,7 +556,7 @@ namespace FirehoseFinder
             }
             catch (Exception ex)
             {
-                output = LocRes.GetString("er_func_fhl_params") + Environment.NewLine + ex.Message;
+                output = LocRes.GetString("er_func_fhl_params") + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace;
             }
             return output;
         }

@@ -41,6 +41,7 @@ namespace FirehoseFinder
             this.label_donate = new System.Windows.Forms.Label();
             this.button_donate_ymoney = new System.Windows.Forms.Button();
             this.button_donate_pp = new System.Windows.Forms.Button();
+            this.label_thanks = new System.Windows.Forms.Label();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -48,17 +49,18 @@ namespace FirehoseFinder
             // tableLayoutPanel
             // 
             resources.ApplyResources(this.tableLayoutPanel, "tableLayoutPanel");
-            this.tableLayoutPanel.Controls.Add(this.linkLabel_telega, 1, 5);
+            this.tableLayoutPanel.Controls.Add(this.linkLabel_telega, 0, 4);
             this.tableLayoutPanel.Controls.Add(this.logoPictureBox, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.labelProductName, 1, 0);
             this.tableLayoutPanel.Controls.Add(this.labelVersion, 1, 1);
             this.tableLayoutPanel.Controls.Add(this.labelCopyright, 1, 2);
-            this.tableLayoutPanel.Controls.Add(this.okButton, 1, 6);
+            this.tableLayoutPanel.Controls.Add(this.okButton, 2, 7);
             this.tableLayoutPanel.Controls.Add(this.textBoxDescription, 1, 3);
             this.tableLayoutPanel.Controls.Add(this.linkLabel_forum, 1, 4);
-            this.tableLayoutPanel.Controls.Add(this.label_donate, 0, 4);
-            this.tableLayoutPanel.Controls.Add(this.button_donate_ymoney, 0, 5);
-            this.tableLayoutPanel.Controls.Add(this.button_donate_pp, 0, 6);
+            this.tableLayoutPanel.Controls.Add(this.label_donate, 1, 6);
+            this.tableLayoutPanel.Controls.Add(this.button_donate_ymoney, 0, 6);
+            this.tableLayoutPanel.Controls.Add(this.button_donate_pp, 0, 7);
+            this.tableLayoutPanel.Controls.Add(this.label_thanks, 0, 5);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             // 
             // linkLabel_telega
@@ -80,16 +82,19 @@ namespace FirehoseFinder
             // 
             // labelProductName
             // 
+            this.tableLayoutPanel.SetColumnSpan(this.labelProductName, 2);
             resources.ApplyResources(this.labelProductName, "labelProductName");
             this.labelProductName.Name = "labelProductName";
             // 
             // labelVersion
             // 
+            this.tableLayoutPanel.SetColumnSpan(this.labelVersion, 2);
             resources.ApplyResources(this.labelVersion, "labelVersion");
             this.labelVersion.Name = "labelVersion";
             // 
             // labelCopyright
             // 
+            this.tableLayoutPanel.SetColumnSpan(this.labelCopyright, 2);
             resources.ApplyResources(this.labelCopyright, "labelCopyright");
             this.labelCopyright.Name = "labelCopyright";
             // 
@@ -102,6 +107,7 @@ namespace FirehoseFinder
             // 
             // textBoxDescription
             // 
+            this.tableLayoutPanel.SetColumnSpan(this.textBoxDescription, 2);
             resources.ApplyResources(this.textBoxDescription, "textBoxDescription");
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.ReadOnly = true;
@@ -110,6 +116,7 @@ namespace FirehoseFinder
             // linkLabel_forum
             // 
             resources.ApplyResources(this.linkLabel_forum, "linkLabel_forum");
+            this.tableLayoutPanel.SetColumnSpan(this.linkLabel_forum, 2);
             this.linkLabel_forum.Name = "linkLabel_forum";
             this.linkLabel_forum.TabStop = true;
             this.linkLabel_forum.UseCompatibleTextRendering = true;
@@ -119,6 +126,7 @@ namespace FirehoseFinder
             // 
             resources.ApplyResources(this.label_donate, "label_donate");
             this.label_donate.Name = "label_donate";
+            this.tableLayoutPanel.SetRowSpan(this.label_donate, 2);
             // 
             // button_donate_ymoney
             // 
@@ -133,6 +141,12 @@ namespace FirehoseFinder
             this.button_donate_pp.Name = "button_donate_pp";
             this.button_donate_pp.UseVisualStyleBackColor = true;
             this.button_donate_pp.Click += new System.EventHandler(this.Button_donate_pp_Click);
+            // 
+            // label_thanks
+            // 
+            resources.ApplyResources(this.label_thanks, "label_thanks");
+            this.tableLayoutPanel.SetColumnSpan(this.label_thanks, 3);
+            this.label_thanks.Name = "label_thanks";
             // 
             // AboutBox1
             // 
@@ -167,5 +181,6 @@ namespace FirehoseFinder
         private System.Windows.Forms.Label label_donate;
         private System.Windows.Forms.Button button_donate_ymoney;
         private System.Windows.Forms.Button button_donate_pp;
+        private System.Windows.Forms.Label label_thanks;
     }
 }
