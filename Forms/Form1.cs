@@ -15,6 +15,7 @@ using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace FirehoseFinder
 {
@@ -999,12 +1000,12 @@ namespace FirehoseFinder
         private void Label_select_gpt_TextChanged(object sender, EventArgs e)
         {
             long selbytes = 0; //Размер выбранных секторов в байтах
-            if (label_select_gpt.Text.Equals(listView_GPT.Items.Count.ToString())) contextMenuStrip_gpt.Items[6].Enabled = false;
-            else contextMenuStrip_gpt.Items[6].Enabled = true;
+            if (label_select_gpt.Text.Equals(listView_GPT.Items.Count.ToString())) contextMenuStrip_gpt.Items[7].Enabled = false;
+            else contextMenuStrip_gpt.Items[7].Enabled = true;
             if (label_select_gpt.Text.Equals("0"))
             {
-                contextMenuStrip_gpt.Items[4].Enabled = false;
-                contextMenuStrip_gpt.Items[7].Enabled = false;
+                contextMenuStrip_gpt.Items[5].Enabled = false;
+                contextMenuStrip_gpt.Items[8].Enabled = false;
             }
             else
             {
@@ -1012,8 +1013,8 @@ namespace FirehoseFinder
                 {
                     selbytes += Convert.ToInt64(item.SubItems[4].Text);
                 }
-                contextMenuStrip_gpt.Items[4].Enabled = true;
-                contextMenuStrip_gpt.Items[7].Enabled = true;
+                contextMenuStrip_gpt.Items[5].Enabled = true;
+                contextMenuStrip_gpt.Items[8].Enabled = true;
             }
             label_GPT_bytes.Text = func.Bytes_KB_MB(selbytes.ToString());
         }
@@ -1029,16 +1030,18 @@ namespace FirehoseFinder
             {
                 contextMenuStrip_gpt.Items[0].Enabled = false;
                 contextMenuStrip_gpt.Items[2].Enabled = false;
-                contextMenuStrip_gpt.Items[4].Enabled = false;
-                contextMenuStrip_gpt.Items[6].Enabled = false;
+                contextMenuStrip_gpt.Items[3].Enabled = false;
+                contextMenuStrip_gpt.Items[5].Enabled = false;
                 contextMenuStrip_gpt.Items[7].Enabled = false;
+                contextMenuStrip_gpt.Items[8].Enabled = false;
             }
             else
             {
                 contextMenuStrip_gpt.Items[0].Enabled = true;
                 contextMenuStrip_gpt.Items[2].Enabled = true;
-                contextMenuStrip_gpt.Items[4].Enabled = true;
-                contextMenuStrip_gpt.Items[6].Enabled = true;
+                contextMenuStrip_gpt.Items[3].Enabled = true;
+                contextMenuStrip_gpt.Items[5].Enabled = true;
+                contextMenuStrip_gpt.Items[7].Enabled = true;
             }
         }
 
@@ -1049,8 +1052,8 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Label_total_blocks_TextChanged(object sender, EventArgs e)
         {
-            if (Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors == 0) contextMenuStrip_gpt.Items[3].Enabled = false;
-            else contextMenuStrip_gpt.Items[3].Enabled = true;
+            if (Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors == 0) contextMenuStrip_gpt.Items[4].Enabled = false;
+            else contextMenuStrip_gpt.Items[4].Enabled = true;
         }
 
         /// <summary>
@@ -1234,6 +1237,46 @@ namespace FirehoseFinder
                 foreach (ListViewItem item in listView_fb_devices.Items)
                 {
                     if (!item.Text.Equals(e.Item.Text)) item.Checked = false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Сохраняем таблицу разметки в формате XML
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void СохранитьТаблицуВФорматеCsvToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                XmlDocument doc = new XmlDocument();
+                XmlDeclaration xmldecl;
+                int lunnum = comboBox_lun_count.SelectedIndex;
+                string gptfile = "gpt" + lunnum.ToString();
+                StringBuilder xmlgpt = new StringBuilder("<" + gptfile + ">");
+                xmldecl = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
+                foreach (ListViewItem item in listView_GPT.Items)
+                {
+                    xmlgpt.Append("<Name name=\"" + item.SubItems[2].Text + "\">");
+                    xmlgpt.Append("<StartLBA>" + item.SubItems[0].Text + "</StartLBA>");
+                    xmlgpt.Append("<EndLBA>" + item.SubItems[1].Text + "</EndLBA>");
+                    xmlgpt.Append("<Blocks>" + item.SubItems[3].Text + "</Blocks>");
+                    xmlgpt.Append("<Bytes>" + item.SubItems[4].Text + "</Bytes>");
+                    xmlgpt.Append("</Name>");
+                }
+                xmlgpt.Append("</" + gptfile +">");
+                doc.LoadXml(xmlgpt.ToString());
+                XmlElement root = doc.DocumentElement;
+                doc.InsertBefore(xmldecl, root);
+                try
+                {
+                    doc.Save(saveFileDialog1.FileName);
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_gpt_save") + Environment.NewLine);
+                }
+                catch (XmlException ex)
+                {
+                    MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace, LocRes.GetString("er_func_xml"));
                 }
             }
         }
@@ -2421,8 +2464,8 @@ namespace FirehoseFinder
             label_total_blocks.Text = Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors.ToString("### ### ### ##0");
             label_total_gpt.Text = "0";
             label_select_gpt.Text = "0";
-            contextMenuStrip_gpt.Items[3].Enabled = false;
-            contextMenuStrip_gpt.Items[6].Enabled = false;
+            contextMenuStrip_gpt.Items[4].Enabled = false;
+            contextMenuStrip_gpt.Items[7].Enabled = false;
             listView_GPT.Items.Clear();
         }
 
