@@ -2969,18 +2969,22 @@ namespace FirehoseFinder
         private void BackgroundWorker_rawprogram_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
-            if (worker.CancellationPending)
+                    //Выполняем задачу пока чтения, потом записи в параллельном потоке
+            for (int i = 0; i < 10; i++)
             {
-                e.Cancel = true;
-                //break;
+                if (worker.CancellationPending)
+                {
+                    e.Cancel = true;
+                    break;
+                }
+                else
+                {
+                    Thread.Sleep(500);
+                    e.Result = i*10;
+                    worker.ReportProgress((int)e.Result, "super");
+                }
             }
-            else
-            {
-                //Выполняем задачу пока чтения, потом записи в параллельном потоке
-                MessageBox.Show(e.Argument.ToString());
-                e.Result = 50;
-                worker.ReportProgress((int)e.Result, "super");
-            }
+
             /* В потоке оставляем окно открытым на время теста
             * Должно отображаться процент выполнения для длительной операции чтения
             * Потом переносим процент выполнения в репорт
@@ -2991,22 +2995,20 @@ namespace FirehoseFinder
 
         private void BackgroundWorker_rawprogram_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            //Отображаем на форме прогрессбар по выполненным операциям
             progressBar_phone.Value = e.ProgressPercentage;
             textBox_soft_term.AppendText(e.ProgressPercentage.ToString() + e.UserState.ToString());
         }
 
         private void BackgroundWorker_rawprogram_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            //При завершении операции сбразываем таскбар в ноль, пишем в лог успешное завершение
             progressBar_phone.Value = 0;
-            if (e.Cancelled) textBox_soft_term.AppendText(LocRes.GetString("tb_cancel_user"));
+            if (e.Cancelled) textBox_soft_term.AppendText(LocRes.GetString("tb_cancel_user") + Environment.NewLine);
             else
             {
                 if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine + e.Error.StackTrace + Environment.NewLine);
                 else
                 {
-                    textBox_soft_term.AppendText("Готово!");
+                    textBox_soft_term.AppendText(LocRes.GetString("done") + Environment.NewLine);
                 }
             }
         }
