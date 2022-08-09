@@ -129,10 +129,39 @@
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>624, 20</value>
   </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="progressBar_phone.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="progressBar_phone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 602</value>
+  </data>
+  <data name="progressBar_phone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>394, 14</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="progressBar_phone.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="progressBar_phone.ToolTip" xml:space="preserve">
+    <value>При значении более 5% длительную операцию можно попробовать отменить.</value>
+  </data>
+  <data name="&gt;&gt;progressBar_phone.Name" xml:space="preserve">
+    <value>progressBar_phone</value>
+  </data>
+  <data name="&gt;&gt;progressBar_phone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;progressBar_phone.Parent" xml:space="preserve">
+    <value>tableLayoutPanel_phone</value>
+  </data>
+  <data name="&gt;&gt;progressBar_phone.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>865, 20</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="автоматическиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 26</value>
   </data>
@@ -274,7 +303,6 @@
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1369, 30</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -293,7 +321,6 @@
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView_collection.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -3488,30 +3515,6 @@ _HASH</value>
   <data name="&gt;&gt;groupBox_term_buttons.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="progressBar_phone.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="progressBar_phone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 602</value>
-  </data>
-  <data name="progressBar_phone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 14</value>
-  </data>
-  <data name="progressBar_phone.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;progressBar_phone.Name" xml:space="preserve">
-    <value>progressBar_phone</value>
-  </data>
-  <data name="&gt;&gt;progressBar_phone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;progressBar_phone.Parent" xml:space="preserve">
-    <value>tableLayoutPanel_phone</value>
-  </data>
-  <data name="&gt;&gt;progressBar_phone.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="tableLayoutPanel_phone.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -3632,6 +3635,9 @@ _HASH</value>
   <data name="saveFileDialog1.Title" xml:space="preserve">
     <value>Сохранить файл</value>
   </data>
+  <metadata name="backgroundWorker_rawprogram.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>395, 106</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -6588,6 +6594,12 @@ _HASH</value>
   </data>
   <data name="&gt;&gt;saveFileDialog1.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker_rawprogram.Name" xml:space="preserve">
+    <value>backgroundWorker_rawprogram</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker_rawprogram.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Formfhf</value>

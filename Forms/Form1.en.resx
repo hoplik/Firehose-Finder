@@ -118,6 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="progressBar_phone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 604</value>
+  </data>
+  <data name="progressBar_phone.ToolTip" xml:space="preserve">
+    <value>If the value is more than 5%, you can try to cancel the long operation.</value>
+  </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1369, 28</value>
   </data>
@@ -478,20 +484,11 @@ if there are none</value>
   <data name="tabControl_soft.Size" type="System.Drawing.Size, System.Drawing">
     <value>943, 594</value>
   </data>
-  <data name="tabPage_adb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 565</value>
-  </data>
-  <data name="tableLayoutPanel_adb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>929, 559</value>
-  </data>
   <data name="button_ADB_start.Text" xml:space="preserve">
     <value>Start ADB</value>
   </data>
   <data name="button_ADB_clear.Text" xml:space="preserve">
     <value>Close ADB session</value>
-  </data>
-  <data name="groupBox_adb_commands.Size" type="System.Drawing.Size, System.Drawing">
-    <value>923, 423</value>
   </data>
   <data name="groupBox_adb_commands.Text" xml:space="preserve">
     <value>ADB commands</value>
@@ -798,9 +795,6 @@ if there are none</value>
   </data>
   <data name="button_term_save.Text" xml:space="preserve">
     <value>Save log</value>
-  </data>
-  <data name="progressBar_phone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 604</value>
   </data>
   <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 28</value>

@@ -44,6 +44,7 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.progressBar_phone = new System.Windows.Forms.ProgressBar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выборЯзыкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -217,7 +218,6 @@
             this.groupBox_term_buttons = new System.Windows.Forms.GroupBox();
             this.button_term_clear = new System.Windows.Forms.Button();
             this.button_term_save = new System.Windows.Forms.Button();
-            this.progressBar_phone = new System.Windows.Forms.ProgressBar();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.dataSet_Find = new System.Data.DataSet();
@@ -227,6 +227,7 @@
             this.bindingSource_collection = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource_firehose = new System.Windows.Forms.BindingSource(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.backgroundWorker_rawprogram = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabPage_collection.SuspendLayout();
@@ -283,6 +284,16 @@
             // toolTip1
             // 
             this.toolTip1.Tag = "";
+            // 
+            // progressBar_phone
+            // 
+            resources.ApplyResources(this.progressBar_phone, "progressBar_phone");
+            this.progressBar_phone.ForeColor = System.Drawing.Color.LimeGreen;
+            this.progressBar_phone.Name = "progressBar_phone";
+            this.progressBar_phone.Step = 1;
+            this.progressBar_phone.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.toolTip1.SetToolTip(this.progressBar_phone, resources.GetString("progressBar_phone.ToolTip"));
+            this.progressBar_phone.Click += new System.EventHandler(this.progressBar_phone_Click);
             // 
             // menuStrip1
             // 
@@ -1644,14 +1655,6 @@
             this.button_term_save.UseVisualStyleBackColor = true;
             this.button_term_save.Click += new System.EventHandler(this.Button_term_save_Click);
             // 
-            // progressBar_phone
-            // 
-            resources.ApplyResources(this.progressBar_phone, "progressBar_phone");
-            this.progressBar_phone.ForeColor = System.Drawing.Color.LimeGreen;
-            this.progressBar_phone.Name = "progressBar_phone";
-            this.progressBar_phone.Step = 1;
-            this.progressBar_phone.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage_phone);
@@ -1693,6 +1696,14 @@
             this.saveFileDialog1.FileName = "gpt_main";
             resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
             this.saveFileDialog1.InitialDirectory = "Desktop";
+            // 
+            // backgroundWorker_rawprogram
+            // 
+            this.backgroundWorker_rawprogram.WorkerReportsProgress = true;
+            this.backgroundWorker_rawprogram.WorkerSupportsCancellation = true;
+            this.backgroundWorker_rawprogram.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_rawprogram_DoWork);
+            this.backgroundWorker_rawprogram.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_rawprogram_ProgressChanged);
+            this.backgroundWorker_rawprogram.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_rawprogram_RunWorkerCompleted);
             // 
             // Formfhf
             // 
@@ -1957,6 +1968,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_Comp;
         private System.Windows.Forms.ToolStripMenuItem сохранитьТаблицуВФорматеCsvToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker_rawprogram;
     }
 }
 

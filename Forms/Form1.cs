@@ -528,9 +528,11 @@ namespace FirehoseFinder
                     else textBox_soft_term.AppendText(LocRes.GetString("tb_write_cancel") + Environment.NewLine);
                     break;
                 case 5: //Пакетная запись прошивки
-                    MessageBox.Show("В процессе подготовки");
+                    //Сначала создаём запрос в параллельный поток, чтоб не подвисало приложение
+                    //Открываем форму с путём к файлам и при Ок передаём список файлов и путь в поток
+                    if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync("В процессе подготовки");
                     break;
-                case 6: //Стереть диск полностью
+                case 6: //Стереть выбранный диск полностью
                     textBox_soft_term.AppendText(LocRes.GetString("tb_er_mem") + Environment.NewLine);
                     if (MessageBox.Show(LocRes.GetString("tb_body_att_del_mem"),
                         LocRes.GetString("tb_note_att_del_mem"),
@@ -2962,6 +2964,65 @@ namespace FirehoseFinder
         {
             ProcessStartInfo offertrans = new ProcessStartInfo("https://t.me/+Suwc1u6h8PYzM2Qy");
             Process.Start(offertrans);
+        }
+
+        private void BackgroundWorker_rawprogram_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            if (worker.CancellationPending)
+            {
+                e.Cancel = true;
+                //break;
+            }
+            else
+            {
+                //Выполняем задачу пока чтения, потом записи в параллельном потоке
+                MessageBox.Show(e.Argument.ToString());
+                e.Result = 50;
+                worker.ReportProgress((int)e.Result, "super");
+            }
+            /* В потоке оставляем окно открытым на время теста
+            * Должно отображаться процент выполнения для длительной операции чтения
+            * Потом переносим процент выполнения в репорт
+            * Потом, если отображается процент на форме, то меняем команду на запись
+            * Для релизной версии скрываем окно и выводим данные в терминал
+            */
+        }
+
+        private void BackgroundWorker_rawprogram_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            //Отображаем на форме прогрессбар по выполненным операциям
+            progressBar_phone.Value = e.ProgressPercentage;
+            textBox_soft_term.AppendText(e.ProgressPercentage.ToString() + e.UserState.ToString());
+        }
+
+        private void BackgroundWorker_rawprogram_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            //При завершении операции сбразываем таскбар в ноль, пишем в лог успешное завершение
+            progressBar_phone.Value = 0;
+            if (e.Cancelled) textBox_soft_term.AppendText(LocRes.GetString("tb_cancel_user"));
+            else
+            {
+                if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine + e.Error.StackTrace + Environment.NewLine);
+                else
+                {
+                    textBox_soft_term.AppendText("Готово!");
+                }
+            }
+        }
+
+        private void progressBar_phone_Click(object sender, EventArgs e)
+        {
+            if (progressBar_phone.Value>5)
+            {
+                if (MessageBox.Show(LocRes.GetString("hex_mess_stopoper"), LocRes.GetString("hex_warn_stopoper"),
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Stop,
+                    MessageBoxDefaultButton.Button2)==DialogResult.OK)
+                {
+                    backgroundWorker_rawprogram.CancelAsync();
+                }
+            }
         }
     }
 }
