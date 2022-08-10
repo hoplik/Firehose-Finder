@@ -1435,6 +1435,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на В процессе разработки.
+        /// </summary>
+        internal static string under_dev {
+            get {
+                return ResourceManager.GetString("under_dev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap united_kingdom_flags_flag_17079 {

@@ -1923,7 +1923,7 @@ _HASH</value>
     <value>3, 133</value>
   </data>
   <data name="groupBox_adb_commands.Size" type="System.Drawing.Size, System.Drawing">
-    <value>923, 421</value>
+    <value>923, 423</value>
   </data>
   <data name="groupBox_adb_commands.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -2019,7 +2019,7 @@ _HASH</value>
     <value>3</value>
   </data>
   <data name="tableLayoutPanel_adb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>929, 557</value>
+    <value>929, 559</value>
   </data>
   <data name="tableLayoutPanel_adb.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -2046,7 +2046,7 @@ _HASH</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage_adb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 563</value>
+    <value>935, 565</value>
   </data>
   <data name="tabPage_adb.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2616,7 +2616,7 @@ _HASH</value>
     <value>Сбросить выбор (deselecting all)</value>
   </data>
   <data name="contextMenuStrip_gpt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>442, 184</value>
+    <value>442, 212</value>
   </data>
   <data name="&gt;&gt;contextMenuStrip_gpt.Name" xml:space="preserve">
     <value>contextMenuStrip_gpt</value>

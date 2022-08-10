@@ -528,9 +528,9 @@ namespace FirehoseFinder
                     else textBox_soft_term.AppendText(LocRes.GetString("tb_write_cancel") + Environment.NewLine);
                     break;
                 case 5: //Пакетная запись прошивки
-                    //Сначала создаём запрос в параллельный поток, чтоб не подвисало приложение
                     //Открываем форму с путём к файлам и при Ок передаём список файлов и путь в поток
-                    if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync("В процессе подготовки");
+                    MessageBox.Show(LocRes.GetString("under_dev"));
+                    //if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync("В процессе подготовки");
                     break;
                 case 6: //Стереть выбранный диск полностью
                     textBox_soft_term.AppendText(LocRes.GetString("tb_er_mem") + Environment.NewLine);
@@ -2969,7 +2969,7 @@ namespace FirehoseFinder
         private void BackgroundWorker_rawprogram_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
-                    //Выполняем задачу пока чтения, потом записи в параллельном потоке
+            //Выполняем задачу пока чтения, потом записи в параллельном потоке
             for (int i = 0; i < 10; i++)
             {
                 if (worker.CancellationPending)
@@ -2979,7 +2979,7 @@ namespace FirehoseFinder
                 }
                 else
                 {
-                    Thread.Sleep(500);
+                    Thread.Sleep(1000);
                     e.Result = i*10;
                     worker.ReportProgress((int)e.Result, "super");
                 }
@@ -3013,7 +3013,12 @@ namespace FirehoseFinder
             }
         }
 
-        private void progressBar_phone_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Отменяем долгую операцию нажав прогрессбар
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProgressBar_phone_Click(object sender, EventArgs e)
         {
             if (progressBar_phone.Value>5)
             {
@@ -3022,7 +3027,7 @@ namespace FirehoseFinder
                     MessageBoxIcon.Stop,
                     MessageBoxDefaultButton.Button2)==DialogResult.OK)
                 {
-                    backgroundWorker_rawprogram.CancelAsync();
+                    if (backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.CancelAsync();
                 }
             }
         }

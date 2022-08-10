@@ -709,6 +709,10 @@
     <value>Currently being processed</value>
     <comment>Сейчас обрабатывается</comment>
   </data>
+  <data name="under_dev" xml:space="preserve">
+    <value>Under development</value>
+    <comment>В процессе разработки</comment>
+  </data>
   <data name="unknown" xml:space="preserve">
     <value>Something unknown</value>
     <comment>Что-то непонятное</comment>

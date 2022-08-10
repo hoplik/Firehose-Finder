@@ -366,12 +366,12 @@ namespace FirehoseFinder
         private void BackgroundWorker_unpacker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             toolStripProgressBar1.Value = e.ProgressPercentage;
-            toolStripStatusLabel1.Text = string.Format(LocRes.GetString("status_repack_unpacking_complited") + " {0}%",e.ProgressPercentage);
+            toolStripStatusLabel1.Text = string.Format(LocRes.GetString("status_repack_unpacking_complited") + " {0}%", e.ProgressPercentage);
             if (e.ProgressPercentage > 5) toolStripSplitButton_explorer.Visible = true;
             File_info_bytes F_I_B = (File_info_bytes)e.UserState;
             textBox_parse.AppendText(string.Format(
                 Environment.NewLine + "{0} {1}, {2} {3}, {4} {5}, {6} {7}",
-                LocRes.GetString("file"), F_I_B.File_Name, LocRes.GetString("offset"), F_I_B.Offset, LocRes.GetString("size"), 
+                LocRes.GetString("file"), F_I_B.File_Name, LocRes.GetString("offset"), F_I_B.Offset, LocRes.GetString("size"),
                 F_I_B.Size, LocRes.GetString("crc"), F_I_B.CRC));
         }
 

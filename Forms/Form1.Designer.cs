@@ -293,7 +293,7 @@
             this.progressBar_phone.Step = 1;
             this.progressBar_phone.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.toolTip1.SetToolTip(this.progressBar_phone, resources.GetString("progressBar_phone.ToolTip"));
-            this.progressBar_phone.Click += new System.EventHandler(this.progressBar_phone_Click);
+            this.progressBar_phone.Click += new System.EventHandler(this.ProgressBar_phone_Click);
             // 
             // menuStrip1
             // 
