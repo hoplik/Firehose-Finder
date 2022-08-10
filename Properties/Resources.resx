@@ -454,6 +454,9 @@
   <data name="tb_adb_start" xml:space="preserve">
     <value>Запускаем сервер ADB ...</value>
   </data>
+  <data name="tb_batch_record" xml:space="preserve">
+    <value>Пакетная запись прошивки</value>
+  </data>
   <data name="tb_blm" xml:space="preserve">
     <value>режим загрузчика</value>
   </data>

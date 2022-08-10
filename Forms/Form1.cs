@@ -528,9 +528,23 @@ namespace FirehoseFinder
                     else textBox_soft_term.AppendText(LocRes.GetString("tb_write_cancel") + Environment.NewLine);
                     break;
                 case 5: //Пакетная запись прошивки
-                    //Открываем форму с путём к файлам и при Ок передаём список файлов и путь в поток
-                    MessageBox.Show(LocRes.GetString("under_dev"));
-                    //if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync("В процессе подготовки");
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_batch_record") + Environment.NewLine);
+                    RawProgramForm rp = new RawProgramForm();
+                    switch (rp.ShowDialog())
+                    {
+                        case DialogResult.OK:
+                            RawPatchRecords rpr = new RawPatchRecords(rp.label_raw_patch.Text, rp.label_path.Text);
+                            if (!string.IsNullOrEmpty(rp.label_raw_patch.Text) && !string.IsNullOrEmpty(rp.label_path.Text))
+                            {
+                                if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(rpr);
+                            }
+                            break;
+                        case DialogResult.Cancel:
+                            textBox_soft_term.AppendText(LocRes.GetString("tb_cancel_user") + Environment.NewLine);
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case 6: //Стереть выбранный диск полностью
                     textBox_soft_term.AppendText(LocRes.GetString("tb_er_mem") + Environment.NewLine);
@@ -2969,7 +2983,7 @@ namespace FirehoseFinder
         private void BackgroundWorker_rawprogram_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
-            //Выполняем задачу пока чтения, потом записи в параллельном потоке
+            RawPatchRecords rpr = (RawPatchRecords)e.Argument;
             for (int i = 0; i < 10; i++)
             {
                 if (worker.CancellationPending)
@@ -2981,7 +2995,7 @@ namespace FirehoseFinder
                 {
                     Thread.Sleep(1000);
                     e.Result = i*10;
-                    worker.ReportProgress((int)e.Result, "super");
+                    worker.ReportProgress((int)e.Result, rpr.RawPatchFiles + rpr.PathFirmware);
                 }
             }
 

@@ -1057,6 +1057,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Пакетная запись прошивки.
+        /// </summary>
+        internal static string tb_batch_record {
+            get {
+                return ResourceManager.GetString("tb_batch_record", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на режим загрузчика.
         /// </summary>
         internal static string tb_blm {

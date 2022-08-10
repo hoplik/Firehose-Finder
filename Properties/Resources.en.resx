@@ -549,6 +549,10 @@
     <value>Starting the ADB server ...</value>
     <comment>Запускаем сервер ADB ...</comment>
   </data>
+  <data name="tb_batch_record" xml:space="preserve">
+    <value>Batch firmware recording</value>
+    <comment>Пакетная запись прошивки</comment>
+  </data>
   <data name="tb_blm" xml:space="preserve">
     <value>bootloader mode</value>
     <comment>режим загрузчика</comment>

@@ -270,4 +270,15 @@ namespace FirehoseFinder
             File_Name = file_name;
         }
     }
+
+    class RawPatchRecords
+    {
+        public string RawPatchFiles;
+        public string PathFirmware;
+        public RawPatchRecords (string rawpatchfiles, string pathfirmware)
+        {
+            RawPatchFiles = rawpatchfiles;
+            PathFirmware = pathfirmware;
+        }
+    }
 }

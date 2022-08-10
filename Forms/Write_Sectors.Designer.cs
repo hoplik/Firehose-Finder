@@ -49,7 +49,6 @@ namespace FirehoseFinder
             // 
             // groupBox_ws
             // 
-            resources.ApplyResources(this.groupBox_ws, "groupBox_ws");
             this.groupBox_ws.Controls.Add(this.label_ss_ws);
             this.groupBox_ws.Controls.Add(this.textBox_secsize_ws);
             this.groupBox_ws.Controls.Add(this.label_secsize_ws);
@@ -60,6 +59,7 @@ namespace FirehoseFinder
             this.groupBox_ws.Controls.Add(this.label_count_ws);
             this.groupBox_ws.Controls.Add(this.textBox_start_ws);
             this.groupBox_ws.Controls.Add(this.label_start_ws);
+            resources.ApplyResources(this.groupBox_ws, "groupBox_ws");
             this.groupBox_ws.Name = "groupBox_ws";
             this.groupBox_ws.TabStop = false;
             // 

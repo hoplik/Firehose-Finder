@@ -15,7 +15,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>C:\Users\serge\Desktop\Publishing\</PublishUrl>
+    <PublishUrl>ftp://fhf.mywebcommunity.org/fhf.mywebcommunity.org/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -36,8 +36,8 @@
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>22.8.10.0</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>22.8.10.1</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -235,6 +235,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.en.resx</DependentUpon>
     </Compile>
+    <Compile Include="RawProgramForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RawProgramForm.Designer.cs">
+      <DependentUpon>RawProgramForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Forms\Write_Sectors.cs">
       <SubType>Form</SubType>
@@ -242,6 +248,12 @@
     <Compile Include="Forms\Write_Sectors.Designer.cs">
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RawProgramForm.en.resx">
+      <DependentUpon>RawProgramForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RawProgramForm.resx">
+      <DependentUpon>RawProgramForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Resources\Greeting_en.txt" />
     <Content Include="Resources\help_en.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
