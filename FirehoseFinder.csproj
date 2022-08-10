@@ -235,10 +235,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.en.resx</DependentUpon>
     </Compile>
-    <Compile Include="RawProgramForm.cs">
+    <Compile Include="Forms\RawProgramForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RawProgramForm.Designer.cs">
+    <Compile Include="Forms\RawProgramForm.Designer.cs">
       <DependentUpon>RawProgramForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
@@ -248,10 +248,10 @@
     <Compile Include="Forms\Write_Sectors.Designer.cs">
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RawProgramForm.en.resx">
+    <EmbeddedResource Include="Forms\RawProgramForm.en.resx">
       <DependentUpon>RawProgramForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RawProgramForm.resx">
+    <EmbeddedResource Include="Forms\RawProgramForm.resx">
       <DependentUpon>RawProgramForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Resources\Greeting_en.txt" />
