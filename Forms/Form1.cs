@@ -2467,27 +2467,24 @@ namespace FirehoseFinder
             long chat = -1001227261414;
             try
             {
-                using (Task<Telegram.Bot.Types.Message> task = mybot.SendTextMessageAsync(
+                mybot.SendTextMessageAsync(
                     chat,
                     correct_mess,
-                    parseMode: ParseMode.Markdown))
-                {
-                }
+                    parseMode: ParseMode.Markdown);
                 toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_data_sent");
             }
-            catch (SerializationException)
-            {
-                //Отправляется, не смотря на косяк сериализации!
-            }
-            catch (InvalidOperationException ex)
-            {
-                //Игнорим
-                textBox_soft_term.AppendText(LocRes.GetString("tt_data_not_sent") + '\u002E' + '\u0020' + ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
-            }
+            //catch (SerializationException)
+            //{
+            //    //Отправляется, не смотря на косяк сериализации!
+            //}
+            //catch (InvalidOperationException ex)
+            //{
+            //    //Игнорим
+            //}
             catch (Exception ex)
             {
-                textBox_soft_term.AppendText(LocRes.GetString("tt_data_not_sent") + '\u002E' + '\u0020' + ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine);
-                MessageBox.Show(ex.Message, LocRes.GetString("tt_data_not_sent") + '\u0020' + '\u002D' + '\u0020' + ex.ToString());
+                textBox_soft_term.AppendText(LocRes.GetString("tt_data_not_sent") + '\u002E' + '\u0020' + ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine, LocRes.GetString("tt_data_not_sent"));
             }
             checkBox_send.Checked = false;
         }
@@ -3042,7 +3039,6 @@ namespace FirehoseFinder
                                     {
                                         worker.ReportProgress(50, outputLine.Data);
                                         Thread.Sleep(100);
-                                        //textBox_soft_term.Refresh();
                                     }
                                 });
                 process.Start();
