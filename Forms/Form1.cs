@@ -13,6 +13,7 @@ using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Text;
+using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
@@ -2461,18 +2462,27 @@ namespace FirehoseFinder
                     .Insert(0, "...");
             }
             //Устанавливаем моношрифт
-            correct_mess = '\u0060' + correct_mess;
-            correct_mess.Append('\u0060');
+            correct_mess = '\u0060' + correct_mess + '\u0060';
             TelegramBotClient mybot = new TelegramBotClient(Resources.bot);
             long chat = -1001227261414;
             try
             {
-                mybot.SendTextMessageAsync(chat, correct_mess, ParseMode.Markdown);
+                using (Task<Telegram.Bot.Types.Message> task = mybot.SendTextMessageAsync(
+                    chat,
+                    correct_mess,
+                    parseMode: ParseMode.Markdown))
+                {
+                }
                 toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_data_sent");
             }
             catch (SerializationException)
             {
                 //Отправляется, не смотря на косяк сериализации!
+            }
+            catch (InvalidOperationException ex)
+            {
+                //Игнорим
+                textBox_soft_term.AppendText(LocRes.GetString("tt_data_not_sent") + '\u002E' + '\u0020' + ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
             }
             catch (Exception ex)
             {
