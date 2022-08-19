@@ -16,6 +16,9 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
+using Telegram.Bot;
+using Telegram.Bot.Types.Enums;
+using System.Runtime.Serialization;
 
 namespace FirehoseFinder
 {
@@ -51,7 +54,7 @@ namespace FirehoseFinder
         /// Отлавливаем подключение USB устройств. Перезапускаем скан доступных портов
         /// </summary>
         /// <param name="m"></param>
-        protected override void WndProc(ref Message m)
+        protected override void WndProc(ref System.Windows.Forms.Message m)
         {
             try
             {
@@ -548,6 +551,7 @@ namespace FirehoseFinder
                                     " --showpercentagecomplete --zlpawarehost=1");
                                 if (radioButton_mem_ufs.Checked) fh_command_args.Append("-- setactivepartition=1");
                                 else fh_command_args.Append(" --setactivepartition=0");
+                                fh_command_args.Append(" --convertprogram2read");
                                 if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args);
                             }
                             break;
@@ -2456,16 +2460,16 @@ namespace FirehoseFinder
                     .Insert(0, "...");
             }
             //Устанавливаем моношрифт
-            //correct_mess=correct_mess.Insert(0, "`")
-            //    .Insert(correct_mess.LastIndexOf('\u000A'), "`");
-            var mybot = new TelegramBotApi.TelegramBotClient(Resources.bot);
+            correct_mess = '\u0060' + correct_mess;
+            correct_mess.Append('\u0060');
+            TelegramBotClient mybot = new TelegramBotClient(Resources.bot);
             long chat = -1001227261414;
             try
             {
-                mybot.SendTextMessage(chat, correct_mess);
+                mybot.SendTextMessageAsync(chat, correct_mess, ParseMode.Markdown);
                 toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_data_sent");
             }
-            catch (System.Runtime.Serialization.SerializationException)
+            catch (SerializationException)
             {
                 //Отправляется, не смотря на косяк сериализации!
             }
@@ -2786,7 +2790,7 @@ namespace FirehoseFinder
                 if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs --lun=" + groupBox_LUN.Text.Remove(0, 5));
                 else Argstoxml.Append(" --memoryname=emmc");
                 Argstoxml.Append(" --convertprogram2read"); //Добавляем для операции чтения
-                                                            //При наличии файла запускаем процесс чтения в отдельном потоке
+                //При наличии файла запускаем процесс чтения в отдельном потоке
                 if (!backgroundWorker_xml.IsBusy && File.Exists("p_r.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
             }
         }
@@ -2999,35 +3003,43 @@ namespace FirehoseFinder
 
         private void BackgroundWorker_rawprogram_DoWork(object sender, DoWorkEventArgs e)
         {
-            BackgroundWorker worker = sender as BackgroundWorker;
-            //e.Argument - аргумент лоадера;
-            for (int i = 0; i < 10; i++)
-            {
-                if (worker.CancellationPending)
-                {
-                    e.Cancel = true;
-                    break;
-                }
-                else
-                {
-                    Thread.Sleep(1000);
-                    e.Result = i*10;
-                    worker.ReportProgress((int)e.Result, e.Argument);
-                }
-            }
-
             /* В потоке оставляем окно открытым на время теста
             * Должно отображаться процент выполнения для длительной операции чтения
             * Потом переносим процент выполнения в репорт
             * Потом, если отображается процент на форме, то меняем команду на запись
             * Для релизной версии скрываем окно и выводим данные в терминал
             */
+            BackgroundWorker worker = sender as BackgroundWorker;
+            using (Process process = new Process())
+            {
+                process.StartInfo = new ProcessStartInfo
+                {
+                    FileName = "fh_loader.exe",
+                    Arguments = e.Argument.ToString(), //аргументы лоадера;
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    CreateNoWindow = true
+                };
+                process.OutputDataReceived += new DataReceivedEventHandler((senderproc, outputLine) =>
+                                {
+                                    if (worker.CancellationPending)
+                                    {
+                                        e.Cancel = true;
+                                        return;
+                                    }
+                                    else if (!string.IsNullOrEmpty(outputLine.Data)) worker.ReportProgress(50, outputLine.Data);
+                                });
+                process.Start();
+                process.BeginOutputReadLine();
+                process.WaitForExit();
+                process.Close();
+            }
         }
 
         private void BackgroundWorker_rawprogram_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             progressBar_phone.Value = e.ProgressPercentage;
-            textBox_soft_term.AppendText(e.ProgressPercentage.ToString() + e.UserState.ToString());
+            textBox_soft_term.AppendText(e.UserState.ToString() + Environment.NewLine);
         }
 
         private void BackgroundWorker_rawprogram_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
