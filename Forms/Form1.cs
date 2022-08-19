@@ -36,6 +36,7 @@ namespace FirehoseFinder
         internal Dictionary<string, string> Connected_Devices = new Dictionary<string, string>(); //Список подключённых ADB устройств
         //Подтянули перевод на другие языки
         readonly ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
+        int countstring = 0;
 
         /// <summary>
         /// Инициализация компонентов
@@ -2436,7 +2437,7 @@ namespace FirehoseFinder
             string message_not_mark = send_message.Replace("_", "\\_")
                 .Replace("*", "\\*")
                 .Replace("[", "\\[")
-                .Replace("`", "\\`");/*
+                .Replace("`", "\\`")
                 .Replace("]", "\\]")
                 .Replace("(", "\\(")
                 .Replace(")", "\\)")
@@ -2451,7 +2452,7 @@ namespace FirehoseFinder
                 .Replace("}", "\\}")
                 .Replace(".", "\\.")
                 .Replace("!", "\\!")
-                .Replace("\"", "\\\"");*/
+                .Replace("\"", "\\\"");
             string correct_mess = message_not_mark;
             //Ограничение на размер сообщения. Оставляем только конец.
             if (message_not_mark.Length >= 4096)
@@ -3027,7 +3028,12 @@ namespace FirehoseFinder
                                         e.Cancel = true;
                                         return;
                                     }
-                                    else if (!string.IsNullOrEmpty(outputLine.Data)) worker.ReportProgress(50, outputLine.Data);
+                                    else if (!string.IsNullOrEmpty(outputLine.Data))
+                                    {
+                                        worker.ReportProgress(50, outputLine.Data);
+                                        Thread.Sleep(100);
+                                        //textBox_soft_term.Refresh();
+                                    }
                                 });
                 process.Start();
                 process.BeginOutputReadLine();
@@ -3038,8 +3044,9 @@ namespace FirehoseFinder
 
         private void BackgroundWorker_rawprogram_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
+            countstring++;
             progressBar_phone.Value = e.ProgressPercentage;
-            textBox_soft_term.AppendText(e.UserState.ToString() + Environment.NewLine);
+            textBox_soft_term.AppendText(countstring.ToString() + " - " + e.UserState.ToString() + Environment.NewLine);
         }
 
         private void BackgroundWorker_rawprogram_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
