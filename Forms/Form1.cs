@@ -607,6 +607,12 @@ namespace FirehoseFinder
                     if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args.ToString());
                     break;
             }
+            //Притормозим основной поток пока не выполнится асинхрон
+            while (backgroundWorker_rawprogram.IsBusy)
+            {
+                Thread.Sleep(100);
+                Application.DoEvents();
+            }
             if (need_parsing_lun) NeedParsingLun(output_FH, lun_int);
             if (getgpt) GetGPT(lun_int);
             if (pp.checkBox_output.Checked)
