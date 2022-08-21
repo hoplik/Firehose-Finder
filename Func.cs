@@ -531,36 +531,7 @@ namespace FirehoseFinder
             }
             return string.Format("{0} {1}", total_size.ToString("N2", CultureInfo.CreateSpecificCulture("sv-SE")), byte_type);
         }
-
-        /// <summary>
-        /// Выполнение FH_Loader с указанными параметрами
-        /// </summary>
-        /// <param name="com_args">Аргументы команды лоадеру</param>
-        /// <returns>Ответ лоадера по результатам исполнения команды</returns>
-        internal string FH_Commands(string com_args)
-        {
-            Process process = new Process();
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.FileName = "fh_loader.exe";
-            process.StartInfo.Arguments = com_args;
-            string output;
-            try
-            {
-                process.Start();
-                StreamReader reader = process.StandardOutput;
-                output = reader.ReadToEnd();
-                process.WaitForExit();
-                process.Close();
-            }
-            catch (Exception ex)
-            {
-                output = LocRes.GetString("er_func_fhl_params") + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace;
-            }
-            return output;
-        }
-
+        
         /// <summary>
         /// Создаём файл чтения/записи
         /// </summary>
@@ -796,6 +767,22 @@ namespace FirehoseFinder
                 PPR[i] = StringToByteArray(matchs[i].Value.Substring(2, 2))[0];
             }
             return PPR;
+        }
+
+        /// <summary>
+        /// Парсим ответ лодыря по проценту загрузки
+        /// </summary>
+        /// <param name="outputstr"></param>
+        /// <returns></returns>
+        internal int ProcessPersent(string outputstr)
+        {
+            int persentcomplited = 0;
+            if (!string.IsNullOrEmpty(outputstr) && outputstr.Contains("percent files transferred"))
+            {
+                string intoutput = outputstr.Remove(outputstr.LastIndexOf('\u0025') - 3); //Обрезали конец до целых по знаку %
+                persentcomplited = Convert.ToInt32(intoutput.Substring(intoutput.LastIndexOf('\u0020'))); //Обрезали спереди по пробелу
+            }
+            return persentcomplited;
         }
     }
 }

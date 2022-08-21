@@ -228,6 +228,7 @@
             this.bindingSource_firehose = new System.Windows.Forms.BindingSource(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.backgroundWorker_rawprogram = new System.ComponentModel.BackgroundWorker();
+            this.process_FH_Loader = new System.Diagnostics.Process();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabPage_collection.SuspendLayout();
@@ -1705,6 +1706,21 @@
             this.backgroundWorker_rawprogram.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_rawprogram_ProgressChanged);
             this.backgroundWorker_rawprogram.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_rawprogram_RunWorkerCompleted);
             // 
+            // process_FH_Loader
+            // 
+            this.process_FH_Loader.StartInfo.CreateNoWindow = true;
+            this.process_FH_Loader.StartInfo.Domain = "";
+            this.process_FH_Loader.StartInfo.FileName = "fh_loader.exe";
+            this.process_FH_Loader.StartInfo.LoadUserProfile = false;
+            this.process_FH_Loader.StartInfo.Password = null;
+            this.process_FH_Loader.StartInfo.RedirectStandardOutput = true;
+            this.process_FH_Loader.StartInfo.StandardErrorEncoding = null;
+            this.process_FH_Loader.StartInfo.StandardOutputEncoding = null;
+            this.process_FH_Loader.StartInfo.UserName = "";
+            this.process_FH_Loader.StartInfo.UseShellExecute = false;
+            this.process_FH_Loader.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            this.process_FH_Loader.SynchronizingObject = this;
+            // 
             // Formfhf
             // 
             resources.ApplyResources(this, "$this");
@@ -1969,6 +1985,7 @@
         private System.Windows.Forms.ToolStripMenuItem сохранитьТаблицуВФорматеCsvToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.ComponentModel.BackgroundWorker backgroundWorker_rawprogram;
+        private System.Diagnostics.Process process_FH_Loader;
     }
 }
 

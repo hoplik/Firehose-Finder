@@ -37,7 +37,8 @@ namespace FirehoseFinder
         internal Dictionary<string, string> Connected_Devices = new Dictionary<string, string>(); //Список подключённых ADB устройств
         //Подтянули перевод на другие языки
         readonly ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
-        int countstring = 0;
+        int ppc = 0; //Процент выполнения в параллельном процессе
+        string output_FH = string.Empty; //Вывод результата работы лоадера в консоли на форму
 
         /// <summary>
         /// Инициализация компонентов
@@ -411,8 +412,8 @@ namespace FirehoseFinder
             StringBuilder fh_command_args = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
             bool need_parsing_lun = false; //Необходимо ли парсить данные хранилища
             bool getgpt = false; //Необходимо ли получить таблицу GPT
-            string output_FH = string.Empty; //Вывод результата работы лоадера в консоли на форму
             button_Sahara_Ids.Enabled = false;
+            output_FH=string.Empty;
             if (!File.Exists(label_Sahara_fhf.Text))
             {
                 DialogResult dr = MessageBox.Show(LocRes.GetString("mb_note_sel_prog"),
@@ -493,20 +494,20 @@ namespace FirehoseFinder
                     textBox_soft_term.AppendText(LocRes.GetString("tbs_stor_dev") + Environment.NewLine);
                     fh_command_args.Append(" --getstorageinfo=" + lun_int.ToString());
                     need_parsing_lun = true;
-                    output_FH = func.FH_Commands(fh_command_args.ToString());
+                    if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args.ToString());
                     break;
                 case 1: //Получить таблицу разметки
                     textBox_soft_term.AppendText(LocRes.GetString("tbs_part_table") + Environment.NewLine);
                     fh_command_args.Append(" --getgptmainbackup=" + lun_int.ToString());
                     getgpt = true;
-                    output_FH = func.FH_Commands(fh_command_args.ToString());
+                    if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args.ToString());
                     break;
                 case 2: //Перезагрузка устройства
                     textBox_soft_term.AppendText(LocRes.GetString("tb_reboot") + '\u0020' +
                         LocRes.GetString("hex_in") + '\u0020' +
                         LocRes.GetString("tb_norm") + Environment.NewLine);
                     fh_command_args.Append(" --noprompt --reset");
-                    output_FH = func.FH_Commands(fh_command_args.ToString());
+                    if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args.ToString());
                     StartStatus();
                     break;
                 //case 3 - разделитель "Внимание, запись!"
@@ -533,7 +534,7 @@ namespace FirehoseFinder
                             if (File.Exists("p_r.xml"))
                             {
                                 fh_command_args.Append(" --sendxml=p_r.xml --noprompt --search_path=" + loadpath);
-                                output_FH = func.FH_Commands(fh_command_args.ToString());
+                                if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args.ToString());
                             }
                         }
                         else textBox_soft_term.AppendText(LocRes.GetString("tb_write_cancel") + Environment.NewLine);
@@ -553,7 +554,6 @@ namespace FirehoseFinder
                                     " --showpercentagecomplete --zlpawarehost=1");
                                 if (radioButton_mem_ufs.Checked) fh_command_args.Append("-- setactivepartition=1");
                                 else fh_command_args.Append(" --setactivepartition=0");
-                                fh_command_args.Append(" --convertprogram2read");
                                 if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args);
                             }
                             break;
@@ -574,7 +574,7 @@ namespace FirehoseFinder
                         MessageBoxOptions.DefaultDesktopOnly) == DialogResult.OK)
                     {
                         fh_command_args.Append(" --noprompt --erase=" + lun_int.ToString());
-                        output_FH = func.FH_Commands(fh_command_args.ToString());
+                        if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args.ToString());
                     }
                     else textBox_soft_term.AppendText(LocRes.GetString("tb_er_mem") + '\u0020' +
                         LocRes.GetString("tb_cancel_user") + Environment.NewLine);
@@ -591,7 +591,7 @@ namespace FirehoseFinder
                             }
                             else textBox_soft_term.AppendText(LocRes.GetString("tb_xml_not_gen") + Environment.NewLine);
                             textBox_soft_term.AppendText(LocRes.GetString("tb_form_comp") + Environment.NewLine);
-                            output_FH = func.FH_Commands(fh_command_args.ToString());
+                            if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args.ToString());
                             break;
                         case DialogResult.Cancel:
                             textBox_soft_term.AppendText(LocRes.GetString("tb_form_close") + Environment.NewLine);
@@ -604,10 +604,9 @@ namespace FirehoseFinder
                     textBox_soft_term.AppendText(LocRes.GetString("tbs_stor_dev") + Environment.NewLine);
                     fh_command_args.Append(" --getstorageinfo=" + lun_int.ToString());
                     need_parsing_lun = true;
-                    output_FH = func.FH_Commands(fh_command_args.ToString());
+                    if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args.ToString());
                     break;
             }
-            textBox_soft_term.AppendText(output_FH + Environment.NewLine);
             if (need_parsing_lun) NeedParsingLun(output_FH, lun_int);
             if (getgpt) GetGPT(lun_int);
             if (pp.checkBox_output.Checked)
@@ -1122,18 +1121,18 @@ namespace FirehoseFinder
         {
             BackgroundWorker worker = sender as BackgroundWorker;
             List<string> do_str = new List<string>((List<string>)e.Argument);
-            string dump_results = string.Empty; //Отчёт
+            output_FH = string.Empty; //Обнуляем строку вывода консоли
             int count = 1;
             foreach (string str in do_str)
             {
                 string endoffilename = str.Remove(0, str.IndexOf("--sendimage=dump_") + 12);
                 int endoffile = endoffilename.IndexOf(".bin");
                 string userState = endoffilename.Substring(0, endoffile + 4); //Имя файла
-                dump_results += func.FH_Commands(str.ToString()) + Environment.NewLine;
+                FH_Commands(str.ToString());
                 worker.ReportProgress(count * 100 / do_str.Count, userState);
                 count++;
             }
-            e.Result = dump_results;
+            e.Result = output_FH;
             Thread.Sleep(1);
         }
 
@@ -2798,7 +2797,7 @@ namespace FirehoseFinder
                 if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs --lun=" + groupBox_LUN.Text.Remove(0, 5));
                 else Argstoxml.Append(" --memoryname=emmc");
                 Argstoxml.Append(" --convertprogram2read"); //Добавляем для операции чтения
-                //При наличии файла запускаем процесс чтения в отдельном потоке
+                                                            //При наличии файла запускаем процесс чтения в отдельном потоке
                 if (!backgroundWorker_xml.IsBusy && File.Exists("p_r.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
             }
         }
@@ -2858,7 +2857,8 @@ namespace FirehoseFinder
 
         private void BackgroundWorker_xml_DoWork(object sender, DoWorkEventArgs e)
         {
-            e.Result = func.FH_Commands(e.Argument.ToString());
+            FH_Commands(e.Argument.ToString());
+            e.Result = output_FH;
         }
 
         private void BackgroundWorker_xml_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -3011,61 +3011,49 @@ namespace FirehoseFinder
 
         private void BackgroundWorker_rawprogram_DoWork(object sender, DoWorkEventArgs e)
         {
-            /* В потоке оставляем окно открытым на время теста
-            * Должно отображаться процент выполнения для длительной операции чтения
-            * Потом переносим процент выполнения в репорт
-            * Потом, если отображается процент на форме, то меняем команду на запись
-            * Для релизной версии скрываем окно и выводим данные в терминал
-            */
             BackgroundWorker worker = sender as BackgroundWorker;
-            using (Process process = new Process())
+            process_FH_Loader.StartInfo.Arguments = e.Argument.ToString(); //аргументы лоадера;
+            process_FH_Loader.Start();
+            StreamReader reader = process_FH_Loader.StandardOutput;
+            ppc = 10; //Начали обработку в параллельном потоке
+            while (reader.Peek() >= 0)
             {
-                process.StartInfo = new ProcessStartInfo
+                if (worker.CancellationPending)
                 {
-                    FileName = "fh_loader.exe",
-                    Arguments = e.Argument.ToString(), //аргументы лоадера;
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true,
-                    CreateNoWindow = true
-                };
-                process.OutputDataReceived += new DataReceivedEventHandler((senderproc, outputLine) =>
-                                {
-                                    if (worker.CancellationPending)
-                                    {
-                                        e.Cancel = true;
-                                        return;
-                                    }
-                                    else if (!string.IsNullOrEmpty(outputLine.Data))
-                                    {
-                                        worker.ReportProgress(50, outputLine.Data);
-                                        Thread.Sleep(100);
-                                    }
-                                });
-                process.Start();
-                process.BeginOutputReadLine();
-                process.WaitForExit();
-                process.Close();
+                    e.Cancel = true;
+                    break;
+                }
+                else
+                {
+                    string outline = reader.ReadLine();
+                    if (!string.IsNullOrEmpty(outline))
+                    {
+                        int ppn = func.ProcessPersent(outline);
+                        if (ppc < ppn) ppc = ppn;
+                        output_FH+=outline;
+                        worker.ReportProgress(ppc, outline);
+                    }
+                }
             }
+            process_FH_Loader.WaitForExit();
+            process_FH_Loader.Close();
         }
 
         private void BackgroundWorker_rawprogram_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            countstring++;
             progressBar_phone.Value = e.ProgressPercentage;
-            textBox_soft_term.AppendText(countstring.ToString() + " - " + e.UserState.ToString() + Environment.NewLine);
+            textBox_soft_term.AppendText(e.UserState.ToString() + Environment.NewLine);
         }
 
         private void BackgroundWorker_rawprogram_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            progressBar_phone.Value = 0;
+            ppc = 0;
+            progressBar_phone.Value = ppc;
             if (e.Cancelled) textBox_soft_term.AppendText(LocRes.GetString("tb_cancel_user") + Environment.NewLine);
             else
             {
                 if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine + e.Error.StackTrace + Environment.NewLine);
-                else
-                {
-                    textBox_soft_term.AppendText(LocRes.GetString("done") + Environment.NewLine);
-                }
+                else textBox_soft_term.AppendText(LocRes.GetString("done") + Environment.NewLine);
             }
         }
 
@@ -3085,6 +3073,35 @@ namespace FirehoseFinder
                 {
                     if (backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.CancelAsync();
                 }
+            }
+        }
+
+        /// <summary>
+        /// Выполнение FH_Loader с указанными параметрами
+        /// </summary>
+        /// <param name="com_args">Аргументы команды лоадеру</param>
+        /// <returns>Ответ лоадера по результатам исполнения команды</returns>
+        private void FH_Commands(string com_args)
+        {
+            process_FH_Loader.StartInfo.Arguments = com_args; //аргументы лоадера
+            try
+            {
+                process_FH_Loader.Start();
+                StreamReader reader = process_FH_Loader.StandardOutput;
+                while (reader.Peek() >= 0)
+                {
+                    string outline = reader.ReadLine();
+                    if (!string.IsNullOrEmpty(outline))
+                    {
+                        output_FH += outline + Environment.NewLine;
+                    }
+                }
+                process_FH_Loader.WaitForExit();
+                process_FH_Loader.Close();
+            }
+            catch (Exception ex)
+            {
+                output_FH = LocRes.GetString("er_func_fhl_params") + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace;
             }
         }
     }
