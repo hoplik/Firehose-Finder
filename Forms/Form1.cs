@@ -552,7 +552,7 @@ namespace FirehoseFinder
                                 fh_command_args.Append(" --sendxml=" + rp.label_raw_patch.Text +
                                     " --search_path=" + rp.label_path.Text +
                                     " --showpercentagecomplete --zlpawarehost=1");
-                                if (radioButton_mem_ufs.Checked) fh_command_args.Append("-- setactivepartition=1");
+                                if (radioButton_mem_ufs.Checked) fh_command_args.Append(" --setactivepartition=1");
                                 else fh_command_args.Append(" --setactivepartition=0");
                                 if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args);
                             }
