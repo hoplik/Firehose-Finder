@@ -124,8 +124,9 @@
     <value>Cancel</value>
   </data>
   <data name="label_comment.Text" xml:space="preserve">
-    <value>For batch recording of the firmware, you must select
-ALL files rawprogram.xml and ALL files patch.xml from the firmware.</value>
+    <value>To batch write the firmware, you need to select ALL files rawprogram.xml and ALL files patch.xml from the firmware.
+Pay attention to the status of the sparse command in the raw program files.
+It should be "false", which corresponds to writing the split images to the partition by their sectors, without merging them.</value>
   </data>
   <data name="button_files.Text" xml:space="preserve">
     <value>Select xml firmware files</value>

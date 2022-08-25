@@ -13,13 +13,11 @@ using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 using Telegram.Bot;
 using Telegram.Bot.Types.Enums;
-using System.Runtime.Serialization;
 
 namespace FirehoseFinder
 {
@@ -768,6 +766,7 @@ namespace FirehoseFinder
                 }
                 else
                 {
+                    отправкаПрограммераToolStripMenuItem.Enabled=true;
                     //Прописываем путь к программеру и серийный номер в глобальный массив
                     //Проверяем наличие программера в базе
                     MessageBox.Show("Похоже, что выбранный вами программер отработал успешно и при этом он отсутствует в базе данных." +
@@ -2525,6 +2524,7 @@ namespace FirehoseFinder
             label_select_gpt.Text = "0";
             contextMenuStrip_gpt.Items[4].Enabled = false;
             contextMenuStrip_gpt.Items[7].Enabled = false;
+            отправкаПрограммераToolStripMenuItem.Enabled = false;
             listView_GPT.Items.Clear();
         }
 
