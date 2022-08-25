@@ -234,6 +234,9 @@ namespace FirehoseFinder
         }
     }
 
+    /// <summary>
+    /// Параметры выбранного диска, обязательные для использования.
+    /// </summary>
     class Flash_Disk
     {
         public int Total_Sectors;

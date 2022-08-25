@@ -331,7 +331,7 @@
     <value>51</value>
   </data>
   <data name="dataGridView_collection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 595</value>
+    <value>1361, 593</value>
   </data>
   <data name="dataGridView_collection.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -545,7 +545,7 @@
     <value>Увеличить шрифт</value>
   </data>
   <data name="bindingNavigator_collection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 595</value>
+    <value>0, 593</value>
   </data>
   <data name="bindingNavigator_collection.Size" type="System.Drawing.Size, System.Drawing">
     <value>1361, 32</value>
@@ -572,7 +572,7 @@
     <value>4, 25</value>
   </data>
   <data name="tabPage_collection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 627</value>
+    <value>1361, 625</value>
   </data>
   <data name="tabPage_collection.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -605,7 +605,7 @@
     <value>Vertical</value>
   </data>
   <data name="textBox_main_term.Size" type="System.Drawing.Size, System.Drawing">
-    <value>409, 419</value>
+    <value>409, 417</value>
   </data>
   <data name="textBox_main_term.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -725,7 +725,7 @@
     <value>51</value>
   </data>
   <data name="dataGridView_final.Size" type="System.Drawing.Size, System.Drawing">
-    <value>946, 419</value>
+    <value>946, 417</value>
   </data>
   <data name="dataGridView_final.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -749,7 +749,7 @@
     <value>3, 180</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 419</value>
+    <value>1355, 417</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -1614,7 +1614,7 @@ _HASH</value>
     <value>Готово</value>
   </data>
   <data name="statusStrip_firehose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 599</value>
+    <value>3, 597</value>
   </data>
   <data name="statusStrip_firehose.Size" type="System.Drawing.Size, System.Drawing">
     <value>1355, 26</value>
@@ -1647,7 +1647,7 @@ _HASH</value>
     <value>3, 2, 3, 2</value>
   </data>
   <data name="tabPage_firehose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 627</value>
+    <value>1361, 625</value>
   </data>
   <data name="tabPage_firehose.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1923,7 +1923,7 @@ _HASH</value>
     <value>3, 133</value>
   </data>
   <data name="groupBox_adb_commands.Size" type="System.Drawing.Size, System.Drawing">
-    <value>923, 421</value>
+    <value>923, 423</value>
   </data>
   <data name="groupBox_adb_commands.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -2019,7 +2019,7 @@ _HASH</value>
     <value>3</value>
   </data>
   <data name="tableLayoutPanel_adb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>929, 557</value>
+    <value>929, 559</value>
   </data>
   <data name="tableLayoutPanel_adb.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -2046,7 +2046,7 @@ _HASH</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage_adb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 563</value>
+    <value>935, 565</value>
   </data>
   <data name="tabPage_adb.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2760,7 +2760,7 @@ _HASH</value>
     <value>Bottom</value>
   </data>
   <data name="groupBox_LUN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 223</value>
+    <value>3, 221</value>
   </data>
   <data name="groupBox_LUN.Size" type="System.Drawing.Size, System.Drawing">
     <value>929, 339</value>
@@ -2937,7 +2937,7 @@ _HASH</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage_sahara.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 565</value>
+    <value>935, 563</value>
   </data>
   <data name="tabPage_sahara.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3237,7 +3237,7 @@ _HASH</value>
     <value>3, 133</value>
   </data>
   <data name="groupBox_fb_commands.Size" type="System.Drawing.Size, System.Drawing">
-    <value>929, 429</value>
+    <value>929, 427</value>
   </data>
   <data name="groupBox_fb_commands.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3333,7 +3333,7 @@ _HASH</value>
     <value>3</value>
   </data>
   <data name="tableLayoutPanel_fb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 565</value>
+    <value>935, 563</value>
   </data>
   <data name="tableLayoutPanel_fb.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3357,7 +3357,7 @@ _HASH</value>
     <value>4, 25</value>
   </data>
   <data name="tabPage_fb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 565</value>
+    <value>935, 563</value>
   </data>
   <data name="tabPage_fb.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

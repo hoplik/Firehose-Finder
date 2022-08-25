@@ -96,7 +96,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-08-23T18:02:15">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-08-25T14:19:16">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -247,7 +247,7 @@
 <FullName>Snapdragon 400/410</FullName>
 <OEMID>0042</OEMID>
 <MODELID>0018</MODELID>
-<HASHID>FAF5C7A62884B4DB6EDC3CE226D53492552769004007683913983594441B0608</HASHID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>6039Y</Model>
 </ForFilter>
@@ -256,7 +256,7 @@
 <FullName>Snapdragon 400/410</FullName>
 <OEMID>0042</OEMID>
 <MODELID>0018</MODELID>
-<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<HASHID>FAF5C7A62884B4DB6EDC3CE226D53492552769004007683913983594441B0608</HASHID>
 <Trademark>Alcatel</Trademark>
 <Model>6039Y</Model>
 </ForFilter>
@@ -2514,7 +2514,7 @@
 <HASHID>32942E378ADBC21376ABB8B83A681E579BFEBF5926C5BDC53B08F35738147041</HASHID>
 <Trademark>realme</Trademark>
 <Model>RMX1991</Model>
-<AltName>X2, RMX1993EX, RMX1992EX</AltName>
+<AltName>RMX1993EX, RMX1992EX, X2</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>0010A0E1</HWID>
@@ -2524,7 +2524,7 @@
 <HASHID>92D86F650BDE72FE9B447AE32545F2B16FFEA572ACBC596970102A9C40420889BE4FAE7212D956EBE50A81D191FF5D6B</HASHID>
 <Trademark>realme</Trademark>
 <Model>RMX2030</Model>
-<AltName>RMX2030EEA</AltName>
+<AltName>RMX2030EEA, 5i</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>0005E0E1</HWID>
@@ -4029,7 +4029,19 @@
 <LASTKNOWNSBLVER>00000001</LASTKNOWNSBLVER>
 <Trademark>realme</Trademark>
 <Model>RMX1931</Model>
-<AltName>RMX1931RU</AltName>
+<AltName>RMX1931RU, X2 Pro</AltName>
+</ForFilter>
+<ForFilter>
+<Trust>full trust</Trust>
+<HWID>001080E1</HWID>
+<FullName>Snapdragon 712</FullName>
+<OEMID>0051</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>91057040B895B1D63F856124589C22ADC2ECE0CE5B15FC1BD925541C683115B9</HASHID>
+<LASTKNOWNSBLVER>00000001</LASTKNOWNSBLVER>
+<Trademark>realme</Trademark>
+<Model>RMX1973</Model>
+<AltName>RMX1973, 5 Pro</AltName>
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>
@@ -4689,6 +4701,18 @@
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
+<HWID>009720E1</HWID>
+<FullName>Snapdragon 210</FullName>
+<OEMID>0039</OEMID>
+<MODELID>0028</MODELID>
+<HASHID>7BE49B72F9E4337223CCB84D6ECCCA4E61CE16E3602AC2008CB18B75BABE6D09</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>Kyocera</Trademark>
+<Model>E6833</Model>
+<AltName>DuraForce PRO</AltName>
+</ForFilter>
+<ForFilter>
+<Trust>real dev</Trust>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
 <OEMID>0000</OEMID>
@@ -5050,18 +5074,6 @@
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
-<HWID>001920E1</HWID>
-<FullName>Snapdragon 778G (SM7325-AB)</FullName>
-<OEMID>0051</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>ADEC891CA335FF17D5601296B0209BF5C921E37AE07CCBBC0CC44CAEE19F904993EB1F25D780104AD86ABAE5C5755689</HASHID>
-<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>realme</Trademark>
-<Model>GT Master Edirtion</Model>
-<AltName>GT Master Edirtion</AltName>
-</ForFilter>
-<ForFilter>
-<Trust>real dev</Trust>
 <HWID>000DB0E1</HWID>
 <FullName>Snapdragon 710</FullName>
 <OEMID>0051</OEMID>
@@ -5083,6 +5095,18 @@
 <Trademark>realme</Trademark>
 <Model>RMX1927</Model>
 <AltName>5</AltName>
+</ForFilter>
+<ForFilter>
+<Trust>real dev</Trust>
+<HWID>001920E1</HWID>
+<FullName>Snapdragon 778G (SM7325-AB)</FullName>
+<OEMID>0051</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>ADEC891CA335FF17D5601296B0209BF5C921E37AE07CCBBC0CC44CAEE19F904993EB1F25D780104AD86ABAE5C5755689</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>realme</Trademark>
+<Model>RMX3363</Model>
+<AltName>RMX3360 (India), RMX3361 (China), RMX3363 (EU), GT Master Edirtion</AltName>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -5239,6 +5263,17 @@
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
 <Trademark>Santin</Trademark>
 <Model>Actoma Ace</Model>
+</ForFilter>
+<ForFilter>
+<Trust>real dev</Trust>
+<HWID>001060E1</HWID>
+<FullName>215 Mobile Platform</FullName>
+<OEMID>0019</OEMID>
+<MODELID>0004</MODELID>
+<HASHID>F76A42E0F7BD4BC90EC4D925A8BA9F62AAA8CDC45BE5D65387BF892DE9A854EC</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>SCHQK</Trademark>
+<Model>SCHQK</Model>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>

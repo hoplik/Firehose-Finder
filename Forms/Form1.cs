@@ -762,14 +762,23 @@ namespace FirehoseFinder
                 //При неправильном парсинге отправляем лог в канал при согласии пользователя.
                 if (Flash_Params[lun_numder].Sector_Size == 0 && Flash_Params[lun_numder].Total_Sectors == 0)
                 {
-                    Flash_Params[lun_numder].Sector_Size = 512; //Чтоб отрабатывал парсинг GPT
+                    //Flash_Params[lun_numder].Sector_Size = 512; //Чтоб отрабатывал парсинг GPT
                     SendErrorInChat();
+                    StartStatus(); //Отменяем возможность выполнения других операций 
                 }
-                if (comboBox_lun_count.SelectedIndex != lun_numder) comboBox_lun_count.SelectedIndex = lun_numder;
                 else
                 {
-                    label_total_blocks.Text = Flash_Params[lun_numder].Total_Sectors.ToString("### ### ### ##0");
-                    label_block_size.Text = Flash_Params[lun_numder].Sector_Size.ToString();
+                    //Прописываем путь к программеру и серийный номер в глобальный массив
+                    //Проверяем наличие программера в базе
+                    MessageBox.Show("Похоже, что выбранный вами программер отработал успешно и при этом он отсутствует в базе данных." +
+                        " Если есть желание поделиться этим программером, добавив его в базу данных, пожалуйста перейдите в окно отправки программера в чат сейчас или после завершения текущей работы." +
+                        " В окне \"Отправка программера\" из меню \"Вид\" необходимо заполнить все недостающие данные модели вручную или автоматически для корректной привязки программера к модели.");
+                    if (comboBox_lun_count.SelectedIndex != lun_numder) comboBox_lun_count.SelectedIndex = lun_numder;
+                    else
+                    {
+                        label_total_blocks.Text = Flash_Params[lun_numder].Total_Sectors.ToString("### ### ### ##0");
+                        label_block_size.Text = Flash_Params[lun_numder].Sector_Size.ToString();
+                    }
                 }
             }
         }
