@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Resources;
 using System.Windows.Forms;
 
@@ -36,6 +37,13 @@ namespace FirehoseFinder
                     }
                     label_raw_patch.Text = label_raw_patch.Text.TrimEnd('\u002C');
                     label_path.Text = openFileDialog_xmlfiles.FileName.Remove(openFileDialog_xmlfiles.FileName.LastIndexOf('\u005C'));
+                    if (label_path.Text.Contains('\u0020'))
+                    {
+                        MessageBox.Show(LocRes.GetString("mb_body_att_spaces"),
+                            LocRes.GetString("mb_title_att"),
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
+                    }
                     break;
                 case DialogResult.Cancel:
                     label_raw_patch.Text = string.Empty;

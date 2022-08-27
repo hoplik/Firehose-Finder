@@ -525,6 +525,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на В пути содержатся пробелы. При проверке возможны ошибки. Рекомендуется изменить путь..
+        /// </summary>
+        internal static string mb_body_att_spaces {
+            get {
+                return ResourceManager.GetString("mb_body_att_spaces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Проверка корректности работы с устройством через ADB закончилась неудачно..
         /// </summary>
         internal static string mb_body_check_fail {
@@ -656,6 +665,15 @@ namespace FirehoseFinder.Properties {
         internal static string mb_title_adb_er {
             get {
                 return ResourceManager.GetString("mb_title_adb_er", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Обратите внимание!.
+        /// </summary>
+        internal static string mb_title_att {
+            get {
+                return ResourceManager.GetString("mb_title_att", resourceCulture);
             }
         }
         

@@ -309,6 +309,10 @@
     <value>Access error</value>
     <comment>Ошибка доступа</comment>
   </data>
+  <data name="mb_body_att_spaces" xml:space="preserve">
+    <value>The path contains spaces. Errors are possible when checking it. It is recommended to change the path.</value>
+    <comment>В пути содержатся пробелы. При проверке возможны ошибки. Рекомендуется изменить путь.</comment>
+  </data>
   <data name="mb_body_check_fail" xml:space="preserve">
     <value>Checking the correctness of working with the device via ADB failed.</value>
     <comment>Проверка корректности работы с устройством через ADB закончилась неудачно.</comment>
@@ -368,6 +372,10 @@
   <data name="mb_title_adb_er" xml:space="preserve">
     <value>ADB error</value>
     <comment>Ошибка ADB</comment>
+  </data>
+  <data name="mb_title_att" xml:space="preserve">
+    <value>Pay attention!</value>
+    <comment>Обратите внимание!</comment>
   </data>
   <data name="mb_title_dev_recon" xml:space="preserve">
     <value>Attention!</value>

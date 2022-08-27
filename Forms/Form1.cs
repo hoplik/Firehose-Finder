@@ -518,6 +518,15 @@ namespace FirehoseFinder
                         {
                             //Определяем путь к файлу
                             string loadpath = openFileDialog1.FileName.Remove(openFileDialog1.FileName.IndexOf(openFileDialog1.SafeFileName) - 1);
+                            if (loadpath.Contains('\u0020'))
+                            {
+                                textBox_soft_term.AppendText(LocRes.GetString("mb_title_att") + Environment.NewLine);
+                                MessageBox.Show(LocRes.GetString("mb_body_att_spaces"),
+                                    LocRes.GetString("mb_title_att"),
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Exclamation);
+                                break;
+                            }
                             //Определяем последний сектор для записи
                             uint lastsec = Convert.ToUInt32(ws.textBox_start_ws.Text, 16) + Convert.ToUInt32(ws.textBox_count_ws.Text, 10) - 1;
                             //Создаём xml-файл для записи
@@ -1528,6 +1537,14 @@ namespace FirehoseFinder
                 работаСУстройствомToolStripMenuItem.Checked = true;
                 tabControl1.SelectedTab = tabPage_phone;
                 tabControl_soft.SelectedTab = tabPage_sahara;
+                if (label_Sahara_fhf.Text.Contains('\u0020'))
+                {
+                    textBox_soft_term.AppendText(LocRes.GetString("mb_title_att") + Environment.NewLine);
+                    MessageBox.Show(LocRes.GetString("mb_body_att_spaces"),
+                        LocRes.GetString("mb_title_att"),
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+                }
             }
         }
 
@@ -2780,6 +2797,16 @@ namespace FirehoseFinder
             DialogResult dr = folderBrowserDialog1.ShowDialog();
             if (dr == DialogResult.OK)
             {
+                string loadpath = folderBrowserDialog1.SelectedPath;
+                if (loadpath.Contains('\u0020'))
+                {
+                    textBox_soft_term.AppendText(LocRes.GetString("mb_title_att") + Environment.NewLine);
+                    MessageBox.Show(LocRes.GetString("mb_body_att_spaces"),
+                        LocRes.GetString("mb_title_att"),
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+                    return;
+                }
                 //Создаём xml-файл для чтения
                 func.FhXmltoRW(
                     true,
@@ -2790,7 +2817,7 @@ namespace FirehoseFinder
                     listView_GPT.CheckedItems[0].SubItems[1].Text);
                 //Создаём аргументы для лоадера
                 StringBuilder Argstoxml = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
-                Argstoxml.Append(" --sendxml=p_r.xml --noprompt --search_path=" + folderBrowserDialog1.SelectedPath);
+                Argstoxml.Append(" --sendxml=p_r.xml --noprompt --search_path=" + loadpath);
                 switch (comboBox_log.SelectedIndex)
                 {
                     case 0:
@@ -2834,6 +2861,15 @@ namespace FirehoseFinder
             {
                 //Определяем путь к файлу
                 string loadpath = openFileDialog1.FileName.Remove(openFileDialog1.FileName.IndexOf(openFileDialog1.SafeFileName) - 1);
+                if (loadpath.Contains('\u0020'))
+                {
+                    textBox_soft_term.AppendText(LocRes.GetString("mb_title_att") + Environment.NewLine);
+                    MessageBox.Show(LocRes.GetString("mb_body_att_spaces"),
+                        LocRes.GetString("mb_title_att"),
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+                    return;
+                }
                 //Создаём xml-файл для записи
                 func.FhXmltoRW(
                     false,

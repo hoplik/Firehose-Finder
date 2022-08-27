@@ -271,6 +271,9 @@
   <data name="mb_acc_er" xml:space="preserve">
     <value>Ошибка доступа</value>
   </data>
+  <data name="mb_body_att_spaces" xml:space="preserve">
+    <value>В пути содержатся пробелы. При проверке возможны ошибки. Рекомендуется изменить путь.</value>
+  </data>
   <data name="mb_body_check_fail" xml:space="preserve">
     <value>Проверка корректности работы с устройством через ADB закончилась неудачно.</value>
   </data>
@@ -315,6 +318,9 @@
   </data>
   <data name="mb_title_adb_er" xml:space="preserve">
     <value>Ошибка ADB</value>
+  </data>
+  <data name="mb_title_att" xml:space="preserve">
+    <value>Обратите внимание!</value>
   </data>
   <data name="mb_title_dev_recon" xml:space="preserve">
     <value>Внимание!</value>
