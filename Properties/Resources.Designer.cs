@@ -160,6 +160,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Поиск.
+        /// </summary>
+        internal static string button_search {
+            get {
+                return ResourceManager.GetString("button_search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на процессор.
         /// </summary>
         internal static string chip {

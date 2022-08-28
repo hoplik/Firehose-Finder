@@ -157,6 +157,10 @@
     <value>The path to the firmware file</value>
     <comment>Путь к файлу прошивки</comment>
   </data>
+  <data name="button_search" xml:space="preserve">
+    <value>Search</value>
+    <comment>Поиск</comment>
+  </data>
   <data name="chip" xml:space="preserve">
     <value>chip</value>
     <comment>процессор</comment>

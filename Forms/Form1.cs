@@ -778,9 +778,10 @@ namespace FirehoseFinder
                     отправкаПрограммераToolStripMenuItem.Enabled=true;
                     //Прописываем путь к программеру и серийный номер в глобальный массив
                     //Проверяем наличие программера в базе
-                    MessageBox.Show("Похоже, что выбранный вами программер отработал успешно и при этом он отсутствует в базе данных." +
+                    /*MessageBox.Show("Похоже, что выбранный вами программер отработал успешно и при этом он отсутствует в базе данных." +
                         " Если есть желание поделиться этим программером, добавив его в базу данных, пожалуйста перейдите в окно отправки программера в чат сейчас или после завершения текущей работы." +
                         " В окне \"Отправка программера\" из меню \"Вид\" необходимо заполнить все недостающие данные модели вручную или автоматически для корректной привязки программера к модели.");
+                    */
                     if (comboBox_lun_count.SelectedIndex != lun_numder) comboBox_lun_count.SelectedIndex = lun_numder;
                     else
                     {
@@ -1416,8 +1417,7 @@ namespace FirehoseFinder
             //Ищем локально или на сервере
             if (checkBox_Find_Local.Checked)
             {
-                DialogResult result = folderBrowserDialog1.ShowDialog();
-                if (result == DialogResult.OK)
+                if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
                 {
                     button_path.Text = folderBrowserDialog1.SelectedPath;
                     Check_Unread_Files();
@@ -1506,6 +1506,7 @@ namespace FirehoseFinder
                         dataGridView_final.Rows.Insert(0, somerec);
                         dataGridView_final["Column_rate", 0].Value = 1 + Rating(id_str, 0);
                         dataGridView_final["Column_rate", 0].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                        toolStripProgressBar_filescompleted.Value = i * 100 / dataGridView_FInd_Server.Rows.Count;
                     }
                     toolStripStatusLabel_filescompleted.Text = LocRes.GetString("hex_processed") + '\u0020' +
                         dataGridView_final.Rows.Count.ToString() + '\u0020'+
@@ -1514,6 +1515,7 @@ namespace FirehoseFinder
                         dataGridView_final.Rows.Count.ToString();
                 }
                 else dataGridView_final.Rows.Insert(0, somerec);
+                toolStripProgressBar_filescompleted.Value = 0;
             }
         }
 
@@ -1712,14 +1714,7 @@ namespace FirehoseFinder
             {
                 radioButton_topdir.Enabled = true;
                 radioButton_alldir.Enabled = true;
-                button_path.Enabled = true;
                 if (checkBox_Find_Server.Checked) checkBox_Find_Server.Checked = false;
-            }
-            else
-            {
-                radioButton_topdir.Enabled = false;
-                radioButton_alldir.Enabled = false;
-                if (!checkBox_Find_Server.Checked) button_path.Enabled = false;
             }
         }
 
@@ -1732,10 +1727,11 @@ namespace FirehoseFinder
         {
             if (checkBox_Find_Server.Checked)
             {
-                button_path.Enabled = true;
-                if (checkBox_Find_Local.Checked) checkBox_Find_Local.Checked = false;
+                checkBox_Find_Local.Checked = false;
+                radioButton_topdir.Enabled = false;
+                radioButton_alldir.Enabled = false;
+                button_path.Text = LocRes.GetString("button_search");
             }
-            else if (!checkBox_Find_Local.Checked) button_path.Enabled = false;
         }
 
         /// <summary>

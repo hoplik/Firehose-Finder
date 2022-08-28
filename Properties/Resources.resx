@@ -151,6 +151,9 @@
   <data name="button_rampath" xml:space="preserve">
     <value>Путь к файлу прошивки</value>
   </data>
+  <data name="button_search" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
   <data name="chip" xml:space="preserve">
     <value>процессор</value>
   </data>
