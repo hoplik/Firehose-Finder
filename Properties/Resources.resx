@@ -451,6 +451,9 @@
   <data name="status_repack_unpacking_complited" xml:space="preserve">
     <value>Распаковка файлов прошивки выполнена на</value>
   </data>
+  <data name="sw_ver" xml:space="preserve">
+    <value>тип программы (версия)</value>
+  </data>
   <data name="tbs_part_table" xml:space="preserve">
     <value>Получаем таблицу разметки</value>
   </data>

@@ -340,7 +340,7 @@
     <value>51</value>
   </data>
   <data name="dataGridView_collection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 595</value>
+    <value>1361, 593</value>
   </data>
   <data name="dataGridView_collection.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -554,7 +554,7 @@
     <value>Увеличить шрифт</value>
   </data>
   <data name="bindingNavigator_collection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 595</value>
+    <value>0, 593</value>
   </data>
   <data name="bindingNavigator_collection.Size" type="System.Drawing.Size, System.Drawing">
     <value>1361, 32</value>
@@ -581,7 +581,7 @@
     <value>4, 25</value>
   </data>
   <data name="tabPage_collection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 627</value>
+    <value>1361, 625</value>
   </data>
   <data name="tabPage_collection.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -662,7 +662,7 @@
     <value>True</value>
   </metadata>
   <data name="Column_id.HeaderText" xml:space="preserve">
-    <value>Jtag-OEM-MODEL-HASH</value>
+    <value>Jtag-OEM-MODEL-HASH-SWType(Ver)</value>
   </data>
   <data name="Column_id.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
@@ -6373,48 +6373,6 @@ _HASH</value>
   <data name="&gt;&gt;toolStripButton_large_font.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Column_Sel.Name" xml:space="preserve">
-    <value>Column_Sel</value>
-  </data>
-  <data name="&gt;&gt;Column_Sel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Column_Name.Name" xml:space="preserve">
-    <value>Column_Name</value>
-  </data>
-  <data name="&gt;&gt;Column_Name.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Column_id.Name" xml:space="preserve">
-    <value>Column_id</value>
-  </data>
-  <data name="&gt;&gt;Column_id.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Column_rate.Name" xml:space="preserve">
-    <value>Column_rate</value>
-  </data>
-  <data name="&gt;&gt;Column_rate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Column_Full.Name" xml:space="preserve">
-    <value>Column_Full</value>
-  </data>
-  <data name="&gt;&gt;Column_Full.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Column_SW_type.Name" xml:space="preserve">
-    <value>Column_SW_type</value>
-  </data>
-  <data name="&gt;&gt;Column_SW_type.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Column_Comp.Name" xml:space="preserve">
-    <value>Column_Comp</value>
-  </data>
-  <data name="&gt;&gt;Column_Comp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolStripStatusLabel_filescompleted.Name" xml:space="preserve">
     <value>toolStripStatusLabel_filescompleted</value>
   </data>
@@ -6636,6 +6594,48 @@ _HASH</value>
   </data>
   <data name="&gt;&gt;process_Fastboot.Type" xml:space="preserve">
     <value>System.Diagnostics.Process, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_Sel.Name" xml:space="preserve">
+    <value>Column_Sel</value>
+  </data>
+  <data name="&gt;&gt;Column_Sel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_Name.Name" xml:space="preserve">
+    <value>Column_Name</value>
+  </data>
+  <data name="&gt;&gt;Column_Name.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_id.Name" xml:space="preserve">
+    <value>Column_id</value>
+  </data>
+  <data name="&gt;&gt;Column_id.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_rate.Name" xml:space="preserve">
+    <value>Column_rate</value>
+  </data>
+  <data name="&gt;&gt;Column_rate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_Full.Name" xml:space="preserve">
+    <value>Column_Full</value>
+  </data>
+  <data name="&gt;&gt;Column_Full.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_SW_type.Name" xml:space="preserve">
+    <value>Column_SW_type</value>
+  </data>
+  <data name="&gt;&gt;Column_SW_type.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_Comp.Name" xml:space="preserve">
+    <value>Column_Comp</value>
+  </data>
+  <data name="&gt;&gt;Column_Comp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Formfhf</value>

@@ -1066,6 +1066,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на тип программы (версия).
+        /// </summary>
+        internal static string sw_ver {
+            get {
+                return ResourceManager.GetString("sw_ver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на сеанс ADB.
         /// </summary>
         internal static string tb_adb_sess {

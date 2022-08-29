@@ -35,11 +35,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataSet1 = new System.Data.DataSet();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
@@ -92,13 +92,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox_main_term = new System.Windows.Forms.TextBox();
             this.dataGridView_final = new System.Windows.Forms.DataGridView();
-            this.Column_Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_Comp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox_fh_sel_path = new System.Windows.Forms.GroupBox();
             this.checkBox_Find_Local = new System.Windows.Forms.CheckBox();
@@ -232,6 +225,13 @@
             this.process_FH_Loader = new System.Diagnostics.Process();
             this.process_Sahara = new System.Diagnostics.Process();
             this.process_Fastboot = new System.Diagnostics.Process();
+            this.Column_Sel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_Comp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabPage_collection.SuspendLayout();
@@ -705,50 +705,6 @@
             this.dataGridView_final.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_final.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellContentClick);
             this.dataGridView_final.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellDoubleClick);
-            // 
-            // Column_Sel
-            // 
-            this.Column_Sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle5.NullValue = false;
-            this.Column_Sel.DefaultCellStyle = dataGridViewCellStyle5;
-            resources.ApplyResources(this.Column_Sel, "Column_Sel");
-            this.Column_Sel.Name = "Column_Sel";
-            // 
-            // Column_Name
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column_Name.DefaultCellStyle = dataGridViewCellStyle6;
-            resources.ApplyResources(this.Column_Name, "Column_Name");
-            this.Column_Name.Name = "Column_Name";
-            // 
-            // Column_id
-            // 
-            resources.ApplyResources(this.Column_id, "Column_id");
-            this.Column_id.Name = "Column_id";
-            // 
-            // Column_rate
-            // 
-            resources.ApplyResources(this.Column_rate, "Column_rate");
-            this.Column_rate.Name = "Column_rate";
-            // 
-            // Column_Full
-            // 
-            resources.ApplyResources(this.Column_Full, "Column_Full");
-            this.Column_Full.Name = "Column_Full";
-            // 
-            // Column_SW_type
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column_SW_type.DefaultCellStyle = dataGridViewCellStyle7;
-            resources.ApplyResources(this.Column_SW_type, "Column_SW_type");
-            this.Column_SW_type.Name = "Column_SW_type";
-            // 
-            // Column_Comp
-            // 
-            resources.ApplyResources(this.Column_Comp, "Column_Comp");
-            this.Column_Comp.Name = "Column_Comp";
             // 
             // panel1
             // 
@@ -1761,6 +1717,50 @@
             this.process_Fastboot.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             this.process_Fastboot.SynchronizingObject = this;
             // 
+            // Column_Sel
+            // 
+            this.Column_Sel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle5.NullValue = false;
+            this.Column_Sel.DefaultCellStyle = dataGridViewCellStyle5;
+            resources.ApplyResources(this.Column_Sel, "Column_Sel");
+            this.Column_Sel.Name = "Column_Sel";
+            // 
+            // Column_Name
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column_Name.DefaultCellStyle = dataGridViewCellStyle6;
+            resources.ApplyResources(this.Column_Name, "Column_Name");
+            this.Column_Name.Name = "Column_Name";
+            // 
+            // Column_id
+            // 
+            resources.ApplyResources(this.Column_id, "Column_id");
+            this.Column_id.Name = "Column_id";
+            // 
+            // Column_rate
+            // 
+            resources.ApplyResources(this.Column_rate, "Column_rate");
+            this.Column_rate.Name = "Column_rate";
+            // 
+            // Column_Full
+            // 
+            resources.ApplyResources(this.Column_Full, "Column_Full");
+            this.Column_Full.Name = "Column_Full";
+            // 
+            // Column_SW_type
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column_SW_type.DefaultCellStyle = dataGridViewCellStyle7;
+            resources.ApplyResources(this.Column_SW_type, "Column_SW_type");
+            this.Column_SW_type.Name = "Column_SW_type";
+            // 
+            // Column_Comp
+            // 
+            resources.ApplyResources(this.Column_Comp, "Column_Comp");
+            this.Column_Comp.Name = "Column_Comp";
+            // 
             // Formfhf
             // 
             resources.ApplyResources(this, "$this");
@@ -2015,13 +2015,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton_small_font;
         private System.Windows.Forms.ToolStripLabel toolStripLabel_font;
         private System.Windows.Forms.ToolStripButton toolStripButton_large_font;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column_Sel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_rate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Full;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_SW_type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Comp;
         private System.Windows.Forms.ToolStripMenuItem сохранитьТаблицуВФорматеCsvToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.ComponentModel.BackgroundWorker backgroundWorker_rawprogram;
@@ -2029,6 +2022,13 @@
         private System.Windows.Forms.ToolStripMenuItem отправкаПрограммераToolStripMenuItem;
         private System.Diagnostics.Process process_Sahara;
         private System.Diagnostics.Process process_Fastboot;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column_Sel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_rate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Full;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_SW_type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_Comp;
     }
 }
 

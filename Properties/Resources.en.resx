@@ -545,6 +545,10 @@
     <value>Unpacking of firmware files is completed on</value>
     <comment>Распаковка файлов прошивки выполнена на</comment>
   </data>
+  <data name="sw_ver" xml:space="preserve">
+    <value>software type (version)</value>
+    <comment>тип программы (версия)</comment>
+  </data>
   <data name="tbs_part_table" xml:space="preserve">
     <value>Getting partition table</value>
     <comment>Получаем таблицу разметки</comment>

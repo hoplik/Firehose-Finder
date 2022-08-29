@@ -2035,7 +2035,7 @@ namespace FirehoseFinder
             string oemhash;
             if (id_str[3].Length < 8) oemhash = id_str[3];
             else oemhash = id_str[3].Substring(id_str[3].Length - 8);
-            dataGridView_final["Column_id", Currnum].Value = id_str[0] + '\u002D' + id_str[1] + '\u002D' + id_str[2] + '\u002D' + oemhash;// + "-" + id_str[4] + id_str[5];
+            dataGridView_final["Column_id", Currnum].Value = id_str[0] + '\u002D' + id_str[1] + '\u002D' + id_str[2] + '\u002D' + oemhash + '\u002D' + id_str[4] + id_str[5];
             if (guide.SW_ID_type.ContainsKey(id_str[4])) sw_type = guide.SW_ID_type[id_str[4]];
             dataGridView_final["Column_SW_type", Currnum].Value = sw_type;
             dataGridView_final["Column_Full", Currnum].Value = "Jtag_ID (" + LocRes.GetString("chip") + ") - " + id_str[0] + Environment.NewLine +
@@ -2043,8 +2043,8 @@ namespace FirehoseFinder
                 "MODEL_ID (" + LocRes.GetString("model") + ") - " + id_str[2] + Environment.NewLine +
                 "OEM_PK_HASH (" + LocRes.GetString("hash") + '\u0020' +
                 id_str[3].Length.ToString() + '\u0020' +
-                LocRes.GetString("signs") + ") - " + id_str[3];
-            //+ Environment.NewLine + "SW_ID (тип программы (версия)) - " + id_str[4] + id_str[5] + " - " + sw_type;
+                LocRes.GetString("signs") + ") - " + id_str[3] + Environment.NewLine +
+                "SW_ID (" + LocRes.GetString("sw_ver") + ") - " + id_str[4] + id_str[5] + " - " + sw_type;
             if (guide.Double_CPU.ContainsKey(id_str[0])) //HWID два или более
             {
                 StringBuilder comp_model = new StringBuilder(string.Empty);
