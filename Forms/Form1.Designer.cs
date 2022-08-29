@@ -230,6 +230,8 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.backgroundWorker_rawprogram = new System.ComponentModel.BackgroundWorker();
             this.process_FH_Loader = new System.Diagnostics.Process();
+            this.process_Sahara = new System.Diagnostics.Process();
+            this.process_Fastboot = new System.Diagnostics.Process();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabPage_collection.SuspendLayout();
@@ -1728,6 +1730,37 @@
             this.process_FH_Loader.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             this.process_FH_Loader.SynchronizingObject = this;
             // 
+            // process_Sahara
+            // 
+            this.process_Sahara.StartInfo.CreateNoWindow = true;
+            this.process_Sahara.StartInfo.Domain = "";
+            this.process_Sahara.StartInfo.FileName = "QSaharaServer.exe";
+            this.process_Sahara.StartInfo.LoadUserProfile = false;
+            this.process_Sahara.StartInfo.Password = null;
+            this.process_Sahara.StartInfo.RedirectStandardOutput = true;
+            this.process_Sahara.StartInfo.StandardErrorEncoding = null;
+            this.process_Sahara.StartInfo.StandardOutputEncoding = null;
+            this.process_Sahara.StartInfo.UserName = "";
+            this.process_Sahara.StartInfo.UseShellExecute = false;
+            this.process_Sahara.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            this.process_Sahara.SynchronizingObject = this;
+            // 
+            // process_Fastboot
+            // 
+            this.process_Fastboot.StartInfo.CreateNoWindow = true;
+            this.process_Fastboot.StartInfo.Domain = "";
+            this.process_Fastboot.StartInfo.FileName = "fastboot.exe";
+            this.process_Fastboot.StartInfo.LoadUserProfile = false;
+            this.process_Fastboot.StartInfo.Password = null;
+            this.process_Fastboot.StartInfo.RedirectStandardError = true;
+            this.process_Fastboot.StartInfo.RedirectStandardOutput = true;
+            this.process_Fastboot.StartInfo.StandardErrorEncoding = null;
+            this.process_Fastboot.StartInfo.StandardOutputEncoding = null;
+            this.process_Fastboot.StartInfo.UserName = "";
+            this.process_Fastboot.StartInfo.UseShellExecute = false;
+            this.process_Fastboot.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            this.process_Fastboot.SynchronizingObject = this;
+            // 
             // Formfhf
             // 
             resources.ApplyResources(this, "$this");
@@ -1994,6 +2027,8 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker_rawprogram;
         private System.Diagnostics.Process process_FH_Loader;
         private System.Windows.Forms.ToolStripMenuItem отправкаПрограммераToolStripMenuItem;
+        private System.Diagnostics.Process process_Sahara;
+        private System.Diagnostics.Process process_Fastboot;
     }
 }
 

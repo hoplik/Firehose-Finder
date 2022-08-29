@@ -402,10 +402,6 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button_Sahara_CommandStart_Click(object sender, EventArgs e)
         {
-            Process process1 = new Process();
-            process1.StartInfo.UseShellExecute = false;
-            process1.StartInfo.RedirectStandardOutput = true;
-            process1.StartInfo.CreateNoWindow = true;
             StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -s 13:");
             StringBuilder fh_command_args = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
             bool need_parsing_lun = false; //Необходимо ли парсить данные хранилища
@@ -457,15 +453,14 @@ namespace FirehoseFinder
                     button_Sahara_CommandStart.Enabled = false;
                     return;
                 }
-                process1.StartInfo.FileName = "QSaharaServer.exe";
-                process1.StartInfo.Arguments = sahara_command_args.ToString();
+                process_Sahara.StartInfo.Arguments = sahara_command_args.ToString();
                 try
                 {
-                    process1.Start();
-                    StreamReader reader1 = process1.StandardOutput;
+                    process_Sahara.Start();
+                    StreamReader reader1 = process_Sahara.StandardOutput;
                     textBox_soft_term.AppendText(reader1.ReadToEnd());
-                    process1.WaitForExit();
-                    process1.Close();
+                    process_Sahara.WaitForExit();
+                    process_Sahara.Close();
                     FHAlreadyLoaded = true;
                     NeedReset = true;
                 }
@@ -780,7 +775,7 @@ namespace FirehoseFinder
                     //Проверяем наличие программера в базе
                     /*MessageBox.Show("Похоже, что выбранный вами программер отработал успешно и при этом он отсутствует в базе данных." +
                         " Если есть желание поделиться этим программером, добавив его в базу данных, пожалуйста перейдите в окно отправки программера в чат сейчас или после завершения текущей работы." +
-                        " В окне \"Отправка программера\" из меню \"Вид\" необходимо заполнить все недостающие данные модели вручную или автоматически для корректной привязки программера к модели.");
+                        " В окне \"Поделиться программером\" из меню \"Вид\" необходимо заполнить все недостающие данные модели вручную или автоматически для корректной привязки программера к модели.");
                     */
                     if (comboBox_lun_count.SelectedIndex != lun_numder) comboBox_lun_count.SelectedIndex = lun_numder;
                     else
@@ -2310,21 +2305,16 @@ namespace FirehoseFinder
                 return;
             }
             //Выполняем запрос HWID-OEMID (command01, 02, 03, 07)
-            Process process = new Process();
-            process.StartInfo.FileName = "QSaharaServer.exe";
-            process.StartInfo.Arguments = "-u " + serialPort1.PortName.Remove(0, 3) + " -c 1 -c 2 -c 3 -c 7";
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.CreateNoWindow = true;
+            process_Sahara.StartInfo.Arguments = "-u " + serialPort1.PortName.Remove(0, 3) + " -c 1 -c 2 -c 3 -c 7";
             try
             {
-                process.Start();
-                StreamReader reader = process.StandardOutput;
+                process_Sahara.Start();
+                StreamReader reader = process_Sahara.StandardOutput;
                 string output = reader.ReadToEnd();
                 textBox_soft_term.AppendText(output + Environment.NewLine);
                 textBox_main_term.AppendText(output + Environment.NewLine);
-                process.WaitForExit();
-                process.Close();
+                process_Sahara.WaitForExit();
+                process_Sahara.Close();
             }
             catch (Exception ex)
             {
@@ -2563,20 +2553,14 @@ namespace FirehoseFinder
         private bool FB_Check()
         {
             bool goodjob = false;
-            Process process = new Process();
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.RedirectStandardError = true;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.FileName = "fastboot.exe";
-            process.StartInfo.Arguments = "devices -l";
+            process_Fastboot.StartInfo.Arguments = "devices -l";
             textBox_soft_term.AppendText(LocRes.GetString("sent") + ": devices -l" + Environment.NewLine);
             try
             {
 
-                process.Start();
-                string normstr = process.StandardOutput.ReadToEnd();
-                string errstr = process.StandardError.ReadToEnd();
+                process_Fastboot.Start();
+                string normstr = process_Fastboot.StandardOutput.ReadToEnd();
+                string errstr = process_Fastboot.StandardError.ReadToEnd();
                 if (!string.IsNullOrEmpty(normstr))
                 {
                     Pars_FB_Dev(normstr);//Разбираем полученный массив на список устройств
@@ -2592,8 +2576,8 @@ namespace FirehoseFinder
                         goodjob = true;
                     }
                 }
-                process.WaitForExit();
-                process.Close();
+                process_Fastboot.WaitForExit();
+                process_Fastboot.Close();
             }
             catch (Exception ex)
             {
@@ -2609,25 +2593,19 @@ namespace FirehoseFinder
         /// <param name="fb_command">Команда</param>
         private void Fastboot_commands(string fb_command)
         {
-            Process process = new Process();
             string real_command = fb_command;
             if (!string.IsNullOrEmpty(Global_FB_Device)) real_command = "-s " + Global_FB_Device + " " + fb_command;
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.RedirectStandardError = true;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.FileName = "fastboot.exe";
-            process.StartInfo.Arguments = real_command;
+            process_Fastboot.StartInfo.Arguments = real_command;
             textBox_soft_term.AppendText(LocRes.GetString("sent") + '\u003A' + '\u0020' + real_command + Environment.NewLine);
             try
             {
-                process.Start();
-                string exstr = process.StandardError.ReadToEnd();
-                string normstr = process.StandardOutput.ReadToEnd();
+                process_Fastboot.Start();
+                string exstr = process_Fastboot.StandardError.ReadToEnd();
+                string normstr = process_Fastboot.StandardOutput.ReadToEnd();
                 if (!string.IsNullOrEmpty(normstr)) textBox_soft_term.AppendText(LocRes.GetString("get") + '\u003A' + '\u0020' + normstr + Environment.NewLine);
                 if (!string.IsNullOrEmpty(exstr)) textBox_soft_term.AppendText(LocRes.GetString("get") + "(ex): " + exstr + Environment.NewLine);
-                process.WaitForExit();
-                process.Close();
+                process_Fastboot.WaitForExit();
+                process_Fastboot.Close();
             }
             catch (Exception ex)
             {
