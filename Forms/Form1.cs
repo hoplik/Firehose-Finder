@@ -777,6 +777,7 @@ namespace FirehoseFinder
                     отправкаПрограммераToolStripMenuItem.Enabled=true;
                     //Прописываем путь к программеру и серийный номер в глобальный массив
                     //Проверяем наличие программера в базе
+
                     MessageBox.Show(dataGridView_final.SelectedRows[0].Cells[2].Value.ToString());
                     /*MessageBox.Show("Похоже, что выбранный вами программер отработал успешно и при этом он отсутствует в базе данных." +
                         " Если есть желание поделиться этим программером, добавив его в базу данных, пожалуйста перейдите в окно отправки программера в чат сейчас или после завершения текущей работы." +
@@ -1425,7 +1426,13 @@ namespace FirehoseFinder
             }
             if (checkBox_Find_Server.Checked)
             {
-                object[] somerec = { false, LocRes.GetString("server_not_found"), null, 0, null, null, null };
+                object[] somerec = { false, //Выбор
+                    LocRes.GetString("server_not_found"), //Файл
+                    null, //Набор идентификаторов
+                    0, //Рейтинг
+                    null, //Полный ИД (скрыто)
+                    null, //Тип ПО
+                    null }; //Может подойти
                 //Делаем фильтр
                 char[] filter_chr = { '0', '0', '0', '0' };
                 if (!string.IsNullOrEmpty(textBox_hwid.Text)) filter_chr[0] = '1';
@@ -1491,18 +1498,23 @@ namespace FirehoseFinder
                 {
                     for (int i = 0; i < dataGridView_FInd_Server.Rows.Count; i++)
                     {
+                        string swtype = "3";
+                        string swver = string.Empty;
+                        if (!string.IsNullOrEmpty(dataGridView_FInd_Server["SWType", i].Value.ToString())) swtype = dataGridView_FInd_Server["SWType", i].Value.ToString();
+                        if (!string.IsNullOrEmpty(dataGridView_FInd_Server["SWVer", i].Value.ToString())) swver = "(" + dataGridView_FInd_Server["SWVer", i].Value.ToString() + ")";
                         somerec[1] = dataGridView_FInd_Server["Url", i].Value.ToString();
-                        somerec[2] = string.Format("{0}-{1}-{2}-{3}", dataGridView_FInd_Server["HW_FH", i].Value.ToString(),
-                            dataGridView_FInd_Server["OEM_FH", i].Value.ToString(), dataGridView_FInd_Server["MODEL_FH", i].Value.ToString(),
-                            dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Substring(dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Length - 8));
+                        somerec[2] = string.Format("{0}-{1}-{2}-{3}-{4}", dataGridView_FInd_Server["HW_FH", i].Value.ToString(),
+                            dataGridView_FInd_Server["OEM_FH", i].Value.ToString(),
+                            dataGridView_FInd_Server["MODEL_FH", i].Value.ToString(),
+                            dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Substring(dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Length - 8),
+                            swtype + swver);
                         string[] id_str = {
                             dataGridView_FInd_Server["HW_FH", i].Value.ToString(),
                             dataGridView_FInd_Server["OEM_FH", i].Value.ToString(),
                             dataGridView_FInd_Server["MODEL_FH", i].Value.ToString(),
                             dataGridView_FInd_Server["HASH_FH", i].Value.ToString(),
-                            "3",
-                            string.Empty
-                        };
+                            swtype,
+                            swver};
                         dataGridView_final.Rows.Insert(0, somerec);
                         dataGridView_final["Column_rate", 0].Value = 1 + Rating(id_str, 0);
                         dataGridView_final["Column_rate", 0].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
