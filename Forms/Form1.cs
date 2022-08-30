@@ -461,7 +461,7 @@ namespace FirehoseFinder
                     StreamReader erread = process_Sahara.StandardError;
                     string output = string.Empty;
                     if (reader.Peek() >= 0) output = reader.ReadToEnd();
-                    if (erread.Peek() >= 0) output = erread.ReadToEnd();
+                    if (erread.Peek() >= 0) output = "er: " + erread.ReadToEnd();
                     textBox_soft_term.AppendText(output + Environment.NewLine);
                     process_Sahara.WaitForExit();
                     process_Sahara.Close();
@@ -777,6 +777,7 @@ namespace FirehoseFinder
                     отправкаПрограммераToolStripMenuItem.Enabled=true;
                     //Прописываем путь к программеру и серийный номер в глобальный массив
                     //Проверяем наличие программера в базе
+                    MessageBox.Show(dataGridView_final.SelectedRows[0].Cells[2].Value.ToString());
                     /*MessageBox.Show("Похоже, что выбранный вами программер отработал успешно и при этом он отсутствует в базе данных." +
                         " Если есть желание поделиться этим программером, добавив его в базу данных, пожалуйста перейдите в окно отправки программера в чат сейчас или после завершения текущей работы." +
                         " В окне \"Поделиться программером\" из меню \"Вид\" необходимо заполнить все недостающие данные модели вручную или автоматически для корректной привязки программера к модели.");
@@ -2316,7 +2317,7 @@ namespace FirehoseFinder
                 StreamReader reader = process_Sahara.StandardOutput;
                 StreamReader erread = process_Sahara.StandardError;
                 string output = string.Empty;
-                if (erread.Peek() >= 0) output = erread.ReadToEnd();
+                if (erread.Peek() >= 0) output = "er: " + erread.ReadToEnd();
                 if (reader.Peek() >= 0) output = reader.ReadToEnd();
                 textBox_soft_term.AppendText(output + Environment.NewLine);
                 textBox_main_term.AppendText(output + Environment.NewLine);
@@ -3068,7 +3069,7 @@ namespace FirehoseFinder
                     }
                 }
             }
-            if (erread.Peek() >= 0) worker.ReportProgress(100, erread.ReadToEnd());
+            if (erread.Peek() >= 0) worker.ReportProgress(100, "er: " + erread.ReadToEnd());
             process_FH_Loader.WaitForExit();
             process_FH_Loader.Close();
         }
@@ -3131,7 +3132,7 @@ namespace FirehoseFinder
                         output_FH += outline + Environment.NewLine;
                     }
                 }
-                if (erread.Peek() >=0) output_FH = erread.ReadToEnd();
+                if (erread.Peek() >=0) output_FH = "er: " + erread.ReadToEnd();
                 process_FH_Loader.WaitForExit();
                 process_FH_Loader.Close();
             }
