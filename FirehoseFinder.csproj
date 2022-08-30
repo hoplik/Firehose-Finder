@@ -37,7 +37,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>22.8.30.2</ApplicationVersion>
+    <ApplicationVersion>22.8.31.2</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -424,6 +424,12 @@
     <Compile Include="Forms\RawProgramForm.Designer.cs">
       <DependentUpon>RawProgramForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SendProgForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SendProgForm.Designer.cs">
+      <DependentUpon>SendProgForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Forms\Write_Sectors.cs">
       <SubType>Form</SubType>
@@ -436,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RawProgramForm.resx">
       <DependentUpon>RawProgramForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendProgForm.resx">
+      <DependentUpon>SendProgForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Resources\Greeting_en.txt" />
     <Content Include="Resources\help_en.pdf">

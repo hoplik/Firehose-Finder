@@ -449,8 +449,9 @@
             // 
             // отправкаПрограммераToolStripMenuItem
             // 
-            resources.ApplyResources(this.отправкаПрограммераToolStripMenuItem, "отправкаПрограммераToolStripMenuItem");
             this.отправкаПрограммераToolStripMenuItem.Name = "отправкаПрограммераToolStripMenuItem";
+            resources.ApplyResources(this.отправкаПрограммераToolStripMenuItem, "отправкаПрограммераToolStripMenuItem");
+            this.отправкаПрограммераToolStripMenuItem.Click += new System.EventHandler(this.ОтправкаПрограммераToolStripMenuItem_Click);
             // 
             // инструментыToolStripMenuItem
             // 

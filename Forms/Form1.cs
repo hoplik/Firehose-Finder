@@ -2576,7 +2576,7 @@ namespace FirehoseFinder
             label_select_gpt.Text = "0";
             contextMenuStrip_gpt.Items[4].Enabled = false;
             contextMenuStrip_gpt.Items[7].Enabled = false;
-            отправкаПрограммераToolStripMenuItem.Enabled = false;
+            //отправкаПрограммераToolStripMenuItem.Enabled = false;
             listView_GPT.Items.Clear();
         }
 
@@ -3180,6 +3180,34 @@ namespace FirehoseFinder
             catch (Exception ex)
             {
                 output_FH = LocRes.GetString("er_func_fhl_params") + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace;
+            }
+        }
+
+        private void ОтправкаПрограммераToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SendProgForm spf = new SendProgForm(this);
+            switch (spf.ShowDialog())
+            {
+                case DialogResult.None:
+                    break;
+                case DialogResult.OK:
+                    MessageBox.Show("Отправили программер");
+                    break;
+                case DialogResult.Cancel:
+                    MessageBox.Show("Отправка отменена пользователем");
+                    break;
+                case DialogResult.Abort:
+                    break;
+                case DialogResult.Retry:
+                    break;
+                case DialogResult.Ignore:
+                    break;
+                case DialogResult.Yes:
+                    break;
+                case DialogResult.No:
+                    break;
+                default:
+                    break;
             }
         }
     }
