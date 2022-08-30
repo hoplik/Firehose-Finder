@@ -457,8 +457,12 @@ namespace FirehoseFinder
                 try
                 {
                     process_Sahara.Start();
-                    StreamReader reader1 = process_Sahara.StandardOutput;
-                    textBox_soft_term.AppendText(reader1.ReadToEnd());
+                    StreamReader reader = process_Sahara.StandardOutput;
+                    StreamReader erread = process_Sahara.StandardError;
+                    string output = string.Empty;
+                    if (reader.Peek() >= 0) output = reader.ReadToEnd();
+                    if (erread.Peek() >= 0) output = erread.ReadToEnd();
+                    textBox_soft_term.AppendText(output + Environment.NewLine);
                     process_Sahara.WaitForExit();
                     process_Sahara.Close();
                     FHAlreadyLoaded = true;
@@ -2310,7 +2314,10 @@ namespace FirehoseFinder
             {
                 process_Sahara.Start();
                 StreamReader reader = process_Sahara.StandardOutput;
-                string output = reader.ReadToEnd();
+                StreamReader erread = process_Sahara.StandardError;
+                string output = string.Empty;
+                if (erread.Peek() >= 0) output = erread.ReadToEnd();
+                if (reader.Peek() >= 0) output = reader.ReadToEnd();
                 textBox_soft_term.AppendText(output + Environment.NewLine);
                 textBox_main_term.AppendText(output + Environment.NewLine);
                 process_Sahara.WaitForExit();
@@ -3040,6 +3047,7 @@ namespace FirehoseFinder
             process_FH_Loader.StartInfo.Arguments = e.Argument.ToString(); //аргументы лоадера;
             process_FH_Loader.Start();
             StreamReader reader = process_FH_Loader.StandardOutput;
+            StreamReader erread = process_FH_Loader.StandardError;
             ppc = 10; //Начали обработку в параллельном потоке
             while (reader.Peek() >= 0)
             {
@@ -3060,6 +3068,7 @@ namespace FirehoseFinder
                     }
                 }
             }
+            if (erread.Peek() >= 0) worker.ReportProgress(100, erread.ReadToEnd());
             process_FH_Loader.WaitForExit();
             process_FH_Loader.Close();
         }
@@ -3113,6 +3122,7 @@ namespace FirehoseFinder
             {
                 process_FH_Loader.Start();
                 StreamReader reader = process_FH_Loader.StandardOutput;
+                StreamReader erread = process_FH_Loader.StandardError;
                 while (reader.Peek() >= 0)
                 {
                     string outline = reader.ReadLine();
@@ -3121,6 +3131,7 @@ namespace FirehoseFinder
                         output_FH += outline + Environment.NewLine;
                     }
                 }
+                if (erread.Peek() >=0) output_FH = erread.ReadToEnd();
                 process_FH_Loader.WaitForExit();
                 process_FH_Loader.Close();
             }
