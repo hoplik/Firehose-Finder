@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-08-30T22:34:51">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-08-30T23:25:36">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -345,6 +345,7 @@
 <OEM_FH>0000</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>CAB02552DC28F562E8C5BEFA75BC4A97B90AAB1C91A3C186EC51F3D3D7D6A1C7</HASH_FH>
+<SWVer>1</SWVer>
 <Model>Z2 Plus</Model>
 </ForFound>
 <ForFound>

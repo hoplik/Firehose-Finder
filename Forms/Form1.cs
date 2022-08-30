@@ -403,7 +403,7 @@ namespace FirehoseFinder
         private void Button_Sahara_CommandStart_Click(object sender, EventArgs e)
         {
             StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -s 13:");
-            StringBuilder fh_command_args = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
+            StringBuilder fh_command_args = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName + " --noprompt");
             bool need_parsing_lun = false; //Необходимо ли парсить данные хранилища
             bool getgpt = false; //Необходимо ли получить таблицу GPT
             button_Sahara_Ids.Enabled = false;
@@ -503,7 +503,7 @@ namespace FirehoseFinder
                     textBox_soft_term.AppendText(LocRes.GetString("tb_reboot") + '\u0020' +
                         LocRes.GetString("hex_in") + '\u0020' +
                         LocRes.GetString("tb_norm") + Environment.NewLine);
-                    fh_command_args.Append(" --noprompt --reset");
+                    fh_command_args.Append(" --reset");
                     if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args.ToString());
                     StartStatus();
                     break;
@@ -539,7 +539,7 @@ namespace FirehoseFinder
                             //Создаём аргументы для лоадера и при наличии файла запускаем процесс записи
                             if (File.Exists("p_r.xml"))
                             {
-                                fh_command_args.Append(" --sendxml=p_r.xml --noprompt --search_path=" + loadpath);
+                                fh_command_args.Append(" --sendxml=p_r.xml --search_path=" + loadpath);
                                 if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args.ToString());
                             }
                         }
@@ -579,7 +579,7 @@ namespace FirehoseFinder
                         MessageBoxDefaultButton.Button2,
                         MessageBoxOptions.DefaultDesktopOnly) == DialogResult.OK)
                     {
-                        fh_command_args.Append(" --noprompt --erase=" + lun_int.ToString());
+                        fh_command_args.Append(" --erase=" + lun_int.ToString());
                         if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args.ToString());
                     }
                     else textBox_soft_term.AppendText(LocRes.GetString("tb_er_mem") + '\u0020' +
@@ -592,7 +592,7 @@ namespace FirehoseFinder
                         case DialogResult.OK:
                             if (File.Exists("work.xml"))
                             {
-                                fh_command_args.Append(string.Format(" --sendxml=work.xml --search_path={0} --noprompt", Directory.GetCurrentDirectory()));
+                                fh_command_args.Append(string.Format(" --sendxml=work.xml --search_path={0}", Directory.GetCurrentDirectory()));
                                 if (pp.radioButton_peek.Checked) fh_command_args.Append(" --convertprogram2read");
                             }
                             else textBox_soft_term.AppendText(LocRes.GetString("tb_xml_not_gen") + Environment.NewLine);
@@ -768,21 +768,21 @@ namespace FirehoseFinder
                 //При неправильном парсинге отправляем лог в канал при согласии пользователя.
                 if (Flash_Params[lun_numder].Sector_Size == 0 && Flash_Params[lun_numder].Total_Sectors == 0)
                 {
-                    //Flash_Params[lun_numder].Sector_Size = 512; //Чтоб отрабатывал парсинг GPT
                     SendErrorInChat();
                     StartStatus(); //Отменяем возможность выполнения других операций 
                 }
                 else
                 {
-                    отправкаПрограммераToolStripMenuItem.Enabled=true;
+                    //Проверяем наличие программера в базе и если его нет, то предлагаем поделиться
+                    if (ProgNoServer())
+                    {
+                        отправкаПрограммераToolStripMenuItem.Enabled = true;
+                        MessageBox.Show("Похоже, что выбранный вами программер отработал успешно и при этом он отсутствует в базе данных." +
+                            " Если есть желание поделиться этим программером, добавив его в базу данных, пожалуйста перейдите в окно отправки программера в чат сейчас или после завершения текущей работы." +
+                            " В окне \"Поделиться программером\" из меню \"Вид\" необходимо заполнить все недостающие данные модели вручную или автоматически для корректной привязки программера к модели.");
+                    }
+                    else MessageBox.Show("Программер есть на сервере");
                     //Прописываем путь к программеру и серийный номер в глобальный массив
-                    //Проверяем наличие программера в базе
-
-                    MessageBox.Show(dataGridView_final.SelectedRows[0].Cells[2].Value.ToString());
-                    /*MessageBox.Show("Похоже, что выбранный вами программер отработал успешно и при этом он отсутствует в базе данных." +
-                        " Если есть желание поделиться этим программером, добавив его в базу данных, пожалуйста перейдите в окно отправки программера в чат сейчас или после завершения текущей работы." +
-                        " В окне \"Поделиться программером\" из меню \"Вид\" необходимо заполнить все недостающие данные модели вручную или автоматически для корректной привязки программера к модели.");
-                    */
                     if (comboBox_lun_count.SelectedIndex != lun_numder) comboBox_lun_count.SelectedIndex = lun_numder;
                     else
                     {
@@ -791,6 +791,35 @@ namespace FirehoseFinder
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Сравниваем программеры на сервере с программером пользователя
+        /// </summary>
+        /// <returns>false - Программер есть на сервере, true - Программера нет на сервере</returns>
+        private bool ProgNoServer()
+        {
+            if (dataGridView_FInd_Server.Rows.Count > 0)
+            {
+                //Собираем строки сервера по маске грида
+                List<string> serverprogs = new List<string>();
+                for (int i = 0; i < dataGridView_FInd_Server.Rows.Count; i++)
+                {
+                    string swtype = "3";
+                    string swver = string.Empty;
+                    if (!string.IsNullOrEmpty(dataGridView_FInd_Server["SWType", i].Value.ToString())) swtype = dataGridView_FInd_Server["SWType", i].Value.ToString();
+                    if (!string.IsNullOrEmpty(dataGridView_FInd_Server["SWVer", i].Value.ToString())) swver = "(" + dataGridView_FInd_Server["SWVer", i].Value.ToString() + ")";
+                    string somerec = string.Format("{0}-{1}-{2}-{3}-{4}", dataGridView_FInd_Server["HW_FH", i].Value.ToString(),
+                        dataGridView_FInd_Server["OEM_FH", i].Value.ToString(),
+                        dataGridView_FInd_Server["MODEL_FH", i].Value.ToString(),
+                        dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Substring(dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Length - 8),
+                        swtype + swver);
+                    serverprogs.Add(somerec);
+                }
+                if (serverprogs.Contains(dataGridView_final.SelectedRows[0].Cells[2].Value.ToString())) return false; //Программер есть на сервере
+                else return true; //Программера нет на сервере
+            }
+            else return true; //Программера нет на сервере
         }
 
         /// <summary>
