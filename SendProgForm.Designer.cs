@@ -33,11 +33,13 @@
             this.button_send = new System.Windows.Forms.Button();
             this.button_cancel = new System.Windows.Forms.Button();
             this.dataGridView_shareprog = new System.Windows.Forms.DataGridView();
-            this.Column_cat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_adb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_sahara = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_loader = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_prog = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_dev_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_manuf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_altname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_chipnum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_path = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_shareprog)).BeginInit();
             this.SuspendLayout();
@@ -68,51 +70,66 @@
             // 
             this.dataGridView_shareprog.AllowUserToAddRows = false;
             this.dataGridView_shareprog.AllowUserToDeleteRows = false;
+            this.dataGridView_shareprog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView_shareprog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_shareprog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column_cat,
-            this.Column_adb,
-            this.Column_sahara,
-            this.Column_loader,
-            this.Column_prog});
+            this.Column_dev_num,
+            this.Column_manuf,
+            this.Column_model,
+            this.Column_altname,
+            this.Column_chipnum,
+            this.Column_id,
+            this.Column_path});
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridView_shareprog, 5);
             resources.ApplyResources(this.dataGridView_shareprog, "dataGridView_shareprog");
             this.dataGridView_shareprog.MultiSelect = false;
             this.dataGridView_shareprog.Name = "dataGridView_shareprog";
             this.dataGridView_shareprog.ReadOnly = true;
-            this.dataGridView_shareprog.RowHeadersVisible = false;
+            this.dataGridView_shareprog.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView_shareprog.RowTemplate.Height = 24;
             this.dataGridView_shareprog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             // 
-            // Column_cat
+            // Column_dev_num
             // 
-            resources.ApplyResources(this.Column_cat, "Column_cat");
-            this.Column_cat.Name = "Column_cat";
-            this.Column_cat.ReadOnly = true;
+            resources.ApplyResources(this.Column_dev_num, "Column_dev_num");
+            this.Column_dev_num.Name = "Column_dev_num";
+            this.Column_dev_num.ReadOnly = true;
             // 
-            // Column_adb
+            // Column_manuf
             // 
-            resources.ApplyResources(this.Column_adb, "Column_adb");
-            this.Column_adb.Name = "Column_adb";
-            this.Column_adb.ReadOnly = true;
+            resources.ApplyResources(this.Column_manuf, "Column_manuf");
+            this.Column_manuf.Name = "Column_manuf";
+            this.Column_manuf.ReadOnly = true;
             // 
-            // Column_sahara
+            // Column_model
             // 
-            resources.ApplyResources(this.Column_sahara, "Column_sahara");
-            this.Column_sahara.Name = "Column_sahara";
-            this.Column_sahara.ReadOnly = true;
+            resources.ApplyResources(this.Column_model, "Column_model");
+            this.Column_model.Name = "Column_model";
+            this.Column_model.ReadOnly = true;
             // 
-            // Column_loader
+            // Column_altname
             // 
-            resources.ApplyResources(this.Column_loader, "Column_loader");
-            this.Column_loader.Name = "Column_loader";
-            this.Column_loader.ReadOnly = true;
+            resources.ApplyResources(this.Column_altname, "Column_altname");
+            this.Column_altname.Name = "Column_altname";
+            this.Column_altname.ReadOnly = true;
             // 
-            // Column_prog
+            // Column_chipnum
             // 
-            resources.ApplyResources(this.Column_prog, "Column_prog");
-            this.Column_prog.Name = "Column_prog";
-            this.Column_prog.ReadOnly = true;
+            resources.ApplyResources(this.Column_chipnum, "Column_chipnum");
+            this.Column_chipnum.Name = "Column_chipnum";
+            this.Column_chipnum.ReadOnly = true;
+            // 
+            // Column_id
+            // 
+            resources.ApplyResources(this.Column_id, "Column_id");
+            this.Column_id.Name = "Column_id";
+            this.Column_id.ReadOnly = true;
+            // 
+            // Column_path
+            // 
+            resources.ApplyResources(this.Column_path, "Column_path");
+            this.Column_path.Name = "Column_path";
+            this.Column_path.ReadOnly = true;
             // 
             // SendProgForm
             // 
@@ -135,10 +152,12 @@
         private System.Windows.Forms.Button button_send;
         private System.Windows.Forms.Button button_cancel;
         internal System.Windows.Forms.DataGridView dataGridView_shareprog;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_cat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_adb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_sahara;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_loader;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_prog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_dev_num;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_manuf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_model;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_altname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_chipnum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_path;
     }
 }
