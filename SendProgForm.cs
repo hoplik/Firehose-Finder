@@ -19,5 +19,25 @@ namespace FirehoseFinder
         {
             InitializeComponent();
         }
+
+        private void Button_cancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Hide();
+        }
+
+        private void Button_send_Click(object sender, EventArgs e)
+        {
+            DialogResult=DialogResult.OK;
+            Hide();
+        }
+
+        private void SendProgForm_Load(object sender, EventArgs e)
+        {
+            if (true)
+            {
+                button_send.Enabled=true;
+            }
+        }
     }
 }

@@ -3186,15 +3186,17 @@ namespace FirehoseFinder
         private void ОтправкаПрограммераToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SendProgForm spf = new SendProgForm(this);
+            textBox_soft_term.AppendText(LocRes.GetString("tb_share_prog") + Environment.NewLine);
             switch (spf.ShowDialog())
             {
                 case DialogResult.None:
                     break;
                 case DialogResult.OK:
                     MessageBox.Show("Отправили программер");
+                    //Запускаем отправку файла в чат
                     break;
                 case DialogResult.Cancel:
-                    MessageBox.Show("Отправка отменена пользователем");
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_cancel_user") + Environment.NewLine);
                     break;
                 case DialogResult.Abort:
                     break;

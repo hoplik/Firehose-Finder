@@ -443,6 +443,9 @@
     <EmbeddedResource Include="Forms\RawProgramForm.resx">
       <DependentUpon>RawProgramForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SendProgForm.en.resx">
+      <DependentUpon>SendProgForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SendProgForm.resx">
       <DependentUpon>SendProgForm.cs</DependentUpon>
     </EmbeddedResource>

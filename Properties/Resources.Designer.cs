@@ -1327,6 +1327,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Поделиться программером.
+        /// </summary>
+        internal static string tb_share_prog {
+            get {
+                return ResourceManager.GetString("tb_share_prog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Запись файла в разделы отменена пользователем..
         /// </summary>
         internal static string tb_write_cancel {

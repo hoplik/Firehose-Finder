@@ -544,6 +544,9 @@
   <data name="tb_send_conf" xml:space="preserve">
     <value>Отправка лога подтверждена пользователем.</value>
   </data>
+  <data name="tb_share_prog" xml:space="preserve">
+    <value>Поделиться программером</value>
+  </data>
   <data name="tb_write_cancel" xml:space="preserve">
     <value>Запись файла в разделы отменена пользователем.</value>
   </data>

@@ -669,6 +669,10 @@
     <value>Sending the log has been confirmed by the user.</value>
     <comment>Отправка лога подтверждена пользователем.</comment>
   </data>
+  <data name="tb_share_prog" xml:space="preserve">
+    <value>Share the programmer</value>
+    <comment>Поделиться программером</comment>
+  </data>
   <data name="tb_write_cancel" xml:space="preserve">
     <value>Writing a file to sections was canceled by the user.</value>
     <comment>Запись файла в разделы отменена пользователем.</comment>
