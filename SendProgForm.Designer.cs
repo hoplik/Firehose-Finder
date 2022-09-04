@@ -87,7 +87,7 @@
             this.dataGridView_shareprog.ReadOnly = true;
             this.dataGridView_shareprog.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView_shareprog.RowTemplate.Height = 24;
-            this.dataGridView_shareprog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView_shareprog.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridView_shareprog_RowHeaderMouseDoubleClick);
             // 
             // Column_dev_num
             // 

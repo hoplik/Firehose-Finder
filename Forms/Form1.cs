@@ -32,6 +32,13 @@ namespace FirehoseFinder
         internal Flash_Disk[] Flash_Params = new Flash_Disk[1];
         internal DeviceData Global_ADB_Device = new DeviceData();
         internal string Global_FB_Device = string.Empty;
+        internal string[][] Global_Share_Prog = new string[4][] //Массив данных для отправки программера
+        {
+            new string[8] { "ADB", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty},
+            new string[8] { "Sahara", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty},
+            new string[8] { "Loader", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty},
+            new string[8] { "Programer", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty }
+        };
         internal Dictionary<string, string> Connected_Devices = new Dictionary<string, string>(); //Список подключённых ADB устройств
         //Подтянули перевод на другие языки
         readonly ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
@@ -240,15 +247,23 @@ namespace FirehoseFinder
             switch (imf.ShowDialog())
             {
                 case DialogResult.Cancel:
+                    Global_Share_Prog[0][1] = string.Empty;
                     label_tm.Text = "---";
+                    Global_Share_Prog[0][2] = string.Empty;
                     label_model.Text = "---";
+                    Global_Share_Prog[0][3] = string.Empty;
                     label_altname.Text = "---";
+                    Global_Share_Prog[0][4] = string.Empty;
                     label_chip_sn.Text = "---";
+                    Global_Share_Prog[0][5] = string.Empty;
                     break;
                 default:
                     label_tm.Text = imf.comboBox_tm_insert.Text;
                     label_model.Text = imf.textBox_model_insert.Text;
                     label_altname.Text = imf.textBox_alt_insert.Text;
+                    Global_Share_Prog[0][2] = label_tm.Text;
+                    Global_Share_Prog[0][3] = label_model.Text;
+                    Global_Share_Prog[0][4] = label_altname.Text;
                     break;
             }
         }
@@ -1835,6 +1850,9 @@ namespace FirehoseFinder
             label_tm.Text = dataGridView_collection["Trademark", sel_row].Value.ToString();
             label_model.Text = dataGridView_collection["Model", sel_row].Value.ToString();
             label_altname.Text = dataGridView_collection["AltName", sel_row].Value.ToString();
+            Global_Share_Prog[0][2] = label_tm.Text;
+            Global_Share_Prog[0][3] = label_model.Text;
+            Global_Share_Prog[0][4] = label_altname.Text;
             tabControl1.SelectedTab = tabPage_firehose;
             //Загружаем программер с сервера
             if (!string.IsNullOrEmpty(dataGridView_collection["Url", sel_row].Value.ToString()))
@@ -2310,6 +2328,11 @@ namespace FirehoseFinder
                 LocRes.GetString("model") + '\u003A' + '\u0020' + label_model.Text + Environment.NewLine +
                 LocRes.GetString("alt_name") + '\u003A' + '\u0020' + label_altname.Text + Environment.NewLine +
                 LocRes.GetString("chip_sn") + '\u003A' + '\u0020' + label_chip_sn.Text + Environment.NewLine);
+            Global_Share_Prog[0][1] = device.Serial;
+            Global_Share_Prog[0][2] = label_tm.Text;
+            Global_Share_Prog[0][3] = label_model.Text;
+            Global_Share_Prog[0][4] = label_altname.Text;
+            Global_Share_Prog[0][5] = label_chip_sn.Text;
             if (reset)
             {
                 textBox_soft_term.AppendText(LocRes.GetString("tb_reboot") + '\u0020' +
@@ -2432,6 +2455,14 @@ namespace FirehoseFinder
                 string.Format("HWID: {0}{1}{2}", textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text) + Environment.NewLine +
                 string.Format("OEM PK Hash ({0}): {1}", textBox_oemhash.TextLength, textBox_oemhash.Text) + Environment.NewLine +
                 string.Format("SBL SW Version: {0}", label_SW_Ver.Text);
+            //Записываем данные в глобальный массив
+            Global_Share_Prog[0][2] = label_tm.Text;
+            Global_Share_Prog[0][3] = label_model.Text;
+            Global_Share_Prog[0][4] = label_altname.Text;
+            Global_Share_Prog[1][4] = textBox_hwid.Text + textBox_oemid.Text + textBox_modelid.Text + '\u002D' +
+                textBox_oemhash.Text.Remove(0, textBox_oemhash.Text.Length - 8) + '\u002D' +
+                label_SW_Ver.Text.TrimStart('0');
+            Global_Share_Prog[1][5] = chip_sn;
             if (checkBox_Log.Checked)
             {
                 try
