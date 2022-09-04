@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendProgForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button_send = new System.Windows.Forms.Button();
             this.button_cancel = new System.Windows.Forms.Button();
@@ -81,6 +82,14 @@
             this.Column_id,
             this.Column_path});
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridView_shareprog, 5);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_shareprog.DefaultCellStyle = dataGridViewCellStyle1;
             resources.ApplyResources(this.dataGridView_shareprog, "dataGridView_shareprog");
             this.dataGridView_shareprog.MultiSelect = false;
             this.dataGridView_shareprog.Name = "dataGridView_shareprog";

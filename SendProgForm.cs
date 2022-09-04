@@ -19,11 +19,6 @@ namespace FirehoseFinder
         {
             InitializeComponent();
             dataGridView_shareprog.Rows.Add(formfhf.Global_Share_Prog.Length);
-            //Данные от Sahara
-            //Данные от Loader
-            //Данные от Programer
-            formfhf.Global_Share_Prog[3][6] = formfhf.dataGridView_final.SelectedRows[0].Cells[2].Value.ToString();
-            formfhf.Global_Share_Prog[3][7] = formfhf.label_Sahara_fhf.Text;
             for (int i = 0; i < formfhf.Global_Share_Prog.Length; i++)
             {
                 dataGridView_shareprog.Rows[i].HeaderCell.Value = formfhf.Global_Share_Prog[i][0];

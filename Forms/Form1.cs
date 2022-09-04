@@ -1603,6 +1603,8 @@ namespace FirehoseFinder
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
                 }
+                Global_Share_Prog[3][6] = dataGridView_final.SelectedRows[0].Cells[2].Value.ToString();
+                Global_Share_Prog[3][7] = label_Sahara_fhf.Text;
             }
         }
 
@@ -2459,10 +2461,10 @@ namespace FirehoseFinder
             Global_Share_Prog[0][2] = label_tm.Text;
             Global_Share_Prog[0][3] = label_model.Text;
             Global_Share_Prog[0][4] = label_altname.Text;
-            Global_Share_Prog[1][4] = textBox_hwid.Text + textBox_oemid.Text + textBox_modelid.Text + '\u002D' +
+            Global_Share_Prog[1][5] = chip_sn;
+            Global_Share_Prog[1][6] = textBox_hwid.Text + '\u002D' + textBox_oemid.Text + '\u002D' + textBox_modelid.Text + '\u002D' +
                 textBox_oemhash.Text.Remove(0, textBox_oemhash.Text.Length - 8) + '\u002D' +
                 label_SW_Ver.Text.TrimStart('0');
-            Global_Share_Prog[1][5] = chip_sn;
             if (checkBox_Log.Checked)
             {
                 try
