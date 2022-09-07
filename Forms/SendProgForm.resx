@@ -117,13 +117,252 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="button_send.Text" xml:space="preserve">
-    <value>Share</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="button_cancel.Text" xml:space="preserve">
-    <value>Cancel</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button_send.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="button_send.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button_send.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 266</value>
+  </data>
+  <data name="button_send.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 24</value>
+  </data>
+  <data name="button_send.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="button_send.Text" xml:space="preserve">
+    <value>Поделиться</value>
+  </data>
+  <data name="&gt;&gt;button_send.Name" xml:space="preserve">
+    <value>button_send</value>
+  </data>
+  <data name="&gt;&gt;button_send.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_send.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_send.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button_cancel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="button_cancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1298, 266</value>
+  </data>
+  <data name="button_cancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 24</value>
+  </data>
+  <data name="button_cancel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="button_cancel.Text" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="&gt;&gt;button_cancel.Name" xml:space="preserve">
+    <value>button_cancel</value>
+  </data>
+  <data name="&gt;&gt;button_cancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_cancel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_cancel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="Column_dev_num.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Column_dev_num.HeaderText" xml:space="preserve">
+    <value>Номер устройства</value>
+  </data>
+  <data name="Column_dev_num.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Column_dev_num.Width" type="System.Int32, mscorlib">
+    <value>145</value>
+  </data>
+  <metadata name="Column_manuf.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Column_manuf.HeaderText" xml:space="preserve">
+    <value>Производитель</value>
+  </data>
+  <data name="Column_manuf.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Column_manuf.Width" type="System.Int32, mscorlib">
+    <value>140</value>
+  </data>
+  <metadata name="Column_model.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Column_model.HeaderText" xml:space="preserve">
+    <value>Модель</value>
+  </data>
+  <data name="Column_model.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Column_model.Width" type="System.Int32, mscorlib">
+    <value>86</value>
+  </data>
+  <metadata name="Column_altname.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Column_altname.HeaderText" xml:space="preserve">
+    <value>Альтернативное наименование</value>
+  </data>
+  <data name="Column_altname.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Column_altname.Width" type="System.Int32, mscorlib">
+    <value>224</value>
+  </data>
+  <metadata name="Column_chipnum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Column_chipnum.HeaderText" xml:space="preserve">
+    <value>Номер чипа</value>
+  </data>
+  <data name="Column_chipnum.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Column_chipnum.Width" type="System.Int32, mscorlib">
+    <value>105</value>
+  </data>
+  <metadata name="Column_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Column_id.HeaderText" xml:space="preserve">
+    <value>Идентификаторы</value>
+  </data>
+  <data name="Column_id.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Column_id.Width" type="System.Int32, mscorlib">
+    <value>151</value>
+  </data>
+  <metadata name="Column_path.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Column_path.HeaderText" xml:space="preserve">
+    <value>Путь к файлу</value>
+  </data>
+  <data name="Column_path.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Column_path.Width" type="System.Int32, mscorlib">
+    <value>114</value>
+  </data>
+  <data name="dataGridView_shareprog.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="dataGridView_shareprog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 73</value>
+  </data>
+  <data name="dataGridView_shareprog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1389, 187</value>
+  </data>
+  <data name="dataGridView_shareprog.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;dataGridView_shareprog.Name" xml:space="preserve">
+    <value>dataGridView_shareprog</value>
+  </data>
+  <data name="&gt;&gt;dataGridView_shareprog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView_shareprog.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView_shareprog.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label_title.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_title.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="label_title.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="label_title.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1389, 70</value>
+  </data>
+  <data name="label_title.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label_title.Text" xml:space="preserve">
+    <value>Пожалуйста, проверьте корректность информации по таблице.
+При необходимости корректировки данных закройте окно, нажав кнопку "Отмена", и проведите повторный опрос данных устройства или программера.
+В случае корректной информации нажмите кнопку "Поделиться" для отправки программера и идентификаторов модели в общий чат.
+В общую базу данные будут добавлены при следующем обновлении программы.</value>
+  </data>
+  <data name="label_title.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;label_title.Name" xml:space="preserve">
+    <value>label_title</value>
+  </data>
+  <data name="&gt;&gt;label_title.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_title.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;label_title.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1395, 293</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="button_send" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_cancel" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="dataGridView_shareprog" Row="1" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="label_title" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,125,Percent,100,Absolute,100,Absolute,20,Absolute,20" /&gt;&lt;Rows Styles="Absolute,70,Percent,100,Absolute,30,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1395, 293</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAQAAEABACXOwIAFgAAAIlQTkcNChoKAAAADUlIRFIAAAKmAAACiggGAAAA7xWZ0gAAIABJ
@@ -2569,6 +2808,54 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Share the programmer</value>
+    <value>Поделиться программером</value>
+  </data>
+  <data name="&gt;&gt;Column_dev_num.Name" xml:space="preserve">
+    <value>Column_dev_num</value>
+  </data>
+  <data name="&gt;&gt;Column_dev_num.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_manuf.Name" xml:space="preserve">
+    <value>Column_manuf</value>
+  </data>
+  <data name="&gt;&gt;Column_manuf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_model.Name" xml:space="preserve">
+    <value>Column_model</value>
+  </data>
+  <data name="&gt;&gt;Column_model.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_altname.Name" xml:space="preserve">
+    <value>Column_altname</value>
+  </data>
+  <data name="&gt;&gt;Column_altname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_chipnum.Name" xml:space="preserve">
+    <value>Column_chipnum</value>
+  </data>
+  <data name="&gt;&gt;Column_chipnum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_id.Name" xml:space="preserve">
+    <value>Column_id</value>
+  </data>
+  <data name="&gt;&gt;Column_id.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_path.Name" xml:space="preserve">
+    <value>Column_path</value>
+  </data>
+  <data name="&gt;&gt;Column_path.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SendProgForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

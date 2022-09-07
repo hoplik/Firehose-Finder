@@ -41,6 +41,7 @@
             this.Column_chipnum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_path = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label_title = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_shareprog)).BeginInit();
             this.SuspendLayout();
@@ -48,9 +49,10 @@
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.button_send, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.button_cancel, 4, 3);
+            this.tableLayoutPanel1.Controls.Add(this.button_send, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.button_cancel, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.dataGridView_shareprog, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label_title, 0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // button_send
@@ -81,7 +83,7 @@
             this.Column_chipnum,
             this.Column_id,
             this.Column_path});
-            this.tableLayoutPanel1.SetColumnSpan(this.dataGridView_shareprog, 5);
+            this.tableLayoutPanel1.SetColumnSpan(this.dataGridView_shareprog, 3);
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -96,7 +98,6 @@
             this.dataGridView_shareprog.ReadOnly = true;
             this.dataGridView_shareprog.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView_shareprog.RowTemplate.Height = 24;
-            this.dataGridView_shareprog.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridView_shareprog_RowHeaderMouseDoubleClick);
             // 
             // Column_dev_num
             // 
@@ -140,6 +141,12 @@
             this.Column_path.Name = "Column_path";
             this.Column_path.ReadOnly = true;
             // 
+            // label_title
+            // 
+            resources.ApplyResources(this.label_title, "label_title");
+            this.tableLayoutPanel1.SetColumnSpan(this.label_title, 3);
+            this.label_title.Name = "label_title";
+            // 
             // SendProgForm
             // 
             resources.ApplyResources(this, "$this");
@@ -150,6 +157,7 @@
             this.Name = "SendProgForm";
             this.Load += new System.EventHandler(this.SendProgForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_shareprog)).EndInit();
             this.ResumeLayout(false);
 
@@ -161,6 +169,7 @@
         private System.Windows.Forms.Button button_send;
         private System.Windows.Forms.Button button_cancel;
         internal System.Windows.Forms.DataGridView dataGridView_shareprog;
+        private System.Windows.Forms.Label label_title;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_dev_num;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_manuf;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_model;

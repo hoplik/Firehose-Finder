@@ -424,10 +424,10 @@
     <Compile Include="Forms\RawProgramForm.Designer.cs">
       <DependentUpon>RawProgramForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SendProgForm.cs">
+    <Compile Include="Forms\SendProgForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SendProgForm.Designer.cs">
+    <Compile Include="Forms\SendProgForm.Designer.cs">
       <DependentUpon>SendProgForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
@@ -443,10 +443,10 @@
     <EmbeddedResource Include="Forms\RawProgramForm.resx">
       <DependentUpon>RawProgramForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SendProgForm.en.resx">
+    <EmbeddedResource Include="Forms\SendProgForm.en.resx">
       <DependentUpon>SendProgForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SendProgForm.resx">
+    <EmbeddedResource Include="Forms\SendProgForm.resx">
       <DependentUpon>SendProgForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Resources\Greeting_en.txt" />

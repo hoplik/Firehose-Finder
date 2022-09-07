@@ -423,6 +423,7 @@ namespace FirehoseFinder
             bool getgpt = false; //Необходимо ли получить таблицу GPT
             button_Sahara_Ids.Enabled = false;
             output_FH=string.Empty;
+            int counter_backgroung = 0;
             if (!File.Exists(label_Sahara_fhf.Text))
             {
                 DialogResult dr = MessageBox.Show(LocRes.GetString("mb_note_sel_prog"),
@@ -631,9 +632,14 @@ namespace FirehoseFinder
             //Притормозим основной поток пока не выполнится асинхрон
             while (backgroundWorker_rawprogram.IsBusy)
             {
-                Thread.Sleep(100);
+                counter_backgroung++;
+                if (counter_backgroung>100) counter_backgroung=100;
+                progressBar_phone.Value = counter_backgroung;
+                Thread.Sleep(1200);
                 Application.DoEvents();
             }
+            counter_backgroung=0;
+            progressBar_phone.Value=counter_backgroung;
             if (need_parsing_lun) NeedParsingLun(output_FH, lun_int);
             if (getgpt) GetGPT(lun_int);
             if (pp.checkBox_output.Checked)
@@ -725,6 +731,15 @@ namespace FirehoseFinder
                                     string m_type = parstr.Substring(0, parstr.IndexOf("\","));
                                     if (m_type.Equals("UFS")) parsLUN_int.SetValue((int)Guide.MEM_TYPE.UFS, 3);
                                     break;
+                                case "Chip serial num:":
+                                    parstr = correct_pars_str.Substring(correct_pars_str.IndexOf("(0x") + 3, 8);
+                                    Global_Share_Prog[2][5] = parstr.ToUpper();
+                                    break;
+                                case "Device Serial Nu":
+                                    parstr = correct_pars_str.Substring(correct_pars_str.IndexOf(": 0x") + 4, 8);
+                                    Global_Share_Prog[2][1] = parstr.ToUpper();
+                                    break;
+                                //Ошибки
                                 //Используется программер с авторизацией
                                 case "Only nop and sig":
                                     //if (item.EndsWith("authentication."))
@@ -796,8 +811,6 @@ namespace FirehoseFinder
                             " Если есть желание поделиться этим программером, добавив его в базу данных, пожалуйста перейдите в окно отправки программера в чат сейчас или после завершения текущей работы." +
                             " В окне \"Поделиться программером\" из меню \"Вид\" необходимо заполнить все недостающие данные модели вручную или автоматически для корректной привязки программера к модели.");
                     }
-                    else MessageBox.Show("Программер есть на сервере");
-                    //Прописываем путь к программеру и серийный номер в глобальный массив
                     if (comboBox_lun_count.SelectedIndex != lun_numder) comboBox_lun_count.SelectedIndex = lun_numder;
                     else
                     {
@@ -2330,7 +2343,7 @@ namespace FirehoseFinder
                 LocRes.GetString("model") + '\u003A' + '\u0020' + label_model.Text + Environment.NewLine +
                 LocRes.GetString("alt_name") + '\u003A' + '\u0020' + label_altname.Text + Environment.NewLine +
                 LocRes.GetString("chip_sn") + '\u003A' + '\u0020' + label_chip_sn.Text + Environment.NewLine);
-            Global_Share_Prog[0][1] = device.Serial;
+            Global_Share_Prog[0][1] = device.Serial.ToUpper();
             Global_Share_Prog[0][2] = label_tm.Text;
             Global_Share_Prog[0][3] = label_model.Text;
             Global_Share_Prog[0][4] = label_altname.Text;
@@ -2609,7 +2622,7 @@ namespace FirehoseFinder
             label_select_gpt.Text = "0";
             contextMenuStrip_gpt.Items[4].Enabled = false;
             contextMenuStrip_gpt.Items[7].Enabled = false;
-            //отправкаПрограммераToolStripMenuItem.Enabled = false;
+            отправкаПрограммераToolStripMenuItem.Enabled = false;
             listView_GPT.Items.Clear();
         }
 
