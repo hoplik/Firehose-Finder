@@ -232,6 +232,7 @@
             this.process_FH_Loader = new System.Diagnostics.Process();
             this.process_Sahara = new System.Diagnostics.Process();
             this.process_Fastboot = new System.Diagnostics.Process();
+            this.backgroundWorker_sahara = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabPage_collection.SuspendLayout();
@@ -1764,6 +1765,11 @@
             this.process_Fastboot.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
             this.process_Fastboot.SynchronizingObject = this;
             // 
+            // backgroundWorker_sahara
+            // 
+            this.backgroundWorker_sahara.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_sahara_DoWork);
+            this.backgroundWorker_sahara.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_sahara_RunWorkerCompleted);
+            // 
             // Formfhf
             // 
             resources.ApplyResources(this, "$this");
@@ -2032,6 +2038,7 @@
         internal System.Windows.Forms.Label label_model;
         internal System.Windows.Forms.Label label_tm;
         internal System.Windows.Forms.Label label_chip_sn;
+        private System.ComponentModel.BackgroundWorker backgroundWorker_sahara;
     }
 }
 

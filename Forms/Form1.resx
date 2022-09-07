@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="dataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>668, 63</value>
+    <value>916, 60</value>
   </metadata>
   <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>928, 63</value>
+    <value>1176, 60</value>
   </metadata>
   <metadata name="backgroundWorker_Read_File.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>528, 9</value>
   </metadata>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1017, 106</value>
+    <value>1319, 103</value>
   </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="progressBar_phone.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -160,7 +160,7 @@
     <value>3</value>
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1132, 63</value>
+    <value>17, 103</value>
   </metadata>
   <data name="автоматическиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 26</value>
@@ -358,7 +358,7 @@
     <value>0</value>
   </data>
   <metadata name="bindingNavigator_collection.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1010, 20</value>
+    <value>17, 60</value>
   </metadata>
   <data name="bindingNavigatorCountItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 29</value>
@@ -614,7 +614,7 @@
     <value>Vertical</value>
   </data>
   <data name="textBox_main_term.Size" type="System.Drawing.Size, System.Drawing">
-    <value>409, 417</value>
+    <value>409, 419</value>
   </data>
   <data name="textBox_main_term.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -734,7 +734,7 @@
     <value>51</value>
   </data>
   <data name="dataGridView_final.Size" type="System.Drawing.Size, System.Drawing">
-    <value>946, 417</value>
+    <value>946, 419</value>
   </data>
   <data name="dataGridView_final.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -758,7 +758,7 @@
     <value>3, 180</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 417</value>
+    <value>1355, 419</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -1605,7 +1605,7 @@ _HASH</value>
     <value>2</value>
   </data>
   <metadata name="statusStrip_firehose.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>828, 106</value>
+    <value>1130, 103</value>
   </metadata>
   <data name="toolStripStatusLabel_filescompleted.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 20</value>
@@ -1623,7 +1623,7 @@ _HASH</value>
     <value>Готово</value>
   </data>
   <data name="statusStrip_firehose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 597</value>
+    <value>3, 599</value>
   </data>
   <data name="statusStrip_firehose.Size" type="System.Drawing.Size, System.Drawing">
     <value>1355, 26</value>
@@ -1656,7 +1656,7 @@ _HASH</value>
     <value>3, 2, 3, 2</value>
   </data>
   <data name="tabPage_firehose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 625</value>
+    <value>1361, 627</value>
   </data>
   <data name="tabPage_firehose.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1932,7 +1932,7 @@ _HASH</value>
     <value>3, 133</value>
   </data>
   <data name="groupBox_adb_commands.Size" type="System.Drawing.Size, System.Drawing">
-    <value>923, 421</value>
+    <value>923, 423</value>
   </data>
   <data name="groupBox_adb_commands.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -2028,7 +2028,7 @@ _HASH</value>
     <value>3</value>
   </data>
   <data name="tableLayoutPanel_adb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>929, 557</value>
+    <value>929, 559</value>
   </data>
   <data name="tableLayoutPanel_adb.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -2055,7 +2055,7 @@ _HASH</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage_adb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 563</value>
+    <value>935, 565</value>
   </data>
   <data name="tabPage_adb.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2520,7 +2520,7 @@ _HASH</value>
     <value>0</value>
   </data>
   <metadata name="contextMenuStrip_gpt.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>460, 63</value>
+    <value>708, 60</value>
   </metadata>
   <data name="сохранитьВыбранныйРазделToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2769,7 +2769,7 @@ _HASH</value>
     <value>Bottom</value>
   </data>
   <data name="groupBox_LUN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 223</value>
+    <value>3, 221</value>
   </data>
   <data name="groupBox_LUN.Size" type="System.Drawing.Size, System.Drawing">
     <value>929, 339</value>
@@ -2946,7 +2946,7 @@ _HASH</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage_sahara.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 565</value>
+    <value>935, 563</value>
   </data>
   <data name="tabPage_sahara.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3609,10 +3609,10 @@ _HASH</value>
     <value>1</value>
   </data>
   <metadata name="serialPort1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>700, 106</value>
+    <value>1002, 103</value>
   </metadata>
   <metadata name="dataSet_Find.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>784, 63</value>
+    <value>1032, 60</value>
   </metadata>
   <metadata name="backgroundWorker_dump.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>15, 9</value>
@@ -3621,7 +3621,7 @@ _HASH</value>
     <value>790, 17</value>
   </metadata>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1267, 63</value>
+    <value>152, 103</value>
   </metadata>
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>Бинарные файлы (*.bin)|*.bin|Все файлы (*.*)|*.*</value>
@@ -3630,13 +3630,13 @@ _HASH</value>
     <value>Выбор файла для загрузки</value>
   </data>
   <metadata name="bindingSource_collection.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 63</value>
+    <value>265, 60</value>
   </metadata>
   <metadata name="bindingSource_firehose.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>244, 63</value>
+    <value>492, 60</value>
   </metadata>
   <metadata name="saveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>538, 106</value>
+    <value>840, 103</value>
   </metadata>
   <data name="saveFileDialog1.Filter" xml:space="preserve">
     <value>XML-файлы (*.xml)|*.xml</value>
@@ -3648,13 +3648,13 @@ _HASH</value>
     <value>250, 9</value>
   </metadata>
   <metadata name="process_FH_Loader.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>191, 106</value>
+    <value>493, 103</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>134</value>
+    <value>129</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
@@ -6637,6 +6637,12 @@ _HASH</value>
   <data name="&gt;&gt;process_Fastboot.Type" xml:space="preserve">
     <value>System.Diagnostics.Process, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;backgroundWorker_sahara.Name" xml:space="preserve">
+    <value>backgroundWorker_sahara</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker_sahara.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Formfhf</value>
   </data>
@@ -6644,9 +6650,12 @@ _HASH</value>
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="process_Sahara.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>377, 106</value>
+    <value>679, 103</value>
   </metadata>
   <metadata name="process_Fastboot.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 106</value>
+    <value>319, 103</value>
+  </metadata>
+  <metadata name="backgroundWorker_sahara.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1009, 17</value>
   </metadata>
 </root>

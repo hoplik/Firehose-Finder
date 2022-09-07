@@ -373,6 +373,10 @@
     <value>Select the programmer on the "Work with files" tab</value>
     <comment>Выберете программер на вкладке "Работа с файлами"</comment>
   </data>
+  <data name="mb_share_prog" xml:space="preserve">
+    <value>It seems that the program you selected worked successfully and at the same time it is not in the database. If you want to share this programmer by adding it to the database, please go to the window for sending the programmer to the chat now or after completing the current work. In the "Share programmer" window from the "View" menu, it is necessary to fill in all the missing model data manually or automatically for the correct binding of the programmer to the model.</value>
+    <comment>Похоже, что выбранный вами программе отработал успешно и при этом он отсутствует в базе данных. Если есть желание поделиться этим программером, добавив его в базу данных, пожалуйста, перейдите в окно отправки программера в чат сейчас или после завершения текущей работы. В окне "Поделиться программером" из меню "Вид" необходимо заполнить все недостающие данные модели вручную или автоматически для корректной привязки программера к модели.</comment>
+  </data>
   <data name="mb_title_adb_er" xml:space="preserve">
     <value>ADB error</value>
     <comment>Ошибка ADB</comment>

@@ -391,6 +391,7 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void ListView_comport_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
+            StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -c 1 -c 2 -c 3 -c 7");
             if (e.Item.Checked)
             {
                 serialPort1.PortName = e.Item.Text;
@@ -399,7 +400,7 @@ namespace FirehoseFinder
                 if (waitSahara)
                 {
                     button_Sahara_Ids.Enabled = false;
-                    GetSaharaIDs();
+                    GetSaharaIDs(sahara_command_args);
                 }
             }
             else StartStatus();
@@ -412,7 +413,8 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button_Sahara_Ids_Click(object sender, EventArgs e)
         {
-            GetSaharaIDs();
+            StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -c 1 -c 2 -c 3 -c 7");
+            GetSaharaIDs(sahara_command_args);
         }
 
         /// <summary>
@@ -438,6 +440,12 @@ namespace FirehoseFinder
                 return;
             }
             sahara_command_args.Append(label_Sahara_fhf.Text);
+            //Если отсутствуют ид сахары, то получаем их вместе с загрузкой лоадера
+            if (string.IsNullOrEmpty(Global_Share_Prog[1][6]))
+            {
+                sahara_command_args.Append(" -c 1 -c 2 -c 3 -c 7");
+                GetSaharaIDs(sahara_command_args);
+            }
             switch (comboBox_log.SelectedIndex)
             {
                 case 0:
@@ -474,26 +482,20 @@ namespace FirehoseFinder
                     button_Sahara_CommandStart.Enabled = false;
                     return;
                 }
-                process_Sahara.StartInfo.Arguments = sahara_command_args.ToString();
-                try
+                //Если лоадер ещё не загружен в imem, то грузим в параллельном потоке
+                if (!backgroundWorker_sahara.IsBusy) backgroundWorker_sahara.RunWorkerAsync(sahara_command_args);
+                //Притормозим основной поток на 2 минуты или пока не выполнится асинхрон sahara
+                while (backgroundWorker_sahara.IsBusy && counter_backgroung<100)
                 {
-                    process_Sahara.Start();
-                    StreamReader reader = process_Sahara.StandardOutput;
-                    StreamReader erread = process_Sahara.StandardError;
-                    string output = string.Empty;
-                    if (reader.Peek() >= 0) output = reader.ReadToEnd();
-                    if (erread.Peek() >= 0) output = "er: " + erread.ReadToEnd();
-                    textBox_soft_term.AppendText(output + Environment.NewLine);
-                    process_Sahara.WaitForExit();
-                    process_Sahara.Close();
-                    FHAlreadyLoaded = true;
-                    NeedReset = true;
+                    counter_backgroung++;
+                    progressBar_phone.Value = counter_backgroung;
+                    Thread.Sleep(1200);
+                    Application.DoEvents();
                 }
-                catch (Exception ex)
-                {
-                    textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
-                    SendErrorInChat();
-                }
+                counter_backgroung=0;
+                progressBar_phone.Value=counter_backgroung;
+                FHAlreadyLoaded = true;
+                NeedReset = true;
             }
             //После первой выполненной команды по получению инфо хранилища делаем доступным выбор других команд
             comboBox_fh_commands.Enabled = true;
@@ -811,9 +813,7 @@ namespace FirehoseFinder
                     if (ProgNoServer())
                     {
                         отправкаПрограммераToolStripMenuItem.Enabled = true;
-                        MessageBox.Show("Похоже, что выбранный вами программер отработал успешно и при этом он отсутствует в базе данных." +
-                            " Если есть желание поделиться этим программером, добавив его в базу данных, пожалуйста перейдите в окно отправки программера в чат сейчас или после завершения текущей работы." +
-                            " В окне \"Поделиться программером\" из меню \"Вид\" необходимо заполнить все недостающие данные модели вручную или автоматически для корректной привязки программера к модели.");
+                        MessageBox.Show(LocRes.GetString("mb_share_prog"));
                     }
                     if (comboBox_lun_count.SelectedIndex != lun_numder) comboBox_lun_count.SelectedIndex = lun_numder;
                     else
@@ -1416,9 +1416,10 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button_findIDs_Click(object sender, EventArgs e)
         {
+            StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -c 1 -c 2 -c 3 -c 7");
             if (listView_comport.CheckedItems.Count > 0)
             {
-                GetSaharaIDs();
+                GetSaharaIDs(sahara_command_args);
                 return;
             }
             if (!ADB_Check())
@@ -2243,10 +2244,10 @@ namespace FirehoseFinder
             //Заполнили листвью наименованием и транспортом
             foreach (DeviceData dev in devices)
             {
-                ListViewItem viewItem = new ListViewItem(dev.Serial.ToUpper());
+                ListViewItem viewItem = new ListViewItem(dev.Serial);
                 viewItem.SubItems.Add(dev.Model);
                 listView_ADB_devices.Items.Add(viewItem);
-                if (!Connected_Devices.ContainsKey(dev.Serial.ToUpper())) Connected_Devices.Add(dev.Serial.ToUpper(), dev.Model);
+                if (!Connected_Devices.ContainsKey(dev.Serial)) Connected_Devices.Add(dev.Serial, dev.Model);
             }
             //Пометили первый попавшийся и активировали если больше одного
             if (listView_ADB_devices.Items.Count > 0)
@@ -2257,8 +2258,8 @@ namespace FirehoseFinder
             button_ADB_start.Enabled = false;
             foreach (var device in devices)
             {
-                textBox_soft_term.AppendText(LocRes.GetString("tb_dev_con") + '\u0020' + device.Serial.ToUpper() + Environment.NewLine);
-                textBox_main_term.AppendText(LocRes.GetString("tb_dev_con") + '\u0020' + device.Serial.ToUpper() + Environment.NewLine);
+                textBox_soft_term.AppendText(LocRes.GetString("tb_dev_con") + '\u0020' + device + Environment.NewLine);
+                textBox_main_term.AppendText(LocRes.GetString("tb_dev_con") + '\u0020' + device + Environment.NewLine);
             }
             if (devices.Count == 0)
             {
@@ -2380,8 +2381,9 @@ namespace FirehoseFinder
         /// <summary>
         /// Получаем идентификаторы из Сахары
         /// </summary>
-        private void GetSaharaIDs()
+        private void GetSaharaIDs(StringBuilder sahara_command_args)
         {
+            int counter_backgroung = 0;
             waitSahara = false;
             if (NeedReset)
             {
@@ -2393,25 +2395,17 @@ namespace FirehoseFinder
                 return;
             }
             //Выполняем запрос HWID-OEMID (command01, 02, 03, 07)
-            process_Sahara.StartInfo.Arguments = "-u " + serialPort1.PortName.Remove(0, 3) + " -c 1 -c 2 -c 3 -c 7";
-            try
+            if (!backgroundWorker_sahara.IsBusy) backgroundWorker_sahara.RunWorkerAsync(sahara_command_args);
+            //Притормозим основной поток на 2 минуты или пока не выполнится асинхрон sahara
+            while (backgroundWorker_sahara.IsBusy && counter_backgroung<100)
             {
-                process_Sahara.Start();
-                StreamReader reader = process_Sahara.StandardOutput;
-                StreamReader erread = process_Sahara.StandardError;
-                string output = string.Empty;
-                if (erread.Peek() >= 0) output = "er: " + erread.ReadToEnd();
-                if (reader.Peek() >= 0) output = reader.ReadToEnd();
-                textBox_soft_term.AppendText(output + Environment.NewLine);
-                textBox_main_term.AppendText(output + Environment.NewLine);
-                process_Sahara.WaitForExit();
-                process_Sahara.Close();
+                counter_backgroung++;
+                progressBar_phone.Value = counter_backgroung;
+                Thread.Sleep(1200);
+                Application.DoEvents();
             }
-            catch (Exception ex)
-            {
-                textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
-                SendErrorInChat();
-            }
+            counter_backgroung=0;
+            progressBar_phone.Value=counter_backgroung;
             NeedReset = true;
             //Обрабатываем запрос идентификатора 1
             string chip_sn = func.SaharaCommand1();
@@ -2442,9 +2436,11 @@ namespace FirehoseFinder
             label_SW_Ver.Text = SW_VER;
             textBox_soft_term.AppendText("SBL SW Ver. - " + SW_VER + Environment.NewLine);
             textBox_main_term.AppendText("SBL SW Ver. - " + SW_VER + Environment.NewLine);
+            toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_id_rec");
+        }
+/*
             //Переходим на вкладку Работа с файлами
             tabControl1.SelectedTab = tabPage_firehose;
-            toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_id_rec");
             if (checkBox_Log.Checked || checkBox_send.Checked)
             {
                 if (label_tm.Text.StartsWith("---") || label_model.Text.StartsWith("---"))
@@ -2504,775 +2500,797 @@ namespace FirehoseFinder
                     toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_id_empty");
                 }
                 else CheckIDs(logstr);
-            }
-        }
+            }*/
 
-        /// <summary>
-        /// Проверяем все идентификаторы на наличие в Справочнике.
-        /// </summary>
-        public void CheckIDs(string send_string)
+    /// <summary>
+    /// Проверяем все идентификаторы на наличие в Справочнике.
+    /// </summary>
+    public void CheckIDs(string send_string)
+    {
+        //Проводим две проверки: 
+        //Все четыре идентификатора Сахары совпадают 
+        bindingSource_collection.Filter = string.Format(
+             "Trust is Not Null AND HWID LIKE '{0}' AND OEMID LIKE '{1}' AND MODELID LIKE '{2}' AND HASHID LIKE '{3}'",
+             textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text, textBox_oemhash.Text);
+        if (dataGridView_collection.Rows.Count > 0) //Есть устройство с такими идентификаторами
         {
-            //Проводим две проверки: 
-            //Все четыре идентификатора Сахары совпадают 
-            bindingSource_collection.Filter = string.Format(
-                 "Trust is Not Null AND HWID LIKE '{0}' AND OEMID LIKE '{1}' AND MODELID LIKE '{2}' AND HASHID LIKE '{3}'",
-                 textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text, textBox_oemhash.Text);
-            if (dataGridView_collection.Rows.Count > 0) //Есть устройство с такими идентификаторами
+            for (int i = 0; i < dataGridView_collection.Rows.Count; i++)
             {
-                for (int i = 0; i < dataGridView_collection.Rows.Count; i++)
+                if (Convert.ToByte(dataGridView_collection["LASTKNOWNSBLVER", i].Value.ToString(), 16) >= Convert.ToByte(label_SW_Ver.Text, 16))
                 {
-                    if (Convert.ToByte(dataGridView_collection["LASTKNOWNSBLVER", i].Value.ToString(), 16) >= Convert.ToByte(label_SW_Ver.Text, 16))
-                    {
-                        if (dataGridView_collection["Model", i].Value.ToString().Contains(label_model.Text)) return; //Проверяем модель на наличие
-                    }
+                    if (dataGridView_collection["Model", i].Value.ToString().Contains(label_model.Text)) return; //Проверяем модель на наличие
                 }
-                //Исправить/добавить название/модель если 1 совпадает, а 2 нет
-                BotSendMes(LocRes.GetString("add_model") + '\u003A' + '\u0020' + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
             }
-            //Устройства нет, надо добавить в автосообщение
+            //Исправить/добавить название/модель если 1 совпадает, а 2 нет
+            BotSendMes(LocRes.GetString("add_model") + '\u003A' + '\u0020' + send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+        }
+        //Устройства нет, надо добавить в автосообщение
+        else
+        {
+            if (!string.IsNullOrEmpty(textBox_hwid.Text) &&
+                !string.IsNullOrEmpty(textBox_oemid.Text) &&
+                !string.IsNullOrEmpty(textBox_modelid.Text) &&
+                !string.IsNullOrEmpty(textBox_oemhash.Text)) BotSendMes(LocRes.GetString("add_dev") + '\u003A' + '\u0020' +
+                    send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            else toolStripStatusLabel_filescompleted.Text = LocRes.GetString("not_send");
+        }
+    }
+
+    /// <summary>
+    /// Асинхронная операция отправки сообщения боту телеграма
+    /// </summary>
+    /// <param name="send_message"></param>
+    /// <returns></returns>
+    public void BotSendMes(string send_message, string version)
+    {
+        try
+        {
+            mybot.SendTextMessageAsync(
+                chat,
+                CorrectBotString(send_message + Environment.NewLine + version),
+                parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
+            toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_data_sent");
+        }
+        catch (Exception ex)
+        {
+            textBox_soft_term.AppendText(LocRes.GetString("tt_data_not_sent") + '\u002E' + '\u0020' + ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+            MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine, LocRes.GetString("tt_data_not_sent"));
+        }
+        checkBox_send.Checked = false;
+    }
+
+    /// <summary>
+    /// Приводим строку в соответствие с требованиями телеги
+    /// </summary>
+    /// <param name="inputstr"></param>
+    /// <returns></returns>
+    private string CorrectBotString(string inputstr)
+    {
+        //Экранируем запрещённые символы
+        string message_not_mark = inputstr.Replace("_", "\\_")
+            .Replace("*", "\\*")
+            .Replace("[", "\\[")
+            .Replace("`", "\\`")
+            .Replace("]", "\\]")
+            .Replace("(", "\\(")
+            .Replace(")", "\\)")
+            .Replace("~", "\\~")
+            .Replace(">", "\\>")
+            .Replace("#", "\\#")
+            .Replace("+", "\\+")
+            .Replace("-", "\\-")
+            .Replace("=", "\\=")
+            .Replace("|", "\\|")
+            .Replace("{", "\\{")
+            .Replace("}", "\\}")
+            .Replace(".", "\\.")
+            .Replace("!", "\\!")
+            .Replace("\"", "\\\"");
+        string correct_mess = message_not_mark;
+        //Ограничение на размер сообщения. Оставляем только конец.
+        if (message_not_mark.Length >= 4096)
+        {
+            correct_mess = message_not_mark.Remove(0, message_not_mark.Length - 4090)
+                .Insert(0, "...");
+        }
+        //Устанавливаем моношрифт
+        return '\u0060' + correct_mess + '\u0060';
+    }
+
+    /// <summary>
+    /// Возвращаем исходное состояние
+    /// </summary>
+    private void StartStatus()
+    {
+        button_Sahara_CommandStart.Enabled = false;
+        button_Sahara_Ids.Enabled = false;
+        radioButton_mem_emmc.Checked = true;
+        comboBox_lun_count.SelectedIndex = 0;
+        comboBox_lun_count.Text = comboBox_lun_count.SelectedItem.ToString();
+        comboBox_lun_count.Enabled = false;
+        comboBox_log.Enabled = false;
+        comboBox_fh_commands.SelectedIndex = 0;
+        comboBox_fh_commands.Text = comboBox_fh_commands.SelectedItem.ToString();
+        comboBox_fh_commands.Enabled = false;
+        groupBox_LUN.Text = comboBox_lun_count.SelectedItem.ToString();
+        label_block_size.Text = Flash_Params[comboBox_lun_count.SelectedIndex].Sector_Size.ToString();
+        label_total_blocks.Text = Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors.ToString("### ### ### ##0");
+        label_total_gpt.Text = "0";
+        label_select_gpt.Text = "0";
+        contextMenuStrip_gpt.Items[4].Enabled = false;
+        contextMenuStrip_gpt.Items[7].Enabled = false;
+        отправкаПрограммераToolStripMenuItem.Enabled = false;
+        listView_GPT.Items.Clear();
+    }
+
+    /// <summary>
+    /// Очищаем список подключённых устройств
+    /// </summary>
+    private void ClearListViewDevices()
+    {
+        if (listView_ADB_devices.Items.Count > 0) listView_ADB_devices.Items.Clear();
+        listView_ADB_devices.Enabled = false;
+        button_ADB_comstart.Enabled = false;
+        groupBox_adb_commands.Enabled = false;
+        if (listView_fb_devices.Items.Count > 0) listView_fb_devices.Items.Clear();
+        listView_fb_devices.Enabled = false;
+        button_fb_com_start.Enabled = false;
+        groupBox_fb_commands.Enabled = false;
+    }
+
+    /// <summary>
+    /// Проверяем подключённые устройства в режиме загрузчика
+    /// </summary>
+    /// <returns>true - получен список подключённых устройств, false - устройство не подключено</returns>
+    private bool FB_Check()
+    {
+        bool goodjob = false;
+        process_Fastboot.StartInfo.Arguments = "devices -l";
+        textBox_soft_term.AppendText(LocRes.GetString("sent") + ": devices -l" + Environment.NewLine);
+        try
+        {
+
+            process_Fastboot.Start();
+            string normstr = process_Fastboot.StandardOutput.ReadToEnd();
+            string errstr = process_Fastboot.StandardError.ReadToEnd();
+            if (!string.IsNullOrEmpty(normstr))
+            {
+                Pars_FB_Dev(normstr);//Разбираем полученный массив на список устройств
+                textBox_soft_term.AppendText(LocRes.GetString("get") + '\u003A' + '\u0020' + normstr + Environment.NewLine);
+                goodjob = true;
+            }
             else
             {
-                if (!string.IsNullOrEmpty(textBox_hwid.Text) &&
-                    !string.IsNullOrEmpty(textBox_oemid.Text) &&
-                    !string.IsNullOrEmpty(textBox_modelid.Text) &&
-                    !string.IsNullOrEmpty(textBox_oemhash.Text)) BotSendMes(LocRes.GetString("add_dev") + '\u003A' + '\u0020' +
-                        send_string, Assembly.GetExecutingAssembly().GetName().Version.ToString());
-                else toolStripStatusLabel_filescompleted.Text = LocRes.GetString("not_send");
-            }
-        }
-
-        /// <summary>
-        /// Асинхронная операция отправки сообщения боту телеграма
-        /// </summary>
-        /// <param name="send_message"></param>
-        /// <returns></returns>
-        public void BotSendMes(string send_message, string version)
-        {
-            try
-            {
-                mybot.SendTextMessageAsync(
-                    chat,
-                    CorrectBotString(send_message + Environment.NewLine + version),
-                    parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
-                toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_data_sent");
-            }
-            catch (Exception ex)
-            {
-                textBox_soft_term.AppendText(LocRes.GetString("tt_data_not_sent") + '\u002E' + '\u0020' + ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
-                MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine, LocRes.GetString("tt_data_not_sent"));
-            }
-            checkBox_send.Checked = false;
-        }
-
-        /// <summary>
-        /// Приводим строку в соответствие с требованиями телеги
-        /// </summary>
-        /// <param name="inputstr"></param>
-        /// <returns></returns>
-        private string CorrectBotString(string inputstr)
-        {
-            //Экранируем запрещённые символы
-            string message_not_mark = inputstr.Replace("_", "\\_")
-                .Replace("*", "\\*")
-                .Replace("[", "\\[")
-                .Replace("`", "\\`")
-                .Replace("]", "\\]")
-                .Replace("(", "\\(")
-                .Replace(")", "\\)")
-                .Replace("~", "\\~")
-                .Replace(">", "\\>")
-                .Replace("#", "\\#")
-                .Replace("+", "\\+")
-                .Replace("-", "\\-")
-                .Replace("=", "\\=")
-                .Replace("|", "\\|")
-                .Replace("{", "\\{")
-                .Replace("}", "\\}")
-                .Replace(".", "\\.")
-                .Replace("!", "\\!")
-                .Replace("\"", "\\\"");
-            string correct_mess = message_not_mark;
-            //Ограничение на размер сообщения. Оставляем только конец.
-            if (message_not_mark.Length >= 4096)
-            {
-                correct_mess = message_not_mark.Remove(0, message_not_mark.Length - 4090)
-                    .Insert(0, "...");
-            }
-            //Устанавливаем моношрифт
-            return '\u0060' + correct_mess + '\u0060';
-        }
-
-        /// <summary>
-        /// Возвращаем исходное состояние
-        /// </summary>
-        private void StartStatus()
-        {
-            button_Sahara_CommandStart.Enabled = false;
-            button_Sahara_Ids.Enabled = false;
-            radioButton_mem_emmc.Checked = true;
-            comboBox_lun_count.SelectedIndex = 0;
-            comboBox_lun_count.Text = comboBox_lun_count.SelectedItem.ToString();
-            comboBox_lun_count.Enabled = false;
-            comboBox_log.Enabled = false;
-            comboBox_fh_commands.SelectedIndex = 0;
-            comboBox_fh_commands.Text = comboBox_fh_commands.SelectedItem.ToString();
-            comboBox_fh_commands.Enabled = false;
-            groupBox_LUN.Text = comboBox_lun_count.SelectedItem.ToString();
-            label_block_size.Text = Flash_Params[comboBox_lun_count.SelectedIndex].Sector_Size.ToString();
-            label_total_blocks.Text = Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors.ToString("### ### ### ##0");
-            label_total_gpt.Text = "0";
-            label_select_gpt.Text = "0";
-            contextMenuStrip_gpt.Items[4].Enabled = false;
-            contextMenuStrip_gpt.Items[7].Enabled = false;
-            отправкаПрограммераToolStripMenuItem.Enabled = false;
-            listView_GPT.Items.Clear();
-        }
-
-        /// <summary>
-        /// Очищаем список подключённых устройств
-        /// </summary>
-        private void ClearListViewDevices()
-        {
-            if (listView_ADB_devices.Items.Count > 0) listView_ADB_devices.Items.Clear();
-            listView_ADB_devices.Enabled = false;
-            button_ADB_comstart.Enabled = false;
-            groupBox_adb_commands.Enabled = false;
-            if (listView_fb_devices.Items.Count > 0) listView_fb_devices.Items.Clear();
-            listView_fb_devices.Enabled = false;
-            button_fb_com_start.Enabled = false;
-            groupBox_fb_commands.Enabled = false;
-        }
-
-        /// <summary>
-        /// Проверяем подключённые устройства в режиме загрузчика
-        /// </summary>
-        /// <returns>true - получен список подключённых устройств, false - устройство не подключено</returns>
-        private bool FB_Check()
-        {
-            bool goodjob = false;
-            process_Fastboot.StartInfo.Arguments = "devices -l";
-            textBox_soft_term.AppendText(LocRes.GetString("sent") + ": devices -l" + Environment.NewLine);
-            try
-            {
-
-                process_Fastboot.Start();
-                string normstr = process_Fastboot.StandardOutput.ReadToEnd();
-                string errstr = process_Fastboot.StandardError.ReadToEnd();
-                if (!string.IsNullOrEmpty(normstr))
+                if (!string.IsNullOrEmpty(errstr))
                 {
-                    Pars_FB_Dev(normstr);//Разбираем полученный массив на список устройств
-                    textBox_soft_term.AppendText(LocRes.GetString("get") + '\u003A' + '\u0020' + normstr + Environment.NewLine);
+                    Pars_FB_Dev(errstr);//Разбираем полученный массив на список устройств
+                    textBox_soft_term.AppendText(LocRes.GetString("get") + " er: " + errstr + Environment.NewLine);
                     goodjob = true;
                 }
-                else
-                {
-                    if (!string.IsNullOrEmpty(errstr))
+            }
+            process_Fastboot.WaitForExit();
+            process_Fastboot.Close();
+        }
+        catch (Exception ex)
+        {
+            textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+            SendErrorInChat();
+        }
+        return goodjob;
+    }
+
+    /// <summary>
+    /// Отправка команды в режиме загрузчика
+    /// </summary>
+    /// <param name="fb_command">Команда</param>
+    private void Fastboot_commands(string fb_command)
+    {
+        string real_command = fb_command;
+        if (!string.IsNullOrEmpty(Global_FB_Device)) real_command = "-s " + Global_FB_Device + " " + fb_command;
+        process_Fastboot.StartInfo.Arguments = real_command;
+        textBox_soft_term.AppendText(LocRes.GetString("sent") + '\u003A' + '\u0020' + real_command + Environment.NewLine);
+        try
+        {
+            process_Fastboot.Start();
+            string exstr = process_Fastboot.StandardError.ReadToEnd();
+            string normstr = process_Fastboot.StandardOutput.ReadToEnd();
+            if (!string.IsNullOrEmpty(normstr)) textBox_soft_term.AppendText(LocRes.GetString("get") + '\u003A' + '\u0020' + normstr + Environment.NewLine);
+            if (!string.IsNullOrEmpty(exstr)) textBox_soft_term.AppendText(LocRes.GetString("get") + "(ex): " + exstr + Environment.NewLine);
+            process_Fastboot.WaitForExit();
+            process_Fastboot.Close();
+        }
+        catch (Exception ex)
+        {
+            textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+            SendErrorInChat();
+        }
+    }
+
+    /// <summary>
+    /// Процедура запуска в паралельном потоке функции сохранения разделов
+    /// </summary>
+    /// <param name="ByBlocks">true - по именам разделов, false - по секторам</param>
+    /// <param name="StartSector">Начальный сектор</param>
+    /// <param name="NumSectors">Количество секторов</param>
+    private void DumpBySectors(bool ByBlocks, int StartSector, int NumSectors)
+    {
+        //Запускаем диалог сохранения папки
+        DialogResult result = folderBrowserDialog1.ShowDialog();
+        if (result == DialogResult.OK)
+        {
+            StringBuilder fh_all_args = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
+            List<string> argsfordump = new List<string>(); //Необходимые данные для параллельного потока
+            int lun_int = 0;
+            fh_all_args.Append(" --convertprogram2read");
+            if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
+            fh_all_args.Append(" --lun=" + lun_int);
+            fh_all_args.Append(" --noprompt --zlpawarehost=1");
+            if (radioButton_mem_ufs.Checked) fh_all_args.Append(" --memoryname=ufs");
+            else fh_all_args.Append(" --memoryname=emmc");
+            switch (ByBlocks)
+            {
+                case true: //Один или несколько запросов по именам разделов
+                    foreach (ListViewItem item in listView_GPT.CheckedItems)
                     {
-                        Pars_FB_Dev(errstr);//Разбираем полученный массив на список устройств
-                        textBox_soft_term.AppendText(LocRes.GetString("get") + " er: " + errstr + Environment.NewLine);
-                        goodjob = true;
+                        StringBuilder fh_mass_args = new StringBuilder(fh_all_args.ToString());
+                        fh_mass_args.Append(string.Format(" --sendimage=dump_{0}.bin", item.SubItems[2].Text));
+                        fh_mass_args.Append(string.Format(" --start_sector={0}", Convert.ToInt32(item.SubItems[0].Text, 16)));
+                        int NumSec = Convert.ToInt32(item.SubItems[1].Text, 16) - Convert.ToInt32(item.SubItems[0].Text, 16) + 1;
+                        fh_mass_args.Append(string.Format(" --num_sectors={0}", NumSec));
+                        argsfordump.Add(fh_mass_args.ToString());
                     }
-                }
-                process_Fastboot.WaitForExit();
-                process_Fastboot.Close();
-            }
-            catch (Exception ex)
-            {
-                textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
-                SendErrorInChat();
-            }
-            return goodjob;
-        }
-
-        /// <summary>
-        /// Отправка команды в режиме загрузчика
-        /// </summary>
-        /// <param name="fb_command">Команда</param>
-        private void Fastboot_commands(string fb_command)
-        {
-            string real_command = fb_command;
-            if (!string.IsNullOrEmpty(Global_FB_Device)) real_command = "-s " + Global_FB_Device + " " + fb_command;
-            process_Fastboot.StartInfo.Arguments = real_command;
-            textBox_soft_term.AppendText(LocRes.GetString("sent") + '\u003A' + '\u0020' + real_command + Environment.NewLine);
-            try
-            {
-                process_Fastboot.Start();
-                string exstr = process_Fastboot.StandardError.ReadToEnd();
-                string normstr = process_Fastboot.StandardOutput.ReadToEnd();
-                if (!string.IsNullOrEmpty(normstr)) textBox_soft_term.AppendText(LocRes.GetString("get") + '\u003A' + '\u0020' + normstr + Environment.NewLine);
-                if (!string.IsNullOrEmpty(exstr)) textBox_soft_term.AppendText(LocRes.GetString("get") + "(ex): " + exstr + Environment.NewLine);
-                process_Fastboot.WaitForExit();
-                process_Fastboot.Close();
-            }
-            catch (Exception ex)
-            {
-                textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
-                SendErrorInChat();
-            }
-        }
-
-        /// <summary>
-        /// Процедура запуска в паралельном потоке функции сохранения разделов
-        /// </summary>
-        /// <param name="ByBlocks">true - по именам разделов, false - по секторам</param>
-        /// <param name="StartSector">Начальный сектор</param>
-        /// <param name="NumSectors">Количество секторов</param>
-        private void DumpBySectors(bool ByBlocks, int StartSector, int NumSectors)
-        {
-            //Запускаем диалог сохранения папки
-            DialogResult result = folderBrowserDialog1.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                StringBuilder fh_all_args = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
-                List<string> argsfordump = new List<string>(); //Необходимые данные для параллельного потока
-                int lun_int = 0;
-                fh_all_args.Append(" --convertprogram2read");
-                if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
-                fh_all_args.Append(" --lun=" + lun_int);
-                fh_all_args.Append(" --noprompt --zlpawarehost=1");
-                if (radioButton_mem_ufs.Checked) fh_all_args.Append(" --memoryname=ufs");
-                else fh_all_args.Append(" --memoryname=emmc");
-                switch (ByBlocks)
-                {
-                    case true: //Один или несколько запросов по именам разделов
-                        foreach (ListViewItem item in listView_GPT.CheckedItems)
-                        {
-                            StringBuilder fh_mass_args = new StringBuilder(fh_all_args.ToString());
-                            fh_mass_args.Append(string.Format(" --sendimage=dump_{0}.bin", item.SubItems[2].Text));
-                            fh_mass_args.Append(string.Format(" --start_sector={0}", Convert.ToInt32(item.SubItems[0].Text, 16)));
-                            int NumSec = Convert.ToInt32(item.SubItems[1].Text, 16) - Convert.ToInt32(item.SubItems[0].Text, 16) + 1;
-                            fh_mass_args.Append(string.Format(" --num_sectors={0}", NumSec));
-                            argsfordump.Add(fh_mass_args.ToString());
-                        }
-                        break;
-                    case false: //Один запрос по секторам
-                        string newfilename = string.Format("dump_sectors{0}_{1}.bin", StartSector, NumSectors);
-                        fh_all_args.Append(" --sendimage=" + newfilename);
-                        fh_all_args.Append(string.Format(" --start_sector={0}", StartSector));
-                        fh_all_args.Append(string.Format(" --num_sectors={0}", NumSectors));
-                        argsfordump.Add(fh_all_args.ToString());
-                        break;
-                    default:
-                        break;
-                }
-                if (!backgroundWorker_dump.IsBusy) backgroundWorker_dump.RunWorkerAsync(argsfordump);
-            }
-        }
-
-        /// <summary>
-        /// Разбираем ответ запроса подключённых устройств в режиме загрузчика
-        /// </summary>
-        /// <param name="parsing_string"></param>
-        private void Pars_FB_Dev(string parsing_string)
-        {
-            string temp_str = parsing_string; //Временная строка для разбора
-            if (listView_fb_devices.Items.Count > 0) listView_fb_devices.Items.Clear();
-            Global_FB_Device = string.Empty;
-            while (temp_str.Contains("fastboot"))
-            {
-                char[] for_trim = { ' ', '\t', '\n', '\r' };
-                int cut_str = temp_str.IndexOf("fastboot");
-                string fb_device = temp_str.Substring(0, cut_str).Trim(for_trim);
-                if (!string.IsNullOrEmpty(fb_device))
-                {
-                    ListViewItem new_device = new ListViewItem(fb_device);
-                    if (Connected_Devices.ContainsKey(fb_device)) new_device.SubItems.Add(Connected_Devices[fb_device]);
-                    listView_fb_devices.Items.Add(new_device);
-                }
-                temp_str = temp_str.Substring(cut_str + 8);
-            }
-            if (listView_fb_devices.Items.Count > 0)
-            {
-                Global_FB_Device = listView_fb_devices.Items[0].Text;
-                listView_fb_devices.Items[0].Checked = true;
-                if (listView_fb_devices.Items.Count > 1)
-                {
-                    listView_fb_devices.Enabled = true;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Отправляем лог в чат с согласия пользователя
-        /// </summary>
-        private void SendErrorInChat()
-        {
-            if (MessageBox.Show(LocRes.GetString("mb_body_send"),
-                    LocRes.GetString("mb_title_mis") + '\u0020' +
-                    LocRes.GetString("mb_title_send"),
-                MessageBoxButtons.OKCancel,
-                MessageBoxIcon.Exclamation,
-                MessageBoxDefaultButton.Button1)==DialogResult.OK)
-            {
-                textBox_soft_term.AppendText(LocRes.GetString("tb_send_conf") + Environment.NewLine);
-                BotSendMes(textBox_soft_term.Text, Assembly.GetExecutingAssembly().GetName().Version.ToString());
-            }
-        }
-
-        #endregion
-
-        /// <summary>
-        /// Блокируем видимость для всего, кроме единственного выбора
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ListView_GPT_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listView_GPT.CheckedIndices.Count == 1 && listView_GPT.SelectedItems.Count == 1)
-            {
-                if (listView_GPT.SelectedIndices[0] == listView_GPT.CheckedIndices[0])
-                {
-                    сохранитьВыбранныйРазделToolStripMenuItem.Enabled = true;
-                    записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = true;
-                }
-                else
-                {
-                    сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
-                    записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Очищаем рабочую папку от файлов и систему от запущенных процессов
-        /// </summary>
-        private void CleanFilesProcess()
-        {
-            try
-            {
-                foreach (string cleanfile in guide.FilesToClean)
-                {
-                    if (File.Exists(cleanfile)) File.Delete(cleanfile);
-                }
-                foreach (string processforclose in guide.ProcessToClean)
-                {
-                    foreach (Process pfc in Process.GetProcessesByName(processforclose))
-                    {
-                        pfc.Kill();
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                //Просто игнорируем все ошибки
-            }
-        }
-
-        /// <summary>
-        /// Выбор контекстного меню для сохранения выбранного раздела
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void СохранитьВыбранныйРазделToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = folderBrowserDialog1.ShowDialog();
-            if (dr == DialogResult.OK)
-            {
-                string loadpath = folderBrowserDialog1.SelectedPath;
-                if (loadpath.Contains('\u0020'))
-                {
-                    textBox_soft_term.AppendText(LocRes.GetString("mb_title_att") + Environment.NewLine);
-                    MessageBox.Show(LocRes.GetString("mb_body_att_spaces"),
-                        LocRes.GetString("mb_title_att"),
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation);
-                    return;
-                }
-                //Создаём xml-файл для чтения
-                func.FhXmltoRW(
-                    true,
-                    label_block_size.Text,
-                    "dump_" + listView_GPT.CheckedItems[0].SubItems[2].Text + ".bin",
-                    groupBox_LUN.Text.Remove(0, 5),
-                    listView_GPT.CheckedItems[0].SubItems[0].Text,
-                    listView_GPT.CheckedItems[0].SubItems[1].Text);
-                //Создаём аргументы для лоадера
-                StringBuilder Argstoxml = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
-                Argstoxml.Append(" --sendxml=p_r.xml --noprompt --search_path=" + loadpath);
-                switch (comboBox_log.SelectedIndex)
-                {
-                    case 0:
-                        Argstoxml.Append(" --loglevel=1");
-                        break;
-                    case 1:
-                        Argstoxml.Append(" --loglevel=0");
-                        break;
-                    case 2:
-                        Argstoxml.Append(" --loglevel=2");
-                        break;
-                    case 3:
-                        Argstoxml.Append(" --loglevel=3");
-                        break;
-                    default:
-                        Argstoxml.Append(" --loglevel=1");
-                        break;
-                }
-                if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs --lun=" + groupBox_LUN.Text.Remove(0, 5));
-                else Argstoxml.Append(" --memoryname=emmc");
-                Argstoxml.Append(" --convertprogram2read"); //Добавляем для операции чтения
-                                                            //При наличии файла запускаем процесс чтения в отдельном потоке
-                if (!backgroundWorker_xml.IsBusy && File.Exists("p_r.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
-            }
-        }
-
-        /// <summary>
-        /// Выбор контексного меню на запись раздела
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ЗаписатьФайлВВыбранныйРазделLoadToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show(LocRes.GetString("mb_body_record"),
-                LocRes.GetString("mb_title_dev_recon") + '\u0020' +
-                LocRes.GetString("mb_title_record"),
-                MessageBoxButtons.OKCancel,
-                MessageBoxIcon.Exclamation);
-            if (dr == DialogResult.OK) textBox_soft_term.Text = string.Empty;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                //Определяем путь к файлу
-                string loadpath = openFileDialog1.FileName.Remove(openFileDialog1.FileName.IndexOf(openFileDialog1.SafeFileName) - 1);
-                if (loadpath.Contains('\u0020'))
-                {
-                    textBox_soft_term.AppendText(LocRes.GetString("mb_title_att") + Environment.NewLine);
-                    MessageBox.Show(LocRes.GetString("mb_body_att_spaces"),
-                        LocRes.GetString("mb_title_att"),
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation);
-                    return;
-                }
-                //Создаём xml-файл для записи
-                func.FhXmltoRW(
-                    false,
-                    label_block_size.Text,
-                    openFileDialog1.SafeFileName,
-                    groupBox_LUN.Text.Remove(0, 5),
-                    listView_GPT.CheckedItems[0].SubItems[0].Text,
-                    listView_GPT.CheckedItems[0].SubItems[1].Text);
-                //Создаём аргументы для лоадера
-                StringBuilder Argstoxml = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
-                Argstoxml.Append(" --sendxml=p_r.xml --noprompt --search_path=" + loadpath);
-                switch (comboBox_log.SelectedIndex)
-                {
-                    case 0:
-                        Argstoxml.Append(" --loglevel=1");
-                        break;
-                    case 1:
-                        Argstoxml.Append(" --loglevel=0");
-                        break;
-                    case 2:
-                        Argstoxml.Append(" --loglevel=2");
-                        break;
-                    case 3:
-                        Argstoxml.Append(" --loglevel=3");
-                        break;
-                    default:
-                        Argstoxml.Append(" --loglevel=1");
-                        break;
-                }
-                if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs --lun=" + groupBox_LUN.Text.Remove(0, 5));
-                else Argstoxml.Append(" --memoryname=emmc");
-                //При наличии файла запускаем процесс записи в отдельном потоке
-                if (!backgroundWorker_xml.IsBusy && File.Exists("p_r.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
-            }
-        }
-
-        private void BackgroundWorker_xml_DoWork(object sender, DoWorkEventArgs e)
-        {
-            FH_Commands(e.Argument.ToString());
-            e.Result = output_FH;
-        }
-
-        private void BackgroundWorker_xml_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine);
-            else
-            {
-                string newfilename = "dump_" + listView_GPT.CheckedItems[0].SubItems[2].Text + ".bin";
-                if (File.Exists(newfilename))
-                {
-                    try
-                    {
-                        File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
-                    }
-                    catch (IOException)
-                    {
-                        File.Delete(folderBrowserDialog1.SelectedPath + "\\" + newfilename);
-                        File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
-                    }
-                    File.Delete(newfilename);
-                }
-                textBox_soft_term.AppendText(e.Result.ToString() + Environment.NewLine +
-                    LocRes.GetString("tb_loader_com") + Environment.NewLine);
-            }
-        }
-
-        #region Инструменты
-        /// <summary>
-        /// Открываем новое окно для осуществления бинарного поиска по маске
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ПоискМаскиБайтToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Hex_Search hsearch = new Hex_Search();
-            hsearch.ShowDialog();
-        }
-        /// <summary>
-        /// Открываем новое окно для распаковки и декодирования прошивки
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void РаспаковкаОднобиновойПрошивкиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AGMRepacker repacker = new AGMRepacker();
-            repacker.ShowDialog();
-        }
-        #endregion
-
-        private void РеальноПодключённыеУстройстваToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
-        {
-            string strfil = string.Format("Trust = '{0}'", "full trust");
-            if (реальноПодключённыеУстройстваToolStripMenuItem.Checked)
-            {
-                strfil = "Trust is Not Null";
-                if (!CollectionToolStripMenuItem.Checked) CollectionToolStripMenuItem.Checked=true;
-                if (устройстваСПрограммерамиToolStripMenuItem.Checked) strfil += " AND Url is Not Null";
-            }
-            else if (устройстваСПрограммерамиToolStripMenuItem.Checked) strfil += " AND Url is Not Null";
-            bindingSource_collection.Filter=strfil;
-        }
-
-        private void УстройстваСПрограммерамиToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
-        {
-            string strfil = string.Format("Trust = '{0}'", "full trust");
-            if (устройстваСПрограммерамиToolStripMenuItem.Checked)
-            {
-                if (!CollectionToolStripMenuItem.Checked) CollectionToolStripMenuItem.Checked=true;
-                if (реальноПодключённыеУстройстваToolStripMenuItem.Checked) strfil = "Trust is Not Null AND Url is Not Null";
-                else strfil+=" AND Url is Not Null";
-            }
-            else if (реальноПодключённыеУстройстваToolStripMenuItem.Checked) strfil = "Trust is Not Null";
-            bindingSource_collection.Filter=strfil;
-        }
-
-
-        /// <summary>
-        /// Переключились на автоматический выбор языка
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void АвтоматическиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (автоматическиToolStripMenuItem.Checked)
-            {
-                Settings.Default.local_lang=string.Empty;
-                if (русскийToolStripMenuItem.Checked) русскийToolStripMenuItem.Checked=false;
-                if (englishToolStripMenuItem.Checked) englishToolStripMenuItem.Checked=false;
-                if (MessageBox.Show(LocRes.GetString("message_body_need_restart"),
-                    LocRes.GetString("message_title_need_restart"),
-                    MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
-                {
-                    Application.Restart();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Переключились на русский независимо от языка системы
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void РусскийToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (русскийToolStripMenuItem.Checked)
-            {
-                Settings.Default.local_lang="ru";
-                if (автоматическиToolStripMenuItem.Checked) автоматическиToolStripMenuItem.Checked=false;
-                if (englishToolStripMenuItem.Checked) englishToolStripMenuItem.Checked=false;
-                if (MessageBox.Show(LocRes.GetString("message_body_need_restart"),
-                    LocRes.GetString("message_title_need_restart"),
-                    MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
-                {
-                    Application.Restart();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Переключились на английский независимо от языка системы
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void EnglishToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (englishToolStripMenuItem.Checked)
-            {
-                Settings.Default.local_lang="en";
-                if (автоматическиToolStripMenuItem.Checked) автоматическиToolStripMenuItem.Checked=false;
-                if (русскийToolStripMenuItem.Checked) русскийToolStripMenuItem.Checked=false;
-                if (MessageBox.Show(LocRes.GetString("message_body_need_restart"),
-                    LocRes.GetString("message_title_need_restart"),
-                    MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
-                {
-                    Application.Restart();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Отправили в чат предлагать перевод
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ПредложитьПереводToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ProcessStartInfo offertrans = new ProcessStartInfo("https://t.me/+Suwc1u6h8PYzM2Qy");
-            Process.Start(offertrans);
-        }
-
-        private void BackgroundWorker_rawprogram_DoWork(object sender, DoWorkEventArgs e)
-        {
-            BackgroundWorker worker = sender as BackgroundWorker;
-            process_FH_Loader.StartInfo.Arguments = e.Argument.ToString(); //аргументы лоадера;
-            process_FH_Loader.Start();
-            StreamReader reader = process_FH_Loader.StandardOutput;
-            StreamReader erread = process_FH_Loader.StandardError;
-            ppc = 10; //Начали обработку в параллельном потоке
-            while (reader.Peek() >= 0)
-            {
-                if (worker.CancellationPending)
-                {
-                    e.Cancel = true;
                     break;
-                }
-                else
-                {
-                    string outline = reader.ReadLine();
-                    if (!string.IsNullOrEmpty(outline))
-                    {
-                        int ppn = func.ProcessPersent(outline);
-                        if (ppc < ppn) ppc = ppn;
-                        output_FH+=outline;
-                        worker.ReportProgress(ppc, outline);
-                    }
-                }
-            }
-            if (erread.Peek() >= 0) worker.ReportProgress(100, "er: " + erread.ReadToEnd());
-            process_FH_Loader.WaitForExit();
-            process_FH_Loader.Close();
-        }
-
-        private void BackgroundWorker_rawprogram_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            progressBar_phone.Value = e.ProgressPercentage;
-            textBox_soft_term.AppendText(e.UserState.ToString() + Environment.NewLine);
-        }
-
-        private void BackgroundWorker_rawprogram_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            ppc = 0;
-            progressBar_phone.Value = ppc;
-            if (e.Cancelled) textBox_soft_term.AppendText(LocRes.GetString("tb_cancel_user") + Environment.NewLine);
-            else
-            {
-                if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine + e.Error.StackTrace + Environment.NewLine);
-                else textBox_soft_term.AppendText(LocRes.GetString("done") + Environment.NewLine);
-            }
-        }
-
-        /// <summary>
-        /// Отменяем долгую операцию нажав прогрессбар
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ProgressBar_phone_Click(object sender, EventArgs e)
-        {
-            if (progressBar_phone.Value>5)
-            {
-                if (MessageBox.Show(LocRes.GetString("hex_mess_stopoper"), LocRes.GetString("hex_warn_stopoper"),
-                    MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Stop,
-                    MessageBoxDefaultButton.Button2)==DialogResult.OK)
-                {
-                    if (backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.CancelAsync();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Выполнение FH_Loader с указанными параметрами
-        /// </summary>
-        /// <param name="com_args">Аргументы команды лоадеру</param>
-        /// <returns>Ответ лоадера по результатам исполнения команды</returns>
-        private void FH_Commands(string com_args)
-        {
-            process_FH_Loader.StartInfo.Arguments = com_args; //аргументы лоадера
-            try
-            {
-                process_FH_Loader.Start();
-                StreamReader reader = process_FH_Loader.StandardOutput;
-                StreamReader erread = process_FH_Loader.StandardError;
-                while (reader.Peek() >= 0)
-                {
-                    string outline = reader.ReadLine();
-                    if (!string.IsNullOrEmpty(outline))
-                    {
-                        output_FH += outline + Environment.NewLine;
-                    }
-                }
-                if (erread.Peek() >=0) output_FH = "er: " + erread.ReadToEnd();
-                process_FH_Loader.WaitForExit();
-                process_FH_Loader.Close();
-            }
-            catch (Exception ex)
-            {
-                output_FH = LocRes.GetString("er_func_fhl_params") + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace;
-            }
-        }
-
-        private void ОтправкаПрограммераToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SendProgForm spf = new SendProgForm(this);
-            textBox_soft_term.AppendText(LocRes.GetString("tb_share_prog") + Environment.NewLine);
-            switch (spf.ShowDialog())
-            {
-                case DialogResult.None:
-                    break;
-                case DialogResult.OK:
-                    //Запускаем отправку файла в чат
-                    if (File.Exists(Global_Share_Prog[3][7]))
-                    {
-                        Stream stream = File.OpenRead(Global_Share_Prog[3][7]);
-                        InputOnlineFile onlineFile = new InputOnlineFile(stream, Global_Share_Prog[3][7]);
-                        StringBuilder inputstr = new StringBuilder();
-                        for (int i = 0; i < Global_Share_Prog.Length; i++)
-                        {
-                            for (int k = 0; k < Global_Share_Prog[i].Length - 1; k++)
-                            {
-                                inputstr.Append(Global_Share_Prog[i][k] + '\t');
-                            }
-                            inputstr.Append(Environment.NewLine);
-                        }
-                        try
-                        {
-                            mybot.SendDocumentAsync(chat, onlineFile, null, CorrectBotString(inputstr.ToString()), Telegram.Bot.Types.Enums.ParseMode.Markdown);
-                            textBox_soft_term.AppendText(LocRes.GetString("sent") + Environment.NewLine);
-                        }
-                        catch (Exception ex)
-                        {
-                            textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
-                            SendErrorInChat();
-                        }
-                    }
-                    else textBox_soft_term.AppendText(LocRes.GetString("tb_nopath") + Environment.NewLine);
-                    break;
-                case DialogResult.Cancel:
-                    textBox_soft_term.AppendText(LocRes.GetString("tb_cancel_user") + Environment.NewLine);
+                case false: //Один запрос по секторам
+                    string newfilename = string.Format("dump_sectors{0}_{1}.bin", StartSector, NumSectors);
+                    fh_all_args.Append(" --sendimage=" + newfilename);
+                    fh_all_args.Append(string.Format(" --start_sector={0}", StartSector));
+                    fh_all_args.Append(string.Format(" --num_sectors={0}", NumSectors));
+                    argsfordump.Add(fh_all_args.ToString());
                     break;
                 default:
                     break;
             }
+            if (!backgroundWorker_dump.IsBusy) backgroundWorker_dump.RunWorkerAsync(argsfordump);
         }
     }
+
+    /// <summary>
+    /// Разбираем ответ запроса подключённых устройств в режиме загрузчика
+    /// </summary>
+    /// <param name="parsing_string"></param>
+    private void Pars_FB_Dev(string parsing_string)
+    {
+        string temp_str = parsing_string; //Временная строка для разбора
+        if (listView_fb_devices.Items.Count > 0) listView_fb_devices.Items.Clear();
+        Global_FB_Device = string.Empty;
+        while (temp_str.Contains("fastboot"))
+        {
+            char[] for_trim = { ' ', '\t', '\n', '\r' };
+            int cut_str = temp_str.IndexOf("fastboot");
+            string fb_device = temp_str.Substring(0, cut_str).Trim(for_trim);
+            if (!string.IsNullOrEmpty(fb_device))
+            {
+                ListViewItem new_device = new ListViewItem(fb_device);
+                if (Connected_Devices.ContainsKey(fb_device)) new_device.SubItems.Add(Connected_Devices[fb_device]);
+                listView_fb_devices.Items.Add(new_device);
+            }
+            temp_str = temp_str.Substring(cut_str + 8);
+        }
+        if (listView_fb_devices.Items.Count > 0)
+        {
+            Global_FB_Device = listView_fb_devices.Items[0].Text;
+            listView_fb_devices.Items[0].Checked = true;
+            if (listView_fb_devices.Items.Count > 1)
+            {
+                listView_fb_devices.Enabled = true;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Отправляем лог в чат с согласия пользователя
+    /// </summary>
+    private void SendErrorInChat()
+    {
+        if (MessageBox.Show(LocRes.GetString("mb_body_send"),
+                LocRes.GetString("mb_title_mis") + '\u0020' +
+                LocRes.GetString("mb_title_send"),
+            MessageBoxButtons.OKCancel,
+            MessageBoxIcon.Exclamation,
+            MessageBoxDefaultButton.Button1)==DialogResult.OK)
+        {
+            textBox_soft_term.AppendText(LocRes.GetString("tb_send_conf") + Environment.NewLine);
+            BotSendMes(textBox_soft_term.Text, Assembly.GetExecutingAssembly().GetName().Version.ToString());
+        }
+    }
+
+    #endregion
+
+    /// <summary>
+    /// Блокируем видимость для всего, кроме единственного выбора
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ListView_GPT_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (listView_GPT.CheckedIndices.Count == 1 && listView_GPT.SelectedItems.Count == 1)
+        {
+            if (listView_GPT.SelectedIndices[0] == listView_GPT.CheckedIndices[0])
+            {
+                сохранитьВыбранныйРазделToolStripMenuItem.Enabled = true;
+                записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                сохранитьВыбранныйРазделToolStripMenuItem.Enabled = false;
+                записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Enabled = false;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Очищаем рабочую папку от файлов и систему от запущенных процессов
+    /// </summary>
+    private void CleanFilesProcess()
+    {
+        try
+        {
+            foreach (string cleanfile in guide.FilesToClean)
+            {
+                if (File.Exists(cleanfile)) File.Delete(cleanfile);
+            }
+            foreach (string processforclose in guide.ProcessToClean)
+            {
+                foreach (Process pfc in Process.GetProcessesByName(processforclose))
+                {
+                    pfc.Kill();
+                }
+            }
+        }
+        catch (Exception)
+        {
+            //Просто игнорируем все ошибки
+        }
+    }
+
+    /// <summary>
+    /// Выбор контекстного меню для сохранения выбранного раздела
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void СохранитьВыбранныйРазделToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        DialogResult dr = folderBrowserDialog1.ShowDialog();
+        if (dr == DialogResult.OK)
+        {
+            string loadpath = folderBrowserDialog1.SelectedPath;
+            if (loadpath.Contains('\u0020'))
+            {
+                textBox_soft_term.AppendText(LocRes.GetString("mb_title_att") + Environment.NewLine);
+                MessageBox.Show(LocRes.GetString("mb_body_att_spaces"),
+                    LocRes.GetString("mb_title_att"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                return;
+            }
+            //Создаём xml-файл для чтения
+            func.FhXmltoRW(
+                true,
+                label_block_size.Text,
+                "dump_" + listView_GPT.CheckedItems[0].SubItems[2].Text + ".bin",
+                groupBox_LUN.Text.Remove(0, 5),
+                listView_GPT.CheckedItems[0].SubItems[0].Text,
+                listView_GPT.CheckedItems[0].SubItems[1].Text);
+            //Создаём аргументы для лоадера
+            StringBuilder Argstoxml = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
+            Argstoxml.Append(" --sendxml=p_r.xml --noprompt --search_path=" + loadpath);
+            switch (comboBox_log.SelectedIndex)
+            {
+                case 0:
+                    Argstoxml.Append(" --loglevel=1");
+                    break;
+                case 1:
+                    Argstoxml.Append(" --loglevel=0");
+                    break;
+                case 2:
+                    Argstoxml.Append(" --loglevel=2");
+                    break;
+                case 3:
+                    Argstoxml.Append(" --loglevel=3");
+                    break;
+                default:
+                    Argstoxml.Append(" --loglevel=1");
+                    break;
+            }
+            if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs --lun=" + groupBox_LUN.Text.Remove(0, 5));
+            else Argstoxml.Append(" --memoryname=emmc");
+            Argstoxml.Append(" --convertprogram2read"); //Добавляем для операции чтения
+                                                        //При наличии файла запускаем процесс чтения в отдельном потоке
+            if (!backgroundWorker_xml.IsBusy && File.Exists("p_r.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
+        }
+    }
+
+    /// <summary>
+    /// Выбор контексного меню на запись раздела
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ЗаписатьФайлВВыбранныйРазделLoadToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        DialogResult dr = MessageBox.Show(LocRes.GetString("mb_body_record"),
+            LocRes.GetString("mb_title_dev_recon") + '\u0020' +
+            LocRes.GetString("mb_title_record"),
+            MessageBoxButtons.OKCancel,
+            MessageBoxIcon.Exclamation);
+        if (dr == DialogResult.OK) textBox_soft_term.Text = string.Empty;
+        if (openFileDialog1.ShowDialog() == DialogResult.OK)
+        {
+            //Определяем путь к файлу
+            string loadpath = openFileDialog1.FileName.Remove(openFileDialog1.FileName.IndexOf(openFileDialog1.SafeFileName) - 1);
+            if (loadpath.Contains('\u0020'))
+            {
+                textBox_soft_term.AppendText(LocRes.GetString("mb_title_att") + Environment.NewLine);
+                MessageBox.Show(LocRes.GetString("mb_body_att_spaces"),
+                    LocRes.GetString("mb_title_att"),
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                return;
+            }
+            //Создаём xml-файл для записи
+            func.FhXmltoRW(
+                false,
+                label_block_size.Text,
+                openFileDialog1.SafeFileName,
+                groupBox_LUN.Text.Remove(0, 5),
+                listView_GPT.CheckedItems[0].SubItems[0].Text,
+                listView_GPT.CheckedItems[0].SubItems[1].Text);
+            //Создаём аргументы для лоадера
+            StringBuilder Argstoxml = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
+            Argstoxml.Append(" --sendxml=p_r.xml --noprompt --search_path=" + loadpath);
+            switch (comboBox_log.SelectedIndex)
+            {
+                case 0:
+                    Argstoxml.Append(" --loglevel=1");
+                    break;
+                case 1:
+                    Argstoxml.Append(" --loglevel=0");
+                    break;
+                case 2:
+                    Argstoxml.Append(" --loglevel=2");
+                    break;
+                case 3:
+                    Argstoxml.Append(" --loglevel=3");
+                    break;
+                default:
+                    Argstoxml.Append(" --loglevel=1");
+                    break;
+            }
+            if (radioButton_mem_ufs.Checked) Argstoxml.Append(" --memoryname=ufs --lun=" + groupBox_LUN.Text.Remove(0, 5));
+            else Argstoxml.Append(" --memoryname=emmc");
+            //При наличии файла запускаем процесс записи в отдельном потоке
+            if (!backgroundWorker_xml.IsBusy && File.Exists("p_r.xml")) backgroundWorker_xml.RunWorkerAsync(Argstoxml.ToString());
+        }
+    }
+
+    private void BackgroundWorker_xml_DoWork(object sender, DoWorkEventArgs e)
+    {
+        FH_Commands(e.Argument.ToString());
+        e.Result = output_FH;
+    }
+
+    private void BackgroundWorker_xml_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+    {
+        if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine);
+        else
+        {
+            string newfilename = "dump_" + listView_GPT.CheckedItems[0].SubItems[2].Text + ".bin";
+            if (File.Exists(newfilename))
+            {
+                try
+                {
+                    File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                }
+                catch (IOException)
+                {
+                    File.Delete(folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                    File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                }
+                File.Delete(newfilename);
+            }
+            textBox_soft_term.AppendText(e.Result.ToString() + Environment.NewLine +
+                LocRes.GetString("tb_loader_com") + Environment.NewLine);
+        }
+    }
+
+    #region Инструменты
+    /// <summary>
+    /// Открываем новое окно для осуществления бинарного поиска по маске
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ПоискМаскиБайтToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        Hex_Search hsearch = new Hex_Search();
+        hsearch.ShowDialog();
+    }
+    /// <summary>
+    /// Открываем новое окно для распаковки и декодирования прошивки
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void РаспаковкаОднобиновойПрошивкиToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        AGMRepacker repacker = new AGMRepacker();
+        repacker.ShowDialog();
+    }
+    #endregion
+
+    private void РеальноПодключённыеУстройстваToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+    {
+        string strfil = string.Format("Trust = '{0}'", "full trust");
+        if (реальноПодключённыеУстройстваToolStripMenuItem.Checked)
+        {
+            strfil = "Trust is Not Null";
+            if (!CollectionToolStripMenuItem.Checked) CollectionToolStripMenuItem.Checked=true;
+            if (устройстваСПрограммерамиToolStripMenuItem.Checked) strfil += " AND Url is Not Null";
+        }
+        else if (устройстваСПрограммерамиToolStripMenuItem.Checked) strfil += " AND Url is Not Null";
+        bindingSource_collection.Filter=strfil;
+    }
+
+    private void УстройстваСПрограммерамиToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+    {
+        string strfil = string.Format("Trust = '{0}'", "full trust");
+        if (устройстваСПрограммерамиToolStripMenuItem.Checked)
+        {
+            if (!CollectionToolStripMenuItem.Checked) CollectionToolStripMenuItem.Checked=true;
+            if (реальноПодключённыеУстройстваToolStripMenuItem.Checked) strfil = "Trust is Not Null AND Url is Not Null";
+            else strfil+=" AND Url is Not Null";
+        }
+        else if (реальноПодключённыеУстройстваToolStripMenuItem.Checked) strfil = "Trust is Not Null";
+        bindingSource_collection.Filter=strfil;
+    }
+
+
+    /// <summary>
+    /// Переключились на автоматический выбор языка
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void АвтоматическиToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        if (автоматическиToolStripMenuItem.Checked)
+        {
+            Settings.Default.local_lang=string.Empty;
+            if (русскийToolStripMenuItem.Checked) русскийToolStripMenuItem.Checked=false;
+            if (englishToolStripMenuItem.Checked) englishToolStripMenuItem.Checked=false;
+            if (MessageBox.Show(LocRes.GetString("message_body_need_restart"),
+                LocRes.GetString("message_title_need_restart"),
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+            {
+                Application.Restart();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Переключились на русский независимо от языка системы
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void РусскийToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        if (русскийToolStripMenuItem.Checked)
+        {
+            Settings.Default.local_lang="ru";
+            if (автоматическиToolStripMenuItem.Checked) автоматическиToolStripMenuItem.Checked=false;
+            if (englishToolStripMenuItem.Checked) englishToolStripMenuItem.Checked=false;
+            if (MessageBox.Show(LocRes.GetString("message_body_need_restart"),
+                LocRes.GetString("message_title_need_restart"),
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+            {
+                Application.Restart();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Переключились на английский независимо от языка системы
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void EnglishToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        if (englishToolStripMenuItem.Checked)
+        {
+            Settings.Default.local_lang="en";
+            if (автоматическиToolStripMenuItem.Checked) автоматическиToolStripMenuItem.Checked=false;
+            if (русскийToolStripMenuItem.Checked) русскийToolStripMenuItem.Checked=false;
+            if (MessageBox.Show(LocRes.GetString("message_body_need_restart"),
+                LocRes.GetString("message_title_need_restart"),
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+            {
+                Application.Restart();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Отправили в чат предлагать перевод
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ПредложитьПереводToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        ProcessStartInfo offertrans = new ProcessStartInfo("https://t.me/+Suwc1u6h8PYzM2Qy");
+        Process.Start(offertrans);
+    }
+
+    private void BackgroundWorker_rawprogram_DoWork(object sender, DoWorkEventArgs e)
+    {
+        BackgroundWorker worker = sender as BackgroundWorker;
+        process_FH_Loader.StartInfo.Arguments = e.Argument.ToString(); //аргументы лоадера;
+        process_FH_Loader.Start();
+        StreamReader reader = process_FH_Loader.StandardOutput;
+        StreamReader erread = process_FH_Loader.StandardError;
+        ppc = 10; //Начали обработку в параллельном потоке
+        while (reader.Peek() >= 0)
+        {
+            if (worker.CancellationPending)
+            {
+                e.Cancel = true;
+                break;
+            }
+            else
+            {
+                string outline = reader.ReadLine();
+                if (!string.IsNullOrEmpty(outline))
+                {
+                    int ppn = func.ProcessPersent(outline);
+                    if (ppc < ppn) ppc = ppn;
+                    output_FH+=outline;
+                    worker.ReportProgress(ppc, outline);
+                }
+            }
+        }
+        if (erread.Peek() >= 0) worker.ReportProgress(100, "er: " + erread.ReadToEnd());
+        process_FH_Loader.WaitForExit();
+        process_FH_Loader.Close();
+    }
+
+    private void BackgroundWorker_rawprogram_ProgressChanged(object sender, ProgressChangedEventArgs e)
+    {
+        progressBar_phone.Value = e.ProgressPercentage;
+        textBox_soft_term.AppendText(e.UserState.ToString() + Environment.NewLine);
+    }
+
+    private void BackgroundWorker_rawprogram_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+    {
+        ppc = 0;
+        progressBar_phone.Value = ppc;
+        if (e.Cancelled) textBox_soft_term.AppendText(LocRes.GetString("tb_cancel_user") + Environment.NewLine);
+        else
+        {
+            if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine + e.Error.StackTrace + Environment.NewLine);
+            else textBox_soft_term.AppendText(LocRes.GetString("done") + Environment.NewLine);
+        }
+    }
+
+    /// <summary>
+    /// Отменяем долгую операцию нажав прогрессбар
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ProgressBar_phone_Click(object sender, EventArgs e)
+    {
+        if (progressBar_phone.Value>5)
+        {
+            if (MessageBox.Show(LocRes.GetString("hex_mess_stopoper"), LocRes.GetString("hex_warn_stopoper"),
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Stop,
+                MessageBoxDefaultButton.Button2)==DialogResult.OK)
+            {
+                if (backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.CancelAsync();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Выполнение FH_Loader с указанными параметрами
+    /// </summary>
+    /// <param name="com_args">Аргументы команды лоадеру</param>
+    /// <returns>Ответ лоадера по результатам исполнения команды</returns>
+    private void FH_Commands(string com_args)
+    {
+        process_FH_Loader.StartInfo.Arguments = com_args; //аргументы лоадера
+        try
+        {
+            process_FH_Loader.Start();
+            StreamReader reader = process_FH_Loader.StandardOutput;
+            StreamReader erread = process_FH_Loader.StandardError;
+            while (reader.Peek() >= 0)
+            {
+                string outline = reader.ReadLine();
+                if (!string.IsNullOrEmpty(outline))
+                {
+                    output_FH += outline + Environment.NewLine;
+                }
+            }
+            if (erread.Peek() >=0) output_FH = "er: " + erread.ReadToEnd();
+            process_FH_Loader.WaitForExit();
+            process_FH_Loader.Close();
+        }
+        catch (Exception ex)
+        {
+            output_FH = LocRes.GetString("er_func_fhl_params") + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace;
+        }
+    }
+
+    private void ОтправкаПрограммераToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        SendProgForm spf = new SendProgForm(this);
+        textBox_soft_term.AppendText(LocRes.GetString("tb_share_prog") + Environment.NewLine);
+        switch (spf.ShowDialog())
+        {
+            case DialogResult.None:
+                break;
+            case DialogResult.OK:
+                //Запускаем отправку файла в чат
+                FileInfo pathprog = new FileInfo(Global_Share_Prog[3][7]);
+                if (File.Exists(pathprog.FullName))
+                {
+                    Stream stream = File.OpenRead(pathprog.FullName);
+                    InputOnlineFile onlineFile = new InputOnlineFile(stream, pathprog.Name);
+                    StringBuilder inputstr = new StringBuilder();
+                    for (int i = 0; i < Global_Share_Prog.Length; i++)
+                    {
+                        for (int k = 0; k < Global_Share_Prog[i].Length - 1; k++)
+                        {
+                            inputstr.Append(Global_Share_Prog[i][k] + '\t');
+                        }
+                        inputstr.Append(Environment.NewLine);
+                    }
+                    try
+                    {
+                        mybot.SendDocumentAsync(chat, onlineFile, null, CorrectBotString(inputstr.ToString()), Telegram.Bot.Types.Enums.ParseMode.Markdown);
+                        textBox_soft_term.AppendText(LocRes.GetString("sent") + Environment.NewLine);
+                    }
+                    catch (Exception ex)
+                    {
+                        textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                        SendErrorInChat();
+                    }
+                }
+                else textBox_soft_term.AppendText(LocRes.GetString("tb_nopath") + Environment.NewLine);
+                break;
+            case DialogResult.Cancel:
+                textBox_soft_term.AppendText(LocRes.GetString("tb_cancel_user") + Environment.NewLine);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void BackgroundWorker_sahara_DoWork(object sender, DoWorkEventArgs e)
+    {
+        process_Sahara.StartInfo.Arguments = e.Argument.ToString(); //аргументы sahara;
+        process_Sahara.Start();
+        StreamReader reader = process_Sahara.StandardOutput;
+        StreamReader erread = process_Sahara.StandardError;
+        if (reader.Peek() >= 0) e.Result=reader.ReadToEnd();
+        if (erread.Peek() >= 0) e.Result="er: " + erread.ReadToEnd();
+        process_Sahara.WaitForExit();
+        process_Sahara.Close();
+    }
+
+    private void BackgroundWorker_sahara_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+    {
+        if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine + e.Error.StackTrace + Environment.NewLine);
+        else
+        {
+            textBox_soft_term.AppendText(e.Result + Environment.NewLine + LocRes.GetString("done") + Environment.NewLine);
+            textBox_main_term.AppendText(e.Result + Environment.NewLine);
+        }
+    }
+}
 }
