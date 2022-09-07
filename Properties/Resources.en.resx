@@ -633,6 +633,10 @@
     <value>log file</value>
     <comment>файла лога</comment>
   </data>
+  <data name="tb_nopath" xml:space="preserve">
+    <value>The path to the file does not exist</value>
+    <comment>Путь к файлу не существует</comment>
+  </data>
   <data name="tb_norm" xml:space="preserve">
     <value>normal mode</value>
     <comment>нормальный режим</comment>

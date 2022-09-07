@@ -517,6 +517,9 @@
   <data name="tb_log" xml:space="preserve">
     <value>файла лога</value>
   </data>
+  <data name="tb_nopath" xml:space="preserve">
+    <value>Путь к файлу не существует</value>
+  </data>
   <data name="tb_norm" xml:space="preserve">
     <value>нормальный режим</value>
   </data>

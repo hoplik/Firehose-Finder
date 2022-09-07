@@ -11,13 +11,16 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 using Telegram.Bot;
-using Telegram.Bot.Types.Enums;
+using Telegram.Bot.Types;
+using Telegram.Bot.Types.InputFiles;
+using File = System.IO.File;
 
 namespace FirehoseFinder
 {
@@ -44,6 +47,8 @@ namespace FirehoseFinder
         readonly ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
         int ppc = 0; //Процент выполнения в параллельном процессе
         string output_FH = string.Empty; //Вывод результата работы лоадера в консоли на форму
+        TelegramBotClient mybot = new TelegramBotClient(Resources.bot);
+        long chat = -1001227261414;
 
         /// <summary>
         /// Инициализация компонентов
@@ -629,11 +634,10 @@ namespace FirehoseFinder
                     if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args.ToString());
                     break;
             }
-            //Притормозим основной поток пока не выполнится асинхрон
-            while (backgroundWorker_rawprogram.IsBusy)
+            //Притормозим основной поток на 2 минуты или пока не выполнится асинхрон лоадера
+            while (backgroundWorker_rawprogram.IsBusy && counter_backgroung<100)
             {
                 counter_backgroung++;
-                if (counter_backgroung>100) counter_backgroung=100;
                 progressBar_phone.Value = counter_backgroung;
                 Thread.Sleep(1200);
                 Application.DoEvents();
@@ -2239,10 +2243,10 @@ namespace FirehoseFinder
             //Заполнили листвью наименованием и транспортом
             foreach (DeviceData dev in devices)
             {
-                ListViewItem viewItem = new ListViewItem(dev.Serial);
+                ListViewItem viewItem = new ListViewItem(dev.Serial.ToUpper());
                 viewItem.SubItems.Add(dev.Model);
                 listView_ADB_devices.Items.Add(viewItem);
-                if (!Connected_Devices.ContainsKey(dev.Serial)) Connected_Devices.Add(dev.Serial, dev.Model);
+                if (!Connected_Devices.ContainsKey(dev.Serial.ToUpper())) Connected_Devices.Add(dev.Serial.ToUpper(), dev.Model);
             }
             //Пометили первый попавшийся и активировали если больше одного
             if (listView_ADB_devices.Items.Count > 0)
@@ -2253,8 +2257,8 @@ namespace FirehoseFinder
             button_ADB_start.Enabled = false;
             foreach (var device in devices)
             {
-                textBox_soft_term.AppendText(LocRes.GetString("tb_dev_con") + '\u0020' + device + Environment.NewLine);
-                textBox_main_term.AppendText(LocRes.GetString("tb_dev_con") + '\u0020' + device + Environment.NewLine);
+                textBox_soft_term.AppendText(LocRes.GetString("tb_dev_con") + '\u0020' + device.Serial.ToUpper() + Environment.NewLine);
+                textBox_main_term.AppendText(LocRes.GetString("tb_dev_con") + '\u0020' + device.Serial.ToUpper() + Environment.NewLine);
             }
             if (devices.Count == 0)
             {
@@ -2544,9 +2548,31 @@ namespace FirehoseFinder
         /// <returns></returns>
         public void BotSendMes(string send_message, string version)
         {
-            send_message += Environment.NewLine + version;
+            try
+            {
+                mybot.SendTextMessageAsync(
+                    chat,
+                    CorrectBotString(send_message + Environment.NewLine + version),
+                    parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
+                toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_data_sent");
+            }
+            catch (Exception ex)
+            {
+                textBox_soft_term.AppendText(LocRes.GetString("tt_data_not_sent") + '\u002E' + '\u0020' + ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine, LocRes.GetString("tt_data_not_sent"));
+            }
+            checkBox_send.Checked = false;
+        }
+
+        /// <summary>
+        /// Приводим строку в соответствие с требованиями телеги
+        /// </summary>
+        /// <param name="inputstr"></param>
+        /// <returns></returns>
+        private string CorrectBotString(string inputstr)
+        {
             //Экранируем запрещённые символы
-            string message_not_mark = send_message.Replace("_", "\\_")
+            string message_not_mark = inputstr.Replace("_", "\\_")
                 .Replace("*", "\\*")
                 .Replace("[", "\\[")
                 .Replace("`", "\\`")
@@ -2573,31 +2599,7 @@ namespace FirehoseFinder
                     .Insert(0, "...");
             }
             //Устанавливаем моношрифт
-            correct_mess = '\u0060' + correct_mess + '\u0060';
-            TelegramBotClient mybot = new TelegramBotClient(Resources.bot);
-            long chat = -1001227261414;
-            try
-            {
-                mybot.SendTextMessageAsync(
-                    chat,
-                    correct_mess,
-                    parseMode: ParseMode.Markdown);
-                toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_data_sent");
-            }
-            //catch (SerializationException)
-            //{
-            //    //Отправляется, не смотря на косяк сериализации!
-            //}
-            //catch (InvalidOperationException ex)
-            //{
-            //    //Игнорим
-            //}
-            catch (Exception ex)
-            {
-                textBox_soft_term.AppendText(LocRes.GetString("tt_data_not_sent") + '\u002E' + '\u0020' + ex.ToString() + Environment.NewLine + ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
-                MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine, LocRes.GetString("tt_data_not_sent"));
-            }
-            checkBox_send.Checked = false;
+            return '\u0060' + correct_mess + '\u0060';
         }
 
         /// <summary>
@@ -3238,21 +3240,35 @@ namespace FirehoseFinder
                 case DialogResult.None:
                     break;
                 case DialogResult.OK:
-                    MessageBox.Show("Отправили программер");
                     //Запускаем отправку файла в чат
+                    if (File.Exists(Global_Share_Prog[3][7]))
+                    {
+                        Stream stream = File.OpenRead(Global_Share_Prog[3][7]);
+                        InputOnlineFile onlineFile = new InputOnlineFile(stream, Global_Share_Prog[3][7]);
+                        StringBuilder inputstr = new StringBuilder();
+                        for (int i = 0; i < Global_Share_Prog.Length; i++)
+                        {
+                            for (int k = 0; k < Global_Share_Prog[i].Length - 1; k++)
+                            {
+                                inputstr.Append(Global_Share_Prog[i][k] + '\t');
+                            }
+                            inputstr.Append(Environment.NewLine);
+                        }
+                        try
+                        {
+                            mybot.SendDocumentAsync(chat, onlineFile, null, CorrectBotString(inputstr.ToString()), Telegram.Bot.Types.Enums.ParseMode.Markdown);
+                            textBox_soft_term.AppendText(LocRes.GetString("sent") + Environment.NewLine);
+                        }
+                        catch (Exception ex)
+                        {
+                            textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                            SendErrorInChat();
+                        }
+                    }
+                    else textBox_soft_term.AppendText(LocRes.GetString("tb_nopath") + Environment.NewLine);
                     break;
                 case DialogResult.Cancel:
                     textBox_soft_term.AppendText(LocRes.GetString("tb_cancel_user") + Environment.NewLine);
-                    break;
-                case DialogResult.Abort:
-                    break;
-                case DialogResult.Retry:
-                    break;
-                case DialogResult.Ignore:
-                    break;
-                case DialogResult.Yes:
-                    break;
-                case DialogResult.No:
                     break;
                 default:
                     break;

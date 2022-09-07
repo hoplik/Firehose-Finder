@@ -1246,6 +1246,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Путь к файлу не существует.
+        /// </summary>
+        internal static string tb_nopath {
+            get {
+                return ResourceManager.GetString("tb_nopath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на нормальный режим.
         /// </summary>
         internal static string tb_norm {
