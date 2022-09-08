@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace FirehoseFinder
@@ -35,11 +36,8 @@ namespace FirehoseFinder
 
         private void SendProgForm_Load(object sender, EventArgs e)
         {
-            //Потом поставлю проверку данных при необходимости
-            if (true)
-            {
-                button_send.Enabled=true;
-            }
+            if (!string.IsNullOrEmpty(dataGridView_shareprog[0, 0].Value.ToString())) button_send.Enabled=true;
+            else dataGridView_shareprog.Rows[0].DefaultCellStyle.BackColor = Color.Red;
         }
     }
 }

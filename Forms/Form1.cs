@@ -11,14 +11,12 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Reflection.Emit;
 using System.Resources;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 using Telegram.Bot;
-using Telegram.Bot.Types;
 using Telegram.Bot.Types.InputFiles;
 using File = System.IO.File;
 
@@ -37,7 +35,7 @@ namespace FirehoseFinder
         internal string Global_FB_Device = string.Empty;
         internal string[][] Global_Share_Prog = new string[4][] //Массив данных для отправки программера
         {
-            new string[8] { "ADB", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty},
+            new string[8] { "Device", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty},
             new string[8] { "Sahara", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty},
             new string[8] { "Loader", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty},
             new string[8] { "Programer", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty }
@@ -259,16 +257,16 @@ namespace FirehoseFinder
                     Global_Share_Prog[0][3] = string.Empty;
                     label_altname.Text = "---";
                     Global_Share_Prog[0][4] = string.Empty;
-                    label_chip_sn.Text = "---";
                     Global_Share_Prog[0][5] = string.Empty;
+                    label_chip_sn.Text = "---";
                     break;
                 default:
                     label_tm.Text = imf.comboBox_tm_insert.Text;
                     label_model.Text = imf.textBox_model_insert.Text;
                     label_altname.Text = imf.textBox_alt_insert.Text;
-                    Global_Share_Prog[0][2] = label_tm.Text;
-                    Global_Share_Prog[0][3] = label_model.Text;
-                    Global_Share_Prog[0][4] = label_altname.Text;
+                    Global_Share_Prog[0][1] = label_tm.Text;
+                    Global_Share_Prog[0][2] = label_model.Text;
+                    Global_Share_Prog[0][3] = label_altname.Text;
                     break;
             }
         }
@@ -425,7 +423,7 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button_Sahara_CommandStart_Click(object sender, EventArgs e)
         {
-            StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -s 13:");
+            StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3));
             StringBuilder fh_command_args = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName + " --noprompt");
             bool need_parsing_lun = false; //Необходимо ли парсить данные хранилища
             bool getgpt = false; //Необходимо ли получить таблицу GPT
@@ -440,7 +438,6 @@ namespace FirehoseFinder
                 if (dr == DialogResult.OK) tabControl1.SelectedTab = tabPage_firehose;
                 return;
             }
-            sahara_command_args.Append(label_Sahara_fhf.Text);
             switch (comboBox_log.SelectedIndex)
             {
                 case 0:
@@ -478,7 +475,7 @@ namespace FirehoseFinder
                     return;
                 }
                 //Если лоадер ещё не загружен в imem, то грузим в параллельном потоке
-                sahara_command_args.Append(" -c 1 -c 2 -c 3 -c 7");
+                sahara_command_args.Append(" -c 1 -c 2 -c 3 -c 7 -x -s 13:" + label_Sahara_fhf.Text);
                 GetSaharaIDs(sahara_command_args);
                 FHAlreadyLoaded = true;
                 NeedReset = true;
@@ -729,7 +726,7 @@ namespace FirehoseFinder
                                     break;
                                 case "Device Serial Nu":
                                     parstr = correct_pars_str.Substring(correct_pars_str.IndexOf(": 0x") + 4, 8);
-                                    Global_Share_Prog[2][1] = parstr.ToUpper();
+                                    Global_Share_Prog[2][4] = parstr.ToUpper();
                                     break;
                                 //Ошибки
                                 //Используется программер с авторизацией
@@ -1857,9 +1854,9 @@ namespace FirehoseFinder
             label_tm.Text = dataGridView_collection["Trademark", sel_row].Value.ToString();
             label_model.Text = dataGridView_collection["Model", sel_row].Value.ToString();
             label_altname.Text = dataGridView_collection["AltName", sel_row].Value.ToString();
-            Global_Share_Prog[0][2] = label_tm.Text;
-            Global_Share_Prog[0][3] = label_model.Text;
-            Global_Share_Prog[0][4] = label_altname.Text;
+            Global_Share_Prog[0][1] = label_tm.Text;
+            Global_Share_Prog[0][2] = label_model.Text;
+            Global_Share_Prog[0][3] = label_altname.Text;
             tabControl1.SelectedTab = tabPage_firehose;
             //Загружаем программер с сервера
             if (!string.IsNullOrEmpty(dataGridView_collection["Url", sel_row].Value.ToString()))
@@ -2335,10 +2332,10 @@ namespace FirehoseFinder
                 LocRes.GetString("model") + '\u003A' + '\u0020' + label_model.Text + Environment.NewLine +
                 LocRes.GetString("alt_name") + '\u003A' + '\u0020' + label_altname.Text + Environment.NewLine +
                 LocRes.GetString("chip_sn") + '\u003A' + '\u0020' + label_chip_sn.Text + Environment.NewLine);
-            Global_Share_Prog[0][1] = device.Serial.ToUpper();
-            Global_Share_Prog[0][2] = label_tm.Text;
-            Global_Share_Prog[0][3] = label_model.Text;
-            Global_Share_Prog[0][4] = label_altname.Text;
+            Global_Share_Prog[0][4] = device.Serial.ToUpper();
+            Global_Share_Prog[0][1] = label_tm.Text;
+            Global_Share_Prog[0][2] = label_model.Text;
+            Global_Share_Prog[0][3] = label_altname.Text;
             Global_Share_Prog[0][5] = label_chip_sn.Text;
             if (reset)
             {
@@ -2467,9 +2464,9 @@ namespace FirehoseFinder
                 string.Format("OEM PK Hash ({0}): {1}", textBox_oemhash.TextLength, textBox_oemhash.Text) + Environment.NewLine +
                 string.Format("SBL SW Version: {0}", label_SW_Ver.Text);
             //Записываем данные в глобальный массив
-            Global_Share_Prog[0][2] = label_tm.Text;
-            Global_Share_Prog[0][3] = label_model.Text;
-            Global_Share_Prog[0][4] = label_altname.Text;
+            Global_Share_Prog[0][1] = label_tm.Text;
+            Global_Share_Prog[0][2] = label_model.Text;
+            Global_Share_Prog[0][3] = label_altname.Text;
             if (checkBox_Log.Checked)
             {
                 try

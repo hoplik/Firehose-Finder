@@ -34,14 +34,14 @@
             this.button_send = new System.Windows.Forms.Button();
             this.button_cancel = new System.Windows.Forms.Button();
             this.dataGridView_shareprog = new System.Windows.Forms.DataGridView();
-            this.Column_dev_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label_title = new System.Windows.Forms.Label();
             this.Column_manuf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_model = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_altname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_dev_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_chipnum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_path = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label_title = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_shareprog)).BeginInit();
             this.SuspendLayout();
@@ -73,13 +73,13 @@
             // 
             this.dataGridView_shareprog.AllowUserToAddRows = false;
             this.dataGridView_shareprog.AllowUserToDeleteRows = false;
-            this.dataGridView_shareprog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView_shareprog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dataGridView_shareprog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_shareprog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column_dev_num,
             this.Column_manuf,
             this.Column_model,
             this.Column_altname,
+            this.Column_dev_num,
             this.Column_chipnum,
             this.Column_id,
             this.Column_path});
@@ -99,11 +99,11 @@
             this.dataGridView_shareprog.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView_shareprog.RowTemplate.Height = 24;
             // 
-            // Column_dev_num
+            // label_title
             // 
-            resources.ApplyResources(this.Column_dev_num, "Column_dev_num");
-            this.Column_dev_num.Name = "Column_dev_num";
-            this.Column_dev_num.ReadOnly = true;
+            resources.ApplyResources(this.label_title, "label_title");
+            this.tableLayoutPanel1.SetColumnSpan(this.label_title, 3);
+            this.label_title.Name = "label_title";
             // 
             // Column_manuf
             // 
@@ -123,6 +123,12 @@
             this.Column_altname.Name = "Column_altname";
             this.Column_altname.ReadOnly = true;
             // 
+            // Column_dev_num
+            // 
+            resources.ApplyResources(this.Column_dev_num, "Column_dev_num");
+            this.Column_dev_num.Name = "Column_dev_num";
+            this.Column_dev_num.ReadOnly = true;
+            // 
             // Column_chipnum
             // 
             resources.ApplyResources(this.Column_chipnum, "Column_chipnum");
@@ -140,12 +146,6 @@
             resources.ApplyResources(this.Column_path, "Column_path");
             this.Column_path.Name = "Column_path";
             this.Column_path.ReadOnly = true;
-            // 
-            // label_title
-            // 
-            resources.ApplyResources(this.label_title, "label_title");
-            this.tableLayoutPanel1.SetColumnSpan(this.label_title, 3);
-            this.label_title.Name = "label_title";
             // 
             // SendProgForm
             // 
@@ -170,10 +170,10 @@
         private System.Windows.Forms.Button button_cancel;
         internal System.Windows.Forms.DataGridView dataGridView_shareprog;
         private System.Windows.Forms.Label label_title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_dev_num;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_manuf;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_model;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_altname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_dev_num;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_chipnum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_path;

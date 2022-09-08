@@ -180,18 +180,6 @@
   <data name="&gt;&gt;button_cancel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="Column_dev_num.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Column_dev_num.HeaderText" xml:space="preserve">
-    <value>Номер устройства</value>
-  </data>
-  <data name="Column_dev_num.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="Column_dev_num.Width" type="System.Int32, mscorlib">
-    <value>145</value>
-  </data>
   <metadata name="Column_manuf.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -199,10 +187,10 @@
     <value>Производитель</value>
   </data>
   <data name="Column_manuf.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>20</value>
   </data>
   <data name="Column_manuf.Width" type="System.Int32, mscorlib">
-    <value>140</value>
+    <value>20</value>
   </data>
   <metadata name="Column_model.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -211,10 +199,10 @@
     <value>Модель</value>
   </data>
   <data name="Column_model.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>20</value>
   </data>
   <data name="Column_model.Width" type="System.Int32, mscorlib">
-    <value>86</value>
+    <value>20</value>
   </data>
   <metadata name="Column_altname.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -223,10 +211,22 @@
     <value>Альтернативное наименование</value>
   </data>
   <data name="Column_altname.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>20</value>
   </data>
   <data name="Column_altname.Width" type="System.Int32, mscorlib">
-    <value>224</value>
+    <value>20</value>
+  </data>
+  <metadata name="Column_dev_num.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Column_dev_num.HeaderText" xml:space="preserve">
+    <value>Номер устройства</value>
+  </data>
+  <data name="Column_dev_num.MinimumWidth" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="Column_dev_num.Width" type="System.Int32, mscorlib">
+    <value>20</value>
   </data>
   <metadata name="Column_chipnum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -235,10 +235,10 @@
     <value>Номер чипа</value>
   </data>
   <data name="Column_chipnum.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>20</value>
   </data>
   <data name="Column_chipnum.Width" type="System.Int32, mscorlib">
-    <value>105</value>
+    <value>20</value>
   </data>
   <metadata name="Column_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -247,10 +247,10 @@
     <value>Идентификаторы</value>
   </data>
   <data name="Column_id.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>20</value>
   </data>
   <data name="Column_id.Width" type="System.Int32, mscorlib">
-    <value>151</value>
+    <value>20</value>
   </data>
   <metadata name="Column_path.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -259,10 +259,10 @@
     <value>Путь к файлу</value>
   </data>
   <data name="Column_path.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>20</value>
   </data>
   <data name="Column_path.Width" type="System.Int32, mscorlib">
-    <value>114</value>
+    <value>20</value>
   </data>
   <data name="dataGridView_shareprog.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2810,12 +2810,6 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Поделиться программером</value>
   </data>
-  <data name="&gt;&gt;Column_dev_num.Name" xml:space="preserve">
-    <value>Column_dev_num</value>
-  </data>
-  <data name="&gt;&gt;Column_dev_num.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;Column_manuf.Name" xml:space="preserve">
     <value>Column_manuf</value>
   </data>
@@ -2832,6 +2826,12 @@
     <value>Column_altname</value>
   </data>
   <data name="&gt;&gt;Column_altname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Column_dev_num.Name" xml:space="preserve">
+    <value>Column_dev_num</value>
+  </data>
+  <data name="&gt;&gt;Column_dev_num.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Column_chipnum.Name" xml:space="preserve">
