@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-09-08T21:58:35">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-09-09T00:35:31">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -356,6 +356,14 @@
 <Model>NTH-NX9</Model>
 </ForFound>
 <ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/164FB294/prog_firehose_ddr_Asusx_384.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0029</OEM_FH>
+<MODEL_FH>0865</MODEL_FH>
+<HASH_FH>88538270E8F924BEE0C6231E55A06E84CD997EAE2633AD6FDD1E1FB0995AE6A86C5A5FBE674E5C95C5B847E2164FB294</HASH_FH>
+<Model>ZS671KS</Model>
+</ForFound>
+<ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A758CF6D/0/prog_emmc_firehose_8917.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
 <OEM_FH>0004</OEM_FH>
@@ -549,6 +557,22 @@
 <SWType>3</SWType>
 <SWVer>1</SWVer>
 <Model>Redmi 8</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/164FB294/prog_firehose_ddr_Asusy_384.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0029</OEM_FH>
+<MODEL_FH>0865</MODEL_FH>
+<HASH_FH>88538270E8F924BEE0C6231E55A06E84CD997EAE2633AD6FDD1E1FB0995AE6A86C5A5FBE674E5C95C5B847E2164FB294</HASH_FH>
+<Model>ZS671KS</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/2D3CFE5D/0000000000040000_dff7dda29c8c49b1_fhprg.bin#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0004</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>DFF7DDA29C8C49B1241F6220A482825E42E572BC814B3143FEA83C101EB7F9172DDD75A30F741D09276B486D2D3CFE5D</HASH_FH>
+<Model>NX659J</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A2CF981F/0/BCM6153_V1660_PreBoot_20_KN.bin#</Url>
