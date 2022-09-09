@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-09-09T19:02:26">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-09-09T23:17:47">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -131,22 +131,8 @@
 <SWVer>1</SWVer>
 <Model>Redmi S2</Model>
 </ForFound>
-<ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D42A380F/Acer_(Z330)_8909_ddr.mbn#</Url>
-<HW_FH>009600E1</HW_FH>
-<OEM_FH>0000</OEM_FH>
-<MODEL_FH>0000</MODEL_FH>
-<HASH_FH>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASH_FH>
-<Model>Z330</Model>
-</ForFound>
-<ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/03F0FE65/ZTE_BladeV9.mbn#</Url>
-<HW_FH>0006B0E1</HW_FH>
-<OEM_FH>0004</OEM_FH>
-<MODEL_FH>0000</MODEL_FH>
-<HASH_FH>9764995D53559360DC5789643D7424ACE3BF6208DA9433656B7C9DD103F0FE65</HASH_FH>
-<Model>P840F03</Model>
-</ForFound>
+<ForFound/>
+<ForFound/>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/03F0FE65/prog_emmc_firehose_8940.mbn#</Url>
 <HW_FH>0006B0E1</HW_FH>
@@ -345,9 +331,7 @@
 <OEM_FH>0000</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>CAB02552DC28F562E8C5BEFA75BC4A97B90AAB1C91A3C186EC51F3D3D7D6A1C7</HASH_FH>
-<SWType>3</SWType>
-<SWVer>1</SWVer>
-<Model>Z2 Plus</Model>
+<Model>ZUK Z2131</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F6955368/Honor50_NTH-NX9_SM7325_ufs.mbn#</Url>
@@ -382,13 +366,7 @@
 <HASH_FH>8008B2CD7B7E36F1BD723381ADA008109F6D434A0780C38CE017C7CA89672D69</HASH_FH>
 <Model>Swift2</Model>
 </ForFound>
-<ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/6965FE65/prog_ufs_firehose_sdm845_Mi8_Pocco.elf#</Url>
-<HW_FH>0008B0E1</HW_FH>
-<OEM_FH>0072</OEM_FH>
-<MODEL_FH>0000</MODEL_FH>
-<HASH_FH>C924A35F39CE1CDD1B8D5A9F3B8E3C51317930431D7A9DD5A55028CF6965FE65</HASH_FH>
-</ForFound>
+<ForFound/>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D49D14D4/prog_ufs_firehose_8996_lite.elf#</Url>
 <HW_FH>0005F0E1</HW_FH>
@@ -673,29 +651,16 @@
 <OEM_FH>0000</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>CAB02552DC28F562E8C5BEFA75BC4A97B90AAB1C91A3C186EC51F3D3D7D6A1C7</HASH_FH>
-<SWType>3</SWType>
-<SWVer>1</SWVer>
-<Model>Z2 Plus</Model>
+<Model>ZUK Z2131</Model>
 </ForFound>
-<ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D7D6A1C7/prog_emmc_firehose_8996_ddr_zuk%20(2).elf#</Url>
-<HW_FH>009470E1</HW_FH>
-<OEM_FH>0000</OEM_FH>
-<MODEL_FH>0000</MODEL_FH>
-<HASH_FH>CAB02552DC28F562E8C5BEFA75BC4A97B90AAB1C91A3C186EC51F3D3D7D6A1C7</HASH_FH>
-<SWType>3</SWType>
-<SWVer>1</SWVer>
-<Model>Z2 Plus</Model>
-</ForFound>
+<ForFound/>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D7D6A1C7/prog_ufs_firehose_8996_ddr_zuk.elf#</Url>
 <HW_FH>009470E1</HW_FH>
 <OEM_FH>0000</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>CAB02552DC28F562E8C5BEFA75BC4A97B90AAB1C91A3C186EC51F3D3D7D6A1C7</HASH_FH>
-<SWType>3</SWType>
-<SWVer>1</SWVer>
-<Model>Z2 Plus</Model>
+<Model>ZUK Z2131</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F543B6A5/prog_ufs_firehose_8996_ddr_motogriff.elf#</Url>
