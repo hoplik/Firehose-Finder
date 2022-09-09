@@ -619,10 +619,11 @@ namespace FirehoseFinder
                     if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args.ToString());
                     break;
             }
-            //Притормозим основной поток на 2 минуты или пока не выполнится асинхрон лоадера
-            while (backgroundWorker_rawprogram.IsBusy && counter_backgroung<100)
+            //Притормозим основной поток пока не выполнится асинхрон лоадера
+            while (backgroundWorker_rawprogram.IsBusy)
             {
                 counter_backgroung++;
+                if (counter_backgroung>100) counter_backgroung=100;
                 progressBar_phone.Value = counter_backgroung;
                 Thread.Sleep(1200);
                 Application.DoEvents();
@@ -2380,10 +2381,11 @@ namespace FirehoseFinder
             }
             //Выполняем запрос HWID-OEMID (command01, 02, 03, 07)
             if (!backgroundWorker_sahara.IsBusy) backgroundWorker_sahara.RunWorkerAsync(sahara_command_args);
-            //Притормозим основной поток на 2 минуты или пока не выполнится асинхрон sahara
-            while (backgroundWorker_sahara.IsBusy && counter_backgroung<100)
+            //Притормозим основной поток пока не выполнится асинхрон sahara
+            while (backgroundWorker_sahara.IsBusy)
             {
                 counter_backgroung++;
+                if (counter_backgroung > 100) counter_backgroung=100;
                 progressBar_phone.Value = counter_backgroung;
                 Thread.Sleep(1200);
                 Application.DoEvents();
