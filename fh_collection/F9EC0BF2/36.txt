@@ -1,0 +1,5 @@
+Jtag_ID (процессор) - 0090B0E1
+OEM_ID (производитель) - 1111
+MODEL_ID (модель) - 2222
+OEM_PK_HASH (хеш корневого сертификата 64 знаков) - F069A87F6D4364EFCDFECFCD34BD5201F4126990D38424FCF7F21724F9EC0BF2
+SW_ID (тип программы (версия)) - 3 - Firehose programmer
