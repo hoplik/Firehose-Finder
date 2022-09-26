@@ -2348,8 +2348,11 @@ namespace FirehoseFinder
                     LocRes.GetString("tb_edl") + '\u0020' + Environment.NewLine);
                 try
                 {
-                    if (label_tm.Text.Contains("Samsung")) client.Reboot("download", device);
-                    else client.Reboot("edl", device);
+                    //if (label_tm.Text.Contains("Samsung")) client.Reboot("download", device);
+                    //else
+                    //{
+                        client.Reboot("edl", device);
+                    //}
                 }
                 catch (Exception ex)
                 {
