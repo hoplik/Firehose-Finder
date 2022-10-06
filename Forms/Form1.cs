@@ -367,7 +367,6 @@ namespace FirehoseFinder
             catch (SharpAdbClient.Exceptions.AdbException ex)
             {
                 textBox_soft_term.AppendText(ex.AdbError + Environment.NewLine);
-                SendErrorInChat();
             }
         }
 
@@ -2020,7 +2019,6 @@ namespace FirehoseFinder
                 textBox_soft_term.AppendText(LocRes.GetString("tb_compl_fail") + '\u0020' +
                     LocRes.GetString("tb_adb_sess") + Environment.NewLine +
                     ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
-                SendErrorInChat();
             }
         }
 
@@ -2043,7 +2041,6 @@ namespace FirehoseFinder
             catch (SharpAdbClient.Exceptions.AdbException ex)
             {
                 textBox_soft_term.AppendText(ex.AdbError + Environment.NewLine);
-                SendErrorInChat();
             }
         }
 
@@ -2284,7 +2281,6 @@ namespace FirehoseFinder
                 {
                     textBox_soft_term.AppendText(ex.AdbError + Environment.NewLine);
                     textBox_main_term.AppendText(ex.AdbError + Environment.NewLine);
-                    SendErrorInChat();
                 }
             }
             string[] adbstr = receiver.ToString().Split('\u000A'); //Перевод строки
@@ -2360,7 +2356,6 @@ namespace FirehoseFinder
                         ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
                     textBox_main_term.AppendText(LocRes.GetString("tb_reboot_fail") + Environment.NewLine +
                         ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
-                    SendErrorInChat();
                 }
                 Thread.Sleep(500);
                 StopAdb();
