@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-11-04T15:53:13">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-11-15T18:22:00">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -691,6 +691,15 @@
 <MODEL_FH>41DB</MODEL_FH>
 <HASH_FH>F3270473110E9CEF80EDC84E876F04D286BBEEE8ED379C1E699F7239CE4F21C09ECA6105D8317DA2B8E765B1FA7C49FF</HASH_FH>
 <Model>5</Model>
+</ForFound>
+<ForFound>
+<HW_FH>60000000</HW_FH>
+<OEM_FH>0072</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>MI 8</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C7FA5AA2/0000000000514d6d_7c15a98db4e70963_fhprg.bin#</Url>
