@@ -2401,7 +2401,7 @@ namespace FirehoseFinder
             string chip_sn = func.SaharaCommand1();
             textBox_main_term.AppendText(LocRes.GetString("get") + '\u0020' + "S/N CPU - " + chip_sn + Environment.NewLine);
             textBox_soft_term.AppendText(LocRes.GetString("get") + '\u0020' + "S/N CPU - " + chip_sn + Environment.NewLine);
-            if (chip_sn.Equals(label_chip_sn.Text))
+            if (chip_sn.Contains(label_chip_sn.Text))
             {
                 textBox_main_term.AppendText(LocRes.GetString("tb_chip_same") + Environment.NewLine);
                 textBox_soft_term.AppendText(LocRes.GetString("tb_chip_same") + Environment.NewLine);
