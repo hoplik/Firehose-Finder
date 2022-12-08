@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-12-01T20:24:23">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-12-08T21:58:52">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -412,7 +412,7 @@
 <OEM_FH>0000</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>4BC6A094D433F49FE0AA20D36F71229E75EED022744744A0E738CF0139657295</HASH_FH>
-<Model>A3s</Model>
+<Model>M653</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/Honor_AUM-L29.mbn#</Url>
