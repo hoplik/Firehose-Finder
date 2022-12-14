@@ -135,7 +135,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="progressBar_phone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 604</value>
+    <value>3, 602</value>
   </data>
   <data name="progressBar_phone.Size" type="System.Drawing.Size, System.Drawing">
     <value>394, 14</value>
@@ -1692,7 +1692,7 @@ _HASH</value>
     <value>Vertical</value>
   </data>
   <data name="textBox_soft_term.Size" type="System.Drawing.Size, System.Drawing">
-    <value>388, 514</value>
+    <value>388, 512</value>
   </data>
   <data name="textBox_soft_term.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1716,7 +1716,7 @@ _HASH</value>
     <value>3, 3</value>
   </data>
   <data name="groupBox_terminal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 535</value>
+    <value>394, 533</value>
   </data>
   <data name="groupBox_terminal.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -3246,7 +3246,7 @@ _HASH</value>
     <value>3, 133</value>
   </data>
   <data name="groupBox_fb_commands.Size" type="System.Drawing.Size, System.Drawing">
-    <value>929, 427</value>
+    <value>929, 429</value>
   </data>
   <data name="groupBox_fb_commands.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3342,7 +3342,7 @@ _HASH</value>
     <value>3</value>
   </data>
   <data name="tableLayoutPanel_fb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 563</value>
+    <value>935, 565</value>
   </data>
   <data name="tableLayoutPanel_fb.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3366,7 +3366,7 @@ _HASH</value>
     <value>4, 25</value>
   </data>
   <data name="tabPage_fb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 563</value>
+    <value>935, 565</value>
   </data>
   <data name="tabPage_fb.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3393,7 +3393,7 @@ _HASH</value>
     <value>3, 18</value>
   </data>
   <data name="tabControl_soft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>943, 594</value>
+    <value>943, 592</value>
   </data>
   <data name="tabControl_soft.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3417,7 +3417,7 @@ _HASH</value>
     <value>403, 3</value>
   </data>
   <data name="groupBox_soft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>949, 615</value>
+    <value>949, 613</value>
   </data>
   <data name="groupBox_soft.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3501,7 +3501,7 @@ _HASH</value>
     <value>Fill</value>
   </data>
   <data name="groupBox_term_buttons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 544</value>
+    <value>3, 542</value>
   </data>
   <data name="groupBox_term_buttons.Size" type="System.Drawing.Size, System.Drawing">
     <value>394, 54</value>
@@ -3534,7 +3534,7 @@ _HASH</value>
     <value>3</value>
   </data>
   <data name="tableLayoutPanel_phone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 621</value>
+    <value>1355, 619</value>
   </data>
   <data name="tableLayoutPanel_phone.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -3561,7 +3561,7 @@ _HASH</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage_phone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 627</value>
+    <value>1361, 625</value>
   </data>
   <data name="tabPage_phone.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

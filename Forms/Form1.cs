@@ -501,6 +501,11 @@ namespace FirehoseFinder
                 case 1: //Получить таблицу разметки
                     textBox_soft_term.AppendText(LocRes.GetString("tbs_part_table") + Environment.NewLine);
                     fh_command_args.Append(" --getgptmainbackup=" + lun_int.ToString());
+                    //Стираем предыдущие файлы разметки, если они были сформированы.
+                    string gpt_main = string.Format("gpt_main{0}.bin", lun_int);
+                    string gpt_backup = string.Format("gpt_backup{0}.bin", lun_int);
+                    if (File.Exists(gpt_main)) File.Delete(gpt_main);
+                    if (File.Exists(gpt_backup)) File.Delete(gpt_backup);
                     getgpt = true;
                     if (!backgroundWorker_rawprogram.IsBusy) backgroundWorker_rawprogram.RunWorkerAsync(fh_command_args.ToString());
                     break;

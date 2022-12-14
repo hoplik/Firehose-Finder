@@ -96,7 +96,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-12-08T21:58:47">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2022-12-14T21:33:04">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -881,7 +881,7 @@
 <OEMID>0031</OEMID>
 <MODELID>1000</MODELID>
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
-<Trademark>google</Trademark>
+<Trademark>Google</Trademark>
 <Model>Nexus 5</Model>
 <AltName>LG D820/D821 (Hammerhead)</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D42A380F/MPRG8974.mbn#</Url>
@@ -892,7 +892,7 @@
 <OEMID>0031</OEMID>
 <MODELID>1006</MODELID>
 <HASHID>B5BACA995AEC012DB32EB9E49CA340F7D4C26153AAA60C5A82A03F99AFC698E3</HASHID>
-<Trademark>google</Trademark>
+<Trademark>Google</Trademark>
 <Model>Nexus 5X</Model>
 </ForFilter>
 <ForFilter>
@@ -901,7 +901,7 @@
 <OEMID>0228</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>F541E6985D979CDD829FF504494B6EBFAFC9C88A1329D36C1948BF9AA22902B4</HASHID>
-<Trademark>google</Trademark>
+<Trademark>Google</Trademark>
 <Model>Nexus 6</Model>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A22902B4/programmer.mbn#</Url>
 </ForFilter>
@@ -911,7 +911,7 @@
 <OEMID>0015</OEMID>
 <MODELID>0020</MODELID>
 <HASHID>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASHID>
-<Trademark>google</Trademark>
+<Trademark>Google</Trademark>
 <Model>Nexus 6P</Model>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/prog_emmc_firehose_6p.mbn#</Url>
 </ForFilter>
@@ -921,7 +921,7 @@
 <OEMID>0066</OEMID>
 <MODELID>000A</MODELID>
 <HASHID>3EF72A02FB931BE15408BB63603588FAEAFEB09F07D567C04A3FDC7E9FDD7E2FAAB10F954C89A682AFE1CD46F8482C6C</HASHID>
-<Trademark>google</Trademark>
+<Trademark>Google</Trademark>
 <Model>Pixel 4a</Model>
 <AltName>sunfish</AltName>
 </ForFilter>
@@ -3679,9 +3679,21 @@
 <MODELID>0006</MODELID>
 <HASHID>778B0AEF202BCB95109AE2D12B498D333413DC123CD723C02D8D31E795DA8D81</HASHID>
 <LASTKNOWNSBLVER>00000002</LASTKNOWNSBLVER>
-<Trademark>google</Trademark>
+<Trademark>Google</Trademark>
 <Model>Pixel 3a</Model>
 <AltName>twrp_sargo</AltName>
+</ForFilter>
+<ForFilter>
+<Trust>full trust</Trust>
+<HWID>000A50E1</HWID>
+<FullName>Snapdragon 855</FullName>
+<OEMID>0066</OEMID>
+<MODELID>0008</MODELID>
+<HASHID>26F6D8FC9E2036C80E67DCDC21B1056DA55E7F6DD519A7B040E4466EA3179D6768BD85736A475FEDFF9CBEFF9EE05AB0</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>Google</Trademark>
+<Model>Pixel 4 XL</Model>
+<AltName>coral</AltName>
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>
@@ -3795,6 +3807,18 @@
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>
+<HWID>0008C0E1</HWID>
+<FullName>Snapdragon 660</FullName>
+<OEMID>0058</OEMID>
+<MODELID>94DB</MODELID>
+<HASHID>40B461E59D24C633F52F0D05A17BE369C8A72473AFCD4A6B3BE9D6AEA357D6FC</HASHID>
+<LASTKNOWNSBLVER>00000001</LASTKNOWNSBLVER>
+<Trademark>Motorola Solutions</Trademark>
+<Model>LEX L11n</Model>
+<AltName>lexl11g_64</AltName>
+</ForFilter>
+<ForFilter>
+<Trust>full trust</Trust>
 <HWID>000940E1</HWID>
 <FullName>Snapdragon 205</FullName>
 <OEMID>0042</OEMID>
@@ -3876,7 +3900,7 @@
 <Trademark>OnePlus</Trademark>
 <Model>LE2100</Model>
 <AltName>aosp_kebab, LE2101, 9R</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C7FA5AA2/0000000000514d6d_7c15a98db4e70963_fhprg.bin#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C7FA5AA2/000c30e100514d6d_7c15a98db4e70963_fhprg_op8_op8tmo_op8t_op8ttmo.bin#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>
@@ -3889,7 +3913,7 @@
 <Trademark>OnePlus</Trademark>
 <Model>LE2100</Model>
 <AltName>aosp_kebab, LE2101, 9R</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C7FA5AA2/000c30e100514d6d_7c15a98db4e70963_fhprg_op8_op8tmo_op8t_op8ttmo.bin#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C7FA5AA2/0000000000514d6d_7c15a98db4e70963_fhprg.bin#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>
@@ -4027,18 +4051,6 @@
 <Trust>full trust</Trust>
 <HWID>0010A0E1</HWID>
 <FullName>Snapdragon 665</FullName>
-<OEMID>0042</OEMID>
-<MODELID>0052</MODELID>
-<HASHID>9F9740C424E5BCFA8C8F60BBE3F9B5F7E4905E4F5D7CE24BD39AACF30CC1EE6067755FB7E94DDA7FBC9BBEA3BABC051B</HASHID>
-<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>TCL</Trademark>
-<Model>9296Q</Model>
-<AltName>TABMAX 10.4, 9296Q_RU</AltName>
-</ForFilter>
-<ForFilter>
-<Trust>full trust</Trust>
-<HWID>0010A0E1</HWID>
-<FullName>Snapdragon 665</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>D40EEE56F3194665574109A39267724AE7944134CD53CB767E293D3C40497955BC8A4519FF992B031FADC6355015AC87</HASHID>
@@ -4046,6 +4058,18 @@
 <Trademark>TCL</Trademark>
 <Model>9296Q</Model>
 <AltName>TABMAX 10.4, 9296Q_EEA</AltName>
+</ForFilter>
+<ForFilter>
+<Trust>full trust</Trust>
+<HWID>0010A0E1</HWID>
+<FullName>Snapdragon 665</FullName>
+<OEMID>0042</OEMID>
+<MODELID>0052</MODELID>
+<HASHID>9F9740C424E5BCFA8C8F60BBE3F9B5F7E4905E4F5D7CE24BD39AACF30CC1EE6067755FB7E94DDA7FBC9BBEA3BABC051B</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>TCL</Trademark>
+<Model>9296Q</Model>
+<AltName>TABMAX 10.4, 9296Q_RU</AltName>
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>
@@ -4538,7 +4562,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZE550KL</Model>
 <AltName>Zenfone 2 Laser</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr_550.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -4551,7 +4575,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZE550KL</Model>
 <AltName>Zenfone 2 Laser</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr_550.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -4621,7 +4645,7 @@
 <MODELID>0002</MODELID>
 <HASHID>748921750A6EC93122DD7803860FE4F660080A937D6AE9B1D6792EDD0886C199</HASHID>
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>google</Trademark>
+<Trademark>Google</Trademark>
 <Model>G011A</Model>
 <AltName>Pixel 2, walleye</AltName>
 </ForFilter>
@@ -4633,7 +4657,7 @@
 <MODELID>0002</MODELID>
 <HASHID>748921750A6EC93122DD7803860FE4F660080A937D6AE9B1D6792EDD0886C199</HASHID>
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>google</Trademark>
+<Trademark>Google</Trademark>
 <Model>G011C</Model>
 <AltName>Pixel 2XL, Taimen</AltName>
 </ForFilter>
@@ -4645,7 +4669,7 @@
 <MODELID>0000</MODELID>
 <HASHID>BA2102DA99C924058C758FA9F4250847C92CABDE17FDCEF01D4DAFF8DF5D6753</HASHID>
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>google</Trademark>
+<Trademark>Google</Trademark>
 <Model>G-2PW2200</Model>
 <AltName>Pixel XL, Nexus Marlin, Nexus M1, G-2PW2100</AltName>
 </ForFilter>
@@ -4657,7 +4681,7 @@
 <MODELID>0000</MODELID>
 <HASHID>BA2102DA99C924058C758FA9F4250847C92CABDE17FDCEF01D4DAFF8DF5D6753</HASHID>
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>google</Trademark>
+<Trademark>Google</Trademark>
 <Model>G-2PW4200</Model>
 <AltName>Pixel, Nexus Sailfish, Nexus S1, G-2PW4100</AltName>
 </ForFilter>
@@ -4669,7 +4693,7 @@
 <MODELID>0004</MODELID>
 <HASHID>E693A06F0C0E7E610DFF09371F1C8077C5EB1BDE02E7AD1DA99B8C45117F8F32</HASHID>
 <LASTKNOWNSBLVER>00000002</LASTKNOWNSBLVER>
-<Trademark>google</Trademark>
+<Trademark>Google</Trademark>
 <Model>Pixel 3</Model>
 <AltName>blueline</AltName>
 </ForFilter>
@@ -4681,7 +4705,7 @@
 <MODELID>0004</MODELID>
 <HASHID>E693A06F0C0E7E610DFF09371F1C8077C5EB1BDE02E7AD1DA99B8C45117F8F32</HASHID>
 <LASTKNOWNSBLVER>00000002</LASTKNOWNSBLVER>
-<Trademark>google</Trademark>
+<Trademark>Google</Trademark>
 <Model>Pixel 3XL</Model>
 <AltName>crosshatch</AltName>
 </ForFilter>
@@ -4693,20 +4717,9 @@
 <MODELID>0008</MODELID>
 <HASHID>26F6D8FC9E2036C80E67DCDC21B1056DA55E7F6DD519A7B040E4466EA3179D6768BD85736A475FEDFF9CBEFF9EE05AB0</HASHID>
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>google</Trademark>
+<Trademark>Google</Trademark>
 <Model>Pixel 4</Model>
 <AltName>flame</AltName>
-</ForFilter>
-<ForFilter>
-<Trust>real dev</Trust>
-<HWID>000A50E1</HWID>
-<FullName>Snapdragon 855</FullName>
-<OEMID>0066</OEMID>
-<MODELID>0008</MODELID>
-<HASHID>26F6D8FC9E2036C80E67DCDC21B1056DA55E7F6DD519A7B040E4466EA3179D6768BD85736A475FEDFF9CBEFF9EE05AB0</HASHID>
-<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>google</Trademark>
-<Model>Pixel 4XL</Model>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -4716,7 +4729,7 @@
 <MODELID>000A</MODELID>
 <HASHID>3EF72A02FB931BE15408BB63603588FAEAFEB09F07D567C04A3FDC7E9FDD7E2FAAB10F954C89A682AFE1CD46F8482C6C</HASHID>
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>google</Trademark>
+<Trademark>Google</Trademark>
 <Model>Pixel 5a</Model>
 <AltName>Pixel 5a 5G</AltName>
 </ForFilter>
@@ -5257,17 +5270,6 @@
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
-<HWID>0008C0E1</HWID>
-<FullName>Snapdragon 660</FullName>
-<OEMID>0058</OEMID>
-<MODELID>94DB</MODELID>
-<HASHID>40B461E59D24C633F52F0D05A17BE369C8A72473AFCD4A6B3BE9D6AEA357D6FC</HASHID>
-<LASTKNOWNSBLVER>00000001</LASTKNOWNSBLVER>
-<Trademark>Motorola</Trademark>
-<Model>LEX L11</Model>
-</ForFilter>
-<ForFilter>
-<Trust>real dev</Trust>
 <HWID>000560E1</HWID>
 <FullName>Snapdragon 425</FullName>
 <OEMID>0368</OEMID>
@@ -5289,7 +5291,7 @@
 <Trademark>Motorola</Trademark>
 <Model>Moto Z Force</Model>
 <AltName>griffin_verizon, XT1650-01, XT1650-02, XT1650-03, XT1650-05 (Griffin)</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F543B6A5/prog_ufs_firehose_8996_lge.elf#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F543B6A5/prog_ufs_firehose_8996_ddr_motogriff.elf#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -5302,7 +5304,7 @@
 <Trademark>Motorola</Trademark>
 <Model>Moto Z Force</Model>
 <AltName>griffin_verizon, XT1650-01, XT1650-02, XT1650-03, XT1650-05 (Griffin)</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F543B6A5/prog_ufs_firehose_8996_ddr_motogriff.elf#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F543B6A5/prog_ufs_firehose_8996_lge.elf#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
