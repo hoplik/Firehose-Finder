@@ -735,18 +735,20 @@ namespace FirehoseFinder
                                     break;
                                 //Ошибки
                                 //Используется программер с авторизацией
+                                case "Authenticate fai":
+                                    textBox_soft_term.AppendText(LocRes.GetString("auth_body") + Environment.NewLine);
+                                    parsLUN_int.SetValue(512, 1); //Чтоб корректно отрабатывало ошибку
+                                    MessageBox.Show(LocRes.GetString("auth_body"), LocRes.GetString("auth_title"));
+                                    break;
                                 case "Verifying signat":
                                     textBox_soft_term.AppendText(LocRes.GetString("auth_body") + Environment.NewLine);
                                     parsLUN_int.SetValue(512, 1); //Чтоб корректно отрабатывало ошибку
                                     MessageBox.Show(LocRes.GetString("auth_body"), LocRes.GetString("auth_title"));
                                     break;
                                 case "Only nop and sig":
-                                    //if (item.EndsWith("authentication."))
-                                    //{
                                     textBox_soft_term.AppendText(LocRes.GetString("auth_body") + Environment.NewLine);
                                     parsLUN_int.SetValue(512, 1); //Чтоб корректно отрабатывало ошибку
                                     MessageBox.Show(LocRes.GetString("auth_body"), LocRes.GetString("auth_title"));
-                                    //}
                                     break;
                                 //Неправильно выбран тип памяти (еммс вместо ufs)
                                 case "Failed to open d":
