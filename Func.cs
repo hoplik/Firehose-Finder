@@ -35,7 +35,7 @@ namespace FirehoseFinder
             Phone_Version = 64, // 0x40 Версия телефона
             Image_Version = 576, // 0x240 Версия прошивки
             Author = 1096, // 0x448 Автор прошивки (8 байт)
-            Header_Len = 1612 // 0x64c Размер шапки (2 байта)
+            Header_Len = 1612 // 0x64c Возможно размер шапки (2 байта)
         }
 
         /// <summary>

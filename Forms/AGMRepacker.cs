@@ -241,15 +241,15 @@ namespace FirehoseFinder
             H_I.Bin_Nym = BitConverter.ToUInt32(res_bytes, (int)Func.Parsing_Header_Four_Bytes.Bin_Number);
             try
             {
-                if (H_I.Bin_Nym == 1)
-                {
+                //if (H_I.Bin_Nym == 1) Пока уберём для двухфайловых прошивок
+                //{
                     H_I.Conf_Files = BitConverter.ToUInt32(res_bytes, (int)Func.Parsing_Header_Four_Bytes.Config_Files);
                     H_I.Bin_Files = BitConverter.ToUInt32(res_bytes, (int)Func.Parsing_Header_Four_Bytes.Bin_Files);
                     ParsingHeader.AppendLine(string.Format(LocRes.GetString("count_bin") + " - {0}" + Environment.NewLine +
                         LocRes.GetString("count_inside_bin") + " - {1}" + Environment.NewLine +
                         LocRes.GetString("count_inside_conf") + " - {2}", H_I.Bin_Nym, H_I.Bin_Files, H_I.Conf_Files));
-                    try
-                    {
+                    //try
+                    //{
                         H_I.Header_Len = BitConverter.ToString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Header_Len, 4).Replace("-", "");
                         H_I.Author = new ASCIIEncoding().GetString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Author, (int)Func.Parsing_Bytes.Long_number).TrimEnd('\0');
                         H_I.Packer_Ver = new ASCIIEncoding().GetString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Packer_Version, (int)Func.Parsing_Bytes.String_parse).TrimEnd('\0');
@@ -261,19 +261,19 @@ namespace FirehoseFinder
                             LocRes.GetString("phone_version") + " - {3}" + Environment.NewLine+
                             LocRes.GetString("firmware_version") + " - {4}", H_I.Header_Len, H_I.Author, H_I.Packer_Ver, H_I.Phone_Ver, H_I.Image_Ver));
                         toolStripStatusLabel1.Text = LocRes.GetString("status_repack_parsing_header_complite");
-                    }
-                    catch (ArgumentOutOfRangeException Ex)
-                    {
-                        ParsingHeader.AppendLine(LocRes.GetString("status_repack_parsing_header_failed"));
-                        toolStripStatusLabel1.Text = Ex.Message;
-                    }
-                }
-                else
-                {
-                    ParsingHeader.Clear();
-                    ParsingHeader.AppendLine(LocRes.GetString("status_repack_unpacked_failed"));
-                    toolStripStatusLabel1.Text = LocRes.GetString("status_repack_parsing_header_failed");
-                }
+                    //}
+                    //catch (ArgumentOutOfRangeException Ex)
+                    //{
+                    //    ParsingHeader.AppendLine(LocRes.GetString("status_repack_parsing_header_failed"));
+                    //    toolStripStatusLabel1.Text = Ex.Message;
+                    //}
+                //}
+                //else
+                //{
+                //    ParsingHeader.Clear();
+                //    ParsingHeader.AppendLine(LocRes.GetString("status_repack_unpacked_failed"));
+                //    toolStripStatusLabel1.Text = LocRes.GetString("status_repack_parsing_header_failed");
+                //}
             }
             catch (ArgumentOutOfRangeException Ex)
             {
@@ -322,7 +322,7 @@ namespace FirehoseFinder
             BackgroundWorker unpacker = sender as BackgroundWorker;
             File_info_bytes[] F_I_B = new File_info_bytes[(int)(H_I.Conf_Files + H_I.Bin_Files)]; //Информация для одиночного файла
             int start_adress = 0x2800; //Адрес начала списка файлов
-            for (int i = 0; i < H_I.Conf_Files + H_I.Bin_Files; i++) // Первый цикл из всех файлов, запакованных в прошивку
+            for (int i = 0; i < F_I_B.Length; i++) // Первый цикл из всех файлов, запакованных в прошивку
             {
                 F_I_B[i].ROM_Name = new ASCIIEncoding().GetString(decode_header_bytes, i * (int)Func.Parsing_Bytes.File_info + start_adress, (int)Func.Parsing_Bytes.String_parse).TrimEnd('\0'); // 0х40 (64) Имя файла прошивки
                 F_I_B[i].File_Name = new ASCIIEncoding().GetString(decode_header_bytes, i * (int)Func.Parsing_Bytes.File_info + 64 + start_adress, (int)Func.Parsing_Bytes.String_parse).TrimEnd('\0');  // 0х40 (64) Имя файла
@@ -408,6 +408,27 @@ namespace FirehoseFinder
         {
             if (backgroundWorker_unpacker.IsBusy) backgroundWorker_unpacker.CancelAsync();
             if (toolStripSplitButton_explorer.Text.Equals(LocRes.GetString("status_repack_open_folder"))) Process.Start("explorer.exe", Decode_ROM_Path);
+        }
+
+        /// <summary>
+        /// Сохраняем декодированную шапку в файл
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_decode_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("Сохраняем в файл");
+            if (saveFileDialog_decode_header.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    File.WriteAllBytes(saveFileDialog_decode_header.FileName, decode_header_bytes);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
