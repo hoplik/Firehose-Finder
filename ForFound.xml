@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-03-26T18:47:59">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-04-01T21:54:57">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -719,6 +719,54 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>90DFFA75BBE8ADA625041CF21761945088141537AD8DC4DF138FEB0298585D392397D9689978F057F29A01E0545842FA</HASH_FH>
 <Model>TA-1234</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/AA4E1FE1/000a50e100290025_7e5acfff90370967_fhprg_zs660kl.bin#</Url>
+<HW_FH>000A50E1</HW_FH>
+<OEM_FH>0029</OEM_FH>
+<MODEL_FH>0025</MODEL_FH>
+<HASH_FH>7E5ACFFF90370967EDD2BDF205A9EBC9035ABCA140B3AB9BB7771BD7C27057CBFCF13FBCE7E71D9B35B6A505AA4E1FE1</HASH_FH>
+<Model>ZS660KL</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/707AF1D8/prog_firehose_ddr_0016F0E1.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0043</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>4352B3BFEAC440CAB3FC0A181BE897F57CEED6CFE7729D61752ADD407FA6E1BEE86FE4A27EAED96A83F9972F707AF1D8</HASH_FH>
+<Model>AGM Glory_G1S</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/707AF1D8/prog_firehose_lite_0016F0E1.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0043</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>4352B3BFEAC440CAB3FC0A181BE897F57CEED6CFE7729D61752ADD407FA6E1BEE86FE4A27EAED96A83F9972F707AF1D8</HASH_FH>
+<Model>AGM Glory_G1S</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/92002DDF/prog_emmc_firehose_8976_ddr_009900E1.mbn#</Url>
+<HW_FH>009900E1</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>7C6DCA9BF5674291AA39DD55760C0D4B65C7A4223097AAB1DB791E2192002DDF</HASH_FH>
+<Model>AGM X2</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/6A752E39/prog_firehose_ddr_60000100.elf#</Url>
+<HW_FH>60000000</HW_FH>
+<OEM_FH>0043</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>BC4C2FAAF0C46B258B8B6A94543F3985741D41481B41241E32D24770871831EA22F330E82495886D29F9A2C56A752E39</HASH_FH>
+<Model>AGM X3</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/6A752E39/prog_firehose_lite_60000100.elf#</Url>
+<HW_FH>60000000</HW_FH>
+<OEM_FH>0043</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>BC4C2FAAF0C46B258B8B6A94543F3985741D41481B41241E32D24770871831EA22F330E82495886D29F9A2C56A752E39</HASH_FH>
+<Model>AGM X3</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C7FA5AA2/0000000000514d6d_7c15a98db4e70963_fhprg.bin#</Url>
