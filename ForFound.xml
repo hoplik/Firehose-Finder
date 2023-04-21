@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-04-08T17:24:49">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-04-21T21:35:57">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -767,6 +767,16 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>BC4C2FAAF0C46B258B8B6A94543F3985741D41481B41241E32D24770871831EA22F330E82495886D29F9A2C56A752E39</HASH_FH>
 <Model>AGM X3</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/49974F90/1/0000000002e80000_abbcc86fe393b13d_fhprg.bin#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>02E8</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>ABBCC86FE393B13D59E2A2EC944AF26DA3FA3D4B2A1CCD2FB383C73E0FFFC30DC1736DCB2752E955A61421C349974F90</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>moto g(8) power</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C7FA5AA2/0000000000514d6d_7c15a98db4e70963_fhprg.bin#</Url>
