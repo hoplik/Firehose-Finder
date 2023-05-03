@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-04-21T21:35:57">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-05-03T18:00:22">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -777,6 +777,30 @@
 <SWType>3</SWType>
 <SWVer>1</SWVer>
 <Model>moto g(8) power</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/000460e100150021_6bc369511da9cadb_fhprg_peek.bin#</Url>
+<HW_FH>000460E1</HW_FH>
+<OEM_FH>0015</OEM_FH>
+<MODEL_FH>0021</MODEL_FH>
+<HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
+<Model>CAN-L11</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/0004f0e100150041_6bc369511da9cadb_fhprg_peek.bin#</Url>
+<HW_FH>0004F0E1</HW_FH>
+<OEM_FH>0015</OEM_FH>
+<MODEL_FH>0041</MODEL_FH>
+<HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
+<Model>LDN-L21</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/0006b0e100150040_6bc369511da9cadb_fhprg_peek.bin#</Url>
+<HW_FH>0006B0E1</HW_FH>
+<OEM_FH>0015</OEM_FH>
+<MODEL_FH>0040</MODEL_FH>
+<HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
+<Model>DIG-L21</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C7FA5AA2/0000000000514d6d_7c15a98db4e70963_fhprg.bin#</Url>
