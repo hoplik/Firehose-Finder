@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-05-03T18:00:22">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-05-03T18:34:39">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -250,7 +250,7 @@
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/Loader_V2.mbn#</Url>
 <HW_FH>0009A0E1</HW_FH>
 <OEM_FH>0015</OEM_FH>
-<MODEL_FH>0062</MODEL_FH>
+<MODEL_FH>0065</MODEL_FH>
 <HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
 <Model>DUB-LX1</Model>
 </ForFound>
@@ -801,6 +801,38 @@
 <MODEL_FH>0040</MODEL_FH>
 <HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
 <Model>DIG-L21</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/0004f0e100150042_6bc369511da9cadb_fhprg_peek.bin#</Url>
+<HW_FH>0004F0E1</HW_FH>
+<OEM_FH>0015</OEM_FH>
+<MODEL_FH>0042</MODEL_FH>
+<HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
+<Model>DLI-TL20</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/000ba0e100150067_6bc369511da9cadb_fhprg_peek.bin#</Url>
+<HW_FH>000BA0E1</HW_FH>
+<OEM_FH>0015</OEM_FH>
+<MODEL_FH>0067</MODEL_FH>
+<HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
+<Model>BKK-L21</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/000560e10015003a_6bc369511da9cadb_fhprg_peek.bin#</Url>
+<HW_FH>000560E1</HW_FH>
+<OEM_FH>0015</OEM_FH>
+<MODEL_FH>003A</MODEL_FH>
+<HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
+<Model>ATU-L21</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/0006B0E100150062_573DBA61BF6AE119.mbn#</Url>
+<HW_FH>0006B0E1</HW_FH>
+<OEM_FH>0015</OEM_FH>
+<MODEL_FH>0062</MODEL_FH>
+<HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
+<Model>BAH-L09</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C7FA5AA2/0000000000514d6d_7c15a98db4e70963_fhprg.bin#</Url>
