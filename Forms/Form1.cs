@@ -17,7 +17,8 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 using Telegram.Bot;
-using Telegram.Bot.Types.InputFiles;
+using Telegram.Bot.Types;
+using Color = System.Drawing.Color;
 using File = System.IO.File;
 
 namespace FirehoseFinder
@@ -2359,7 +2360,7 @@ namespace FirehoseFinder
                     //if (label_tm.Text.Contains("Samsung")) client.Reboot("download", device);
                     //else
                     //{
-                        client.Reboot("edl", device);
+                    client.Reboot("edl", device);
                     //}
                 }
                 catch (Exception ex)
@@ -3243,7 +3244,7 @@ namespace FirehoseFinder
                     if (File.Exists(pathprog.FullName))
                     {
                         Stream stream = File.OpenRead(pathprog.FullName);
-                        InputOnlineFile onlineFile = new InputOnlineFile(stream, pathprog.Name);
+                        InputFileStream onlineFile = new InputFileStream(stream, pathprog.Name);
                         StringBuilder inputstr = new StringBuilder();
                         for (int i = 0; i < Global_Share_Prog.Length; i++)
                         {
@@ -3255,7 +3256,7 @@ namespace FirehoseFinder
                         }
                         try
                         {
-                            mybot.SendDocumentAsync(chat, onlineFile, null, CorrectBotString(inputstr.ToString()), Telegram.Bot.Types.Enums.ParseMode.Markdown);
+                            mybot.SendDocumentAsync(chat, onlineFile, null, null, CorrectBotString(inputstr.ToString()), Telegram.Bot.Types.Enums.ParseMode.Markdown);
                             textBox_soft_term.AppendText(LocRes.GetString("sent") + Environment.NewLine);
                         }
                         catch (Exception ex)
