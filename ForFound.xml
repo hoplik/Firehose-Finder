@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-05-03T18:34:39">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-05-20T18:39:39">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -833,6 +833,56 @@
 <MODEL_FH>0062</MODEL_FH>
 <HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
 <Model>BAH-L09</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/B396D324/prog_emmc_firehose_8x10_qct.mbn#</Url>
+<HW_FH>008140E1</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0001</MODEL_FH>
+<HASH_FH>5B49D99A5282E9847631B8B9B7A942CBF2C3B6FAC436A12B9571BA6EB396D324</HASH_FH>
+<Model>Ixion W5</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/E3C4B250/prog_emmc_firehose_8940_ddr_gion.mbn#</Url>
+<HW_FH>0006B0E1</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>1A6BA5B80B9E7811D7656C7C9F74E63925A8AB6D2B664595F3DAB1C2E3C4B250</HASH_FH>
+<Model>GN5007</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/92002DDF/prog_emmc_firehose_8937_ddr_hisen1.mbn#</Url>
+<HW_FH>0004F0E1</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>7C6DCA9BF5674291AA39DD55760C0D4B65C7A4223097AAB1DB791E2192002DDF</HASH_FH>
+<Model>Hisense C20S</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D7C0FCC2/prog_emmc_firehose_8916_cyan.mbn#</Url>
+<HW_FH>007050E1</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>D36C6073C9C2CB1C36FB4EE0FBB6DF9D5B12A35BD07C0C03A6260022D7C0FCC2</HASH_FH>
+<Model>Swift</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F5B53BBC/prog_emmc_firehose_8940_ddr_oppo.mbn#</Url>
+<HW_FH>0006B0E1</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>77A22B92A1BCD0C4D3AAA10AA9F1B2C36D51C0CA7429B5201D0FD1D5F5B53BBC</HASH_FH>
+<Model>CPH1701</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8DBB87B8/1/prog_firehose_ddr_ufs.elf#</Url>
+<HW_FH>0010A0E1</HW_FH>
+<OEM_FH>0051</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>6E91B529AAD0307F1FC67310DAB1FF821EB7AA02FA5620157A9D20E124F4E0B84897B1389836216B4F2CB50D8DBB87B8</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>CPH1937</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C7FA5AA2/0000000000514d6d_7c15a98db4e70963_fhprg.bin#</Url>
