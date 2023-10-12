@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-10-12T21:41:35">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-10-12T23:52:26">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -931,6 +931,16 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>CAB02552DC28F562E8C5BEFA75BC4A97B90AAB1C91A3C186EC51F3D3D7D6A1C7</HASH_FH>
 <Model>Lenovo L38011</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/6AD73382/1/prog_firehose_ddr.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0051</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>A94E15342EC1D0D82EC6E65870301B1382E6559E8C5DD452CD4C86270E22439A1A766B8B593A8B92481E611C6AD73382</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>CPH2009</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C7FA5AA2/0000000000514d6d_7c15a98db4e70963_fhprg.bin#</Url>
