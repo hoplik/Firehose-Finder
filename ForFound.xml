@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-10-12T23:52:26">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-10-15T01:16:18">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -941,6 +941,24 @@
 <SWType>3</SWType>
 <SWVer>1</SWVer>
 <Model>CPH2009</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/11A5FF49/firehose_loader.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0051</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>D8E3B5A8DADA006DE3600D3489AF632F62511E17BC2F0834CCD8855294B3EAEA5806184AAC7BF6FD5DEF121311A5FF49</HASH_FH>
+<Model>RMX3312</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D75EE329/1/loader_sdm460_sahabattuser.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0051</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>49445E14621312DFECCD4389F267E6B71674DDD36B1BC41D1F605AA991D14AD687834378CF2129259DFAF107D75EE329</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>CPH2135</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C7FA5AA2/0000000000514d6d_7c15a98db4e70963_fhprg.bin#</Url>
