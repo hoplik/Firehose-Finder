@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-10-15T01:16:18">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-10-17T00:05:16">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -959,6 +959,16 @@
 <SWType>3</SWType>
 <SWVer>1</SWVer>
 <Model>CPH2135</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCADFE3/1/pad5_prog_ufs_firehose_sm7150_ddr.elf#</Url>
+<HW_FH>000A50E1</HW_FH>
+<OEM_FH>0072</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>MI Pad 5</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C7FA5AA2/0000000000514d6d_7c15a98db4e70963_fhprg.bin#</Url>
