@@ -1956,7 +1956,16 @@ namespace FirehoseFinder
         /// </summary>
         private void CheckListPorts()
         {
-            string[] ports = System.IO.Ports.SerialPort.GetPortNames();
+            string[] ports = null;
+            try
+            {
+                ports = System.IO.Ports.SerialPort.GetPortNames();
+            }
+            catch (Win32Exception ex)
+            {
+                textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                SendErrorInChat();
+            }
             if (listView_comport.Items.Count > 0) listView_comport.Items.Clear();
             if (ports.Length == 0) return;
             for (int item = 0; item < ports.Length; item++)
