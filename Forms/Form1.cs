@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Management;
 using System.Reflection;
 using System.Resources;
 using System.Text;
@@ -391,6 +392,10 @@ namespace FirehoseFinder
         {
             if (e.Item.Checked)
             {
+                foreach (ListViewItem item in listView_comport.Items)
+                {
+                    if (!item.Equals(e.Item)) item.Checked = false; //Обнулили выбор всех портов, кроме выбранного
+                }
                 serialPort1.PortName = e.Item.Text;
                 button_Sahara_Ids.Enabled = true;
                 button_Sahara_CommandStart.Enabled = true;
@@ -1412,7 +1417,7 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button_findIDs_Click(object sender, EventArgs e)
         {
-            if (listView_comport.CheckedItems.Count > 0)
+            if (listView_comport.CheckedItems.Count == 1)
             {
                 StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -c 1 -c 2 -c 3 -c 7");
                 GetSaharaIDs(sahara_command_args);
@@ -1952,10 +1957,27 @@ namespace FirehoseFinder
         #region Функции самостоятельных команд
 
         /// <summary>
-        /// Вносим в листвью список активных портов
+        /// Вносим в листвью список активных портов при загрузке программы и изменении конфигурации оборудования
         /// </summary>
         private void CheckListPorts()
         {
+            //!!!Полностью переписываю функцию!!!
+
+            /*
+            if (listView_comport.Items.Count > 0) listView_comport.Items.Clear(); //Очищаем форму для новых записей
+            //Притормаживаем поток для завершения опроса системы
+            Thread.Sleep(1000);
+            ManagementObjectSearcher dev_seacher = new ManagementObjectSearcher(
+                "SELECT * FROM Win32_PnPEntity WHERE DeviceID LIKE \"USB%PID_9008%\""); //Ищем все USB-устройства в 9008
+            if (dev_seacher.Get().Count > 0) //Если нашли хоть одно, работаем, иначе выходим.
+            {
+
+            }
+            */
+
+
+            
+            //Заполняем бокс наименованиями доступных портов
             string[] ports = null;
             try
             {
@@ -2011,6 +2033,7 @@ namespace FirehoseFinder
             tabControl1.SelectedTab = tabPage_phone;
             tabControl_soft.SelectedTab = tabPage_sahara;
             работаСУстройствомToolStripMenuItem.Checked = false;
+            
         }
 
         /// <summary>
@@ -3015,7 +3038,7 @@ namespace FirehoseFinder
             }
         }
 
-        #region Инструменты
+        #region Регион Раздел меню "Инструменты"
         /// <summary>
         /// Открываем новое окно для осуществления бинарного поиска по маске
         /// </summary>
@@ -3304,6 +3327,16 @@ namespace FirehoseFinder
                 textBox_soft_term.AppendText(e.Result + Environment.NewLine + LocRes.GetString("done") + Environment.NewLine);
                 textBox_main_term.AppendText(e.Result + Environment.NewLine);
             }
+        }
+
+        private void ДрайвераEDLИADBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo driversfolder = new ProcessStartInfo()
+            {
+                FileName = "explorer",
+                Arguments = Application.StartupPath + "\\Drivers"
+            };
+            Process.Start(driversfolder);
         }
     }
 }
