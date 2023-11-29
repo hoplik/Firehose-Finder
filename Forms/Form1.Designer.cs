@@ -234,6 +234,7 @@
             this.process_Sahara = new System.Diagnostics.Process();
             this.process_Fastboot = new System.Diagnostics.Process();
             this.backgroundWorker_sahara = new System.ComponentModel.BackgroundWorker();
+            this.bgWorker_ports = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabPage_collection.SuspendLayout();
@@ -1783,6 +1784,11 @@
             this.backgroundWorker_sahara.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_sahara_DoWork);
             this.backgroundWorker_sahara.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_sahara_RunWorkerCompleted);
             // 
+            // bgWorker_ports
+            // 
+            this.bgWorker_ports.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgWorker_ports_DoWork);
+            this.bgWorker_ports.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BgWorker_ports_RunWorkerCompleted);
+            // 
             // Formfhf
             // 
             resources.ApplyResources(this, "$this");
@@ -2053,6 +2059,7 @@
         internal System.Windows.Forms.Label label_chip_sn;
         private System.ComponentModel.BackgroundWorker backgroundWorker_sahara;
         private System.Windows.Forms.ToolStripMenuItem драйвераEDLИADBToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker bgWorker_ports;
     }
 }
 

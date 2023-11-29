@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Management;
 using System.Resources;
 using System.Security.Cryptography;
 using System.Text;
@@ -531,7 +532,7 @@ namespace FirehoseFinder
             }
             return string.Format("{0} {1}", total_size.ToString("N2", CultureInfo.CreateSpecificCulture("sv-SE")), byte_type);
         }
-        
+
         /// <summary>
         /// Создаём файл чтения/записи
         /// </summary>
@@ -783,6 +784,32 @@ namespace FirehoseFinder
                 persentcomplited = Convert.ToInt32(intoutput.Substring(intoutput.LastIndexOf('\u0020'))); //Обрезали спереди по пробелу
             }
             return persentcomplited;
+        }
+
+        /// <summary>
+        /// Разбираем свойства отдельно взятого устройства.
+        /// </summary>
+        /// <param name="DevProps"></param>
+        /// <returns>Возвращаем массив строк: 0-ком-порт, 1-его описание</returns>
+        internal string[] ParsingPortsProps(ManagementObject DevProps)
+        {
+            string[] portprops = new string[2] { string.Empty, string.Empty };
+            switch (DevProps.Properties["Status"].Value.ToString())
+            {
+                case "Error": //Ошибка. Смотрим номер
+                    if ((UInt32)DevProps.Properties["ConfigManagerErrorCode"].Value == 28) portprops[1] = "The drivers for this device are not installed.";
+                    else portprops[1] = "Устройство определено с ошибкой " + DevProps.Properties["ConfigManagerErrorCode"].Value.ToString();
+                    break;
+                case "OK": //Нормально, парсим
+                    portprops[1] = DevProps.Properties["Description"].Value.ToString();
+                    portprops[0] = DevProps.Properties["Caption"].Value.ToString();
+//                Caption: Qualcomm HS-USB QDLoader 9008(COM3)
+//Description: Qualcomm HS-USB QDLoader 9008
+                    break;
+                default:
+                    break;
+            }
+            return portprops;
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using FirehoseFinder.Properties;
-using Microsoft.Win32;
 using SharpAdbClient;
 using System;
 using System.Collections.Generic;
@@ -64,38 +63,33 @@ namespace FirehoseFinder
         }
 
         /// <summary>
-        /// Отлавливаем подключение USB устройств. Перезапускаем скан доступных портов
+        /// Отлавливаем подключение/отключение USB устройств. Перезапускаем скан доступных портов
         /// </summary>
         /// <param name="m"></param>
         protected override void WndProc(ref System.Windows.Forms.Message m)
         {
-            try
-            {
-                base.WndProc(ref m);
-            }
-            catch (TargetInvocationException)
-            {
-            }
+            base.WndProc(ref m);
             try
             {
                 switch (m.WParam.ToInt32())
                 {
-                    case 0x8000: //Новое usb подключено
+                    case 0x8000: //Подключили usb устройство
                         NeedReset = false;
-                        CheckListPorts();
+                        if (!bgWorker_ports.IsBusy) bgWorker_ports.RunWorkerAsync(); //Запустили пересмотр портов в параллельном потоке
                         ClearListViewDevices();
                         break;
-                    case 0x0007: //Любое изменение конфигурации оборудования
-                        CheckListPorts();
+                    case 0x8004: //Отключили устройство
+                        if (!bgWorker_ports.IsBusy) bgWorker_ports.RunWorkerAsync(); //Запустили пересмотр портов в параллельном потоке
                         ClearListViewDevices();
                         break;
                     default:
+                        //Просто игнорируем все остальные сообщения системы
                         break;
                 }
             }
             catch (OverflowException)
             {
-                //Просто игнорируем ошибку
+                //Просто игнорируем ошибку преобразования формата
             }
         }
 
@@ -137,7 +131,7 @@ namespace FirehoseFinder
             toolTip1.SetToolTip(button_findIDs, LocRes.GetString("tt_find"));
             toolTip1.SetToolTip(button_path, LocRes.GetString("tt_path"));
             toolTip1.SetToolTip(button_useSahara_fhf, LocRes.GetString("tt_check"));
-            CheckListPorts();
+            if (!bgWorker_ports.IsBusy) bgWorker_ports.RunWorkerAsync(); //Запустили пересмотр портов в параллельном потоке
             //Открываем приветствие если новое или отмечено в настройках
             if (Settings.Default.CheckBox_start_Checked)
             {
@@ -1957,86 +1951,6 @@ namespace FirehoseFinder
         #region Функции самостоятельных команд
 
         /// <summary>
-        /// Вносим в листвью список активных портов при загрузке программы и изменении конфигурации оборудования
-        /// </summary>
-        private void CheckListPorts()
-        {
-            //!!!Полностью переписываю функцию!!!
-
-            /*
-            if (listView_comport.Items.Count > 0) listView_comport.Items.Clear(); //Очищаем форму для новых записей
-            //Притормаживаем поток для завершения опроса системы
-            Thread.Sleep(1000);
-            ManagementObjectSearcher dev_seacher = new ManagementObjectSearcher(
-                "SELECT * FROM Win32_PnPEntity WHERE DeviceID LIKE \"USB%PID_9008%\""); //Ищем все USB-устройства в 9008
-            if (dev_seacher.Get().Count > 0) //Если нашли хоть одно, работаем, иначе выходим.
-            {
-
-            }
-            */
-
-
-            
-            //Заполняем бокс наименованиями доступных портов
-            string[] ports = null;
-            try
-            {
-                ports = System.IO.Ports.SerialPort.GetPortNames();
-            }
-            catch (Win32Exception ex)
-            {
-                textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
-                SendErrorInChat();
-            }
-            if (listView_comport.Items.Count > 0) listView_comport.Items.Clear();
-            if (ports.Length == 0) return;
-            for (int item = 0; item < ports.Length; item++)
-            {
-                listView_comport.Items.Add(ports[item]);
-                try
-                {
-                    RegistryKey rk = Registry.LocalMachine; // Зашли в локал машин
-                    RegistryKey openRK = rk.OpenSubKey("SYSTEM\\CurrentControlSet\\Enum\\USB"); // Открыли на чтение папку USB устройств
-                    string[] USBDevices = openRK.GetSubKeyNames();  // Получили имена всех, когда-либо подключаемых устройств
-                    foreach (string stepOne in USBDevices)  // Для каждого производителя устройства проверяем подпапки, т.к. бывает несколько устройств на одном ВИД/ПИД
-                    {
-                        RegistryKey stepOneReg = openRK.OpenSubKey(stepOne);    // Открываем каждого производителя на чтение
-                        string[] stepTwo = stepOneReg.GetSubKeyNames(); // Получили список всех устройств для каждого производителя
-                        foreach (string friendName in stepTwo)
-                        {
-                            RegistryKey friendRegName = stepOneReg.OpenSubKey(friendName);
-                            string[] fn = friendRegName.GetValueNames();
-                            foreach (string currentName in fn)
-                            {
-                                if (currentName == "FriendlyName")
-                                {
-                                    object frn = friendRegName.GetValue("FriendlyName");
-                                    RegistryKey devPar = friendRegName.OpenSubKey("Device Parameters");
-                                    object dp = devPar.GetValue("PortName");
-                                    if (dp != null && listView_comport.Items[item].Text.Equals(dp.ToString()))
-                                    {
-                                        listView_comport.Items[item].SubItems.Add(frn.ToString());
-                                        if (stepOne.Equals("VID_05C6&PID_9008")) listView_comport.Items[item].Checked = true;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
-                    SendErrorInChat();
-                }
-            }
-            работаСУстройствомToolStripMenuItem.Checked = true;
-            tabControl1.SelectedTab = tabPage_phone;
-            tabControl_soft.SelectedTab = tabPage_sahara;
-            работаСУстройствомToolStripMenuItem.Checked = false;
-            
-        }
-
-        /// <summary>
         /// Останавливаем сервер, очищаем поле, восстанавливаем доступы к контролам
         /// </summary>
         private void StopAdb()
@@ -3329,6 +3243,11 @@ namespace FirehoseFinder
             }
         }
 
+        /// <summary>
+        /// Открываем папку с драйверами по клику в меню
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ДрайвераEDLИADBToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProcessStartInfo driversfolder = new ProcessStartInfo()
@@ -3337,6 +3256,70 @@ namespace FirehoseFinder
                 Arguments = Application.StartupPath + "\\Drivers"
             };
             Process.Start(driversfolder);
+        }
+
+        /// <summary>
+        /// Запрашиваем все USB-устройства в аварийном режиме 9008
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">ManagementObjectCollection</param>
+        private void BgWorker_ports_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                ManagementObjectSearcher dev_seacher = new ManagementObjectSearcher(
+                    "root\\CIMV2",
+                    "SELECT * FROM Win32_PnPEntity WHERE DeviceID LIKE \"USB%PID_9008%\"");
+                e.Result = dev_seacher.Get();
+            }
+            catch (Exception ex)
+            {
+                textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                SendErrorInChat();
+            }
+        }
+
+        /// <summary>
+        /// Вносим в листвью список активных портов при загрузке программы и изменении конфигурации оборудования
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BgWorker_ports_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Error != null)
+            {
+                textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine + e.Error.StackTrace + Environment.NewLine);
+                SendErrorInChat();
+            }
+            else
+            {
+                ManagementObjectCollection moc = (ManagementObjectCollection)e.Result;
+                if (listView_comport.Items.Count > 0) listView_comport.Items.Clear();
+                if (moc.Count > 0)
+                {
+                    foreach (ManagementObject dev_obj in moc)
+                    {
+                        string[] dev_param = func.ParsingPortsProps(dev_obj);
+                        if (string.IsNullOrEmpty(dev_param[0]))
+                        {
+                            //Устройство с ошибкой
+                            MessageBox.Show(dev_param[1]);
+                        }
+                        else
+                        {
+                            //Устройство с портом
+                            ListViewItem portusb = new ListViewItem(dev_param[0]);
+                            portusb.SubItems.Add(dev_param[1]);
+                            listView_comport.Items.Add(portusb);
+                        }
+                    }
+                    if (listView_comport.Items.Count > 0) listView_comport.Items[0].Checked = true; //Отметили первое устройство в списке как выбранное
+                }
+                работаСУстройствомToolStripMenuItem.Checked = true;
+                tabControl1.SelectedTab = tabPage_phone;
+                tabControl_soft.SelectedTab = tabPage_sahara;
+                работаСУстройствомToolStripMenuItem.Checked = false;
+            }
         }
     }
 }
