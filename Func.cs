@@ -11,6 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml;
+using Telegram.Bot.Types.Enums;
 
 namespace FirehoseFinder
 {
@@ -794,17 +795,19 @@ namespace FirehoseFinder
         internal string[] ParsingPortsProps(ManagementObject DevProps)
         {
             string[] portprops = new string[2] { string.Empty, string.Empty };
-            switch (DevProps.Properties["Status"].Value.ToString())
+            string status = string.Empty;
+            if (!string.IsNullOrEmpty(DevProps.Properties["Status"].Value.ToString())) status = DevProps.Properties["Status"].Value.ToString();
+            switch (status)
             {
                 case "Error": //Ошибка. Смотрим номер
-                    if ((UInt32)DevProps.Properties["ConfigManagerErrorCode"].Value == 28) portprops[1] = "The drivers for this device are not installed.";
-                    else portprops[1] = "Устройство определено с ошибкой " + DevProps.Properties["ConfigManagerErrorCode"].Value.ToString();
+                    if ((uint)DevProps.Properties["ConfigManagerErrorCode"].Value == 28) portprops[1] = LocRes.GetString("mb_body_port_driver");
+                    else portprops[1] = LocRes.GetString("mb_body_dev_mist") + '\u0020' + DevProps.Properties["ConfigManagerErrorCode"].Value.ToString();
                     break;
                 case "OK": //Нормально, парсим
-                    portprops[1] = DevProps.Properties["Description"].Value.ToString();
-                    portprops[0] = DevProps.Properties["Caption"].Value.ToString();
-//                Caption: Qualcomm HS-USB QDLoader 9008(COM3)
-//Description: Qualcomm HS-USB QDLoader 9008
+                    string portname = string.Empty;
+                    if (!string.IsNullOrEmpty(DevProps.Properties["Description"].Value.ToString())) portprops[1] = DevProps.Properties["Description"].Value.ToString();
+                    if (!string.IsNullOrEmpty(DevProps.Properties["Caption"].Value.ToString())) portname = DevProps.Properties["Caption"].Value.ToString();
+                    if (portname.Length > portprops[1].Length) portprops[0] = portname.Substring(portprops[1].Length).Trim('(', ')', ' ');
                     break;
                 default:
                     break;

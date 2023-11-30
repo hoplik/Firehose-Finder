@@ -325,6 +325,14 @@
     <value>Please correct the errors according to the log data and/or connect the device in 9008 mode after manual reboot.</value>
     <comment>Пожалуйста, исправьте ошибки по данным лога и/или подключите устройство в режиме 9008 после перезагрузки вручную.</comment>
   </data>
+  <data name="mb_body_dev_mist" xml:space="preserve">
+    <value>The device was identified with an error</value>
+    <comment>Устройство определено с ошибкой</comment>
+  </data>
+  <data name="mb_body_driver_folder" xml:space="preserve">
+    <value>Open the driver folder?</value>
+    <comment>Открыть папку с драйверами?</comment>
+  </data>
   <data name="mb_body_er_gpt" xml:space="preserve">
     <value>Error processing the GPT table</value>
     <comment>Ошибка обработки таблицы GPT</comment>
@@ -344,6 +352,10 @@
   <data name="mb_body_memtype" xml:space="preserve">
     <value>The memory type is probably incorrectly selected. If the eMMC type is specified, then try changing it to UFS and repeat the request.</value>
     <comment>Вероятно, неправильно выбран тип памяти. Если указан тип eMMC, то попробуйте изменить на UFS и повторить запрос.</comment>
+  </data>
+  <data name="mb_body_port_driver" xml:space="preserve">
+    <value>The drivers for this device are not installed</value>
+    <comment>Драйверы для этого устройства не установлены</comment>
   </data>
   <data name="mb_body_record" xml:space="preserve">
     <value>An attempt is being made to write information to memory partitions. For the convenience of tracking the completion of the recording, you can clear the log window by clicking "Ok", leave the current log in the terminal window - "Cancel". Please wait for the operation to be performed, as it will be written in the log window.</value>

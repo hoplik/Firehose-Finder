@@ -571,6 +571,24 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Устройство определено с ошибкой.
+        /// </summary>
+        internal static string mb_body_dev_mist {
+            get {
+                return ResourceManager.GetString("mb_body_dev_mist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Открыть папку с драйверами?.
+        /// </summary>
+        internal static string mb_body_driver_folder {
+            get {
+                return ResourceManager.GetString("mb_body_driver_folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Ошибка обработки таблицы GPT.
         /// </summary>
         internal static string mb_body_er_gpt {
@@ -612,6 +630,15 @@ namespace FirehoseFinder.Properties {
         internal static string mb_body_memtype {
             get {
                 return ResourceManager.GetString("mb_body_memtype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Драйверы для этого устройства не установлены.
+        /// </summary>
+        internal static string mb_body_port_driver {
+            get {
+                return ResourceManager.GetString("mb_body_port_driver", resourceCulture);
             }
         }
         

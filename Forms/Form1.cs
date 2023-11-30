@@ -3303,7 +3303,20 @@ namespace FirehoseFinder
                         if (string.IsNullOrEmpty(dev_param[0]))
                         {
                             //Устройство с ошибкой
-                            MessageBox.Show(dev_param[1]);
+                            DialogResult dr = MessageBox.Show(dev_param[1] + Environment.NewLine +
+                                LocRes.GetString("mb_body_driver_folder"),
+                                LocRes.GetString("mb_title_mis"),
+                                MessageBoxButtons.OKCancel, 
+                                MessageBoxIcon.Exclamation);
+                            if (dr == DialogResult.OK)
+                            {
+                                ProcessStartInfo driversfolder = new ProcessStartInfo()
+                                {
+                                    FileName = "explorer",
+                                    Arguments = Application.StartupPath + "\\Drivers"
+                                };
+                                Process.Start(driversfolder);
+                            }
                         }
                         else
                         {
