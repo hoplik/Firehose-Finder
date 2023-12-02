@@ -75,11 +75,11 @@ namespace FirehoseFinder
                 {
                     case 0x8000: //Подключили usb устройство
                         NeedReset = false;
-                        if (!bgWorker_ports.IsBusy) bgWorker_ports.RunWorkerAsync(); //Запустили пересмотр портов в параллельном потоке
+                        CheckPortsList(); //Запустили пересмотр портов в параллельном потоке
                         ClearListViewDevices();
                         break;
-                    case 0x8004: //Отключили устройство
-                        if (!bgWorker_ports.IsBusy) bgWorker_ports.RunWorkerAsync(); //Запустили пересмотр портов в параллельном потоке
+                    case 0x0007: //Любое изменение списка оборудования
+                        CheckPortsList(); //Запустили пересмотр портов в параллельном потоке
                         ClearListViewDevices();
                         break;
                     default:
@@ -131,7 +131,7 @@ namespace FirehoseFinder
             toolTip1.SetToolTip(button_findIDs, LocRes.GetString("tt_find"));
             toolTip1.SetToolTip(button_path, LocRes.GetString("tt_path"));
             toolTip1.SetToolTip(button_useSahara_fhf, LocRes.GetString("tt_check"));
-            if (!bgWorker_ports.IsBusy) bgWorker_ports.RunWorkerAsync(); //Запустили пересмотр портов в параллельном потоке
+            CheckPortsList(); //Запустили пересмотр портов в параллельном потоке
             //Открываем приветствие если новое или отмечено в настройках
             if (Settings.Default.CheckBox_start_Checked)
             {
@@ -3265,18 +3265,31 @@ namespace FirehoseFinder
         /// <param name="e">ManagementObjectCollection</param>
         private void BgWorker_ports_DoWork(object sender, DoWorkEventArgs e)
         {
+            USB_DEV_Props[] usbdevices = new USB_DEV_Props[1];
             try
             {
                 ManagementObjectSearcher dev_seacher = new ManagementObjectSearcher(
                     "root\\CIMV2",
                     "SELECT * FROM Win32_PnPEntity WHERE DeviceID LIKE \"USB%PID_9008%\"");
-                e.Result = dev_seacher.Get();
+                ManagementObjectCollection moc = dev_seacher.Get();
+                if (moc.Count > 0)
+                {
+                    Array.Resize(ref usbdevices, moc.Count);
+                    int countdevs = 0;
+                    foreach (ManagementObject dev_obj in moc)
+                    {
+                        USB_DEV_Props usbdev = new USB_DEV_Props(func.ParsingPortsProps(dev_obj)[0], func.ParsingPortsProps(dev_obj)[1]);
+                        usbdevices.SetValue(usbdev, countdevs);
+                        countdevs++;
+                    }
+                }
             }
             catch (Exception ex)
             {
                 textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
                 SendErrorInChat();
             }
+            e.Result = usbdevices;
         }
 
         /// <summary>
@@ -3293,20 +3306,18 @@ namespace FirehoseFinder
             }
             else
             {
-                ManagementObjectCollection moc = (ManagementObjectCollection)e.Result;
                 if (listView_comport.Items.Count > 0) listView_comport.Items.Clear();
-                if (moc.Count > 0)
+                if (e.Result != null)
                 {
-                    foreach (ManagementObject dev_obj in moc)
+                    foreach (USB_DEV_Props dev_obj in (USB_DEV_Props[])e.Result)
                     {
-                        string[] dev_param = func.ParsingPortsProps(dev_obj);
-                        if (string.IsNullOrEmpty(dev_param[0]))
+                        if (string.IsNullOrEmpty(dev_obj.PortNum))
                         {
                             //Устройство с ошибкой
-                            DialogResult dr = MessageBox.Show(dev_param[1] + Environment.NewLine +
+                            DialogResult dr = MessageBox.Show(dev_obj.PortName + Environment.NewLine +
                                 LocRes.GetString("mb_body_driver_folder"),
                                 LocRes.GetString("mb_title_mis"),
-                                MessageBoxButtons.OKCancel, 
+                                MessageBoxButtons.OKCancel,
                                 MessageBoxIcon.Exclamation);
                             if (dr == DialogResult.OK)
                             {
@@ -3321,9 +3332,11 @@ namespace FirehoseFinder
                         else
                         {
                             //Устройство с портом
-                            ListViewItem portusb = new ListViewItem(dev_param[0]);
-                            portusb.SubItems.Add(dev_param[1]);
-                            listView_comport.Items.Add(portusb);
+                            ListViewItem portusb = new ListViewItem(dev_obj.PortNum);
+                            portusb.SubItems.Add(dev_obj.PortName);
+                            bool notdublicItem = true;
+                            foreach (ListViewItem item in listView_comport.Items) if (item.Equals(portusb)) notdublicItem = false;
+                            if (notdublicItem) listView_comport.Items.Add(portusb);
                         }
                     }
                     if (listView_comport.Items.Count > 0) listView_comport.Items[0].Checked = true; //Отметили первое устройство в списке как выбранное
@@ -3332,6 +3345,17 @@ namespace FirehoseFinder
                 tabControl1.SelectedTab = tabPage_phone;
                 tabControl_soft.SelectedTab = tabPage_sahara;
                 работаСУстройствомToolStripMenuItem.Checked = false;
+            }
+        }
+
+        private void CheckPortsList()
+        {
+            if (!bgWorker_ports.IsBusy) bgWorker_ports.RunWorkerAsync(); //Запустили пересмотр портов в параллельном потоке
+            //Приостановили основной поток для завершения фоновых
+            while (bgWorker_ports.IsBusy)
+            {
+                Application.DoEvents();
+                Thread.Sleep(100);
             }
         }
     }

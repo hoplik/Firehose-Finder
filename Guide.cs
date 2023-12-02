@@ -273,4 +273,14 @@ namespace FirehoseFinder
             File_Name = file_name;
         }
     }
+    class USB_DEV_Props
+    {
+        public string PortNum;
+        public string PortName;
+        public USB_DEV_Props(string portnum, string portname)
+        {
+            PortNum = portnum;
+            PortName = portname;
+        }
+    }
 }
