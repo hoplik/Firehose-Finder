@@ -3265,7 +3265,8 @@ namespace FirehoseFinder
         /// <param name="e">ManagementObjectCollection</param>
         private void BgWorker_ports_DoWork(object sender, DoWorkEventArgs e)
         {
-            USB_DEV_Props[] usbdevices = new USB_DEV_Props[1];
+            USB_DEV_Props zerodev = new USB_DEV_Props(string.Empty, string.Empty);
+            USB_DEV_Props[] usbdevices = new USB_DEV_Props[1] { zerodev };
             try
             {
                 ManagementObjectSearcher dev_seacher = new ManagementObjectSearcher(
@@ -3313,6 +3314,8 @@ namespace FirehoseFinder
                     {
                         if (string.IsNullOrEmpty(dev_obj.PortNum))
                         {
+                            //Устройства нет в системе
+                            if (string.IsNullOrEmpty(dev_obj.PortName)) return;
                             //Устройство с ошибкой
                             DialogResult dr = MessageBox.Show(dev_obj.PortName + Environment.NewLine +
                                 LocRes.GetString("mb_body_driver_folder"),

@@ -355,7 +355,7 @@
   </data>
   <data name="mb_body_port_driver" xml:space="preserve">
     <value>The drivers for this device are not installed</value>
-    <comment>Драйверы для этого устройства не установлены</comment>
+    <comment>Драйвера для этого устройства не установлены</comment>
   </data>
   <data name="mb_body_record" xml:space="preserve">
     <value>An attempt is being made to write information to memory partitions. For the convenience of tracking the completion of the recording, you can clear the log window by clicking "Ok", leave the current log in the terminal window - "Cancel". Please wait for the operation to be performed, as it will be written in the log window.</value>

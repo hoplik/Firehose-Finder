@@ -632,6 +632,6 @@
     <value>Открыть папку с драйверами?</value>
   </data>
   <data name="mb_body_port_driver" xml:space="preserve">
-    <value>Драйверы для этого устройства не установлены</value>
+    <value>Драйвера для этого устройства не установлены</value>
   </data>
 </root>

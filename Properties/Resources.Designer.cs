@@ -634,7 +634,7 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Драйверы для этого устройства не установлены.
+        ///   Ищет локализованную строку, похожую на Драйвера для этого устройства не установлены.
         /// </summary>
         internal static string mb_body_port_driver {
             get {
