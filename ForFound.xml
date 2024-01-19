@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2023-12-03T01:35:17">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-01-19T21:40:45">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -651,6 +651,30 @@
 <MODEL_FH>4985</MODEL_FH>
 <HASH_FH>2ACF3A85FDE334E2E28D64CBC416B2474E0E95CAD4698F143E27479D67E92D995A20DA04E40395B61A140F3DB7C32720</HASH_FH>
 <Model>HD1907</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8E1561B4/prog_firehose_ddr.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0051</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>22F415BEC935E3CBE982EEB854DD5F3D150D46A5C41060BBFE4600EAF94B981D4A89F94C4CDE16AEC078B7B58E1561B4</HASH_FH>
+<Model>GN2200</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/FC1D0AA5/prog_firehose_ddr.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0051</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>D53F19D28ED8CA4A5D9C5BD7DDB365DBC9268CBDE3DFC8A151E70C8B0A0DFFC210BBF251AE8BDED0F5714DE3FC1D0AA5</HASH_FH>
+<Model>CPH2363</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/164FB294/zf7_firehose_lite.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0029</OEM_FH>
+<MODEL_FH>0865</MODEL_FH>
+<HASH_FH>88538270E8F924BEE0C6231E55A06E84CD997EAE2633AD6FDD1E1FB0995AE6A86C5A5FBE674E5C95C5B847E2164FB294</HASH_FH>
+<Model>ZS671KS</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
