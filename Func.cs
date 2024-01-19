@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -11,7 +10,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml;
-using Telegram.Bot.Types.Enums;
 
 namespace FirehoseFinder
 {
@@ -240,7 +238,7 @@ namespace FirehoseFinder
                 for (int i = 0; i < rootcert; i++)
                 {
                     string certl = SFDump.Substring(matchs[i].Index + 4, 4); // Получили длину сертификата в строке хекс
-                    int certlen = Int32.Parse(certl, NumberStyles.HexNumber); // Перевели её в 10 инт
+                    int certlen = int.Parse(certl, NumberStyles.HexNumber); // Перевели её в 10 инт
                     certs.Insert(i, matchs[i].Value + SFDump.Substring(matchs[i].Index + 12, certlen * 2 - 4));
                 }
                 Guide guide = new Guide();
