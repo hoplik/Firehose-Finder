@@ -244,6 +244,12 @@
   <data name="драйвераEDLИADBToolStripMenuItem.Text" xml:space="preserve">
     <value>Drivers for EDL and ADB</value>
   </data>
+  <data name="ExSertToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 26</value>
+  </data>
+  <data name="ExSertToolStripMenuItem.Text" xml:space="preserve">
+    <value>Extract certificates</value>
+  </data>
   <data name="справкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 24</value>
   </data>
@@ -262,14 +268,8 @@
   <data name="оПрограммеToolStripMenuItem.Text" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="tabPage_collection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 627</value>
-  </data>
   <data name="tabPage_collection.Text" xml:space="preserve">
     <value>Reference book of devices</value>
-  </data>
-  <data name="dataGridView_collection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 595</value>
   </data>
   <data name="bindingNavigatorMoveFirstItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -350,20 +350,8 @@
   <data name="toolStripButton_large_font.ToolTipText" xml:space="preserve">
     <value>Enlarge the font size</value>
   </data>
-  <data name="bindingNavigator_collection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 595</value>
-  </data>
-  <data name="tabPage_firehose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 627</value>
-  </data>
   <data name="tabPage_firehose.Text" xml:space="preserve">
     <value>Work with files</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 419</value>
-  </data>
-  <data name="textBox_main_term.Size" type="System.Drawing.Size, System.Drawing">
-    <value>409, 419</value>
   </data>
   <data name="Column_Sel.HeaderText" xml:space="preserve">
     <value>Select</value>
@@ -383,9 +371,6 @@
   </data>
   <data name="Column_Comp.HeaderText" xml:space="preserve">
     <value>Maybe suitable for:</value>
-  </data>
-  <data name="dataGridView_final.Size" type="System.Drawing.Size, System.Drawing">
-    <value>946, 419</value>
   </data>
   <data name="groupBox_fh_sel_path.Text" xml:space="preserve">
     <value>Programmer search</value>
@@ -453,9 +438,6 @@ if there are none</value>
   </data>
   <data name="button_useSahara_fhf.Text" xml:space="preserve">
     <value>Check selected programmer</value>
-  </data>
-  <data name="statusStrip_firehose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 599</value>
   </data>
   <data name="toolStripStatusLabel_filescompleted.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 20</value>

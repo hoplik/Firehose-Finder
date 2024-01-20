@@ -79,6 +79,16 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap about1 {
+            get {
+                object obj = ResourceManager.GetObject("about1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Добавить устройство.
         /// </summary>
         internal static string add_dev {
@@ -129,6 +139,16 @@ namespace FirehoseFinder.Properties {
         internal static string auth_title {
             get {
                 return ResourceManager.GetString("auth_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap autolen {
+            get {
+                object obj = ResourceManager.GetObject("autolen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -232,11 +252,31 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap database {
+            get {
+                object obj = ResourceManager.GetObject("database", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Готово..
         /// </summary>
         internal static string done {
             get {
                 return ResourceManager.GetString("done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap drivers {
+            get {
+                object obj = ResourceManager.GetObject("drivers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -300,6 +340,16 @@ namespace FirehoseFinder.Properties {
         internal static string er_func_xml {
             get {
                 return ResourceManager.GetString("er_func_xml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exit {
+            get {
+                object obj = ResourceManager.GetObject("exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -387,6 +437,16 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap greet {
+            get {
+                object obj = ResourceManager.GetObject("greet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на 			Краткий инструктаж.
         ///
         ///	Основной функционал приложения - поиск подходящего программера (programmer, firehose, пожарный шланг и т.п.) под определённое устройство.
@@ -404,6 +464,16 @@ namespace FirehoseFinder.Properties {
         internal static string hash {
             get {
                 return ResourceManager.GetString("hash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap help {
+            get {
+                object obj = ResourceManager.GetObject("help", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -512,6 +582,26 @@ namespace FirehoseFinder.Properties {
         internal static string hex_warn_stopoper {
             get {
                 return ResourceManager.GetString("hex_warn_stopoper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap insert {
+            get {
+                object obj = ResourceManager.GetObject("insert", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lensel {
+            get {
+                object obj = ResourceManager.GetObject("lensel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -924,6 +1014,16 @@ namespace FirehoseFinder.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rom {
+            get {
+                object obj = ResourceManager.GetObject("rom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap russia_flags_flag_17058 {
             get {
                 object obj = ResourceManager.GetObject("russia_flags_flag_17058", resourceCulture);
@@ -959,11 +1059,31 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap send {
+            get {
+                object obj = ResourceManager.GetObject("send", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Отправили.
         /// </summary>
         internal static string sent {
             get {
                 return ResourceManager.GetString("sent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sert {
+            get {
+                object obj = ResourceManager.GetObject("sert", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1463,6 +1583,16 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap translate {
+            get {
+                object obj = ResourceManager.GetObject("translate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Нажмите для проверки выбранного программера.
         /// </summary>
         internal static string tt_check {
@@ -1595,6 +1725,16 @@ namespace FirehoseFinder.Properties {
         internal static string warn {
             get {
                 return ResourceManager.GetString("warn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap work {
+            get {
+                object obj = ResourceManager.GetObject("work", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

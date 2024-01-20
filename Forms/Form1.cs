@@ -1,4 +1,5 @@
-﻿using FirehoseFinder.Properties;
+﻿using FirehoseFinder.Forms;
+using FirehoseFinder.Properties;
 using SharpAdbClient;
 using System;
 using System.Collections.Generic;
@@ -3360,6 +3361,17 @@ namespace FirehoseFinder
                 Application.DoEvents();
                 Thread.Sleep(100);
             }
+        }
+
+        /// <summary>
+        /// Открываем форму для извлечения сертификата
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ExSertToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExSert exSert = new ExSert();
+            exSert.ShowDialog();
         }
     }
 }

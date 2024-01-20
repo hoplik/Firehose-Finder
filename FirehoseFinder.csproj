@@ -379,6 +379,12 @@
     <Compile Include="Forms\Dump_Sectors.Designer.cs">
       <DependentUpon>Dump_Sectors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ExSert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExSert.Designer.cs">
+      <DependentUpon>ExSert.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -437,7 +443,23 @@
     <Compile Include="Forms\Write_Sectors.Designer.cs">
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </Compile>
+    <Content Include="Resources\about.png" />
+    <Content Include="Resources\autolen.png" />
+    <Content Include="Resources\database.png" />
+    <Content Include="Resources\exit.png" />
+    <Content Include="Resources\greet.png" />
+    <Content Include="Resources\help.png" />
+    <Content Include="Resources\insert.png" />
+    <Content Include="Resources\lensel.png" />
+    <Content Include="Resources\rom.png" />
+    <Content Include="Resources\send.png" />
+    <Content Include="Resources\sert.png" />
+    <Content Include="Resources\translate.png" />
+    <Content Include="Resources\work.png" />
     <None Include="Resources\logo.contrast-white.png" />
+    <EmbeddedResource Include="Forms\ExSert.resx">
+      <DependentUpon>ExSert.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\RawProgramForm.en.resx">
       <DependentUpon>RawProgramForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -490,6 +512,7 @@
     <Content Include="Drivers\QUSBEDL\qcser.inf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\drivers.png" />
     <Content Include="Resources\help_en.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
