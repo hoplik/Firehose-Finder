@@ -21,7 +21,11 @@ namespace FirehoseFinder.Forms
 
         private void ListView1_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
-            if (listView1.CheckedItems.Count > 0) button2.Enabled = true;
+            if (listView1.CheckedItems.Count > 0)
+            {
+                button2.Enabled = true;
+                button2.Focus();
+            }
             else button2.Enabled = false;
             toolStripStatusLabel1.Text = "Выбрано " + listView1.CheckedItems.Count.ToString() + " сертификатов";
         }
@@ -75,7 +79,11 @@ namespace FirehoseFinder.Forms
                 //Открываем папку для просмотра сертификатов
                 Process.Start("explorer.exe", label2.Text);
             }
-            else { button2.Enabled = true; }
+            else
+            {
+                button2.Enabled = true;
+                button2.Focus();
+            }
         }
 
         private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -117,7 +125,7 @@ namespace FirehoseFinder.Forms
                         //Заполняем листбокс
                         ListViewItem item = new ListViewItem(startsert.ToString());
                         item.SubItems.Add(cslen.ToString());
-                        item.SubItems.Add("Сертификат");
+                        item.SubItems.Add("Сертификат формата DER (X.509)");
                         listView1.Items.Add(item);
                     }
                     else countsert--;

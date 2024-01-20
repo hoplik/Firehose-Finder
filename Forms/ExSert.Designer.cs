@@ -83,51 +83,53 @@
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(544, 578);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(3, 421);
+            this.button1.Location = new System.Drawing.Point(3, 441);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(538, 34);
             this.button1.TabIndex = 0;
             this.button1.Text = "Выбрать файл";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 458);
+            this.label1.Location = new System.Drawing.Point(3, 478);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(538, 40);
+            this.label1.Size = new System.Drawing.Size(538, 30);
             this.label1.TabIndex = 1;
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.ControlDark;
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(3, 501);
+            this.button2.Location = new System.Drawing.Point(3, 511);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(538, 34);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Извлечь выбранные сертификаты";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Text = "Извлечь выбранные сертификаты в папку";
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 538);
+            this.label2.Location = new System.Drawing.Point(3, 548);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(538, 40);
+            this.label2.Size = new System.Drawing.Size(538, 30);
             this.label2.TabIndex = 3;
             // 
             // listView1
@@ -145,7 +147,7 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(3, 3);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(538, 412);
+            this.listView1.Size = new System.Drawing.Size(538, 432);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -173,25 +175,25 @@
             this.отменитьВыборToolStripMenuItem,
             this.выбратьВсёToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 80);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(197, 52);
             // 
             // отменитьВыборToolStripMenuItem
             // 
             this.отменитьВыборToolStripMenuItem.Name = "отменитьВыборToolStripMenuItem";
-            this.отменитьВыборToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.отменитьВыборToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
             this.отменитьВыборToolStripMenuItem.Text = "Отменить выбор";
             this.отменитьВыборToolStripMenuItem.Click += new System.EventHandler(this.ОтменитьВыборToolStripMenuItem_Click);
             // 
             // выбратьВсёToolStripMenuItem
             // 
             this.выбратьВсёToolStripMenuItem.Name = "выбратьВсёToolStripMenuItem";
-            this.выбратьВсёToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.выбратьВсёToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
             this.выбратьВсёToolStripMenuItem.Text = "Выбрать всё";
             this.выбратьВсёToolStripMenuItem.Click += new System.EventHandler(this.ВыбратьВсёToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Файл elf|*.elf|Файл mbn|*.mbn|Файл bin|*.bin|Все файлы|*.*";
             // 
             // backgroundWorker1
             // 
