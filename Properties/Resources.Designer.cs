@@ -344,6 +344,42 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на сертификатов.
+        /// </summary>
+        internal static string excert_cert {
+            get {
+                return ResourceManager.GetString("excert_cert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сертификат формата DER (X.509).
+        /// </summary>
+        internal static string excert_format {
+            get {
+                return ResourceManager.GetString("excert_format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Найдено.
+        /// </summary>
+        internal static string excert_found {
+            get {
+                return ResourceManager.GetString("excert_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Выбрано.
+        /// </summary>
+        internal static string excert_sel {
+            get {
+                return ResourceManager.GetString("excert_sel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap exit {

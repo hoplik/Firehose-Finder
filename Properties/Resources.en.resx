@@ -221,6 +221,22 @@
     <value>Failed to create xml file for reading/writing sections</value>
     <comment>Не удалось создать xml-файл чтения/записи разделов</comment>
   </data>
+  <data name="excert_cert" xml:space="preserve">
+    <value>сertificates</value>
+    <comment>сертификатов</comment>
+  </data>
+  <data name="excert_format" xml:space="preserve">
+    <value>Certificate of DER format (X.509)</value>
+    <comment>Сертификат формата DER (X.509)</comment>
+  </data>
+  <data name="excert_found" xml:space="preserve">
+    <value>Found</value>
+    <comment>Найдено</comment>
+  </data>
+  <data name="excert_sel" xml:space="preserve">
+    <value>Selected</value>
+    <comment>Выбрано</comment>
+  </data>
   <data name="file" xml:space="preserve">
     <value>file</value>
     <comment>файл</comment>

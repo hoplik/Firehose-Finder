@@ -27,7 +27,9 @@ namespace FirehoseFinder.Forms
                 button2.Focus();
             }
             else button2.Enabled = false;
-            toolStripStatusLabel1.Text = "Выбрано " + listView1.CheckedItems.Count.ToString() + " сертификатов";
+            toolStripStatusLabel1.Text = LocRes.GetString("excert_sel") + '\u0020'
+                + listView1.CheckedItems.Count.ToString()
+                + '\u0020' + LocRes.GetString("excert_cert");
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -110,7 +112,7 @@ namespace FirehoseFinder.Forms
         {
             filestring = e.Result.ToString();
             string pattern = "3082(.{4})3082"; //Бинарный признак сертификата с его длиной в середине (3082-4 знака-3082)
-            byte countsert = 0; //Количество сертификатов в файле
+            byte countsert = 0; //Считаем колличество сертификатов в файле
             Regex regex = new Regex(pattern);
             MatchCollection matchs = regex.Matches(filestring);
             if (matchs.Count > 0)
@@ -119,18 +121,20 @@ namespace FirehoseFinder.Forms
                 {
                     countsert++;
                     int cslen = Convert.ToInt32(match.Groups[1].Value, 16);
-                    if (cslen > 100 && cslen < 2000)
+                    if (cslen > 128 && cslen < 2048) //Условно считаем, что сертификат должен быть длиннее 128 байт и короче 2 кб.
                     {
                         int startsert = match.Index / 2;
                         //Заполняем листбокс
                         ListViewItem item = new ListViewItem(startsert.ToString());
                         item.SubItems.Add(cslen.ToString());
-                        item.SubItems.Add("Сертификат формата DER (X.509)");
+                        item.SubItems.Add(LocRes.GetString("excert_format"));
                         listView1.Items.Add(item);
                     }
                     else countsert--;
                 }
-                toolStripStatusLabel1.Text = "Найдено " + countsert.ToString() + " сертификатов";
+                toolStripStatusLabel1.Text = LocRes.GetString("excert_found") + '\u0020'
+                    + countsert.ToString()
+                    + '\u0020' + LocRes.GetString("excert_cert");
             }
         }
 

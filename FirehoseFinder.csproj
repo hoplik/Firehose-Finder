@@ -15,7 +15,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\hoplik\OneDrive\Рабочий стол\Publishing\</PublishUrl>
+    <PublishUrl>ftp://fhf.mywebcommunity.org/fhf.mywebcommunity.org/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -36,7 +36,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>24.1.21.0</ApplicationVersion>
+    <ApplicationVersion>24.1.22.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -457,6 +457,9 @@
     <Content Include="Resources\translate.png" />
     <Content Include="Resources\work.png" />
     <None Include="Resources\logo.contrast-white.png" />
+    <EmbeddedResource Include="Forms\ExSert.en.resx">
+      <DependentUpon>ExSert.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExSert.resx">
       <DependentUpon>ExSert.cs</DependentUpon>
     </EmbeddedResource>

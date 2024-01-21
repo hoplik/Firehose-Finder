@@ -676,4 +676,16 @@
   <data name="work" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\work.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="excert_cert" xml:space="preserve">
+    <value>сертификатов</value>
+  </data>
+  <data name="excert_format" xml:space="preserve">
+    <value>Сертификат формата DER (X.509)</value>
+  </data>
+  <data name="excert_found" xml:space="preserve">
+    <value>Найдено</value>
+  </data>
+  <data name="excert_sel" xml:space="preserve">
+    <value>Выбрано</value>
+  </data>
 </root>
