@@ -121,7 +121,7 @@
     <value>Select file</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
-    <value>Extract the selected certificates to a folder</value>
+    <value>Extract selected certificates to a folder</value>
   </data>
   <data name="columnHeader1.Text" xml:space="preserve">
     <value>Start</value>
@@ -133,6 +133,9 @@
     <value>Description</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 52</value>
+  </data>
   <data name="отменитьВыборToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 24</value>
   </data>
@@ -144,9 +147,6 @@
   </data>
   <data name="выбратьВсёToolStripMenuItem.Text" xml:space="preserve">
     <value>Select all</value>
-  </data>
-  <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 52</value>
   </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>File elf|*.elf|File mbn|*.mbn|File bin|*.bin|All files|*.*</value>
