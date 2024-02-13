@@ -4,3 +4,9 @@ http://4pda.ru/forum/index.php?showtopic=643084
 
 Для получения полной справки по программе, пожалуйста, смотрите файл "help".
 https://github.com/hoplik/Firehose-Finder/blob/master/Resources/help_ru.pdf
+=====
+Here is a reference table of Firehose loaders available on two sites.
+You can search by PK hash or file MD5 to locate a loader.
+This table is copyright.
+http://www.temblast.com/ref/loaders.htm
+It should be updated regularly.
