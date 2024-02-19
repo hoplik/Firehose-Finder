@@ -115,6 +115,7 @@ namespace FirehoseFinder
             dataGridView_collection.Columns["LASTKNOWNSBLVER"].HeaderText = "SW Ver";
             dataGridView_collection.Columns["HASHID"].HeaderText = "OEM Private Key Hash";
             dataGridView_collection.Columns["OEMID"].HeaderText = "OEM";
+            dataGridView_collection.Columns["HWID"].HeaderText = "JTAG";
             dataGridView_collection.Columns["MODELID"].HeaderText = "Model";
             //Устанавливаем размер шрифта в Справочнике
             using (Font font = new Font(
@@ -2469,7 +2470,7 @@ namespace FirehoseFinder
                 {
                     if (Convert.ToByte(dataGridView_collection["LASTKNOWNSBLVER", i].Value.ToString(), 16) >= Convert.ToByte(label_SW_Ver.Text, 16))
                     {
-                        if (dataGridView_collection["Model", i].Value.ToString().Contains(label_model.Text)) return; //Проверяем модель на наличие
+                        if (dataGridView_collection["Model", i].Value.ToString().IndexOf(label_model.Text, 0, StringComparison.OrdinalIgnoreCase) != -1) return; //Проверяем модель на наличие без учёта регистра!
                     }
                 }
                 //Исправить/добавить название/модель если 1 совпадает, а 2 нет
