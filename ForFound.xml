@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-01-22T22:57:51">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-02-23T01:35:48">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -188,7 +188,7 @@
 <OEM_FH>2A70</OEM_FH>
 <MODEL_FH>41DB</MODEL_FH>
 <HASH_FH>F3270473110E9CEF80EDC84E876F04D286BBEEE8ED379C1E699F7239CE4F21C09ECA6105D8317DA2B8E765B1FA7C49FF</HASH_FH>
-<Model>5</Model>
+<Model>ONEPLUS A5000</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BD25D20B/asus.elf#</Url>
@@ -677,6 +677,14 @@
 <Model>ZS671KS</Model>
 </ForFound>
 <ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/54466053/prog_emmc_firehose_8916.mbn#</Url>
+<HW_FH>007050E1</HW_FH>
+<OEM_FH>0001</OEM_FH>
+<MODEL_FH>0001</MODEL_FH>
+<HASH_FH>0B010BCB83A7B520C240A358A00DB87675681FB9C7C703496692AC3154466053</HASH_FH>
+<Model>ZB500KL</Model>
+</ForFound>
+<ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
 <HW_FH>0090B0E1</HW_FH>
 <OEM_FH>1111</OEM_FH>
@@ -714,7 +722,7 @@
 <OEM_FH>2A70</OEM_FH>
 <MODEL_FH>41DB</MODEL_FH>
 <HASH_FH>F3270473110E9CEF80EDC84E876F04D286BBEEE8ED379C1E699F7239CE4F21C09ECA6105D8317DA2B8E765B1FA7C49FF</HASH_FH>
-<Model>5</Model>
+<Model>ONEPLUS A5000</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCADFE3/1/prog_ufs_firehose_sdm845_ddr.elf#</Url>
