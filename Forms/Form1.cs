@@ -397,7 +397,7 @@ namespace FirehoseFinder
                 button_Sahara_CommandStart.Enabled = true;
                 if (waitSahara)
                 {
-                    StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -c 1 -c 2 -c 3 -c 7");
+                    StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -c 7 -c 3 -c 2 -c 1");
                     button_Sahara_Ids.Enabled = false;
                     GetSaharaIDs(sahara_command_args);
                     SendSaharaIDs();
@@ -413,7 +413,7 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button_Sahara_Ids_Click(object sender, EventArgs e)
         {
-            StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -c 1 -c 2 -c 3 -c 7");
+            StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -c 7 -c 3 -c 2 -c 1");
             GetSaharaIDs(sahara_command_args);
         }
 
@@ -476,7 +476,7 @@ namespace FirehoseFinder
                     return;
                 }
                 //Если лоадер ещё не загружен в imem, то грузим в параллельном потоке
-                sahara_command_args.Append(" -c 1 -c 2 -c 3 -c 7 -x -s 13:" + label_Sahara_fhf.Text);
+                sahara_command_args.Append(" -c 7 -c 3 -c 2 -c 1 -x -s 13:" + label_Sahara_fhf.Text);
                 GetSaharaIDs(sahara_command_args);
                 FHAlreadyLoaded = true;
                 NeedReset = true;
@@ -1415,7 +1415,7 @@ namespace FirehoseFinder
         {
             if (listView_comport.CheckedItems.Count == 1)
             {
-                StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -c 1 -c 2 -c 3 -c 7");
+                StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -c 7 -c 3 -c 2 -c 1");
                 GetSaharaIDs(sahara_command_args);
                 SendSaharaIDs();
                 return;
