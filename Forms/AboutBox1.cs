@@ -125,7 +125,7 @@ namespace FirehoseFinder
 
         private void Button_donate_pp_Click(object sender, EventArgs e)
         {
-            ProcessStartInfo psinfo = new ProcessStartInfo("https://my.qiwi.com/Aleksandr-SFr4nxtZ1E");
+            ProcessStartInfo psinfo = new ProcessStartInfo("https://paypal.me/hoplik?country.x=RU&locale.x=ru_RU");
             Process.Start(psinfo);
         }
 
