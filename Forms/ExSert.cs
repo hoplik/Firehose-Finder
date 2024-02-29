@@ -147,5 +147,22 @@ namespace FirehoseFinder.Forms
         {
             foreach (ListViewItem item in listView1.Items) if (!item.Checked) item.Checked = true;
         }
+
+        private void ХешСертификатаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                //Записываем сертификат в переменную
+                foreach (ListViewItem item in listView1.SelectedItems)
+                {
+                    int startadress = Convert.ToInt32(item.Text);
+                    int sertlen = Convert.ToInt32(item.SubItems[1].Text);
+                    string certstr = filestring.Substring(startadress * 2, (4 * 2) + (sertlen * 2));
+                    string selcert = Func.CertExtr(certstr);
+                    string fullstr = "(" + selcert.Length.ToString() + ") -> " + selcert + " <-";
+                    MessageBox.Show(startadress.ToString() + "-" + sertlen.ToString() + Environment.NewLine + fullstr, "Хеш сертификата");
+                }
+            }
+        }
     }
 }

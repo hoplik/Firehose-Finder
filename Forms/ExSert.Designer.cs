@@ -44,6 +44,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.отменитьВыборToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выбратьВсёToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.хешСертификатаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -54,16 +56,16 @@
             // 
             // statusStrip1
             // 
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
-            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             // 
             // tableLayoutPanel1
             // 
@@ -77,8 +79,8 @@
             // 
             // button1
             // 
-            resources.ApplyResources(this.button1, "button1");
             this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -90,8 +92,8 @@
             // 
             // button2
             // 
-            resources.ApplyResources(this.button2, "button2");
             this.button2.BackColor = System.Drawing.SystemColors.ControlDark;
+            resources.ApplyResources(this.button2, "button2");
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
@@ -103,17 +105,18 @@
             // 
             // listView1
             // 
-            resources.ApplyResources(this.listView1, "listView1");
             this.listView1.CheckBoxes = true;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
             this.listView1.ContextMenuStrip = this.contextMenuStrip1;
+            resources.ApplyResources(this.listView1, "listView1");
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -133,32 +136,41 @@
             // 
             // contextMenuStrip1
             // 
-            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.отменитьВыборToolStripMenuItem,
-            this.выбратьВсёToolStripMenuItem});
+            this.выбратьВсёToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.хешСертификатаToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             // 
             // отменитьВыборToolStripMenuItem
             // 
-            resources.ApplyResources(this.отменитьВыборToolStripMenuItem, "отменитьВыборToolStripMenuItem");
             this.отменитьВыборToolStripMenuItem.Name = "отменитьВыборToolStripMenuItem";
+            resources.ApplyResources(this.отменитьВыборToolStripMenuItem, "отменитьВыборToolStripMenuItem");
             this.отменитьВыборToolStripMenuItem.Click += new System.EventHandler(this.ОтменитьВыборToolStripMenuItem_Click);
             // 
             // выбратьВсёToolStripMenuItem
             // 
-            resources.ApplyResources(this.выбратьВсёToolStripMenuItem, "выбратьВсёToolStripMenuItem");
             this.выбратьВсёToolStripMenuItem.Name = "выбратьВсёToolStripMenuItem";
+            resources.ApplyResources(this.выбратьВсёToolStripMenuItem, "выбратьВсёToolStripMenuItem");
             this.выбратьВсёToolStripMenuItem.Click += new System.EventHandler(this.ВыбратьВсёToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            // 
+            // хешСертификатаToolStripMenuItem
+            // 
+            this.хешСертификатаToolStripMenuItem.Name = "хешСертификатаToolStripMenuItem";
+            resources.ApplyResources(this.хешСертификатаToolStripMenuItem, "хешСертификатаToolStripMenuItem");
+            this.хешСертификатаToolStripMenuItem.Click += new System.EventHandler(this.ХешСертификатаToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
-            // 
-            // folderBrowserDialog1
-            // 
-            resources.ApplyResources(this.folderBrowserDialog1, "folderBrowserDialog1");
             // 
             // backgroundWorker1
             // 
@@ -201,5 +213,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem хешСертификатаToolStripMenuItem;
     }
 }
