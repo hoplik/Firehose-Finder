@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-03-01T01:46:14">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-03-02T01:04:16">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -608,7 +608,7 @@
 <OEM_FH>0029</OEM_FH>
 <MODEL_FH>003C</MODEL_FH>
 <HASH_FH>EC70FF124179A138C679962561700EE3007131713530D4B2205EAD1B11BB915CB52B4C2CB68644C4FBB0CFE490649ED1</HASH_FH>
-<Model>ZS630KL</Model>
+<Model>ASUS_I01WD</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D42A380F/007b40e100310000_cc3153a80293939b_fhprg.bin#</Url>

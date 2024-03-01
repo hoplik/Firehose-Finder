@@ -15,7 +15,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\hoplik\OneDrive\Рабочий стол\Publishing\</PublishUrl>
+    <PublishUrl>ftp://fhf.mywebcommunity.org/fhf.mywebcommunity.org/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
