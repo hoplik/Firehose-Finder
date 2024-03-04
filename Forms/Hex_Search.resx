@@ -203,9 +203,6 @@
   <data name="&gt;&gt;textBox_byte_search.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="tableLayoutPanel_hs.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
   <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -218,12 +215,11 @@
   <data name="groupBox_byte_text.Size" type="System.Drawing.Size, System.Drawing">
     <value>587, 84</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="listView_search.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="&gt;&gt;textBox_hexsearch.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_start_search.Parent" xml:space="preserve">
+    <value>tableLayoutPanel_hs</value>
   </data>
   <data name="radioButton_search_text.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
@@ -252,6 +248,9 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Hex_Search</value>
   </data>
+  <data name="&gt;&gt;columnHeader3.Name" xml:space="preserve">
+    <value>columnHeader3</value>
+  </data>
   <data name="textBox_addfirst.Text" xml:space="preserve">
     <value>10</value>
   </data>
@@ -260,9 +259,6 @@
   </data>
   <data name="radioButton_file.Text" xml:space="preserve">
     <value>Файл</value>
-  </data>
-  <data name="textBox_hexsearch.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;listView_search.Parent" xml:space="preserve">
     <value>tableLayoutPanel_hs</value>
@@ -363,6 +359,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Бинарный поиск</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="groupBox_byte_text.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -374,9 +371,6 @@
   </data>
   <data name="&gt;&gt;folderBrowserDialog1.Type" xml:space="preserve">
     <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="columnHeader3.Width" type="System.Int32, mscorlib">
-    <value>588</value>
   </data>
   <data name="radioButton_dir.Location" type="System.Drawing.Point, System.Drawing">
     <value>81, 45</value>
@@ -395,9 +389,6 @@
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
-  </data>
-  <data name="textBox_addfirst.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="textBox_addfirst.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 22</value>
@@ -426,14 +417,17 @@
   <data name="button_start_search.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="&gt;&gt;radioButton_search_text.Name" xml:space="preserve">
-    <value>radioButton_search_text</value>
-  </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="button_start_search.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 23</value>
+  </data>
   <data name="textBox_hexsearch.Location" type="System.Drawing.Point, System.Drawing">
     <value>77, 51</value>
+  </data>
+  <data name="radioButton_byte_search.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="tableLayoutPanel_hs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -501,8 +495,14 @@
   <data name="&gt;&gt;radioButton_byte_search.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="radioButton_byte_search.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 22</value>
+  </data>
   <data name="&gt;&gt;textBox_addlast.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBox_addbytes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>796, 3</value>
   </data>
   <data name="&gt;&gt;radioButton_search_text.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -537,8 +537,8 @@
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="radioButton_byte_search.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 22</value>
+  <data name="columnHeader3.Width" type="System.Int32, mscorlib">
+    <value>588</value>
   </data>
   <data name="textBox_addfirst.Location" type="System.Drawing.Point, System.Drawing">
     <value>85, 27</value>
@@ -552,8 +552,8 @@
   <data name="&gt;&gt;tableLayoutPanel_hs.Type" xml:space="preserve">
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;columnHeader3.Name" xml:space="preserve">
-    <value>columnHeader3</value>
+  <data name="listView_search.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3080,8 +3080,8 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="radioButton_byte_search.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="textBox_hexsearch.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="radioButton_dir.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3089,8 +3089,8 @@
   <data name="&gt;&gt;textBox_addlast.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="groupBox_addbytes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>796, 3</value>
+  <data name="textBox_addfirst.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;radioButton_dir.Parent" xml:space="preserve">
     <value>groupBox_hs</value>
@@ -3116,14 +3116,14 @@
   <data name="toolStripProgressBar_search.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 18</value>
   </data>
-  <data name="&gt;&gt;button_start_search.Parent" xml:space="preserve">
-    <value>tableLayoutPanel_hs</value>
+  <data name="&gt;&gt;radioButton_search_text.Name" xml:space="preserve">
+    <value>radioButton_search_text</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="button_start_search.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 23</value>
+  <data name="tableLayoutPanel_hs.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel_hs.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -3136,9 +3136,6 @@
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en</value>
   </metadata>
   <metadata name="statusStrip_search.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>794, 17</value>
