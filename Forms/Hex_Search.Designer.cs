@@ -59,9 +59,14 @@ namespace FirehoseFinder
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_folders = new System.Windows.Forms.TabPage();
             this.tabPage_files = new System.Windows.Forms.TabPage();
-            this.tabPage_mask = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.tabPage_mask = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button_orig = new System.Windows.Forms.Button();
+            this.button_dubl = new System.Windows.Forms.Button();
+            this.button_exe = new System.Windows.Forms.Button();
+            this.button_del = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.statusStrip_search.SuspendLayout();
             this.tableLayoutPanel_hs.SuspendLayout();
             this.groupBox_byte_text.SuspendLayout();
@@ -71,6 +76,7 @@ namespace FirehoseFinder
             this.tabPage_folders.SuspendLayout();
             this.tabPage_files.SuspendLayout();
             this.tabPage_mask.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // folderBrowserDialog1
@@ -266,7 +272,7 @@ namespace FirehoseFinder
             // 
             // tabPage_folders
             // 
-            this.tabPage_folders.Controls.Add(this.label4);
+            this.tabPage_folders.Controls.Add(this.tableLayoutPanel1);
             resources.ApplyResources(this.tabPage_folders, "tabPage_folders");
             this.tabPage_folders.Name = "tabPage_folders";
             this.tabPage_folders.UseVisualStyleBackColor = true;
@@ -278,6 +284,11 @@ namespace FirehoseFinder
             this.tabPage_files.Name = "tabPage_files";
             this.tabPage_files.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
             // tabPage_mask
             // 
             this.tabPage_mask.Controls.Add(this.tableLayoutPanel_hs);
@@ -285,15 +296,47 @@ namespace FirehoseFinder
             this.tabPage_mask.Name = "tabPage_mask";
             this.tabPage_mask.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // tableLayoutPanel1
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.button_orig, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button_dubl, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button_exe, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.button_del, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.listView1, 0, 1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
-            // label5
+            // button_orig
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
+            resources.ApplyResources(this.button_orig, "button_orig");
+            this.button_orig.Name = "button_orig";
+            this.button_orig.UseVisualStyleBackColor = true;
+            // 
+            // button_dubl
+            // 
+            resources.ApplyResources(this.button_dubl, "button_dubl");
+            this.button_dubl.Name = "button_dubl";
+            this.button_dubl.UseVisualStyleBackColor = true;
+            // 
+            // button_exe
+            // 
+            resources.ApplyResources(this.button_exe, "button_exe");
+            this.button_exe.Name = "button_exe";
+            this.button_exe.UseVisualStyleBackColor = true;
+            // 
+            // button_del
+            // 
+            resources.ApplyResources(this.button_del, "button_del");
+            this.button_del.Name = "button_del";
+            this.button_del.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.listView1, 2);
+            resources.ApplyResources(this.listView1, "listView1");
+            this.listView1.HideSelection = false;
+            this.listView1.Name = "listView1";
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // Hex_Search
             // 
@@ -315,10 +358,10 @@ namespace FirehoseFinder
             this.groupBox_addbytes.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage_folders.ResumeLayout(false);
-            this.tabPage_folders.PerformLayout();
             this.tabPage_files.ResumeLayout(false);
             this.tabPage_files.PerformLayout();
             this.tabPage_mask.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,7 +398,12 @@ namespace FirehoseFinder
         private System.Windows.Forms.TabPage tabPage_folders;
         private System.Windows.Forms.TabPage tabPage_files;
         private System.Windows.Forms.TabPage tabPage_mask;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button button_orig;
+        private System.Windows.Forms.Button button_dubl;
+        private System.Windows.Forms.Button button_exe;
+        private System.Windows.Forms.Button button_del;
+        private System.Windows.Forms.ListView listView1;
     }
 }

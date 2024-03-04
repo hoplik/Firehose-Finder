@@ -1659,17 +1659,24 @@ namespace FirehoseFinder
             {
                 int len = Convert.ToInt32(FileToRead.Value);
                 byte[] chunk = new byte[len];
-                using (var stream = File.OpenRead(FileToRead.Key))
+                try
                 {
-                    int byteschunk = stream.Read(chunk, 0, 4);
-                    for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, string.Format("{0:X2}", (int)chunk[i]));
-                    if (Enum.IsDefined(typeof(Guide.FH_magic_numbers), Convert.ToUInt32(dumptext.ToString(), 16)))
+                    using (var stream = File.OpenRead(FileToRead.Key))
                     {
-                        dumptext.Clear();
-                        stream.Position = 0;
-                        byteschunk = stream.Read(chunk, 0, len);
+                        int byteschunk = stream.Read(chunk, 0, 4);
                         for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, string.Format("{0:X2}", (int)chunk[i]));
+                        if (Enum.IsDefined(typeof(Guide.FH_magic_numbers), Convert.ToUInt32(dumptext.ToString(), 16)))
+                        {
+                            dumptext.Clear();
+                            stream.Position = 0;
+                            byteschunk = stream.Read(chunk, 0, len);
+                            for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, string.Format("{0:X2}", (int)chunk[i]));
+                        }
                     }
+                }
+                catch (IOException ex)
+                {
+                    e.Result = ex;
                 }
             }
             e.Result = dumptext.ToString();
@@ -3377,7 +3384,7 @@ namespace FirehoseFinder
 
         private void ContextMenuStrip_final_Opening(object sender, CancelEventArgs e)
         {
-                if (dataGridView_final.Rows.Count > 0 && dataGridView_final.SelectedRows[0].Cells[1].Value.ToString().StartsWith("#")) загрузитьССервераToolStripMenuItem.Enabled = true;
+            if (dataGridView_final.Rows.Count > 0 && dataGridView_final.SelectedRows[0].Cells[1].Value.ToString().StartsWith("#")) загрузитьССервераToolStripMenuItem.Enabled = true;
         }
 
         private void ЗагрузитьССервераToolStripMenuItem_Click(object sender, EventArgs e)

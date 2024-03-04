@@ -131,10 +131,13 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="statusStrip_search.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 645</value>
+    <value>0, 637</value>
+  </data>
+  <data name="statusStrip_search.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 34</value>
   </data>
   <data name="statusStrip_search.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1409, 26</value>
+    <value>1409, 34</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="statusStrip_search.TabIndex" type="System.Int32, mscorlib">
@@ -156,10 +159,10 @@
     <value>1</value>
   </data>
   <data name="toolStripProgressBar_search.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 18</value>
+    <value>200, 26</value>
   </data>
   <data name="toolStripStatusLabel_search.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>100, 28</value>
   </data>
   <data name="toolStripStatusLabel_search.Text" xml:space="preserve">
     <value>Оповещения</value>
@@ -525,8 +528,11 @@
   <data name="button_start_search.Location" type="System.Drawing.Point, System.Drawing">
     <value>1198, 183</value>
   </data>
+  <data name="button_start_search.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 34</value>
+  </data>
   <data name="button_start_search.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 23</value>
+    <value>194, 34</value>
   </data>
   <data name="button_start_search.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -825,17 +831,173 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
+  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="button_orig.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+  <data name="button_orig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="button_orig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>691, 28</value>
+  </data>
+  <data name="button_orig.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="button_orig.Text" xml:space="preserve">
+    <value>Выберите папку с оригиналами</value>
+  </data>
+  <data name="&gt;&gt;button_orig.Name" xml:space="preserve">
+    <value>button_orig</value>
+  </data>
+  <data name="&gt;&gt;button_orig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_orig.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_orig.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button_dubl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="button_dubl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>700, 3</value>
+  </data>
+  <data name="button_dubl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>692, 28</value>
+  </data>
+  <data name="button_dubl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="button_dubl.Text" xml:space="preserve">
+    <value>Выберите папку с дубликатами</value>
+  </data>
+  <data name="&gt;&gt;button_dubl.Name" xml:space="preserve">
+    <value>button_dubl</value>
+  </data>
+  <data name="&gt;&gt;button_dubl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_dubl.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_dubl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_exe.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="button_exe.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 571</value>
+  </data>
+  <data name="button_exe.Size" type="System.Drawing.Size, System.Drawing">
+    <value>691, 28</value>
+  </data>
+  <data name="button_exe.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="button_exe.Text" xml:space="preserve">
+    <value>Поиск дубликатов</value>
+  </data>
+  <data name="&gt;&gt;button_exe.Name" xml:space="preserve">
+    <value>button_exe</value>
+  </data>
+  <data name="&gt;&gt;button_exe.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_exe.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_exe.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="button_del.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="button_del.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="button_del.Location" type="System.Drawing.Point, System.Drawing">
+    <value>700, 571</value>
+  </data>
+  <data name="button_del.Size" type="System.Drawing.Size, System.Drawing">
+    <value>692, 28</value>
+  </data>
+  <data name="button_del.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="button_del.Text" xml:space="preserve">
+    <value>Удалить отмеченные файлы</value>
+  </data>
+  <data name="&gt;&gt;button_del.Name" xml:space="preserve">
+    <value>button_del</value>
+  </data>
+  <data name="&gt;&gt;button_del.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_del.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_del.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="listView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="listView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 37</value>
+  </data>
+  <data name="listView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1389, 528</value>
+  </data>
+  <data name="listView1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;listView1.Name" xml:space="preserve">
+    <value>listView1</value>
+  </data>
+  <data name="&gt;&gt;listView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listView1.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;listView1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1395, 602</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
     <value>tabPage_folders</value>
   </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="button_orig" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_dubl" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="button_exe" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_del" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="listView1" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,34,Percent,100,Absolute,34" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tabPage_folders.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
@@ -844,7 +1006,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage_folders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1401, 616</value>
+    <value>1401, 608</value>
   </data>
   <data name="tabPage_folders.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -863,27 +1025,6 @@
   </data>
   <data name="&gt;&gt;tabPage_folders.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 30pt</value>
-  </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 93</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>915, 58</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Будет добавлено в ближайшее время</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -958,7 +1099,7 @@
     <value>0, 0</value>
   </data>
   <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1409, 645</value>
+    <value>1409, 637</value>
   </data>
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -975,34 +1116,37 @@
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 30pt</value>
   </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 93</value>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>99, 93</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>915, 58</value>
   </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
+  <data name="label5.Text" xml:space="preserve">
     <value>Будет добавлено в ближайшее время</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
   </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>tabPage_folders</value>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>tabPage_files</value>
   </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

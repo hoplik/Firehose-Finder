@@ -19,7 +19,16 @@ namespace FirehoseFinder
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Начинаем со вкладки "Поиск по маске"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Hex_Search_Shown(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage_mask;
+        }
+        #region Вкладка "Поиск по маске
         private void TextBox_byte_search_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBox_byte_search.Text)) button_start_search.Enabled = false;
@@ -275,7 +284,11 @@ namespace FirehoseFinder
             }
             return search_Results;
         }
-
+        /// <summary>
+        /// Создаём таблицу групп
+        /// </summary>
+        /// <param name="subitemstr"></param>
+        /// <returns></returns>
         private Hashtable CreateTableGroups(string subitemstr)
         {
             Hashtable groups = new Hashtable();
@@ -286,10 +299,10 @@ namespace FirehoseFinder
             }
             return groups;
         }
-
-        private void Hex_Search_Shown(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tabPage_mask;
-        }
+        #endregion
+        #region Вкладка "Различия между файлами"
+        #endregion
+        #region Вкладка "Дубликаты файлов"
+        #endregion
     }
 }
