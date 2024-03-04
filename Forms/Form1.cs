@@ -3374,5 +3374,18 @@ namespace FirehoseFinder
             ExSert exSert = new ExSert();
             exSert.ShowDialog();
         }
+
+        private void ContextMenuStrip_final_Opening(object sender, CancelEventArgs e)
+        {
+                if (dataGridView_final.Rows.Count > 0 && dataGridView_final.SelectedRows[0].Cells[1].Value.ToString().StartsWith("#")) загрузитьССервераToolStripMenuItem.Enabled = true;
+        }
+
+        private void ЗагрузитьССервераToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(LocRes.GetString("mb_body_server_down"),
+                LocRes.GetString("mb_title_server_down"),
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Information) == DialogResult.OK) Process.Start(string.Format(dataGridView_final.SelectedRows[0].Cells[1].Value.ToString().Trim('#')));
+        }
     }
 }

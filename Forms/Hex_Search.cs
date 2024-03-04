@@ -286,5 +286,10 @@ namespace FirehoseFinder
             }
             return groups;
         }
+
+        private void Hex_Search_Shown(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage_mask;
+        }
     }
 }

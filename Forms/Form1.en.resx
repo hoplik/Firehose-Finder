@@ -372,6 +372,15 @@
   <data name="Column_Comp.HeaderText" xml:space="preserve">
     <value>Maybe suitable for:</value>
   </data>
+  <data name="загрузитьССервераToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 24</value>
+  </data>
+  <data name="загрузитьССервераToolStripMenuItem.Text" xml:space="preserve">
+    <value>Download from server</value>
+  </data>
+  <data name="contextMenuStrip_final.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 28</value>
+  </data>
   <data name="groupBox_fh_sel_path.Text" xml:space="preserve">
     <value>Programmer search</value>
   </data>

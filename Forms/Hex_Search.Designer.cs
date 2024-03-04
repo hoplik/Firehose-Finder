@@ -56,22 +56,30 @@ namespace FirehoseFinder
             this.textBox_addfirst = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage_folders = new System.Windows.Forms.TabPage();
+            this.tabPage_files = new System.Windows.Forms.TabPage();
+            this.tabPage_mask = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.statusStrip_search.SuspendLayout();
             this.tableLayoutPanel_hs.SuspendLayout();
             this.groupBox_byte_text.SuspendLayout();
             this.groupBox_hs.SuspendLayout();
             this.groupBox_addbytes.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage_folders.SuspendLayout();
+            this.tabPage_files.SuspendLayout();
+            this.tabPage_mask.SuspendLayout();
             this.SuspendLayout();
             // 
             // folderBrowserDialog1
             // 
-            resources.ApplyResources(this.folderBrowserDialog1, "folderBrowserDialog1");
             this.folderBrowserDialog1.ShowNewFolderButton = false;
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
             // backgroundWorker_hex_search
             // 
@@ -82,25 +90,25 @@ namespace FirehoseFinder
             // 
             // statusStrip_search
             // 
-            resources.ApplyResources(this.statusStrip_search, "statusStrip_search");
             this.statusStrip_search.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip_search.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar_search,
             this.toolStripStatusLabel_search});
+            resources.ApplyResources(this.statusStrip_search, "statusStrip_search");
             this.statusStrip_search.Name = "statusStrip_search";
             // 
             // toolStripProgressBar_search
             // 
-            resources.ApplyResources(this.toolStripProgressBar_search, "toolStripProgressBar_search");
             this.toolStripProgressBar_search.ForeColor = System.Drawing.Color.LimeGreen;
             this.toolStripProgressBar_search.Name = "toolStripProgressBar_search";
+            resources.ApplyResources(this.toolStripProgressBar_search, "toolStripProgressBar_search");
             this.toolStripProgressBar_search.Step = 1;
             this.toolStripProgressBar_search.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // toolStripStatusLabel_search
             // 
-            resources.ApplyResources(this.toolStripStatusLabel_search, "toolStripStatusLabel_search");
             this.toolStripStatusLabel_search.Name = "toolStripStatusLabel_search";
+            resources.ApplyResources(this.toolStripStatusLabel_search, "toolStripStatusLabel_search");
             // 
             // tableLayoutPanel_hs
             // 
@@ -120,13 +128,14 @@ namespace FirehoseFinder
             // 
             // listView_search
             // 
-            resources.ApplyResources(this.listView_search, "listView_search");
             this.listView_search.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
             this.tableLayoutPanel_hs.SetColumnSpan(this.listView_search, 2);
+            resources.ApplyResources(this.listView_search, "listView_search");
             this.listView_search.FullRowSelect = true;
+            this.listView_search.GridLines = true;
             this.listView_search.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView_search.HideSelection = false;
             this.listView_search.MultiSelect = false;
@@ -150,11 +159,11 @@ namespace FirehoseFinder
             // 
             // groupBox_byte_text
             // 
-            resources.ApplyResources(this.groupBox_byte_text, "groupBox_byte_text");
             this.groupBox_byte_text.Controls.Add(this.textBox_hexsearch);
             this.groupBox_byte_text.Controls.Add(this.textBox_byte_search);
             this.groupBox_byte_text.Controls.Add(this.radioButton_search_text);
             this.groupBox_byte_text.Controls.Add(this.radioButton_byte_search);
+            resources.ApplyResources(this.groupBox_byte_text, "groupBox_byte_text");
             this.groupBox_byte_text.Name = "groupBox_byte_text";
             this.groupBox_byte_text.TabStop = false;
             // 
@@ -195,9 +204,9 @@ namespace FirehoseFinder
             // 
             // groupBox_hs
             // 
-            resources.ApplyResources(this.groupBox_hs, "groupBox_hs");
             this.groupBox_hs.Controls.Add(this.radioButton_dir);
             this.groupBox_hs.Controls.Add(this.radioButton_file);
+            resources.ApplyResources(this.groupBox_hs, "groupBox_hs");
             this.groupBox_hs.Name = "groupBox_hs";
             this.groupBox_hs.TabStop = false;
             // 
@@ -218,11 +227,11 @@ namespace FirehoseFinder
             // 
             // groupBox_addbytes
             // 
-            resources.ApplyResources(this.groupBox_addbytes, "groupBox_addbytes");
             this.groupBox_addbytes.Controls.Add(this.textBox_addlast);
             this.groupBox_addbytes.Controls.Add(this.textBox_addfirst);
             this.groupBox_addbytes.Controls.Add(this.label3);
             this.groupBox_addbytes.Controls.Add(this.label2);
+            resources.ApplyResources(this.groupBox_addbytes, "groupBox_addbytes");
             this.groupBox_addbytes.Name = "groupBox_addbytes";
             this.groupBox_addbytes.TabStop = false;
             // 
@@ -246,13 +255,54 @@ namespace FirehoseFinder
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage_folders);
+            this.tabControl1.Controls.Add(this.tabPage_files);
+            this.tabControl1.Controls.Add(this.tabPage_mask);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            // 
+            // tabPage_folders
+            // 
+            this.tabPage_folders.Controls.Add(this.label4);
+            resources.ApplyResources(this.tabPage_folders, "tabPage_folders");
+            this.tabPage_folders.Name = "tabPage_folders";
+            this.tabPage_folders.UseVisualStyleBackColor = true;
+            // 
+            // tabPage_files
+            // 
+            this.tabPage_files.Controls.Add(this.label5);
+            resources.ApplyResources(this.tabPage_files, "tabPage_files");
+            this.tabPage_files.Name = "tabPage_files";
+            this.tabPage_files.UseVisualStyleBackColor = true;
+            // 
+            // tabPage_mask
+            // 
+            this.tabPage_mask.Controls.Add(this.tableLayoutPanel_hs);
+            resources.ApplyResources(this.tabPage_mask, "tabPage_mask");
+            this.tabPage_mask.Name = "tabPage_mask";
+            this.tabPage_mask.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
             // Hex_Search
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tableLayoutPanel_hs);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip_search);
             this.Name = "Hex_Search";
+            this.Shown += new System.EventHandler(this.Hex_Search_Shown);
             this.statusStrip_search.ResumeLayout(false);
             this.statusStrip_search.PerformLayout();
             this.tableLayoutPanel_hs.ResumeLayout(false);
@@ -263,6 +313,12 @@ namespace FirehoseFinder
             this.groupBox_hs.PerformLayout();
             this.groupBox_addbytes.ResumeLayout(false);
             this.groupBox_addbytes.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage_folders.ResumeLayout(false);
+            this.tabPage_folders.PerformLayout();
+            this.tabPage_files.ResumeLayout(false);
+            this.tabPage_files.PerformLayout();
+            this.tabPage_mask.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,5 +351,11 @@ namespace FirehoseFinder
         private System.Windows.Forms.TextBox textBox_addfirst;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage_folders;
+        private System.Windows.Forms.TabPage tabPage_files;
+        private System.Windows.Forms.TabPage tabPage_mask;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
