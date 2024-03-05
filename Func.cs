@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -217,15 +218,30 @@ namespace FirehoseFinder
         /// <returns>Строка хеша</returns>
         internal static string CertExtr(string SFDump)
         {
-            int rootcert = 0; //Расположение корневого сертификата в файле (второй или третий)
-            string pattern = "3082.{4}3082"; //Бинарный признак сертификата с его длиной в середине (3082-4 знака-3082)
-            MatchCollection matchs = Regex.Matches(SFDump, pattern);
+            byte rootcert = 0; //Расположение корневого сертификата в файле (второй или третий)
+            byte countcert = 0; //Считаем количество сертификатов
+            string pattern = "3082(.{4})3082"; //Бинарный признак сертификата с его длиной в середине (3082-4 знака-3082)
+            Regex regex = new Regex(pattern);
+            MatchCollection matchs = regex.Matches(SFDump);
             List<string> certs = new List<string>();
             StringBuilder SHAstr = new StringBuilder(string.Empty);
             SHA256 mysha256 = SHA256.Create();
             SHA384 rsaPSS = SHA384.Create();
             byte[] hashbytes = null;
-            switch (matchs.Count)
+            //Считаем сертификаты в выгрузке
+            if (matchs.Count > 0)
+            {
+                foreach (Match match in matchs)
+                {
+                    int cslen = Convert.ToInt32(match.Groups[1].Value, 16); //Получили длину сертификата
+                    if (cslen > 128 && cslen < 2048) //Условно считаем, что сертификат должен быть длиннее 128 байт и короче 2 кб.
+                    {
+                        certs.Insert(countcert, match.Value + SFDump.Substring(match.Index + 12, cslen * 2 - 4));
+                        countcert++;
+                    }
+                }
+            }
+            switch (countcert)
             {
                 case 0:
                     rootcert = 0;
@@ -233,25 +249,15 @@ namespace FirehoseFinder
                 case 1:
                     rootcert = 1;
                     break;
+                case 2:
+                    rootcert = 2;
+                    break;
                 default:
-                    //Проверяем, реально ли сертификат по длине между 1 и 2
-                    string certl = SFDump.Substring(matchs[0].Index + 4, 4); // Получили длину сертификата в строке хекс
-                    int certlen = int.Parse(certl, NumberStyles.HexNumber); // Перевели её в 10 инт
-                    if ((matchs[0].Index + certlen * 2 + 8) == matchs[1].Index)
-                    {
-                        rootcert = 2;
-                        if (matchs.Count >= 3) rootcert = 3;
-                    }
+                    rootcert = 3;
                     break;
             }
             if (rootcert > 0)
             {
-                for (int i = 0; i < rootcert; i++)
-                {
-                    string certl = SFDump.Substring(matchs[i].Index + 4, 4); // Получили длину сертификата в строке хекс
-                    int certlen = int.Parse(certl, NumberStyles.HexNumber); // Перевели её в 10 инт
-                    certs.Insert(i, matchs[i].Value + SFDump.Substring(matchs[i].Index + 12, certlen * 2 - 4));
-                }
                 Guide guide = new Guide();
                 foreach (KeyValuePair<string, int> correct_SHA in guide.SHA_magic_numbers)
                 {
