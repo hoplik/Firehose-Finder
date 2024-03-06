@@ -335,31 +335,37 @@ namespace FirehoseFinder
             AdbClient client = new AdbClient();
             DeviceData device = Global_ADB_Device;
             string Com_String = textBox_ADB_commandstring.Text;
+            RadioButton rb = groupBox_adb_commands.Controls.OfType<RadioButton>().First(n => n.Checked == true);
             try
             {
-                if (radioButton_adb_IDs.Checked) GetADBIDs(false);
-                if (radioButton_reboot_edl.Checked)
+                switch (rb.Name)
                 {
-                    textBox_soft_term.AppendText(LocRes.GetString("tb_reboot") + '\u0020' +
-                        LocRes.GetString("hex_in") + '\u0020' +
-                        LocRes.GetString("tb_edl") + '\u0020' +
-                        Environment.NewLine);
-                    client.Reboot("edl", device);
-                    Thread.Sleep(500);
-                    StopAdb();
-                    tabControl_soft.SelectedTab = tabPage_sahara;
-                }
-                if (radioButton_adb_com.Checked && !string.IsNullOrEmpty(Com_String)) Adb_Comm_String(Com_String);
-                if (radioButton_reboot_fastboot.Checked)
-                {
-                    textBox_soft_term.AppendText(LocRes.GetString("tb_reboot") + '\u0020' +
-                        LocRes.GetString("hex_in") + '\u0020' +
-                        LocRes.GetString("tb_blm") + '\u0020' +
-                        Environment.NewLine);
-                    client.Reboot("bootloader", device);
-                    Thread.Sleep(500);
-                    StopAdb();
-                    tabControl_soft.SelectedTab = tabPage_fb;
+                    case "radioButton_adb_IDs":
+                        GetADBIDs(false);
+                        break;
+                    case "radioButton_reboot_edl":
+                        textBox_soft_term.AppendText(LocRes.GetString("tb_reboot") + '\u0020' +
+                            LocRes.GetString("hex_in") + '\u0020' +
+                            LocRes.GetString("tb_edl") + '\u0020' +
+                            Environment.NewLine);
+                        client.Reboot("edl", device);
+                        Thread.Sleep(500);
+                        StopAdb();
+                        tabControl_soft.SelectedTab = tabPage_sahara;
+                        break;
+                    case "radioButton_reboot_fastboot":
+                        textBox_soft_term.AppendText(LocRes.GetString("tb_reboot") + '\u0020' +
+                            LocRes.GetString("hex_in") + '\u0020' +
+                            LocRes.GetString("tb_blm") + '\u0020' +
+                            Environment.NewLine);
+                        client.Reboot("bootloader", device);
+                        Thread.Sleep(500);
+                        StopAdb();
+                        tabControl_soft.SelectedTab = tabPage_fb;
+                        break;
+                    default://radioButton_adb_com
+                        if (!string.IsNullOrEmpty(Com_String)) Adb_Comm_String(Com_String);
+                        break;
                 }
             }
             catch (SharpAdbClient.Exceptions.AdbException ex)
@@ -1277,14 +1283,38 @@ namespace FirehoseFinder
         private void Button_fb_com_start_Click(object sender, EventArgs e)
         {
             string Com_String = textBox_ADB_commandstring.Text;
-            if (radioButton_fb_reboot_normal.Checked) Fastboot_commands("reboot");
-            if (radioButton_fb_rebootbootloader.Checked) Fastboot_commands("reboot bootloader");
-            if (radioButton_fb_rebootedl.Checked) Fastboot_commands("oem reboot-edl");
-            if (radioButton_fb_getvar.Checked) Fastboot_commands("getvar all");
-            if (radioButton_fb_devinfo.Checked) Fastboot_commands("oem device-info");
-            if (radioButton_fb_unlock.Checked) Fastboot_commands("flashing unlock");
-            if (radioButton_fb_lock.Checked) Fastboot_commands("flashing lock");
-            if (radioButton_fb_commandline.Checked && !string.IsNullOrEmpty(Com_String)) Fastboot_commands(Com_String);
+            RadioButton rb = groupBox_fb_commands.Controls.OfType<RadioButton>()
+                            .First(n => n.Checked == true);
+            switch (rb.Name)
+            {
+                case "radioButton_fb_reboot_normal":
+                    Fastboot_commands("reboot");
+                    break;
+                case "radioButton_fb_rebootbootloader":
+                    Fastboot_commands("reboot bootloader");
+                    break;
+                case "radioButton_fb_rebootedl":
+                    Fastboot_commands("oem reboot-edl");
+                    break;
+                case "radioButton_fb_getvar":
+                    Fastboot_commands("getvar all");
+                    break;
+                case "radioButton_fb_devinfo":
+                    Fastboot_commands("oem device-info");
+                    break;
+                case "radioButton_fb_unlock":
+                    Fastboot_commands("flashing unlock");
+                    break;
+                case "radioButton_fb_lock":
+                    Fastboot_commands("flashing lock");
+                    break;
+                case "radioButton_fb_eraseud":
+                    Fastboot_commands("-w");
+                    break;
+                default: //radioButton_fb_commandline
+                    if (!string.IsNullOrEmpty(Com_String)) Fastboot_commands(Com_String);
+                    break;
+            }
         }
 
         /// <summary>

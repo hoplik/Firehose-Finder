@@ -3029,6 +3029,36 @@ _HASH</value>
   <data name="&gt;&gt;button_fb_check.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="radioButton_fb_eraseud.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButton_fb_eraseud.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButton_fb_eraseud.Location" type="System.Drawing.Point, System.Drawing">
+    <value>566, 113</value>
+  </data>
+  <data name="radioButton_fb_eraseud.Size" type="System.Drawing.Size, System.Drawing">
+    <value>353, 20</value>
+  </data>
+  <data name="radioButton_fb_eraseud.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="radioButton_fb_eraseud.Text" xml:space="preserve">
+    <value>Стереть юзердату (сброс до заводских настроек)</value>
+  </data>
+  <data name="&gt;&gt;radioButton_fb_eraseud.Name" xml:space="preserve">
+    <value>radioButton_fb_eraseud</value>
+  </data>
+  <data name="&gt;&gt;radioButton_fb_eraseud.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_fb_eraseud.Parent" xml:space="preserve">
+    <value>groupBox_fb_commands</value>
+  </data>
+  <data name="&gt;&gt;radioButton_fb_eraseud.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="radioButton_fb_rebootedl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3054,7 +3084,7 @@ _HASH</value>
     <value>groupBox_fb_commands</value>
   </data>
   <data name="&gt;&gt;radioButton_fb_rebootedl.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="radioButton_fb_getvar.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3081,7 +3111,7 @@ _HASH</value>
     <value>groupBox_fb_commands</value>
   </data>
   <data name="&gt;&gt;radioButton_fb_getvar.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="textBox_fb_commandline.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3105,7 +3135,7 @@ _HASH</value>
     <value>groupBox_fb_commands</value>
   </data>
   <data name="&gt;&gt;textBox_fb_commandline.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="radioButton_fb_commandline.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3132,7 +3162,7 @@ _HASH</value>
     <value>groupBox_fb_commands</value>
   </data>
   <data name="&gt;&gt;radioButton_fb_commandline.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="radioButton_fb_rebootbootloader.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3159,7 +3189,7 @@ _HASH</value>
     <value>groupBox_fb_commands</value>
   </data>
   <data name="&gt;&gt;radioButton_fb_rebootbootloader.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="radioButton_fb_unlock.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3186,7 +3216,7 @@ _HASH</value>
     <value>groupBox_fb_commands</value>
   </data>
   <data name="&gt;&gt;radioButton_fb_unlock.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="radioButton_fb_lock.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3213,7 +3243,7 @@ _HASH</value>
     <value>groupBox_fb_commands</value>
   </data>
   <data name="&gt;&gt;radioButton_fb_lock.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="radioButton_fb_devinfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3240,7 +3270,7 @@ _HASH</value>
     <value>groupBox_fb_commands</value>
   </data>
   <data name="&gt;&gt;radioButton_fb_devinfo.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="radioButton_fb_reboot_normal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3267,7 +3297,7 @@ _HASH</value>
     <value>groupBox_fb_commands</value>
   </data>
   <data name="&gt;&gt;radioButton_fb_reboot_normal.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="groupBox_fb_commands.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

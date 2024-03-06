@@ -207,6 +207,7 @@
             this.tableLayoutPanel_fb = new System.Windows.Forms.TableLayoutPanel();
             this.button_fb_check = new System.Windows.Forms.Button();
             this.groupBox_fb_commands = new System.Windows.Forms.GroupBox();
+            this.radioButton_fb_eraseud = new System.Windows.Forms.RadioButton();
             this.radioButton_fb_rebootedl = new System.Windows.Forms.RadioButton();
             this.radioButton_fb_getvar = new System.Windows.Forms.RadioButton();
             this.textBox_fb_commandline = new System.Windows.Forms.TextBox();
@@ -1597,6 +1598,7 @@
             // groupBox_fb_commands
             // 
             this.tableLayoutPanel_fb.SetColumnSpan(this.groupBox_fb_commands, 3);
+            this.groupBox_fb_commands.Controls.Add(this.radioButton_fb_eraseud);
             this.groupBox_fb_commands.Controls.Add(this.radioButton_fb_rebootedl);
             this.groupBox_fb_commands.Controls.Add(this.radioButton_fb_getvar);
             this.groupBox_fb_commands.Controls.Add(this.textBox_fb_commandline);
@@ -1609,6 +1611,12 @@
             resources.ApplyResources(this.groupBox_fb_commands, "groupBox_fb_commands");
             this.groupBox_fb_commands.Name = "groupBox_fb_commands";
             this.groupBox_fb_commands.TabStop = false;
+            // 
+            // radioButton_fb_eraseud
+            // 
+            resources.ApplyResources(this.radioButton_fb_eraseud, "radioButton_fb_eraseud");
+            this.radioButton_fb_eraseud.Name = "radioButton_fb_eraseud";
+            this.radioButton_fb_eraseud.UseVisualStyleBackColor = true;
             // 
             // radioButton_fb_rebootedl
             // 
@@ -2105,6 +2113,7 @@
         private System.Windows.Forms.ToolStripMenuItem ExSertToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip_final;
         private System.Windows.Forms.ToolStripMenuItem загрузитьССервераToolStripMenuItem;
+        private System.Windows.Forms.RadioButton radioButton_fb_eraseud;
     }
 }
 
