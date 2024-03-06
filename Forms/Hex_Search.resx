@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>154, 17</value>
+    <value>17, 17</value>
   </metadata>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>358, 17</value>
+    <value>223, 17</value>
   </metadata>
   <metadata name="backgroundWorker_hex_search.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>525, 17</value>
+    <value>393, 17</value>
   </metadata>
   <metadata name="statusStrip_search.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>794, 17</value>
+    <value>656, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="statusStrip_search.Location" type="System.Drawing.Point, System.Drawing">
@@ -156,7 +156,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;statusStrip_search.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="toolStripProgressBar_search.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 26</value>
@@ -253,7 +253,7 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel_hs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1395, 610</value>
+    <value>1395, 602</value>
   </data>
   <data name="tableLayoutPanel_hs.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -313,7 +313,7 @@
     <value>3, 93</value>
   </data>
   <data name="listView_search.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1189, 514</value>
+    <value>1189, 506</value>
   </data>
   <data name="listView_search.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -945,28 +945,61 @@
   <data name="&gt;&gt;button_del.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="listView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="columnHeader_fullpath.Text" xml:space="preserve">
+    <value>Полный путь к файлу</value>
+  </data>
+  <data name="columnHeader_fullpath.Width" type="System.Int32, mscorlib">
+    <value>152</value>
+  </data>
+  <data name="columnHeader_filelen.Text" xml:space="preserve">
+    <value>Длина файла (байт)</value>
+  </data>
+  <data name="columnHeader_filelen.Width" type="System.Int32, mscorlib">
+    <value>1233</value>
+  </data>
+  <metadata name="contextMenuStrip_dubl_files.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>458, 58</value>
+  </metadata>
+  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 24</value>
+  </data>
+  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Text" xml:space="preserve">
+    <value>Поменять местами оригинал и дубликат</value>
+  </data>
+  <data name="contextMenuStrip_dubl_files.Size" type="System.Drawing.Size, System.Drawing">
+    <value>363, 56</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStrip_dubl_files.Name" xml:space="preserve">
+    <value>contextMenuStrip_dubl_files</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStrip_dubl_files.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="listView_dubl_files.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="listView1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="listView_dubl_files.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 37</value>
   </data>
-  <data name="listView1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="listView_dubl_files.Size" type="System.Drawing.Size, System.Drawing">
     <value>1389, 528</value>
   </data>
-  <data name="listView1.TabIndex" type="System.Int32, mscorlib">
+  <data name="listView_dubl_files.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;listView1.Name" xml:space="preserve">
-    <value>listView1</value>
+  <data name="&gt;&gt;listView_dubl_files.Name" xml:space="preserve">
+    <value>listView_dubl_files</value>
   </data>
-  <data name="&gt;&gt;listView1.Type" xml:space="preserve">
+  <data name="&gt;&gt;listView_dubl_files.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;listView1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;listView_dubl_files.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
-  <data name="&gt;&gt;listView1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;listView_dubl_files.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -997,7 +1030,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="button_orig" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_dubl" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="button_exe" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_del" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="listView1" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,34,Percent,100,Absolute,34" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="button_orig" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_dubl" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="button_exe" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_del" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="listView_dubl_files" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,34,Percent,100,Absolute,34" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tabPage_folders.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
@@ -1045,7 +1078,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage_files.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1401, 616</value>
+    <value>1401, 608</value>
   </data>
   <data name="tabPage_files.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1072,7 +1105,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage_mask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1401, 616</value>
+    <value>1401, 608</value>
   </data>
   <data name="tabPage_mask.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1114,7 +1147,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1149,8 +1182,23 @@
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="folderBrowserDialog_orig.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>833, 17</value>
+  </metadata>
+  <metadata name="folderBrowserDialog_dubl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1064, 17</value>
+  </metadata>
+  <metadata name="backgroundWorker_orig.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 58</value>
+  </metadata>
+  <metadata name="backgroundWorker_dubl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>236, 58</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>86</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
@@ -3652,6 +3700,48 @@
   </data>
   <data name="&gt;&gt;columnHeader3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader_fullpath.Name" xml:space="preserve">
+    <value>columnHeader_fullpath</value>
+  </data>
+  <data name="&gt;&gt;columnHeader_fullpath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader_filelen.Name" xml:space="preserve">
+    <value>columnHeader_filelen</value>
+  </data>
+  <data name="&gt;&gt;columnHeader_filelen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;поменятьМестамиОригиналИДубликатToolStripMenuItem.Name" xml:space="preserve">
+    <value>поменятьМестамиОригиналИДубликатToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;поменятьМестамиОригиналИДубликатToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;folderBrowserDialog_orig.Name" xml:space="preserve">
+    <value>folderBrowserDialog_orig</value>
+  </data>
+  <data name="&gt;&gt;folderBrowserDialog_orig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;folderBrowserDialog_dubl.Name" xml:space="preserve">
+    <value>folderBrowserDialog_dubl</value>
+  </data>
+  <data name="&gt;&gt;folderBrowserDialog_dubl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker_orig.Name" xml:space="preserve">
+    <value>backgroundWorker_orig</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker_orig.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker_dubl.Name" xml:space="preserve">
+    <value>backgroundWorker_dubl</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker_dubl.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Hex_Search</value>

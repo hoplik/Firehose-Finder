@@ -29,6 +29,7 @@ namespace FirehoseFinder
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hex_Search));
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -58,15 +59,23 @@ namespace FirehoseFinder
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_folders = new System.Windows.Forms.TabPage();
-            this.tabPage_files = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tabPage_mask = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button_orig = new System.Windows.Forms.Button();
             this.button_dubl = new System.Windows.Forms.Button();
             this.button_exe = new System.Windows.Forms.Button();
             this.button_del = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listView_dubl_files = new System.Windows.Forms.ListView();
+            this.columnHeader_fullpath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_filelen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip_dubl_files = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.поменятьМестамиОригиналИДубликатToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage_files = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tabPage_mask = new System.Windows.Forms.TabPage();
+            this.folderBrowserDialog_orig = new System.Windows.Forms.FolderBrowserDialog();
+            this.folderBrowserDialog_dubl = new System.Windows.Forms.FolderBrowserDialog();
+            this.backgroundWorker_orig = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker_dubl = new System.ComponentModel.BackgroundWorker();
             this.statusStrip_search.SuspendLayout();
             this.tableLayoutPanel_hs.SuspendLayout();
             this.groupBox_byte_text.SuspendLayout();
@@ -74,9 +83,10 @@ namespace FirehoseFinder
             this.groupBox_addbytes.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage_folders.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.contextMenuStrip_dubl_files.SuspendLayout();
             this.tabPage_files.SuspendLayout();
             this.tabPage_mask.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // folderBrowserDialog1
@@ -277,6 +287,86 @@ namespace FirehoseFinder
             this.tabPage_folders.Name = "tabPage_folders";
             this.tabPage_folders.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.button_orig, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button_dubl, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button_exe, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.button_del, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.listView_dubl_files, 0, 1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // button_orig
+            // 
+            resources.ApplyResources(this.button_orig, "button_orig");
+            this.button_orig.Name = "button_orig";
+            this.button_orig.UseVisualStyleBackColor = true;
+            this.button_orig.Click += new System.EventHandler(this.Button_orig_Click);
+            // 
+            // button_dubl
+            // 
+            resources.ApplyResources(this.button_dubl, "button_dubl");
+            this.button_dubl.Name = "button_dubl";
+            this.button_dubl.UseVisualStyleBackColor = true;
+            this.button_dubl.Click += new System.EventHandler(this.Button_dubl_Click);
+            // 
+            // button_exe
+            // 
+            resources.ApplyResources(this.button_exe, "button_exe");
+            this.button_exe.Name = "button_exe";
+            this.button_exe.UseVisualStyleBackColor = true;
+            this.button_exe.Click += new System.EventHandler(this.Button_exe_Click);
+            // 
+            // button_del
+            // 
+            resources.ApplyResources(this.button_del, "button_del");
+            this.button_del.Name = "button_del";
+            this.button_del.UseVisualStyleBackColor = true;
+            this.button_del.Click += new System.EventHandler(this.Button_del_Click);
+            // 
+            // listView_dubl_files
+            // 
+            this.listView_dubl_files.CheckBoxes = true;
+            this.listView_dubl_files.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader_fullpath,
+            this.columnHeader_filelen});
+            this.tableLayoutPanel1.SetColumnSpan(this.listView_dubl_files, 2);
+            this.listView_dubl_files.ContextMenuStrip = this.contextMenuStrip_dubl_files;
+            resources.ApplyResources(this.listView_dubl_files, "listView_dubl_files");
+            this.listView_dubl_files.FullRowSelect = true;
+            this.listView_dubl_files.GridLines = true;
+            this.listView_dubl_files.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView_dubl_files.HideSelection = false;
+            this.listView_dubl_files.MultiSelect = false;
+            this.listView_dubl_files.Name = "listView_dubl_files";
+            this.listView_dubl_files.UseCompatibleStateImageBehavior = false;
+            this.listView_dubl_files.View = System.Windows.Forms.View.Details;
+            this.listView_dubl_files.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.ListView_dubl_files_ItemChecked);
+            // 
+            // columnHeader_fullpath
+            // 
+            resources.ApplyResources(this.columnHeader_fullpath, "columnHeader_fullpath");
+            // 
+            // columnHeader_filelen
+            // 
+            resources.ApplyResources(this.columnHeader_filelen, "columnHeader_filelen");
+            // 
+            // contextMenuStrip_dubl_files
+            // 
+            this.contextMenuStrip_dubl_files.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip_dubl_files.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.поменятьМестамиОригиналИДубликатToolStripMenuItem});
+            this.contextMenuStrip_dubl_files.Name = "contextMenuStrip_dubl_files";
+            resources.ApplyResources(this.contextMenuStrip_dubl_files, "contextMenuStrip_dubl_files");
+            this.contextMenuStrip_dubl_files.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStrip_dubl_files_Opening);
+            // 
+            // поменятьМестамиОригиналИДубликатToolStripMenuItem
+            // 
+            resources.ApplyResources(this.поменятьМестамиОригиналИДубликатToolStripMenuItem, "поменятьМестамиОригиналИДубликатToolStripMenuItem");
+            this.поменятьМестамиОригиналИДубликатToolStripMenuItem.Name = "поменятьМестамиОригиналИДубликатToolStripMenuItem";
+            this.поменятьМестамиОригиналИДубликатToolStripMenuItem.Click += new System.EventHandler(this.ПоменятьМестамиОригиналИДубликатToolStripMenuItem_Click);
+            // 
             // tabPage_files
             // 
             this.tabPage_files.Controls.Add(this.label5);
@@ -296,47 +386,19 @@ namespace FirehoseFinder
             this.tabPage_mask.Name = "tabPage_mask";
             this.tabPage_mask.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel1
+            // backgroundWorker_orig
             // 
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.button_orig, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button_dubl, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button_exe, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.button_del, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.listView1, 0, 1);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.backgroundWorker_orig.WorkerReportsProgress = true;
+            this.backgroundWorker_orig.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_orig_DoWork);
+            this.backgroundWorker_orig.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_orig_ProgressChanged);
+            this.backgroundWorker_orig.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_orig_RunWorkerCompleted);
             // 
-            // button_orig
+            // backgroundWorker_dubl
             // 
-            resources.ApplyResources(this.button_orig, "button_orig");
-            this.button_orig.Name = "button_orig";
-            this.button_orig.UseVisualStyleBackColor = true;
-            // 
-            // button_dubl
-            // 
-            resources.ApplyResources(this.button_dubl, "button_dubl");
-            this.button_dubl.Name = "button_dubl";
-            this.button_dubl.UseVisualStyleBackColor = true;
-            // 
-            // button_exe
-            // 
-            resources.ApplyResources(this.button_exe, "button_exe");
-            this.button_exe.Name = "button_exe";
-            this.button_exe.UseVisualStyleBackColor = true;
-            // 
-            // button_del
-            // 
-            resources.ApplyResources(this.button_del, "button_del");
-            this.button_del.Name = "button_del";
-            this.button_del.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.listView1, 2);
-            resources.ApplyResources(this.listView1, "listView1");
-            this.listView1.HideSelection = false;
-            this.listView1.Name = "listView1";
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.backgroundWorker_dubl.WorkerReportsProgress = true;
+            this.backgroundWorker_dubl.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_dubl_DoWork);
+            this.backgroundWorker_dubl.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_dubl_ProgressChanged);
+            this.backgroundWorker_dubl.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_dubl_RunWorkerCompleted);
             // 
             // Hex_Search
             // 
@@ -358,10 +420,11 @@ namespace FirehoseFinder
             this.groupBox_addbytes.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage_folders.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.contextMenuStrip_dubl_files.ResumeLayout(false);
             this.tabPage_files.ResumeLayout(false);
             this.tabPage_files.PerformLayout();
             this.tabPage_mask.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,6 +467,14 @@ namespace FirehoseFinder
         private System.Windows.Forms.Button button_dubl;
         private System.Windows.Forms.Button button_exe;
         private System.Windows.Forms.Button button_del;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listView_dubl_files;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog_orig;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog_dubl;
+        private System.ComponentModel.BackgroundWorker backgroundWorker_orig;
+        private System.ComponentModel.BackgroundWorker backgroundWorker_dubl;
+        private System.Windows.Forms.ColumnHeader columnHeader_fullpath;
+        private System.Windows.Forms.ColumnHeader columnHeader_filelen;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip_dubl_files;
+        private System.Windows.Forms.ToolStripMenuItem поменятьМестамиОригиналИДубликатToolStripMenuItem;
     }
 }

@@ -5,13 +5,18 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Resources;
+using System.Security.Cryptography;
+using System.Threading;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FirehoseFinder
 {
     public partial class Hex_Search : Form
     {
         Func func = new Func();
+        List<File_Struct> orig_list = new List<File_Struct>(); //Основной список (полный путь к файлу - хеш)
+        List<File_Struct> dubl_list = new List<File_Struct>(); //Дубликаты (полный путь к файлу - хеш)
         Hashtable TableGroups = new Hashtable();
         readonly ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
 
@@ -303,6 +308,275 @@ namespace FirehoseFinder
         #region Вкладка "Различия между файлами"
         #endregion
         #region Вкладка "Дубликаты файлов"
+        private byte[] HashFile(string filename)
+        {
+            byte[] hashfile = null;
+            using (SHA256 mySHA256 = SHA256.Create())
+            {
+                using (FileStream fileStream = new FileStream(filename, FileMode.Open, FileAccess.Read))
+                {
+                    try
+                    {
+                        fileStream.Position = 0;
+                        hashfile = mySHA256.ComputeHash(fileStream);
+                    }
+                    catch (IOException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    catch (UnauthorizedAccessException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            return hashfile;
+        }
+        private void CheckDubs_SinglePath(List<File_Struct> worklist)
+        {
+            listView_dubl_files.Items.Clear(); //Очистили элементы листвью
+            listView_dubl_files.Groups.Clear(); //Очистили группы листвью
+            TableGroups.Clear(); //Очистили таблицу групп
+            if (worklist.Count > 1)
+            {
+                for (int i = 0; i < worklist.Count - 1; i++)
+                {
+                    for (int k = i + 1; k < worklist.Count; k++)
+                    {
+                        if (worklist[i].HashCodeFile.Equals(worklist[k].HashCodeFile) && !worklist[k].Dubl) //Найден дубликат
+                        {
+                            CreateTableGroups(worklist[i].FullFileName); //Создаём группу, если не была раньше создана
+                            //Проверяем на наличие группы в листвью
+                            if (!listView_dubl_files.Groups.Contains((ListViewGroup)TableGroups[worklist[i].FullFileName]))
+                                listView_dubl_files.Groups.Add((ListViewGroup)TableGroups[worklist[i].FullFileName]);
+                            worklist[k].Dubl = true;
+                            ListViewItem dublfile = new ListViewItem(worklist[k].FullFileName);
+                            dublfile.SubItems.Add(worklist[k].FiLen.ToString("### ### ### ##0"));
+                            dublfile.Group = (ListViewGroup)TableGroups[worklist[i].FullFileName];
+                            listView_dubl_files.Items.Add(dublfile);
+                            listView_dubl_files.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.ColumnContent);
+                        }
+                    }
+                }
+            }
+        }
+        private void CheckDubs()
+        {
+            listView_dubl_files.Items.Clear(); //Очистили элементы листвью
+            listView_dubl_files.Groups.Clear(); //Очистили группы листвью
+            TableGroups.Clear(); //Очистили таблицу групп
+            if (orig_list.Count > 0 && dubl_list.Count > 0)
+            {
+                for (int i = 0; i < orig_list.Count; i++)
+                {
+                    for (int k = 0; k < dubl_list.Count; k++)
+                    {
+                        if (orig_list[i].HashCodeFile.Equals(dubl_list[k].HashCodeFile) && !dubl_list[k].Dubl) //Найден дубликат
+                        {
+                            CreateTableGroups(orig_list[i].FullFileName); //Создаём группу, если не была раньше создана
+                            //Проверяем на наличие группы в листвью
+                            if (!listView_dubl_files.Groups.Contains((ListViewGroup)TableGroups[orig_list[i].FullFileName]))
+                                listView_dubl_files.Groups.Add((ListViewGroup)TableGroups[orig_list[i].FullFileName]);
+                            dubl_list[k].Dubl = true;
+                            ListViewItem dublfile = new ListViewItem(dubl_list[k].FullFileName);
+                            dublfile.SubItems.Add(dubl_list[k].FiLen.ToString("### ### ### ##0"));
+                            dublfile.Group = (ListViewGroup)TableGroups[orig_list[i].FullFileName];
+                            listView_dubl_files.Items.Add(dublfile);
+                            listView_dubl_files.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.ColumnContent);
+                        }
+                    }
+                }
+            }
+        }
+        private void ListView_dubl_files_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            if (listView_dubl_files.CheckedItems.Count > 0) button_del.Enabled = true;
+            else button_del.Enabled = false;
+        }
+        private void BackgroundWorker_orig_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            IEnumerable<FileInfo> workfiles = (IEnumerable<FileInfo>)e.Argument;
+            int readyfiles = 1; //Обработанных файлов
+            try //Заполнили всеми файлами оригинал
+            {
+                foreach (FileInfo WF in workfiles)
+                {
+                    File_Struct file = new File_Struct
+                    {
+                        Dubl = false,
+                        FullFileName = WF.FullName,
+                        HashCodeFile = BitConverter.ToString(HashFile(WF.FullName)),
+                        FiLen = WF.Length
+                    };
+                    orig_list.Add(file);
+                    worker.ReportProgress(readyfiles * 100 / workfiles.Count(), "Обрабатывается " + readyfiles.ToString() + " файл из " + workfiles.Count().ToString() + " -> " + WF.Name);
+                    readyfiles++;
+                    Thread.Sleep(5);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void BackgroundWorker_orig_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            toolStripProgressBar_search.Value = e.ProgressPercentage;
+            toolStripStatusLabel_search.Text = e.UserState.ToString();
+        }
+
+        private void BackgroundWorker_orig_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            toolStripProgressBar_search.Value = 0;
+            CheckDubs_SinglePath(orig_list); //Проверяем на дублинаты оригинал
+            toolStripStatusLabel_search.Text = $"Обработано {orig_list.Count} файлов. Найдено {listView_dubl_files.Items.Count} дублей.";
+        }
+
+        private void BackgroundWorker_dubl_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            IEnumerable<FileInfo> workfiles = (IEnumerable<FileInfo>)e.Argument;
+            int readyfiles = 1; //Обработанных файлов
+            try //Заполнили всеми файлами дублями
+            {
+                foreach (FileInfo WF in workfiles)
+                {
+                    File_Struct file = new File_Struct
+                    {
+                        Dubl = false,
+                        FullFileName = WF.FullName,
+                        HashCodeFile = BitConverter.ToString(HashFile(WF.FullName)),
+                        FiLen = WF.Length
+                    };
+                    dubl_list.Add(file);
+                    worker.ReportProgress(readyfiles * 100 / workfiles.Count(), "Обрабатывается " + readyfiles.ToString() + " файл из " + workfiles.Count().ToString() + " -> " + WF.Name);
+                    readyfiles++;
+                    Thread.Sleep(5);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void BackgroundWorker_dubl_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            toolStripProgressBar_search.Value = e.ProgressPercentage;
+            toolStripStatusLabel_search.Text = e.UserState.ToString();
+        }
+
+        private void BackgroundWorker_dubl_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            toolStripProgressBar_search.Value = 0;
+            CheckDubs_SinglePath(dubl_list); //Проверяем на дублинаты дубликаты
+            toolStripStatusLabel_search.Text = $"Обработано {dubl_list.Count} файлов. Найдено {listView_dubl_files.Items.Count} дублей.";
+        }
+
+        private void Button_orig_Click(object sender, EventArgs e)
+        {
+            orig_list.Clear();
+            if (folderBrowserDialog_orig.ShowDialog() == DialogResult.OK)
+            {
+                button_orig.Text = folderBrowserDialog_orig.SelectedPath;
+                IEnumerable<FileInfo> workF = new DirectoryInfo(folderBrowserDialog_orig.SelectedPath).EnumerateFiles("*.*", SearchOption.AllDirectories);
+                if (!backgroundWorker_orig.IsBusy) backgroundWorker_orig.RunWorkerAsync(workF);
+            }
+            else
+            {
+                button_orig.Text = "Выберите папку-оригинал";
+                folderBrowserDialog_orig.SelectedPath = string.Empty;
+            }
+        }
+
+        private void Button_dubl_Click(object sender, EventArgs e)
+        {
+            dubl_list.Clear();
+            if (folderBrowserDialog_dubl.ShowDialog() == DialogResult.OK)
+            {
+                button_dubl.Text = folderBrowserDialog_dubl.SelectedPath;
+                IEnumerable<FileInfo> workF = new DirectoryInfo(folderBrowserDialog_dubl.SelectedPath).EnumerateFiles("*.*", SearchOption.AllDirectories);
+                if (!backgroundWorker_dubl.IsBusy) backgroundWorker_dubl.RunWorkerAsync(workF);
+            }
+            else
+            {
+                button_dubl.Text = "Выберите папку-дубликаты";
+                folderBrowserDialog_dubl.SelectedPath = string.Empty;
+            }
+        }
+
+        private void Button_exe_Click(object sender, EventArgs e)
+        {
+            toolStripStatusLabel_search.Text = "Обрабатываем ...";
+            CheckDubs();
+            toolStripStatusLabel_search.Text = $"Обработано {orig_list.Count + dubl_list.Count} файлов. Найдено {listView_dubl_files.Items.Count} дублей.";
+        }
+
+        private void Button_del_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Удаляем отмеченные файлы",
+                "Подтверждение удаления файлов!",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning,
+                MessageBoxDefaultButton.Button2) == DialogResult.OK)
+            {
+                foreach (ListViewItem item in listView_dubl_files.CheckedItems)
+                {
+                    try
+                    {
+                        File.Delete(item.Text);
+                        listView_dubl_files.Items.RemoveAt(item.Index);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                button_del.Enabled = false;
+            }
+            else foreach (ListViewItem item in listView_dubl_files.CheckedItems)
+                {
+                    item.Checked = false;
+                }
+        }
+
+        private void ПоменятьМестамиОригиналИДубликатToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listView_dubl_files.SelectedItems.Count > 0)
+            {
+                string conversion = listView_dubl_files.SelectedItems[0].Text;
+                CreateTableGroups(conversion);
+                listView_dubl_files.SelectedItems[0].Text = listView_dubl_files.SelectedItems[0].Group.Header;
+                listView_dubl_files.SelectedItems[0].Group.Header = conversion;
+            }
+        }
+
+        private void ContextMenuStrip_dubl_files_Opening(object sender, CancelEventArgs e)
+        {
+            if (listView_dubl_files.Items.Count > 0) поменятьМестамиОригиналИДубликатToolStripMenuItem.Enabled = true;
+            else поменятьМестамиОригиналИДубликатToolStripMenuItem.Enabled = false;
+        }
         #endregion
+    }
+
+    /// <summary>
+    /// Структура файла
+    /// </summary>
+    class File_Struct
+    {
+        public bool Dubl { get; set; }
+        public string FullFileName { get; set; }
+        public string HashCodeFile { get; set; }
+        public long FiLen { get; set; }
+        public File_Struct(bool dubl, string fullfilename, string hashcodefile, long filen)
+        {
+            Dubl = dubl;
+            FullFileName = fullfilename;
+            HashCodeFile = hashcodefile;
+            FiLen = filen;
+        }
+        public File_Struct() { }
     }
 }
