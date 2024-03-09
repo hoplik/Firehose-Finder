@@ -863,7 +863,7 @@ namespace FirehoseFinder
         /// <param name="lun_number">Номер диска</param>
         private void GetGPT(int lun_number)
         {
-            string gptmain = string.Format("gpt_main{0}.bin", lun_number.ToString());
+            string gptmain = $"gpt_main{lun_number}.bin";
             if (listView_GPT.Items.Count > 0) listView_GPT.Items.Clear();
             if (File.Exists(gptmain))
             {

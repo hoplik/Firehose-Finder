@@ -8,7 +8,6 @@ using System.Resources;
 using System.Security.Cryptography;
 using System.Threading;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FirehoseFinder
 {
@@ -18,6 +17,9 @@ namespace FirehoseFinder
         List<File_Struct> orig_list = new List<File_Struct>(); //Основной список (полный путь к файлу - хеш)
         List<File_Struct> dubl_list = new List<File_Struct>(); //Дубликаты (полный путь к файлу - хеш)
         Hashtable TableGroups = new Hashtable();
+        int[] anton = new int[5] { 65, 78, 84, 79, 78 };
+        int[] hello = new int[5];
+        byte counthello = 0;
         readonly ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
 
         public Hex_Search()
@@ -29,9 +31,29 @@ namespace FirehoseFinder
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Hex_Search_Shown(object sender, EventArgs e)
+        private void Hex_Search_Load(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = tabPage_mask;
+            tabControl1.TabPages.Remove(tabPage_dd);
+            tabControl1.TabPages.Remove(tabPage_folders);
+        }
+        private void TabControl1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == anton[counthello])
+            {
+                hello[counthello] = e.KeyValue;
+                counthello++;
+            }
+            else counthello = 0;
+            if (counthello == 5)
+            {
+                counthello = 0;
+                if (tabControl1.TabPages.Count == 1)
+                {
+                    tabControl1.TabPages.Insert(1, tabPage_dd);
+                    tabControl1.TabPages.Insert(2, tabPage_folders);
+                    tabControl1.SelectedTab = tabPage_dd;
+                }
+            }
         }
         #region Вкладка "Поиск по маске
         private void TextBox_byte_search_TextChanged(object sender, EventArgs e)
@@ -305,8 +327,6 @@ namespace FirehoseFinder
             return groups;
         }
         #endregion
-        #region Вкладка "Различия между файлами"
-        #endregion
         #region Вкладка "Дубликаты файлов"
         private byte[] HashFile(string filename)
         {
@@ -402,6 +422,7 @@ namespace FirehoseFinder
             {
                 foreach (FileInfo WF in workfiles)
                 {
+                    worker.ReportProgress(readyfiles * 100 / workfiles.Count(), "Обрабатывается " + readyfiles.ToString() + " файл из " + workfiles.Count().ToString() + " -> " + WF.Name);
                     File_Struct file = new File_Struct
                     {
                         Dubl = false,
@@ -410,7 +431,6 @@ namespace FirehoseFinder
                         FiLen = WF.Length
                     };
                     orig_list.Add(file);
-                    worker.ReportProgress(readyfiles * 100 / workfiles.Count(), "Обрабатывается " + readyfiles.ToString() + " файл из " + workfiles.Count().ToString() + " -> " + WF.Name);
                     readyfiles++;
                     Thread.Sleep(5);
                 }
@@ -430,7 +450,7 @@ namespace FirehoseFinder
         private void BackgroundWorker_orig_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             toolStripProgressBar_search.Value = 0;
-            CheckDubs_SinglePath(orig_list); //Проверяем на дублинаты оригинал
+            if (radioButton_od_yes.Checked) CheckDubs_SinglePath(orig_list); //Проверяем на дублинаты оригинал
             toolStripStatusLabel_search.Text = $"Обработано {orig_list.Count} файлов. Найдено {listView_dubl_files.Items.Count} дублей.";
         }
 
@@ -443,6 +463,7 @@ namespace FirehoseFinder
             {
                 foreach (FileInfo WF in workfiles)
                 {
+                    worker.ReportProgress(readyfiles * 100 / workfiles.Count(), "Обрабатывается " + readyfiles.ToString() + " файл из " + workfiles.Count().ToString() + " -> " + WF.Name);
                     File_Struct file = new File_Struct
                     {
                         Dubl = false,
@@ -451,7 +472,6 @@ namespace FirehoseFinder
                         FiLen = WF.Length
                     };
                     dubl_list.Add(file);
-                    worker.ReportProgress(readyfiles * 100 / workfiles.Count(), "Обрабатывается " + readyfiles.ToString() + " файл из " + workfiles.Count().ToString() + " -> " + WF.Name);
                     readyfiles++;
                     Thread.Sleep(5);
                 }
@@ -471,7 +491,7 @@ namespace FirehoseFinder
         private void BackgroundWorker_dubl_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             toolStripProgressBar_search.Value = 0;
-            CheckDubs_SinglePath(dubl_list); //Проверяем на дублинаты дубликаты
+            if (radioButton_dd_yes.Checked) CheckDubs_SinglePath(dubl_list); //Проверяем на дублинаты дубликаты
             toolStripStatusLabel_search.Text = $"Обработано {dubl_list.Count} файлов. Найдено {listView_dubl_files.Items.Count} дублей.";
         }
 
@@ -559,6 +579,147 @@ namespace FirehoseFinder
             else поменятьМестамиОригиналИДубликатToolStripMenuItem.Enabled = false;
         }
         #endregion
+
+        #region Вкладка "Разобрать дамп диска"
+        private void Button_dd_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                button_dd.Text = openFileDialog1.FileName;
+                int maxfilelen = 0x6000;
+                int minfilelen = 0x800;
+                FileInfo gpt = new FileInfo(openFileDialog1.FileName);
+                if (gpt.Length >= minfilelen)
+                {
+                    if (gpt.Length >= maxfilelen) Fill_ListDD(maxfilelen);
+                    else Fill_ListDD((int)gpt.Length);
+                }
+                else
+                {
+                    MessageBox.Show("Маленький размер файла");
+                    button_dd.Text = "Выбрать дамп диска";
+                }
+            }
+            else button_dd.Text = "Выбрать дамп диска";
+        }
+        private void Fill_ListDD(int bytestoread)
+        {
+            byte[] gpt_bytes = new byte[bytestoread];
+            string byte_mask = "4546492050415254"; //EFI PART
+            FileInfo fi = new FileInfo(openFileDialog1.FileName);
+            string newdir = fi.Name.Remove(fi.Name.IndexOf(fi.Extension));
+            label_path.Text = $"{fi.DirectoryName}\\{newdir}";
+            Directory.CreateDirectory(label_path.Text);
+            string newgptfile = $"{label_path.Text}\\gpt_main.bin";
+            using (FileStream fs_gpt = File.OpenRead(openFileDialog1.FileName))
+            {
+                fs_gpt.Read(gpt_bytes, 0, bytestoread);
+            }
+            string sec = BitConverter.ToString(gpt_bytes).Replace("-", "");
+            int sec_len = sec.IndexOf(byte_mask) / 2;
+            using (FileStream fs_write = File.OpenWrite(newgptfile))
+            {
+                switch (sec_len)
+                {
+                    case 512:
+                        fs_write.Write(gpt_bytes, 0, 512 * 34);
+                        break;
+                    case 4096:
+                        fs_write.Write(gpt_bytes, 0, 4096 * 6);
+                        break;
+                    default:
+                        MessageBox.Show("Что-то пошло не так");
+                        break;
+                }
+            }
+            textBox_sector.Text = sec_len.ToString();
+            if (File.Exists(newgptfile))
+            {
+                if (listView_dd.Items.Count > 0) listView_dd.Items.Clear();
+                List<GPT_Table> gpt_array = func.Parsing_GPT_main(newgptfile, sec_len);
+                if (string.IsNullOrEmpty(gpt_array[0].EndLBA)) MessageBox.Show(gpt_array[0].StartLBA, LocRes.GetString("mb_body_er_gpt"));
+                else //Заполняем листвью массивом итемов(разделов таблицы GPT)
+                {
+                    for (int i = 0; i < gpt_array.Count; i++)
+                    {
+                        ListViewItem gpt_item = new ListViewItem(gpt_array[i].StartLBA); //Это итем и сабитем0
+                        gpt_item.SubItems.Add(gpt_array[i].EndLBA); //сабитем1
+                        gpt_item.SubItems.Add(gpt_array[i].BlockName); //сабитем2
+                        gpt_item.SubItems.Add(gpt_array[i].BlockLength); //сабитем3
+                        gpt_item.SubItems.Add(gpt_array[i].BlockBytes); //сабитем4
+                        listView_dd.Items.Add(gpt_item);
+                    }
+                }
+            }
+            else MessageBox.Show(LocRes.GetString("mb_body_gpt_not_formed"));
+        }
+
+        private void Button_destr_Click(object sender, EventArgs e)
+        {
+            List<GPT_Table> items = new List<GPT_Table>();
+            foreach (ListViewItem lvi in listView_dd.Items)
+            {
+                GPT_Table item = new GPT_Table()
+                {
+                    StartLBA = lvi.Text,
+                    EndLBA = lvi.SubItems[1].Text,
+                    BlockName = lvi.SubItems[2].Text,
+                    BlockLength = button_dd.Text, //Вместо длины передаём путь к файлу
+                    BlockBytes = label_path.Text, //Вместо байт передаём путь к папке
+                    SectorSize = textBox_sector.Text
+                };
+                items.Add(item);
+            }
+            if (!backgroundWorker_destr.IsBusy) backgroundWorker_destr.RunWorkerAsync(items);
+        }
+
+        private void BackgroundWorker_destr_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            List<GPT_Table> items = (List<GPT_Table>)e.Argument;
+            int countitem = 1;
+            FileInfo fi = new FileInfo(items[0].BlockLength);
+            long countbytes;
+            long offset;
+            foreach (GPT_Table item in items)
+            {
+                worker.ReportProgress(countitem * 100 / items.Count, $"Обрабатывается {countitem} раздел из {items.Count} -> {item.BlockName}");
+                string newfile = $"{items[0].BlockBytes}\\{item.BlockName}.bin";
+                offset = Convert.ToInt64(item.StartLBA, 16) * Convert.ToInt32(item.SectorSize);
+                if (Convert.ToInt64(item.EndLBA, 16) + 1 - Convert.ToInt64(item.StartLBA, 16) > 0)
+                {
+                    countbytes = (Convert.ToInt64(item.EndLBA, 16) + 1 - Convert.ToInt64(item.StartLBA, 16)) * Convert.ToInt32(item.SectorSize);
+                }
+                else countbytes = 0;
+                byte[] bytestoread = new byte[countbytes];
+                using (FileStream fs_gpt = File.OpenRead(fi.FullName))
+                {
+                    fs_gpt.Position = offset;
+                    for (long i = 0; i < countbytes; i++) bytestoread[i] = (byte)fs_gpt.ReadByte();
+                }
+                using (FileStream fs_write = File.OpenWrite(newfile))
+                {
+                    for (long i = 0; i < countbytes; i++) fs_write.WriteByte(bytestoread[i]);
+                }
+                countitem++;
+            }
+        }
+
+        private void BackgroundWorker_destr_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            toolStripProgressBar_search.Value = e.ProgressPercentage;
+            toolStripStatusLabel_search.Text = e.UserState.ToString();
+        }
+
+        private void BackgroundWorker_destr_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            toolStripProgressBar_search.Value = 0;
+            toolStripStatusLabel_search.Text = $"Обработано {listView_dd.Items.Count} разделов.";
+        }
+
+        #endregion
+
+
     }
 
     /// <summary>

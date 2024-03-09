@@ -831,221 +831,29 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="&gt;&gt;tabPage_mask.Name" xml:space="preserve">
+    <value>tabPage_mask</value>
   </data>
-  <data name="button_orig.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;tabPage_mask.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="button_orig.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="&gt;&gt;tabPage_mask.Parent" xml:space="preserve">
+    <value>tabControl1</value>
   </data>
-  <data name="button_orig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>691, 28</value>
-  </data>
-  <data name="button_orig.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;tabPage_mask.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="button_orig.Text" xml:space="preserve">
-    <value>Выберите папку с оригиналами</value>
+  <data name="&gt;&gt;tabPage_dd.Name" xml:space="preserve">
+    <value>tabPage_dd</value>
   </data>
-  <data name="&gt;&gt;button_orig.Name" xml:space="preserve">
-    <value>button_orig</value>
+  <data name="&gt;&gt;tabPage_dd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button_orig.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tabPage_dd.Parent" xml:space="preserve">
+    <value>tabControl1</value>
   </data>
-  <data name="&gt;&gt;button_orig.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;button_orig.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="button_dubl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="button_dubl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>700, 3</value>
-  </data>
-  <data name="button_dubl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>692, 28</value>
-  </data>
-  <data name="button_dubl.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;tabPage_dd.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="button_dubl.Text" xml:space="preserve">
-    <value>Выберите папку с дубликатами</value>
-  </data>
-  <data name="&gt;&gt;button_dubl.Name" xml:space="preserve">
-    <value>button_dubl</value>
-  </data>
-  <data name="&gt;&gt;button_dubl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_dubl.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;button_dubl.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="button_exe.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="button_exe.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 571</value>
-  </data>
-  <data name="button_exe.Size" type="System.Drawing.Size, System.Drawing">
-    <value>691, 28</value>
-  </data>
-  <data name="button_exe.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="button_exe.Text" xml:space="preserve">
-    <value>Поиск дубликатов</value>
-  </data>
-  <data name="&gt;&gt;button_exe.Name" xml:space="preserve">
-    <value>button_exe</value>
-  </data>
-  <data name="&gt;&gt;button_exe.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_exe.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;button_exe.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="button_del.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="button_del.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="button_del.Location" type="System.Drawing.Point, System.Drawing">
-    <value>700, 571</value>
-  </data>
-  <data name="button_del.Size" type="System.Drawing.Size, System.Drawing">
-    <value>692, 28</value>
-  </data>
-  <data name="button_del.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="button_del.Text" xml:space="preserve">
-    <value>Удалить отмеченные файлы</value>
-  </data>
-  <data name="&gt;&gt;button_del.Name" xml:space="preserve">
-    <value>button_del</value>
-  </data>
-  <data name="&gt;&gt;button_del.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_del.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;button_del.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="columnHeader_fullpath.Text" xml:space="preserve">
-    <value>Полный путь к файлу</value>
-  </data>
-  <data name="columnHeader_fullpath.Width" type="System.Int32, mscorlib">
-    <value>152</value>
-  </data>
-  <data name="columnHeader_filelen.Text" xml:space="preserve">
-    <value>Длина файла (байт)</value>
-  </data>
-  <data name="columnHeader_filelen.Width" type="System.Int32, mscorlib">
-    <value>1233</value>
-  </data>
-  <metadata name="contextMenuStrip_dubl_files.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>458, 58</value>
-  </metadata>
-  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 24</value>
-  </data>
-  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Text" xml:space="preserve">
-    <value>Поменять местами оригинал и дубликат</value>
-  </data>
-  <data name="contextMenuStrip_dubl_files.Size" type="System.Drawing.Size, System.Drawing">
-    <value>363, 56</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStrip_dubl_files.Name" xml:space="preserve">
-    <value>contextMenuStrip_dubl_files</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStrip_dubl_files.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="listView_dubl_files.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="listView_dubl_files.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 37</value>
-  </data>
-  <data name="listView_dubl_files.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1389, 528</value>
-  </data>
-  <data name="listView_dubl_files.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;listView_dubl_files.Name" xml:space="preserve">
-    <value>listView_dubl_files</value>
-  </data>
-  <data name="&gt;&gt;listView_dubl_files.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listView_dubl_files.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;listView_dubl_files.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1395, 602</value>
-  </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>tabPage_folders</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="button_orig" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_dubl" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="button_exe" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_del" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="listView_dubl_files" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,34,Percent,100,Absolute,34" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="tabPage_folders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tabPage_folders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage_folders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1401, 608</value>
-  </data>
-  <data name="tabPage_folders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabPage_folders.Text" xml:space="preserve">
-    <value>Дубликаты файлов в папках</value>
   </data>
   <data name="&gt;&gt;tabPage_folders.Name" xml:space="preserve">
     <value>tabPage_folders</value>
@@ -1057,72 +865,6 @@
     <value>tabControl1</value>
   </data>
   <data name="&gt;&gt;tabPage_folders.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>tabPage_files</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabPage_files.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tabPage_files.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage_files.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1401, 608</value>
-  </data>
-  <data name="tabPage_files.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPage_files.Text" xml:space="preserve">
-    <value>Различия между двумя файлами</value>
-  </data>
-  <data name="&gt;&gt;tabPage_files.Name" xml:space="preserve">
-    <value>tabPage_files</value>
-  </data>
-  <data name="&gt;&gt;tabPage_files.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage_files.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage_files.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabPage_mask.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tabPage_mask.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage_mask.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1401, 608</value>
-  </data>
-  <data name="tabPage_mask.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tabPage_mask.Text" xml:space="preserve">
-    <value>Поиск по маске в файле</value>
-  </data>
-  <data name="&gt;&gt;tabPage_mask.Name" xml:space="preserve">
-    <value>tabPage_mask</value>
-  </data>
-  <data name="&gt;&gt;tabPage_mask.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage_mask.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage_mask.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -1149,37 +891,865 @@
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;label_path.Name" xml:space="preserve">
+    <value>label_path</value>
   </data>
-  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 30pt</value>
-  </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 93</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>915, 58</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Будет добавлено в ближайшее время</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+  <data name="&gt;&gt;label_path.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>tabPage_files</value>
+  <data name="&gt;&gt;label_path.Parent" xml:space="preserve">
+    <value>tabPage_dd</value>
   </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label_path.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;button_destr.Name" xml:space="preserve">
+    <value>button_destr</value>
+  </data>
+  <data name="&gt;&gt;button_destr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_destr.Parent" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;button_destr.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;groupBox_sector.Name" xml:space="preserve">
+    <value>groupBox_sector</value>
+  </data>
+  <data name="&gt;&gt;groupBox_sector.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_sector.Parent" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;groupBox_sector.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;listView_dd.Name" xml:space="preserve">
+    <value>listView_dd</value>
+  </data>
+  <data name="&gt;&gt;listView_dd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listView_dd.Parent" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;listView_dd.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;button_dd.Name" xml:space="preserve">
+    <value>button_dd</value>
+  </data>
+  <data name="&gt;&gt;button_dd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_dd.Parent" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;button_dd.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabPage_dd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tabPage_dd.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage_dd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1401, 608</value>
+  </data>
+  <data name="tabPage_dd.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPage_dd.Text" xml:space="preserve">
+    <value>Разобрать дамп диска</value>
+  </data>
+  <data name="&gt;&gt;tabPage_dd.Name" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;tabPage_dd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage_dd.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage_dd.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label_path.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_path.Location" type="System.Drawing.Point, System.Drawing">
+    <value>450, 25</value>
+  </data>
+  <data name="label_path.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 16</value>
+  </data>
+  <data name="label_path.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label_path.Text" xml:space="preserve">
+    <value>Папка с разбором</value>
+  </data>
+  <data name="&gt;&gt;label_path.Name" xml:space="preserve">
+    <value>label_path</value>
+  </data>
+  <data name="&gt;&gt;label_path.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_path.Parent" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;label_path.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button_destr.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_destr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>755, 7</value>
+  </data>
+  <data name="button_destr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 48</value>
+  </data>
+  <data name="button_destr.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="button_destr.Text" xml:space="preserve">
+    <value>Разобрать дамп</value>
+  </data>
+  <data name="&gt;&gt;button_destr.Name" xml:space="preserve">
+    <value>button_destr</value>
+  </data>
+  <data name="&gt;&gt;button_destr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_destr.Parent" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;button_destr.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBox_sector.Name" xml:space="preserve">
+    <value>textBox_sector</value>
+  </data>
+  <data name="&gt;&gt;textBox_sector.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_sector.Parent" xml:space="preserve">
+    <value>groupBox_sector</value>
+  </data>
+  <data name="&gt;&gt;textBox_sector.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox_sector.Location" type="System.Drawing.Point, System.Drawing">
+    <value>312, 7</value>
+  </data>
+  <data name="groupBox_sector.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 48</value>
+  </data>
+  <data name="groupBox_sector.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox_sector.Text" xml:space="preserve">
+    <value>Размер сектора</value>
+  </data>
+  <data name="&gt;&gt;groupBox_sector.Name" xml:space="preserve">
+    <value>groupBox_sector</value>
+  </data>
+  <data name="&gt;&gt;groupBox_sector.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_sector.Parent" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;groupBox_sector.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="textBox_sector.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="textBox_sector.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 18</value>
+  </data>
+  <data name="textBox_sector.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 22</value>
+  </data>
+  <data name="textBox_sector.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textBox_sector.Name" xml:space="preserve">
+    <value>textBox_sector</value>
+  </data>
+  <data name="&gt;&gt;textBox_sector.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_sector.Parent" xml:space="preserve">
+    <value>groupBox_sector</value>
+  </data>
+  <data name="&gt;&gt;textBox_sector.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="listView_dd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 61</value>
+  </data>
+  <data name="listView_dd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>901, 541</value>
+  </data>
+  <data name="listView_dd.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;listView_dd.Name" xml:space="preserve">
+    <value>listView_dd</value>
+  </data>
+  <data name="&gt;&gt;listView_dd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listView_dd.Parent" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;listView_dd.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="columnHeader_ss.Text" xml:space="preserve">
+    <value>Стартовый сектор</value>
+  </data>
+  <data name="columnHeader_ss.Width" type="System.Int32, mscorlib">
+    <value>132</value>
+  </data>
+  <data name="columnHeader_ls.Text" xml:space="preserve">
+    <value>Последний сектор</value>
+  </data>
+  <data name="columnHeader_ls.Width" type="System.Int32, mscorlib">
+    <value>133</value>
+  </data>
+  <data name="columnHeader_pn.Text" xml:space="preserve">
+    <value>Имя раздела</value>
+  </data>
+  <data name="columnHeader_pn.Width" type="System.Int32, mscorlib">
+    <value>97</value>
+  </data>
+  <data name="columnHeader_pl.Text" xml:space="preserve">
+    <value>Секторов занято (байт)</value>
+  </data>
+  <data name="columnHeader_pl.Width" type="System.Int32, mscorlib">
+    <value>511</value>
+  </data>
+  <data name="columnHeader_bl.Text" xml:space="preserve">
+    <value>Блоков</value>
+  </data>
+  <data name="columnHeader_bl.Width" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="button_dd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 7</value>
+  </data>
+  <data name="button_dd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>297, 48</value>
+  </data>
+  <data name="button_dd.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="button_dd.Text" xml:space="preserve">
+    <value>Выбрать дамп диска</value>
+  </data>
+  <data name="&gt;&gt;button_dd.Name" xml:space="preserve">
+    <value>button_dd</value>
+  </data>
+  <data name="&gt;&gt;button_dd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_dd.Parent" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;button_dd.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>tabPage_folders</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="groupBox_dubl" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="groupBox_orig" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_dubl" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="listView_dubl_files" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="button_del" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_exe" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_orig" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,50,Absolute,34,Percent,100,Absolute,34,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tabPage_folders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tabPage_folders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage_folders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1401, 608</value>
+  </data>
+  <data name="tabPage_folders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPage_folders.Text" xml:space="preserve">
+    <value>Дубликаты файлов в папках</value>
+  </data>
+  <data name="&gt;&gt;tabPage_folders.Name" xml:space="preserve">
+    <value>tabPage_folders</value>
+  </data>
+  <data name="&gt;&gt;tabPage_folders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage_folders.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage_folders.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dubl.Name" xml:space="preserve">
+    <value>groupBox_dubl</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dubl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dubl.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dubl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBox_orig.Name" xml:space="preserve">
+    <value>groupBox_orig</value>
+  </data>
+  <data name="&gt;&gt;groupBox_orig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_orig.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox_orig.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;button_dubl.Name" xml:space="preserve">
+    <value>button_dubl</value>
+  </data>
+  <data name="&gt;&gt;button_dubl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_dubl.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_dubl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;listView_dubl_files.Name" xml:space="preserve">
+    <value>listView_dubl_files</value>
+  </data>
+  <data name="&gt;&gt;listView_dubl_files.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listView_dubl_files.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;listView_dubl_files.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;button_del.Name" xml:space="preserve">
+    <value>button_del</value>
+  </data>
+  <data name="&gt;&gt;button_del.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_del.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_del.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;button_exe.Name" xml:space="preserve">
+    <value>button_exe</value>
+  </data>
+  <data name="&gt;&gt;button_exe.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_exe.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_exe.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;button_orig.Name" xml:space="preserve">
+    <value>button_orig</value>
+  </data>
+  <data name="&gt;&gt;button_orig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_orig.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_orig.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1395, 602</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>tabPage_folders</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="groupBox_dubl" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="groupBox_orig" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_dubl" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="listView_dubl_files" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="button_del" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_exe" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_orig" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,50,Absolute,34,Percent,100,Absolute,34,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_yes.Name" xml:space="preserve">
+    <value>radioButton_dd_yes</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_yes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_yes.Parent" xml:space="preserve">
+    <value>groupBox_dubl</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_yes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_no.Name" xml:space="preserve">
+    <value>radioButton_dd_no</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_no.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_no.Parent" xml:space="preserve">
+    <value>groupBox_dubl</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_no.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox_dubl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox_dubl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>700, 3</value>
+  </data>
+  <data name="groupBox_dubl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>692, 44</value>
+  </data>
+  <data name="groupBox_dubl.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="groupBox_dubl.Text" xml:space="preserve">
+    <value>Обрабатывать дубликаты в выбранной папке</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dubl.Name" xml:space="preserve">
+    <value>groupBox_dubl</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dubl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dubl.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dubl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="radioButton_dd_yes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButton_dd_yes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButton_dd_yes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 19</value>
+  </data>
+  <data name="radioButton_dd_yes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 20</value>
+  </data>
+  <data name="radioButton_dd_yes.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="radioButton_dd_yes.Text" xml:space="preserve">
+    <value>Да, давайте обработаем</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_yes.Name" xml:space="preserve">
+    <value>radioButton_dd_yes</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_yes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_yes.Parent" xml:space="preserve">
+    <value>groupBox_dubl</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_yes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="radioButton_dd_no.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButton_dd_no.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButton_dd_no.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="radioButton_dd_no.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 20</value>
+  </data>
+  <data name="radioButton_dd_no.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="radioButton_dd_no.Text" xml:space="preserve">
+    <value>Не обрабатывать</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_no.Name" xml:space="preserve">
+    <value>radioButton_dd_no</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_no.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_no.Parent" xml:space="preserve">
+    <value>groupBox_dubl</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_no.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_yes.Name" xml:space="preserve">
+    <value>radioButton_od_yes</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_yes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_yes.Parent" xml:space="preserve">
+    <value>groupBox_orig</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_yes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_no.Name" xml:space="preserve">
+    <value>radioButton_od_no</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_no.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_no.Parent" xml:space="preserve">
+    <value>groupBox_orig</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_no.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox_orig.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox_orig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="groupBox_orig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>691, 44</value>
+  </data>
+  <data name="groupBox_orig.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="groupBox_orig.Text" xml:space="preserve">
+    <value>Обрабатывать дубликаты в выбранной папке</value>
+  </data>
+  <data name="&gt;&gt;groupBox_orig.Name" xml:space="preserve">
+    <value>groupBox_orig</value>
+  </data>
+  <data name="&gt;&gt;groupBox_orig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_orig.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox_orig.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="radioButton_od_yes.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButton_od_yes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButton_od_yes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>339, 19</value>
+  </data>
+  <data name="radioButton_od_yes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 20</value>
+  </data>
+  <data name="radioButton_od_yes.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="radioButton_od_yes.Text" xml:space="preserve">
+    <value>Да, давайте обработаем</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_yes.Name" xml:space="preserve">
+    <value>radioButton_od_yes</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_yes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_yes.Parent" xml:space="preserve">
+    <value>groupBox_orig</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_yes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="radioButton_od_no.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButton_od_no.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButton_od_no.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 18</value>
+  </data>
+  <data name="radioButton_od_no.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 20</value>
+  </data>
+  <data name="radioButton_od_no.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="radioButton_od_no.Text" xml:space="preserve">
+    <value>Не обрабатывать</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_no.Name" xml:space="preserve">
+    <value>radioButton_od_no</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_no.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_no.Parent" xml:space="preserve">
+    <value>groupBox_orig</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_no.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_dubl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="button_dubl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_dubl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>700, 53</value>
+  </data>
+  <data name="button_dubl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>692, 28</value>
+  </data>
+  <data name="button_dubl.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="button_dubl.Text" xml:space="preserve">
+    <value>Выберите папку с дубликатами</value>
+  </data>
+  <data name="&gt;&gt;button_dubl.Name" xml:space="preserve">
+    <value>button_dubl</value>
+  </data>
+  <data name="&gt;&gt;button_dubl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_dubl.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_dubl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="columnHeader_fullpath.Text" xml:space="preserve">
+    <value>Полный путь к файлу</value>
+  </data>
+  <data name="columnHeader_fullpath.Width" type="System.Int32, mscorlib">
+    <value>152</value>
+  </data>
+  <data name="columnHeader_filelen.Text" xml:space="preserve">
+    <value>Длина файла (байт)</value>
+  </data>
+  <data name="columnHeader_filelen.Width" type="System.Int32, mscorlib">
+    <value>1233</value>
+  </data>
+  <metadata name="contextMenuStrip_dubl_files.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>458, 58</value>
+  </metadata>
+  <data name="contextMenuStrip_dubl_files.Size" type="System.Drawing.Size, System.Drawing">
+    <value>363, 28</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStrip_dubl_files.Name" xml:space="preserve">
+    <value>contextMenuStrip_dubl_files</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStrip_dubl_files.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="listView_dubl_files.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="listView_dubl_files.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 87</value>
+  </data>
+  <data name="listView_dubl_files.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1389, 478</value>
+  </data>
+  <data name="listView_dubl_files.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;listView_dubl_files.Name" xml:space="preserve">
+    <value>listView_dubl_files</value>
+  </data>
+  <data name="&gt;&gt;listView_dubl_files.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listView_dubl_files.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;listView_dubl_files.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 24</value>
+  </data>
+  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Text" xml:space="preserve">
+    <value>Поменять местами оригинал и дубликат</value>
+  </data>
+  <data name="button_del.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="button_del.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="button_del.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_del.Location" type="System.Drawing.Point, System.Drawing">
+    <value>700, 571</value>
+  </data>
+  <data name="button_del.Size" type="System.Drawing.Size, System.Drawing">
+    <value>692, 28</value>
+  </data>
+  <data name="button_del.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="button_del.Text" xml:space="preserve">
+    <value>Удалить отмеченные файлы</value>
+  </data>
+  <data name="&gt;&gt;button_del.Name" xml:space="preserve">
+    <value>button_del</value>
+  </data>
+  <data name="&gt;&gt;button_del.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_del.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_del.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="button_exe.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="button_exe.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_exe.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 571</value>
+  </data>
+  <data name="button_exe.Size" type="System.Drawing.Size, System.Drawing">
+    <value>691, 28</value>
+  </data>
+  <data name="button_exe.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="button_exe.Text" xml:space="preserve">
+    <value>Поиск дубликатов</value>
+  </data>
+  <data name="&gt;&gt;button_exe.Name" xml:space="preserve">
+    <value>button_exe</value>
+  </data>
+  <data name="&gt;&gt;button_exe.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_exe.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_exe.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="button_orig.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="button_orig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 53</value>
+  </data>
+  <data name="button_orig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>691, 28</value>
+  </data>
+  <data name="button_orig.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="button_orig.Text" xml:space="preserve">
+    <value>Выберите папку с оригиналами</value>
+  </data>
+  <data name="&gt;&gt;button_orig.Name" xml:space="preserve">
+    <value>button_orig</value>
+  </data>
+  <data name="&gt;&gt;button_orig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_orig.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_orig.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tabPage_mask.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tabPage_mask.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage_mask.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1401, 608</value>
+  </data>
+  <data name="tabPage_mask.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabPage_mask.Text" xml:space="preserve">
+    <value>Поиск по маске в файле</value>
+  </data>
+  <data name="&gt;&gt;tabPage_mask.Name" xml:space="preserve">
+    <value>tabPage_mask</value>
+  </data>
+  <data name="&gt;&gt;tabPage_mask.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage_mask.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage_mask.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="folderBrowserDialog_orig.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -1193,6 +1763,9 @@
   </metadata>
   <metadata name="backgroundWorker_dubl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>236, 58</value>
+  </metadata>
+  <metadata name="backgroundWorker_destr.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>704, 58</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3701,6 +4274,36 @@
   <data name="&gt;&gt;columnHeader3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;columnHeader_ss.Name" xml:space="preserve">
+    <value>columnHeader_ss</value>
+  </data>
+  <data name="&gt;&gt;columnHeader_ss.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader_ls.Name" xml:space="preserve">
+    <value>columnHeader_ls</value>
+  </data>
+  <data name="&gt;&gt;columnHeader_ls.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader_pn.Name" xml:space="preserve">
+    <value>columnHeader_pn</value>
+  </data>
+  <data name="&gt;&gt;columnHeader_pn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader_pl.Name" xml:space="preserve">
+    <value>columnHeader_pl</value>
+  </data>
+  <data name="&gt;&gt;columnHeader_pl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader_bl.Name" xml:space="preserve">
+    <value>columnHeader_bl</value>
+  </data>
+  <data name="&gt;&gt;columnHeader_bl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;columnHeader_fullpath.Name" xml:space="preserve">
     <value>columnHeader_fullpath</value>
   </data>
@@ -3741,6 +4344,12 @@
     <value>backgroundWorker_dubl</value>
   </data>
   <data name="&gt;&gt;backgroundWorker_dubl.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker_destr.Name" xml:space="preserve">
+    <value>backgroundWorker_destr</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker_destr.Type" xml:space="preserve">
     <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
