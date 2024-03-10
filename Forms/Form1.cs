@@ -2979,10 +2979,11 @@ namespace FirehoseFinder
                     {
                         File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
                     }
-                    catch (IOException)
+                    catch (IOException ex)
                     {
-                        File.Delete(folderBrowserDialog1.SelectedPath + "\\" + newfilename);
-                        File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                        textBox_soft_term.AppendText(ex.Message + Environment.NewLine);
+                        //File.Delete(folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                        //File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
                     }
                     File.Delete(newfilename);
                 }

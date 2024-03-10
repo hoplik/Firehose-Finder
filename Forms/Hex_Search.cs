@@ -387,24 +387,55 @@ namespace FirehoseFinder
             TableGroups.Clear(); //Очистили таблицу групп
             if (orig_list.Count > 0 && dubl_list.Count > 0)
             {
-                for (int i = 0; i < orig_list.Count; i++)
+                switch (radioButton_nameandhash.Checked)
                 {
-                    for (int k = 0; k < dubl_list.Count; k++)
-                    {
-                        if (orig_list[i].HashCodeFile.Equals(dubl_list[k].HashCodeFile) && !dubl_list[k].Dubl) //Найден дубликат
+                    case true:
+                        for (int i = 0; i < orig_list.Count; i++)
                         {
-                            CreateTableGroups(orig_list[i].FullFileName); //Создаём группу, если не была раньше создана
-                            //Проверяем на наличие группы в листвью
-                            if (!listView_dubl_files.Groups.Contains((ListViewGroup)TableGroups[orig_list[i].FullFileName]))
-                                listView_dubl_files.Groups.Add((ListViewGroup)TableGroups[orig_list[i].FullFileName]);
-                            dubl_list[k].Dubl = true;
-                            ListViewItem dublfile = new ListViewItem(dubl_list[k].FullFileName);
-                            dublfile.SubItems.Add(dubl_list[k].FiLen.ToString("### ### ### ##0"));
-                            dublfile.Group = (ListViewGroup)TableGroups[orig_list[i].FullFileName];
-                            listView_dubl_files.Items.Add(dublfile);
-                            listView_dubl_files.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.ColumnContent);
+                            FileInfo ofn = new FileInfo(orig_list[i].FullFileName);
+                            for (int j = 0; j < dubl_list.Count; j++)
+                            {
+                                FileInfo dfn = new FileInfo(dubl_list[j].FullFileName);
+                                if (ofn.Name.Equals(dfn.Name))
+                                {
+                                    if (orig_list[i].HashCodeFile.Equals(dubl_list[j].HashCodeFile) && !dubl_list[j].Dubl) //Найден дубликат
+                                    {
+                                        CreateTableGroups(orig_list[i].FullFileName); //Создаём группу, если не была раньше создана
+                                                                                      //Проверяем на наличие группы в листвью
+                                        if (!listView_dubl_files.Groups.Contains((ListViewGroup)TableGroups[orig_list[i].FullFileName]))
+                                            listView_dubl_files.Groups.Add((ListViewGroup)TableGroups[orig_list[i].FullFileName]);
+                                        dubl_list[j].Dubl = true;
+                                        ListViewItem dublfile = new ListViewItem(dubl_list[j].FullFileName);
+                                        dublfile.SubItems.Add(dubl_list[j].FiLen.ToString("### ### ### ##0"));
+                                        dublfile.Group = (ListViewGroup)TableGroups[orig_list[i].FullFileName];
+                                        listView_dubl_files.Items.Add(dublfile);
+                                        listView_dubl_files.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.ColumnContent);
+                                    }
+                                }
+                            }
                         }
-                    }
+                        break;
+                    default:
+                        for (int i = 0; i < orig_list.Count; i++)
+                        {
+                            for (int k = 0; k < dubl_list.Count; k++)
+                            {
+                                if (orig_list[i].HashCodeFile.Equals(dubl_list[k].HashCodeFile) && !dubl_list[k].Dubl) //Найден дубликат
+                                {
+                                    CreateTableGroups(orig_list[i].FullFileName); //Создаём группу, если не была раньше создана
+                                                                                  //Проверяем на наличие группы в листвью
+                                    if (!listView_dubl_files.Groups.Contains((ListViewGroup)TableGroups[orig_list[i].FullFileName]))
+                                        listView_dubl_files.Groups.Add((ListViewGroup)TableGroups[orig_list[i].FullFileName]);
+                                    dubl_list[k].Dubl = true;
+                                    ListViewItem dublfile = new ListViewItem(dubl_list[k].FullFileName);
+                                    dublfile.SubItems.Add(dubl_list[k].FiLen.ToString("### ### ### ##0"));
+                                    dublfile.Group = (ListViewGroup)TableGroups[orig_list[i].FullFileName];
+                                    listView_dubl_files.Items.Add(dublfile);
+                                    listView_dubl_files.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.ColumnContent);
+                                }
+                            }
+                        }
+                        break;
                 }
             }
         }
@@ -449,6 +480,9 @@ namespace FirehoseFinder
 
         private void BackgroundWorker_orig_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            button_orig.Enabled = true;
+            button_dubl.Enabled = true;
+            button_exe.Enabled = true;
             toolStripProgressBar_search.Value = 0;
             if (radioButton_od_yes.Checked) CheckDubs_SinglePath(orig_list); //Проверяем на дублинаты оригинал
             toolStripStatusLabel_search.Text = $"Обработано {orig_list.Count} файлов. Найдено {listView_dubl_files.Items.Count} дублей.";
@@ -490,6 +524,9 @@ namespace FirehoseFinder
 
         private void BackgroundWorker_dubl_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            button_orig.Enabled = true;
+            button_dubl.Enabled = true;
+            button_exe.Enabled = true;
             toolStripProgressBar_search.Value = 0;
             if (radioButton_dd_yes.Checked) CheckDubs_SinglePath(dubl_list); //Проверяем на дублинаты дубликаты
             toolStripStatusLabel_search.Text = $"Обработано {dubl_list.Count} файлов. Найдено {listView_dubl_files.Items.Count} дублей.";
@@ -502,7 +539,13 @@ namespace FirehoseFinder
             {
                 button_orig.Text = folderBrowserDialog_orig.SelectedPath;
                 IEnumerable<FileInfo> workF = new DirectoryInfo(folderBrowserDialog_orig.SelectedPath).EnumerateFiles("*.*", SearchOption.AllDirectories);
-                if (!backgroundWorker_orig.IsBusy) backgroundWorker_orig.RunWorkerAsync(workF);
+                if (!backgroundWorker_orig.IsBusy)
+                {
+                    button_orig.Enabled = false;
+                    button_dubl.Enabled = false;
+                    button_exe.Enabled = false;
+                    backgroundWorker_orig.RunWorkerAsync(workF);
+                }
             }
             else
             {
@@ -518,7 +561,13 @@ namespace FirehoseFinder
             {
                 button_dubl.Text = folderBrowserDialog_dubl.SelectedPath;
                 IEnumerable<FileInfo> workF = new DirectoryInfo(folderBrowserDialog_dubl.SelectedPath).EnumerateFiles("*.*", SearchOption.AllDirectories);
-                if (!backgroundWorker_dubl.IsBusy) backgroundWorker_dubl.RunWorkerAsync(workF);
+                if (!backgroundWorker_dubl.IsBusy)
+                {
+                    button_orig.Enabled = false;
+                    button_dubl.Enabled = false;
+                    button_exe.Enabled = false;
+                    backgroundWorker_dubl.RunWorkerAsync(workF);
+                }
             }
             else
             {
@@ -679,7 +728,8 @@ namespace FirehoseFinder
             List<GPT_Table> items = (List<GPT_Table>)e.Argument;
             int countitem = 1;
             FileInfo fi = new FileInfo(items[0].BlockLength);
-            long countbytes;
+            long longbytes;
+            int cutbase = 2147479552; //Ограничения на размер 2гб
             long offset;
             foreach (GPT_Table item in items)
             {
@@ -688,18 +738,56 @@ namespace FirehoseFinder
                 offset = Convert.ToInt64(item.StartLBA, 16) * Convert.ToInt32(item.SectorSize);
                 if (Convert.ToInt64(item.EndLBA, 16) + 1 - Convert.ToInt64(item.StartLBA, 16) > 0)
                 {
-                    countbytes = (Convert.ToInt64(item.EndLBA, 16) + 1 - Convert.ToInt64(item.StartLBA, 16)) * Convert.ToInt32(item.SectorSize);
+                    longbytes = (Convert.ToInt64(item.EndLBA, 16) + 1 - Convert.ToInt64(item.StartLBA, 16)) * Convert.ToInt32(item.SectorSize);
                 }
-                else countbytes = 0;
-                byte[] bytestoread = new byte[countbytes];
-                using (FileStream fs_gpt = File.OpenRead(fi.FullName))
+                else longbytes = 0;
+                if (longbytes > cutbase) //Для раздела больше 2 гб
                 {
-                    fs_gpt.Position = offset;
-                    for (long i = 0; i < countbytes; i++) bytestoread[i] = (byte)fs_gpt.ReadByte();
+                    //Определяем размер нарезки для лонга
+                    byte cutbyte = Convert.ToByte(longbytes / cutbase);
+                    int lastbytes = Convert.ToInt32(longbytes % cutbase);
+                    byte[] bytestoread = new byte[cutbase];
+                    byte[] lastbytestoread = new byte[lastbytes];
+                    for (byte i = 0; i < cutbyte; i++)
+                    {
+                        worker.ReportProgress(countitem * 100 / items.Count, $"Обрабатывается {i + 1} часть раздела из {cutbyte} -> {item.BlockName}");
+                        using (FileStream fs_gpt = File.OpenRead(fi.FullName))
+                        {
+                            fs_gpt.Position = offset + (i * cutbase);
+                            fs_gpt.Read(bytestoread, 0, cutbase);
+                        }
+                        using (FileStream fs_write = new FileStream(newfile, FileMode.Append, FileAccess.Write))
+                        {
+                            //fs_write.Position = offset + (i * cutbase);
+                            fs_write.Write(bytestoread, 0, cutbase);
+                        }
+                    }
+                    if (lastbytes > 0) //Дописываем хвост
+                    {
+                        using (FileStream fs_gpt = File.OpenRead(fi.FullName))
+                        {
+                            fs_gpt.Position = offset + (cutbyte * cutbase);
+                            fs_gpt.Read(lastbytestoread, 0, lastbytes);
+                        }
+                        using (FileStream fs_write = new FileStream(newfile, FileMode.Append, FileAccess.Write))
+                        {
+                            //fs_write.Position = offset + (cutbyte * cutbase);
+                            fs_write.Write(lastbytestoread, 0, lastbytes);
+                        }
+                    }
                 }
-                using (FileStream fs_write = File.OpenWrite(newfile))
+                else //Для размеров разделов меньше 2 гб
                 {
-                    for (long i = 0; i < countbytes; i++) fs_write.WriteByte(bytestoread[i]);
+                    byte[] bytestoread = new byte[longbytes];
+                    using (FileStream fs_gpt = File.OpenRead(fi.FullName))
+                    {
+                        fs_gpt.Position = offset;
+                        fs_gpt.Read(bytestoread, 0, (int)longbytes);
+                    }
+                    using (FileStream fs_write = File.OpenWrite(newfile))
+                    {
+                        fs_write.Write(bytestoread, 0, (int)longbytes);
+                    }
                 }
                 countitem++;
             }
@@ -717,9 +805,24 @@ namespace FirehoseFinder
             toolStripStatusLabel_search.Text = $"Обработано {listView_dd.Items.Count} разделов.";
         }
 
+
         #endregion
 
+        private void ВыбратьВсёToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in listView_dubl_files.Items)
+            {
+                if (!item.Checked) item.Checked = true;
+            }
+        }
 
+        private void СнятьВесьВыборToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in listView_dubl_files.Items)
+            {
+                if (item.Checked) item.Checked = false;
+            }
+        }
     }
 
     /// <summary>
