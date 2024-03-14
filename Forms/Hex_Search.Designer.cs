@@ -94,11 +94,28 @@ namespace FirehoseFinder
             this.radioButton_nameandhash = new System.Windows.Forms.RadioButton();
             this.button_exe = new System.Windows.Forms.Button();
             this.button_del = new System.Windows.Forms.Button();
+            this.tabPage_files = new System.Windows.Forms.TabPage();
+            this.groupBox_dif = new System.Windows.Forms.GroupBox();
+            this.label_newdir = new System.Windows.Forms.Label();
+            this.button_comp = new System.Windows.Forms.Button();
+            this.groupBox_raw = new System.Windows.Forms.GroupBox();
+            this.label_raw_secsize = new System.Windows.Forms.Label();
+            this.comboBox_raw_secsize = new System.Windows.Forms.ComboBox();
+            this.label_raw_lun = new System.Windows.Forms.Label();
+            this.textBox_raw_lun = new System.Windows.Forms.TextBox();
+            this.checkBox_difraw = new System.Windows.Forms.CheckBox();
+            this.checkBox_difbin = new System.Windows.Forms.CheckBox();
+            this.checkBox_diftxt = new System.Windows.Forms.CheckBox();
+            this.button_df = new System.Windows.Forms.Button();
+            this.button_of = new System.Windows.Forms.Button();
             this.folderBrowserDialog_orig = new System.Windows.Forms.FolderBrowserDialog();
             this.folderBrowserDialog_dubl = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker_orig = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker_dubl = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker_destr = new System.ComponentModel.BackgroundWorker();
+            this.openFileDialog_of = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog_df = new System.Windows.Forms.OpenFileDialog();
+            this.backgroundWorker_comp = new System.ComponentModel.BackgroundWorker();
             this.statusStrip_search.SuspendLayout();
             this.tableLayoutPanel_hs.SuspendLayout();
             this.groupBox_byte_text.SuspendLayout();
@@ -114,6 +131,9 @@ namespace FirehoseFinder
             this.groupBox_dubl.SuspendLayout();
             this.groupBox_orig.SuspendLayout();
             this.groupBox_comp.SuspendLayout();
+            this.tabPage_files.SuspendLayout();
+            this.groupBox_dif.SuspendLayout();
+            this.groupBox_raw.SuspendLayout();
             this.SuspendLayout();
             // 
             // folderBrowserDialog1
@@ -240,9 +260,10 @@ namespace FirehoseFinder
             // 
             // button_start_search
             // 
+            this.button_start_search.BackColor = System.Drawing.Color.Gainsboro;
             resources.ApplyResources(this.button_start_search, "button_start_search");
             this.button_start_search.Name = "button_start_search";
-            this.button_start_search.UseVisualStyleBackColor = true;
+            this.button_start_search.UseVisualStyleBackColor = false;
             this.button_start_search.Click += new System.EventHandler(this.Button_start_search_Click);
             // 
             // groupBox_hs
@@ -301,8 +322,9 @@ namespace FirehoseFinder
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage_mask);
-            this.tabControl1.Controls.Add(this.tabPage_dd);
+            this.tabControl1.Controls.Add(this.tabPage_files);
             this.tabControl1.Controls.Add(this.tabPage_folders);
+            this.tabControl1.Controls.Add(this.tabPage_dd);
             resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -333,9 +355,10 @@ namespace FirehoseFinder
             // 
             // button_destr
             // 
+            this.button_destr.BackColor = System.Drawing.Color.Gainsboro;
             resources.ApplyResources(this.button_destr, "button_destr");
             this.button_destr.Name = "button_destr";
-            this.button_destr.UseVisualStyleBackColor = true;
+            this.button_destr.UseVisualStyleBackColor = false;
             this.button_destr.Click += new System.EventHandler(this.Button_destr_Click);
             // 
             // groupBox_sector
@@ -390,9 +413,10 @@ namespace FirehoseFinder
             // 
             // button_dd
             // 
+            this.button_dd.BackColor = System.Drawing.Color.Gainsboro;
             resources.ApplyResources(this.button_dd, "button_dd");
             this.button_dd.Name = "button_dd";
-            this.button_dd.UseVisualStyleBackColor = true;
+            this.button_dd.UseVisualStyleBackColor = false;
             this.button_dd.Click += new System.EventHandler(this.Button_dd_Click);
             // 
             // tabPage_folders
@@ -523,16 +547,18 @@ namespace FirehoseFinder
             // 
             // button_dubl
             // 
+            this.button_dubl.BackColor = System.Drawing.Color.Gainsboro;
             resources.ApplyResources(this.button_dubl, "button_dubl");
             this.button_dubl.Name = "button_dubl";
-            this.button_dubl.UseVisualStyleBackColor = true;
+            this.button_dubl.UseVisualStyleBackColor = false;
             this.button_dubl.Click += new System.EventHandler(this.Button_dubl_Click);
             // 
             // button_orig
             // 
+            this.button_orig.BackColor = System.Drawing.Color.Gainsboro;
             resources.ApplyResources(this.button_orig, "button_orig");
             this.button_orig.Name = "button_orig";
-            this.button_orig.UseVisualStyleBackColor = true;
+            this.button_orig.UseVisualStyleBackColor = false;
             this.button_orig.Click += new System.EventHandler(this.Button_orig_Click);
             // 
             // groupBox_comp
@@ -559,17 +585,125 @@ namespace FirehoseFinder
             // 
             // button_exe
             // 
+            this.button_exe.BackColor = System.Drawing.Color.Gainsboro;
             resources.ApplyResources(this.button_exe, "button_exe");
             this.button_exe.Name = "button_exe";
-            this.button_exe.UseVisualStyleBackColor = true;
+            this.button_exe.UseVisualStyleBackColor = false;
             this.button_exe.Click += new System.EventHandler(this.Button_exe_Click);
             // 
             // button_del
             // 
+            this.button_del.BackColor = System.Drawing.Color.Gainsboro;
             resources.ApplyResources(this.button_del, "button_del");
             this.button_del.Name = "button_del";
-            this.button_del.UseVisualStyleBackColor = true;
+            this.button_del.UseVisualStyleBackColor = false;
             this.button_del.Click += new System.EventHandler(this.Button_del_Click);
+            // 
+            // tabPage_files
+            // 
+            this.tabPage_files.Controls.Add(this.groupBox_dif);
+            this.tabPage_files.Controls.Add(this.button_df);
+            this.tabPage_files.Controls.Add(this.button_of);
+            resources.ApplyResources(this.tabPage_files, "tabPage_files");
+            this.tabPage_files.Name = "tabPage_files";
+            this.tabPage_files.UseVisualStyleBackColor = true;
+            // 
+            // groupBox_dif
+            // 
+            this.groupBox_dif.Controls.Add(this.label_newdir);
+            this.groupBox_dif.Controls.Add(this.button_comp);
+            this.groupBox_dif.Controls.Add(this.groupBox_raw);
+            this.groupBox_dif.Controls.Add(this.checkBox_difraw);
+            this.groupBox_dif.Controls.Add(this.checkBox_difbin);
+            this.groupBox_dif.Controls.Add(this.checkBox_diftxt);
+            resources.ApplyResources(this.groupBox_dif, "groupBox_dif");
+            this.groupBox_dif.Name = "groupBox_dif";
+            this.groupBox_dif.TabStop = false;
+            // 
+            // label_newdir
+            // 
+            resources.ApplyResources(this.label_newdir, "label_newdir");
+            this.label_newdir.Name = "label_newdir";
+            // 
+            // button_comp
+            // 
+            this.button_comp.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.button_comp, "button_comp");
+            this.button_comp.Name = "button_comp";
+            this.button_comp.UseVisualStyleBackColor = false;
+            this.button_comp.Click += new System.EventHandler(this.Button_comp_Click);
+            // 
+            // groupBox_raw
+            // 
+            this.groupBox_raw.Controls.Add(this.label_raw_secsize);
+            this.groupBox_raw.Controls.Add(this.comboBox_raw_secsize);
+            this.groupBox_raw.Controls.Add(this.label_raw_lun);
+            this.groupBox_raw.Controls.Add(this.textBox_raw_lun);
+            resources.ApplyResources(this.groupBox_raw, "groupBox_raw");
+            this.groupBox_raw.Name = "groupBox_raw";
+            this.groupBox_raw.TabStop = false;
+            // 
+            // label_raw_secsize
+            // 
+            resources.ApplyResources(this.label_raw_secsize, "label_raw_secsize");
+            this.label_raw_secsize.Name = "label_raw_secsize";
+            // 
+            // comboBox_raw_secsize
+            // 
+            this.comboBox_raw_secsize.FormattingEnabled = true;
+            this.comboBox_raw_secsize.Items.AddRange(new object[] {
+            resources.GetString("comboBox_raw_secsize.Items"),
+            resources.GetString("comboBox_raw_secsize.Items1"),
+            resources.GetString("comboBox_raw_secsize.Items2")});
+            resources.ApplyResources(this.comboBox_raw_secsize, "comboBox_raw_secsize");
+            this.comboBox_raw_secsize.Name = "comboBox_raw_secsize";
+            // 
+            // label_raw_lun
+            // 
+            resources.ApplyResources(this.label_raw_lun, "label_raw_lun");
+            this.label_raw_lun.Name = "label_raw_lun";
+            // 
+            // textBox_raw_lun
+            // 
+            resources.ApplyResources(this.textBox_raw_lun, "textBox_raw_lun");
+            this.textBox_raw_lun.Name = "textBox_raw_lun";
+            // 
+            // checkBox_difraw
+            // 
+            resources.ApplyResources(this.checkBox_difraw, "checkBox_difraw");
+            this.checkBox_difraw.Name = "checkBox_difraw";
+            this.checkBox_difraw.UseVisualStyleBackColor = true;
+            this.checkBox_difraw.CheckedChanged += new System.EventHandler(this.CheckBox_difraw_CheckedChanged);
+            // 
+            // checkBox_difbin
+            // 
+            resources.ApplyResources(this.checkBox_difbin, "checkBox_difbin");
+            this.checkBox_difbin.Name = "checkBox_difbin";
+            this.checkBox_difbin.UseVisualStyleBackColor = true;
+            this.checkBox_difbin.CheckedChanged += new System.EventHandler(this.CheckBox_difbin_CheckedChanged);
+            // 
+            // checkBox_diftxt
+            // 
+            resources.ApplyResources(this.checkBox_diftxt, "checkBox_diftxt");
+            this.checkBox_diftxt.Name = "checkBox_diftxt";
+            this.checkBox_diftxt.UseVisualStyleBackColor = true;
+            this.checkBox_diftxt.CheckedChanged += new System.EventHandler(this.CheckBox_diftxt_CheckedChanged);
+            // 
+            // button_df
+            // 
+            this.button_df.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.button_df, "button_df");
+            this.button_df.Name = "button_df";
+            this.button_df.UseVisualStyleBackColor = false;
+            this.button_df.Click += new System.EventHandler(this.Button_df_Click);
+            // 
+            // button_of
+            // 
+            this.button_of.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.button_of, "button_of");
+            this.button_of.Name = "button_of";
+            this.button_of.UseVisualStyleBackColor = false;
+            this.button_of.Click += new System.EventHandler(this.Button_of_Click);
             // 
             // backgroundWorker_orig
             // 
@@ -591,6 +725,24 @@ namespace FirehoseFinder
             this.backgroundWorker_destr.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_destr_DoWork);
             this.backgroundWorker_destr.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_destr_ProgressChanged);
             this.backgroundWorker_destr.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_destr_RunWorkerCompleted);
+            // 
+            // openFileDialog_of
+            // 
+            resources.ApplyResources(this.openFileDialog_of, "openFileDialog_of");
+            this.openFileDialog_of.InitialDirectory = "Desktop";
+            // 
+            // openFileDialog_df
+            // 
+            resources.ApplyResources(this.openFileDialog_df, "openFileDialog_df");
+            this.openFileDialog_df.InitialDirectory = "Desktop";
+            // 
+            // backgroundWorker_comp
+            // 
+            this.backgroundWorker_comp.WorkerReportsProgress = true;
+            this.backgroundWorker_comp.WorkerSupportsCancellation = true;
+            this.backgroundWorker_comp.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_comp_DoWork);
+            this.backgroundWorker_comp.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_comp_ProgressChanged);
+            this.backgroundWorker_comp.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_comp_RunWorkerCompleted);
             // 
             // Hex_Search
             // 
@@ -625,6 +777,11 @@ namespace FirehoseFinder
             this.groupBox_orig.PerformLayout();
             this.groupBox_comp.ResumeLayout(false);
             this.groupBox_comp.PerformLayout();
+            this.tabPage_files.ResumeLayout(false);
+            this.groupBox_dif.ResumeLayout(false);
+            this.groupBox_dif.PerformLayout();
+            this.groupBox_raw.ResumeLayout(false);
+            this.groupBox_raw.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -699,5 +856,22 @@ namespace FirehoseFinder
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem выбратьВсёToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem снятьВесьВыборToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabPage_files;
+        private System.Windows.Forms.OpenFileDialog openFileDialog_of;
+        private System.Windows.Forms.OpenFileDialog openFileDialog_df;
+        private System.Windows.Forms.Button button_df;
+        private System.Windows.Forms.Button button_of;
+        private System.Windows.Forms.GroupBox groupBox_dif;
+        private System.Windows.Forms.CheckBox checkBox_diftxt;
+        private System.Windows.Forms.CheckBox checkBox_difraw;
+        private System.Windows.Forms.CheckBox checkBox_difbin;
+        private System.Windows.Forms.GroupBox groupBox_raw;
+        private System.Windows.Forms.Label label_raw_secsize;
+        private System.Windows.Forms.ComboBox comboBox_raw_secsize;
+        private System.Windows.Forms.Label label_raw_lun;
+        private System.Windows.Forms.TextBox textBox_raw_lun;
+        private System.Windows.Forms.Button button_comp;
+        private System.ComponentModel.BackgroundWorker backgroundWorker_comp;
+        private System.Windows.Forms.Label label_newdir;
     }
 }

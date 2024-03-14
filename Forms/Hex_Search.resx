@@ -118,27 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>482, 58</value>
   </metadata>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>223, 17</value>
+    <value>688, 58</value>
   </metadata>
   <metadata name="backgroundWorker_hex_search.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>393, 17</value>
+    <value>694, 17</value>
   </metadata>
   <metadata name="statusStrip_search.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>656, 17</value>
+    <value>1222, 58</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="toolStripProgressBar_search.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 26</value>
-  </data>
-  <data name="toolStripStatusLabel_search.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
-  </data>
-  <data name="toolStripStatusLabel_search.Text" xml:space="preserve">
-    <value>Оповещения</value>
-  </data>
   <data name="statusStrip_search.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 637</value>
   </data>
@@ -167,13 +158,124 @@
   <data name="&gt;&gt;statusStrip_search.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="toolStripProgressBar_search.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 26</value>
+  </data>
+  <data name="toolStripStatusLabel_search.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 28</value>
+  </data>
+  <data name="toolStripStatusLabel_search.Text" xml:space="preserve">
+    <value>Оповещения</value>
+  </data>
   <data name="tableLayoutPanel_hs.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>tableLayoutPanel_hs</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;listView_search.Name" xml:space="preserve">
+    <value>listView_search</value>
+  </data>
+  <data name="&gt;&gt;listView_search.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listView_search.Parent" xml:space="preserve">
+    <value>tableLayoutPanel_hs</value>
+  </data>
+  <data name="&gt;&gt;listView_search.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;groupBox_byte_text.Name" xml:space="preserve">
+    <value>groupBox_byte_text</value>
+  </data>
+  <data name="&gt;&gt;groupBox_byte_text.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_byte_text.Parent" xml:space="preserve">
+    <value>tableLayoutPanel_hs</value>
+  </data>
+  <data name="&gt;&gt;groupBox_byte_text.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;button_start_search.Name" xml:space="preserve">
+    <value>button_start_search</value>
+  </data>
+  <data name="&gt;&gt;button_start_search.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_start_search.Parent" xml:space="preserve">
+    <value>tableLayoutPanel_hs</value>
+  </data>
+  <data name="&gt;&gt;button_start_search.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;groupBox_hs.Name" xml:space="preserve">
+    <value>groupBox_hs</value>
+  </data>
+  <data name="&gt;&gt;groupBox_hs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_hs.Parent" xml:space="preserve">
+    <value>tableLayoutPanel_hs</value>
+  </data>
+  <data name="&gt;&gt;groupBox_hs.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;groupBox_addbytes.Name" xml:space="preserve">
+    <value>groupBox_addbytes</value>
+  </data>
+  <data name="&gt;&gt;groupBox_addbytes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_addbytes.Parent" xml:space="preserve">
+    <value>tableLayoutPanel_hs</value>
+  </data>
+  <data name="&gt;&gt;groupBox_addbytes.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tableLayoutPanel_hs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel_hs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tableLayoutPanel_hs.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tableLayoutPanel_hs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1395, 602</value>
+  </data>
+  <data name="tableLayoutPanel_hs.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel_hs.Name" xml:space="preserve">
+    <value>tableLayoutPanel_hs</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel_hs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel_hs.Parent" xml:space="preserve">
+    <value>tabPage_mask</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel_hs.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel_hs.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="listView_search" Row="1" RowSpan="2" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="groupBox_byte_text" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="button_start_search" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="groupBox_hs" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="groupBox_addbytes" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,200,Percent,100,Absolute,200" /&gt;&lt;Rows Styles="Absolute,90,Absolute,90,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -201,24 +303,6 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Адрес (hex, 0x)</value>
-  </data>
-  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
-    <value>132</value>
-  </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Bytes | ASCII</value>
-  </data>
-  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
-    <value>116</value>
-  </data>
-  <data name="columnHeader3.Text" xml:space="preserve">
-    <value>Файл</value>
-  </data>
-  <data name="columnHeader3.Width" type="System.Int32, mscorlib">
-    <value>937</value>
-  </data>
   <data name="listView_search.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -245,6 +329,99 @@
   </data>
   <data name="&gt;&gt;listView_search.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value>Адрес (hex, 0x)</value>
+  </data>
+  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
+    <value>132</value>
+  </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>Bytes | ASCII</value>
+  </data>
+  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
+    <value>116</value>
+  </data>
+  <data name="columnHeader3.Text" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="columnHeader3.Width" type="System.Int32, mscorlib">
+    <value>937</value>
+  </data>
+  <data name="&gt;&gt;textBox_hexsearch.Name" xml:space="preserve">
+    <value>textBox_hexsearch</value>
+  </data>
+  <data name="&gt;&gt;textBox_hexsearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_hexsearch.Parent" xml:space="preserve">
+    <value>groupBox_byte_text</value>
+  </data>
+  <data name="&gt;&gt;textBox_hexsearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textBox_byte_search.Name" xml:space="preserve">
+    <value>textBox_byte_search</value>
+  </data>
+  <data name="&gt;&gt;textBox_byte_search.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_byte_search.Parent" xml:space="preserve">
+    <value>groupBox_byte_text</value>
+  </data>
+  <data name="&gt;&gt;textBox_byte_search.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;radioButton_search_text.Name" xml:space="preserve">
+    <value>radioButton_search_text</value>
+  </data>
+  <data name="&gt;&gt;radioButton_search_text.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_search_text.Parent" xml:space="preserve">
+    <value>groupBox_byte_text</value>
+  </data>
+  <data name="&gt;&gt;radioButton_search_text.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;radioButton_byte_search.Name" xml:space="preserve">
+    <value>radioButton_byte_search</value>
+  </data>
+  <data name="&gt;&gt;radioButton_byte_search.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_byte_search.Parent" xml:space="preserve">
+    <value>groupBox_byte_text</value>
+  </data>
+  <data name="&gt;&gt;radioButton_byte_search.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBox_byte_text.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox_byte_text.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 3</value>
+  </data>
+  <data name="groupBox_byte_text.Size" type="System.Drawing.Size, System.Drawing">
+    <value>989, 84</value>
+  </data>
+  <data name="groupBox_byte_text.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="groupBox_byte_text.Text" xml:space="preserve">
+    <value>Набор символов для поиска</value>
+  </data>
+  <data name="&gt;&gt;groupBox_byte_text.Name" xml:space="preserve">
+    <value>groupBox_byte_text</value>
+  </data>
+  <data name="&gt;&gt;groupBox_byte_text.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_byte_text.Parent" xml:space="preserve">
+    <value>tableLayoutPanel_hs</value>
+  </data>
+  <data name="&gt;&gt;groupBox_byte_text.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="textBox_hexsearch.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -345,33 +522,6 @@
   <data name="&gt;&gt;radioButton_byte_search.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="groupBox_byte_text.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="groupBox_byte_text.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 3</value>
-  </data>
-  <data name="groupBox_byte_text.Size" type="System.Drawing.Size, System.Drawing">
-    <value>989, 84</value>
-  </data>
-  <data name="groupBox_byte_text.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="groupBox_byte_text.Text" xml:space="preserve">
-    <value>Набор символов для поиска</value>
-  </data>
-  <data name="&gt;&gt;groupBox_byte_text.Name" xml:space="preserve">
-    <value>groupBox_byte_text</value>
-  </data>
-  <data name="&gt;&gt;groupBox_byte_text.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox_byte_text.Parent" xml:space="preserve">
-    <value>tableLayoutPanel_hs</value>
-  </data>
-  <data name="&gt;&gt;groupBox_byte_text.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="button_start_search.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -401,6 +551,57 @@
   </data>
   <data name="&gt;&gt;button_start_search.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dir.Name" xml:space="preserve">
+    <value>radioButton_dir</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dir.Parent" xml:space="preserve">
+    <value>groupBox_hs</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dir.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;radioButton_file.Name" xml:space="preserve">
+    <value>radioButton_file</value>
+  </data>
+  <data name="&gt;&gt;radioButton_file.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_file.Parent" xml:space="preserve">
+    <value>groupBox_hs</value>
+  </data>
+  <data name="&gt;&gt;radioButton_file.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox_hs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox_hs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1198, 93</value>
+  </data>
+  <data name="groupBox_hs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 84</value>
+  </data>
+  <data name="groupBox_hs.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox_hs.Text" xml:space="preserve">
+    <value>Область поиска</value>
+  </data>
+  <data name="&gt;&gt;groupBox_hs.Name" xml:space="preserve">
+    <value>groupBox_hs</value>
+  </data>
+  <data name="&gt;&gt;groupBox_hs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_hs.Parent" xml:space="preserve">
+    <value>tableLayoutPanel_hs</value>
+  </data>
+  <data name="&gt;&gt;groupBox_hs.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="radioButton_dir.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -456,32 +657,77 @@
   <data name="&gt;&gt;radioButton_file.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="groupBox_hs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;textBox_addlast.Name" xml:space="preserve">
+    <value>textBox_addlast</value>
   </data>
-  <data name="groupBox_hs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1198, 93</value>
+  <data name="&gt;&gt;textBox_addlast.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="groupBox_hs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 84</value>
+  <data name="&gt;&gt;textBox_addlast.Parent" xml:space="preserve">
+    <value>groupBox_addbytes</value>
   </data>
-  <data name="groupBox_hs.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;textBox_addlast.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textBox_addfirst.Name" xml:space="preserve">
+    <value>textBox_addfirst</value>
+  </data>
+  <data name="&gt;&gt;textBox_addfirst.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_addfirst.Parent" xml:space="preserve">
+    <value>groupBox_addbytes</value>
+  </data>
+  <data name="&gt;&gt;textBox_addfirst.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>groupBox_addbytes</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="groupBox_hs.Text" xml:space="preserve">
-    <value>Область поиска</value>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
   </data>
-  <data name="&gt;&gt;groupBox_hs.Name" xml:space="preserve">
-    <value>groupBox_hs</value>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox_hs.Type" xml:space="preserve">
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>groupBox_addbytes</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBox_addbytes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1198, 3</value>
+  </data>
+  <data name="groupBox_addbytes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 84</value>
+  </data>
+  <data name="groupBox_addbytes.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="groupBox_addbytes.Text" xml:space="preserve">
+    <value>Добавить байты</value>
+  </data>
+  <data name="&gt;&gt;groupBox_addbytes.Name" xml:space="preserve">
+    <value>groupBox_addbytes</value>
+  </data>
+  <data name="&gt;&gt;groupBox_addbytes.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox_hs.Parent" xml:space="preserve">
+  <data name="&gt;&gt;groupBox_addbytes.Parent" xml:space="preserve">
     <value>tableLayoutPanel_hs</value>
   </data>
-  <data name="&gt;&gt;groupBox_hs.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;groupBox_addbytes.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="textBox_addlast.Location" type="System.Drawing.Point, System.Drawing">
     <value>85, 56</value>
@@ -585,60 +831,6 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="groupBox_addbytes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1198, 3</value>
-  </data>
-  <data name="groupBox_addbytes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 84</value>
-  </data>
-  <data name="groupBox_addbytes.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="groupBox_addbytes.Text" xml:space="preserve">
-    <value>Добавить байты</value>
-  </data>
-  <data name="&gt;&gt;groupBox_addbytes.Name" xml:space="preserve">
-    <value>groupBox_addbytes</value>
-  </data>
-  <data name="&gt;&gt;groupBox_addbytes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox_addbytes.Parent" xml:space="preserve">
-    <value>tableLayoutPanel_hs</value>
-  </data>
-  <data name="&gt;&gt;groupBox_addbytes.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tableLayoutPanel_hs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tableLayoutPanel_hs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tableLayoutPanel_hs.RowCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tableLayoutPanel_hs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1395, 602</value>
-  </data>
-  <data name="tableLayoutPanel_hs.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel_hs.Name" xml:space="preserve">
-    <value>tableLayoutPanel_hs</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel_hs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel_hs.Parent" xml:space="preserve">
-    <value>tabPage_mask</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel_hs.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel_hs.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="listView_search" Row="1" RowSpan="2" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="groupBox_byte_text" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="button_start_search" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="groupBox_hs" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="groupBox_addbytes" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,200,Percent,100,Absolute,200" /&gt;&lt;Rows Styles="Absolute,90,Absolute,90,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
   <data name="tabPage_mask.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
   </data>
@@ -665,6 +857,219 @@
   </data>
   <data name="&gt;&gt;tabPage_mask.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dif.Name" xml:space="preserve">
+    <value>groupBox_dif</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dif.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dif.Parent" xml:space="preserve">
+    <value>tabPage_files</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dif.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;button_df.Name" xml:space="preserve">
+    <value>button_df</value>
+  </data>
+  <data name="&gt;&gt;button_df.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_df.Parent" xml:space="preserve">
+    <value>tabPage_files</value>
+  </data>
+  <data name="&gt;&gt;button_df.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;button_of.Name" xml:space="preserve">
+    <value>button_of</value>
+  </data>
+  <data name="&gt;&gt;button_of.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_of.Parent" xml:space="preserve">
+    <value>tabPage_files</value>
+  </data>
+  <data name="&gt;&gt;button_of.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabPage_files.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tabPage_files.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1401, 608</value>
+  </data>
+  <data name="tabPage_files.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabPage_files.Text" xml:space="preserve">
+    <value>Сравнить файлы</value>
+  </data>
+  <data name="&gt;&gt;tabPage_files.Name" xml:space="preserve">
+    <value>tabPage_files</value>
+  </data>
+  <data name="&gt;&gt;tabPage_files.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage_files.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage_files.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>tabPage_folders</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="listView_dubl_files" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="groupBox_dubl" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="groupBox_orig" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_dubl" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="button_orig" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="groupBox_comp" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_exe" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_del" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,50,Absolute,34,Percent,100,Absolute,50,Absolute,34" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tabPage_folders.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tabPage_folders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage_folders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1401, 608</value>
+  </data>
+  <data name="tabPage_folders.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPage_folders.Text" xml:space="preserve">
+    <value>Дубликаты файлов в папках</value>
+  </data>
+  <data name="&gt;&gt;tabPage_folders.Name" xml:space="preserve">
+    <value>tabPage_folders</value>
+  </data>
+  <data name="&gt;&gt;tabPage_folders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage_folders.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage_folders.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label_path.Name" xml:space="preserve">
+    <value>label_path</value>
+  </data>
+  <data name="&gt;&gt;label_path.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_path.Parent" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;label_path.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;button_destr.Name" xml:space="preserve">
+    <value>button_destr</value>
+  </data>
+  <data name="&gt;&gt;button_destr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_destr.Parent" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;button_destr.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;groupBox_sector.Name" xml:space="preserve">
+    <value>groupBox_sector</value>
+  </data>
+  <data name="&gt;&gt;groupBox_sector.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_sector.Parent" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;groupBox_sector.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;listView_dd.Name" xml:space="preserve">
+    <value>listView_dd</value>
+  </data>
+  <data name="&gt;&gt;listView_dd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listView_dd.Parent" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;listView_dd.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;button_dd.Name" xml:space="preserve">
+    <value>button_dd</value>
+  </data>
+  <data name="&gt;&gt;button_dd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_dd.Parent" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;button_dd.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabPage_dd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tabPage_dd.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage_dd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1401, 608</value>
+  </data>
+  <data name="tabPage_dd.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPage_dd.Text" xml:space="preserve">
+    <value>Разобрать дамп диска</value>
+  </data>
+  <data name="&gt;&gt;tabPage_dd.Name" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;tabPage_dd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage_dd.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage_dd.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1409, 637</value>
+  </data>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="label_path.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -720,18 +1125,6 @@
   <data name="&gt;&gt;button_destr.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="textBox_sector.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="textBox_sector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 18</value>
-  </data>
-  <data name="textBox_sector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 22</value>
-  </data>
-  <data name="textBox_sector.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;textBox_sector.Name" xml:space="preserve">
     <value>textBox_sector</value>
   </data>
@@ -768,6 +1161,51 @@
   <data name="&gt;&gt;groupBox_sector.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="textBox_sector.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="textBox_sector.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 18</value>
+  </data>
+  <data name="textBox_sector.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 22</value>
+  </data>
+  <data name="textBox_sector.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textBox_sector.Name" xml:space="preserve">
+    <value>textBox_sector</value>
+  </data>
+  <data name="&gt;&gt;textBox_sector.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_sector.Parent" xml:space="preserve">
+    <value>groupBox_sector</value>
+  </data>
+  <data name="&gt;&gt;textBox_sector.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="listView_dd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 61</value>
+  </data>
+  <data name="listView_dd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>901, 541</value>
+  </data>
+  <data name="listView_dd.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;listView_dd.Name" xml:space="preserve">
+    <value>listView_dd</value>
+  </data>
+  <data name="&gt;&gt;listView_dd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listView_dd.Parent" xml:space="preserve">
+    <value>tabPage_dd</value>
+  </data>
+  <data name="&gt;&gt;listView_dd.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="columnHeader_ss.Text" xml:space="preserve">
     <value>Стартовый сектор</value>
   </data>
@@ -798,27 +1236,6 @@
   <data name="columnHeader_bl.Width" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="listView_dd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 61</value>
-  </data>
-  <data name="listView_dd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>901, 541</value>
-  </data>
-  <data name="listView_dd.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;listView_dd.Name" xml:space="preserve">
-    <value>listView_dd</value>
-  </data>
-  <data name="&gt;&gt;listView_dd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listView_dd.Parent" xml:space="preserve">
-    <value>tabPage_dd</value>
-  </data>
-  <data name="&gt;&gt;listView_dd.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="button_dd.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 7</value>
   </data>
@@ -843,35 +1260,134 @@
   <data name="&gt;&gt;button_dd.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="tabPage_dd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tabPage_dd.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage_dd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1401, 608</value>
-  </data>
-  <data name="tabPage_dd.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPage_dd.Text" xml:space="preserve">
-    <value>Разобрать дамп диска</value>
-  </data>
-  <data name="&gt;&gt;tabPage_dd.Name" xml:space="preserve">
-    <value>tabPage_dd</value>
-  </data>
-  <data name="&gt;&gt;tabPage_dd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage_dd.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage_dd.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;listView_dubl_files.Name" xml:space="preserve">
+    <value>listView_dubl_files</value>
+  </data>
+  <data name="&gt;&gt;listView_dubl_files.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listView_dubl_files.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;listView_dubl_files.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dubl.Name" xml:space="preserve">
+    <value>groupBox_dubl</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dubl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dubl.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dubl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;groupBox_orig.Name" xml:space="preserve">
+    <value>groupBox_orig</value>
+  </data>
+  <data name="&gt;&gt;groupBox_orig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_orig.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox_orig.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;button_dubl.Name" xml:space="preserve">
+    <value>button_dubl</value>
+  </data>
+  <data name="&gt;&gt;button_dubl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_dubl.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_dubl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;button_orig.Name" xml:space="preserve">
+    <value>button_orig</value>
+  </data>
+  <data name="&gt;&gt;button_orig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_orig.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_orig.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;groupBox_comp.Name" xml:space="preserve">
+    <value>groupBox_comp</value>
+  </data>
+  <data name="&gt;&gt;groupBox_comp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_comp.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox_comp.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;button_exe.Name" xml:space="preserve">
+    <value>button_exe</value>
+  </data>
+  <data name="&gt;&gt;button_exe.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_exe.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_exe.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;button_del.Name" xml:space="preserve">
+    <value>button_del</value>
+  </data>
+  <data name="&gt;&gt;button_del.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_del.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_del.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1395, 602</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>tabPage_folders</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="listView_dubl_files" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="groupBox_dubl" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="groupBox_orig" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_dubl" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="button_orig" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="groupBox_comp" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_exe" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_del" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,50,Absolute,34,Percent,100,Absolute,50,Absolute,34" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="columnHeader_fullpath.Text" xml:space="preserve">
     <value>Полный путь к файлу</value>
@@ -886,32 +1402,8 @@
     <value>1233</value>
   </data>
   <metadata name="contextMenuStrip_dubl_files.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>458, 58</value>
+    <value>1176, 17</value>
   </metadata>
-  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 24</value>
-  </data>
-  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Text" xml:space="preserve">
-    <value>Поменять местами оригинал и дубликат</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 6</value>
-  </data>
-  <data name="выбратьВсёToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 24</value>
-  </data>
-  <data name="выбратьВсёToolStripMenuItem.Text" xml:space="preserve">
-    <value>Выбрать всё</value>
-  </data>
-  <data name="снятьВесьВыборToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 24</value>
-  </data>
-  <data name="снятьВесьВыборToolStripMenuItem.Text" xml:space="preserve">
-    <value>Сбросить весь выбор</value>
-  </data>
   <data name="contextMenuStrip_dubl_files.Size" type="System.Drawing.Size, System.Drawing">
     <value>363, 82</value>
   </data>
@@ -944,6 +1436,81 @@
   </data>
   <data name="&gt;&gt;listView_dubl_files.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 24</value>
+  </data>
+  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Text" xml:space="preserve">
+    <value>Поменять местами оригинал и дубликат</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 6</value>
+  </data>
+  <data name="выбратьВсёToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 24</value>
+  </data>
+  <data name="выбратьВсёToolStripMenuItem.Text" xml:space="preserve">
+    <value>Выбрать всё</value>
+  </data>
+  <data name="снятьВесьВыборToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 24</value>
+  </data>
+  <data name="снятьВесьВыборToolStripMenuItem.Text" xml:space="preserve">
+    <value>Сбросить весь выбор</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_yes.Name" xml:space="preserve">
+    <value>radioButton_dd_yes</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_yes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_yes.Parent" xml:space="preserve">
+    <value>groupBox_dubl</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_yes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_no.Name" xml:space="preserve">
+    <value>radioButton_dd_no</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_no.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_no.Parent" xml:space="preserve">
+    <value>groupBox_dubl</value>
+  </data>
+  <data name="&gt;&gt;radioButton_dd_no.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox_dubl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox_dubl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>700, 3</value>
+  </data>
+  <data name="groupBox_dubl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>692, 44</value>
+  </data>
+  <data name="groupBox_dubl.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="groupBox_dubl.Text" xml:space="preserve">
+    <value>Обрабатывать дубликаты в выбранной папке</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dubl.Name" xml:space="preserve">
+    <value>groupBox_dubl</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dubl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dubl.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dubl.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="radioButton_dd_yes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1005,32 +1572,56 @@
   <data name="&gt;&gt;radioButton_dd_no.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="groupBox_dubl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="&gt;&gt;radioButton_od_yes.Name" xml:space="preserve">
+    <value>radioButton_od_yes</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_yes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_yes.Parent" xml:space="preserve">
+    <value>groupBox_orig</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_yes.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_no.Name" xml:space="preserve">
+    <value>radioButton_od_no</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_no.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_no.Parent" xml:space="preserve">
+    <value>groupBox_orig</value>
+  </data>
+  <data name="&gt;&gt;radioButton_od_no.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox_orig.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="groupBox_dubl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>700, 3</value>
+  <data name="groupBox_orig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
-  <data name="groupBox_dubl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>692, 44</value>
+  <data name="groupBox_orig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>691, 44</value>
   </data>
-  <data name="groupBox_dubl.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+  <data name="groupBox_orig.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
   </data>
-  <data name="groupBox_dubl.Text" xml:space="preserve">
+  <data name="groupBox_orig.Text" xml:space="preserve">
     <value>Обрабатывать дубликаты в выбранной папке</value>
   </data>
-  <data name="&gt;&gt;groupBox_dubl.Name" xml:space="preserve">
-    <value>groupBox_dubl</value>
+  <data name="&gt;&gt;groupBox_orig.Name" xml:space="preserve">
+    <value>groupBox_orig</value>
   </data>
-  <data name="&gt;&gt;groupBox_dubl.Type" xml:space="preserve">
+  <data name="&gt;&gt;groupBox_orig.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox_dubl.Parent" xml:space="preserve">
+  <data name="&gt;&gt;groupBox_orig.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
-  <data name="&gt;&gt;groupBox_dubl.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;groupBox_orig.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="radioButton_od_yes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1092,33 +1683,6 @@
   <data name="&gt;&gt;radioButton_od_no.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="groupBox_orig.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="groupBox_orig.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="groupBox_orig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>691, 44</value>
-  </data>
-  <data name="groupBox_orig.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="groupBox_orig.Text" xml:space="preserve">
-    <value>Обрабатывать дубликаты в выбранной папке</value>
-  </data>
-  <data name="&gt;&gt;groupBox_orig.Name" xml:space="preserve">
-    <value>groupBox_orig</value>
-  </data>
-  <data name="&gt;&gt;groupBox_orig.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox_orig.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;groupBox_orig.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="button_dubl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1176,6 +1740,57 @@
   <data name="&gt;&gt;button_orig.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="&gt;&gt;radioButton_hashonly.Name" xml:space="preserve">
+    <value>radioButton_hashonly</value>
+  </data>
+  <data name="&gt;&gt;radioButton_hashonly.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_hashonly.Parent" xml:space="preserve">
+    <value>groupBox_comp</value>
+  </data>
+  <data name="&gt;&gt;radioButton_hashonly.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;radioButton_nameandhash.Name" xml:space="preserve">
+    <value>radioButton_nameandhash</value>
+  </data>
+  <data name="&gt;&gt;radioButton_nameandhash.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButton_nameandhash.Parent" xml:space="preserve">
+    <value>groupBox_comp</value>
+  </data>
+  <data name="&gt;&gt;radioButton_nameandhash.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox_comp.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox_comp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 521</value>
+  </data>
+  <data name="groupBox_comp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>691, 44</value>
+  </data>
+  <data name="groupBox_comp.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="groupBox_comp.Text" xml:space="preserve">
+    <value>Сравнивать оригинал и дубликаты</value>
+  </data>
+  <data name="&gt;&gt;groupBox_comp.Name" xml:space="preserve">
+    <value>groupBox_comp</value>
+  </data>
+  <data name="&gt;&gt;groupBox_comp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_comp.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;groupBox_comp.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="radioButton_hashonly.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1232,33 +1847,6 @@
   </data>
   <data name="&gt;&gt;radioButton_nameandhash.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="groupBox_comp.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="groupBox_comp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 521</value>
-  </data>
-  <data name="groupBox_comp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>691, 44</value>
-  </data>
-  <data name="groupBox_comp.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="groupBox_comp.Text" xml:space="preserve">
-    <value>Сравнивать оригинал и дубликаты</value>
-  </data>
-  <data name="&gt;&gt;groupBox_comp.Name" xml:space="preserve">
-    <value>groupBox_comp</value>
-  </data>
-  <data name="&gt;&gt;groupBox_comp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox_comp.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;groupBox_comp.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="button_exe.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1323,107 +1911,527 @@
   <data name="&gt;&gt;button_del.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;label_newdir.Name" xml:space="preserve">
+    <value>label_newdir</value>
   </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+  <data name="&gt;&gt;label_newdir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;label_newdir.Parent" xml:space="preserve">
+    <value>groupBox_dif</value>
   </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1395, 602</value>
-  </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;label_newdir.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+  <data name="&gt;&gt;button_comp.Name" xml:space="preserve">
+    <value>button_comp</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button_comp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>tabPage_folders</value>
+  <data name="&gt;&gt;button_comp.Parent" xml:space="preserve">
+    <value>groupBox_dif</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="listView_dubl_files" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="groupBox_dubl" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="groupBox_orig" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_dubl" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="button_orig" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="groupBox_comp" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_exe" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_del" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,50,Absolute,34,Percent,100,Absolute,50,Absolute,34" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="tabPage_folders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tabPage_folders.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage_folders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1401, 608</value>
-  </data>
-  <data name="tabPage_folders.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabPage_folders.Text" xml:space="preserve">
-    <value>Дубликаты файлов в папках</value>
-  </data>
-  <data name="&gt;&gt;tabPage_folders.Name" xml:space="preserve">
-    <value>tabPage_folders</value>
-  </data>
-  <data name="&gt;&gt;tabPage_folders.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage_folders.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage_folders.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1409, 637</value>
-  </data>
-  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button_comp.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;groupBox_raw.Name" xml:space="preserve">
+    <value>groupBox_raw</value>
+  </data>
+  <data name="&gt;&gt;groupBox_raw.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_raw.Parent" xml:space="preserve">
+    <value>groupBox_dif</value>
+  </data>
+  <data name="&gt;&gt;groupBox_raw.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;checkBox_difraw.Name" xml:space="preserve">
+    <value>checkBox_difraw</value>
+  </data>
+  <data name="&gt;&gt;checkBox_difraw.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_difraw.Parent" xml:space="preserve">
+    <value>groupBox_dif</value>
+  </data>
+  <data name="&gt;&gt;checkBox_difraw.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;checkBox_difbin.Name" xml:space="preserve">
+    <value>checkBox_difbin</value>
+  </data>
+  <data name="&gt;&gt;checkBox_difbin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_difbin.Parent" xml:space="preserve">
+    <value>groupBox_dif</value>
+  </data>
+  <data name="&gt;&gt;checkBox_difbin.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;checkBox_diftxt.Name" xml:space="preserve">
+    <value>checkBox_diftxt</value>
+  </data>
+  <data name="&gt;&gt;checkBox_diftxt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_diftxt.Parent" xml:space="preserve">
+    <value>groupBox_dif</value>
+  </data>
+  <data name="&gt;&gt;checkBox_diftxt.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="groupBox_dif.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 45</value>
+  </data>
+  <data name="groupBox_dif.Size" type="System.Drawing.Size, System.Drawing">
+    <value>523, 254</value>
+  </data>
+  <data name="groupBox_dif.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox_dif.Text" xml:space="preserve">
+    <value>Действия для различающихся секторов (в новой папке по имени файла)</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dif.Name" xml:space="preserve">
+    <value>groupBox_dif</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dif.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dif.Parent" xml:space="preserve">
+    <value>tabPage_files</value>
+  </data>
+  <data name="&gt;&gt;groupBox_dif.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_newdir.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_newdir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 22</value>
+  </data>
+  <data name="label_newdir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 16</value>
+  </data>
+  <data name="label_newdir.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;label_newdir.Name" xml:space="preserve">
+    <value>label_newdir</value>
+  </data>
+  <data name="&gt;&gt;label_newdir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_newdir.Parent" xml:space="preserve">
+    <value>groupBox_dif</value>
+  </data>
+  <data name="&gt;&gt;label_newdir.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button_comp.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="button_comp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_comp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 215</value>
+  </data>
+  <data name="button_comp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 27</value>
+  </data>
+  <data name="button_comp.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="button_comp.Text" xml:space="preserve">
+    <value>Сравнить</value>
+  </data>
+  <data name="&gt;&gt;button_comp.Name" xml:space="preserve">
+    <value>button_comp</value>
+  </data>
+  <data name="&gt;&gt;button_comp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_comp.Parent" xml:space="preserve">
+    <value>groupBox_dif</value>
+  </data>
+  <data name="&gt;&gt;button_comp.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label_raw_secsize.Name" xml:space="preserve">
+    <value>label_raw_secsize</value>
+  </data>
+  <data name="&gt;&gt;label_raw_secsize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_raw_secsize.Parent" xml:space="preserve">
+    <value>groupBox_raw</value>
+  </data>
+  <data name="&gt;&gt;label_raw_secsize.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBox_raw_secsize.Name" xml:space="preserve">
+    <value>comboBox_raw_secsize</value>
+  </data>
+  <data name="&gt;&gt;comboBox_raw_secsize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_raw_secsize.Parent" xml:space="preserve">
+    <value>groupBox_raw</value>
+  </data>
+  <data name="&gt;&gt;comboBox_raw_secsize.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label_raw_lun.Name" xml:space="preserve">
+    <value>label_raw_lun</value>
+  </data>
+  <data name="&gt;&gt;label_raw_lun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_raw_lun.Parent" xml:space="preserve">
+    <value>groupBox_raw</value>
+  </data>
+  <data name="&gt;&gt;label_raw_lun.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;textBox_raw_lun.Name" xml:space="preserve">
+    <value>textBox_raw_lun</value>
+  </data>
+  <data name="&gt;&gt;textBox_raw_lun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_raw_lun.Parent" xml:space="preserve">
+    <value>groupBox_raw</value>
+  </data>
+  <data name="&gt;&gt;textBox_raw_lun.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBox_raw.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="groupBox_raw.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 147</value>
+  </data>
+  <data name="groupBox_raw.Size" type="System.Drawing.Size, System.Drawing">
+    <value>511, 62</value>
+  </data>
+  <data name="groupBox_raw.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="groupBox_raw.Text" xml:space="preserve">
+    <value>Данные для rawprogram.xml</value>
+  </data>
+  <data name="&gt;&gt;groupBox_raw.Name" xml:space="preserve">
+    <value>groupBox_raw</value>
+  </data>
+  <data name="&gt;&gt;groupBox_raw.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox_raw.Parent" xml:space="preserve">
+    <value>groupBox_dif</value>
+  </data>
+  <data name="&gt;&gt;groupBox_raw.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label_raw_secsize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_raw_secsize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_raw_secsize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="label_raw_secsize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 16</value>
+  </data>
+  <data name="label_raw_secsize.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label_raw_secsize.Text" xml:space="preserve">
+    <value>Размер сектора</value>
+  </data>
+  <data name="&gt;&gt;label_raw_secsize.Name" xml:space="preserve">
+    <value>label_raw_secsize</value>
+  </data>
+  <data name="&gt;&gt;label_raw_secsize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_raw_secsize.Parent" xml:space="preserve">
+    <value>groupBox_raw</value>
+  </data>
+  <data name="&gt;&gt;label_raw_secsize.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="comboBox_raw_secsize.Items" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_raw_secsize.Items1" xml:space="preserve">
+    <value>512</value>
+  </data>
+  <data name="comboBox_raw_secsize.Items2" xml:space="preserve">
+    <value>4096</value>
+  </data>
+  <data name="comboBox_raw_secsize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>295, 19</value>
+  </data>
+  <data name="comboBox_raw_secsize.MaxLength" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="comboBox_raw_secsize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 24</value>
+  </data>
+  <data name="comboBox_raw_secsize.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;comboBox_raw_secsize.Name" xml:space="preserve">
+    <value>comboBox_raw_secsize</value>
+  </data>
+  <data name="&gt;&gt;comboBox_raw_secsize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_raw_secsize.Parent" xml:space="preserve">
+    <value>groupBox_raw</value>
+  </data>
+  <data name="&gt;&gt;comboBox_raw_secsize.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label_raw_lun.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_raw_lun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 22</value>
+  </data>
+  <data name="label_raw_lun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 16</value>
+  </data>
+  <data name="label_raw_lun.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label_raw_lun.Text" xml:space="preserve">
+    <value>Номер диска (lun)</value>
+  </data>
+  <data name="&gt;&gt;label_raw_lun.Name" xml:space="preserve">
+    <value>label_raw_lun</value>
+  </data>
+  <data name="&gt;&gt;label_raw_lun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_raw_lun.Parent" xml:space="preserve">
+    <value>groupBox_raw</value>
+  </data>
+  <data name="&gt;&gt;label_raw_lun.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="textBox_raw_lun.Location" type="System.Drawing.Point, System.Drawing">
+    <value>132, 19</value>
+  </data>
+  <data name="textBox_raw_lun.MaxLength" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="textBox_raw_lun.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 22</value>
+  </data>
+  <data name="textBox_raw_lun.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="textBox_raw_lun.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;textBox_raw_lun.Name" xml:space="preserve">
+    <value>textBox_raw_lun</value>
+  </data>
+  <data name="&gt;&gt;textBox_raw_lun.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_raw_lun.Parent" xml:space="preserve">
+    <value>groupBox_raw</value>
+  </data>
+  <data name="&gt;&gt;textBox_raw_lun.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="checkBox_difraw.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_difraw.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBox_difraw.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 121</value>
+  </data>
+  <data name="checkBox_difraw.Size" type="System.Drawing.Size, System.Drawing">
+    <value>367, 20</value>
+  </data>
+  <data name="checkBox_difraw.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="checkBox_difraw.Text" xml:space="preserve">
+    <value>Сформировать rawprogram.xml для пакетной записи</value>
+  </data>
+  <data name="&gt;&gt;checkBox_difraw.Name" xml:space="preserve">
+    <value>checkBox_difraw</value>
+  </data>
+  <data name="&gt;&gt;checkBox_difraw.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_difraw.Parent" xml:space="preserve">
+    <value>groupBox_dif</value>
+  </data>
+  <data name="&gt;&gt;checkBox_difraw.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="checkBox_difbin.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_difbin.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBox_difbin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 95</value>
+  </data>
+  <data name="checkBox_difbin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>353, 20</value>
+  </data>
+  <data name="checkBox_difbin.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="checkBox_difbin.Text" xml:space="preserve">
+    <value>Сохранить различающиеся данные в bin-формате</value>
+  </data>
+  <data name="&gt;&gt;checkBox_difbin.Name" xml:space="preserve">
+    <value>checkBox_difbin</value>
+  </data>
+  <data name="&gt;&gt;checkBox_difbin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_difbin.Parent" xml:space="preserve">
+    <value>groupBox_dif</value>
+  </data>
+  <data name="&gt;&gt;checkBox_difbin.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="checkBox_diftxt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox_diftxt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 69</value>
+  </data>
+  <data name="checkBox_diftxt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 20</value>
+  </data>
+  <data name="checkBox_diftxt.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="checkBox_diftxt.Text" xml:space="preserve">
+    <value>Сохранить различающиеся данные в txt-файл</value>
+  </data>
+  <data name="&gt;&gt;checkBox_diftxt.Name" xml:space="preserve">
+    <value>checkBox_diftxt</value>
+  </data>
+  <data name="&gt;&gt;checkBox_diftxt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox_diftxt.Parent" xml:space="preserve">
+    <value>groupBox_dif</value>
+  </data>
+  <data name="&gt;&gt;checkBox_diftxt.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="button_df.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_df.Location" type="System.Drawing.Point, System.Drawing">
+    <value>287, 12</value>
+  </data>
+  <data name="button_df.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 27</value>
+  </data>
+  <data name="button_df.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="button_df.Text" xml:space="preserve">
+    <value>Выберите файл для сравнения</value>
+  </data>
+  <data name="&gt;&gt;button_df.Name" xml:space="preserve">
+    <value>button_df</value>
+  </data>
+  <data name="&gt;&gt;button_df.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_df.Parent" xml:space="preserve">
+    <value>tabPage_files</value>
+  </data>
+  <data name="&gt;&gt;button_df.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_of.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 12</value>
+  </data>
+  <data name="button_of.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 27</value>
+  </data>
+  <data name="button_of.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="button_of.Text" xml:space="preserve">
+    <value>Выберите оригинальный файл</value>
+  </data>
+  <data name="&gt;&gt;button_of.Name" xml:space="preserve">
+    <value>button_of</value>
+  </data>
+  <data name="&gt;&gt;button_of.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_of.Parent" xml:space="preserve">
+    <value>tabPage_files</value>
+  </data>
+  <data name="&gt;&gt;button_of.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="folderBrowserDialog_orig.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>833, 17</value>
+    <value>251, 58</value>
   </metadata>
   <metadata name="folderBrowserDialog_dubl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1064, 17</value>
-  </metadata>
-  <metadata name="backgroundWorker_orig.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 58</value>
   </metadata>
+  <metadata name="backgroundWorker_orig.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>957, 17</value>
+  </metadata>
   <metadata name="backgroundWorker_dubl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>236, 58</value>
+    <value>242, 17</value>
   </metadata>
   <metadata name="backgroundWorker_destr.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>704, 58</value>
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="openFileDialog_of.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>858, 58</value>
+  </metadata>
+  <data name="openFileDialog_of.Filter" xml:space="preserve">
+    <value>bin-файлы|*.bin|Все файлы|*.*</value>
+  </data>
+  <data name="openFileDialog_of.Title" xml:space="preserve">
+    <value>Выбор оригинального файла</value>
+  </data>
+  <metadata name="openFileDialog_df.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1040, 58</value>
+  </metadata>
+  <data name="openFileDialog_df.Filter" xml:space="preserve">
+    <value>bin-файлы|*.bin|Все файлы|*.*</value>
+  </data>
+  <data name="openFileDialog_df.Title" xml:space="preserve">
+    <value>Выбор файла для сравнения</value>
+  </data>
+  <metadata name="backgroundWorker_comp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>464, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>86</value>
+    <value>82</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
@@ -4020,6 +5028,24 @@
     <value>backgroundWorker_destr</value>
   </data>
   <data name="&gt;&gt;backgroundWorker_destr.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog_of.Name" xml:space="preserve">
+    <value>openFileDialog_of</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog_of.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog_df.Name" xml:space="preserve">
+    <value>openFileDialog_df</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog_df.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker_comp.Name" xml:space="preserve">
+    <value>backgroundWorker_comp</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker_comp.Type" xml:space="preserve">
     <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

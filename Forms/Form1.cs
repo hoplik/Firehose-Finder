@@ -534,7 +534,8 @@ namespace FirehoseFinder
                         if (openFileDialog1.ShowDialog() == DialogResult.OK)
                         {
                             //Определяем путь к файлу
-                            string loadpath = openFileDialog1.FileName.Remove(openFileDialog1.FileName.IndexOf(openFileDialog1.SafeFileName) - 1);
+                            FileInfo fileInfo = new FileInfo(openFileDialog1.FileName);
+                            string loadpath = fileInfo.DirectoryName;
                             if (loadpath.Contains('\u0020'))
                             {
                                 textBox_soft_term.AppendText(LocRes.GetString("mb_title_att") + Environment.NewLine);
