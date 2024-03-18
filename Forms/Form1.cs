@@ -1080,8 +1080,10 @@ namespace FirehoseFinder
                 {
                     try
                     {
-                        File.Copy(gptmain, folderBrowserDialog1.SelectedPath + "\\" + gptmain);
-                        File.Copy(gptbackup, folderBrowserDialog1.SelectedPath + "\\" + gptbackup);
+                        if (File.Exists(folderBrowserDialog1.SelectedPath + "\\" + gptmain)) File.Delete(folderBrowserDialog1.SelectedPath + "\\" + gptmain);
+                        File.Move(gptmain, folderBrowserDialog1.SelectedPath + "\\" + gptmain);
+                        if (File.Exists(folderBrowserDialog1.SelectedPath + "\\" + gptbackup)) File.Delete(folderBrowserDialog1.SelectedPath + "\\" + gptbackup);
+                        File.Move(gptbackup, folderBrowserDialog1.SelectedPath + "\\" + gptbackup);
                         textBox_soft_term.AppendText(LocRes.GetString("tb_gpt_save") + Environment.NewLine);
                     }
                     catch (Exception ex)
@@ -1235,14 +1237,14 @@ namespace FirehoseFinder
             {
                 try
                 {
-                    File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                    if (File.Exists(folderBrowserDialog1.SelectedPath + "\\" + newfilename)) File.Delete(folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                    File.Move(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
                 }
-                catch (IOException)
+                catch (Exception ex)
                 {
-                    File.Delete(folderBrowserDialog1.SelectedPath + "\\" + newfilename);
-                    File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                    textBox_soft_term.AppendText(ex.Message + Environment.NewLine);
+                    SendErrorInChat();
                 }
-                File.Delete(newfilename);
             }
             textBox_soft_term.AppendText(LocRes.GetString("done") + Environment.NewLine);
         }
@@ -2978,15 +2980,14 @@ namespace FirehoseFinder
                 {
                     try
                     {
-                        File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                        if (File.Exists(folderBrowserDialog1.SelectedPath + "\\" + newfilename)) File.Delete(folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                        File.Move(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
                     }
-                    catch (IOException ex)
+                    catch (Exception ex)
                     {
                         textBox_soft_term.AppendText(ex.Message + Environment.NewLine);
-                        //File.Delete(folderBrowserDialog1.SelectedPath + "\\" + newfilename);
-                        //File.Copy(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                        SendErrorInChat();
                     }
-                    File.Delete(newfilename);
                 }
                 textBox_soft_term.AppendText(e.Result.ToString() + Environment.NewLine +
                     LocRes.GetString("tb_loader_com") + Environment.NewLine);
