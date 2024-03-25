@@ -2475,6 +2475,12 @@ namespace FirehoseFinder
                 {
                     using (StreamWriter sw = new StreamWriter(label_log.Text + "\\" + label_model.Text + "_Report.txt", false)) sw.Write(logstr);
                 }
+                catch (UnauthorizedAccessException uae)
+                {
+                    toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tb_er_write") + '\u0020' +
+                        LocRes.GetString("tb_rep_file") + '\u003A' + '\u0020' + uae.Message;
+                    textBox_soft_term.AppendText(uae.Message + Environment.NewLine);
+                }
                 catch (Exception ex)
                 {
                     toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tb_er_write") + '\u0020' +
@@ -3307,25 +3313,29 @@ namespace FirehoseFinder
         /// <param name="e">ManagementObjectCollection</param>
         private void BgWorker_ports_DoWork(object sender, DoWorkEventArgs e)
         {
-            USB_DEV_Props zerodev = new USB_DEV_Props(string.Empty, string.Empty);
-            USB_DEV_Props[] usbdevices = new USB_DEV_Props[1] { zerodev };
+            USB_DEV_Props[] usbdevices = new USB_DEV_Props[1] { new USB_DEV_Props(portnum: string.Empty, portname: string.Empty) };
             try
             {
                 ManagementObjectSearcher dev_seacher = new ManagementObjectSearcher(
                     "root\\CIMV2",
                     "SELECT * FROM Win32_PnPEntity WHERE DeviceID LIKE \"USB%PID_9008%\"");
                 ManagementObjectCollection moc = dev_seacher.Get();
-                if (moc.Count > 0)
+                int countdevs = moc.Count;
+                if (countdevs > 0)
                 {
-                    Array.Resize(ref usbdevices, moc.Count);
-                    int countdevs = 0;
-                    foreach (ManagementObject dev_obj in moc)
+                    if (countdevs > 1) Array.Resize(ref usbdevices, countdevs);
+                    int dev = 0;
+                    foreach (ManagementObject dev_obj in moc.Cast<ManagementObject>())
                     {
                         USB_DEV_Props usbdev = new USB_DEV_Props(func.ParsingPortsProps(dev_obj)[0], func.ParsingPortsProps(dev_obj)[1]);
-                        usbdevices.SetValue(usbdev, countdevs);
-                        countdevs++;
+                        usbdevices.SetValue(usbdev, dev);
+                        dev++;
                     }
                 }
+            }
+            catch (ManagementException me)
+            {
+                textBox_soft_term.AppendText(me.Message + Environment.NewLine);
             }
             catch (Exception ex)
             {
