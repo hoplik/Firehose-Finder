@@ -218,7 +218,6 @@ namespace FirehoseFinder
         /// <returns>Строка хеша</returns>
         internal static string CertExtr(string SFDump)
         {
-            byte rootcert = 0; //Расположение корневого сертификата в файле (второй или третий)
             byte countcert = 0; //Считаем количество сертификатов
             string pattern = "3082(.{4})3082"; //Бинарный признак сертификата с его длиной в середине (3082-4 знака-3082)
             Regex regex = new Regex(pattern);
@@ -241,6 +240,7 @@ namespace FirehoseFinder
                     }
                 }
             }
+            byte rootcert; //Расположение корневого сертификата в файле (второй или третий)
             switch (countcert)
             {
                 case 0:
