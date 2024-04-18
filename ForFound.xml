@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-04-13T23:21:30">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-04-18T17:51:07">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -690,7 +690,7 @@
 <OEM_FH>0043</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>4352B3BFEAC440CAB3FC0A181BE897F57CEED6CFE7729D61752ADD407FA6E1BEE86FE4A27EAED96A83F9972F707AF1D8</HASH_FH>
-<Model>G2</Model>
+<Model>AGM G2</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/707AF1D8/prog_firehose_lite_001970E1.elf#</Url>
@@ -698,7 +698,7 @@
 <OEM_FH>0043</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>4352B3BFEAC440CAB3FC0A181BE897F57CEED6CFE7729D61752ADD407FA6E1BEE86FE4A27EAED96A83F9972F707AF1D8</HASH_FH>
-<Model>G2</Model>
+<Model>AGM G2</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/5015AC87/000a50e100000000_d40eee56f3194665_fhprg.bin#</Url>
@@ -933,7 +933,7 @@
 <OEM_FH>0015</OEM_FH>
 <MODEL_FH>0021</MODEL_FH>
 <HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
-<Model>CAN-L11</Model>
+<Model>JLN-LX1</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/0004f0e100150041_6bc369511da9cadb_fhprg_peek.bin#</Url>
