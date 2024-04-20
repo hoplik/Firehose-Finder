@@ -82,20 +82,20 @@ namespace FirehoseFinder
             // 
             // labelProductName
             // 
-            this.tableLayoutPanel.SetColumnSpan(this.labelProductName, 2);
             resources.ApplyResources(this.labelProductName, "labelProductName");
+            this.tableLayoutPanel.SetColumnSpan(this.labelProductName, 2);
             this.labelProductName.Name = "labelProductName";
             // 
             // labelVersion
             // 
-            this.tableLayoutPanel.SetColumnSpan(this.labelVersion, 2);
             resources.ApplyResources(this.labelVersion, "labelVersion");
+            this.tableLayoutPanel.SetColumnSpan(this.labelVersion, 2);
             this.labelVersion.Name = "labelVersion";
             // 
             // labelCopyright
             // 
-            this.tableLayoutPanel.SetColumnSpan(this.labelCopyright, 2);
             resources.ApplyResources(this.labelCopyright, "labelCopyright");
+            this.tableLayoutPanel.SetColumnSpan(this.labelCopyright, 2);
             this.labelCopyright.Name = "labelCopyright";
             // 
             // okButton
@@ -107,8 +107,8 @@ namespace FirehoseFinder
             // 
             // textBoxDescription
             // 
-            this.tableLayoutPanel.SetColumnSpan(this.textBoxDescription, 2);
             resources.ApplyResources(this.textBoxDescription, "textBoxDescription");
+            this.tableLayoutPanel.SetColumnSpan(this.textBoxDescription, 2);
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.ReadOnly = true;
             this.textBoxDescription.TabStop = false;

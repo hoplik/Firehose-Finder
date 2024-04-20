@@ -483,6 +483,9 @@
     <Content Include="Resources\sert.png" />
     <Content Include="Resources\translate.png" />
     <Content Include="Resources\work.png" />
+    <EmbeddedResource Include="Forms\AboutBox1.zh-Hans.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.zh-Hans.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.zh-Hans.Designer.cs</LastGenOutput>

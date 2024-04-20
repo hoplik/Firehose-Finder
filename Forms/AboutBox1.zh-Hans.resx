@@ -119,49 +119,52 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="linkLabel_telega.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 69</value>
+    <value>203, 69</value>
   </data>
   <data name="logoPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 163</value>
+    <value>201, 163</value>
   </data>
   <data name="labelProductName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 0</value>
+    <value>217, 0</value>
   </data>
   <data name="labelProductName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>530, 21</value>
+    <value>532, 21</value>
   </data>
   <data name="labelVersion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 34</value>
+    <value>217, 34</value>
   </data>
   <data name="labelVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>530, 21</value>
+    <value>532, 21</value>
   </data>
   <data name="labelCopyright.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 68</value>
+    <value>217, 68</value>
   </data>
   <data name="labelCopyright.Size" type="System.Drawing.Size, System.Drawing">
-    <value>530, 21</value>
+    <value>532, 21</value>
   </data>
   <data name="textBoxDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 106</value>
+    <value>217, 106</value>
   </data>
   <data name="textBoxDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>530, 61</value>
+    <value>532, 61</value>
   </data>
   <data name="linkLabel_forum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 171</value>
+    <value>212, 171</value>
   </data>
   <data name="linkLabel_forum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>536, 69</value>
+    <value>538, 69</value>
   </data>
   <data name="label_donate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 325</value>
+    <value>212, 325</value>
+  </data>
+  <data name="label_donate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>399, 48</value>
   </data>
   <data name="button_donate_ymoney.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 24</value>
+    <value>203, 24</value>
   </data>
   <data name="button_donate_pp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 26</value>
+    <value>203, 26</value>
   </data>
   <data name="label_thanks.Text" xml:space="preserve">
     <value>谢谢:
