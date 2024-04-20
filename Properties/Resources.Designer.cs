@@ -189,6 +189,16 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap china_flags_flag_16985 {
+            get {
+                object obj = ResourceManager.GetObject("china_flags_flag_16985", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на процессор.
         /// </summary>
         internal static string chip {

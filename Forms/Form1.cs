@@ -3062,6 +3062,7 @@ namespace FirehoseFinder
                 Settings.Default.local_lang=string.Empty;
                 if (русскийToolStripMenuItem.Checked) русскийToolStripMenuItem.Checked=false;
                 if (englishToolStripMenuItem.Checked) englishToolStripMenuItem.Checked=false;
+                if (chinaToolStripMenuItem.Checked) chinaToolStripMenuItem.Checked = false;
                 if (MessageBox.Show(LocRes.GetString("message_body_need_restart"),
                     LocRes.GetString("message_title_need_restart"),
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
@@ -3083,6 +3084,7 @@ namespace FirehoseFinder
                 Settings.Default.local_lang="ru";
                 if (автоматическиToolStripMenuItem.Checked) автоматическиToolStripMenuItem.Checked=false;
                 if (englishToolStripMenuItem.Checked) englishToolStripMenuItem.Checked=false;
+                if (chinaToolStripMenuItem.Checked) chinaToolStripMenuItem.Checked = false;
                 if (MessageBox.Show(LocRes.GetString("message_body_need_restart"),
                     LocRes.GetString("message_title_need_restart"),
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
@@ -3104,6 +3106,29 @@ namespace FirehoseFinder
                 Settings.Default.local_lang="en";
                 if (автоматическиToolStripMenuItem.Checked) автоматическиToolStripMenuItem.Checked=false;
                 if (русскийToolStripMenuItem.Checked) русскийToolStripMenuItem.Checked=false;
+                if (chinaToolStripMenuItem.Checked) chinaToolStripMenuItem.Checked = false;
+                if (MessageBox.Show(LocRes.GetString("message_body_need_restart"),
+                    LocRes.GetString("message_title_need_restart"),
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+                {
+                    Application.Restart();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Переключились на китайский независимо от языка системы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ChinaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (chinaToolStripMenuItem.Checked)
+            {
+                Settings.Default.local_lang="zh-Hans";
+                if (автоматическиToolStripMenuItem.Checked) автоматическиToolStripMenuItem.Checked=false;
+                if (русскийToolStripMenuItem.Checked) русскийToolStripMenuItem.Checked=false;
+                if (englishToolStripMenuItem.Checked) englishToolStripMenuItem.Checked=false;
                 if (MessageBox.Show(LocRes.GetString("message_body_need_restart"),
                     LocRes.GetString("message_title_need_restart"),
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)

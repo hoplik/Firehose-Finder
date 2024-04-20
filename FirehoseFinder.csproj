@@ -436,6 +436,11 @@
     <Compile Include="Forms\SendProgForm.Designer.cs">
       <DependentUpon>SendProgForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.zh-Hans.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.zh-Hans.resx</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Forms\Write_Sectors.cs">
       <SubType>Form</SubType>
@@ -457,12 +462,19 @@
     <Content Include="Resources\sert.png" />
     <Content Include="Resources\translate.png" />
     <Content Include="Resources\work.png" />
+    <EmbeddedResource Include="Properties\Resources.zh-Hans.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.zh-Hans.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Resources\logo.contrast-white.png" />
     <EmbeddedResource Include="Forms\ExSert.en.resx">
       <DependentUpon>ExSert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ExSert.resx">
       <DependentUpon>ExSert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.zh-Hans.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RawProgramForm.en.resx">
       <DependentUpon>RawProgramForm.cs</DependentUpon>

@@ -129,6 +129,13 @@
   <data name="tb_xml_not_gen" xml:space="preserve">
     <value>XML-файл для работы не сформирован</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="database" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="work" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\work.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="repack_parsing_header" xml:space="preserve">
     <value>Параметры прошивки</value>
   </data>
@@ -153,23 +160,35 @@
   <data name="sel_prog" xml:space="preserve">
     <value>Выберете программер на вкладке "Работа с файлами"</value>
   </data>
-  <data name="tb_adb_sess" xml:space="preserve">
-    <value>сеанс ADB</value>
+  <data name="sert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gb_disk" xml:space="preserve">
     <value>Диск</value>
   </data>
-  <data name="status_repack_open_folder" xml:space="preserve">
-    <value>Открыть папку в Проводнике</value>
+  <data name="pp_note" xml:space="preserve">
+    <value>Если в логе появляется ошибка о некорректном значении команды (HANDLE_PEEK_FAILURE), попробуйте изменить выбор архитектуры процессора для этого программера.</value>
+  </data>
+  <data name="translate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\translate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tip_decode" xml:space="preserve">
     <value>Система дешифровки - только DES. Количество знаков в ключе меньше 16 будет дополнено '0' в начале.</value>
   </data>
+  <data name="excert_cert" xml:space="preserve">
+    <value>сертификатов</value>
+  </data>
+  <data name="excert_format" xml:space="preserve">
+    <value>Сертификат формата DER (X.509)</value>
+  </data>
   <data name="not_elf" xml:space="preserve">
     <value>не является ELF</value>
   </data>
-  <data name="write_ss" xml:space="preserve">
-    <value>Текущий размер сектора</value>
+  <data name="rom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tb_form_comp" xml:space="preserve">
+    <value>Работа с формой чтения/записи байт завершена</value>
   </data>
   <data name="chip" xml:space="preserve">
     <value>процессор</value>
@@ -183,14 +202,17 @@
   <data name="sectors" xml:space="preserve">
     <value>секторов</value>
   </data>
+  <data name="status_repack_unpacking_complite" xml:space="preserve">
+    <value>Прошивка успешно распакована в указанную директорию</value>
+  </data>
   <data name="message_title_need_fields" xml:space="preserve">
     <value>Пустые обязательные поля</value>
   </data>
   <data name="er_func_xml" xml:space="preserve">
     <value>Не удалось создать xml-файл чтения/записи разделов</value>
   </data>
-  <data name="hex_from" xml:space="preserve">
-    <value>из</value>
+  <data name="status_repack_start" xml:space="preserve">
+    <value>Выберите путь к прошивке и директорию для распаковки</value>
   </data>
   <data name="status_read" xml:space="preserve">
     <value>Читаем ...</value>
@@ -216,8 +238,8 @@
   <data name="hex_warn_stopoper" xml:space="preserve">
     <value>Внимание, остановка длительной операции!</value>
   </data>
-  <data name="er_func_wfiles" xml:space="preserve">
-    <value>Ошибка в функции WFiles</value>
+  <data name="tb_blm" xml:space="preserve">
+    <value>режим загрузчика</value>
   </data>
   <data name="mb_body_id_not_res" xml:space="preserve">
     <value>Идентификаторы не получены. Пожалуйста, перезагрузите устройство в аварийный режим вручную.</value>
@@ -234,8 +256,14 @@
   <data name="message_title_need_restart" xml:space="preserve">
     <value>Требуется перезапуск приложения!</value>
   </data>
+  <data name="insert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\insert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="copy_clip" xml:space="preserve">
     <value>Скопировано в буфер</value>
+  </data>
+  <data name="count_inside_conf" xml:space="preserve">
+    <value>Количество конфигурационных файлов внутри прошивки</value>
   </data>
   <data name="tb_dev_con" xml:space="preserve">
     <value>Подключено устройство:</value>
@@ -246,7 +274,6 @@
   <data name="about" xml:space="preserve">
     <value>О программе</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="fh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\fh.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -255,6 +282,9 @@
   </data>
   <data name="tb_body_att_del_mem" xml:space="preserve">
     <value>Осторожно, вы предпринимаете попытку стереть всю информацию из памяти устройства. Будут удалены (заменены на 0х00) все данные на флеш-памяти, включая таблицу разметки и все доступные пользователю разделы. Нажимая кнопку "Ok", вы подтверждаете выполнение операции. Это последнее предупреждение. Если вы не сделали резервной копии устройства, то сейчас самое время отменить операцию и заняться бэкапом.</value>
+  </data>
+  <data name="mb_body_dev_mist" xml:space="preserve">
+    <value>Устройство определено с ошибкой</value>
   </data>
   <data name="mb_title_dev_recon" xml:space="preserve">
     <value>Внимание!</value>
@@ -271,8 +301,8 @@
   <data name="russia_flags_flag_17058" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\russia_flags_flag_17058.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tb_gpt_save" xml:space="preserve">
-    <value>Сохранение файла таблицы разметки в выбранную папку прошло успешно.</value>
+  <data name="tb_loader_com" xml:space="preserve">
+    <value>Выполнение команды лоадера успешно завершено.</value>
   </data>
   <data name="dump_select_disc" xml:space="preserve">
     <value> секторов для </value>
@@ -286,6 +316,9 @@
   <data name="status_repack_unpacking_complited" xml:space="preserve">
     <value>Распаковка файлов прошивки выполнена на</value>
   </data>
+  <data name="greet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\greet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tb_chip_same" xml:space="preserve">
     <value>Номера чипов из ADB и Sahara совпадают</value>
   </data>
@@ -298,11 +331,14 @@
   <data name="mb_body_memtype" xml:space="preserve">
     <value>Вероятно, неправильно выбран тип памяти. Если указан тип eMMC, то попробуйте изменить на UFS и повторить запрос.</value>
   </data>
+  <data name="mb_body_driver_folder" xml:space="preserve">
+    <value>Открыть папку с драйверами?</value>
+  </data>
   <data name="tb_log" xml:space="preserve">
     <value>файла лога</value>
   </data>
-  <data name="button_dirrepack" xml:space="preserve">
-    <value>Директория для распаковки</value>
+  <data name="firmware_signer" xml:space="preserve">
+    <value>Подписант прошивки</value>
   </data>
   <data name="tt_proc" xml:space="preserve">
     <value>Сейчас обрабатывается</value>
@@ -331,6 +367,9 @@
   <data name="tt_id_not_rec" xml:space="preserve">
     <value>Не все идентификаторы получены, отправка данных отменена</value>
   </data>
+  <data name="mb_body_port_driver" xml:space="preserve">
+    <value>Драйвера для этого устройства не установлены</value>
+  </data>
   <data name="hex_mess_stopoper" xml:space="preserve">
     <value>Осторожно, вы предпринимаете попытку остановить длительную процедуру поиска. Нажимая кнопку "Ok", вы подтверждаете выполнение операции.</value>
   </data>
@@ -345,9 +384,6 @@
   </data>
   <data name="hex_found" xml:space="preserve">
     <value>найдено</value>
-  </data>
-  <data name="tb_send_conf" xml:space="preserve">
-    <value>Отправка лога подтверждена пользователем.</value>
   </data>
   <data name="file" xml:space="preserve">
     <value>файл</value>
@@ -364,23 +400,23 @@
   <data name="tb_compl" xml:space="preserve">
     <value>завершён</value>
   </data>
-  <data name="firmware_signer" xml:space="preserve">
-    <value>Подписант прошивки</value>
+  <data name="tip_cancel" xml:space="preserve">
+    <value>Для сброса нажмите кнопку и выберите "Отмена"</value>
   </data>
-  <data name="tb_loader_com" xml:space="preserve">
-    <value>Выполнение команды лоадера успешно завершено.</value>
+  <data name="er_func_wfiles" xml:space="preserve">
+    <value>Ошибка в функции WFiles</value>
   </data>
-  <data name="status_repack_start" xml:space="preserve">
-    <value>Выберите путь к прошивке и директорию для распаковки</value>
+  <data name="status_decode" xml:space="preserve">
+    <value>Декодируем ...</value>
   </data>
   <data name="button_rampath" xml:space="preserve">
     <value>Путь к файлу прошивки</value>
   </data>
-  <data name="tt_check" xml:space="preserve">
-    <value>Нажмите для проверки выбранного программера</value>
-  </data>
   <data name="mb_title_server_down" xml:space="preserve">
     <value>Загрузка файла с сервера</value>
+  </data>
+  <data name="excert_sel" xml:space="preserve">
+    <value>Выбрано</value>
   </data>
   <data name="tb_pp" xml:space="preserve">
     <value>Читаем/пишем байты по определённому адресу (peek&amp;poke)</value>
@@ -388,17 +424,23 @@
   <data name="encode" xml:space="preserve">
     <value>закодирован</value>
   </data>
+  <data name="hex_from" xml:space="preserve">
+    <value>из</value>
+  </data>
   <data name="tb_dev_not_con" xml:space="preserve">
     <value>Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли "Отладка по USB" в разделе "Система" - "Для разработчиков".</value>
-  </data>
-  <data name="mb_title_adb_er" xml:space="preserve">
-    <value>Ошибка ADB</value>
   </data>
   <data name="tbs_part_table" xml:space="preserve">
     <value>Получаем таблицу разметки</value>
   </data>
   <data name="tb_cancel_user" xml:space="preserve">
     <value>отменено пользователем</value>
+  </data>
+  <data name="send" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\send.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lensel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lensel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="firmware_version" xml:space="preserve">
     <value>Версия прошивки</value>
@@ -415,11 +457,11 @@
   <data name="status_repack_unpacked_failed" xml:space="preserve">
     <value>Данная прошивка не может быть распакована, так как состоит не из одного файла, либо некорректно декодирована!</value>
   </data>
-  <data name="mb_title_send" xml:space="preserve">
-    <value>Можно отправить данные?</value>
+  <data name="excert_found" xml:space="preserve">
+    <value>Найдено</value>
   </data>
-  <data name="united_kingdom_flags_flag_17079" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\united_kingdom_flags_flag_17079.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tt_check" xml:space="preserve">
+    <value>Нажмите для проверки выбранного программера</value>
   </data>
   <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Greeting.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
@@ -436,8 +478,8 @@
   <data name="mb_note_dev_recon" xml:space="preserve">
     <value>Для получения идентификаторов устройство должно быть переподключено!</value>
   </data>
-  <data name="count_inside_conf" xml:space="preserve">
-    <value>Количество конфигурационных файлов внутри прошивки</value>
+  <data name="tb_adb_sess" xml:space="preserve">
+    <value>сеанс ADB</value>
   </data>
   <data name="auth_title" xml:space="preserve">
     <value>Требуется авторизация!</value>
@@ -451,8 +493,11 @@
   <data name="tb_rep_file" xml:space="preserve">
     <value>файл отчёта</value>
   </data>
-  <data name="pp_note" xml:space="preserve">
-    <value>Если в логе появляется ошибка о некорректном значении команды (HANDLE_PEEK_FAILURE), попробуйте изменить выбор архитектуры процессора для этого программера.</value>
+  <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="united_kingdom_flags_flag_17079" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\united_kingdom_flags_flag_17079.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="userstate_show_first" xml:space="preserve">
     <value>Отображаем блок первых символов ...</value>
@@ -496,11 +541,20 @@
   <data name="crc" xml:space="preserve">
     <value>контрольная сумма</value>
   </data>
+  <data name="logo.contrast-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo.contrast-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_dirrepack" xml:space="preserve">
+    <value>Директория для распаковки</value>
+  </data>
   <data name="app_path" xml:space="preserve">
     <value>Путь установки программы</value>
   </data>
   <data name="tb_reboot" xml:space="preserve">
     <value>Устройство перегружается</value>
+  </data>
+  <data name="help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tb_compl_fail" xml:space="preserve">
     <value>Неудачное завершение</value>
@@ -526,11 +580,14 @@
   <data name="tb_write_file_sectors" xml:space="preserve">
     <value>Записываем bin-файл в выбранные сектора</value>
   </data>
+  <data name="drivers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drivers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="autolen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\autolen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="hex_in" xml:space="preserve">
     <value>в</value>
-  </data>
-  <data name="tip_cancel" xml:space="preserve">
-    <value>Для сброса нажмите кнопку и выберите "Отмена"</value>
   </data>
   <data name="tb_pass_suc" xml:space="preserve">
     <value>прошло успешно</value>
@@ -541,8 +598,8 @@
   <data name="count_inside_bin" xml:space="preserve">
     <value>Количество bin файлов внутри прошивки</value>
   </data>
-  <data name="tb_blm" xml:space="preserve">
-    <value>режим загрузчика</value>
+  <data name="status_repack_open_folder" xml:space="preserve">
+    <value>Открыть папку в Проводнике</value>
   </data>
   <data name="hex_note_cancelsearch" xml:space="preserve">
     <value>Текущий поиск отменён пользователем</value>
@@ -559,17 +616,20 @@
   <data name="version" xml:space="preserve">
     <value>Версия</value>
   </data>
-  <data name="status_decode" xml:space="preserve">
-    <value>Декодируем ...</value>
+  <data name="mb_title_adb_er" xml:space="preserve">
+    <value>Ошибка ADB</value>
   </data>
   <data name="mb_body_save_clip" xml:space="preserve">
     <value>Сохранить данные в буфер обмена?</value>
   </data>
+  <data name="about1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\about.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="mb_note_dev_recon2" xml:space="preserve">
     <value>Пожалуйста, отключите устройство от компьютера, перезагрузите в аварийный режим (9008) и подключите повторно.</value>
   </data>
-  <data name="tb_form_comp" xml:space="preserve">
-    <value>Работа с формой чтения/записи байт завершена</value>
+  <data name="mb_title_send" xml:space="preserve">
+    <value>Можно отправить данные?</value>
   </data>
   <data name="manuf" xml:space="preserve">
     <value>производитель</value>
@@ -604,14 +664,17 @@
   <data name="mb_title_mis" xml:space="preserve">
     <value>Внимание! Ошибка!</value>
   </data>
-  <data name="mb_body_gpt_not_formed" xml:space="preserve">
-    <value>Таблица GPT не сформирована</value>
+  <data name="write_ss" xml:space="preserve">
+    <value>Текущий размер сектора</value>
+  </data>
+  <data name="tb_gpt_save" xml:space="preserve">
+    <value>Сохранение файла таблицы разметки в выбранную папку прошло успешно.</value>
   </data>
   <data name="tip_row" xml:space="preserve">
     <value>Выберите из списка или введите вручную</value>
   </data>
-  <data name="status_repack_unpacking_complite" xml:space="preserve">
-    <value>Прошивка успешно распакована в указанную директорию</value>
+  <data name="tb_send_conf" xml:space="preserve">
+    <value>Отправка лога подтверждена пользователем.</value>
   </data>
   <data name="tbs_stor_dev" xml:space="preserve">
     <value>Получаем информацию о запоминающем устройстве</value>
@@ -622,70 +685,10 @@
   <data name="tb_note_att_del_mem" xml:space="preserve">
     <value>Внимание, удаление всей информации из памяти!</value>
   </data>
-  <data name="logo.contrast-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo.contrast-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mb_body_gpt_not_formed" xml:space="preserve">
+    <value>Таблица GPT не сформирована</value>
   </data>
-  <data name="mb_body_dev_mist" xml:space="preserve">
-    <value>Устройство определено с ошибкой</value>
-  </data>
-  <data name="mb_body_driver_folder" xml:space="preserve">
-    <value>Открыть папку с драйверами?</value>
-  </data>
-  <data name="mb_body_port_driver" xml:space="preserve">
-    <value>Драйвера для этого устройства не установлены</value>
-  </data>
-  <data name="about1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\about.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="autolen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\autolen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="database" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="drivers" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\drivers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="greet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\greet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="help" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="insert" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\insert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lensel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lensel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="send" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\send.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sert" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="translate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\translate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="work" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\work.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="excert_cert" xml:space="preserve">
-    <value>сертификатов</value>
-  </data>
-  <data name="excert_format" xml:space="preserve">
-    <value>Сертификат формата DER (X.509)</value>
-  </data>
-  <data name="excert_found" xml:space="preserve">
-    <value>Найдено</value>
-  </data>
-  <data name="excert_sel" xml:space="preserve">
-    <value>Выбрано</value>
+  <data name="china_flags_flag_16985" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\china_flags_flag_16985.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
