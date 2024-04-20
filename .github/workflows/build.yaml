@@ -50,8 +50,8 @@ jobs:
     - uses: actions/checkout@v1
       name: Checkout Code
      
-    - name: Setup MSBuild Path
-      uses: warrenbuckley/Setup-MSBuild@v1
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
        
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.2
@@ -59,7 +59,7 @@ jobs:
     - name: Restore NuGet Packages
       run: nuget restore FirehoseFinder.sln
  
-    - name: Build and Publish Web App
+    - name: Build and Publish App
       run: msbuild FirehoseFinder.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
  
     - name: Upload Artifact
