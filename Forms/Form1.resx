@@ -183,6 +183,12 @@
   <data name="englishToolStripMenuItem.Text" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="中文简体ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 26</value>
+  </data>
+  <data name="中文简体ToolStripMenuItem.Text" xml:space="preserve">
+    <value>中文(简体)</value>
+  </data>
   <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 6</value>
   </data>
@@ -193,16 +199,16 @@
     <value>Предложить перевод</value>
   </data>
   <data name="выборЯзыкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 26</value>
+    <value>224, 26</value>
   </data>
   <data name="выборЯзыкаToolStripMenuItem.Text" xml:space="preserve">
     <value>Выбор языка</value>
   </data>
   <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 6</value>
+    <value>221, 6</value>
   </data>
   <data name="выходToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 26</value>
+    <value>224, 26</value>
   </data>
   <data name="выходToolStripMenuItem.Text" xml:space="preserve">
     <value>Выход</value>
@@ -2658,7 +2664,7 @@ _HASH</value>
     <value>Сбросить выбор (deselecting all)</value>
   </data>
   <data name="contextMenuStrip_gpt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>442, 212</value>
+    <value>442, 184</value>
   </data>
   <data name="&gt;&gt;contextMenuStrip_gpt.Name" xml:space="preserve">
     <value>contextMenuStrip_gpt</value>
@@ -6729,6 +6735,12 @@ _HASH</value>
   </data>
   <data name="&gt;&gt;bgWorker_ports.Type" xml:space="preserve">
     <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;中文简体ToolStripMenuItem.Name" xml:space="preserve">
+    <value>中文简体ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;中文简体ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Formfhf</value>

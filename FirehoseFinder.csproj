@@ -15,7 +15,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\hoplik\OneDrive\Рабочий стол\Publishing\</PublishUrl>
+    <PublishUrl>ftp://fhf.mywebcommunity.org/fhf.mywebcommunity.org/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -445,6 +445,7 @@
     </Compile>
     <Content Include="Resources\about.png" />
     <Content Include="Resources\autolen.png" />
+    <Content Include="Resources\china_flags_flag_16985.png" />
     <Content Include="Resources\database.png" />
     <Content Include="Resources\exit.png" />
     <Content Include="Resources\greet.png" />

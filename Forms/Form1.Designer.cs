@@ -239,6 +239,7 @@
             this.process_Fastboot = new System.Diagnostics.Process();
             this.backgroundWorker_sahara = new System.ComponentModel.BackgroundWorker();
             this.bgWorker_ports = new System.ComponentModel.BackgroundWorker();
+            this.中文简体ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tabPage_collection.SuspendLayout();
@@ -334,6 +335,7 @@
             this.toolStripSeparator6,
             this.русскийToolStripMenuItem,
             this.englishToolStripMenuItem,
+            this.中文简体ToolStripMenuItem,
             this.toolStripSeparator7,
             this.предложитьПереводToolStripMenuItem});
             this.выборЯзыкаToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.lensel;
@@ -1838,6 +1840,11 @@
             this.bgWorker_ports.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgWorker_ports_DoWork);
             this.bgWorker_ports.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BgWorker_ports_RunWorkerCompleted);
             // 
+            // 中文简体ToolStripMenuItem
+            // 
+            this.中文简体ToolStripMenuItem.Name = "中文简体ToolStripMenuItem";
+            resources.ApplyResources(this.中文简体ToolStripMenuItem, "中文简体ToolStripMenuItem");
+            // 
             // Formfhf
             // 
             resources.ApplyResources(this, "$this");
@@ -2114,6 +2121,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip_final;
         private System.Windows.Forms.ToolStripMenuItem загрузитьССервераToolStripMenuItem;
         private System.Windows.Forms.RadioButton radioButton_fb_eraseud;
+        private System.Windows.Forms.ToolStripMenuItem 中文简体ToolStripMenuItem;
     }
 }
 
