@@ -474,12 +474,12 @@
     <comment>Не все идентификаторы указаны. Пока не отправляем.</comment>
   </data>
   <data name="no_part_sel" xml:space="preserve">
-    <value>No partitions have been selected to save.</value>
-    <comment>未选择要保存的分区。</comment>
+    <value>未选择要保存的分区。</value>
+    <comment>No partitions have been selected to save.</comment>
   </data>
   <data name="offset" xml:space="preserve">
-    <value>offset</value>
-    <comment>地址</comment>
+    <value>地址</value>
+    <comment>offset</comment>
   </data>
   <data name="packer_version" xml:space="preserve">
     <value>打包只因版本</value>
@@ -650,8 +650,8 @@
     <comment>Форма чтения/записи байт закрыта без изменений</comment>
   </data>
   <data name="tb_form_comp" xml:space="preserve">
-    <value>The work with the byte read/write form is completed</value>
-    <comment>字节读/写表的工作已完成</comment>
+    <value>字节读/写表的工作已完成</value>
+    <comment>The work with the byte read/write form is completed</comment>
   </data>
   <data name="tb_gpt_save" xml:space="preserve">
     <value>已成功将标记表文件保存到所选文件夹。</value>
@@ -746,8 +746,8 @@
     <comment>Данные успешно отправлены</comment>
   </data>
   <data name="tt_find" xml:space="preserve">
-    <value>Connect the device and click to get the IDs</value>
-    <comment>连接设备并点击按钮 以获取ID</comment>
+    <value>连接设备并点击按钮 以获取ID</value>
+    <comment>Connect the device and click to get the IDs</comment>
   </data>
   <data name="tt_id_empty" xml:space="preserve">
     <value>标识符为空。无内容可发送。</value>
