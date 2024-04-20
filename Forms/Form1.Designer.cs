@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfhf));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -43,7 +42,7 @@
             this.dataSet1 = new System.Data.DataSet();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip();
             this.progressBar_phone = new System.Windows.Forms.ProgressBar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,7 +76,7 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage_collection = new System.Windows.Forms.TabPage();
             this.dataGridView_collection = new System.Windows.Forms.DataGridView();
-            this.bindingNavigator_collection = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigator_collection = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -102,7 +101,7 @@
             this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Comp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStrip_final = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip_final = new System.Windows.Forms.ContextMenuStrip();
             this.загрузитьССервераToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox_fh_sel_path = new System.Windows.Forms.GroupBox();
@@ -183,7 +182,7 @@
             this.Block_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Block_length = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Block_Bytes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.contextMenuStrip_gpt = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip_gpt = new System.Windows.Forms.ContextMenuStrip();
             this.выбратьРазделToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьВыбранныйРазделToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.записатьФайлВВыбранныйРазделLoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -226,13 +225,13 @@
             this.button_term_clear = new System.Windows.Forms.Button();
             this.button_term_save = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.serialPort1 = new System.IO.Ports.SerialPort();
             this.dataSet_Find = new System.Data.DataSet();
             this.backgroundWorker_dump = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker_xml = new System.ComponentModel.BackgroundWorker();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.bindingSource_collection = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource_firehose = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource_collection = new System.Windows.Forms.BindingSource();
+            this.bindingSource_firehose = new System.Windows.Forms.BindingSource();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.backgroundWorker_rawprogram = new System.ComponentModel.BackgroundWorker();
             this.process_FH_Loader = new System.Diagnostics.Process();
@@ -289,10 +288,6 @@
             // 
             this.dataSet1.DataSetName = "DataSet_ForFilter";
             // 
-            // folderBrowserDialog1
-            // 
-            resources.ApplyResources(this.folderBrowserDialog1, "folderBrowserDialog1");
-            // 
             // backgroundWorker_Read_File
             // 
             this.backgroundWorker_Read_File.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_Read_File_DoWork);
@@ -314,28 +309,26 @@
             // 
             // menuStrip1
             // 
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
             this.видToolStripMenuItem,
             this.инструментыToolStripMenuItem,
             this.справкаToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
-            this.toolTip1.SetToolTip(this.menuStrip1, resources.GetString("menuStrip1.ToolTip"));
             // 
             // файлToolStripMenuItem
             // 
-            resources.ApplyResources(this.файлToolStripMenuItem, "файлToolStripMenuItem");
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выборЯзыкаToolStripMenuItem,
             this.toolStripSeparator5,
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            resources.ApplyResources(this.файлToolStripMenuItem, "файлToolStripMenuItem");
             // 
             // выборЯзыкаToolStripMenuItem
             // 
-            resources.ApplyResources(this.выборЯзыкаToolStripMenuItem, "выборЯзыкаToolStripMenuItem");
             this.выборЯзыкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.автоматическиToolStripMenuItem,
             this.toolStripSeparator6,
@@ -346,70 +339,71 @@
             this.предложитьПереводToolStripMenuItem});
             this.выборЯзыкаToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.lensel;
             this.выборЯзыкаToolStripMenuItem.Name = "выборЯзыкаToolStripMenuItem";
+            resources.ApplyResources(this.выборЯзыкаToolStripMenuItem, "выборЯзыкаToolStripMenuItem");
             // 
             // автоматическиToolStripMenuItem
             // 
-            resources.ApplyResources(this.автоматическиToolStripMenuItem, "автоматическиToolStripMenuItem");
             this.автоматическиToolStripMenuItem.CheckOnClick = true;
             this.автоматическиToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.autolen;
             this.автоматическиToolStripMenuItem.Name = "автоматическиToolStripMenuItem";
+            resources.ApplyResources(this.автоматическиToolStripMenuItem, "автоматическиToolStripMenuItem");
             this.автоматическиToolStripMenuItem.Click += new System.EventHandler(this.АвтоматическиToolStripMenuItem_Click);
             // 
             // toolStripSeparator6
             // 
-            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
             this.toolStripSeparator6.Name = "toolStripSeparator6";
+            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
             // 
             // русскийToolStripMenuItem
             // 
-            resources.ApplyResources(this.русскийToolStripMenuItem, "русскийToolStripMenuItem");
             this.русскийToolStripMenuItem.CheckOnClick = true;
             this.русскийToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.russia_flags_flag_17058;
             this.русскийToolStripMenuItem.Name = "русскийToolStripMenuItem";
+            resources.ApplyResources(this.русскийToolStripMenuItem, "русскийToolStripMenuItem");
             this.русскийToolStripMenuItem.Click += new System.EventHandler(this.РусскийToolStripMenuItem_Click);
             // 
             // englishToolStripMenuItem
             // 
-            resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
             this.englishToolStripMenuItem.CheckOnClick = true;
             this.englishToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.united_kingdom_flags_flag_17079;
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
             this.englishToolStripMenuItem.Click += new System.EventHandler(this.EnglishToolStripMenuItem_Click);
             // 
             // chinaToolStripMenuItem
             // 
-            resources.ApplyResources(this.chinaToolStripMenuItem, "chinaToolStripMenuItem");
+            this.chinaToolStripMenuItem.CheckOnClick = true;
             this.chinaToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.china_flags_flag_16985;
             this.chinaToolStripMenuItem.Name = "chinaToolStripMenuItem";
+            resources.ApplyResources(this.chinaToolStripMenuItem, "chinaToolStripMenuItem");
             this.chinaToolStripMenuItem.Click += new System.EventHandler(this.ChinaToolStripMenuItem_Click);
             // 
             // toolStripSeparator7
             // 
-            resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
             this.toolStripSeparator7.Name = "toolStripSeparator7";
+            resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
             // 
             // предложитьПереводToolStripMenuItem
             // 
-            resources.ApplyResources(this.предложитьПереводToolStripMenuItem, "предложитьПереводToolStripMenuItem");
             this.предложитьПереводToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.translate;
             this.предложитьПереводToolStripMenuItem.Name = "предложитьПереводToolStripMenuItem";
+            resources.ApplyResources(this.предложитьПереводToolStripMenuItem, "предложитьПереводToolStripMenuItem");
             this.предложитьПереводToolStripMenuItem.Click += new System.EventHandler(this.ПредложитьПереводToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 
-            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
             this.toolStripSeparator5.Name = "toolStripSeparator5";
+            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
             // 
             // выходToolStripMenuItem
             // 
-            resources.ApplyResources(this.выходToolStripMenuItem, "выходToolStripMenuItem");
             this.выходToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.exit;
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            resources.ApplyResources(this.выходToolStripMenuItem, "выходToolStripMenuItem");
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.ВыходToolStripMenuItem_Click);
             // 
             // видToolStripMenuItem
             // 
-            resources.ApplyResources(this.видToolStripMenuItem, "видToolStripMenuItem");
             this.видToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.приветствиеToolStripMenuItem,
             this.toolStripSeparator1,
@@ -419,62 +413,63 @@
             this.внестиПроизводителяМодельToolStripMenuItem,
             this.отправкаПрограммераToolStripMenuItem});
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
+            resources.ApplyResources(this.видToolStripMenuItem, "видToolStripMenuItem");
             // 
             // приветствиеToolStripMenuItem
             // 
-            resources.ApplyResources(this.приветствиеToolStripMenuItem, "приветствиеToolStripMenuItem");
             this.приветствиеToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.greet;
             this.приветствиеToolStripMenuItem.Name = "приветствиеToolStripMenuItem";
+            resources.ApplyResources(this.приветствиеToolStripMenuItem, "приветствиеToolStripMenuItem");
             this.приветствиеToolStripMenuItem.Click += new System.EventHandler(this.ПриветствиеToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // работаСУстройствомToolStripMenuItem
             // 
-            resources.ApplyResources(this.работаСУстройствомToolStripMenuItem, "работаСУстройствомToolStripMenuItem");
             this.работаСУстройствомToolStripMenuItem.CheckOnClick = true;
             this.работаСУстройствомToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.work;
             this.работаСУстройствомToolStripMenuItem.Name = "работаСУстройствомToolStripMenuItem";
+            resources.ApplyResources(this.работаСУстройствомToolStripMenuItem, "работаСУстройствомToolStripMenuItem");
             this.работаСУстройствомToolStripMenuItem.CheckedChanged += new System.EventHandler(this.РаботаСУстройствомToolStripMenuItem_CheckedChanged);
             // 
             // CollectionToolStripMenuItem
             // 
-            resources.ApplyResources(this.CollectionToolStripMenuItem, "CollectionToolStripMenuItem");
             this.CollectionToolStripMenuItem.CheckOnClick = true;
             this.CollectionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.реальноПодключённыеУстройстваToolStripMenuItem,
             this.устройстваСПрограммерамиToolStripMenuItem});
             this.CollectionToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.database;
             this.CollectionToolStripMenuItem.Name = "CollectionToolStripMenuItem";
+            resources.ApplyResources(this.CollectionToolStripMenuItem, "CollectionToolStripMenuItem");
             this.CollectionToolStripMenuItem.CheckedChanged += new System.EventHandler(this.СправочникУстройствToolStripMenuItem_CheckedChanged);
             // 
             // реальноПодключённыеУстройстваToolStripMenuItem
             // 
-            resources.ApplyResources(this.реальноПодключённыеУстройстваToolStripMenuItem, "реальноПодключённыеУстройстваToolStripMenuItem");
             this.реальноПодключённыеУстройстваToolStripMenuItem.CheckOnClick = true;
             this.реальноПодключённыеУстройстваToolStripMenuItem.Name = "реальноПодключённыеУстройстваToolStripMenuItem";
+            resources.ApplyResources(this.реальноПодключённыеУстройстваToolStripMenuItem, "реальноПодключённыеУстройстваToolStripMenuItem");
             this.реальноПодключённыеУстройстваToolStripMenuItem.CheckedChanged += new System.EventHandler(this.РеальноПодключённыеУстройстваToolStripMenuItem_CheckedChanged);
             // 
             // устройстваСПрограммерамиToolStripMenuItem
             // 
-            resources.ApplyResources(this.устройстваСПрограммерамиToolStripMenuItem, "устройстваСПрограммерамиToolStripMenuItem");
             this.устройстваСПрограммерамиToolStripMenuItem.CheckOnClick = true;
             this.устройстваСПрограммерамиToolStripMenuItem.Name = "устройстваСПрограммерамиToolStripMenuItem";
+            resources.ApplyResources(this.устройстваСПрограммерамиToolStripMenuItem, "устройстваСПрограммерамиToolStripMenuItem");
             this.устройстваСПрограммерамиToolStripMenuItem.CheckedChanged += new System.EventHandler(this.УстройстваСПрограммерамиToolStripMenuItem_CheckedChanged);
             // 
             // toolStripSeparator2
             // 
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // внестиПроизводителяМодельToolStripMenuItem
             // 
-            resources.ApplyResources(this.внестиПроизводителяМодельToolStripMenuItem, "внестиПроизводителяМодельToolStripMenuItem");
             this.внестиПроизводителяМодельToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.insert;
             this.внестиПроизводителяМодельToolStripMenuItem.Name = "внестиПроизводителяМодельToolStripMenuItem";
+            resources.ApplyResources(this.внестиПроизводителяМодельToolStripMenuItem, "внестиПроизводителяМодельToolStripMenuItem");
             this.внестиПроизводителяМодельToolStripMenuItem.Click += new System.EventHandler(this.ВнестиПроизводителяМодельToolStripMenuItem_Click);
             // 
             // отправкаПрограммераToolStripMenuItem
@@ -486,76 +481,74 @@
             // 
             // инструментыToolStripMenuItem
             // 
-            resources.ApplyResources(this.инструментыToolStripMenuItem, "инструментыToolStripMenuItem");
             this.инструментыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.поискМаскиБайтToolStripMenuItem,
             this.распаковкаОднобиновойПрошивкиToolStripMenuItem,
             this.драйвераEDLИADBToolStripMenuItem,
             this.ExSertToolStripMenuItem});
             this.инструментыToolStripMenuItem.Name = "инструментыToolStripMenuItem";
+            resources.ApplyResources(this.инструментыToolStripMenuItem, "инструментыToolStripMenuItem");
             // 
             // поискМаскиБайтToolStripMenuItem
             // 
-            resources.ApplyResources(this.поискМаскиБайтToolStripMenuItem, "поискМаскиБайтToolStripMenuItem");
             this.поискМаскиБайтToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.logo_contrast_white;
             this.поискМаскиБайтToolStripMenuItem.Name = "поискМаскиБайтToolStripMenuItem";
+            resources.ApplyResources(this.поискМаскиБайтToolStripMenuItem, "поискМаскиБайтToolStripMenuItem");
             this.поискМаскиБайтToolStripMenuItem.Click += new System.EventHandler(this.ПоискМаскиБайтToolStripMenuItem_Click);
             // 
             // распаковкаОднобиновойПрошивкиToolStripMenuItem
             // 
-            resources.ApplyResources(this.распаковкаОднобиновойПрошивкиToolStripMenuItem, "распаковкаОднобиновойПрошивкиToolStripMenuItem");
             this.распаковкаОднобиновойПрошивкиToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.rom;
             this.распаковкаОднобиновойПрошивкиToolStripMenuItem.Name = "распаковкаОднобиновойПрошивкиToolStripMenuItem";
+            resources.ApplyResources(this.распаковкаОднобиновойПрошивкиToolStripMenuItem, "распаковкаОднобиновойПрошивкиToolStripMenuItem");
             this.распаковкаОднобиновойПрошивкиToolStripMenuItem.Click += new System.EventHandler(this.РаспаковкаОднобиновойПрошивкиToolStripMenuItem_Click);
             // 
             // драйвераEDLИADBToolStripMenuItem
             // 
-            resources.ApplyResources(this.драйвераEDLИADBToolStripMenuItem, "драйвераEDLИADBToolStripMenuItem");
             this.драйвераEDLИADBToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.drivers;
             this.драйвераEDLИADBToolStripMenuItem.Name = "драйвераEDLИADBToolStripMenuItem";
+            resources.ApplyResources(this.драйвераEDLИADBToolStripMenuItem, "драйвераEDLИADBToolStripMenuItem");
             this.драйвераEDLИADBToolStripMenuItem.Click += new System.EventHandler(this.ДрайвераEDLИADBToolStripMenuItem_Click);
             // 
             // ExSertToolStripMenuItem
             // 
-            resources.ApplyResources(this.ExSertToolStripMenuItem, "ExSertToolStripMenuItem");
             this.ExSertToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.sert;
             this.ExSertToolStripMenuItem.Name = "ExSertToolStripMenuItem";
+            resources.ApplyResources(this.ExSertToolStripMenuItem, "ExSertToolStripMenuItem");
             this.ExSertToolStripMenuItem.Click += new System.EventHandler(this.ExSertToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 
-            resources.ApplyResources(this.справкаToolStripMenuItem, "справкаToolStripMenuItem");
             this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.вопросОтветToolStripMenuItem,
             this.оПрограммеToolStripMenuItem});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            resources.ApplyResources(this.справкаToolStripMenuItem, "справкаToolStripMenuItem");
             // 
             // вопросОтветToolStripMenuItem
             // 
-            resources.ApplyResources(this.вопросОтветToolStripMenuItem, "вопросОтветToolStripMenuItem");
             this.вопросОтветToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.help;
             this.вопросОтветToolStripMenuItem.Name = "вопросОтветToolStripMenuItem";
+            resources.ApplyResources(this.вопросОтветToolStripMenuItem, "вопросОтветToolStripMenuItem");
             this.вопросОтветToolStripMenuItem.Click += new System.EventHandler(this.ПросмотрСправкиToolStripMenuItem_Click);
             // 
             // оПрограммеToolStripMenuItem
             // 
-            resources.ApplyResources(this.оПрограммеToolStripMenuItem, "оПрограммеToolStripMenuItem");
             this.оПрограммеToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.about1;
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            resources.ApplyResources(this.оПрограммеToolStripMenuItem, "оПрограммеToolStripMenuItem");
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.ОПрограммеToolStripMenuItem_Click);
             // 
             // tabPage_collection
             // 
-            resources.ApplyResources(this.tabPage_collection, "tabPage_collection");
             this.tabPage_collection.Controls.Add(this.dataGridView_collection);
             this.tabPage_collection.Controls.Add(this.bindingNavigator_collection);
+            resources.ApplyResources(this.tabPage_collection, "tabPage_collection");
             this.tabPage_collection.Name = "tabPage_collection";
-            this.toolTip1.SetToolTip(this.tabPage_collection, resources.GetString("tabPage_collection.ToolTip"));
             this.tabPage_collection.UseVisualStyleBackColor = true;
             // 
             // dataGridView_collection
             // 
-            resources.ApplyResources(this.dataGridView_collection, "dataGridView_collection");
             this.dataGridView_collection.AllowUserToAddRows = false;
             this.dataGridView_collection.AllowUserToDeleteRows = false;
             this.dataGridView_collection.AllowUserToOrderColumns = true;
@@ -578,6 +571,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_collection.DefaultCellStyle = dataGridViewCellStyle2;
+            resources.ApplyResources(this.dataGridView_collection, "dataGridView_collection");
             this.dataGridView_collection.MultiSelect = false;
             this.dataGridView_collection.Name = "dataGridView_collection";
             this.dataGridView_collection.ReadOnly = true;
@@ -588,15 +582,14 @@
             this.dataGridView_collection.ShowCellToolTips = false;
             this.dataGridView_collection.ShowEditingIcon = false;
             this.dataGridView_collection.ShowRowErrors = false;
-            this.toolTip1.SetToolTip(this.dataGridView_collection, resources.GetString("dataGridView_collection.ToolTip"));
             this.dataGridView_collection.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_collection_CellContentDoubleClick);
             // 
             // bindingNavigator_collection
             // 
-            resources.ApplyResources(this.bindingNavigator_collection, "bindingNavigator_collection");
             this.bindingNavigator_collection.AddNewItem = null;
             this.bindingNavigator_collection.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator_collection.DeleteItem = null;
+            resources.ApplyResources(this.bindingNavigator_collection, "bindingNavigator_collection");
             this.bindingNavigator_collection.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.bindingNavigator_collection.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -618,29 +611,28 @@
             this.bindingNavigator_collection.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator_collection.Name = "bindingNavigator_collection";
             this.bindingNavigator_collection.PositionItem = this.bindingNavigatorPositionItem;
-            this.toolTip1.SetToolTip(this.bindingNavigator_collection, resources.GetString("bindingNavigator_collection.ToolTip"));
             // 
             // bindingNavigatorCountItem
             // 
-            resources.ApplyResources(this.bindingNavigatorCountItem, "bindingNavigatorCountItem");
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            resources.ApplyResources(this.bindingNavigatorCountItem, "bindingNavigatorCountItem");
             // 
             // bindingNavigatorMoveFirstItem
             // 
-            resources.ApplyResources(this.bindingNavigatorMoveFirstItem, "bindingNavigatorMoveFirstItem");
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.bindingNavigatorMoveFirstItem, "bindingNavigatorMoveFirstItem");
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             // 
             // bindingNavigatorMovePreviousItem
             // 
-            resources.ApplyResources(this.bindingNavigatorMovePreviousItem, "bindingNavigatorMovePreviousItem");
             this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.bindingNavigatorMovePreviousItem, "bindingNavigatorMovePreviousItem");
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             // 
             // bindingNavigatorSeparator
             // 
-            resources.ApplyResources(this.bindingNavigatorSeparator, "bindingNavigatorSeparator");
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            resources.ApplyResources(this.bindingNavigatorSeparator, "bindingNavigatorSeparator");
             // 
             // bindingNavigatorPositionItem
             // 
@@ -649,80 +641,76 @@
             // 
             // bindingNavigatorSeparator1
             // 
-            resources.ApplyResources(this.bindingNavigatorSeparator1, "bindingNavigatorSeparator1");
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            resources.ApplyResources(this.bindingNavigatorSeparator1, "bindingNavigatorSeparator1");
             // 
             // bindingNavigatorMoveNextItem
             // 
-            resources.ApplyResources(this.bindingNavigatorMoveNextItem, "bindingNavigatorMoveNextItem");
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.bindingNavigatorMoveNextItem, "bindingNavigatorMoveNextItem");
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             // 
             // bindingNavigatorMoveLastItem
             // 
-            resources.ApplyResources(this.bindingNavigatorMoveLastItem, "bindingNavigatorMoveLastItem");
             this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.bindingNavigatorMoveLastItem, "bindingNavigatorMoveLastItem");
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             // 
             // bindingNavigatorSeparator2
             // 
-            resources.ApplyResources(this.bindingNavigatorSeparator2, "bindingNavigatorSeparator2");
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            resources.ApplyResources(this.bindingNavigatorSeparator2, "bindingNavigatorSeparator2");
             // 
             // toolStripTextBox_find
             // 
-            resources.ApplyResources(this.toolStripTextBox_find, "toolStripTextBox_find");
             this.toolStripTextBox_find.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.toolStripTextBox_find, "toolStripTextBox_find");
             this.toolStripTextBox_find.Name = "toolStripTextBox_find";
             this.toolStripTextBox_find.TextChanged += new System.EventHandler(this.TextBox_find_TextChanged);
             // 
             // toolStripButton_small_font
             // 
-            resources.ApplyResources(this.toolStripButton_small_font, "toolStripButton_small_font");
             this.toolStripButton_small_font.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.toolStripButton_small_font, "toolStripButton_small_font");
             this.toolStripButton_small_font.Name = "toolStripButton_small_font";
             this.toolStripButton_small_font.Click += new System.EventHandler(this.ToolStripButton_small_font_Click);
             // 
             // toolStripLabel_font
             // 
-            resources.ApplyResources(this.toolStripLabel_font, "toolStripLabel_font");
             this.toolStripLabel_font.Name = "toolStripLabel_font";
+            resources.ApplyResources(this.toolStripLabel_font, "toolStripLabel_font");
             // 
             // toolStripButton_large_font
             // 
-            resources.ApplyResources(this.toolStripButton_large_font, "toolStripButton_large_font");
             this.toolStripButton_large_font.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.toolStripButton_large_font, "toolStripButton_large_font");
             this.toolStripButton_large_font.Name = "toolStripButton_large_font";
             this.toolStripButton_large_font.Click += new System.EventHandler(this.ToolStripButton_large_font_Click);
             // 
             // tabPage_firehose
             // 
-            resources.ApplyResources(this.tabPage_firehose, "tabPage_firehose");
             this.tabPage_firehose.Controls.Add(this.panel2);
             this.tabPage_firehose.Controls.Add(this.panel1);
             this.tabPage_firehose.Controls.Add(this.dataGridView_FInd_Server);
             this.tabPage_firehose.Controls.Add(this.statusStrip_firehose);
+            resources.ApplyResources(this.tabPage_firehose, "tabPage_firehose");
             this.tabPage_firehose.Name = "tabPage_firehose";
-            this.toolTip1.SetToolTip(this.tabPage_firehose, resources.GetString("tabPage_firehose.ToolTip"));
             this.tabPage_firehose.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Controls.Add(this.textBox_main_term);
             this.panel2.Controls.Add(this.dataGridView_final);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
-            this.toolTip1.SetToolTip(this.panel2, resources.GetString("panel2.ToolTip"));
             // 
             // textBox_main_term
             // 
             resources.ApplyResources(this.textBox_main_term, "textBox_main_term");
             this.textBox_main_term.Name = "textBox_main_term";
-            this.toolTip1.SetToolTip(this.textBox_main_term, resources.GetString("textBox_main_term.ToolTip"));
             // 
             // dataGridView_final
             // 
-            resources.ApplyResources(this.dataGridView_final, "dataGridView_final");
             this.dataGridView_final.AllowUserToAddRows = false;
             this.dataGridView_final.AllowUserToDeleteRows = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
@@ -737,6 +725,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView_final.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            resources.ApplyResources(this.dataGridView_final, "dataGridView_final");
             this.dataGridView_final.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column_Sel,
             this.Column_Name,
@@ -762,7 +751,6 @@
             this.dataGridView_final.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView_final.RowTemplate.Height = 24;
             this.dataGridView_final.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.toolTip1.SetToolTip(this.dataGridView_final, resources.GetString("dataGridView_final.ToolTip"));
             this.dataGridView_final.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellContentClick);
             this.dataGridView_final.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_final_CellDoubleClick);
             // 
@@ -812,12 +800,11 @@
             // 
             // contextMenuStrip_final
             // 
-            resources.ApplyResources(this.contextMenuStrip_final, "contextMenuStrip_final");
             this.contextMenuStrip_final.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip_final.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.загрузитьССервераToolStripMenuItem});
             this.contextMenuStrip_final.Name = "contextMenuStrip_final";
-            this.toolTip1.SetToolTip(this.contextMenuStrip_final, resources.GetString("contextMenuStrip_final.ToolTip"));
+            resources.ApplyResources(this.contextMenuStrip_final, "contextMenuStrip_final");
             this.contextMenuStrip_final.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStrip_final_Opening);
             // 
             // загрузитьССервераToolStripMenuItem
@@ -828,7 +815,6 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.groupBox_fh_sel_path);
             this.panel1.Controls.Add(this.groupBox_tm_model);
             this.panel1.Controls.Add(this.groupBox4);
@@ -847,20 +833,19 @@
             this.panel1.Controls.Add(this.textBox_oemhash);
             this.panel1.Controls.Add(this.label_oemhash);
             this.panel1.Controls.Add(this.textBox_modelid);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.toolTip1.SetToolTip(this.panel1, resources.GetString("panel1.ToolTip"));
             // 
             // groupBox_fh_sel_path
             // 
-            resources.ApplyResources(this.groupBox_fh_sel_path, "groupBox_fh_sel_path");
             this.groupBox_fh_sel_path.Controls.Add(this.checkBox_Find_Local);
             this.groupBox_fh_sel_path.Controls.Add(this.checkBox_Find_Server);
             this.groupBox_fh_sel_path.Controls.Add(this.radioButton_alldir);
             this.groupBox_fh_sel_path.Controls.Add(this.radioButton_topdir);
             this.groupBox_fh_sel_path.Controls.Add(this.button_path);
+            resources.ApplyResources(this.groupBox_fh_sel_path, "groupBox_fh_sel_path");
             this.groupBox_fh_sel_path.Name = "groupBox_fh_sel_path";
             this.groupBox_fh_sel_path.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox_fh_sel_path, resources.GetString("groupBox_fh_sel_path.ToolTip"));
             // 
             // checkBox_Find_Local
             // 
@@ -868,7 +853,6 @@
             this.checkBox_Find_Local.Checked = true;
             this.checkBox_Find_Local.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_Find_Local.Name = "checkBox_Find_Local";
-            this.toolTip1.SetToolTip(this.checkBox_Find_Local, resources.GetString("checkBox_Find_Local.ToolTip"));
             this.checkBox_Find_Local.UseVisualStyleBackColor = true;
             this.checkBox_Find_Local.CheckedChanged += new System.EventHandler(this.CheckBox_Find_Local_CheckedChanged);
             // 
@@ -876,7 +860,6 @@
             // 
             resources.ApplyResources(this.checkBox_Find_Server, "checkBox_Find_Server");
             this.checkBox_Find_Server.Name = "checkBox_Find_Server";
-            this.toolTip1.SetToolTip(this.checkBox_Find_Server, resources.GetString("checkBox_Find_Server.ToolTip"));
             this.checkBox_Find_Server.UseVisualStyleBackColor = true;
             this.checkBox_Find_Server.CheckedChanged += new System.EventHandler(this.CheckBox_Find_Server_CheckedChanged);
             // 
@@ -886,67 +869,58 @@
             this.radioButton_alldir.Checked = true;
             this.radioButton_alldir.Name = "radioButton_alldir";
             this.radioButton_alldir.TabStop = true;
-            this.toolTip1.SetToolTip(this.radioButton_alldir, resources.GetString("radioButton_alldir.ToolTip"));
             this.radioButton_alldir.UseVisualStyleBackColor = true;
             // 
             // radioButton_topdir
             // 
             resources.ApplyResources(this.radioButton_topdir, "radioButton_topdir");
             this.radioButton_topdir.Name = "radioButton_topdir";
-            this.toolTip1.SetToolTip(this.radioButton_topdir, resources.GetString("radioButton_topdir.ToolTip"));
             this.radioButton_topdir.UseVisualStyleBackColor = true;
             // 
             // button_path
             // 
             resources.ApplyResources(this.button_path, "button_path");
             this.button_path.Name = "button_path";
-            this.toolTip1.SetToolTip(this.button_path, resources.GetString("button_path.ToolTip"));
             this.button_path.UseVisualStyleBackColor = true;
             this.button_path.Click += new System.EventHandler(this.Button_path_Click);
             // 
             // groupBox_tm_model
             // 
-            resources.ApplyResources(this.groupBox_tm_model, "groupBox_tm_model");
             this.groupBox_tm_model.Controls.Add(this.label_chip_sn);
             this.groupBox_tm_model.Controls.Add(this.label_model);
             this.groupBox_tm_model.Controls.Add(this.label_altname);
             this.groupBox_tm_model.Controls.Add(this.label_tm);
+            resources.ApplyResources(this.groupBox_tm_model, "groupBox_tm_model");
             this.groupBox_tm_model.Name = "groupBox_tm_model";
             this.groupBox_tm_model.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox_tm_model, resources.GetString("groupBox_tm_model.ToolTip"));
             // 
             // label_chip_sn
             // 
             resources.ApplyResources(this.label_chip_sn, "label_chip_sn");
             this.label_chip_sn.Name = "label_chip_sn";
-            this.toolTip1.SetToolTip(this.label_chip_sn, resources.GetString("label_chip_sn.ToolTip"));
             // 
             // label_model
             // 
             resources.ApplyResources(this.label_model, "label_model");
             this.label_model.Name = "label_model";
-            this.toolTip1.SetToolTip(this.label_model, resources.GetString("label_model.ToolTip"));
             // 
             // label_altname
             // 
             resources.ApplyResources(this.label_altname, "label_altname");
             this.label_altname.Name = "label_altname";
-            this.toolTip1.SetToolTip(this.label_altname, resources.GetString("label_altname.ToolTip"));
             // 
             // label_tm
             // 
             resources.ApplyResources(this.label_tm, "label_tm");
             this.label_tm.Name = "label_tm";
-            this.toolTip1.SetToolTip(this.label_tm, resources.GetString("label_tm.ToolTip"));
             // 
             // groupBox4
             // 
-            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Controls.Add(this.radioButton_adb_reset);
             this.groupBox4.Controls.Add(this.radioButton_man_reset);
+            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox4, resources.GetString("groupBox4.ToolTip"));
             // 
             // radioButton_adb_reset
             // 
@@ -954,14 +928,12 @@
             this.radioButton_adb_reset.Checked = true;
             this.radioButton_adb_reset.Name = "radioButton_adb_reset";
             this.radioButton_adb_reset.TabStop = true;
-            this.toolTip1.SetToolTip(this.radioButton_adb_reset, resources.GetString("radioButton_adb_reset.ToolTip"));
             this.radioButton_adb_reset.UseVisualStyleBackColor = true;
             // 
             // radioButton_man_reset
             // 
             resources.ApplyResources(this.radioButton_man_reset, "radioButton_man_reset");
             this.radioButton_man_reset.Name = "radioButton_man_reset";
-            this.toolTip1.SetToolTip(this.radioButton_man_reset, resources.GetString("radioButton_man_reset.ToolTip"));
             this.radioButton_man_reset.UseVisualStyleBackColor = true;
             // 
             // checkBox_send
@@ -970,20 +942,17 @@
             this.checkBox_send.Checked = true;
             this.checkBox_send.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_send.Name = "checkBox_send";
-            this.toolTip1.SetToolTip(this.checkBox_send, resources.GetString("checkBox_send.ToolTip"));
             this.checkBox_send.UseVisualStyleBackColor = true;
             // 
             // label_log
             // 
             resources.ApplyResources(this.label_log, "label_log");
             this.label_log.Name = "label_log";
-            this.toolTip1.SetToolTip(this.label_log, resources.GetString("label_log.ToolTip"));
             // 
             // checkBox_Log
             // 
             resources.ApplyResources(this.checkBox_Log, "checkBox_Log");
             this.checkBox_Log.Name = "checkBox_Log";
-            this.toolTip1.SetToolTip(this.checkBox_Log, resources.GetString("checkBox_Log.ToolTip"));
             this.checkBox_Log.UseVisualStyleBackColor = true;
             this.checkBox_Log.CheckedChanged += new System.EventHandler(this.CheckBox_Log_CheckedChanged);
             // 
@@ -991,7 +960,6 @@
             // 
             resources.ApplyResources(this.button_findIDs, "button_findIDs");
             this.button_findIDs.Name = "button_findIDs";
-            this.toolTip1.SetToolTip(this.button_findIDs, resources.GetString("button_findIDs.ToolTip"));
             this.button_findIDs.UseVisualStyleBackColor = true;
             this.button_findIDs.Click += new System.EventHandler(this.Button_findIDs_Click);
             // 
@@ -999,82 +967,70 @@
             // 
             resources.ApplyResources(this.label_SW_Ver, "label_SW_Ver");
             this.label_SW_Ver.Name = "label_SW_Ver";
-            this.toolTip1.SetToolTip(this.label_SW_Ver, resources.GetString("label_SW_Ver.ToolTip"));
             // 
             // label_swid
             // 
             resources.ApplyResources(this.label_swid, "label_swid");
             this.label_swid.Name = "label_swid";
-            this.toolTip1.SetToolTip(this.label_swid, resources.GetString("label_swid.ToolTip"));
             // 
             // label_hwid
             // 
             resources.ApplyResources(this.label_hwid, "label_hwid");
             this.label_hwid.Name = "label_hwid";
-            this.toolTip1.SetToolTip(this.label_hwid, resources.GetString("label_hwid.ToolTip"));
             // 
             // button_useSahara_fhf
             // 
             resources.ApplyResources(this.button_useSahara_fhf, "button_useSahara_fhf");
             this.button_useSahara_fhf.Name = "button_useSahara_fhf";
-            this.toolTip1.SetToolTip(this.button_useSahara_fhf, resources.GetString("button_useSahara_fhf.ToolTip"));
             this.button_useSahara_fhf.UseVisualStyleBackColor = true;
             this.button_useSahara_fhf.Click += new System.EventHandler(this.Button__useSahara_fhf_Click);
             // 
             // textBox_oemid
             // 
-            resources.ApplyResources(this.textBox_oemid, "textBox_oemid");
             this.textBox_oemid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_oemid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.textBox_oemid, "textBox_oemid");
             this.textBox_oemid.Name = "textBox_oemid";
-            this.toolTip1.SetToolTip(this.textBox_oemid, resources.GetString("textBox_oemid.ToolTip"));
             // 
             // label_modelid
             // 
             resources.ApplyResources(this.label_modelid, "label_modelid");
             this.label_modelid.Name = "label_modelid";
-            this.toolTip1.SetToolTip(this.label_modelid, resources.GetString("label_modelid.ToolTip"));
             // 
             // textBox_hwid
             // 
-            resources.ApplyResources(this.textBox_hwid, "textBox_hwid");
             this.textBox_hwid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_hwid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.textBox_hwid, "textBox_hwid");
             this.textBox_hwid.Name = "textBox_hwid";
-            this.toolTip1.SetToolTip(this.textBox_hwid, resources.GetString("textBox_hwid.ToolTip"));
             // 
             // label_oemid
             // 
             resources.ApplyResources(this.label_oemid, "label_oemid");
             this.label_oemid.Name = "label_oemid";
-            this.toolTip1.SetToolTip(this.label_oemid, resources.GetString("label_oemid.ToolTip"));
             // 
             // textBox_oemhash
             // 
-            resources.ApplyResources(this.textBox_oemhash, "textBox_oemhash");
             this.textBox_oemhash.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_oemhash.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.textBox_oemhash, "textBox_oemhash");
             this.textBox_oemhash.Name = "textBox_oemhash";
-            this.toolTip1.SetToolTip(this.textBox_oemhash, resources.GetString("textBox_oemhash.ToolTip"));
             this.textBox_oemhash.TextChanged += new System.EventHandler(this.TextBox_oemhash_TextChanged);
             // 
             // label_oemhash
             // 
             resources.ApplyResources(this.label_oemhash, "label_oemhash");
             this.label_oemhash.Name = "label_oemhash";
-            this.toolTip1.SetToolTip(this.label_oemhash, resources.GetString("label_oemhash.ToolTip"));
             // 
             // textBox_modelid
             // 
-            resources.ApplyResources(this.textBox_modelid, "textBox_modelid");
             this.textBox_modelid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_modelid.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            resources.ApplyResources(this.textBox_modelid, "textBox_modelid");
             this.textBox_modelid.Name = "textBox_modelid";
-            this.toolTip1.SetToolTip(this.textBox_modelid, resources.GetString("textBox_modelid.ToolTip"));
             // 
             // dataGridView_FInd_Server
             // 
-            resources.ApplyResources(this.dataGridView_FInd_Server, "dataGridView_FInd_Server");
             this.dataGridView_FInd_Server.AllowUserToAddRows = false;
             this.dataGridView_FInd_Server.AllowUserToDeleteRows = false;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1094,46 +1050,44 @@
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView_FInd_Server.DefaultCellStyle = dataGridViewCellStyle10;
+            resources.ApplyResources(this.dataGridView_FInd_Server, "dataGridView_FInd_Server");
             this.dataGridView_FInd_Server.Name = "dataGridView_FInd_Server";
             this.dataGridView_FInd_Server.ReadOnly = true;
             this.dataGridView_FInd_Server.RowTemplate.Height = 24;
-            this.toolTip1.SetToolTip(this.dataGridView_FInd_Server, resources.GetString("dataGridView_FInd_Server.ToolTip"));
             // 
             // statusStrip_firehose
             // 
-            resources.ApplyResources(this.statusStrip_firehose, "statusStrip_firehose");
             this.statusStrip_firehose.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip_firehose.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel_filescompleted,
             this.toolStripProgressBar_filescompleted,
             this.toolStripStatusLabel_dowork});
+            resources.ApplyResources(this.statusStrip_firehose, "statusStrip_firehose");
             this.statusStrip_firehose.Name = "statusStrip_firehose";
-            this.toolTip1.SetToolTip(this.statusStrip_firehose, resources.GetString("statusStrip_firehose.ToolTip"));
             // 
             // toolStripStatusLabel_filescompleted
             // 
-            resources.ApplyResources(this.toolStripStatusLabel_filescompleted, "toolStripStatusLabel_filescompleted");
             this.toolStripStatusLabel_filescompleted.Name = "toolStripStatusLabel_filescompleted";
+            resources.ApplyResources(this.toolStripStatusLabel_filescompleted, "toolStripStatusLabel_filescompleted");
             // 
             // toolStripProgressBar_filescompleted
             // 
-            resources.ApplyResources(this.toolStripProgressBar_filescompleted, "toolStripProgressBar_filescompleted");
             this.toolStripProgressBar_filescompleted.ForeColor = System.Drawing.Color.LimeGreen;
             this.toolStripProgressBar_filescompleted.Name = "toolStripProgressBar_filescompleted";
+            resources.ApplyResources(this.toolStripProgressBar_filescompleted, "toolStripProgressBar_filescompleted");
             this.toolStripProgressBar_filescompleted.Step = 1;
             this.toolStripProgressBar_filescompleted.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // toolStripStatusLabel_dowork
             // 
-            resources.ApplyResources(this.toolStripStatusLabel_dowork, "toolStripStatusLabel_dowork");
             this.toolStripStatusLabel_dowork.Name = "toolStripStatusLabel_dowork";
+            resources.ApplyResources(this.toolStripStatusLabel_dowork, "toolStripStatusLabel_dowork");
             // 
             // tabPage_phone
             // 
-            resources.ApplyResources(this.tabPage_phone, "tabPage_phone");
             this.tabPage_phone.Controls.Add(this.tableLayoutPanel_phone);
+            resources.ApplyResources(this.tabPage_phone, "tabPage_phone");
             this.tabPage_phone.Name = "tabPage_phone";
-            this.toolTip1.SetToolTip(this.tabPage_phone, resources.GetString("tabPage_phone.ToolTip"));
             this.tabPage_phone.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel_phone
@@ -1144,48 +1098,42 @@
             this.tableLayoutPanel_phone.Controls.Add(this.groupBox_term_buttons, 0, 1);
             this.tableLayoutPanel_phone.Controls.Add(this.progressBar_phone, 0, 2);
             this.tableLayoutPanel_phone.Name = "tableLayoutPanel_phone";
-            this.toolTip1.SetToolTip(this.tableLayoutPanel_phone, resources.GetString("tableLayoutPanel_phone.ToolTip"));
             // 
             // groupBox_terminal
             // 
-            resources.ApplyResources(this.groupBox_terminal, "groupBox_terminal");
             this.groupBox_terminal.Controls.Add(this.textBox_soft_term);
+            resources.ApplyResources(this.groupBox_terminal, "groupBox_terminal");
             this.groupBox_terminal.Name = "groupBox_terminal";
             this.groupBox_terminal.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox_terminal, resources.GetString("groupBox_terminal.ToolTip"));
             // 
             // textBox_soft_term
             // 
             resources.ApplyResources(this.textBox_soft_term, "textBox_soft_term");
             this.textBox_soft_term.Name = "textBox_soft_term";
-            this.toolTip1.SetToolTip(this.textBox_soft_term, resources.GetString("textBox_soft_term.ToolTip"));
             this.textBox_soft_term.TextChanged += new System.EventHandler(this.TextBox_soft_term_TextChanged);
             // 
             // groupBox_soft
             // 
-            resources.ApplyResources(this.groupBox_soft, "groupBox_soft");
             this.groupBox_soft.Controls.Add(this.tabControl_soft);
+            resources.ApplyResources(this.groupBox_soft, "groupBox_soft");
             this.groupBox_soft.Name = "groupBox_soft";
             this.tableLayoutPanel_phone.SetRowSpan(this.groupBox_soft, 3);
             this.groupBox_soft.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox_soft, resources.GetString("groupBox_soft.ToolTip"));
             // 
             // tabControl_soft
             // 
-            resources.ApplyResources(this.tabControl_soft, "tabControl_soft");
             this.tabControl_soft.Controls.Add(this.tabPage_adb);
             this.tabControl_soft.Controls.Add(this.tabPage_sahara);
             this.tabControl_soft.Controls.Add(this.tabPage_fb);
+            resources.ApplyResources(this.tabControl_soft, "tabControl_soft");
             this.tabControl_soft.Name = "tabControl_soft";
             this.tabControl_soft.SelectedIndex = 0;
-            this.toolTip1.SetToolTip(this.tabControl_soft, resources.GetString("tabControl_soft.ToolTip"));
             // 
             // tabPage_adb
             // 
-            resources.ApplyResources(this.tabPage_adb, "tabPage_adb");
             this.tabPage_adb.Controls.Add(this.tableLayoutPanel_adb);
+            resources.ApplyResources(this.tabPage_adb, "tabPage_adb");
             this.tabPage_adb.Name = "tabPage_adb";
-            this.toolTip1.SetToolTip(this.tabPage_adb, resources.GetString("tabPage_adb.ToolTip"));
             this.tabPage_adb.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel_adb
@@ -1197,13 +1145,11 @@
             this.tableLayoutPanel_adb.Controls.Add(this.listView_ADB_devices, 0, 1);
             this.tableLayoutPanel_adb.Controls.Add(this.button_ADB_comstart, 2, 1);
             this.tableLayoutPanel_adb.Name = "tableLayoutPanel_adb";
-            this.toolTip1.SetToolTip(this.tableLayoutPanel_adb, resources.GetString("tableLayoutPanel_adb.ToolTip"));
             // 
             // button_ADB_start
             // 
             resources.ApplyResources(this.button_ADB_start, "button_ADB_start");
             this.button_ADB_start.Name = "button_ADB_start";
-            this.toolTip1.SetToolTip(this.button_ADB_start, resources.GetString("button_ADB_start.ToolTip"));
             this.button_ADB_start.UseVisualStyleBackColor = true;
             this.button_ADB_start.Click += new System.EventHandler(this.Button_ADB_start_Click);
             // 
@@ -1211,35 +1157,31 @@
             // 
             resources.ApplyResources(this.button_ADB_clear, "button_ADB_clear");
             this.button_ADB_clear.Name = "button_ADB_clear";
-            this.toolTip1.SetToolTip(this.button_ADB_clear, resources.GetString("button_ADB_clear.ToolTip"));
             this.button_ADB_clear.UseVisualStyleBackColor = true;
             this.button_ADB_clear.Click += new System.EventHandler(this.Button_ADB_clear_Click);
             // 
             // groupBox_adb_commands
             // 
-            resources.ApplyResources(this.groupBox_adb_commands, "groupBox_adb_commands");
             this.tableLayoutPanel_adb.SetColumnSpan(this.groupBox_adb_commands, 3);
             this.groupBox_adb_commands.Controls.Add(this.radioButton_reboot_fastboot);
             this.groupBox_adb_commands.Controls.Add(this.radioButton_adb_com);
             this.groupBox_adb_commands.Controls.Add(this.radioButton_adb_IDs);
             this.groupBox_adb_commands.Controls.Add(this.radioButton_reboot_edl);
             this.groupBox_adb_commands.Controls.Add(this.textBox_ADB_commandstring);
+            resources.ApplyResources(this.groupBox_adb_commands, "groupBox_adb_commands");
             this.groupBox_adb_commands.Name = "groupBox_adb_commands";
             this.groupBox_adb_commands.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox_adb_commands, resources.GetString("groupBox_adb_commands.ToolTip"));
             // 
             // radioButton_reboot_fastboot
             // 
             resources.ApplyResources(this.radioButton_reboot_fastboot, "radioButton_reboot_fastboot");
             this.radioButton_reboot_fastboot.Name = "radioButton_reboot_fastboot";
-            this.toolTip1.SetToolTip(this.radioButton_reboot_fastboot, resources.GetString("radioButton_reboot_fastboot.ToolTip"));
             this.radioButton_reboot_fastboot.UseVisualStyleBackColor = true;
             // 
             // radioButton_adb_com
             // 
             resources.ApplyResources(this.radioButton_adb_com, "radioButton_adb_com");
             this.radioButton_adb_com.Name = "radioButton_adb_com";
-            this.toolTip1.SetToolTip(this.radioButton_adb_com, resources.GetString("radioButton_adb_com.ToolTip"));
             this.radioButton_adb_com.UseVisualStyleBackColor = true;
             this.radioButton_adb_com.CheckedChanged += new System.EventHandler(this.RadioButton_adb_com_CheckedChanged);
             // 
@@ -1249,7 +1191,6 @@
             this.radioButton_adb_IDs.Checked = true;
             this.radioButton_adb_IDs.Name = "radioButton_adb_IDs";
             this.radioButton_adb_IDs.TabStop = true;
-            this.toolTip1.SetToolTip(this.radioButton_adb_IDs, resources.GetString("radioButton_adb_IDs.ToolTip"));
             this.radioButton_adb_IDs.UseVisualStyleBackColor = true;
             this.radioButton_adb_IDs.CheckedChanged += new System.EventHandler(this.RadioButton_adb_IDs_CheckedChanged);
             // 
@@ -1257,7 +1198,6 @@
             // 
             resources.ApplyResources(this.radioButton_reboot_edl, "radioButton_reboot_edl");
             this.radioButton_reboot_edl.Name = "radioButton_reboot_edl";
-            this.toolTip1.SetToolTip(this.radioButton_reboot_edl, resources.GetString("radioButton_reboot_edl.ToolTip"));
             this.radioButton_reboot_edl.UseVisualStyleBackColor = true;
             this.radioButton_reboot_edl.CheckedChanged += new System.EventHandler(this.RadioButton_reboot_edl_CheckedChanged);
             // 
@@ -1265,17 +1205,16 @@
             // 
             resources.ApplyResources(this.textBox_ADB_commandstring, "textBox_ADB_commandstring");
             this.textBox_ADB_commandstring.Name = "textBox_ADB_commandstring";
-            this.toolTip1.SetToolTip(this.textBox_ADB_commandstring, resources.GetString("textBox_ADB_commandstring.ToolTip"));
             this.textBox_ADB_commandstring.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBox_ADB_commandstring_KeyUp);
             // 
             // listView_ADB_devices
             // 
-            resources.ApplyResources(this.listView_ADB_devices, "listView_ADB_devices");
             this.listView_ADB_devices.CheckBoxes = true;
             this.listView_ADB_devices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader_ADB_SN,
             this.columnHeader_ADB_Model});
             this.tableLayoutPanel_adb.SetColumnSpan(this.listView_ADB_devices, 2);
+            resources.ApplyResources(this.listView_ADB_devices, "listView_ADB_devices");
             this.listView_ADB_devices.FullRowSelect = true;
             this.listView_ADB_devices.GridLines = true;
             this.listView_ADB_devices.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -1283,7 +1222,6 @@
             this.listView_ADB_devices.MultiSelect = false;
             this.listView_ADB_devices.Name = "listView_ADB_devices";
             this.listView_ADB_devices.ShowGroups = false;
-            this.toolTip1.SetToolTip(this.listView_ADB_devices, resources.GetString("listView_ADB_devices.ToolTip"));
             this.listView_ADB_devices.UseCompatibleStateImageBehavior = false;
             this.listView_ADB_devices.View = System.Windows.Forms.View.Details;
             this.listView_ADB_devices.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.ListView_ADB_devices_ItemChecked);
@@ -1300,13 +1238,11 @@
             // 
             resources.ApplyResources(this.button_ADB_comstart, "button_ADB_comstart");
             this.button_ADB_comstart.Name = "button_ADB_comstart";
-            this.toolTip1.SetToolTip(this.button_ADB_comstart, resources.GetString("button_ADB_comstart.ToolTip"));
             this.button_ADB_comstart.UseVisualStyleBackColor = true;
             this.button_ADB_comstart.Click += new System.EventHandler(this.Button_ADB_comstart_Click);
             // 
             // tabPage_sahara
             // 
-            resources.ApplyResources(this.tabPage_sahara, "tabPage_sahara");
             this.tabPage_sahara.Controls.Add(this.listView_comport);
             this.tabPage_sahara.Controls.Add(this.groupBox_fh_commands);
             this.tabPage_sahara.Controls.Add(this.groupBox_lun_count);
@@ -1316,13 +1252,12 @@
             this.tabPage_sahara.Controls.Add(this.label4);
             this.tabPage_sahara.Controls.Add(this.button_Sahara_Ids);
             this.tabPage_sahara.Controls.Add(this.label_Sahara_fhf);
+            resources.ApplyResources(this.tabPage_sahara, "tabPage_sahara");
             this.tabPage_sahara.Name = "tabPage_sahara";
-            this.toolTip1.SetToolTip(this.tabPage_sahara, resources.GetString("tabPage_sahara.ToolTip"));
             this.tabPage_sahara.UseVisualStyleBackColor = true;
             // 
             // listView_comport
             // 
-            resources.ApplyResources(this.listView_comport, "listView_comport");
             this.listView_comport.CheckBoxes = true;
             this.listView_comport.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader_portnum,
@@ -1331,10 +1266,10 @@
             this.listView_comport.GridLines = true;
             this.listView_comport.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView_comport.HideSelection = false;
+            resources.ApplyResources(this.listView_comport, "listView_comport");
             this.listView_comport.MultiSelect = false;
             this.listView_comport.Name = "listView_comport";
             this.listView_comport.ShowGroups = false;
-            this.toolTip1.SetToolTip(this.listView_comport, resources.GetString("listView_comport.ToolTip"));
             this.listView_comport.UseCompatibleStateImageBehavior = false;
             this.listView_comport.View = System.Windows.Forms.View.Details;
             this.listView_comport.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.ListView_comport_ItemChecked);
@@ -1349,12 +1284,11 @@
             // 
             // groupBox_fh_commands
             // 
-            resources.ApplyResources(this.groupBox_fh_commands, "groupBox_fh_commands");
             this.groupBox_fh_commands.Controls.Add(this.comboBox_fh_commands);
             this.groupBox_fh_commands.Controls.Add(this.button_Sahara_CommandStart);
+            resources.ApplyResources(this.groupBox_fh_commands, "groupBox_fh_commands");
             this.groupBox_fh_commands.Name = "groupBox_fh_commands";
             this.groupBox_fh_commands.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox_fh_commands, resources.GetString("groupBox_fh_commands.ToolTip"));
             // 
             // comboBox_fh_commands
             // 
@@ -1370,23 +1304,20 @@
             resources.GetString("comboBox_fh_commands.Items6"),
             resources.GetString("comboBox_fh_commands.Items7")});
             this.comboBox_fh_commands.Name = "comboBox_fh_commands";
-            this.toolTip1.SetToolTip(this.comboBox_fh_commands, resources.GetString("comboBox_fh_commands.ToolTip"));
             // 
             // button_Sahara_CommandStart
             // 
             resources.ApplyResources(this.button_Sahara_CommandStart, "button_Sahara_CommandStart");
             this.button_Sahara_CommandStart.Name = "button_Sahara_CommandStart";
-            this.toolTip1.SetToolTip(this.button_Sahara_CommandStart, resources.GetString("button_Sahara_CommandStart.ToolTip"));
             this.button_Sahara_CommandStart.UseVisualStyleBackColor = true;
             this.button_Sahara_CommandStart.Click += new System.EventHandler(this.Button_Sahara_CommandStart_Click);
             // 
             // groupBox_lun_count
             // 
-            resources.ApplyResources(this.groupBox_lun_count, "groupBox_lun_count");
             this.groupBox_lun_count.Controls.Add(this.comboBox_lun_count);
+            resources.ApplyResources(this.groupBox_lun_count, "groupBox_lun_count");
             this.groupBox_lun_count.Name = "groupBox_lun_count";
             this.groupBox_lun_count.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox_lun_count, resources.GetString("groupBox_lun_count.ToolTip"));
             // 
             // comboBox_lun_count
             // 
@@ -1395,23 +1326,20 @@
             this.comboBox_lun_count.Items.AddRange(new object[] {
             resources.GetString("comboBox_lun_count.Items")});
             this.comboBox_lun_count.Name = "comboBox_lun_count";
-            this.toolTip1.SetToolTip(this.comboBox_lun_count, resources.GetString("comboBox_lun_count.ToolTip"));
             this.comboBox_lun_count.SelectedIndexChanged += new System.EventHandler(this.ComboBox_lun_count_SelectedIndexChanged);
             // 
             // groupBox_mem_type
             // 
-            resources.ApplyResources(this.groupBox_mem_type, "groupBox_mem_type");
             this.groupBox_mem_type.Controls.Add(this.radioButton_mem_ufs);
             this.groupBox_mem_type.Controls.Add(this.radioButton_mem_emmc);
+            resources.ApplyResources(this.groupBox_mem_type, "groupBox_mem_type");
             this.groupBox_mem_type.Name = "groupBox_mem_type";
             this.groupBox_mem_type.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox_mem_type, resources.GetString("groupBox_mem_type.ToolTip"));
             // 
             // radioButton_mem_ufs
             // 
             resources.ApplyResources(this.radioButton_mem_ufs, "radioButton_mem_ufs");
             this.radioButton_mem_ufs.Name = "radioButton_mem_ufs";
-            this.toolTip1.SetToolTip(this.radioButton_mem_ufs, resources.GetString("radioButton_mem_ufs.ToolTip"));
             this.radioButton_mem_ufs.UseVisualStyleBackColor = true;
             // 
             // radioButton_mem_emmc
@@ -1420,61 +1348,53 @@
             this.radioButton_mem_emmc.Checked = true;
             this.radioButton_mem_emmc.Name = "radioButton_mem_emmc";
             this.radioButton_mem_emmc.TabStop = true;
-            this.toolTip1.SetToolTip(this.radioButton_mem_emmc, resources.GetString("radioButton_mem_emmc.ToolTip"));
             this.radioButton_mem_emmc.UseVisualStyleBackColor = true;
             // 
             // groupBox_LUN
             // 
-            resources.ApplyResources(this.groupBox_LUN, "groupBox_LUN");
             this.groupBox_LUN.Controls.Add(this.groupBox_select_gpt);
             this.groupBox_LUN.Controls.Add(this.groupBox_total_gpt);
             this.groupBox_LUN.Controls.Add(this.listView_GPT);
             this.groupBox_LUN.Controls.Add(this.groupBox_block_size);
             this.groupBox_LUN.Controls.Add(this.groupBox_total_blocks);
+            resources.ApplyResources(this.groupBox_LUN, "groupBox_LUN");
             this.groupBox_LUN.Name = "groupBox_LUN";
             this.groupBox_LUN.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox_LUN, resources.GetString("groupBox_LUN.ToolTip"));
             // 
             // groupBox_select_gpt
             // 
-            resources.ApplyResources(this.groupBox_select_gpt, "groupBox_select_gpt");
             this.groupBox_select_gpt.Controls.Add(this.label_GPT_bytes);
             this.groupBox_select_gpt.Controls.Add(this.label_select_gpt);
+            resources.ApplyResources(this.groupBox_select_gpt, "groupBox_select_gpt");
             this.groupBox_select_gpt.Name = "groupBox_select_gpt";
             this.groupBox_select_gpt.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox_select_gpt, resources.GetString("groupBox_select_gpt.ToolTip"));
             // 
             // label_GPT_bytes
             // 
             resources.ApplyResources(this.label_GPT_bytes, "label_GPT_bytes");
             this.label_GPT_bytes.Name = "label_GPT_bytes";
-            this.toolTip1.SetToolTip(this.label_GPT_bytes, resources.GetString("label_GPT_bytes.ToolTip"));
             // 
             // label_select_gpt
             // 
             resources.ApplyResources(this.label_select_gpt, "label_select_gpt");
             this.label_select_gpt.Name = "label_select_gpt";
-            this.toolTip1.SetToolTip(this.label_select_gpt, resources.GetString("label_select_gpt.ToolTip"));
             this.label_select_gpt.TextChanged += new System.EventHandler(this.Label_select_gpt_TextChanged);
             // 
             // groupBox_total_gpt
             // 
-            resources.ApplyResources(this.groupBox_total_gpt, "groupBox_total_gpt");
             this.groupBox_total_gpt.Controls.Add(this.label_total_gpt);
+            resources.ApplyResources(this.groupBox_total_gpt, "groupBox_total_gpt");
             this.groupBox_total_gpt.Name = "groupBox_total_gpt";
             this.groupBox_total_gpt.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox_total_gpt, resources.GetString("groupBox_total_gpt.ToolTip"));
             // 
             // label_total_gpt
             // 
             resources.ApplyResources(this.label_total_gpt, "label_total_gpt");
             this.label_total_gpt.Name = "label_total_gpt";
-            this.toolTip1.SetToolTip(this.label_total_gpt, resources.GetString("label_total_gpt.ToolTip"));
             this.label_total_gpt.TextChanged += new System.EventHandler(this.Label_total_gpt_TextChanged);
             // 
             // listView_GPT
             // 
-            resources.ApplyResources(this.listView_GPT, "listView_GPT");
             this.listView_GPT.CheckBoxes = true;
             this.listView_GPT.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.StartLBA,
@@ -1483,6 +1403,7 @@
             this.Block_length,
             this.Block_Bytes});
             this.listView_GPT.ContextMenuStrip = this.contextMenuStrip_gpt;
+            resources.ApplyResources(this.listView_GPT, "listView_GPT");
             this.listView_GPT.FullRowSelect = true;
             this.listView_GPT.GridLines = true;
             this.listView_GPT.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -1490,7 +1411,6 @@
             this.listView_GPT.MultiSelect = false;
             this.listView_GPT.Name = "listView_GPT";
             this.listView_GPT.ShowGroups = false;
-            this.toolTip1.SetToolTip(this.listView_GPT, resources.GetString("listView_GPT.ToolTip"));
             this.listView_GPT.UseCompatibleStateImageBehavior = false;
             this.listView_GPT.View = System.Windows.Forms.View.Details;
             this.listView_GPT.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.ListView_GPT_ColumnWidthChanged);
@@ -1519,7 +1439,6 @@
             // 
             // contextMenuStrip_gpt
             // 
-            resources.ApplyResources(this.contextMenuStrip_gpt, "contextMenuStrip_gpt");
             this.contextMenuStrip_gpt.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip_gpt.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выбратьРазделToolStripMenuItem,
@@ -1532,14 +1451,14 @@
             this.выбратьВсеРазделыToolStripMenuItem,
             this.сброситьВыборdeselectAllToolStripMenuItem});
             this.contextMenuStrip_gpt.Name = "contextMenuStrip_gpt";
-            this.toolTip1.SetToolTip(this.contextMenuStrip_gpt, resources.GetString("contextMenuStrip_gpt.ToolTip"));
+            resources.ApplyResources(this.contextMenuStrip_gpt, "contextMenuStrip_gpt");
             // 
             // выбратьРазделToolStripMenuItem
             // 
-            resources.ApplyResources(this.выбратьРазделToolStripMenuItem, "выбратьРазделToolStripMenuItem");
             this.выбратьРазделToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сохранитьВыбранныйРазделToolStripMenuItem,
             this.записатьФайлВВыбранныйРазделLoadToolStripMenuItem});
+            resources.ApplyResources(this.выбратьРазделToolStripMenuItem, "выбратьРазделToolStripMenuItem");
             this.выбратьРазделToolStripMenuItem.Name = "выбратьРазделToolStripMenuItem";
             this.выбратьРазделToolStripMenuItem.Click += new System.EventHandler(this.ВыбратьРазделToolStripMenuItem_Click);
             // 
@@ -1551,15 +1470,15 @@
             // 
             // записатьФайлВВыбранныйРазделLoadToolStripMenuItem
             // 
-            resources.ApplyResources(this.записатьФайлВВыбранныйРазделLoadToolStripMenuItem, "записатьФайлВВыбранныйРазделLoadToolStripMenuItem");
             this.записатьФайлВВыбранныйРазделLoadToolStripMenuItem.BackColor = System.Drawing.Color.LightSalmon;
+            resources.ApplyResources(this.записатьФайлВВыбранныйРазделLoadToolStripMenuItem, "записатьФайлВВыбранныйРазделLoadToolStripMenuItem");
             this.записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Name = "записатьФайлВВыбранныйРазделLoadToolStripMenuItem";
             this.записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Click += new System.EventHandler(this.ЗаписатьФайлВВыбранныйРазделLoadToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             this.toolStripSeparator4.Name = "toolStripSeparator4";
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             // 
             // сохранитьТаблицуВФайлmainGPTbinToolStripMenuItem
             // 
@@ -1587,8 +1506,8 @@
             // 
             // toolStripSeparator3
             // 
-            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             this.toolStripSeparator3.Name = "toolStripSeparator3";
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
             // выбратьВсеРазделыToolStripMenuItem
             // 
@@ -1604,40 +1523,35 @@
             // 
             // groupBox_block_size
             // 
-            resources.ApplyResources(this.groupBox_block_size, "groupBox_block_size");
             this.groupBox_block_size.Controls.Add(this.label_block_size);
+            resources.ApplyResources(this.groupBox_block_size, "groupBox_block_size");
             this.groupBox_block_size.Name = "groupBox_block_size";
             this.groupBox_block_size.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox_block_size, resources.GetString("groupBox_block_size.ToolTip"));
             // 
             // label_block_size
             // 
             resources.ApplyResources(this.label_block_size, "label_block_size");
             this.label_block_size.Name = "label_block_size";
-            this.toolTip1.SetToolTip(this.label_block_size, resources.GetString("label_block_size.ToolTip"));
             // 
             // groupBox_total_blocks
             // 
-            resources.ApplyResources(this.groupBox_total_blocks, "groupBox_total_blocks");
             this.groupBox_total_blocks.Controls.Add(this.label_total_blocks);
+            resources.ApplyResources(this.groupBox_total_blocks, "groupBox_total_blocks");
             this.groupBox_total_blocks.Name = "groupBox_total_blocks";
             this.groupBox_total_blocks.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox_total_blocks, resources.GetString("groupBox_total_blocks.ToolTip"));
             // 
             // label_total_blocks
             // 
             resources.ApplyResources(this.label_total_blocks, "label_total_blocks");
             this.label_total_blocks.Name = "label_total_blocks";
-            this.toolTip1.SetToolTip(this.label_total_blocks, resources.GetString("label_total_blocks.ToolTip"));
             this.label_total_blocks.TextChanged += new System.EventHandler(this.Label_total_blocks_TextChanged);
             // 
             // groupBox_logs
             // 
-            resources.ApplyResources(this.groupBox_logs, "groupBox_logs");
             this.groupBox_logs.Controls.Add(this.comboBox_log);
+            resources.ApplyResources(this.groupBox_logs, "groupBox_logs");
             this.groupBox_logs.Name = "groupBox_logs";
             this.groupBox_logs.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox_logs, resources.GetString("groupBox_logs.ToolTip"));
             // 
             // comboBox_log
             // 
@@ -1649,19 +1563,16 @@
             resources.GetString("comboBox_log.Items2"),
             resources.GetString("comboBox_log.Items3")});
             this.comboBox_log.Name = "comboBox_log";
-            this.toolTip1.SetToolTip(this.comboBox_log, resources.GetString("comboBox_log.ToolTip"));
             // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.toolTip1.SetToolTip(this.label4, resources.GetString("label4.ToolTip"));
             // 
             // button_Sahara_Ids
             // 
             resources.ApplyResources(this.button_Sahara_Ids, "button_Sahara_Ids");
             this.button_Sahara_Ids.Name = "button_Sahara_Ids";
-            this.toolTip1.SetToolTip(this.button_Sahara_Ids, resources.GetString("button_Sahara_Ids.ToolTip"));
             this.button_Sahara_Ids.UseVisualStyleBackColor = true;
             this.button_Sahara_Ids.Click += new System.EventHandler(this.Button_Sahara_Ids_Click);
             // 
@@ -1669,14 +1580,12 @@
             // 
             resources.ApplyResources(this.label_Sahara_fhf, "label_Sahara_fhf");
             this.label_Sahara_fhf.Name = "label_Sahara_fhf";
-            this.toolTip1.SetToolTip(this.label_Sahara_fhf, resources.GetString("label_Sahara_fhf.ToolTip"));
             // 
             // tabPage_fb
             // 
-            resources.ApplyResources(this.tabPage_fb, "tabPage_fb");
             this.tabPage_fb.Controls.Add(this.tableLayoutPanel_fb);
+            resources.ApplyResources(this.tabPage_fb, "tabPage_fb");
             this.tabPage_fb.Name = "tabPage_fb";
-            this.toolTip1.SetToolTip(this.tabPage_fb, resources.GetString("tabPage_fb.ToolTip"));
             this.tabPage_fb.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel_fb
@@ -1687,19 +1596,16 @@
             this.tableLayoutPanel_fb.Controls.Add(this.button_fb_com_start, 2, 1);
             this.tableLayoutPanel_fb.Controls.Add(this.listView_fb_devices, 0, 1);
             this.tableLayoutPanel_fb.Name = "tableLayoutPanel_fb";
-            this.toolTip1.SetToolTip(this.tableLayoutPanel_fb, resources.GetString("tableLayoutPanel_fb.ToolTip"));
             // 
             // button_fb_check
             // 
             resources.ApplyResources(this.button_fb_check, "button_fb_check");
             this.button_fb_check.Name = "button_fb_check";
-            this.toolTip1.SetToolTip(this.button_fb_check, resources.GetString("button_fb_check.ToolTip"));
             this.button_fb_check.UseVisualStyleBackColor = true;
             this.button_fb_check.Click += new System.EventHandler(this.Button_fb_check_Click);
             // 
             // groupBox_fb_commands
             // 
-            resources.ApplyResources(this.groupBox_fb_commands, "groupBox_fb_commands");
             this.tableLayoutPanel_fb.SetColumnSpan(this.groupBox_fb_commands, 3);
             this.groupBox_fb_commands.Controls.Add(this.radioButton_fb_eraseud);
             this.groupBox_fb_commands.Controls.Add(this.radioButton_fb_rebootedl);
@@ -1711,43 +1617,38 @@
             this.groupBox_fb_commands.Controls.Add(this.radioButton_fb_lock);
             this.groupBox_fb_commands.Controls.Add(this.radioButton_fb_devinfo);
             this.groupBox_fb_commands.Controls.Add(this.radioButton_fb_reboot_normal);
+            resources.ApplyResources(this.groupBox_fb_commands, "groupBox_fb_commands");
             this.groupBox_fb_commands.Name = "groupBox_fb_commands";
             this.groupBox_fb_commands.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox_fb_commands, resources.GetString("groupBox_fb_commands.ToolTip"));
             // 
             // radioButton_fb_eraseud
             // 
             resources.ApplyResources(this.radioButton_fb_eraseud, "radioButton_fb_eraseud");
             this.radioButton_fb_eraseud.Name = "radioButton_fb_eraseud";
-            this.toolTip1.SetToolTip(this.radioButton_fb_eraseud, resources.GetString("radioButton_fb_eraseud.ToolTip"));
             this.radioButton_fb_eraseud.UseVisualStyleBackColor = true;
             // 
             // radioButton_fb_rebootedl
             // 
             resources.ApplyResources(this.radioButton_fb_rebootedl, "radioButton_fb_rebootedl");
             this.radioButton_fb_rebootedl.Name = "radioButton_fb_rebootedl";
-            this.toolTip1.SetToolTip(this.radioButton_fb_rebootedl, resources.GetString("radioButton_fb_rebootedl.ToolTip"));
             this.radioButton_fb_rebootedl.UseVisualStyleBackColor = true;
             // 
             // radioButton_fb_getvar
             // 
             resources.ApplyResources(this.radioButton_fb_getvar, "radioButton_fb_getvar");
             this.radioButton_fb_getvar.Name = "radioButton_fb_getvar";
-            this.toolTip1.SetToolTip(this.radioButton_fb_getvar, resources.GetString("radioButton_fb_getvar.ToolTip"));
             this.radioButton_fb_getvar.UseVisualStyleBackColor = true;
             // 
             // textBox_fb_commandline
             // 
             resources.ApplyResources(this.textBox_fb_commandline, "textBox_fb_commandline");
             this.textBox_fb_commandline.Name = "textBox_fb_commandline";
-            this.toolTip1.SetToolTip(this.textBox_fb_commandline, resources.GetString("textBox_fb_commandline.ToolTip"));
             this.textBox_fb_commandline.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBox_fb_commandline_KeyUp);
             // 
             // radioButton_fb_commandline
             // 
             resources.ApplyResources(this.radioButton_fb_commandline, "radioButton_fb_commandline");
             this.radioButton_fb_commandline.Name = "radioButton_fb_commandline";
-            this.toolTip1.SetToolTip(this.radioButton_fb_commandline, resources.GetString("radioButton_fb_commandline.ToolTip"));
             this.radioButton_fb_commandline.UseVisualStyleBackColor = true;
             this.radioButton_fb_commandline.CheckedChanged += new System.EventHandler(this.RadioButton_fb_commandline_CheckedChanged);
             // 
@@ -1755,28 +1656,24 @@
             // 
             resources.ApplyResources(this.radioButton_fb_rebootbootloader, "radioButton_fb_rebootbootloader");
             this.radioButton_fb_rebootbootloader.Name = "radioButton_fb_rebootbootloader";
-            this.toolTip1.SetToolTip(this.radioButton_fb_rebootbootloader, resources.GetString("radioButton_fb_rebootbootloader.ToolTip"));
             this.radioButton_fb_rebootbootloader.UseVisualStyleBackColor = true;
             // 
             // radioButton_fb_unlock
             // 
             resources.ApplyResources(this.radioButton_fb_unlock, "radioButton_fb_unlock");
             this.radioButton_fb_unlock.Name = "radioButton_fb_unlock";
-            this.toolTip1.SetToolTip(this.radioButton_fb_unlock, resources.GetString("radioButton_fb_unlock.ToolTip"));
             this.radioButton_fb_unlock.UseVisualStyleBackColor = true;
             // 
             // radioButton_fb_lock
             // 
             resources.ApplyResources(this.radioButton_fb_lock, "radioButton_fb_lock");
             this.radioButton_fb_lock.Name = "radioButton_fb_lock";
-            this.toolTip1.SetToolTip(this.radioButton_fb_lock, resources.GetString("radioButton_fb_lock.ToolTip"));
             this.radioButton_fb_lock.UseVisualStyleBackColor = true;
             // 
             // radioButton_fb_devinfo
             // 
             resources.ApplyResources(this.radioButton_fb_devinfo, "radioButton_fb_devinfo");
             this.radioButton_fb_devinfo.Name = "radioButton_fb_devinfo";
-            this.toolTip1.SetToolTip(this.radioButton_fb_devinfo, resources.GetString("radioButton_fb_devinfo.ToolTip"));
             this.radioButton_fb_devinfo.UseVisualStyleBackColor = true;
             // 
             // radioButton_fb_reboot_normal
@@ -1785,32 +1682,29 @@
             this.radioButton_fb_reboot_normal.Checked = true;
             this.radioButton_fb_reboot_normal.Name = "radioButton_fb_reboot_normal";
             this.radioButton_fb_reboot_normal.TabStop = true;
-            this.toolTip1.SetToolTip(this.radioButton_fb_reboot_normal, resources.GetString("radioButton_fb_reboot_normal.ToolTip"));
             this.radioButton_fb_reboot_normal.UseVisualStyleBackColor = true;
             // 
             // button_fb_com_start
             // 
             resources.ApplyResources(this.button_fb_com_start, "button_fb_com_start");
             this.button_fb_com_start.Name = "button_fb_com_start";
-            this.toolTip1.SetToolTip(this.button_fb_com_start, resources.GetString("button_fb_com_start.ToolTip"));
             this.button_fb_com_start.UseVisualStyleBackColor = true;
             this.button_fb_com_start.Click += new System.EventHandler(this.Button_fb_com_start_Click);
             // 
             // listView_fb_devices
             // 
-            resources.ApplyResources(this.listView_fb_devices, "listView_fb_devices");
             this.listView_fb_devices.CheckBoxes = true;
             this.listView_fb_devices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader_FB_sernum,
             this.columnHeader_FB_Model});
             this.tableLayoutPanel_fb.SetColumnSpan(this.listView_fb_devices, 2);
+            resources.ApplyResources(this.listView_fb_devices, "listView_fb_devices");
             this.listView_fb_devices.FullRowSelect = true;
             this.listView_fb_devices.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView_fb_devices.HideSelection = false;
             this.listView_fb_devices.MultiSelect = false;
             this.listView_fb_devices.Name = "listView_fb_devices";
             this.listView_fb_devices.ShowGroups = false;
-            this.toolTip1.SetToolTip(this.listView_fb_devices, resources.GetString("listView_fb_devices.ToolTip"));
             this.listView_fb_devices.UseCompatibleStateImageBehavior = false;
             this.listView_fb_devices.View = System.Windows.Forms.View.Details;
             this.listView_fb_devices.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.ListView_fb_devices_ItemChecked);
@@ -1825,18 +1719,16 @@
             // 
             // groupBox_term_buttons
             // 
-            resources.ApplyResources(this.groupBox_term_buttons, "groupBox_term_buttons");
             this.groupBox_term_buttons.Controls.Add(this.button_term_clear);
             this.groupBox_term_buttons.Controls.Add(this.button_term_save);
+            resources.ApplyResources(this.groupBox_term_buttons, "groupBox_term_buttons");
             this.groupBox_term_buttons.Name = "groupBox_term_buttons";
             this.groupBox_term_buttons.TabStop = false;
-            this.toolTip1.SetToolTip(this.groupBox_term_buttons, resources.GetString("groupBox_term_buttons.ToolTip"));
             // 
             // button_term_clear
             // 
             resources.ApplyResources(this.button_term_clear, "button_term_clear");
             this.button_term_clear.Name = "button_term_clear";
-            this.toolTip1.SetToolTip(this.button_term_clear, resources.GetString("button_term_clear.ToolTip"));
             this.button_term_clear.UseVisualStyleBackColor = true;
             this.button_term_clear.Click += new System.EventHandler(this.Button_term_clear_Click);
             // 
@@ -1844,19 +1736,17 @@
             // 
             resources.ApplyResources(this.button_term_save, "button_term_save");
             this.button_term_save.Name = "button_term_save";
-            this.toolTip1.SetToolTip(this.button_term_save, resources.GetString("button_term_save.ToolTip"));
             this.button_term_save.UseVisualStyleBackColor = true;
             this.button_term_save.Click += new System.EventHandler(this.Button_term_save_Click);
             // 
             // tabControl1
             // 
-            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabPage_phone);
             this.tabControl1.Controls.Add(this.tabPage_firehose);
             this.tabControl1.Controls.Add(this.tabPage_collection);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.toolTip1.SetToolTip(this.tabControl1, resources.GetString("tabControl1.ToolTip"));
             // 
             // serialPort1
             // 
@@ -1964,7 +1854,6 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Formfhf";
-            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Formfhf_FormClosing);
             this.Load += new System.EventHandler(this.Formfhf_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
