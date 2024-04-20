@@ -54,7 +54,7 @@ jobs:
       uses: microsoft/setup-msbuild@v2
        
     - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.2
+      uses: NuGet/setup-nuget@v2
      
     - name: Restore NuGet Packages
       run: nuget restore FirehoseFinder.sln
