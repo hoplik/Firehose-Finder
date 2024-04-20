@@ -171,6 +171,12 @@
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 6</value>
   </data>
+  <data name="chinaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 26</value>
+  </data>
+  <data name="chinaToolStripMenuItem.Text" xml:space="preserve">
+    <value>中文(简体)</value>
+  </data>
   <data name="русскийToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 26</value>
   </data>
@@ -182,12 +188,6 @@
   </data>
   <data name="englishToolStripMenuItem.Text" xml:space="preserve">
     <value>English</value>
-  </data>
-  <data name="chinaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 26</value>
-  </data>
-  <data name="chinaToolStripMenuItem.Text" xml:space="preserve">
-    <value>中文(简体)</value>
   </data>
   <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 6</value>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formfhf));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,7 +43,7 @@
             this.dataSet1 = new System.Data.DataSet();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker_Read_File = new System.ComponentModel.BackgroundWorker();
-            this.toolTip1 = new System.Windows.Forms.ToolTip();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.progressBar_phone = new System.Windows.Forms.ProgressBar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,7 +77,7 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage_collection = new System.Windows.Forms.TabPage();
             this.dataGridView_collection = new System.Windows.Forms.DataGridView();
-            this.bindingNavigator_collection = new System.Windows.Forms.BindingNavigator();
+            this.bindingNavigator_collection = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -101,7 +102,7 @@
             this.Column_Full = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_SW_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_Comp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStrip_final = new System.Windows.Forms.ContextMenuStrip();
+            this.contextMenuStrip_final = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.загрузитьССервераToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox_fh_sel_path = new System.Windows.Forms.GroupBox();
@@ -182,7 +183,7 @@
             this.Block_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Block_length = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Block_Bytes = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.contextMenuStrip_gpt = new System.Windows.Forms.ContextMenuStrip();
+            this.contextMenuStrip_gpt = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.выбратьРазделToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьВыбранныйРазделToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.записатьФайлВВыбранныйРазделLoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -225,13 +226,13 @@
             this.button_term_clear = new System.Windows.Forms.Button();
             this.button_term_save = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.serialPort1 = new System.IO.Ports.SerialPort();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.dataSet_Find = new System.Data.DataSet();
             this.backgroundWorker_dump = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker_xml = new System.ComponentModel.BackgroundWorker();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.bindingSource_collection = new System.Windows.Forms.BindingSource();
-            this.bindingSource_firehose = new System.Windows.Forms.BindingSource();
+            this.bindingSource_collection = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource_firehose = new System.Windows.Forms.BindingSource(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.backgroundWorker_rawprogram = new System.ComponentModel.BackgroundWorker();
             this.process_FH_Loader = new System.Diagnostics.Process();
@@ -332,9 +333,9 @@
             this.выборЯзыкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.автоматическиToolStripMenuItem,
             this.toolStripSeparator6,
+            this.chinaToolStripMenuItem,
             this.русскийToolStripMenuItem,
             this.englishToolStripMenuItem,
-            this.chinaToolStripMenuItem,
             this.toolStripSeparator7,
             this.предложитьПереводToolStripMenuItem});
             this.выборЯзыкаToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.lensel;

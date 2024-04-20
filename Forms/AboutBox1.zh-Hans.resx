@@ -117,17 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="linkLabel_telega.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>82, 24</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="linkLabel_telega.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 69</value>
-  </data>
-  <data name="linkLabel_telega.Text" xml:space="preserve">
-    <value>Do you have any questions, suggestions, comments?
-Write to the Telegram channel "Firehose - Finder issues"</value>
   </data>
   <data name="logoPictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 163</value>
@@ -138,17 +130,11 @@ Write to the Telegram channel "Firehose - Finder issues"</value>
   <data name="labelProductName.Size" type="System.Drawing.Size, System.Drawing">
     <value>530, 21</value>
   </data>
-  <data name="labelProductName.Text" xml:space="preserve">
-    <value>Product name</value>
-  </data>
   <data name="labelVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>219, 34</value>
   </data>
   <data name="labelVersion.Size" type="System.Drawing.Size, System.Drawing">
     <value>530, 21</value>
-  </data>
-  <data name="labelVersion.Text" xml:space="preserve">
-    <value>Version</value>
   </data>
   <data name="labelCopyright.Location" type="System.Drawing.Point, System.Drawing">
     <value>219, 68</value>
@@ -156,20 +142,11 @@ Write to the Telegram channel "Firehose - Finder issues"</value>
   <data name="labelCopyright.Size" type="System.Drawing.Size, System.Drawing">
     <value>530, 21</value>
   </data>
-  <data name="labelCopyright.Text" xml:space="preserve">
-    <value>Copyright</value>
-  </data>
   <data name="textBoxDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>219, 106</value>
   </data>
   <data name="textBoxDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>530, 61</value>
-  </data>
-  <data name="textBoxDescription.Text" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="linkLabel_forum.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>12, 125</value>
   </data>
   <data name="linkLabel_forum.Location" type="System.Drawing.Point, System.Drawing">
     <value>214, 171</value>
@@ -177,38 +154,20 @@ Write to the Telegram channel "Firehose - Finder issues"</value>
   <data name="linkLabel_forum.Size" type="System.Drawing.Size, System.Drawing">
     <value>536, 69</value>
   </data>
-  <data name="linkLabel_forum.Text" xml:space="preserve">
-    <value>Topic 4PDA "Общие принципы восстановления загрузчиков на Qualcomm | HS - USB QDLoader 9008, HS - USB Diagnostics 9006, QHUSB_DLOAD и т.д."</value>
-  </data>
   <data name="label_donate.Location" type="System.Drawing.Point, System.Drawing">
     <value>214, 325</value>
-  </data>
-  <data name="label_donate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 32</value>
-  </data>
-  <data name="label_donate.Text" xml:space="preserve">
-    <value>Did you have a desire to thank the author for the work done? Please use the buttons to donate.</value>
   </data>
   <data name="button_donate_ymoney.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 24</value>
   </data>
-  <data name="button_donate_ymoney.Text" xml:space="preserve">
-    <value>ЮMoney - thank`s</value>
-  </data>
   <data name="button_donate_pp.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 26</value>
   </data>
-  <data name="button_donate_pp.Text" xml:space="preserve">
-    <value>QiWi - many thank`s</value>
-  </data>
   <data name="label_thanks.Text" xml:space="preserve">
-    <value>Thanks:
-8Mi_Yile - for translation into Chinese (Simplified) language;
-@SashaSeriy - for ideas, comments and basic information;
-@Always_Alone_R - for testing on a UFS device;
-@krivedko - for tips for the firmware unpacker.</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>About</value>
+    <value>谢谢:
+8Mi_Wile-翻译成中文;
+@SashaSeriy-用于想法，评论和基本信息;
+@Always_Alone_R-用于在UFS设备上进行测试;
+@@krevedko-对于固件拆包的提示。</value>
   </data>
 </root>

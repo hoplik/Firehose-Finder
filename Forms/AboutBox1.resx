@@ -133,10 +133,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="linkLabel_telega.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 156</value>
+    <value>3, 171</value>
   </data>
   <data name="linkLabel_telega.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 63</value>
+    <value>204, 69</value>
   </data>
   <data name="linkLabel_telega.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -167,7 +167,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="logoPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 148</value>
+    <value>202, 163</value>
   </data>
   <data name="logoPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -191,7 +191,7 @@
     <value>Fill</value>
   </data>
   <data name="labelProductName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>221, 0</value>
+    <value>218, 0</value>
   </data>
   <data name="labelProductName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>8, 0, 4, 0</value>
@@ -200,7 +200,7 @@
     <value>0, 21</value>
   </data>
   <data name="labelProductName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>528, 21</value>
+    <value>531, 21</value>
   </data>
   <data name="labelProductName.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -227,7 +227,7 @@
     <value>Fill</value>
   </data>
   <data name="labelVersion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>221, 31</value>
+    <value>218, 34</value>
   </data>
   <data name="labelVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>8, 0, 4, 0</value>
@@ -236,7 +236,7 @@
     <value>0, 21</value>
   </data>
   <data name="labelVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>528, 21</value>
+    <value>531, 21</value>
   </data>
   <data name="labelVersion.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -263,7 +263,7 @@
     <value>Fill</value>
   </data>
   <data name="labelCopyright.Location" type="System.Drawing.Point, System.Drawing">
-    <value>221, 62</value>
+    <value>218, 68</value>
   </data>
   <data name="labelCopyright.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>8, 0, 4, 0</value>
@@ -272,7 +272,7 @@
     <value>0, 21</value>
   </data>
   <data name="labelCopyright.Size" type="System.Drawing.Size, System.Drawing">
-    <value>528, 21</value>
+    <value>531, 21</value>
   </data>
   <data name="labelCopyright.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -299,7 +299,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>656, 325</value>
+    <value>656, 359</value>
   </data>
   <data name="okButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -329,7 +329,7 @@
     <value>Fill</value>
   </data>
   <data name="textBoxDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>221, 97</value>
+    <value>218, 106</value>
   </data>
   <data name="textBoxDescription.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>8, 4, 4, 4</value>
@@ -341,7 +341,7 @@
     <value>Both</value>
   </data>
   <data name="textBoxDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>528, 55</value>
+    <value>531, 61</value>
   </data>
   <data name="textBoxDescription.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -371,10 +371,10 @@
     <value>14, 125</value>
   </data>
   <data name="linkLabel_forum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 156</value>
+    <value>213, 171</value>
   </data>
   <data name="linkLabel_forum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>534, 63</value>
+    <value>537, 69</value>
   </data>
   <data name="linkLabel_forum.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -398,7 +398,7 @@
     <value>True</value>
   </data>
   <data name="label_donate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>216, 289</value>
+    <value>213, 325</value>
   </data>
   <data name="label_donate.Size" type="System.Drawing.Size, System.Drawing">
     <value>420, 32</value>
@@ -422,10 +422,10 @@
     <value>8</value>
   </data>
   <data name="button_donate_ymoney.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 292</value>
+    <value>3, 328</value>
   </data>
   <data name="button_donate_ymoney.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 24</value>
+    <value>204, 24</value>
   </data>
   <data name="button_donate_ymoney.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -446,10 +446,10 @@
     <value>9</value>
   </data>
   <data name="button_donate_pp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 322</value>
+    <value>3, 358</value>
   </data>
   <data name="button_donate_pp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 26</value>
+    <value>204, 26</value>
   </data>
   <data name="button_donate_pp.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -476,16 +476,17 @@
     <value>Fill</value>
   </data>
   <data name="label_thanks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 219</value>
+    <value>3, 240</value>
   </data>
   <data name="label_thanks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>747, 70</value>
+    <value>747, 85</value>
   </data>
   <data name="label_thanks.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
   <data name="label_thanks.Text" xml:space="preserve">
     <value>Благодарности:
+8Mi_Yile - за перевод на китайский язык;
 @SashaSeriy - за идеи, комментарии и базовую информацию;
 @Always_Alone_R - за тестирование на устройстве UFS;
 @krivedko - за подсказки для распаковщика прошивки.</value>
@@ -518,7 +519,7 @@
     <value>8</value>
   </data>
   <data name="tableLayoutPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>753, 353</value>
+    <value>753, 387</value>
   </data>
   <data name="tableLayoutPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -536,7 +537,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="linkLabel_telega" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="logoPictureBox" Row="0" RowSpan="4" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelProductName" Row="0" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="labelVersion" Row="1" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="labelCopyright" Row="2" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="okButton" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="textBoxDescription" Row="3" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="linkLabel_forum" Row="4" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="label_donate" Row="6" RowSpan="2" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="button_donate_ymoney" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_donate_pp" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label_thanks" Row="5" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,Percent,67,Absolute,107" /&gt;&lt;Rows Styles="Percent,14,28571,Percent,14,28572,Percent,14,28572,Percent,28,57143,Percent,28,57143,Absolute,70,Absolute,30,Absolute,30" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="linkLabel_telega" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="logoPictureBox" Row="0" RowSpan="4" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelProductName" Row="0" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="labelVersion" Row="1" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="labelCopyright" Row="2" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="okButton" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="textBoxDescription" Row="3" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="linkLabel_forum" Row="4" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="label_donate" Row="6" RowSpan="2" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="button_donate_ymoney" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_donate_pp" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label_thanks" Row="5" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,Percent,67,Absolute,114" /&gt;&lt;Rows Styles="Percent,14,28571,Percent,14,28572,Percent,14,28572,Percent,28,57143,Percent,28,57143,Absolute,85,Absolute,30,Absolute,30" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -545,7 +546,7 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>777, 375</value>
+    <value>777, 409</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>

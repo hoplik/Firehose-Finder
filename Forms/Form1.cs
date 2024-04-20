@@ -149,6 +149,9 @@ namespace FirehoseFinder
                 case "en":
                     englishToolStripMenuItem.Checked = true;
                     break;
+                case "zh-Hans":
+                    chinaToolStripMenuItem.Checked = true;
+                    break;
                 default:
                     автоматическиToolStripMenuItem.Checked = true;
                     break;
