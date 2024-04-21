@@ -118,59 +118,55 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="linkLabel_telega.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 69</value>
+  <data name="label_ss_ws.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 16</value>
   </data>
-  <data name="logoPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 163</value>
+  <data name="label_ss_ws.Text" xml:space="preserve">
+    <value>字节</value>
   </data>
-  <data name="labelProductName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 0</value>
+  <data name="label_secsize_ws.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 16</value>
   </data>
-  <data name="labelProductName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>532, 21</value>
+  <data name="label_secsize_ws.Text" xml:space="preserve">
+    <value>扇区大小（十进制）</value>
   </data>
-  <data name="labelVersion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 34</value>
+  <data name="label_disk_ws.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 16</value>
   </data>
-  <data name="labelVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>532, 21</value>
+  <data name="label_disk_ws.Text" xml:space="preserve">
+    <value>到磁盘编号（十进制）</value>
   </data>
-  <data name="labelCopyright.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 68</value>
+  <data name="label_count1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 16</value>
   </data>
-  <data name="labelCopyright.Size" type="System.Drawing.Size, System.Drawing">
-    <value>532, 21</value>
+  <data name="label_count1.Text" xml:space="preserve">
+    <value>扇区</value>
   </data>
-  <data name="textBoxDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 106</value>
+  <data name="label_count_ws.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 16</value>
   </data>
-  <data name="textBoxDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>532, 61</value>
+  <data name="label_count_ws.Text" xml:space="preserve">
+    <value>数量（十进制）</value>
   </data>
-  <data name="linkLabel_forum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 171</value>
+  <data name="label_start_ws.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 16</value>
   </data>
-  <data name="linkLabel_forum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>538, 69</value>
+  <data name="label_start_ws.Text" xml:space="preserve">
+    <value>从扇区号开始（十六进制，0x）</value>
   </data>
-  <data name="label_donate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 325</value>
+  <data name="groupBox_ws.Text" xml:space="preserve">
+    <value>将二进制文件写入扇区</value>
   </data>
-  <data name="label_donate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>399, 48</value>
+  <data name="button_ws_cancel.Text" xml:space="preserve">
+    <value>取消</value>
   </data>
-  <data name="button_donate_ymoney.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 24</value>
+  <data name="label_storinfo_ws.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 16</value>
   </data>
-  <data name="button_donate_pp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 26</value>
+  <data name="label_storinfo_ws.Text" xml:space="preserve">
+    <value>当前扇区大小，扇区总数</value>
   </data>
-  <data name="label_thanks.Text" xml:space="preserve">
-    <value>致谢:
-8Mi_Yile-翻译成中文;
-@SashaSeriy-用于想法，评论和基本信息;
-@Always_Alone_R-用于在UFS设备上进行测试;
-@@krevedko-对于固件拆包的提示。</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>写到扇区</value>
   </data>
 </root>
