@@ -482,7 +482,7 @@
     <comment>offset</comment>
   </data>
   <data name="packer_version" xml:space="preserve">
-    <value>打包只因版本</value>
+    <value>打包机版本</value>
     <comment>Версия упаковщика</comment>
   </data>
   <data name="phone_version" xml:space="preserve">
