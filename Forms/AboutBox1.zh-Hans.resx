@@ -168,9 +168,9 @@
   </data>
   <data name="label_thanks.Text" xml:space="preserve">
     <value>致谢:
-8Mi_Yile-翻译成中文;
-@SashaSeriy-用于想法，评论和基本信息;
-@Always_Alone_R-用于在UFS设备上进行测试;
-@@krevedko-对于固件拆包的提示。</value>
+8Mi_Yile - 翻译成中文(简体);
+@SashaSeriy - 用于想法，评论和基本信息;
+@Always_Alone_R - 用于在UFS设备上进行测试;
+@@krevedko - 对于固件拆包的提示。</value>
   </data>
 </root>
