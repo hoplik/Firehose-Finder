@@ -658,9 +658,6 @@
   <data name="tb_er_write" xml:space="preserve">
     <value>Ошибка записи</value>
   </data>
-  <data name="bot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bot.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
-  </data>
   <data name="mb_title_mis" xml:space="preserve">
     <value>Внимание! Ошибка!</value>
   </data>

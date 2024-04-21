@@ -153,15 +153,6 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на 1577249282:AAFIZncf-90YpwMk_I7ad_YNwh4tnr5FXHo.
-        /// </summary>
-        internal static string bot {
-            get {
-                return ResourceManager.GetString("bot", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на Директория для распаковки.
         /// </summary>
         internal static string button_dirrepack {
