@@ -684,7 +684,6 @@
     <Content Include="QSaharaServer.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Resources\bot.txt" />
   </ItemGroup>
   <ItemGroup>
     <PublishFile Include="en\FirehoseFinder.resources">
