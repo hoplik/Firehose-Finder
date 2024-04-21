@@ -36,7 +36,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>24.4.21.0</ApplicationVersion>
+    <ApplicationVersion>24.4.22.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -485,6 +485,36 @@
     <Content Include="Resources\work.png" />
     <EmbeddedResource Include="Forms\AboutBox1.zh-Hans.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AGMRepacker.zh-Hans.resx">
+      <DependentUpon>AGMRepacker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dump_Sectors.zh-Hans.resx">
+      <DependentUpon>Dump_Sectors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExSert.zh-Hans.resx">
+      <DependentUpon>ExSert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Greeting.zh-Hans.resx">
+      <DependentUpon>Greeting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Hex_Search.zh-Hans.resx">
+      <DependentUpon>Hex_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InsertModelForm.zh-Hans.resx">
+      <DependentUpon>InsertModelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Peekpoke.zh-Hans.resx">
+      <DependentUpon>Peekpoke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RawProgramForm.zh-Hans.resx">
+      <DependentUpon>RawProgramForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SendProgForm.zh-Hans.resx">
+      <DependentUpon>SendProgForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Write_Sectors.zh-Hans.resx">
+      <DependentUpon>Write_Sectors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.zh-Hans.resx">
       <Generator>ResXFileCodeGenerator</Generator>
