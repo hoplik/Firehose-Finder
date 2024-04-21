@@ -194,7 +194,7 @@
     <comment>Готово.</comment>
   </data>
   <data name="dump_select_disc" xml:space="preserve">
-    <value> 环节为 </value>
+    <value> 扇区为 </value>
     <comment> секторов для </comment>
   </data>
   <data name="dump_select_sec" xml:space="preserve">
@@ -202,7 +202,7 @@
     <comment>Вы можете выбрать не более</comment>
   </data>
   <data name="dump_select_sectors" xml:space="preserve">
-    <value>磁盘 {1} 最多可选择 {0} 个分区</value>
+    <value>磁盘 {1} 最多可选择 {0} 个扇区</value>
     <comment>Вы можете выбрать не более {0} секторов для Диск {1}</comment>
   </data>
   <data name="encode" xml:space="preserve">
@@ -482,7 +482,7 @@
     <comment>offset</comment>
   </data>
   <data name="packer_version" xml:space="preserve">
-    <value>打包只因版本</value>
+    <value>打包机版本</value>
     <comment>Версия упаковщика</comment>
   </data>
   <data name="phone_version" xml:space="preserve">
@@ -498,7 +498,7 @@
     <comment>Параметры прошивки</comment>
   </data>
   <data name="sectors" xml:space="preserve">
-    <value>环节</value>
+    <value>扇区</value>
     <comment>секторов</comment>
   </data>
   <data name="sel_fold" xml:space="preserve">
@@ -794,7 +794,7 @@
     <comment>Текущий размер сектора</comment>
   </data>
   <data name="write_ts" xml:space="preserve">
-    <value>环节总数</value>
+    <value>扇区总数</value>
     <comment>всего секторов</comment>
   </data>
 </root>
