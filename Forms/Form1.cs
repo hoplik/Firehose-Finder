@@ -48,16 +48,8 @@ namespace FirehoseFinder
         readonly ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
         int ppc = 0; //Процент выполнения в параллельном процессе
         string output_FH = string.Empty; //Вывод результата работы лоадера в консоли на форму
-        private readonly TelegramBotClient mybot = new TelegramBotClient(BotToken());
         private readonly long chat = -1001227261414;
-
-        private static string BotToken()
-        {
-            var config = new ConfigurationBuilder()
-                .AddUserSecrets<Formfhf>(true)
-                .Build();
-            return config["bottoken"].ToString();//Resources.bot;
-        }
+        private readonly TelegramBotClient mybot = new TelegramBotClient(Resources.bot);
 
         /// <summary>
         /// Инициализация компонентов
