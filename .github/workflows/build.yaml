@@ -58,6 +58,10 @@ jobs:
      
     - name: Restore NuGet Packages
       run: nuget restore FirehoseFinder.sln
+
+    - name: Secrets
+      env:
+        bottoken: ${{ secrets.BOT }}
  
     - name: Build and Publish App
       run: msbuild FirehoseFinder.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
