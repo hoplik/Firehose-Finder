@@ -475,6 +475,7 @@
     <Content Include="Resources\database.png" />
     <Content Include="Resources\exit.png" />
     <Content Include="Resources\greet.png" />
+    <Content Include="Resources\Greeting_zh-Hans.txt" />
     <Content Include="Resources\help.png" />
     <Content Include="Resources\insert.png" />
     <Content Include="Resources\lensel.png" />
