@@ -1,6 +1,9 @@
 ﻿using FirehoseFinder.Properties;
 using System;
+using System.Globalization;
 using System.Resources;
+using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace FirehoseFinder
@@ -43,6 +46,14 @@ namespace FirehoseFinder
         {
             checkBox_start.Checked = Settings.Default.CheckBox_start_Checked;
             textBox_greeting.Text = LocRes.GetObject("Greeting").ToString();
+        }
+        private string Utf8tounicode(string utf8str)
+        {
+            Encoding unicode = Encoding.Unicode;
+            Encoding utf8 = Encoding.UTF8;
+            byte[] utf8Bytes = utf8.GetBytes(utf8str);
+            byte[] unicodeBytes = Encoding.Convert(utf8, unicode, utf8Bytes);
+            return Encoding.Unicode.GetString(unicodeBytes);
         }
     }
 }
