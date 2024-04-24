@@ -61,8 +61,6 @@ jobs:
 
     - name: Build and Publish App
       run: msbuild FirehoseFinder.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
-      env:
-        bottoken: ${{ secrets.BOT }}
  
     - name: Upload Artifact
       uses: actions/upload-artifact@v1.0.0
