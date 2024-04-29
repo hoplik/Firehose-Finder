@@ -47,7 +47,7 @@ jobs:
     runs-on: windows-latest
  
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4.1.4
       name: Checkout Code
      
     - name: Setup MSBuild
@@ -71,7 +71,7 @@ jobs:
       run: rm Resources/bot.txt
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v1.0.0
+      uses: actions/upload-artifact@v4.3.3
       with:
         name: Published APP
         path: bin\Release\Publish
