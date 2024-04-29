@@ -1,6 +1,5 @@
 ﻿using FirehoseFinder.Forms;
 using FirehoseFinder.Properties;
-using Microsoft.Extensions.Configuration;
 using SharpAdbClient;
 using System;
 using System.Collections.Generic;

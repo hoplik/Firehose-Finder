@@ -7,7 +7,7 @@ namespace FirehoseFinder
     public partial class SendProgForm : Form
     {
         //ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
-        
+
         public SendProgForm(Formfhf formfhf)
         {
             InitializeComponent();

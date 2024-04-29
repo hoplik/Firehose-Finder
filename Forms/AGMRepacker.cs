@@ -243,30 +243,30 @@ namespace FirehoseFinder
             {
                 //if (H_I.Bin_Nym == 1) Пока уберём для двухфайловых прошивок
                 //{
-                    H_I.Conf_Files = BitConverter.ToUInt32(res_bytes, (int)Func.Parsing_Header_Four_Bytes.Config_Files);
-                    H_I.Bin_Files = BitConverter.ToUInt32(res_bytes, (int)Func.Parsing_Header_Four_Bytes.Bin_Files);
-                    ParsingHeader.AppendLine(string.Format(LocRes.GetString("count_bin") + " - {0}" + Environment.NewLine +
-                        LocRes.GetString("count_inside_bin") + " - {1}" + Environment.NewLine +
-                        LocRes.GetString("count_inside_conf") + " - {2}", H_I.Bin_Nym, H_I.Bin_Files, H_I.Conf_Files));
-                    //try
-                    //{
-                        H_I.Header_Len = BitConverter.ToString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Header_Len, 4).Replace("-", "");
-                        H_I.Author = new ASCIIEncoding().GetString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Author, (int)Func.Parsing_Bytes.Long_number).TrimEnd('\0');
-                        H_I.Packer_Ver = new ASCIIEncoding().GetString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Packer_Version, (int)Func.Parsing_Bytes.String_parse).TrimEnd('\0');
-                        H_I.Phone_Ver = new ASCIIEncoding().GetString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Phone_Version, (int)Func.Parsing_Bytes.String_parse).TrimEnd('\0');
-                        H_I.Image_Ver = new ASCIIEncoding().GetString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Image_Version, (int)Func.Parsing_Bytes.String_parse).TrimEnd('\0');
-                        ParsingHeader.AppendLine(string.Format(LocRes.GetString("unknown") + " - {0}" + Environment.NewLine+
-                            LocRes.GetString("firmware_signer") + " - {1}" + Environment.NewLine+
-                            LocRes.GetString("packer_version") + " - {2}" + Environment.NewLine+
-                            LocRes.GetString("phone_version") + " - {3}" + Environment.NewLine+
-                            LocRes.GetString("firmware_version") + " - {4}", H_I.Header_Len, H_I.Author, H_I.Packer_Ver, H_I.Phone_Ver, H_I.Image_Ver));
-                        toolStripStatusLabel1.Text = LocRes.GetString("status_repack_parsing_header_complite");
-                    //}
-                    //catch (ArgumentOutOfRangeException Ex)
-                    //{
-                    //    ParsingHeader.AppendLine(LocRes.GetString("status_repack_parsing_header_failed"));
-                    //    toolStripStatusLabel1.Text = Ex.Message;
-                    //}
+                H_I.Conf_Files = BitConverter.ToUInt32(res_bytes, (int)Func.Parsing_Header_Four_Bytes.Config_Files);
+                H_I.Bin_Files = BitConverter.ToUInt32(res_bytes, (int)Func.Parsing_Header_Four_Bytes.Bin_Files);
+                ParsingHeader.AppendLine(string.Format(LocRes.GetString("count_bin") + " - {0}" + Environment.NewLine +
+                    LocRes.GetString("count_inside_bin") + " - {1}" + Environment.NewLine +
+                    LocRes.GetString("count_inside_conf") + " - {2}", H_I.Bin_Nym, H_I.Bin_Files, H_I.Conf_Files));
+                //try
+                //{
+                H_I.Header_Len = BitConverter.ToString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Header_Len, 4).Replace("-", "");
+                H_I.Author = new ASCIIEncoding().GetString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Author, (int)Func.Parsing_Bytes.Long_number).TrimEnd('\0');
+                H_I.Packer_Ver = new ASCIIEncoding().GetString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Packer_Version, (int)Func.Parsing_Bytes.String_parse).TrimEnd('\0');
+                H_I.Phone_Ver = new ASCIIEncoding().GetString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Phone_Version, (int)Func.Parsing_Bytes.String_parse).TrimEnd('\0');
+                H_I.Image_Ver = new ASCIIEncoding().GetString(res_bytes, (int)Func.Parsing_Header_String_Bytes.Image_Version, (int)Func.Parsing_Bytes.String_parse).TrimEnd('\0');
+                ParsingHeader.AppendLine(string.Format(LocRes.GetString("unknown") + " - {0}" + Environment.NewLine+
+                    LocRes.GetString("firmware_signer") + " - {1}" + Environment.NewLine+
+                    LocRes.GetString("packer_version") + " - {2}" + Environment.NewLine+
+                    LocRes.GetString("phone_version") + " - {3}" + Environment.NewLine+
+                    LocRes.GetString("firmware_version") + " - {4}", H_I.Header_Len, H_I.Author, H_I.Packer_Ver, H_I.Phone_Ver, H_I.Image_Ver));
+                toolStripStatusLabel1.Text = LocRes.GetString("status_repack_parsing_header_complite");
+                //}
+                //catch (ArgumentOutOfRangeException Ex)
+                //{
+                //    ParsingHeader.AppendLine(LocRes.GetString("status_repack_parsing_header_failed"));
+                //    toolStripStatusLabel1.Text = Ex.Message;
+                //}
                 //}
                 //else
                 //{
