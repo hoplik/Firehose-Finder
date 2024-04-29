@@ -59,9 +59,17 @@ jobs:
     - name: Restore NuGet Packages
       run: nuget restore FirehoseFinder.sln
 
+    - name: Create token file in Resources
+      run: echo $env:token | Out-File Resources/bot.txt 
+      env:
+        token: ${{ secrets.bot }}
+
     - name: Build and Publish App
       run: msbuild FirehoseFinder.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
  
+    - name: Remove token file from Resources
+      run: rm Resources/bot.txt
+
     - name: Upload Artifact
       uses: actions/upload-artifact@v1.0.0
       with:
