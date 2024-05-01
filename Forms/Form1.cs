@@ -2517,7 +2517,11 @@ namespace FirehoseFinder
             {
                 for (int i = 0; i < dataGridView_collection.Rows.Count; i++)
                 {
-                    if (Convert.ToByte(dataGridView_collection["LASTKNOWNSBLVER", i].Value.ToString(), 16) >= Convert.ToByte(label_SW_Ver.Text, 16))
+                    string lastbyte = dataGridView_collection["LASTKNOWNSBLVER", i].Value.ToString().TrimStart('0');
+                    if (string.IsNullOrWhiteSpace(lastbyte)) lastbyte = "0";
+                    string currbyte = label_SW_Ver.Text.TrimStart('0');
+                    if (string.IsNullOrWhiteSpace(currbyte)) currbyte = "0";
+                    if (Convert.ToByte(lastbyte, 16) >= Convert.ToByte(currbyte, 16))
                     {
                         if (dataGridView_collection["Model", i].Value.ToString().IndexOf(label_model.Text, 0, StringComparison.OrdinalIgnoreCase) != -1) return; //Проверяем модель на наличие без учёта регистра!
                     }
