@@ -222,7 +222,8 @@
     <Compile Include="Forms\Write_Sectors.Designer.cs">
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </Compile>
-    <Content Include="Drivers\WdfCoInstaller01009.dll" />
+    <Content Include="Drivers\Sony_USB_Drivers\ggsomc.inf" />
+    <Content Include="Drivers\Sony_USB_Drivers\x64\WdfCoInstaller01009.dll" />
     <Content Include="Resources\about.png" />
     <Content Include="Resources\autolen.png" />
     <Content Include="Resources\bot.txt" />
@@ -230,8 +231,9 @@
     <Content Include="Resources\database.png" />
     <Content Include="Resources\exit.png" />
     <Content Include="Resources\greet.png" />
-    <None Include="Drivers\ggflt.sys" />
-    <None Include="Drivers\ggsomc.sys" />
+    <Content Include="Drivers\Sony_USB_Drivers\ggsomc.cat" />
+    <Content Include="Drivers\Sony_USB_Drivers\x64\ggflt.sys" />
+    <Content Include="Drivers\Sony_USB_Drivers\x64\ggsomc.sys" />
     <None Include="Resources\Greeting_zh-Hans.txt" />
     <Content Include="Resources\help.png" />
     <Content Include="Resources\insert.png" />
@@ -662,8 +664,6 @@
       <Version>19.0.0</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Drivers\NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
