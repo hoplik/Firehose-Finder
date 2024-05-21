@@ -36,7 +36,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>24.5.21.0</ApplicationVersion>
+    <ApplicationVersion>24.5.22.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -222,8 +222,12 @@
     <Compile Include="Forms\Write_Sectors.Designer.cs">
       <DependentUpon>Write_Sectors.cs</DependentUpon>
     </Compile>
-    <Content Include="Drivers\Sony_USB_Drivers\ggsomc.inf" />
-    <Content Include="Drivers\Sony_USB_Drivers\x64\WdfCoInstaller01009.dll" />
+    <Content Include="Drivers\Sony_USB_Drivers\ggsomc.inf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Drivers\Sony_USB_Drivers\x64\WdfCoInstaller01009.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\about.png" />
     <Content Include="Resources\autolen.png" />
     <Content Include="Resources\bot.txt" />
@@ -231,9 +235,15 @@
     <Content Include="Resources\database.png" />
     <Content Include="Resources\exit.png" />
     <Content Include="Resources\greet.png" />
-    <Content Include="Drivers\Sony_USB_Drivers\ggsomc.cat" />
-    <Content Include="Drivers\Sony_USB_Drivers\x64\ggflt.sys" />
-    <Content Include="Drivers\Sony_USB_Drivers\x64\ggsomc.sys" />
+    <Content Include="Drivers\Sony_USB_Drivers\ggsomc.cat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Drivers\Sony_USB_Drivers\x64\ggflt.sys">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Drivers\Sony_USB_Drivers\x64\ggsomc.sys">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\Greeting_zh-Hans.txt" />
     <Content Include="Resources\help.png" />
     <Content Include="Resources\insert.png" />
