@@ -2226,6 +2226,10 @@ namespace FirehoseFinder
             textBox_main_term.AppendText(result.ToString() + Environment.NewLine);
             //Подключаем клиента (устройства)
             AdbClient client = new AdbClient();
+            //Пишем версию ADB
+            int version = client.GetAdbVersion();
+            textBox_soft_term.AppendText(LocRes.GetString("version") + '\u003A' + '\u0020' + version.ToString() + Environment.NewLine);
+            textBox_main_term.AppendText(LocRes.GetString("version") + '\u003A' + '\u0020' + version.ToString() + Environment.NewLine);
             List<DeviceData> devices = new List<DeviceData>(client.GetDevices());
             //Заполнили листвью наименованием и транспортом
             foreach (DeviceData dev in devices)
