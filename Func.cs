@@ -15,7 +15,7 @@ namespace FirehoseFinder
 {
     class Func
     {
-        ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
+        private readonly ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
 
         /// <summary>
         /// Система исчисления, применяемая к строке знаков

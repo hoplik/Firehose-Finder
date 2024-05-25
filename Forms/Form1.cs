@@ -26,12 +26,12 @@ namespace FirehoseFinder
 {
     public partial class Formfhf : Form
     {
-        Func func = new Func(); //Подключили функции
-        Guide guide = new Guide(); //Подключили справочник
+        private readonly Func func = new Func(); //Подключили функции
+        private readonly Guide guide = new Guide(); //Подключили справочник
         bool waitSahara = false; //Ждём ли мы автоперезагрузку с получением ID Sahara
         bool FHAlreadyLoaded = false; //Был ли успешно загружен программер (не надо грузить повторно)
         bool NeedReset = false; //Требуется ли перезагрузка устройства после работы с Сахарой
-        Flash_Disk flash_start = new Flash_Disk(0, 0, 1);
+        private readonly Flash_Disk flash_start = new Flash_Disk(0, 0, 1);
         internal Flash_Disk[] Flash_Params = new Flash_Disk[1];
         internal DeviceData Global_ADB_Device = new DeviceData();
         internal string Global_FB_Device = string.Empty;
