@@ -8,8 +8,23 @@
     <Setting Name="local_lang" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="db_font" Type="System.String" Scope="User">
+    <Setting Name="db_font" Type="System.Single" Scope="User">
       <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="userID" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="userN" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="userFN" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="userSN" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="auth_code" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Случайный код авторизации</Value>
     </Setting>
   </Settings>
 </SettingsFile>

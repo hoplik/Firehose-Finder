@@ -41,7 +41,6 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Greeting_Load(object sender, EventArgs e)
         {
-            checkBox_start.Checked = Settings.Default.CheckBox_start_Checked;
             textBox_greeting.Text = LocRes.GetObject("Greeting").ToString();
         }
     }

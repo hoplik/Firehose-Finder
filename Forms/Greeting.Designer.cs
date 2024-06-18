@@ -47,16 +47,17 @@ namespace FirehoseFinder
             // 
             // textBox_greeting
             // 
-            resources.ApplyResources(this.textBox_greeting, "textBox_greeting");
             this.tableLayoutPanel_greeting.SetColumnSpan(this.textBox_greeting, 2);
+            resources.ApplyResources(this.textBox_greeting, "textBox_greeting");
             this.textBox_greeting.Name = "textBox_greeting";
             this.textBox_greeting.ReadOnly = true;
             // 
             // checkBox_start
             // 
             resources.ApplyResources(this.checkBox_start, "checkBox_start");
-            this.checkBox_start.Checked = true;
+            this.checkBox_start.Checked = global::FirehoseFinder.Properties.Settings.Default.CheckBox_start_Checked;
             this.checkBox_start.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_start.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::FirehoseFinder.Properties.Settings.Default, "CheckBox_start_Checked", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.checkBox_start.Name = "checkBox_start";
             this.checkBox_start.UseVisualStyleBackColor = true;
             this.checkBox_start.CheckedChanged += new System.EventHandler(this.CheckBox_start_CheckedChanged);

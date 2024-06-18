@@ -12,6 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Management;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Resources;
 using System.Text;
 using System.Threading;
@@ -19,6 +20,7 @@ using System.Windows.Forms;
 using System.Xml;
 using Telegram.Bot;
 using Telegram.Bot.Types;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Color = System.Drawing.Color;
 using File = System.IO.File;
 
@@ -28,6 +30,7 @@ namespace FirehoseFinder
     {
         private readonly Func func = new Func(); //Подключили функции
         private readonly Guide guide = new Guide(); //Подключили справочник
+        private readonly Bot_Funcs botFuncs = new Bot_Funcs(); //Подключили функции бота
         bool waitSahara = false; //Ждём ли мы автоперезагрузку с получением ID Sahara
         bool FHAlreadyLoaded = false; //Был ли успешно загружен программер (не надо грузить повторно)
         bool NeedReset = false; //Требуется ли перезагрузка устройства после работы с Сахарой
@@ -47,8 +50,6 @@ namespace FirehoseFinder
         readonly ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
         int ppc = 0; //Процент выполнения в параллельном процессе
         string output_FH = string.Empty; //Вывод результата работы лоадера в консоли на форму
-        private readonly long chat = -1001227261414;
-        private readonly TelegramBotClient mybot = new TelegramBotClient(Resources.bot);
 
         /// <summary>
         /// Инициализация компонентов
@@ -101,6 +102,8 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Formfhf_Load(object sender, EventArgs e)
         {
+            //Запускаем локального бота
+            Bot_Funcs.BotWork();
             //Загружаем Справочник устройств
             dataSet1.ReadXml("ForFilter.xml", XmlReadMode.ReadSchema);
             bindingSource_collection.DataSource = dataSet1.Tables[1];
@@ -119,11 +122,11 @@ namespace FirehoseFinder
             dataGridView_collection.Columns["MODELID"].HeaderText = "Model";
             //Устанавливаем размер шрифта в Справочнике
             using (Font font = new Font(
-                dataGridView_collection.DefaultCellStyle.Font.FontFamily, float.Parse(Settings.Default.db_font, CultureInfo.InvariantCulture)))
+                dataGridView_collection.DefaultCellStyle.Font.FontFamily, Settings.Default.db_font))
             {
                 dataGridView_collection.DefaultCellStyle.Font = font;
             }
-            toolStripLabel_font.Text=Settings.Default.db_font;
+            toolStripLabel_font.Text = Settings.Default.db_font.ToString();
             //Закрываем специализированные закладки
             tabControl1.TabPages.Remove(tabPage_collection);
             tabControl1.TabPages.Remove(tabPage_phone);
@@ -155,6 +158,19 @@ namespace FirehoseFinder
                 default:
                     автоматическиToolStripMenuItem.Checked = true;
                     break;
+            }
+            //Проверяем авторизацию
+            if (Settings.Default.userID == 0)
+            {
+                авторизоватьсяЧерезТелеграмToolStripMenuItem.Visible = true;
+                отменитьАвторизациюToolStripMenuItem.Visible = false;
+                this.Text = "Firehose Finder";
+            }
+            else
+            {
+                авторизоватьсяЧерезТелеграмToolStripMenuItem.Visible = false;
+                отменитьАвторизациюToolStripMenuItem.Visible = true;
+                this.Text = $"Firehose Finder - {Settings.Default.userFN} {Settings.Default.userSN} ({Settings.Default.userN})";
             }
             //Закрываем запущенные процессы и чистим файлы (если есть что)
             CleanFilesProcess();
@@ -1960,16 +1976,16 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void ToolStripButton_small_font_Click(object sender, EventArgs e)
         {
-            float newsizefont = float.Parse(Settings.Default.db_font, CultureInfo.InvariantCulture) - 1;
-            if (newsizefont<1) newsizefont=1;
+            float newsizefont = Settings.Default.db_font - 1;
+            if (newsizefont < 1) newsizefont = 1;
             //Устанавливаем размер шрифта в Справочнике
             using (Font font = new Font(
                 dataGridView_collection.DefaultCellStyle.Font.FontFamily, newsizefont))
             {
                 dataGridView_collection.DefaultCellStyle.Font = font;
             }
-            toolStripLabel_font.Text = Convert.ToInt32(newsizefont).ToString();
-            Settings.Default.db_font = toolStripLabel_font.Text;
+            toolStripLabel_font.Text = newsizefont.ToString();
+            Settings.Default.db_font = newsizefont;
         }
 
         /// <summary>
@@ -1979,16 +1995,16 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void ToolStripButton_large_font_Click(object sender, EventArgs e)
         {
-            float newsizefont = float.Parse(Settings.Default.db_font, CultureInfo.InvariantCulture)+1;
-            if (newsizefont>20) newsizefont=20;
+            float newsizefont = Settings.Default.db_font + 1;
+            if (newsizefont > 20) newsizefont = 20;
             //Устанавливаем размер шрифта в Справочнике
             using (Font font = new Font(
                 dataGridView_collection.DefaultCellStyle.Font.FontFamily, newsizefont))
             {
                 dataGridView_collection.DefaultCellStyle.Font = font;
             }
-            toolStripLabel_font.Text=Convert.ToInt32(newsizefont).ToString();
-            Settings.Default.db_font = toolStripLabel_font.Text;
+            toolStripLabel_font.Text = newsizefont.ToString();
+            Settings.Default.db_font = newsizefont;
         }
 
         #endregion
@@ -2550,13 +2566,16 @@ namespace FirehoseFinder
         /// </summary>
         /// <param name="send_message"></param>
         /// <returns></returns>
-        public void BotSendMes(string send_message, string version)
+        public async void BotSendMes(string send_message, string version)
         {
             try
             {
-                mybot.SendTextMessageAsync(
-                    chat,
-                    CorrectBotString(send_message + Environment.NewLine + version),
+                string mess_to_post = CorrectBotString(send_message) + Environment.NewLine +
+                                    $"[{version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
+                if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine + $"Спасибо пользователю [{Settings.Default.userFN} {Settings.Default.userSN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID}) за предоставленные данные.";
+                await Bot_Funcs._botClient.SendTextMessageAsync(
+                    botFuncs.channel,
+                    mess_to_post,
                     parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
                 toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_data_sent");
             }
@@ -3260,7 +3279,7 @@ namespace FirehoseFinder
             }
         }
 
-        private void ОтправкаПрограммераToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void ОтправкаПрограммераToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SendProgForm spf = new SendProgForm(this);
             textBox_soft_term.AppendText(LocRes.GetString("tb_share_prog") + Environment.NewLine);
@@ -3286,7 +3305,11 @@ namespace FirehoseFinder
                         }
                         try
                         {
-                            mybot.SendDocumentAsync(chat, onlineFile, null, null, CorrectBotString(inputstr.ToString()), Telegram.Bot.Types.Enums.ParseMode.Markdown);
+                            string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                            string mess_to_post = CorrectBotString(inputstr.ToString()) + Environment.NewLine +
+                                                $"[{version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
+                            if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine + $"Спасибо пользователю [{Settings.Default.userFN} {Settings.Default.userSN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID}) за предоставленные данные.";
+                            await Bot_Funcs._botClient.SendDocumentAsync(botFuncs.channel, onlineFile, null, null, mess_to_post, Telegram.Bot.Types.Enums.ParseMode.Markdown);
                             textBox_soft_term.AppendText(LocRes.GetString("sent") + Environment.NewLine);
                         }
                         catch (Exception ex)
@@ -3472,6 +3495,21 @@ namespace FirehoseFinder
                 LocRes.GetString("mb_title_server_down"),
                 MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Information) == DialogResult.OK) Process.Start(string.Format(dataGridView_final.SelectedRows[0].Cells[1].Value.ToString().Trim('#')));
+        }
+
+        private void АвторизоватьсяЧерезТелеграмToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var rand = new Random();
+            Settings.Default.auth_code = rand.Next(10, 99).ToString() + '\u002D' + rand.Next(10, 99).ToString();
+            ProcessStartInfo psi = new ProcessStartInfo("https://t.me/Hoplik_Bot?start=" + Settings.Default.auth_code);
+            Process.Start(psi);
+        }
+
+        private void ОтменитьАвторизациюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings.Default.userID = 0;
+            Settings.Default.userFN = Settings.Default.userSN = Settings.Default.userN = string.Empty;
+            Application.Restart();
         }
     }
 }
