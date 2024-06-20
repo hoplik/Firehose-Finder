@@ -102,8 +102,6 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Formfhf_Load(object sender, EventArgs e)
         {
-            //Запускаем локального бота
-            Bot_Funcs.BotWork();
             //Загружаем Справочник устройств
             dataSet1.ReadXml("ForFilter.xml", XmlReadMode.ReadSchema);
             bindingSource_collection.DataSource = dataSet1.Tables[1];
@@ -2571,8 +2569,9 @@ namespace FirehoseFinder
             try
             {
                 string mess_to_post = CorrectBotString(send_message) + Environment.NewLine +
-                                    $"[{version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
-                if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine + $"Спасибо пользователю [{Settings.Default.userFN} {Settings.Default.userSN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID}) за предоставленные данные.";
+                                    $"[FhF Version: {version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
+                if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine + $"Спасибо пользователю [{Settings.Default.userFN} {Settings.Default.userSN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID}) за предоставленные данные. " +
+                        "Ваша реакция на это сообщение увеличит #Concerned_users_rating";
                 await Bot_Funcs._botClient.SendTextMessageAsync(
                     botFuncs.channel,
                     mess_to_post,
@@ -3307,8 +3306,9 @@ namespace FirehoseFinder
                         {
                             string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
                             string mess_to_post = CorrectBotString(inputstr.ToString()) + Environment.NewLine +
-                                                $"[{version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
-                            if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine + $"Спасибо пользователю [{Settings.Default.userFN} {Settings.Default.userSN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID}) за предоставленные данные.";
+                                                $"[FhF Version: {version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
+                            if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine + $"Спасибо пользователю [{Settings.Default.userFN} {Settings.Default.userSN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID}) за предоставленные данные. " +
+                                    "Ваша реакция на это сообщение увеличит #Concerned_users_rating";
                             await Bot_Funcs._botClient.SendDocumentAsync(botFuncs.channel, onlineFile, null, null, mess_to_post, Telegram.Bot.Types.Enums.ParseMode.Markdown);
                             textBox_soft_term.AppendText(LocRes.GetString("sent") + Environment.NewLine);
                         }
@@ -3499,6 +3499,10 @@ namespace FirehoseFinder
 
         private void АвторизоватьсяЧерезТелеграмToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Пожалуйста, дождитесь сообщения об успешном запуске бота!");
+            //Запускаем локального бота
+            Bot_Funcs.BotWork();
+            Thread.Sleep(5000);
             var rand = new Random();
             Settings.Default.auth_code = rand.Next(10, 99).ToString() + '\u002D' + rand.Next(10, 99).ToString();
             ProcessStartInfo psi = new ProcessStartInfo("https://t.me/Hoplik_Bot?start=" + Settings.Default.auth_code);
