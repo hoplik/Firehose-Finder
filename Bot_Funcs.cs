@@ -128,7 +128,7 @@ namespace FirehoseFinder
                                     //Авторизация прошла удачно. Перегружаемся.
                                     Application.Restart();
                                 }
-                                else //Ввели неподдерживаемую команду
+                                else //Ввели неподдерживаемый текст
                                 {
                                     await botClient.SendTextMessageAsync(
                                         chat.Id,
@@ -141,25 +141,14 @@ namespace FirehoseFinder
                         }
                     case UpdateType.CallbackQuery:
                         {
-                            // Переменная, которая будет содержать в себе всю информацию о кнопке, которую нажали
                             var callbackQuery = update.CallbackQuery;
-                            // Аналогично и с Message мы можем получить информацию о чате, о пользователе и т.д.
-                            var user = callbackQuery.From;
-                            // Вот тут нужно уже быть немножко внимательным и не путаться!
-                            // Мы пишем не callbackQuery.Chat , а callbackQuery.Message.Chat , так как
-                            // кнопка привязана к сообщению, то мы берем информацию от сообщения.
+                            //var user = callbackQuery.From; //Пока заремарим, т.к. не используется
                             var chat = callbackQuery.Message.Chat;
-                            // Добавляем блок switch для проверки кнопок
                             switch (callbackQuery.Data)
                             {
-                                // Data - это придуманный нами id кнопки, мы его указывали в параметре
-                                // callbackData при создании кнопок. У меня это button1, button2 и button3
                                 case "button_auth":
                                     {
-                                        // В этом типе клавиатуры обязательно нужно использовать следующий метод
-                                        await botClient.AnswerCallbackQueryAsync(callbackQuery.Id, "При успешной авторизации ваш экземпляр приложения FhF перезагрузится автоматически!");
-                                        // Для того, чтобы отправить телеграмму запрос, что мы нажали на кнопку
-
+                                        await botClient.AnswerCallbackQueryAsync(callbackQuery.Id, "При успешной авторизации FhF перезагрузится автоматически!");// Всплывающее сообщение
                                         await botClient.SendTextMessageAsync(
                                             chat.Id,
                                             "Отправьте 4 цифры кода авторизации из приложения FhF в формате ХХ-ХХ");
@@ -167,9 +156,7 @@ namespace FirehoseFinder
                                     }
                                 case "button_rate":
                                     {
-                                        // А здесь мы добавляем наш сообственный текст, который заменит слово "загрузка", когда мы нажмем на кнопку
-                                        await botClient.AnswerCallbackQueryAsync(callbackQuery.Id, "Готовлю рейтинг...");
-
+                                        await botClient.AnswerCallbackQueryAsync(callbackQuery.Id, "Готовлю рейтинг..."); // Всплывающее сообщение
                                         await botClient.SendTextMessageAsync(
                                             chat.Id,
                                             $"Пока не научился :(");
