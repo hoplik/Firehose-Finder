@@ -16,12 +16,11 @@ namespace FirehoseFinder
     class Bot_Funcs
     {
         internal readonly long channel = -1001227261414;
-        internal static ITelegramBotClient _botClient;
+        internal static ITelegramBotClient _botClient = new TelegramBotClient(Resources.bot);
         // Это объект с настройками работы бота. Здесь мы будем указывать, какие типы Update мы будем получать, Timeout бота и так далее.
         private static ReceiverOptions _receiverOptions;
         internal static async Task BotWork()
         {
-            _botClient = new TelegramBotClient(Resources.bot);
             _receiverOptions = new ReceiverOptions
             {
                 AllowedUpdates = new[] // Тут указываем типы получаемых Update`ов, о них подробнее расказано тут https://core.telegram.org/bots/api#update
