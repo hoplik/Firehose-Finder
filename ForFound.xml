@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-06-19T02:45:37">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-06-23T23:45:33">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -810,6 +810,32 @@
 <SWType>3</SWType>
 <SWVer>5</SWVer>
 <Model>SM-A235F</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/17BB0C5B/prog_firehose_ddr.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>D9357DB88795B5A8AFAEBFD9AB08A569CC8E519F6C689723759F4E6915CA3466E98B5A3282678BDF63673D8517BB0C5B</HASH_FH>
+<Model>UX999Rocket</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F6C4291E/prog_firehose_ddr.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0040</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>508F4D85B1295E2A6FB39DCABD880FE8F4CCCAE19F2BE21B91E03222531B7A0B92CDBCFB3A70096F8627D517F6C4291E</HASH_FH>
+<Model>TB331FC</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/98568836/1/prog_firehose_ddr_fwupdate.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0051</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>401E4AFF39A09344153E776879CAC4B407B811B62229FB6AC0D2A578662EF528877E89263D856BC9FDD0140498568836</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>RMX2170</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
