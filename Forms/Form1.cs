@@ -696,7 +696,6 @@ namespace FirehoseFinder
                 //Отрезаем с конца все данные массива ответов таргет сэд по символу '
                 foreach (string strparLun in parLun)
                 {
-                    //if (strparLun.Contains("'")) goodparLun.Add(strparLun.Substring(0, strparLun.IndexOf("'")));
                     if (strparLun.Contains('\u0027')) goodparLun.Add(strparLun.Remove(strparLun.LastIndexOf('\u0027')));
                 }
                 //Парсим ответ и раскидываем результат в массив
