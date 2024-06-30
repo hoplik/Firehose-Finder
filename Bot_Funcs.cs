@@ -79,8 +79,14 @@ namespace FirehoseFinder
                                         {
                                             Settings.Default.userID = user.Id;
                                             if (string.IsNullOrEmpty(user.FirstName)) Settings.Default.userFN = string.Empty; else Settings.Default.userFN = user.FirstName;
-                                            if (string.IsNullOrEmpty(user.LastName)) Settings.Default.userSN = string.Empty; else Settings.Default.userSN = user.LastName;
+                                            if (string.IsNullOrEmpty(user.LastName)) Settings.Default.userLN = string.Empty; else Settings.Default.userLN = user.LastName;
                                             if (string.IsNullOrEmpty(user.Username)) Settings.Default.userN = string.Empty; else Settings.Default.userN = user.Username;
+                                            //Сообщаем администратору о новом участнике рейтинга
+                                            await botClient.SendTextMessageAsync(
+                                                1008578121,
+                                                $"Новый участник рейтинга: {user.FirstName} {user.LastName} ({user.Username}) - {user.Id}",
+                                                replyToMessageId: message.MessageId
+                                                );
                                             //Авторизация прошла удачно. Перегружаемся.
                                             Application.Restart();
                                         }
@@ -122,7 +128,7 @@ namespace FirehoseFinder
                                 {
                                     Settings.Default.userID = user.Id;
                                     if (string.IsNullOrEmpty(user.FirstName)) Settings.Default.userFN = string.Empty; else Settings.Default.userFN = user.FirstName;
-                                    if (string.IsNullOrEmpty(user.LastName)) Settings.Default.userSN = string.Empty; else Settings.Default.userSN = user.LastName;
+                                    if (string.IsNullOrEmpty(user.LastName)) Settings.Default.userLN = string.Empty; else Settings.Default.userLN = user.LastName;
                                     if (string.IsNullOrEmpty(user.Username)) Settings.Default.userN = string.Empty; else Settings.Default.userN = user.Username;
                                     //Авторизация прошла удачно. Перегружаемся.
                                     Application.Restart();

@@ -162,13 +162,13 @@ namespace FirehoseFinder
             {
                 авторизоватьсяЧерезТелеграмToolStripMenuItem.Visible = true;
                 отменитьАвторизациюToolStripMenuItem.Visible = false;
-                this.Text = "Firehose Finder";
+                Text = "Firehose Finder";
             }
             else
             {
                 авторизоватьсяЧерезТелеграмToolStripMenuItem.Visible = false;
                 отменитьАвторизациюToolStripMenuItem.Visible = true;
-                this.Text = $"Firehose Finder - {Settings.Default.userFN} {Settings.Default.userSN} ({Settings.Default.userN})";
+                Text = $"Firehose Finder - {Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})";
             }
             //Закрываем запущенные процессы и чистим файлы (если есть что)
             CleanFilesProcess();
@@ -2568,9 +2568,9 @@ namespace FirehoseFinder
             try
             {
                 string mess_to_post = CorrectBotString(send_message) + Environment.NewLine +
-                                    $"[FhF Version: {version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
-                if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine + $"Спасибо пользователю [{Settings.Default.userFN} {Settings.Default.userSN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID}) за предоставленные данные. " +
-                        "Ваша реакция на это сообщение увеличит #Concerned_users_rating";
+                                    $"![FhF Version: {version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
+                if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine + $"Спасибо пользователю [{Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID}) за предоставленные данные. " +
+                        "Реакция на это сообщение увеличит его #Concerned_users_rating";
                 await Bot_Funcs._botClient.SendTextMessageAsync(
                     botFuncs.channel,
                     mess_to_post,
@@ -3305,9 +3305,9 @@ namespace FirehoseFinder
                         {
                             string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
                             string mess_to_post = CorrectBotString(inputstr.ToString()) + Environment.NewLine +
-                                                $"[FhF Version: {version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
-                            if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine + $"Спасибо пользователю [{Settings.Default.userFN} {Settings.Default.userSN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID}) за предоставленные данные. " +
-                                    "Ваша реакция на это сообщение увеличит #Concerned_users_rating";
+                                                $"![FhF Version: {version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
+                            if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine + $"Спасибо пользователю [{Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID}) за предоставленные данные. " +
+                                    "Реакция на это сообщение увеличит его #Concerned_users_rating";
                             await Bot_Funcs._botClient.SendDocumentAsync(botFuncs.channel, onlineFile, null, null, mess_to_post, Telegram.Bot.Types.Enums.ParseMode.Markdown);
                             textBox_soft_term.AppendText(LocRes.GetString("sent") + Environment.NewLine);
                         }
@@ -3511,7 +3511,7 @@ namespace FirehoseFinder
         private void ОтменитьАвторизациюToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Settings.Default.userID = 0;
-            Settings.Default.userFN = Settings.Default.userSN = Settings.Default.userN = string.Empty;
+            Settings.Default.userFN = Settings.Default.userLN = Settings.Default.userN = string.Empty;
             Application.Restart();
         }
     }

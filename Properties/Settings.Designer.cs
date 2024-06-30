@@ -98,12 +98,12 @@ namespace FirehoseFinder.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string userSN {
+        public string userLN {
             get {
-                return ((string)(this["userSN"]));
+                return ((string)(this["userLN"]));
             }
             set {
-                this["userSN"] = value;
+                this["userLN"] = value;
             }
         }
         

@@ -20,7 +20,7 @@
     <Setting Name="userFN" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="userSN" Type="System.String" Scope="User">
+    <Setting Name="userLN" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="auth_code" Type="System.String" Scope="User">
