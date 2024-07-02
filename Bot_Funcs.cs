@@ -130,6 +130,9 @@ namespace FirehoseFinder
                                     if (string.IsNullOrEmpty(user.FirstName)) Settings.Default.userFN = string.Empty; else Settings.Default.userFN = user.FirstName;
                                     if (string.IsNullOrEmpty(user.LastName)) Settings.Default.userLN = string.Empty; else Settings.Default.userLN = user.LastName;
                                     if (string.IsNullOrEmpty(user.Username)) Settings.Default.userN = string.Empty; else Settings.Default.userN = user.Username;
+                                    await botClient.SendTextMessageAsync(
+                                        chat.Id,
+                                        "Авторизация прошла успешно. Приложение FhF перезапущено.");
                                     //Авторизация прошла удачно. Перегружаемся.
                                     Application.Restart();
                                 }
@@ -162,9 +165,17 @@ namespace FirehoseFinder
                                 case "button_rate":
                                     {
                                         await botClient.AnswerCallbackQueryAsync(callbackQuery.Id, "Готовлю рейтинг..."); // Всплывающее сообщение
+                                        string rate_str = string.Empty;
+                                        int count_str = 1;
+                                        Guide guide = new Guide();
+                                        foreach (Users_Rating users_Rating in guide.users_rate)
+                                        {
+                                            rate_str += $"{count_str}. {users_Rating.User_fullname} - {users_Rating.User_activities}" + Environment.NewLine;
+                                            count_str++;
+                                        }
                                         await botClient.SendTextMessageAsync(
                                             chat.Id,
-                                            $"Пока не научился :(");
+                                            rate_str);
                                         return;
                                     }
                                 default:

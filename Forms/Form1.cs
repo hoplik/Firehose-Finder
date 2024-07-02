@@ -3496,12 +3496,17 @@ namespace FirehoseFinder
                 MessageBoxIcon.Information) == DialogResult.OK) Process.Start(string.Format(dataGridView_final.SelectedRows[0].Cells[1].Value.ToString().Trim('#')));
         }
 
+        /// <summary>
+        /// Запускаем бота для авторизации в телеграм
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void АвторизоватьсяЧерезТелеграмToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Пожалуйста, дождитесь сообщения об успешном запуске бота!");
             //Запускаем локального бота
             Bot_Funcs.BotWork();
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
             var rand = new Random();
             Settings.Default.auth_code = rand.Next(10, 99).ToString() + '\u002D' + rand.Next(10, 99).ToString();
             ProcessStartInfo psi = new ProcessStartInfo("https://t.me/Hoplik_Bot?start=" + Settings.Default.auth_code);
@@ -3513,6 +3518,17 @@ namespace FirehoseFinder
             Settings.Default.userID = 0;
             Settings.Default.userFN = Settings.Default.userLN = Settings.Default.userN = string.Empty;
             Application.Restart();
+        }
+
+        /// <summary>
+        /// Открываем страничку с текущим рейтингом и подставляем туда пользователя
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Rate rate = new Rate();
+            rate.Show();
         }
     }
 }

@@ -186,6 +186,16 @@ namespace FirehoseFinder
             {"adb" },
             {"fastboot" }
         };
+
+        /// <summary>
+        /// Рейтинг пользователей (обновляется вручную!)"
+        /// </summary>
+        internal readonly List<Users_Rating> users_rate = new List<Users_Rating>(2)
+        {
+            new Users_Rating ("Mula Taborova (mutabor) - test", user_mess:3, user_reactions:5, user_act:8),
+            new Users_Rating ("Pedro Gonzales (pedrogon) - test", user_mess:2, user_reactions:3, user_act:5),
+            new Users_Rating ("Александр Сергеев (hoplik)", user_mess:1, user_reactions:2, user_act:3),
+        };
     }
 
     class GPT_Struct
@@ -284,6 +294,20 @@ namespace FirehoseFinder
         {
             PortNum = portnum;
             PortName = portname;
+        }
+    }
+    class Users_Rating
+    {
+        internal string User_fullname;
+        internal int User_mess;
+        internal int User_reactions;
+        internal int User_activities;
+        public Users_Rating(string user_fullname, int user_mess, int user_reactions, int user_act)
+        {
+            User_fullname = user_fullname;
+            User_mess = user_mess;
+            User_reactions = user_reactions;
+            User_activities = user_act;
         }
     }
 }

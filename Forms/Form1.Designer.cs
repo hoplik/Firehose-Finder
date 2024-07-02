@@ -56,7 +56,7 @@
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.предложитьПереводToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.авторизацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.авторизоватьсяЧерезТелеграмToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отменитьАвторизациюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
@@ -328,7 +328,7 @@
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выборЯзыкаToolStripMenuItem,
             this.toolStripSeparator5,
-            this.авторизацияToolStripMenuItem,
+            this.rateToolStripMenuItem,
             this.toolStripSeparator8,
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
@@ -402,14 +402,15 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
             // 
-            // авторизацияToolStripMenuItem
+            // rateToolStripMenuItem
             // 
-            this.авторизацияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.авторизоватьсяЧерезТелеграмToolStripMenuItem,
             this.отменитьАвторизациюToolStripMenuItem});
-            this.авторизацияToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.auth;
-            this.авторизацияToolStripMenuItem.Name = "авторизацияToolStripMenuItem";
-            resources.ApplyResources(this.авторизацияToolStripMenuItem, "авторизацияToolStripMenuItem");
+            this.rateToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.auth;
+            this.rateToolStripMenuItem.Name = "rateToolStripMenuItem";
+            resources.ApplyResources(this.rateToolStripMenuItem, "rateToolStripMenuItem");
+            this.rateToolStripMenuItem.Click += new System.EventHandler(this.RateToolStripMenuItem_Click);
             // 
             // авторизоватьсяЧерезТелеграмToolStripMenuItem
             // 
@@ -2157,7 +2158,7 @@
         private System.Windows.Forms.ToolStripMenuItem загрузитьССервераToolStripMenuItem;
         private System.Windows.Forms.RadioButton radioButton_fb_eraseud;
         private System.Windows.Forms.ToolStripMenuItem chinaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem авторизацияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem авторизоватьсяЧерезТелеграмToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отменитьАвторизациюToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
