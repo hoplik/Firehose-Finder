@@ -2568,12 +2568,13 @@ namespace FirehoseFinder
             try
             {
                 string mess_to_post = CorrectBotString(send_message) + Environment.NewLine +
-                                    $"![FhF Version: {version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
+                                    $"[FhF Version: {version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
                 if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine + $"Спасибо пользователю [{Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID}) за предоставленные данные. " +
                         "Реакция на это сообщение увеличит его #Concerned_users_rating";
                 await Bot_Funcs._botClient.SendTextMessageAsync(
                     botFuncs.channel,
                     mess_to_post,
+                    disableWebPagePreview: true,
                     parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
                 toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_data_sent");
             }
@@ -3305,7 +3306,7 @@ namespace FirehoseFinder
                         {
                             string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
                             string mess_to_post = CorrectBotString(inputstr.ToString()) + Environment.NewLine +
-                                                $"![FhF Version: {version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
+                                                $"[FhF Version: {version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
                             if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine + $"Спасибо пользователю [{Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID}) за предоставленные данные. " +
                                     "Реакция на это сообщение увеличит его #Concerned_users_rating";
                             await Bot_Funcs._botClient.SendDocumentAsync(botFuncs.channel, onlineFile, null, null, mess_to_post, Telegram.Bot.Types.Enums.ParseMode.Markdown);

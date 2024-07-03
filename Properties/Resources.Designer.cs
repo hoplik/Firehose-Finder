@@ -144,6 +144,26 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap auth_off {
+            get {
+                object obj = ResourceManager.GetObject("auth_off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap auth_onn {
+            get {
+                object obj = ResourceManager.GetObject("auth_onn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Требуется авторизация!.
         /// </summary>
         internal static string auth_title {

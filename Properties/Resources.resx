@@ -694,4 +694,10 @@
   <data name="auth" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\auth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="auth_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\auth_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="auth_onn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\auth_onn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

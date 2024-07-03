@@ -170,7 +170,7 @@ namespace FirehoseFinder
                                         Guide guide = new Guide();
                                         foreach (Users_Rating users_Rating in guide.users_rate)
                                         {
-                                            rate_str += $"{count_str}. {users_Rating.User_fullname} - {users_Rating.User_activities}" + Environment.NewLine;
+                                            rate_str += $"{count_str}. {users_Rating.User_fullname} - {users_Rating.User_mess + users_Rating.User_reactions}" + Environment.NewLine;
                                             count_str++;
                                         }
                                         await botClient.SendTextMessageAsync(

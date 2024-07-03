@@ -238,7 +238,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\about.png" />
-    <None Include="Resources\auth.png" />
+    <Content Include="Resources\auth.png" />
+    <Content Include="Resources\auth_off.png" />
+    <None Include="Resources\auth_onn.png" />
     <Content Include="Resources\autolen.png" />
     <Content Include="Resources\bot.txt" />
     <Content Include="Resources\china_flags_flag_16985.png" />
@@ -287,7 +289,13 @@
     <EmbeddedResource Include="Forms\Peekpoke.zh-Hans.resx">
       <DependentUpon>Peekpoke.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Rate.en.resx">
+      <DependentUpon>Rate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Rate.resx">
+      <DependentUpon>Rate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Rate.zh-Hans.resx">
       <DependentUpon>Rate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RawProgramForm.zh-Hans.resx">
