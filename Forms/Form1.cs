@@ -12,7 +12,6 @@ using System.IO;
 using System.Linq;
 using System.Management;
 using System.Reflection;
-using System.Reflection.Emit;
 using System.Resources;
 using System.Text;
 using System.Threading;
@@ -20,7 +19,6 @@ using System.Windows.Forms;
 using System.Xml;
 using Telegram.Bot;
 using Telegram.Bot.Types;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Color = System.Drawing.Color;
 using File = System.IO.File;
 
@@ -2569,8 +2567,11 @@ namespace FirehoseFinder
             {
                 string mess_to_post = CorrectBotString(send_message) + Environment.NewLine +
                                     $"[FhF Version: {version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
-                if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine + $"Спасибо пользователю [{Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID}) за предоставленные данные. " +
-                        "Реакция на это сообщение увеличит его #Concerned_users_rating";
+                if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine +
+                        LocRes.GetString("thanks_user") + '\u0020' +
+                        $"[{Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID})" + '\u0020' +
+                        LocRes.GetString("thanks_u_data") + '\u0020' +
+                        LocRes.GetString("increase_rating");
                 await Bot_Funcs._botClient.SendTextMessageAsync(
                     botFuncs.channel,
                     mess_to_post,
@@ -3307,8 +3308,11 @@ namespace FirehoseFinder
                             string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
                             string mess_to_post = CorrectBotString(inputstr.ToString()) + Environment.NewLine +
                                                 $"[FhF Version: {version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
-                            if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine + $"Спасибо пользователю [{Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID}) за предоставленные данные. " +
-                                    "Реакция на это сообщение увеличит его #Concerned_users_rating";
+                            if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine +
+                                    LocRes.GetString("thanks_user") + '\u0020' +
+                                    $"[{Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID})" + '\u0020' +
+                                    LocRes.GetString("thanks_u_data") + '\u0020' + 
+                                    LocRes.GetString("increase_rating");
                             await Bot_Funcs._botClient.SendDocumentAsync(botFuncs.channel, onlineFile, null, null, mess_to_post, Telegram.Bot.Types.Enums.ParseMode.Markdown);
                             textBox_soft_term.AppendText(LocRes.GetString("sent") + Environment.NewLine);
                         }

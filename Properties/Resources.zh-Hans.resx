@@ -122,7 +122,7 @@
     <comment>О программе</comment>
   </data>
   <data name="about_deck" xml:space="preserve">
-    <value>FireHouse是基于高通处理器开发</value>
+    <value>Firehose是基于高通处理器开发</value>
     <comment>Программа подбора программеров(firehose) для устройств на базе процессоров от Qualcomm.</comment>
   </data>
   <data name="add_dev" xml:space="preserve">
@@ -320,6 +320,10 @@
   <data name="hex_warn_stopoper" xml:space="preserve">
     <value>请注意，不要长时间操作!</value>
     <comment>Внимание, остановка длительной операции!</comment>
+  </data>
+  <data name="increase_rating" xml:space="preserve">
+    <value>对此消息的反应将增加#Concerned_users_rating</value>
+    <comment>Реакция на это сообщение увеличит #Concerned_users_rating</comment>
   </data>
   <data name="manuf" xml:space="preserve">
     <value>品牌</value>
@@ -720,6 +724,14 @@
   <data name="tb_xml_not_gen" xml:space="preserve">
     <value>未生成工作的 XML 文件</value>
     <comment>XML-файл для работы не сформирован</comment>
+  </data>
+  <data name="thanks_user" xml:space="preserve">
+    <value>感谢用户</value>
+    <comment>Спасибо пользователю</comment>
+  </data>
+  <data name="thanks_u_data" xml:space="preserve">
+    <value>供的数据。</value>
+    <comment>за предоставленные данные.</comment>
   </data>
   <data name="tip_cancel" xml:space="preserve">
     <value>要重置，请点击按钮并选择"取消"。</value>

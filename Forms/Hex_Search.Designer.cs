@@ -59,18 +59,20 @@ namespace FirehoseFinder
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_mask = new System.Windows.Forms.TabPage();
-            this.tabPage_dd = new System.Windows.Forms.TabPage();
-            this.label_path = new System.Windows.Forms.Label();
-            this.button_destr = new System.Windows.Forms.Button();
-            this.groupBox_sector = new System.Windows.Forms.GroupBox();
-            this.textBox_sector = new System.Windows.Forms.TextBox();
-            this.listView_dd = new System.Windows.Forms.ListView();
-            this.columnHeader_ss = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_ls = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_pn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_pl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_bl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button_dd = new System.Windows.Forms.Button();
+            this.tabPage_files = new System.Windows.Forms.TabPage();
+            this.groupBox_dif = new System.Windows.Forms.GroupBox();
+            this.label_newdir = new System.Windows.Forms.Label();
+            this.button_comp = new System.Windows.Forms.Button();
+            this.groupBox_raw = new System.Windows.Forms.GroupBox();
+            this.label_raw_secsize = new System.Windows.Forms.Label();
+            this.comboBox_raw_secsize = new System.Windows.Forms.ComboBox();
+            this.label_raw_lun = new System.Windows.Forms.Label();
+            this.textBox_raw_lun = new System.Windows.Forms.TextBox();
+            this.checkBox_difraw = new System.Windows.Forms.CheckBox();
+            this.checkBox_difbin = new System.Windows.Forms.CheckBox();
+            this.checkBox_diftxt = new System.Windows.Forms.CheckBox();
+            this.button_df = new System.Windows.Forms.Button();
+            this.button_of = new System.Windows.Forms.Button();
             this.tabPage_folders = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.listView_dubl_files = new System.Windows.Forms.ListView();
@@ -94,20 +96,18 @@ namespace FirehoseFinder
             this.radioButton_nameandhash = new System.Windows.Forms.RadioButton();
             this.button_exe = new System.Windows.Forms.Button();
             this.button_del = new System.Windows.Forms.Button();
-            this.tabPage_files = new System.Windows.Forms.TabPage();
-            this.groupBox_dif = new System.Windows.Forms.GroupBox();
-            this.label_newdir = new System.Windows.Forms.Label();
-            this.button_comp = new System.Windows.Forms.Button();
-            this.groupBox_raw = new System.Windows.Forms.GroupBox();
-            this.label_raw_secsize = new System.Windows.Forms.Label();
-            this.comboBox_raw_secsize = new System.Windows.Forms.ComboBox();
-            this.label_raw_lun = new System.Windows.Forms.Label();
-            this.textBox_raw_lun = new System.Windows.Forms.TextBox();
-            this.checkBox_difraw = new System.Windows.Forms.CheckBox();
-            this.checkBox_difbin = new System.Windows.Forms.CheckBox();
-            this.checkBox_diftxt = new System.Windows.Forms.CheckBox();
-            this.button_df = new System.Windows.Forms.Button();
-            this.button_of = new System.Windows.Forms.Button();
+            this.tabPage_dd = new System.Windows.Forms.TabPage();
+            this.label_path = new System.Windows.Forms.Label();
+            this.button_destr = new System.Windows.Forms.Button();
+            this.groupBox_sector = new System.Windows.Forms.GroupBox();
+            this.textBox_sector = new System.Windows.Forms.TextBox();
+            this.listView_dd = new System.Windows.Forms.ListView();
+            this.columnHeader_ss = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_ls = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_pn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_pl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_bl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button_dd = new System.Windows.Forms.Button();
             this.folderBrowserDialog_orig = new System.Windows.Forms.FolderBrowserDialog();
             this.folderBrowserDialog_dubl = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundWorker_orig = new System.ComponentModel.BackgroundWorker();
@@ -123,17 +123,17 @@ namespace FirehoseFinder
             this.groupBox_addbytes.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage_mask.SuspendLayout();
-            this.tabPage_dd.SuspendLayout();
-            this.groupBox_sector.SuspendLayout();
+            this.tabPage_files.SuspendLayout();
+            this.groupBox_dif.SuspendLayout();
+            this.groupBox_raw.SuspendLayout();
             this.tabPage_folders.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.contextMenuStrip_dubl_files.SuspendLayout();
             this.groupBox_dubl.SuspendLayout();
             this.groupBox_orig.SuspendLayout();
             this.groupBox_comp.SuspendLayout();
-            this.tabPage_files.SuspendLayout();
-            this.groupBox_dif.SuspendLayout();
-            this.groupBox_raw.SuspendLayout();
+            this.tabPage_dd.SuspendLayout();
+            this.groupBox_sector.SuspendLayout();
             this.SuspendLayout();
             // 
             // folderBrowserDialog1
@@ -328,7 +328,6 @@ namespace FirehoseFinder
             resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TabControl1_KeyDown);
             // 
             // tabPage_mask
             // 
@@ -337,87 +336,111 @@ namespace FirehoseFinder
             this.tabPage_mask.Name = "tabPage_mask";
             this.tabPage_mask.UseVisualStyleBackColor = true;
             // 
-            // tabPage_dd
+            // tabPage_files
             // 
-            this.tabPage_dd.Controls.Add(this.label_path);
-            this.tabPage_dd.Controls.Add(this.button_destr);
-            this.tabPage_dd.Controls.Add(this.groupBox_sector);
-            this.tabPage_dd.Controls.Add(this.listView_dd);
-            this.tabPage_dd.Controls.Add(this.button_dd);
-            resources.ApplyResources(this.tabPage_dd, "tabPage_dd");
-            this.tabPage_dd.Name = "tabPage_dd";
-            this.tabPage_dd.UseVisualStyleBackColor = true;
+            this.tabPage_files.Controls.Add(this.groupBox_dif);
+            this.tabPage_files.Controls.Add(this.button_df);
+            this.tabPage_files.Controls.Add(this.button_of);
+            resources.ApplyResources(this.tabPage_files, "tabPage_files");
+            this.tabPage_files.Name = "tabPage_files";
+            this.tabPage_files.UseVisualStyleBackColor = true;
             // 
-            // label_path
+            // groupBox_dif
             // 
-            resources.ApplyResources(this.label_path, "label_path");
-            this.label_path.Name = "label_path";
+            this.groupBox_dif.Controls.Add(this.label_newdir);
+            this.groupBox_dif.Controls.Add(this.button_comp);
+            this.groupBox_dif.Controls.Add(this.groupBox_raw);
+            this.groupBox_dif.Controls.Add(this.checkBox_difraw);
+            this.groupBox_dif.Controls.Add(this.checkBox_difbin);
+            this.groupBox_dif.Controls.Add(this.checkBox_diftxt);
+            resources.ApplyResources(this.groupBox_dif, "groupBox_dif");
+            this.groupBox_dif.Name = "groupBox_dif";
+            this.groupBox_dif.TabStop = false;
             // 
-            // button_destr
+            // label_newdir
             // 
-            this.button_destr.BackColor = System.Drawing.Color.Gainsboro;
-            resources.ApplyResources(this.button_destr, "button_destr");
-            this.button_destr.Name = "button_destr";
-            this.button_destr.UseVisualStyleBackColor = false;
-            this.button_destr.Click += new System.EventHandler(this.Button_destr_Click);
+            resources.ApplyResources(this.label_newdir, "label_newdir");
+            this.label_newdir.Name = "label_newdir";
             // 
-            // groupBox_sector
+            // button_comp
             // 
-            this.groupBox_sector.Controls.Add(this.textBox_sector);
-            resources.ApplyResources(this.groupBox_sector, "groupBox_sector");
-            this.groupBox_sector.Name = "groupBox_sector";
-            this.groupBox_sector.TabStop = false;
+            this.button_comp.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.button_comp, "button_comp");
+            this.button_comp.Name = "button_comp";
+            this.button_comp.UseVisualStyleBackColor = false;
+            this.button_comp.Click += new System.EventHandler(this.Button_comp_Click);
             // 
-            // textBox_sector
+            // groupBox_raw
             // 
-            resources.ApplyResources(this.textBox_sector, "textBox_sector");
-            this.textBox_sector.Name = "textBox_sector";
+            this.groupBox_raw.Controls.Add(this.label_raw_secsize);
+            this.groupBox_raw.Controls.Add(this.comboBox_raw_secsize);
+            this.groupBox_raw.Controls.Add(this.label_raw_lun);
+            this.groupBox_raw.Controls.Add(this.textBox_raw_lun);
+            resources.ApplyResources(this.groupBox_raw, "groupBox_raw");
+            this.groupBox_raw.Name = "groupBox_raw";
+            this.groupBox_raw.TabStop = false;
             // 
-            // listView_dd
+            // label_raw_secsize
             // 
-            this.listView_dd.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader_ss,
-            this.columnHeader_ls,
-            this.columnHeader_pn,
-            this.columnHeader_pl,
-            this.columnHeader_bl});
-            this.listView_dd.FullRowSelect = true;
-            this.listView_dd.GridLines = true;
-            this.listView_dd.HideSelection = false;
-            resources.ApplyResources(this.listView_dd, "listView_dd");
-            this.listView_dd.MultiSelect = false;
-            this.listView_dd.Name = "listView_dd";
-            this.listView_dd.ShowGroups = false;
-            this.listView_dd.UseCompatibleStateImageBehavior = false;
-            this.listView_dd.View = System.Windows.Forms.View.Details;
+            resources.ApplyResources(this.label_raw_secsize, "label_raw_secsize");
+            this.label_raw_secsize.Name = "label_raw_secsize";
             // 
-            // columnHeader_ss
+            // comboBox_raw_secsize
             // 
-            resources.ApplyResources(this.columnHeader_ss, "columnHeader_ss");
+            this.comboBox_raw_secsize.FormattingEnabled = true;
+            this.comboBox_raw_secsize.Items.AddRange(new object[] {
+            resources.GetString("comboBox_raw_secsize.Items"),
+            resources.GetString("comboBox_raw_secsize.Items1"),
+            resources.GetString("comboBox_raw_secsize.Items2")});
+            resources.ApplyResources(this.comboBox_raw_secsize, "comboBox_raw_secsize");
+            this.comboBox_raw_secsize.Name = "comboBox_raw_secsize";
             // 
-            // columnHeader_ls
+            // label_raw_lun
             // 
-            resources.ApplyResources(this.columnHeader_ls, "columnHeader_ls");
+            resources.ApplyResources(this.label_raw_lun, "label_raw_lun");
+            this.label_raw_lun.Name = "label_raw_lun";
             // 
-            // columnHeader_pn
+            // textBox_raw_lun
             // 
-            resources.ApplyResources(this.columnHeader_pn, "columnHeader_pn");
+            resources.ApplyResources(this.textBox_raw_lun, "textBox_raw_lun");
+            this.textBox_raw_lun.Name = "textBox_raw_lun";
             // 
-            // columnHeader_pl
+            // checkBox_difraw
             // 
-            resources.ApplyResources(this.columnHeader_pl, "columnHeader_pl");
+            resources.ApplyResources(this.checkBox_difraw, "checkBox_difraw");
+            this.checkBox_difraw.Name = "checkBox_difraw";
+            this.checkBox_difraw.UseVisualStyleBackColor = true;
+            this.checkBox_difraw.CheckedChanged += new System.EventHandler(this.CheckBox_difraw_CheckedChanged);
             // 
-            // columnHeader_bl
+            // checkBox_difbin
             // 
-            resources.ApplyResources(this.columnHeader_bl, "columnHeader_bl");
+            resources.ApplyResources(this.checkBox_difbin, "checkBox_difbin");
+            this.checkBox_difbin.Name = "checkBox_difbin";
+            this.checkBox_difbin.UseVisualStyleBackColor = true;
+            this.checkBox_difbin.CheckedChanged += new System.EventHandler(this.CheckBox_difbin_CheckedChanged);
             // 
-            // button_dd
+            // checkBox_diftxt
             // 
-            this.button_dd.BackColor = System.Drawing.Color.Gainsboro;
-            resources.ApplyResources(this.button_dd, "button_dd");
-            this.button_dd.Name = "button_dd";
-            this.button_dd.UseVisualStyleBackColor = false;
-            this.button_dd.Click += new System.EventHandler(this.Button_dd_Click);
+            resources.ApplyResources(this.checkBox_diftxt, "checkBox_diftxt");
+            this.checkBox_diftxt.Name = "checkBox_diftxt";
+            this.checkBox_diftxt.UseVisualStyleBackColor = true;
+            this.checkBox_diftxt.CheckedChanged += new System.EventHandler(this.CheckBox_diftxt_CheckedChanged);
+            // 
+            // button_df
+            // 
+            this.button_df.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.button_df, "button_df");
+            this.button_df.Name = "button_df";
+            this.button_df.UseVisualStyleBackColor = false;
+            this.button_df.Click += new System.EventHandler(this.Button_df_Click);
+            // 
+            // button_of
+            // 
+            this.button_of.BackColor = System.Drawing.Color.LightGray;
+            resources.ApplyResources(this.button_of, "button_of");
+            this.button_of.Name = "button_of";
+            this.button_of.UseVisualStyleBackColor = false;
+            this.button_of.Click += new System.EventHandler(this.Button_of_Click);
             // 
             // tabPage_folders
             // 
@@ -599,111 +622,87 @@ namespace FirehoseFinder
             this.button_del.UseVisualStyleBackColor = false;
             this.button_del.Click += new System.EventHandler(this.Button_del_Click);
             // 
-            // tabPage_files
+            // tabPage_dd
             // 
-            this.tabPage_files.Controls.Add(this.groupBox_dif);
-            this.tabPage_files.Controls.Add(this.button_df);
-            this.tabPage_files.Controls.Add(this.button_of);
-            resources.ApplyResources(this.tabPage_files, "tabPage_files");
-            this.tabPage_files.Name = "tabPage_files";
-            this.tabPage_files.UseVisualStyleBackColor = true;
+            this.tabPage_dd.Controls.Add(this.label_path);
+            this.tabPage_dd.Controls.Add(this.button_destr);
+            this.tabPage_dd.Controls.Add(this.groupBox_sector);
+            this.tabPage_dd.Controls.Add(this.listView_dd);
+            this.tabPage_dd.Controls.Add(this.button_dd);
+            resources.ApplyResources(this.tabPage_dd, "tabPage_dd");
+            this.tabPage_dd.Name = "tabPage_dd";
+            this.tabPage_dd.UseVisualStyleBackColor = true;
             // 
-            // groupBox_dif
+            // label_path
             // 
-            this.groupBox_dif.Controls.Add(this.label_newdir);
-            this.groupBox_dif.Controls.Add(this.button_comp);
-            this.groupBox_dif.Controls.Add(this.groupBox_raw);
-            this.groupBox_dif.Controls.Add(this.checkBox_difraw);
-            this.groupBox_dif.Controls.Add(this.checkBox_difbin);
-            this.groupBox_dif.Controls.Add(this.checkBox_diftxt);
-            resources.ApplyResources(this.groupBox_dif, "groupBox_dif");
-            this.groupBox_dif.Name = "groupBox_dif";
-            this.groupBox_dif.TabStop = false;
+            resources.ApplyResources(this.label_path, "label_path");
+            this.label_path.Name = "label_path";
             // 
-            // label_newdir
+            // button_destr
             // 
-            resources.ApplyResources(this.label_newdir, "label_newdir");
-            this.label_newdir.Name = "label_newdir";
+            this.button_destr.BackColor = System.Drawing.Color.Gainsboro;
+            resources.ApplyResources(this.button_destr, "button_destr");
+            this.button_destr.Name = "button_destr";
+            this.button_destr.UseVisualStyleBackColor = false;
+            this.button_destr.Click += new System.EventHandler(this.Button_destr_Click);
             // 
-            // button_comp
+            // groupBox_sector
             // 
-            this.button_comp.BackColor = System.Drawing.Color.LightGray;
-            resources.ApplyResources(this.button_comp, "button_comp");
-            this.button_comp.Name = "button_comp";
-            this.button_comp.UseVisualStyleBackColor = false;
-            this.button_comp.Click += new System.EventHandler(this.Button_comp_Click);
+            this.groupBox_sector.Controls.Add(this.textBox_sector);
+            resources.ApplyResources(this.groupBox_sector, "groupBox_sector");
+            this.groupBox_sector.Name = "groupBox_sector";
+            this.groupBox_sector.TabStop = false;
             // 
-            // groupBox_raw
+            // textBox_sector
             // 
-            this.groupBox_raw.Controls.Add(this.label_raw_secsize);
-            this.groupBox_raw.Controls.Add(this.comboBox_raw_secsize);
-            this.groupBox_raw.Controls.Add(this.label_raw_lun);
-            this.groupBox_raw.Controls.Add(this.textBox_raw_lun);
-            resources.ApplyResources(this.groupBox_raw, "groupBox_raw");
-            this.groupBox_raw.Name = "groupBox_raw";
-            this.groupBox_raw.TabStop = false;
+            resources.ApplyResources(this.textBox_sector, "textBox_sector");
+            this.textBox_sector.Name = "textBox_sector";
             // 
-            // label_raw_secsize
+            // listView_dd
             // 
-            resources.ApplyResources(this.label_raw_secsize, "label_raw_secsize");
-            this.label_raw_secsize.Name = "label_raw_secsize";
+            this.listView_dd.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader_ss,
+            this.columnHeader_ls,
+            this.columnHeader_pn,
+            this.columnHeader_pl,
+            this.columnHeader_bl});
+            this.listView_dd.FullRowSelect = true;
+            this.listView_dd.GridLines = true;
+            this.listView_dd.HideSelection = false;
+            resources.ApplyResources(this.listView_dd, "listView_dd");
+            this.listView_dd.MultiSelect = false;
+            this.listView_dd.Name = "listView_dd";
+            this.listView_dd.ShowGroups = false;
+            this.listView_dd.UseCompatibleStateImageBehavior = false;
+            this.listView_dd.View = System.Windows.Forms.View.Details;
             // 
-            // comboBox_raw_secsize
+            // columnHeader_ss
             // 
-            this.comboBox_raw_secsize.FormattingEnabled = true;
-            this.comboBox_raw_secsize.Items.AddRange(new object[] {
-            resources.GetString("comboBox_raw_secsize.Items"),
-            resources.GetString("comboBox_raw_secsize.Items1"),
-            resources.GetString("comboBox_raw_secsize.Items2")});
-            resources.ApplyResources(this.comboBox_raw_secsize, "comboBox_raw_secsize");
-            this.comboBox_raw_secsize.Name = "comboBox_raw_secsize";
+            resources.ApplyResources(this.columnHeader_ss, "columnHeader_ss");
             // 
-            // label_raw_lun
+            // columnHeader_ls
             // 
-            resources.ApplyResources(this.label_raw_lun, "label_raw_lun");
-            this.label_raw_lun.Name = "label_raw_lun";
+            resources.ApplyResources(this.columnHeader_ls, "columnHeader_ls");
             // 
-            // textBox_raw_lun
+            // columnHeader_pn
             // 
-            resources.ApplyResources(this.textBox_raw_lun, "textBox_raw_lun");
-            this.textBox_raw_lun.Name = "textBox_raw_lun";
+            resources.ApplyResources(this.columnHeader_pn, "columnHeader_pn");
             // 
-            // checkBox_difraw
+            // columnHeader_pl
             // 
-            resources.ApplyResources(this.checkBox_difraw, "checkBox_difraw");
-            this.checkBox_difraw.Name = "checkBox_difraw";
-            this.checkBox_difraw.UseVisualStyleBackColor = true;
-            this.checkBox_difraw.CheckedChanged += new System.EventHandler(this.CheckBox_difraw_CheckedChanged);
+            resources.ApplyResources(this.columnHeader_pl, "columnHeader_pl");
             // 
-            // checkBox_difbin
+            // columnHeader_bl
             // 
-            resources.ApplyResources(this.checkBox_difbin, "checkBox_difbin");
-            this.checkBox_difbin.Name = "checkBox_difbin";
-            this.checkBox_difbin.UseVisualStyleBackColor = true;
-            this.checkBox_difbin.CheckedChanged += new System.EventHandler(this.CheckBox_difbin_CheckedChanged);
+            resources.ApplyResources(this.columnHeader_bl, "columnHeader_bl");
             // 
-            // checkBox_diftxt
+            // button_dd
             // 
-            resources.ApplyResources(this.checkBox_diftxt, "checkBox_diftxt");
-            this.checkBox_diftxt.Name = "checkBox_diftxt";
-            this.checkBox_diftxt.UseVisualStyleBackColor = true;
-            this.checkBox_diftxt.CheckedChanged += new System.EventHandler(this.CheckBox_diftxt_CheckedChanged);
-            // 
-            // button_df
-            // 
-            this.button_df.BackColor = System.Drawing.Color.LightGray;
-            resources.ApplyResources(this.button_df, "button_df");
-            this.button_df.Name = "button_df";
-            this.button_df.UseVisualStyleBackColor = false;
-            this.button_df.Click += new System.EventHandler(this.Button_df_Click);
-            // 
-            // button_of
-            // 
-            this.button_of.BackColor = System.Drawing.Color.LightGray;
-            resources.ApplyResources(this.button_of, "button_of");
-            this.button_of.Name = "button_of";
-            this.button_of.UseVisualStyleBackColor = false;
-            this.button_of.Click += new System.EventHandler(this.Button_of_Click);
+            this.button_dd.BackColor = System.Drawing.Color.Gainsboro;
+            resources.ApplyResources(this.button_dd, "button_dd");
+            this.button_dd.Name = "button_dd";
+            this.button_dd.UseVisualStyleBackColor = false;
+            this.button_dd.Click += new System.EventHandler(this.Button_dd_Click);
             // 
             // backgroundWorker_orig
             // 
@@ -751,7 +750,6 @@ namespace FirehoseFinder
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip_search);
             this.Name = "Hex_Search";
-            this.Load += new System.EventHandler(this.Hex_Search_Load);
             this.statusStrip_search.ResumeLayout(false);
             this.statusStrip_search.PerformLayout();
             this.tableLayoutPanel_hs.ResumeLayout(false);
@@ -764,10 +762,11 @@ namespace FirehoseFinder
             this.groupBox_addbytes.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage_mask.ResumeLayout(false);
-            this.tabPage_dd.ResumeLayout(false);
-            this.tabPage_dd.PerformLayout();
-            this.groupBox_sector.ResumeLayout(false);
-            this.groupBox_sector.PerformLayout();
+            this.tabPage_files.ResumeLayout(false);
+            this.groupBox_dif.ResumeLayout(false);
+            this.groupBox_dif.PerformLayout();
+            this.groupBox_raw.ResumeLayout(false);
+            this.groupBox_raw.PerformLayout();
             this.tabPage_folders.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.contextMenuStrip_dubl_files.ResumeLayout(false);
@@ -777,11 +776,10 @@ namespace FirehoseFinder
             this.groupBox_orig.PerformLayout();
             this.groupBox_comp.ResumeLayout(false);
             this.groupBox_comp.PerformLayout();
-            this.tabPage_files.ResumeLayout(false);
-            this.groupBox_dif.ResumeLayout(false);
-            this.groupBox_dif.PerformLayout();
-            this.groupBox_raw.ResumeLayout(false);
-            this.groupBox_raw.PerformLayout();
+            this.tabPage_dd.ResumeLayout(false);
+            this.tabPage_dd.PerformLayout();
+            this.groupBox_sector.ResumeLayout(false);
+            this.groupBox_sector.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

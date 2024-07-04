@@ -19,45 +19,10 @@ namespace FirehoseFinder
         List<File_Struct> orig_list = new List<File_Struct>(); //Основной список (полный путь к файлу - хеш)
         List<File_Struct> dubl_list = new List<File_Struct>(); //Дубликаты (полный путь к файлу - хеш)
         Hashtable TableGroups = new Hashtable();
-        int[] anton = new int[5] { 65, 78, 84, 79, 78 };
-        int[] hello = new int[5];
-        byte counthello = 0;
         readonly ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
-
         public Hex_Search()
         {
             InitializeComponent();
-        }
-        /// <summary>
-        /// Начинаем со вкладки "Поиск по маске"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Hex_Search_Load(object sender, EventArgs e)
-        {
-            tabControl1.TabPages.Remove(tabPage_files);
-            tabControl1.TabPages.Remove(tabPage_folders);
-            tabControl1.TabPages.Remove(tabPage_dd);
-        }
-        private void TabControl1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == anton[counthello])
-            {
-                hello[counthello] = e.KeyValue;
-                counthello++;
-            }
-            else counthello = 0;
-            if (counthello == 5)
-            {
-                counthello = 0;
-                if (tabControl1.TabPages.Count == 1)
-                {
-                    tabControl1.TabPages.Insert(1, tabPage_files);
-                    tabControl1.TabPages.Insert(2, tabPage_folders);
-                    tabControl1.TabPages.Insert(3, tabPage_dd);
-                    tabControl1.SelectedTab = tabPage_files;
-                }
-            }
         }
         #region Вкладка "Поиск по маске
         private void TextBox_byte_search_TextChanged(object sender, EventArgs e)
@@ -304,7 +269,7 @@ namespace FirehoseFinder
                             {
                                 bytetores[br] = item.Value[addr-frontdump+br];
                             }
-                            sr.Result_String = func.ByEight(bytetores, reslen);//BitConverter.ToString(item.Value, addr-frontdump, reslen);
+                            sr.Result_String = func.ByEight(bytetores, reslen);
                             //Сбросили счётчик совпадений
                             comparecount = 0;
                             search_Results.Add(sr);
@@ -515,16 +480,16 @@ namespace FirehoseFinder
             {
                 long si_kb = Convert.ToInt64(item.NumSectors) * Convert.ToInt32(item.SectorSize) / 1024;
                 long sb_hex = Convert.ToInt64(item.StartSector_Hex, 16) * Convert.ToInt32(item.SectorSize);
-                xmlloadargs.Append($"<program" + '\u0020' +
+                xmlloadargs.Append("<program" + '\u0020' +
                     $"SECTOR_SIZE_IN_BYTES=\"{item.SectorSize}\"" + '\u0020' +
-                    $"file_sector_offset=\"0\"" + '\u0020' +
+                    "file_sector_offset=\"0\"" + '\u0020' +
                     $"filename=\"{item.FileName}\"" +'\u0020' +
                     $"num_partition_sectors=\"{item.NumSectors}\"" + '\u0020' +
-                    $"partofsingleimage=\"false\"" + '\u0020' +
+                    "partofsingleimage=\"false\"" + '\u0020' +
                     $"physical_partition_number=\"{lunnum}\"" + '\u0020' +
-                    $"readbackverify=\"false\"" + '\u0020' +
+                    "readbackverify=\"false\"" + '\u0020' +
                     $"size_in_KB=\"{si_kb}.0\"" + '\u0020' +
-                    $"sparse=\"false\"" + '\u0020' +
+                    "sparse=\"false\"" + '\u0020' +
                     $"start_byte_hex=\"0x{Convert.ToString(sb_hex, 16).ToUpper()}\"" + '\u0020' +
                     $"start_sector=\"{Convert.ToInt64(item.StartSector_Hex, 16)}\"/>");
             }

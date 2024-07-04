@@ -662,6 +662,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Реакция на это сообщение увеличит #Concerned_users_rating.
+        /// </summary>
+        internal static string increase_rating {
+            get {
+                return ResourceManager.GetString("increase_rating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap insert {
@@ -1628,6 +1637,24 @@ namespace FirehoseFinder.Properties {
         internal static string tbs_stor_dev {
             get {
                 return ResourceManager.GetString("tbs_stor_dev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на за предоставленные данные..
+        /// </summary>
+        internal static string thanks_u_data {
+            get {
+                return ResourceManager.GetString("thanks_u_data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Спасибо пользователю.
+        /// </summary>
+        internal static string thanks_user {
+            get {
+                return ResourceManager.GetString("thanks_user", resourceCulture);
             }
         }
         

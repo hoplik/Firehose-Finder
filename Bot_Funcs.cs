@@ -15,9 +15,8 @@ namespace FirehoseFinder
 {
     class Bot_Funcs
     {
-        internal readonly long channel = -1001227261414;
+        internal readonly long channel = -1001227261414; // канал Firehose-Finder issues
         internal static ITelegramBotClient _botClient = new TelegramBotClient(Resources.bot);
-        // Это объект с настройками работы бота. Здесь мы будем указывать, какие типы Update мы будем получать, Timeout бота и так далее.
         private static ReceiverOptions _receiverOptions;
         internal static async Task BotWork()
         {
@@ -36,7 +35,6 @@ namespace FirehoseFinder
             // UpdateHander - обработчик приходящих Update`ов
             // ErrorHandler - обработчик ошибок, связанных с Bot API
             _botClient.StartReceiving(UpdateHandler, ErrorHandler, _receiverOptions, cts.Token); // Запускаем бота
-
             var me = await _botClient.GetMeAsync(); // Создаем переменную, в которую помещаем информацию о нашем боте.
             MessageBox.Show("Если у вас не получилость автоматически авторизоваться, то вы можете найти в Телеграм бота \"Hoplik-Bot\"" +
                 " и при запущенном приложении FhF попробовать ввести после команды /start код авторизации:" + Environment.NewLine + Settings.Default.auth_code.ToString(), me.FirstName + " успешно подключён!");
@@ -44,10 +42,8 @@ namespace FirehoseFinder
         }
         private static async Task UpdateHandler(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
-            // Обязательно ставим блок try-catch, чтобы наш бот не "падал" в случае каких-либо ошибок
             try
             {
-                // Сразу же ставим конструкцию switch, чтобы обрабатывать приходящие Update
                 switch (update.Type)
                 {
                     case UpdateType.Message:
@@ -68,7 +64,7 @@ namespace FirehoseFinder
                                         await botClient.SendTextMessageAsync(
                                             chat.Id,
                                             "Не надо больше. Вы уже авторизованы",
-                                            replyToMessageId: message.MessageId //"ответ" на сообщение
+                                            replyToMessageId: message.MessageId
                                             );
                                     }
                                     else
@@ -95,24 +91,23 @@ namespace FirehoseFinder
                                             await botClient.SendTextMessageAsync(
                                                 chat.Id,
                                                 "Авторизация прошла неудачно. Попробуйте ещё раз, используя приложение FhF.",
-                                                replyToMessageId: message.MessageId //"ответ" на сообщение
+                                                replyToMessageId: message.MessageId
                                                 );
                                         }
                                     }
                                 }
-                                else //Команда без параметров. Поднимаем клавиатуру, просим ввести код авторизации и пр.
+                                else //Команда /start без параметров. Поднимаем клавиатуру, просим ввести код авторизации и пр.
                                 {
-                                    // Тут создаем нашу клавиатуру
+                                    // Создаём клавиатуру
                                     var inlineKeyboard = new InlineKeyboardMarkup(
-                                        new List<InlineKeyboardButton[]>() // здесь создаем лист (массив), который содрежит в себе массив из класса кнопок
+                                        new List<InlineKeyboardButton[]>() // Создаём лист (массив), который содрежит в себе массив из класса кнопок
                                         {
-                                        // Каждый новый массив - это дополнительные строки,
-                                        // а каждая дополнительная кнопка в массиве - это добавление ряда
-                                        new InlineKeyboardButton[] // тут создаем массив кнопок
-                                        {
-                                            InlineKeyboardButton.WithCallbackData("Авторизация", "button_auth"),
-                                            InlineKeyboardButton.WithCallbackData("Рейтинг", "button_rate"),
-                                        },
+                                            // Каждый новый массив - это дополнительные строки, а каждая дополнительная кнопка в массиве - это добавление ряда
+                                            new InlineKeyboardButton[] // Создаём массив кнопок
+                                            {
+                                                InlineKeyboardButton.WithCallbackData("Авторизация", "button_auth"),
+                                                InlineKeyboardButton.WithCallbackData("Рейтинг", "button_rate"),
+                                            },
                                         });
                                     await botClient.SendTextMessageAsync(
                                         chat.Id,
@@ -141,7 +136,7 @@ namespace FirehoseFinder
                                     await botClient.SendTextMessageAsync(
                                         chat.Id,
                                         "Извините, не понимаю о чём вы. Может быть /start?",
-                                        replyToMessageId: message.MessageId //"ответ" на сообщение
+                                        replyToMessageId: message.MessageId
                                         );
                                 }
                             }
@@ -150,13 +145,15 @@ namespace FirehoseFinder
                     case UpdateType.CallbackQuery:
                         {
                             var callbackQuery = update.CallbackQuery;
-                            //var user = callbackQuery.From; //Пока заремарим, т.к. не используется
+                            //var user = callbackQuery.From; //Пока заремарим, т.к. не используется. Думаю о дубликатах!
                             var chat = callbackQuery.Message.Chat;
                             switch (callbackQuery.Data)
                             {
                                 case "button_auth":
-                                    {
-                                        await botClient.AnswerCallbackQueryAsync(callbackQuery.Id, "При успешной авторизации FhF перезагрузится автоматически!");// Всплывающее сообщение
+                                    {   
+                                        await botClient.AnswerCallbackQueryAsync(   // Всплывающее сообщение
+                                            callbackQuery.Id, 
+                                            "При успешной авторизации FhF перезагрузится автоматически!");
                                         await botClient.SendTextMessageAsync(
                                             chat.Id,
                                             "Отправьте 4 цифры кода авторизации из приложения FhF в формате ХХ-ХХ");
@@ -164,7 +161,9 @@ namespace FirehoseFinder
                                     }
                                 case "button_rate":
                                     {
-                                        await botClient.AnswerCallbackQueryAsync(callbackQuery.Id, "Готовлю рейтинг..."); // Всплывающее сообщение
+                                        await botClient.AnswerCallbackQueryAsync(   // Всплывающее сообщение
+                                            callbackQuery.Id, 
+                                            "Готовлю рейтинг..."); 
                                         string rate_str = string.Empty;
                                         int count_str = 1;
                                         Guide guide = new Guide();

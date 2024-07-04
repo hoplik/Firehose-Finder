@@ -321,6 +321,10 @@
     <value>Attention, stopping a long operation!</value>
     <comment>Внимание, остановка длительной операции!</comment>
   </data>
+  <data name="increase_rating" xml:space="preserve">
+    <value>Reaction to this message will increase #Concerned_users_rating</value>
+    <comment>Реакция на это сообщение увеличит #Concerned_users_rating</comment>
+  </data>
   <data name="manuf" xml:space="preserve">
     <value>manufacturer</value>
     <comment>производитель</comment>
@@ -720,6 +724,14 @@
   <data name="tb_xml_not_gen" xml:space="preserve">
     <value>The XML file has not been generated for the work</value>
     <comment>XML-файл для работы не сформирован</comment>
+  </data>
+  <data name="thanks_user" xml:space="preserve">
+    <value>Thanks to</value>
+    <comment>Спасибо пользователю</comment>
+  </data>
+  <data name="thanks_u_data" xml:space="preserve">
+    <value>for the data provided.</value>
+    <comment>за предоставленные данные.</comment>
   </data>
   <data name="tip_cancel" xml:space="preserve">
     <value>To reset, press the button and select "Cancel"</value>
