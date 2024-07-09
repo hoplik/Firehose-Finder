@@ -190,11 +190,11 @@ namespace FirehoseFinder
         /// <summary>
         /// Рейтинг пользователей (обновляется вручную!)"
         /// </summary>
-        internal readonly List<Users_Rating> users_rate = new List<Users_Rating>(2)
+        internal readonly List<Users_Rating> users_rate = new List<Users_Rating>(3)
         {
             new Users_Rating ("Mula Taborova (mutabor) - test", user_mess:3, user_reactions:5),
+            new Users_Rating ("Александр Сергеев (hoplik)", user_mess:2, user_reactions:3),
             new Users_Rating ("Pedro Gonzales (pedrogon) - test", user_mess:2, user_reactions:3),
-            new Users_Rating ("Александр Сергеев (hoplik)", user_mess:1, user_reactions:2),
         };
     }
 
