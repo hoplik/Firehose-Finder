@@ -128,6 +128,12 @@ namespace FirehoseFinder
                                     await botClient.SendTextMessageAsync(
                                         chat.Id,
                                         "Авторизация прошла успешно. Приложение FhF перезапущено.");
+                                    //Сообщаем администратору о новом участнике рейтинга
+                                    await botClient.SendTextMessageAsync(
+                                        1008578121,
+                                        $"Новый участник рейтинга: {user.FirstName} {user.LastName} ({user.Username}) - {user.Id}",
+                                        replyToMessageId: message.MessageId
+                                        );
                                     //Авторизация прошла удачно. Перегружаемся.
                                     Application.Restart();
                                 }
@@ -167,7 +173,8 @@ namespace FirehoseFinder
                                         string rate_str = string.Empty;
                                         int count_str = 1;
                                         Guide guide = new Guide();
-                                        foreach (Users_Rating users_Rating in guide.users_rate)
+                                        Func funcs = new Func();
+                                        foreach (Users_Rating users_Rating in funcs.SortingRate(guide.users_rate))
                                         {
                                             rate_str += $"{count_str}. {users_Rating.User_fullname} - {users_Rating.User_mess + users_Rating.User_reactions}" + Environment.NewLine;
                                             count_str++;

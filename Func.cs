@@ -828,6 +828,37 @@ namespace FirehoseFinder
             }
             return portprops;
         }
+
+        /// <summary>
+        /// Сортировка массива пользователей по рейтингу активности
+        /// </summary>
+        /// <param name="unsort_rate"></param>
+        /// <returns></returns>
+        internal List<Users_Rating> SortingRate(List<Users_Rating> unsort_rate)
+        {
+            List<Users_Rating> sr = new List<Users_Rating> { unsort_rate[0] };
+            foreach (Users_Rating user_rate in unsort_rate)
+            {
+                int user_unsort_rate = user_rate.User_mess+user_rate.User_reactions;
+                for (int curr_rate = 0; curr_rate < sr.Count; curr_rate++)
+                {
+                    //TODO Подумать о том, чтоб при одинаковом рейтинге учитывать дату последнего сообщения
+                    if (!sr[curr_rate].Equals(user_rate))
+                    {
+                        if (user_unsort_rate > (sr[curr_rate].User_mess + sr[curr_rate].User_reactions))
+                        {
+                            sr.Insert(curr_rate, user_rate);
+                            break;
+                        }
+                        else
+                        {
+                            if (curr_rate == sr.Count - 1) sr.Add(user_rate);//Последняя запись массива
+                        }
+                    }
+                }
+            }
+            return sr;
+        }
     }
 }
 
