@@ -842,17 +842,24 @@ namespace FirehoseFinder
                 int user_unsort_rate = user_rate.User_mess+user_rate.User_reactions;
                 for (int curr_rate = 0; curr_rate < sr.Count; curr_rate++)
                 {
-                    //TODO Подумать о том, чтоб при одинаковом рейтинге учитывать дату последнего сообщения
-                    if (!sr[curr_rate].Equals(user_rate))
+                    if (!sr[curr_rate].Equals(user_rate)) //Обрабатываем только несовпадающие строки
                     {
-                        if (user_unsort_rate > (sr[curr_rate].User_mess + sr[curr_rate].User_reactions))
+                        if (user_unsort_rate > (sr[curr_rate].User_mess + sr[curr_rate].User_reactions)) //Рейтинг выше - ставим в начало
                         {
                             sr.Insert(curr_rate, user_rate);
                             break;
                         }
                         else
                         {
-                            if (curr_rate == sr.Count - 1) sr.Add(user_rate);//Последняя запись массива
+                            if (user_unsort_rate == (sr[curr_rate].User_mess + sr[curr_rate].User_reactions)) //Рейтинг одинаковый - сравниваем последнюю дату
+                            {
+                                if (user_rate.Last_post_date > sr[curr_rate].Last_post_date)
+                                {
+                                    sr.Insert(curr_rate, user_rate);
+                                    break;
+                                }
+                            }
+                            if (curr_rate == sr.Count - 1) sr.Add(user_rate); //Последняя запись массива - ставим в конец
                         }
                     }
                 }

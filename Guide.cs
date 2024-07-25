@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace FirehoseFinder
 {
@@ -192,9 +193,9 @@ namespace FirehoseFinder
         /// </summary>
         internal readonly List<Users_Rating> users_rate = new List<Users_Rating>(3)
         {
-            new Users_Rating ("Pedro Gonzales (pedrogon) - test", user_mess:2, user_reactions:3),
-            new Users_Rating ("Mula Taborova (mutabor) - test", user_mess:3, user_reactions:5),
-            new Users_Rating ("Александр Сергеев (hoplik)", user_mess:2, user_reactions:5),
+            new Users_Rating ("Mula Taborova (mutabor) - test", user_mess:3, user_reactions:4, last_post_date: new DateTime(2024,12,26)),
+            new Users_Rating ("Pedro Gonzales (pedrogon) - test", user_mess:2, user_reactions:3, last_post_date: new DateTime(2024,7,12)),
+            new Users_Rating ("Александр Сергеев (hoplik)", user_mess:2, user_reactions:5, last_post_date: new DateTime(2025,1,4)),
         };
     }
 
@@ -301,11 +302,13 @@ namespace FirehoseFinder
         internal string User_fullname;
         internal int User_mess;
         internal int User_reactions;
-        public Users_Rating(string user_fullname, int user_mess, int user_reactions)
+        internal DateTime Last_post_date;
+        public Users_Rating(string user_fullname, int user_mess, int user_reactions, DateTime last_post_date)
         {
             User_fullname = user_fullname;
             User_mess = user_mess;
             User_reactions = user_reactions;
+            Last_post_date = last_post_date;
         }
     }
 }

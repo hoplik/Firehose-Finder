@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-07-09T23:44:15">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-07-25T22:40:19">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -836,6 +836,14 @@
 <SWType>3</SWType>
 <SWVer>1</SWVer>
 <Model>RMX2170</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/EE327A90/Moto%20G62%205G.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>02E8</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>6E8D4870D9E89104A79568C1285E4672C5DF7A52FE0B67FA554DA8DA910FA1EF168A258CDCB3E5DBC745899EEE327A90</HASH_FH>
+<Model>Motorola G62 5G</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
