@@ -149,6 +149,10 @@
     <value>需要授权!</value>
     <comment>Требуется авторизация!</comment>
   </data>
+  <data name="bot_title_start_suc" xml:space="preserve">
+    <value>成功发射！</value>
+    <comment>успешно запущен!</comment>
+  </data>
   <data name="button_dirrepack" xml:space="preserve">
     <value>解压目录</value>
     <comment>Директория для распаковки</comment>
@@ -392,6 +396,10 @@
   <data name="mb_body_server_down" xml:space="preserve">
     <value>确认后，将从服务器下载一个程序包。这并不保证您能成功使用。它只是一个可能适合您所选机型的文件。</value>
     <comment>При подтверждении, с сервера будет загружен программер. Это не гарантирует того, что у вас с этим программером всё получится. Просто это, с высокой долей вероятности, подходящий к выбранной вами модели файл.</comment>
+  </data>
+  <data name="mb_bot_start" xml:space="preserve">
+    <value>请等待有关机器人成功启动的消息！</value>
+    <comment>Пожалуйста, дождитесь сообщения об успешном запуске бота!</comment>
   </data>
   <data name="mb_note_dev_recon" xml:space="preserve">
     <value>必须重新连接设备才能接收 ID！</value>

@@ -15,6 +15,7 @@ using System.Reflection;
 using System.Resources;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using Telegram.Bot;
@@ -3311,7 +3312,7 @@ namespace FirehoseFinder
                             if (Settings.Default.userID != 0) mess_to_post += Environment.NewLine +
                                     LocRes.GetString("thanks_user") + '\u0020' +
                                     $"[{Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID})" + '\u0020' +
-                                    LocRes.GetString("thanks_u_data") + '\u0020' + 
+                                    LocRes.GetString("thanks_u_data") + '\u0020' +
                                     LocRes.GetString("increase_rating");
                             await Bot_Funcs._botClient.SendDocumentAsync(botFuncs.channel, onlineFile, null, null, mess_to_post, Telegram.Bot.Types.Enums.ParseMode.Markdown);
                             textBox_soft_term.AppendText(LocRes.GetString("sent") + Environment.NewLine);
@@ -3508,16 +3509,21 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void АвторизоватьсяЧерезТелеграмToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Пожалуйста, дождитесь сообщения об успешном запуске бота!");
+            MessageBox.Show(LocRes.GetString("mb_bot_start"));
             //Запускаем локального бота
             Bot_Funcs.BotWork();
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             var rand = new Random();
             Settings.Default.auth_code = rand.Next(10, 99).ToString() + '\u002D' + rand.Next(10, 99).ToString();
             ProcessStartInfo psi = new ProcessStartInfo("https://t.me/Hoplik_Bot?start=" + Settings.Default.auth_code);
             Process.Start(psi);
         }
 
+        /// <summary>
+        /// Сбрасываем авторизацию
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ОтменитьАвторизациюToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Settings.Default.userID = 0;

@@ -709,4 +709,10 @@
   <data name="thanks_u_data" xml:space="preserve">
     <value>за предоставленные данные.</value>
   </data>
+  <data name="bot_title_start_suc" xml:space="preserve">
+    <value>успешно запущен!</value>
+  </data>
+  <data name="mb_bot_start" xml:space="preserve">
+    <value>Пожалуйста, дождитесь сообщения об успешном запуске бота!</value>
+  </data>
 </root>

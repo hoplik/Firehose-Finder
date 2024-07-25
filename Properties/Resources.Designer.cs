@@ -192,6 +192,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на успешно запущен!.
+        /// </summary>
+        internal static string bot_title_start_suc {
+            get {
+                return ResourceManager.GetString("bot_title_start_suc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Директория для распаковки.
         /// </summary>
         internal static string button_dirrepack {
@@ -850,6 +859,15 @@ namespace FirehoseFinder.Properties {
         internal static string mb_body_server_down {
             get {
                 return ResourceManager.GetString("mb_body_server_down", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пожалуйста, дождитесь сообщения об успешном запуске бота!.
+        /// </summary>
+        internal static string mb_bot_start {
+            get {
+                return ResourceManager.GetString("mb_bot_start", resourceCulture);
             }
         }
         

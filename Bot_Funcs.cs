@@ -1,6 +1,7 @@
 ﻿using FirehoseFinder.Properties;
 using System;
 using System.Collections.Generic;
+using System.Resources;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,9 @@ namespace FirehoseFinder
         internal readonly long channel = -1001227261414; // канал Firehose-Finder issues
         internal static ITelegramBotClient _botClient = new TelegramBotClient(Resources.bot);
         private static ReceiverOptions _receiverOptions;
+        //Подтянули перевод на другие языки
+        static readonly ResourceManager LocRes = new ResourceManager("FirehoseFinder.Properties.Resources", typeof(Formfhf).Assembly);
+
         internal static async Task BotWork()
         {
             _receiverOptions = new ReceiverOptions
@@ -37,7 +41,8 @@ namespace FirehoseFinder
             _botClient.StartReceiving(UpdateHandler, ErrorHandler, _receiverOptions, cts.Token); // Запускаем бота
             var me = await _botClient.GetMeAsync(); // Создаем переменную, в которую помещаем информацию о нашем боте.
             MessageBox.Show("Если у вас не получилость автоматически авторизоваться, то вы можете найти в Телеграм бота \"Hoplik-Bot\"" +
-                " и при запущенном приложении FhF попробовать ввести после команды /start код авторизации:" + Environment.NewLine + Settings.Default.auth_code.ToString(), me.FirstName + " успешно подключён!");
+                " и при запущенном приложении FhF попробовать ввести после команды /start код авторизации:" + Environment.NewLine + Settings.Default.auth_code.ToString(),
+                me.FirstName + '\u0020' + LocRes.GetString("bot_title_start_suc"));
             await Task.Delay(-1);
         }
         private static async Task UpdateHandler(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)

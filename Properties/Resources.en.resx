@@ -149,6 +149,10 @@
     <value>Authorization is required!</value>
     <comment>Требуется авторизация!</comment>
   </data>
+  <data name="bot_title_start_suc" xml:space="preserve">
+    <value>successfully launched!</value>
+    <comment>успешно запущен!</comment>
+  </data>
   <data name="button_dirrepack" xml:space="preserve">
     <value>Dir for unpacking</value>
     <comment>Директория для распаковки</comment>
@@ -392,6 +396,10 @@
   <data name="mb_body_server_down" xml:space="preserve">
     <value>Upon confirmation, the programmer will be downloaded from the server. This does not guarantee that you will succeed with this programmer. It's just that, with a high degree of probability, a file suitable for the model you have chosen.</value>
     <comment>При подтверждении, с сервера будет загружен программер. Это не гарантирует того, что у вас с этим программером всё получится. Просто это, с высокой долей вероятности, подходящий к выбранной вами модели файл.</comment>
+  </data>
+  <data name="mb_bot_start" xml:space="preserve">
+    <value>Please wait for the message about the successful launch of the bot!</value>
+    <comment>Пожалуйста, дождитесь сообщения об успешном запуске бота!</comment>
   </data>
   <data name="mb_note_dev_recon" xml:space="preserve">
     <value>To get the IDs, the device must be reconnected!</value>
