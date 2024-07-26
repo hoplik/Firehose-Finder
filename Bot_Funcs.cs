@@ -40,8 +40,7 @@ namespace FirehoseFinder
             // ErrorHandler - обработчик ошибок, связанных с Bot API
             _botClient.StartReceiving(UpdateHandler, ErrorHandler, _receiverOptions, cts.Token); // Запускаем бота
             var me = await _botClient.GetMeAsync(); // Создаем переменную, в которую помещаем информацию о нашем боте.
-            MessageBox.Show("Если у вас не получилость автоматически авторизоваться, то вы можете найти в Телеграм бота \"Hoplik-Bot\"" +
-                " и при запущенном приложении FhF попробовать ввести после команды /start код авторизации:" + Environment.NewLine + Settings.Default.auth_code.ToString(),
+            MessageBox.Show(LocRes.GetString("bot_code_start") + Environment.NewLine + Settings.Default.auth_code.ToString(),
                 me.FirstName + '\u0020' + LocRes.GetString("bot_title_start_suc"));
             await Task.Delay(-1);
         }

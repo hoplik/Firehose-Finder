@@ -149,6 +149,10 @@
     <value>Authorization is required!</value>
     <comment>Требуется авторизация!</comment>
   </data>
+  <data name="bot_code_start" xml:space="preserve">
+    <value>If you failed to log in automatically, then you can find the "Hoplik-Bot" bot in the Telegram and try to enter the authorization code after the /start command when the FhF application is running:</value>
+    <comment>Если у вас не получилость автоматически авторизоваться, то вы можете найти в Телеграм бота "Hoplik-Bot" и при запущенном приложении FhF попробовать ввести после команды /start код авторизации:</comment>
+  </data>
   <data name="bot_title_start_suc" xml:space="preserve">
     <value>successfully launched!</value>
     <comment>успешно запущен!</comment>

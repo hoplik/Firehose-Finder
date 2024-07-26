@@ -192,6 +192,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Если у вас не получилость автоматически авторизоваться, то вы можете найти в Телеграм бота &quot;Hoplik-Bot&quot; и при запущенном приложении FhF попробовать ввести после команды /start код авторизации:.
+        /// </summary>
+        internal static string bot_code_start {
+            get {
+                return ResourceManager.GetString("bot_code_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на успешно запущен!.
         /// </summary>
         internal static string bot_title_start_suc {

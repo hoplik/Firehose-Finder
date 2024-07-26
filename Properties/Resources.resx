@@ -715,4 +715,7 @@
   <data name="mb_bot_start" xml:space="preserve">
     <value>Пожалуйста, дождитесь сообщения об успешном запуске бота!</value>
   </data>
+  <data name="bot_code_start" xml:space="preserve">
+    <value>Если у вас не получилость автоматически авторизоваться, то вы можете найти в Телеграм бота "Hoplik-Bot" и при запущенном приложении FhF попробовать ввести после команды /start код авторизации:</value>
+  </data>
 </root>

@@ -149,6 +149,10 @@
     <value>需要授权!</value>
     <comment>Требуется авторизация!</comment>
   </data>
+  <data name="bot_code_start" xml:space="preserve">
+    <value>如果您未能自动登录，那么您可以在Telegram中找到"Hoplik-Bot"机器人，并尝试在FhF应用程序运行时在/start命令之后输入授权代码:</value>
+    <comment>Если у вас не получилость автоматически авторизоваться, то вы можете найти в Телеграм бота "Hoplik-Bot" и при запущенном приложении FhF попробовать ввести после команды /start код авторизации:</comment>
+  </data>
   <data name="bot_title_start_suc" xml:space="preserve">
     <value>成功发射！</value>
     <comment>успешно запущен!</comment>
