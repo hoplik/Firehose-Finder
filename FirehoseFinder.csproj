@@ -15,7 +15,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://fhf.mywebcommunity.org/fhf.mywebcommunity.org/</PublishUrl>
+    <PublishUrl>ftp://yggno.de:21/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -25,19 +25,20 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://fhf.mywebcommunity.org/</InstallUrl>
-    <UpdateUrl>http://fhf.mywebcommunity.org/</UpdateUrl>
+    <InstallUrl>https://fhf.yggno.de/</InstallUrl>
+    <UpdateUrl>https://fhf.yggno.de/</UpdateUrl>
     <SupportUrl>https://github.com/hoplik/Firehose-Finder/</SupportUrl>
     <ErrorReportUrl>https://github.com/hoplik/Firehose-Finder/issues</ErrorReportUrl>
     <TargetCulture>ru</TargetCulture>
     <ProductName>Firehose-Finder</ProductName>
     <PublisherName>hoplik</PublisherName>
-    <MinimumRequiredVersion>3.1.0.4</MinimumRequiredVersion>
+    <MinimumRequiredVersion>24.7.3.0</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>24.7.26.0</ApplicationVersion>
+    <ApplicationVersion>24.7.29.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -240,6 +241,7 @@
     <Content Include="Resources\about.png" />
     <Content Include="Resources\auth.png" />
     <Content Include="Resources\auth_off.png" />
+    <None Include="Properties\DataSources\FirehoseFinder.Properties.Settings.datasource" />
     <None Include="Resources\auth_onn.png" />
     <Content Include="Resources\autolen.png" />
     <Content Include="Resources\bot.txt" />

@@ -718,4 +718,7 @@
   <data name="bot_code_start" xml:space="preserve">
     <value>Если у вас не получилость автоматически авторизоваться, то вы можете найти в Телеграм бота "Hoplik-Bot" и при запущенном приложении FhF попробовать ввести после команды /start код авторизации:</value>
   </data>
+  <data name="actual_data" xml:space="preserve">
+    <value>Актуально на:</value>
+  </data>
 </root>

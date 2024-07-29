@@ -118,44 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="файлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 24</value>
+  <data name="bindingNavigatorCountItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 37</value>
   </data>
-  <data name="файлToolStripMenuItem.Text" xml:space="preserve">
-    <value>文件</value>
+  <data name="bindingNavigatorCountItem.Text" xml:space="preserve">
+    <value>为 {0}</value>
   </data>
-  <data name="выборЯзыкаToolStripMenuItem.Text" xml:space="preserve">
-    <value>语言选择</value>
-  </data>
-  <data name="автоматическиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 26</value>
-  </data>
-  <data name="автоматическиToolStripMenuItem.Text" xml:space="preserve">
-    <value>自动选择</value>
-  </data>
-  <data name="предложитьПереводToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 26</value>
-  </data>
-  <data name="предложитьПереводToolStripMenuItem.Text" xml:space="preserve">
-    <value>提供转帐服务</value>
-  </data>
-  <data name="rateToolStripMenuItem.Text" xml:space="preserve">
-    <value>评级</value>
-  </data>
-  <data name="авторизоватьсяЧерезТелеграмToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 26</value>
-  </data>
-  <data name="авторизоватьсяЧерезТелеграмToolStripMenuItem.Text" xml:space="preserve">
-    <value>通过电报登录</value>
-  </data>
-  <data name="отменитьАвторизациюToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 26</value>
-  </data>
-  <data name="отменитьАвторизациюToolStripMenuItem.Text" xml:space="preserve">
-    <value>取消授权</value>
-  </data>
-  <data name="выходToolStripMenuItem.Text" xml:space="preserve">
-    <value>出</value>
+  <data name="bindingNavigatorCountItem.ToolTipText" xml:space="preserve">
+    <value>元素总数</value>
   </data>
   <data name="bindingNavigatorMoveFirstItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -168,6 +138,9 @@
         lf8gBXgVDULAwAAA8HbAq6XlmnAAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="bindingNavigatorMoveFirstItem.Text" xml:space="preserve">
+    <value>移动到开头</value>
+  </data>
   <data name="bindingNavigatorMovePreviousItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
@@ -177,6 +150,12 @@
         08g3AARUPCZQZsBgBQwMANAUYJgEulBVAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="bindingNavigatorMovePreviousItem.Text" xml:space="preserve">
+    <value>退后</value>
+  </data>
+  <data name="bindingNavigatorPositionItem.ToolTipText" xml:space="preserve">
+    <value>现任职位</value>
+  </data>
   <data name="bindingNavigatorMoveNextItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
@@ -185,6 +164,9 @@
         N8Sj6v7/krnv4JoVXXpIc4F96d3/gS3PyNMMAhZ5d/7bFFwhTzMIGGbdJl8zCOik3SBf81AEDAwAoH5f
         oAc0QjgAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="bindingNavigatorMoveNextItem.Text" xml:space="preserve">
+    <value>向前迈进</value>
   </data>
   <data name="bindingNavigatorMoveLastItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -196,6 +178,12 @@
         WOTd+W9TcAVDMwiA5FL7X8O9hBUYZt3GqhkEQHJhLS//6wbPw22ATtoNnJIgOb/qh/81fKfhNgAfcMq9
         8l/FYwIYQ4UGBWBgAAC+0b+zuQxOnAAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="bindingNavigatorMoveLastItem.Text" xml:space="preserve">
+    <value>移动到最后</value>
+  </data>
+  <data name="toolStripTextBox_find.ToolTipText" xml:space="preserve">
+    <value>搜索所有字段</value>
   </data>
   <data name="toolStripButton_small_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -212,6 +200,9 @@
         TgDQASA1MVpwzwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="toolStripButton_small_font.ToolTipText" xml:space="preserve">
+    <value>减少字体大小</value>
+  </data>
   <data name="toolStripButton_large_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -226,6 +217,192 @@
         kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
         TgDQASA1MVpwzwAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="toolStripButton_large_font.ToolTipText" xml:space="preserve">
+    <value>放大字体</value>
+  </data>
+  <data name="checkBox_update_db.Text" xml:space="preserve">
+    <value>自动数据更新。</value>
+  </data>
+  <data name="файлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 24</value>
+  </data>
+  <data name="файлToolStripMenuItem.Text" xml:space="preserve">
+    <value>文件</value>
+  </data>
+  <data name="приветствиеToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 26</value>
+  </data>
+  <data name="приветствиеToolStripMenuItem.Text" xml:space="preserve">
+    <value>问候语</value>
+  </data>
+  <data name="работаСУстройствомToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 26</value>
+  </data>
+  <data name="работаСУстройствомToolStripMenuItem.Text" xml:space="preserve">
+    <value>使用设备</value>
+  </data>
+  <data name="реальноПодключённыеУстройстваToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 26</value>
+  </data>
+  <data name="реальноПодключённыеУстройстваToolStripMenuItem.Text" xml:space="preserve">
+    <value>真正连接的设备</value>
+  </data>
+  <data name="устройстваСПрограммерамиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 26</value>
+  </data>
+  <data name="устройстваСПрограммерамиToolStripMenuItem.Text" xml:space="preserve">
+    <value>设备与程序员</value>
+  </data>
+  <data name="CollectionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 26</value>
+  </data>
+  <data name="CollectionToolStripMenuItem.Text" xml:space="preserve">
+    <value>设备参考</value>
+  </data>
+  <data name="внестиПроизводителяМодельToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 26</value>
+  </data>
+  <data name="внестиПроизводителяМодельToolStripMenuItem.Text" xml:space="preserve">
+    <value>输入制造商、型号</value>
+  </data>
+  <data name="отправкаПрограммераToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 26</value>
+  </data>
+  <data name="отправкаПрограммераToolStripMenuItem.Text" xml:space="preserve">
+    <value>分享程序员</value>
+  </data>
+  <data name="видToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 24</value>
+  </data>
+  <data name="видToolStripMenuItem.Text" xml:space="preserve">
+    <value>查看</value>
+  </data>
+  <data name="поискМаскиБайтToolStripMenuItem.Text" xml:space="preserve">
+    <value>二进制搜索</value>
+  </data>
+  <data name="распаковкаОднобиновойПрошивкиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 26</value>
+  </data>
+  <data name="распаковкаОднобиновойПрошивкиToolStripMenuItem.Text" xml:space="preserve">
+    <value>解包单箱固件 (AGM)</value>
+  </data>
+  <data name="драйвераEDLИADBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 26</value>
+  </data>
+  <data name="драйвераEDLИADBToolStripMenuItem.Text" xml:space="preserve">
+    <value>EDL和ADB驱动程序</value>
+  </data>
+  <data name="ExSertToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 26</value>
+  </data>
+  <data name="ExSertToolStripMenuItem.Text" xml:space="preserve">
+    <value>提取证书</value>
+  </data>
+  <data name="инструментыToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 24</value>
+  </data>
+  <data name="инструментыToolStripMenuItem.Text" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="справкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 26</value>
+  </data>
+  <data name="справкаToolStripMenuItem.Text" xml:space="preserve">
+    <value>参考资料</value>
+  </data>
+  <data name="выборЯзыкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 26</value>
+  </data>
+  <data name="выборЯзыкаToolStripMenuItem.Text" xml:space="preserve">
+    <value>语言选择</value>
+  </data>
+  <data name="автоматическиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 26</value>
+  </data>
+  <data name="автоматическиToolStripMenuItem.Text" xml:space="preserve">
+    <value>自动选择</value>
+  </data>
+  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 6</value>
+  </data>
+  <data name="chinaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 26</value>
+  </data>
+  <data name="русскийToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 26</value>
+  </data>
+  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 26</value>
+  </data>
+  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 6</value>
+  </data>
+  <data name="предложитьПереводToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 26</value>
+  </data>
+  <data name="предложитьПереводToolStripMenuItem.Text" xml:space="preserve">
+    <value>提供转帐服务</value>
+  </data>
+  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 6</value>
+  </data>
+  <data name="rateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 26</value>
+  </data>
+  <data name="rateToolStripMenuItem.Text" xml:space="preserve">
+    <value>评级</value>
+  </data>
+  <data name="авторизоватьсяЧерезТелеграмToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 26</value>
+  </data>
+  <data name="авторизоватьсяЧерезТелеграмToolStripMenuItem.Text" xml:space="preserve">
+    <value>通过电报登录</value>
+  </data>
+  <data name="отменитьАвторизациюToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 26</value>
+  </data>
+  <data name="отменитьАвторизациюToolStripMenuItem.Text" xml:space="preserve">
+    <value>取消授权</value>
+  </data>
+  <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 6</value>
+  </data>
+  <data name="выходToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 26</value>
+  </data>
+  <data name="выходToolStripMenuItem.Text" xml:space="preserve">
+    <value>出</value>
+  </data>
+  <data name="вопросОтветToolStripMenuItem.Text" xml:space="preserve">
+    <value>查看帮助</value>
+  </data>
+  <data name="оПрограммеToolStripMenuItem.Text" xml:space="preserve">
+    <value>关于计划</value>
+  </data>
+  <data name="tabPage_collection.Text" xml:space="preserve">
+    <value>设备参考</value>
+  </data>
+  <data name="tabPage_firehose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1361, 627</value>
+  </data>
+  <data name="tabPage_firehose.Text" xml:space="preserve">
+    <value>使用文件</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1355, 419</value>
+  </data>
+  <data name="textBox_main_term.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 419</value>
+  </data>
+  <data name="dataGridView_final.Size" type="System.Drawing.Size, System.Drawing">
+    <value>946, 419</value>
+  </data>
+  <data name="statusStrip_firehose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 599</value>
+  </data>
+  <data name="tabPage_phone.Text" xml:space="preserve">
+    <value>使用设备</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

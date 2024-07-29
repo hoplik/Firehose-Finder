@@ -89,6 +89,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Актуально на:.
+        /// </summary>
+        internal static string actual_data {
+            get {
+                return ResourceManager.GetString("actual_data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Добавить устройство.
         /// </summary>
         internal static string add_dev {

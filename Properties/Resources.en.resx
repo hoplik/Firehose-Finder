@@ -125,6 +125,10 @@
     <value>The program of selection of programmers (firehose) for devices based on processors from Qualcomm.</value>
     <comment>Программа подбора программеров(firehose) для устройств на базе процессоров от Qualcomm.</comment>
   </data>
+  <data name="actual_data" xml:space="preserve">
+    <value>Relevant on:</value>
+    <comment>Актуально на:</comment>
+  </data>
   <data name="add_dev" xml:space="preserve">
     <value>Add device</value>
     <comment>Добавить устройство</comment>

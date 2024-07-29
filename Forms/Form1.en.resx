@@ -127,6 +127,9 @@
   <data name="файлToolStripMenuItem.Text" xml:space="preserve">
     <value>File</value>
   </data>
+  <data name="выборЯзыкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 26</value>
+  </data>
   <data name="выборЯзыкаToolStripMenuItem.Text" xml:space="preserve">
     <value>Change language</value>
   </data>
@@ -157,6 +160,12 @@
   <data name="предложитьПереводToolStripMenuItem.Text" xml:space="preserve">
     <value>Offer the translation</value>
   </data>
+  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 6</value>
+  </data>
+  <data name="rateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 26</value>
+  </data>
   <data name="rateToolStripMenuItem.Text" xml:space="preserve">
     <value>Rating</value>
   </data>
@@ -171,6 +180,12 @@
   </data>
   <data name="отменитьАвторизациюToolStripMenuItem.Text" xml:space="preserve">
     <value>Cancel authorization</value>
+  </data>
+  <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 6</value>
+  </data>
+  <data name="выходToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 26</value>
   </data>
   <data name="выходToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
@@ -265,14 +280,29 @@
   <data name="справкаToolStripMenuItem.Text" xml:space="preserve">
     <value>Help</value>
   </data>
+  <data name="вопросОтветToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 26</value>
+  </data>
   <data name="вопросОтветToolStripMenuItem.Text" xml:space="preserve">
     <value>View help</value>
+  </data>
+  <data name="оПрограммеToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 26</value>
   </data>
   <data name="оПрограммеToolStripMenuItem.Text" xml:space="preserve">
     <value>About</value>
   </data>
   <data name="tabPage_collection.Text" xml:space="preserve">
     <value>Reference book of devices</value>
+  </data>
+  <data name="bindingNavigatorCountItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 37</value>
+  </data>
+  <data name="bindingNavigatorCountItem.Text" xml:space="preserve">
+    <value>for {0}</value>
+  </data>
+  <data name="bindingNavigatorCountItem.ToolTipText" xml:space="preserve">
+    <value>Total number of segments</value>
   </data>
   <data name="bindingNavigatorMoveFirstItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -285,6 +315,9 @@
         lf8gBXgVDULAwAAA8HbAq6XlmnAAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="bindingNavigatorMoveFirstItem.Text" xml:space="preserve">
+    <value>Move to the beginning</value>
+  </data>
   <data name="bindingNavigatorMovePreviousItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
@@ -294,6 +327,12 @@
         08g3AARUPCZQZsBgBQwMANAUYJgEulBVAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="bindingNavigatorMovePreviousItem.Text" xml:space="preserve">
+    <value>Move back</value>
+  </data>
+  <data name="bindingNavigatorPositionItem.ToolTipText" xml:space="preserve">
+    <value>Current position</value>
+  </data>
   <data name="bindingNavigatorMoveNextItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
@@ -302,6 +341,9 @@
         N8Sj6v7/krnv4JoVXXpIc4F96d3/gS3PyNMMAhZ5d/7bFFwhTzMIGGbdJl8zCOik3SBf81AEDAwAoH5f
         oAc0QjgAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="bindingNavigatorMoveNextItem.Text" xml:space="preserve">
+    <value>Move forward</value>
   </data>
   <data name="bindingNavigatorMoveLastItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -313,6 +355,12 @@
         WOTd+W9TcAVDMwiA5FL7X8O9hBUYZt3GqhkEQHJhLS//6wbPw22ATtoNnJIgOb/qh/81fKfhNgAfcMq9
         8l/FYwIYQ4UGBWBgAAC+0b+zuQxOnAAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="bindingNavigatorMoveLastItem.Text" xml:space="preserve">
+    <value>Move to the end</value>
+  </data>
+  <data name="toolStripTextBox_find.ToolTipText" xml:space="preserve">
+    <value>Search through all fields</value>
   </data>
   <data name="toolStripButton_small_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -353,8 +401,20 @@
   <data name="toolStripButton_large_font.ToolTipText" xml:space="preserve">
     <value>Enlarge the font size</value>
   </data>
+  <data name="checkBox_update_db.Text" xml:space="preserve">
+    <value>Automatic data update.</value>
+  </data>
+  <data name="tabPage_firehose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1361, 627</value>
+  </data>
   <data name="tabPage_firehose.Text" xml:space="preserve">
     <value>Work with files</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1355, 419</value>
+  </data>
+  <data name="textBox_main_term.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 419</value>
   </data>
   <data name="Column_Sel.HeaderText" xml:space="preserve">
     <value>Select</value>
@@ -377,6 +437,9 @@
   </data>
   <data name="contextMenuStrip_final.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 28</value>
+  </data>
+  <data name="dataGridView_final.Size" type="System.Drawing.Size, System.Drawing">
+    <value>946, 419</value>
   </data>
   <data name="загрузитьССервераToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 24</value>
@@ -450,6 +513,9 @@ if there are none</value>
   </data>
   <data name="button_useSahara_fhf.Text" xml:space="preserve">
     <value>Check selected programmer</value>
+  </data>
+  <data name="statusStrip_firehose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 599</value>
   </data>
   <data name="toolStripStatusLabel_filescompleted.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 20</value>

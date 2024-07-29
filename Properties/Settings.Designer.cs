@@ -118,5 +118,17 @@ namespace FirehoseFinder.Properties {
                 this["auth_code"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool update_db {
+            get {
+                return ((bool)(this["update_db"]));
+            }
+            set {
+                this["update_db"] = value;
+            }
+        }
     }
 }

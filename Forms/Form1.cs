@@ -11,11 +11,11 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Management;
+using System.Net;
 using System.Reflection;
 using System.Resources;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using Telegram.Bot;
@@ -101,6 +101,33 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Formfhf_Load(object sender, EventArgs e)
         {
+            //Проверяем актуальность БД на сервере и локально
+            if (Settings.Default.update_db == true)
+            {
+                string distr_ver = Application.ProductVersion.Replace('.', '_');
+                string distr_path = @"https://fhf.yggno.de/Application%20Files/FirehoseFinder_" + distr_ver + "/";
+                HttpWebRequest filter_wrq = (HttpWebRequest)WebRequest.Create(Path.Combine(distr_path, "ForFilter.xml.deploy"));
+                HttpWebResponse filter_wrs = (HttpWebResponse)filter_wrq.GetResponse();
+                DateTime filter_dt = filter_wrs.LastModified;
+                filter_wrs.Close();
+                HttpWebRequest found_wrq = (HttpWebRequest)WebRequest.Create(Path.Combine(distr_path, "ForFound.xml.deploy"));
+                HttpWebResponse found_wrs = (HttpWebResponse)found_wrq.GetResponse();
+                DateTime found_dt = found_wrs.LastModified;
+                found_wrs.Close();
+                //Если на сервере дата больше, чем локально, то копируем деплой с переименованием в xml
+                if (filter_dt > File.GetLastWriteTime("ForFilter.xml"))
+                {
+                    WebClient filter_wc = new WebClient();
+                    filter_wc.DownloadFile(Path.Combine(distr_path, "ForFilter.xml.deploy"), "ForFilter.xml");
+                    filter_wc.Dispose();
+                }
+                if (found_dt > File.GetLastWriteTime("ForFound.xml"))
+                {
+                    WebClient found_wc = new WebClient();
+                    found_wc.DownloadFile(Path.Combine(distr_path, "ForFound.xml.deploy"), "ForFound.xml");
+                    found_wc.Dispose();
+                }
+            }
             //Загружаем Справочник устройств
             dataSet1.ReadXml("ForFilter.xml", XmlReadMode.ReadSchema);
             bindingSource_collection.DataSource = dataSet1.Tables[1];
@@ -110,6 +137,8 @@ namespace FirehoseFinder
             dataSet_Find.ReadXml("ForFound.xml", XmlReadMode.ReadSchema);
             bindingSource_firehose.DataSource = dataSet_Find.Tables[1];
             dataGridView_FInd_Server.DataSource = bindingSource_firehose;
+            //Формируем указатель актуальности даты для базы данных
+            checkBox_update_db.Text += '\u0020' + LocRes.GetString("actual_data") + '\u0020' + File.GetLastWriteTime("ForFilter.xml").ToString("d", Thread.CurrentThread.CurrentUICulture) + '\u002E';
             //Настройки отображения справочника
             dataGridView_collection.Columns["Trust"].Visible=false;
             dataGridView_collection.Columns["LASTKNOWNSBLVER"].HeaderText = "SW Ver";

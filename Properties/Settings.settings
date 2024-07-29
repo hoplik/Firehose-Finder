@@ -26,5 +26,8 @@
     <Setting Name="auth_code" Type="System.String" Scope="User">
       <Value Profile="(Default)">Случайный код авторизации</Value>
     </Setting>
+    <Setting Name="update_db" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

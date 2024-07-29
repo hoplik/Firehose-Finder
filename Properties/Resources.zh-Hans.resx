@@ -125,6 +125,10 @@
     <value>Firehose是基于高通处理器开发</value>
     <comment>Программа подбора программеров(firehose) для устройств на базе процессоров от Qualcomm.</comment>
   </data>
+  <data name="actual_data" xml:space="preserve">
+    <value>有关:</value>
+    <comment>Актуально на:</comment>
+  </data>
   <data name="add_dev" xml:space="preserve">
     <value>添加设备</value>
     <comment>Добавить устройство</comment>
