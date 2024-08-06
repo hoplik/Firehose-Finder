@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-08-04T23:48:45">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-08-07T00:32:01">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -931,6 +931,48 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>CAB02552DC28F562E8C5BEFA75BC4A97B90AAB1C91A3C186EC51F3D3D7D6A1C7</HASH_FH>
 <Model>s5 k520</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C715C450/4/009470e100200000_144cf47f1614ca83_fhprg_peek.bin#</Url>
+<HW_FH>009470E1</HW_FH>
+<OEM_FH>0020</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>144CF47F1614CA83EF55A7E0FE034A7F1948867B1F2A2F9114C7EF6EC715C450</HASH_FH>
+<SWType>3</SWType>
+<SWVer>4</SWVer>
+<Model>SM-G930A</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A75DB643/000bf0e100359571_06917d466c907e9f_fhprg_peek.bin#</Url>
+<HW_FH>000BF0E1</HW_FH>
+<OEM_FH>0035</OEM_FH>
+<MODEL_FH>9571</MODEL_FH>
+<HASH_FH>06917D466C907E9F411207A6E1F8663EBEAFB598DA3A6DAFFE2F538FA75DB643</HASH_FH>
+<Model>4.2</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F7DCD46C/009900e100000001_7c24b3bec0b60439_fhprg_peek.bin#</Url>
+<HW_FH>009900E1</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0001</MODEL_FH>
+<HASH_FH>7C24B3BEC0B604392D8F610D812998CF744D0B3E0572C7F2CC184DC3F7DCD46C</HASH_FH>
+<Model>X527</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/545E47EF/prog_emmc_firehose_8976_cp.mbn#</Url>
+<HW_FH>009900E1</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0001</MODEL_FH>
+<HASH_FH>7D8BD4A98B53F2F4B6B9D2ECE63F8C238F4FC7873F89CF02750E2569545E47EF</HASH_FH>
+<Model>C103</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/545E47EF/prog_emmc_firehose_8976_ddr_cp.mbn#</Url>
+<HW_FH>009900E1</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0001</MODEL_FH>
+<HASH_FH>7D8BD4A98B53F2F4B6B9D2ECE63F8C238F4FC7873F89CF02750E2569545E47EF</HASH_FH>
+<Model>C107-9</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
