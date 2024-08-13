@@ -105,27 +105,35 @@ namespace FirehoseFinder
             if (Settings.Default.update_db == true)
             {
                 string distr_path = @"https://fhf.yggno.de/db/";
-                HttpWebRequest filter_wrq = (HttpWebRequest)WebRequest.Create(Path.Combine(distr_path, "ForFilter.xml"));
-                HttpWebResponse filter_wrs = (HttpWebResponse)filter_wrq.GetResponse();
-                DateTime filter_dt = filter_wrs.LastModified;
-                filter_wrs.Close();
-                HttpWebRequest found_wrq = (HttpWebRequest)WebRequest.Create(Path.Combine(distr_path, "ForFound.xml"));
-                HttpWebResponse found_wrs = (HttpWebResponse)found_wrq.GetResponse();
-                DateTime found_dt = found_wrs.LastModified;
-                found_wrs.Close();
-                //Если на сервере дата больше, чем локально, то копируем
-                if (filter_dt > File.GetLastWriteTime("ForFilter.xml"))
+                try
                 {
-                    WebClient filter_wc = new WebClient();
-                    filter_wc.DownloadFile(Path.Combine(distr_path, "ForFilter.xml"), "ForFilter.xml");
-                    filter_wc.Dispose();
+                    HttpWebRequest filter_wrq = (HttpWebRequest)WebRequest.Create(Path.Combine(distr_path, "ForFilter.xml"));
+                    HttpWebResponse filter_wrs = (HttpWebResponse)filter_wrq.GetResponse();
+                    DateTime filter_dt = filter_wrs.LastModified;
+                    filter_wrs.Close();
+                    HttpWebRequest found_wrq = (HttpWebRequest)WebRequest.Create(Path.Combine(distr_path, "ForFound.xml"));
+                    HttpWebResponse found_wrs = (HttpWebResponse)found_wrq.GetResponse();
+                    DateTime found_dt = found_wrs.LastModified;
+                    found_wrs.Close();
+                    //Если на сервере дата больше, чем локально, то копируем
+                    if (filter_dt > File.GetLastWriteTime("ForFilter.xml"))
+                    {
+                        WebClient filter_wc = new WebClient();
+                        filter_wc.DownloadFile(Path.Combine(distr_path, "ForFilter.xml"), "ForFilter.xml");
+                        filter_wc.Dispose();
+                    }
+                    if (found_dt > File.GetLastWriteTime("ForFound.xml"))
+                    {
+                        WebClient found_wc = new WebClient();
+                        found_wc.DownloadFile(Path.Combine(distr_path, "ForFound.xml"), "ForFound.xml");
+                        found_wc.Dispose();
+                    }
                 }
-                if (found_dt > File.GetLastWriteTime("ForFound.xml"))
+                catch (WebException ex) //При отсутствии инета
                 {
-                    WebClient found_wc = new WebClient();
-                    found_wc.DownloadFile(Path.Combine(distr_path, "ForFound.xml"), "ForFound.xml");
-                    found_wc.Dispose();
+                    textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
                 }
+
             }
             //Загружаем Справочник устройств
             dataSet1.ReadXml("ForFilter.xml", XmlReadMode.ReadSchema);
