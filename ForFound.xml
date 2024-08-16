@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-08-10T23:00:05">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-08-16T23:40:51">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1162,6 +1162,22 @@
 <MODEL_FH>0050</MODEL_FH>
 <HASH_FH>1357FDAEABB7BECBE49095F000D9D3DADF198885106D98598CAC6D1B9B2EDB3A</HASH_FH>
 <Model>8110 4g</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BF6AE119/0006b0e100150062_6bc369511da9cadb_fhprg_peek.bin#</Url>
+<HW_FH>0006B0E1</HW_FH>
+<OEM_FH>0015</OEM_FH>
+<MODEL_FH>0062</MODEL_FH>
+<HASH_FH>6BC369511DA9CADB3A7AF61574F89DB385003D6241BDD1FF573DBA61BF6AE119</HASH_FH>
+<Model>TRT-LX1</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BEDCAB61/000460e120161721_802156631e5e856b_fhprg_peek.bin#</Url>
+<HW_FH>000460E1</HW_FH>
+<OEM_FH>2016</OEM_FH>
+<MODEL_FH>1721</MODEL_FH>
+<HASH_FH>802156631E5E856BE68D8CED1751174D8B0F712C1394AB6A924D647CBEDCAB61</HASH_FH>
+<Model>Meizu M1721</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
