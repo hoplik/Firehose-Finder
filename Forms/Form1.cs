@@ -132,8 +132,8 @@ namespace FirehoseFinder
                 catch (WebException ex) //При отсутствии инета
                 {
                     textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                    Settings.Default.update_db = false;
                 }
-
             }
             //Загружаем Справочник устройств
             dataSet1.ReadXml("ForFilter.xml", XmlReadMode.ReadSchema);
