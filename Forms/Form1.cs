@@ -1276,7 +1276,7 @@ namespace FirehoseFinder
                 count++;
             }
             e.Result = output_FH;
-            Thread.Sleep(1);
+            Thread.Sleep(5);
         }
 
         private void BackgroundWorker_dump_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -1284,7 +1284,7 @@ namespace FirehoseFinder
             string newfilename = e.UserState.ToString();
             progressBar_phone.Value = e.ProgressPercentage;
             textBox_soft_term.AppendText(LocRes.GetString("tb_save") + '\u0020' + newfilename + " ... ");
-            if (File.Exists(newfilename))
+            /*if (File.Exists(newfilename))
             {
                 try
                 {
@@ -1296,7 +1296,7 @@ namespace FirehoseFinder
                     textBox_soft_term.AppendText(ex.Message + Environment.NewLine);
                     SendErrorInChat();
                 }
-            }
+            }*/
             textBox_soft_term.AppendText(LocRes.GetString("done") + Environment.NewLine);
         }
 
@@ -2786,6 +2786,8 @@ namespace FirehoseFinder
                 StringBuilder fh_all_args = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
                 List<string> argsfordump = new List<string>(); //Необходимые данные для параллельного потока
                 int lun_int = 0;
+                //Указали путь для вывода
+                fh_all_args.Append(" --mainoutputdir=" + folderBrowserDialog1.SelectedPath);
                 fh_all_args.Append(" --convertprogram2read");
                 if (comboBox_lun_count.SelectedIndex != -1) lun_int = comboBox_lun_count.SelectedIndex;
                 fh_all_args.Append(" --lun=" + lun_int);
@@ -2948,7 +2950,9 @@ namespace FirehoseFinder
                     listView_GPT.CheckedItems[0].SubItems[1].Text);
                 //Создаём аргументы для лоадера
                 StringBuilder Argstoxml = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName);
-                Argstoxml.Append(" --sendxml=p_r.xml --noprompt --search_path=" + loadpath);
+                //Путь вывода
+                Argstoxml.Append(" --mainoutputdir=" + loadpath);//--search_path=" + loadpath
+                Argstoxml.Append(" --sendxml=p_r.xml --noprompt");
                 switch (comboBox_log.SelectedIndex)
                 {
                     case 0:
@@ -3048,20 +3052,21 @@ namespace FirehoseFinder
             if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine);
             else
             {
-                string newfilename = "dump_" + listView_GPT.CheckedItems[0].SubItems[2].Text + ".bin";
+                /*string newfilename = "dump_" + listView_GPT.CheckedItems[0].SubItems[2].Text + ".bin";
                 if (File.Exists(newfilename))
                 {
                     try
                     {
-                        if (File.Exists(folderBrowserDialog1.SelectedPath + "\\" + newfilename)) File.Delete(folderBrowserDialog1.SelectedPath + "\\" + newfilename);
-                        File.Move(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
+                        string newfullfile = Path.Combine(folderBrowserDialog1.SelectedPath, newfilename);
+                        if (File.Exists(newfullfile)) File.Delete(newfullfile);
+                        File.Move(newfilename, newfullfile);
                     }
                     catch (Exception ex)
                     {
                         textBox_soft_term.AppendText(ex.Message + Environment.NewLine);
                         SendErrorInChat();
                     }
-                }
+                }*/
                 textBox_soft_term.AppendText(e.Result.ToString() + Environment.NewLine +
                     LocRes.GetString("tb_loader_com") + Environment.NewLine);
             }
