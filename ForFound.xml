@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-08-21T13:55:22">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-08-29T20:09:00">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1432,6 +1432,44 @@
 <SWType>3</SWType>
 <SWVer>2</SWVer>
 <Model>MI MIX3</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A8C9F746/5/G781V%20Loader%20File.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0020</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>ECDB07230E7294DF77C5623B559608BBE5DAE588A54CA8F02F11CE2D803DED8F31627FEE3A549E3EA2D48112DD0CC2B6</HASH_FH>
+<SWType>3</SWType>
+<SWVer>5</SWVer>
+<Model>SM-G781W</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A8C9F746/9/G781U%20Loader%20File.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0020</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>59CD3ADFEEAF8F8713D084F35B7B673BD7C39BD2BBA0B1E88DD84571907F9277821154FB2E15169A9241A8829ACFBEAA</HASH_FH>
+<SWType>3</SWType>
+<SWVer>9</SWVer>
+<Model>SM-G781W</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/81AE61EB/prog_emmc_firehose.mbn#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>01A4</OEM_FH>
+<MODEL_FH>0003</MODEL_FH>
+<HASH_FH>1816101F1302CF634F7002490E6742134F5FCDE05A7EAFF5BA7029AA0E69F9521E921A171A2F60A67BAEF26B81AE61EB</HASH_FH>
+<Model>ANY-LX1</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/93C42D7F/8/G991U%20Loader%20File.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0020</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>ADC06624E8EB216D4AE42D8D80FAEFB7C664AF837D271914D2682A328B0DD957E5D1BD8EF82530BF70CB5F3193C42D7F</HASH_FH>
+<SWType>3</SWType>
+<SWVer>8</SWVer>
+<Model>SM-G991U</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
