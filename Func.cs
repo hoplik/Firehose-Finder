@@ -949,7 +949,7 @@ namespace FirehoseFinder
             }
             return portprops;
         }
-        /*
+        
         /// <summary>
         /// Сортировка массива пользователей по рейтингу активности
         /// </summary>
@@ -986,7 +986,7 @@ namespace FirehoseFinder
                 }
             }
             return sr;
-        }*/
+        }
     }
 }
 
