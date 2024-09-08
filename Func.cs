@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Design;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -97,6 +98,9 @@ namespace FirehoseFinder
             switch (fh_type) //Адрес 0х1004
             {
                 case "06": //Новый шланг
+                    Array.Copy(ProgV6(dumpfile), certarray, certarray.Length);
+                    /*
+                     * Переписал старую функцию
                     StringBuilder hw_res = new StringBuilder(string.Empty);
                     for (int i = 0; i < 4; i++)
                     {
@@ -109,6 +113,7 @@ namespace FirehoseFinder
                     certarray[4] = dumpfile.Substring(8304, 2).TrimStart('0'); //1038, 1byte, SW_ID -идентификатор образа
                     if (dumpfile.Substring(8520, 2) == "00") certarray[5] = string.Empty;
                     else certarray[5] = "(" + dumpfile.Substring(8520, 2).TrimStart('0') + ")"; //10A4, 1byte, SW_VER -версия образа
+                    */
                     break;
                 default: //Старый шланг 5 или 3. 7 - новейший, алгоритм пока не определён
                     if (HWIDstrInd >= 32 && SWIDstrInd >= 32)
@@ -208,6 +213,122 @@ namespace FirehoseFinder
                     break;
             }
             return certarray;
+        }
+
+        /// <summary>
+        /// Процедура получения пользовательских данных из дампа программера
+        /// </summary>
+        /// <param name="dump_str">Полный данп</param>
+        /// <returns>Шесть значений - JTAG_ID-OEM_ID-MODEL_ID-OEM_PK_HASH-SW_ID-AntiRollBack</returns>
+        internal string[] ProgV6(string dump_str)
+        {
+            string[] ids_strings = new string[6]; //Результирующий массив из 6 элементов
+            byte LBE = Convert.ToByte(dump_str.Substring(10, 2), 16); //Данные little (01) or big (02) endian
+            int offset_elf = 0;
+            bool first_sign = true;
+        Double_sign:
+            StringBuilder s_size_elf_header = new StringBuilder(string.Empty);
+            StringBuilder s_size_prog_header = new StringBuilder(string.Empty);
+            //StringBuilder s_count_prog_header = new StringBuilder(string.Empty); //Пока не используем!
+            StringBuilder s_pr_offset = new StringBuilder(string.Empty);
+            StringBuilder JTAG_ID = new StringBuilder(string.Empty);
+            StringBuilder OEM_ID = new StringBuilder(string.Empty);
+            StringBuilder MODEL_ID = new StringBuilder(string.Empty);
+            StringBuilder SW_ID = new StringBuilder(string.Empty);
+            StringBuilder ANTIROLLBACK = new StringBuilder(string.Empty);
+            //Разбираем шапку эльфа
+            switch ((Guide.ELF_Data)LBE)
+            {
+                case Guide.ELF_Data.Little_endian:
+                    for (int i = 0; i < 2; i++) s_size_elf_header.Insert(0, dump_str.Substring(offset_elf + (0x34 * 2) + (i * 2), 2));
+                    for (int i = 0; i < 2; i++) s_size_prog_header.Insert(0, dump_str.Substring(offset_elf + (0x36 * 2) + (i * 2), 2));
+                    //for (int i = 0; i < 2; i++) s_count_prog_header.Insert(0, dump_str.Substring(offset_elf + (0x38 * 2) + (i * 2), 2));
+                    break;
+                case Guide.ELF_Data.Big_endian:
+                    for (int i = 0; i < 2; i++) s_size_elf_header.Append(dump_str.Substring(offset_elf + (0x34 * 2) + (i * 2), 2));
+                    for (int i = 0; i < 2; i++) s_size_prog_header.Append(dump_str.Substring(offset_elf + (0x36 * 2) + (i * 2), 2));
+                    //for (int i = 0; i < 2; i++) s_count_prog_header.Append(dump_str.Substring(offset_elf + (0x38 * 2) + (i * 2), 2));
+                    break;
+            }
+            int size_elf_header = Convert.ToInt32(s_size_elf_header.ToString(), 16); //Размер шапки эльфа - значение 0x40, адрес 0х34, 2 байта
+            int size_prog_header = Convert.ToInt32(s_size_prog_header.ToString(), 16); //Размер шапки прог - значение 0x38, адрес 0х36, 2 байта
+            //int count_prog_header = Convert.ToInt32(s_count_prog_header.ToString(), 16); //Количество прог - значение 0x12, адрес 0х38, 2 байта
+            //Разбираем проги (только вторую - таблицу хешей)
+            switch ((Guide.ELF_Data)LBE)
+            {
+                case Guide.ELF_Data.Little_endian:
+                    for (int i = 0; i < 8; i++) s_pr_offset.Insert(0, dump_str.Substring(
+                        offset_elf + (size_elf_header * 2) + (size_prog_header * 2) + (0x8 * 2) + (i * 2), 2));
+                    break;
+                case Guide.ELF_Data.Big_endian:
+                    for (int i = 0; i < 8; i++) s_pr_offset.Append(dump_str.Substring(
+                        offset_elf + (size_elf_header * 2) + (size_prog_header * 2) + (0x8 * 2) + (i * 2), 2));
+                    break;
+            }
+            int pr_offset = Convert.ToInt32(s_pr_offset.ToString(), 16); //Сдвиг начала прог (для 2 проги) - значение 0х1000, адрес 0х8, 8 байт
+            //Достаём пользовательские данные
+            switch ((Guide.ELF_Data)LBE)
+            {
+                case Guide.ELF_Data.Little_endian:
+                    if (string.IsNullOrEmpty(ids_strings[4]) || ids_strings[4].Equals("0"))
+                    {
+                        for (int i = 0; i < 4; i++) SW_ID.Insert(0, dump_str.Substring(offset_elf + (pr_offset * 2) + (0x38 * 2) + (i * 2), 2)); //1038, 4byte, SW_ID -идентификатор образа
+                    }
+                    for (int i = 0; i < 4; i++) JTAG_ID.Insert(0, dump_str.Substring(offset_elf + (pr_offset * 2) + (0x3C * 2) + (i * 2), 2)); //103C, 4byte, JTAG_ID -идентификатор процессора
+                    if (string.IsNullOrEmpty(ids_strings[1]) || ids_strings[1].Equals("0000"))
+                    {
+                        for (int i = 0; i < 2; i++) OEM_ID.Insert(0, dump_str.Substring(offset_elf + (pr_offset * 2) + (0x40 * 2) + (i * 2), 2)); //1040, 2byte, OEM_ID -идентификатор вендора
+                    }
+                    if (string.IsNullOrEmpty(ids_strings[2]) || ids_strings[2].Equals("0000"))
+                    {
+                        for (int i = 0; i < 2; i++) MODEL_ID.Insert(0, dump_str.Substring(offset_elf + (pr_offset * 2) + (0x44 * 2) + (i * 2), 2)); //1044, 2byte, MODEL_ID -идентификатор модели
+                    }
+                    if (string.IsNullOrEmpty(ids_strings[5]))
+                    {
+                        for (int i = 0; i < 4; i++) ANTIROLLBACK.Insert(0, dump_str.Substring(offset_elf + (pr_offset * 2) + (0xA4 * 2) + (i * 2), 2)); //10A4, 4byte, ANTIROLLBACK -версия образа
+                    }
+                    break;
+                case Guide.ELF_Data.Big_endian:
+                    if (string.IsNullOrEmpty(ids_strings[4]) || ids_strings[4].Equals("0"))
+                    {
+                        for (int i = 0; i < 4; i++) SW_ID.Append(dump_str.Substring(offset_elf + (pr_offset * 2) + (0x38 * 2) + (i * 2), 2));
+                    }
+                    for (int i = 0; i < 4; i++) JTAG_ID.Append(dump_str.Substring(offset_elf + (pr_offset * 2) + (0x3C * 2) + (i * 2), 2));
+                    if (string.IsNullOrEmpty(ids_strings[1]) || ids_strings[1].Equals("0000"))
+                    {
+                        for (int i = 0; i < 2; i++) OEM_ID.Append(dump_str.Substring(offset_elf + (pr_offset * 2) + (0x40 * 2) + (i * 2), 2));
+                    }
+                    if (string.IsNullOrEmpty(ids_strings[2]) || ids_strings[2].Equals("0000"))
+                    {
+                        for (int i = 0; i < 2; i++) MODEL_ID.Append(dump_str.Substring(offset_elf + (pr_offset * 2) + (0x44 * 2) + (i * 2), 2));
+                    }
+                    if (string.IsNullOrEmpty(ids_strings[5]))
+                    {
+                        for (int i = 0; i < 4; i++) ANTIROLLBACK.Append(dump_str.Substring(offset_elf + (pr_offset * 2) + (0xA4 * 2) + (i * 2), 2));
+                    }
+                    break;
+            }
+            if (!string.IsNullOrEmpty(OEM_ID.ToString())) ids_strings[1] = OEM_ID.ToString();
+            if (!string.IsNullOrEmpty(MODEL_ID.ToString())) ids_strings[2] = MODEL_ID.ToString();
+            if (string.IsNullOrEmpty(ids_strings[4]) || ids_strings[4].Equals("0"))
+            {
+                if (string.IsNullOrEmpty(SW_ID.ToString().TrimStart('0'))) ids_strings[4] = "0";
+                else ids_strings[4] = SW_ID.ToString().TrimStart('0');
+            }
+            if (string.IsNullOrEmpty(ids_strings[5]))
+            {
+                if (string.IsNullOrEmpty(ANTIROLLBACK.ToString().TrimStart('0'))) ids_strings[5] = string.Empty;
+                else ids_strings[5] = "(" + ANTIROLLBACK.ToString().TrimStart('0') + ")";
+            }
+            if (JTAG_ID.ToString().Equals("00000000") && dump_str.Substring(pr_offset * 2).Contains("7F454C46") && first_sign)
+            {
+                offset_elf = dump_str.LastIndexOf("7F454C46"); //Ищем во второй подписи эльфа
+                first_sign = false;
+                goto Double_sign;
+            }
+            ids_strings[0] = JTAG_ID.ToString();
+            if (string.IsNullOrEmpty(CertExtr(dump_str))) ids_strings[3] = "?"; else ids_strings[3] = CertExtr(dump_str);  //OEM_PK_HASH
+            return ids_strings;
         }
 
         /// <summary>
@@ -828,7 +949,7 @@ namespace FirehoseFinder
             }
             return portprops;
         }
-
+        /*
         /// <summary>
         /// Сортировка массива пользователей по рейтингу активности
         /// </summary>
@@ -865,7 +986,7 @@ namespace FirehoseFinder
                 }
             }
             return sr;
-        }
+        }*/
     }
 }
 

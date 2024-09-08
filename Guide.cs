@@ -138,6 +138,11 @@ namespace FirehoseFinder
             bit32,
             bit64
         }
+        internal enum ELF_Data : byte
+        {
+            Little_endian = 0x01,
+            Big_endian = 0x02
+        }
 
         /// <summary>
         /// Признак алгоритма подписи сертификата в коде программера
