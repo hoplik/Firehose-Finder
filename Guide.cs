@@ -200,6 +200,7 @@ namespace FirehoseFinder
         {
             new Users_Rating ("ⓢⓘⓕⓐⓝ (sifansaeed)", user_mess:1, user_reactions:1, last_post_date: new DateTime(2025,2,14)),
             new Users_Rating ("Александр Сергеев (hoplik)", user_mess:2, user_reactions:5, last_post_date: new DateTime(2025,1,4)),
+            new Users_Rating ("Andy Dmitriev (AndyDmitriev)", user_mess:1, user_reactions:1, last_post_date: new DateTime(2025,3,16)),
         };
     }
 
