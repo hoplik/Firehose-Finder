@@ -96,7 +96,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-09-18T22:35:30">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-09-18T22:43:55">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -5887,6 +5887,7 @@
 <Trademark>Hisense</Trademark>
 <Model>HLTE556N</Model>
 <AltName>HLTE556N, A9</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/4BDF4501/prog_firehose_ddr_001360E1.elf#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>

@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-09-18T22:35:35">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-09-18T22:44:00">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1496,6 +1496,11 @@
 <Model>Y85</Model>
 </ForFound>
 <ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/4BDF4501/prog_firehose_ddr_001360E1.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0043</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>56D3F3C74A52172B18CA2297DB00F3FEEBD23CDFC77DECFB34268ABCA09D9075F89B18F87610EF3FE67F948D4BDF4501</HASH_FH>
 <Model>HLTE556N</Model>
 </ForFound>
 <ForFound>
