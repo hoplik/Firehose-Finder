@@ -194,7 +194,7 @@ namespace FirehoseFinder
         };
 
         /// <summary>
-        /// Рейтинг пользователей (обновляется вручную!)"
+        /// Рейтинг пользователей #Concernedusersrating (обновляется вручную!)"
         /// </summary>
         internal readonly List<Users_Rating> users_rate = new List<Users_Rating>(3)
         {
