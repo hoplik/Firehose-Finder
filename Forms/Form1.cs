@@ -3553,7 +3553,7 @@ namespace FirehoseFinder
             MessageBox.Show(LocRes.GetString("mb_bot_start"));
             //Запускаем локального бота
             Bot_Funcs.BotWork();
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             var rand = new Random();
             Settings.Default.auth_code = rand.Next(10, 99).ToString() + '\u002D' + rand.Next(10, 99).ToString();
             ProcessStartInfo psi = new ProcessStartInfo("https://t.me/Hoplik_Bot?start=" + Settings.Default.auth_code);

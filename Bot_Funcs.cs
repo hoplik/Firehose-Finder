@@ -123,7 +123,7 @@ namespace FirehoseFinder
                                 {
                                     await botClient.SendTextMessageAsync(
                                         chat.Id,
-                                        "Извините, не понимаю о чём вы. Может быть /start?",
+                                        $"Может быть Вы хотели отправить {Settings.Default.auth_code}?",
                                         replyToMessageId: message.MessageId
                                         );
                                 }
