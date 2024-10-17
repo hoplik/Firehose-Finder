@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-10-10T16:25:44">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-10-17T20:47:01">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1520,6 +1520,16 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>CDCA05C04D0855B807D3F0F56674F1039EC87C9F5A2DE4955C7DCA2642103C032F600F6A3136D8EC257957F990AFBC5C</HASH_FH>
 <Model>motorola one fusion</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/4BF1A07B/8/Sams_G996U.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0020</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>D6BD96B0682EE88A1607A4C5602833F52929A2541C3C2B5D51A4628DB3F4618BD475287DF12553F62D7900A84BF1A07B</HASH_FH>
+<SWType>3</SWType>
+<SWVer>8</SWVer>
+<Model>SM-G996U</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
