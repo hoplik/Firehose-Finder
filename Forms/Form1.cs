@@ -14,6 +14,7 @@ using System.Management;
 using System.Net;
 using System.Reflection;
 using System.Resources;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -29,7 +30,6 @@ namespace FirehoseFinder
     {
         private readonly Func func = new Func(); //Подключили функции
         private readonly Guide guide = new Guide(); //Подключили справочник
-        private readonly Bot_Funcs botFuncs = new Bot_Funcs(); //Подключили функции бота
         bool waitSahara = false; //Ждём ли мы автоперезагрузку с получением ID Sahara
         bool FHAlreadyLoaded = false; //Был ли успешно загружен программер (не надо грузить повторно)
         bool NeedReset = false; //Требуется ли перезагрузка устройства после работы с Сахарой
@@ -2609,8 +2609,8 @@ namespace FirehoseFinder
                         $"[{Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID})" + '\u0020' +
                         LocRes.GetString("thanks_u_data") + '\u0020' +
                         LocRes.GetString("increase_rating");
-                await Bot_Funcs._botClient.SendTextMessageAsync(
-                    botFuncs.channel,
+                await Guide._botClient.SendTextMessageAsync(
+                    guide.channel,
                     mess_to_post,
                     disableWebPagePreview: true,
                     parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
@@ -3052,21 +3052,6 @@ namespace FirehoseFinder
             if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine);
             else
             {
-                /*string newfilename = "dump_" + listView_GPT.CheckedItems[0].SubItems[2].Text + ".bin";
-                if (File.Exists(newfilename))
-                {
-                    try
-                    {
-                        string newfullfile = Path.Combine(folderBrowserDialog1.SelectedPath, newfilename);
-                        if (File.Exists(newfullfile)) File.Delete(newfullfile);
-                        File.Move(newfilename, newfullfile);
-                    }
-                    catch (Exception ex)
-                    {
-                        textBox_soft_term.AppendText(ex.Message + Environment.NewLine);
-                        SendErrorInChat();
-                    }
-                }*/
                 textBox_soft_term.AppendText(e.Result.ToString() + Environment.NewLine +
                     LocRes.GetString("tb_loader_com") + Environment.NewLine);
             }
@@ -3355,7 +3340,7 @@ namespace FirehoseFinder
                                     $"[{Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID})" + '\u0020' +
                                     LocRes.GetString("thanks_u_data") + '\u0020' +
                                     LocRes.GetString("increase_rating");
-                            await Bot_Funcs._botClient.SendDocumentAsync(botFuncs.channel, onlineFile, null, null, mess_to_post, Telegram.Bot.Types.Enums.ParseMode.Markdown);
+                            await Guide._botClient.SendDocumentAsync(guide.channel, onlineFile, null, null, mess_to_post, Telegram.Bot.Types.Enums.ParseMode.Markdown);
                             textBox_soft_term.AppendText(LocRes.GetString("sent") + Environment.NewLine);
                         }
                         catch (Exception ex)
@@ -3550,14 +3535,14 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void АвторизоватьсяЧерезТелеграмToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(LocRes.GetString("mb_bot_start"));
-            //Запускаем локального бота
-            Bot_Funcs.BotWork();
-            Thread.Sleep(500);
-            var rand = new Random();
+            Random rand = new Random();
             Settings.Default.auth_code = rand.Next(10, 99).ToString() + '\u002D' + rand.Next(10, 99).ToString();
             ProcessStartInfo psi = new ProcessStartInfo("https://t.me/Hoplik_Bot?start=" + Settings.Default.auth_code);
             Process.Start(psi);
+            //Запускаем процедуру опроса сервера в параллельном потоке
+            if (!backgroundWorker_auth.IsBusy) backgroundWorker_auth.RunWorkerAsync(Encoding.UTF8.GetBytes(Settings.Default.auth_code));
+            MessageBox.Show(LocRes.GetString("bot_code_start") + Environment.NewLine + Settings.Default.auth_code,
+                LocRes.GetString("bot_title_start"));
         }
 
         /// <summary>
@@ -3581,6 +3566,94 @@ namespace FirehoseFinder
         {
             Rate rate = new Rate();
             rate.Show();
+        }
+
+        /// <summary>
+        /// Ожидаем проведение процедуры авторизации ботом
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BackgroundWorker_auth_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            byte timeout_ask = 5; //Периодичность опроса сервера в секундах
+            byte total_timeout = 100; //Длительность работы потока в секундах
+            string auth_path = @"https://fhf.yggno.de/challenge/";
+            byte[] user_profile = (byte[])e.Argument;
+            SHA256 user_auth = SHA256.Create();
+            string upf_code = BitConverter.ToString(user_auth.ComputeHash(user_profile)).Replace("-", string.Empty);
+            string full_file_path = Path.Combine(auth_path, upf_code);
+            e.Result = string.Empty;
+            string temp_report = LocRes.GetString("ts_auth");
+            while (total_timeout > 0)
+            {
+                try
+                {
+                    HttpWebRequest auth_wrq = (HttpWebRequest)WebRequest.Create(full_file_path);
+                    HttpWebResponse auth_wrs = (HttpWebResponse)auth_wrq.GetResponse();
+                    //Если профайл есть на сервере, то копируем
+                    if (auth_wrs.ContentType != "text/html")
+                    {
+                        total_timeout = timeout_ask;
+                        e.Result = full_file_path;
+                    }
+                    auth_wrs.Close();
+                }
+                catch (WebException ex) //При отсутствии инета
+                {
+                    //Просто игнорируем
+                    temp_report = ex.Message;
+                    throw;
+                }
+                catch (Exception ex)
+                {
+                    temp_report = ex.Message;
+                    throw;
+                }
+                worker.ReportProgress(total_timeout, temp_report);
+                Thread.Sleep(timeout_ask * 1000);
+                total_timeout -= timeout_ask;
+            }
+        }
+
+        /// <summary>
+        /// По завершении либо строка с файлом, либо пусто, либо ошибка
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BackgroundWorker_auth_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            toolStripStatusLabel_filescompleted.Text = string.Empty;
+            toolStripProgressBar_filescompleted.Value = 0;
+            if (e.Error != null)
+            {
+                textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine);
+                MessageBox.Show(e.Error.Message, LocRes.GetString("mb_title_mis"));
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(e.Result.ToString())) //Неудачная авторизация
+                {
+                    textBox_soft_term.AppendText(LocRes.GetString("tb_auth_fall") + Environment.NewLine);
+                    MessageBox.Show(LocRes.GetString("tb_auth_fall"), LocRes.GetString("mb_title_mis"));
+                }
+                else //Успешно авторизовались
+                {
+                    WebClient client = new WebClient();
+                    string[] user_profile = client.DownloadString(e.Result.ToString()).Split('\n');
+                    Settings.Default.userID = Convert.ToInt64(user_profile[0]);
+                    if (string.IsNullOrEmpty(user_profile[1])) Settings.Default.userFN = string.Empty; else Settings.Default.userFN = user_profile[1];
+                    if (string.IsNullOrEmpty(user_profile[2])) Settings.Default.userLN = string.Empty; else Settings.Default.userLN = user_profile[2];
+                    if (string.IsNullOrEmpty(user_profile[3])) Settings.Default.userN = string.Empty; else Settings.Default.userN = user_profile[3];
+                    Application.Restart();
+                }
+            }
+        }
+
+        private void BackgroundWorker_auth_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            toolStripStatusLabel_filescompleted.Text = e.UserState.ToString();
+            toolStripProgressBar_filescompleted.Value = e.ProgressPercentage;
         }
     }
 }

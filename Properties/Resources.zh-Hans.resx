@@ -157,9 +157,9 @@
     <value>如果您未能自动登录，那么您可以在Telegram中找到"Hoplik-Bot"机器人，并尝试在FhF应用程序运行时在/start命令之后输入授权代码:</value>
     <comment>Если у вас не получилость автоматически авторизоваться, то вы можете найти в Телеграм бота "Hoplik-Bot" и при запущенном приложении FhF попробовать ввести после команды /start код авторизации:</comment>
   </data>
-  <data name="bot_title_start_suc" xml:space="preserve">
-    <value>成功发射！</value>
-    <comment>успешно запущен!</comment>
+  <data name="bot_title_start" xml:space="preserve">
+    <value>替代授权选项</value>
+    <comment>Альтернативная возможность авторизации</comment>
   </data>
   <data name="button_dirrepack" xml:space="preserve">
     <value>解压目录</value>
@@ -405,10 +405,6 @@
     <value>确认后，将从服务器下载一个程序包。这并不保证您能成功使用。它只是一个可能适合您所选机型的文件。</value>
     <comment>При подтверждении, с сервера будет загружен программер. Это не гарантирует того, что у вас с этим программером всё получится. Просто это, с высокой долей вероятности, подходящий к выбранной вами модели файл.</comment>
   </data>
-  <data name="mb_bot_start" xml:space="preserve">
-    <value>请等待有关机器人成功启动的消息！</value>
-    <comment>Пожалуйста, дождитесь сообщения об успешном запуске бота!</comment>
-  </data>
   <data name="mb_note_dev_recon" xml:space="preserve">
     <value>必须重新连接设备才能接收 ID！</value>
     <comment>Для получения идентификаторов устройство должно быть переподключено!</comment>
@@ -617,6 +613,10 @@
     <value>正在启动ADB服务器中...</value>
     <comment>Запускаем сервер ADB ...</comment>
   </data>
+  <data name="tb_auth_fall" xml:space="preserve">
+    <value>授权失败。 再试一次。</value>
+    <comment>Авторизация завершилась неудачей. Попробуйте ещё раз.</comment>
+  </data>
   <data name="tb_batch_record" xml:space="preserve">
     <value>固件批量记录</value>
     <comment>Пакетная запись прошивки</comment>
@@ -760,6 +760,10 @@
   <data name="tip_row" xml:space="preserve">
     <value>从列表中选择或手动输入</value>
     <comment>Выберите из списка или введите вручную</comment>
+  </data>
+  <data name="ts_auth" xml:space="preserve">
+    <value>授权书</value>
+    <comment>Авторизация</comment>
   </data>
   <data name="tt_check" xml:space="preserve">
     <value>点击以检查所选编程器</value>

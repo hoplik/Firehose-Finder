@@ -157,9 +157,9 @@
     <value>If you failed to log in automatically, then you can find the "Hoplik-Bot" bot in the Telegram and try to enter the authorization code after the /start command when the FhF application is running:</value>
     <comment>Если у вас не получилость автоматически авторизоваться, то вы можете найти в Телеграм бота "Hoplik-Bot" и при запущенном приложении FhF попробовать ввести после команды /start код авторизации:</comment>
   </data>
-  <data name="bot_title_start_suc" xml:space="preserve">
-    <value>successfully launched!</value>
-    <comment>успешно запущен!</comment>
+  <data name="bot_title_start" xml:space="preserve">
+    <value>Alternative authorization option</value>
+    <comment>Альтернативная возможность авторизации</comment>
   </data>
   <data name="button_dirrepack" xml:space="preserve">
     <value>Dir for unpacking</value>
@@ -405,10 +405,6 @@
     <value>Upon confirmation, the programmer will be downloaded from the server. This does not guarantee that you will succeed with this programmer. It's just that, with a high degree of probability, a file suitable for the model you have chosen.</value>
     <comment>При подтверждении, с сервера будет загружен программер. Это не гарантирует того, что у вас с этим программером всё получится. Просто это, с высокой долей вероятности, подходящий к выбранной вами модели файл.</comment>
   </data>
-  <data name="mb_bot_start" xml:space="preserve">
-    <value>Please wait for the message about the successful launch of the bot!</value>
-    <comment>Пожалуйста, дождитесь сообщения об успешном запуске бота!</comment>
-  </data>
   <data name="mb_note_dev_recon" xml:space="preserve">
     <value>To get the IDs, the device must be reconnected!</value>
     <comment>Для получения идентификаторов устройство должно быть переподключено!</comment>
@@ -617,6 +613,10 @@
     <value>Starting the ADB server ...</value>
     <comment>Запускаем сервер ADB ...</comment>
   </data>
+  <data name="tb_auth_fall" xml:space="preserve">
+    <value>Authorization failed. Try again.</value>
+    <comment>Авторизация завершилась неудачей. Попробуйте ещё раз.</comment>
+  </data>
   <data name="tb_batch_record" xml:space="preserve">
     <value>Batch firmware recording</value>
     <comment>Пакетная запись прошивки</comment>
@@ -760,6 +760,10 @@
   <data name="tip_row" xml:space="preserve">
     <value>Select from the list or enter manually</value>
     <comment>Выберите из списка или введите вручную</comment>
+  </data>
+  <data name="ts_auth" xml:space="preserve">
+    <value>Authorization</value>
+    <comment>Авторизация</comment>
   </data>
   <data name="tt_check" xml:space="preserve">
     <value>Click to check the selected programmer</value>

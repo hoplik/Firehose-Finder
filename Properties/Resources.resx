@@ -709,16 +709,19 @@
   <data name="thanks_u_data" xml:space="preserve">
     <value>за предоставленные данные.</value>
   </data>
-  <data name="bot_title_start_suc" xml:space="preserve">
-    <value>успешно запущен!</value>
-  </data>
-  <data name="mb_bot_start" xml:space="preserve">
-    <value>Пожалуйста, дождитесь сообщения об успешном запуске бота!</value>
+  <data name="bot_title_start" xml:space="preserve">
+    <value>Альтернативная возможность авторизации</value>
   </data>
   <data name="bot_code_start" xml:space="preserve">
     <value>Если у вас не получилость автоматически авторизоваться, то вы можете найти в Телеграм бота "Hoplik-Bot" и при запущенном приложении FhF попробовать ввести после команды /start код авторизации:</value>
   </data>
   <data name="actual_data" xml:space="preserve">
     <value>Актуально на:</value>
+  </data>
+  <data name="tb_auth_fall" xml:space="preserve">
+    <value>Авторизация завершилась неудачей. Попробуйте ещё раз.</value>
+  </data>
+  <data name="ts_auth" xml:space="preserve">
+    <value>Авторизация</value>
   </data>
 </root>

@@ -210,11 +210,11 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на успешно запущен!.
+        ///   Ищет локализованную строку, похожую на Альтернативная возможность авторизации.
         /// </summary>
-        internal static string bot_title_start_suc {
+        internal static string bot_title_start {
             get {
-                return ResourceManager.GetString("bot_title_start_suc", resourceCulture);
+                return ResourceManager.GetString("bot_title_start", resourceCulture);
             }
         }
         
@@ -881,15 +881,6 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Пожалуйста, дождитесь сообщения об успешном запуске бота!.
-        /// </summary>
-        internal static string mb_bot_start {
-            get {
-                return ResourceManager.GetString("mb_bot_start", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на Для получения идентификаторов устройство должно быть переподключено!.
         /// </summary>
         internal static string mb_note_dev_recon {
@@ -1380,6 +1371,15 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Авторизация завершилась неудачей. Попробуйте ещё раз..
+        /// </summary>
+        internal static string tb_auth_fall {
+            get {
+                return ResourceManager.GetString("tb_auth_fall", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Пакетная запись прошивки.
         /// </summary>
         internal static string tb_batch_record {
@@ -1728,6 +1728,15 @@ namespace FirehoseFinder.Properties {
             get {
                 object obj = ResourceManager.GetObject("translate", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Авторизация.
+        /// </summary>
+        internal static string ts_auth {
+            get {
+                return ResourceManager.GetString("ts_auth", resourceCulture);
             }
         }
         

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using FirehoseFinder.Properties;
+using System;
 using System.Collections.Generic;
+using Telegram.Bot.Types;
+using Telegram.Bot;
 
 namespace FirehoseFinder
 {
@@ -203,6 +206,16 @@ namespace FirehoseFinder
             new Users_Rating ("Andy Dmitriev (AndyDmitriev)", user_mess:1, user_reactions:1, last_post_date: new DateTime(2025,3,16)),
             new Users_Rating ("Kaniel Outis (Kanielscotfield)", user_mess:1, user_reactions:1, last_post_date: new DateTime(2025,4,10)),
         };
+
+        /// <summary>
+        /// Канал Firehose-Finder issues
+        /// </summary>
+        internal readonly long channel = -1001227261414;
+
+        /// <summary>
+        /// Бот "Hoplik-Bot"
+        /// </summary>
+        internal static ITelegramBotClient _botClient = new TelegramBotClient(Resources.bot);
     }
 
     class GPT_Struct

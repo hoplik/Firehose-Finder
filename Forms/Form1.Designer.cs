@@ -246,6 +246,7 @@
             this.process_Fastboot = new System.Diagnostics.Process();
             this.backgroundWorker_sahara = new System.ComponentModel.BackgroundWorker();
             this.bgWorker_ports = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker_auth = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -1911,6 +1912,13 @@
             this.bgWorker_ports.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgWorker_ports_DoWork);
             this.bgWorker_ports.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BgWorker_ports_RunWorkerCompleted);
             // 
+            // backgroundWorker_auth
+            // 
+            this.backgroundWorker_auth.WorkerReportsProgress = true;
+            this.backgroundWorker_auth.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_auth_DoWork);
+            this.backgroundWorker_auth.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_auth_ProgressChanged);
+            this.backgroundWorker_auth.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_auth_RunWorkerCompleted);
+            // 
             // Formfhf
             // 
             resources.ApplyResources(this, "$this");
@@ -2199,6 +2207,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.CheckBox checkBox_update_db;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker_auth;
     }
 }
 
