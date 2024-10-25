@@ -37,7 +37,7 @@
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>24.10.21.0</ApplicationVersion>
+    <ApplicationVersion>24.10.24.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -239,6 +239,9 @@
     <Content Include="Resources\about.png" />
     <Content Include="Resources\auth.png" />
     <Content Include="Resources\auth_off.png" />
+    <Content Include="Users_Rate.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\DataSources\FirehoseFinder.Properties.Settings.datasource" />
     <None Include="Resources\auth_onn.png" />
     <Content Include="Resources\autolen.png" />
@@ -527,6 +530,16 @@
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="ForFound.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Users_Rate.xml">
       <Visible>False</Visible>
       <Group>
       </Group>
