@@ -102,9 +102,27 @@ namespace FirehoseFinder
         private void Formfhf_Load(object sender, EventArgs e)
         {
             //Проверяем актуальность БД на сервере и локально
+            string distr_path = @"https://fhf.yggno.de/db/";
+            try
+            {
+                HttpWebRequest rate_wrq = (HttpWebRequest)WebRequest.Create(Path.Combine(distr_path, "Users_Rate.xml"));
+                HttpWebResponse rate_wrs = (HttpWebResponse)rate_wrq.GetResponse();
+                DateTime rate_dt = rate_wrs.LastModified;
+                rate_wrs.Close();
+                //Если на сервере дата больше, чем локально, то копируем
+                if (rate_dt > File.GetLastWriteTime("Users_Rate.xml"))
+                {
+                    WebClient rate_wc = new WebClient();
+                    rate_wc.DownloadFile(Path.Combine(distr_path, "Users_Rate.xml"), "Users_Rate.xml");
+                    rate_wc.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+            }
             if (Settings.Default.update_db == true)
             {
-                string distr_path = @"https://fhf.yggno.de/db/";
                 try
                 {
                     HttpWebRequest filter_wrq = (HttpWebRequest)WebRequest.Create(Path.Combine(distr_path, "ForFilter.xml"));

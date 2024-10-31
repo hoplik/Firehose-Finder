@@ -1,7 +1,6 @@
 ﻿using FirehoseFinder.Properties;
 using System;
 using System.Collections.Generic;
-using Telegram.Bot.Types;
 using Telegram.Bot;
 
 namespace FirehoseFinder
@@ -194,17 +193,6 @@ namespace FirehoseFinder
             {"fh_loader" },
             {"adb" },
             {"fastboot" }
-        };
-
-        /// <summary>
-        /// Рейтинг пользователей #Concernedusersrating (обновляется вручную!)"
-        /// </summary>
-        internal readonly List<Users_Rating> users_rate = new List<Users_Rating>(3)
-        {
-            new Users_Rating ("ⓢⓘⓕⓐⓝ (sifansaeed)", user_mess:3, user_reactions:4, last_post_date: new DateTime(2025,2,23)),
-            new Users_Rating ("Александр Сергеев (hoplik)", user_mess:2, user_reactions:5, last_post_date: new DateTime(2025,1,4)),
-            new Users_Rating ("Andy Dmitriev (AndyDmitriev)", user_mess:1, user_reactions:1, last_post_date: new DateTime(2025,3,16)),
-            new Users_Rating ("Kaniel Outis (Kanielscotfield)", user_mess:1, user_reactions:1, last_post_date: new DateTime(2025,4,10)),
         };
 
         /// <summary>

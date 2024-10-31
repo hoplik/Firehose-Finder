@@ -147,6 +147,9 @@
   <data name="&gt;&gt;users_rating_chart.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="dataSet_rate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2602,6 +2605,12 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Рейтинг неравнодушных пользователей</value>
+  </data>
+  <data name="&gt;&gt;dataSet_rate.Name" xml:space="preserve">
+    <value>dataSet_rate</value>
+  </data>
+  <data name="&gt;&gt;dataSet_rate.Type" xml:space="preserve">
+    <value>System.Data.DataSet, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Rate</value>

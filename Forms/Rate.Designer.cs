@@ -34,7 +34,9 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.users_rating_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.dataSet_rate = new System.Data.DataSet();
             ((System.ComponentModel.ISupportInitialize)(this.users_rating_chart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_rate)).BeginInit();
             this.SuspendLayout();
             // 
             // users_rating_chart
@@ -62,6 +64,10 @@
             this.users_rating_chart.Series.Add(series1);
             this.users_rating_chart.Series.Add(series2);
             // 
+            // dataSet_rate
+            // 
+            this.dataSet_rate.DataSetName = "NewDataSet";
+            // 
             // Rate
             // 
             resources.ApplyResources(this, "$this");
@@ -69,6 +75,7 @@
             this.Controls.Add(this.users_rating_chart);
             this.Name = "Rate";
             ((System.ComponentModel.ISupportInitialize)(this.users_rating_chart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_rate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -76,5 +83,6 @@
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart users_rating_chart;
+        private System.Data.DataSet dataSet_rate;
     }
 }

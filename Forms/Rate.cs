@@ -1,22 +1,36 @@
-﻿using System.Windows.Forms;
+﻿using FirehoseFinder.Properties;
+using System;
 using System.Collections.Generic;
-using FirehoseFinder.Properties;
-using System.Drawing;
+using System.Data;
+using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Globalization;
+using System.Drawing;
 
 namespace FirehoseFinder.Forms
 {
     public partial class Rate : Form
     {
-        Guide guide = new Guide();
-        Func funcs = new Func();
+        readonly Func funcs = new Func();
         public Rate()
         {
             InitializeComponent();
-            List<Users_Rating> sort_rate = new List<Users_Rating>(funcs.SortingRate(guide.users_rate));
-            string fulluser = $"{ Settings.Default.userFN } { Settings.Default.userLN} ({ Settings.Default.userN})";
+            dataSet_rate.ReadXml("Users_Rate.xml", XmlReadMode.ReadSchema);
+            List<Users_Rating> new_sort_rate = new List<Users_Rating>();
+            foreach (DataRow rate_str in dataSet_rate.Tables[1].Rows)
+            {
+                string user_fullstr = $"{rate_str["UserFN"]} {rate_str["UserLN"]} ({rate_str["UserN"]})";
+                int mess = Convert.ToInt32(rate_str["Posts"].ToString(), 10);
+                int react = Convert.ToInt32(rate_str["Reactions"].ToString(), 10);
+                DateTime dt = new DateTime();
+                DateTime.TryParseExact(rate_str["Last_date"].ToString(), "yyyy-MM-ddTHH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out dt);
+                Users_Rating ur = new Users_Rating(user_fullstr, mess, react, dt);
+                new_sort_rate.Add(ur);
+            }
+            List<Users_Rating> sort_rate = new List<Users_Rating>(funcs.SortingRate(new_sort_rate));
+            string fulluser = $"{Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})";
             CustomLabel customLabel;
-            for (int count_str = 0; count_str < sort_rate.Count; count_str++)
+            for (int count_str = 0; count_str<sort_rate.Count; count_str++)
             {
                 users_rating_chart.Series["s1"].Points.AddXY(count_str+1, sort_rate[count_str].User_mess);
                 users_rating_chart.Series["s2"].Points.AddXY(count_str+1, sort_rate[count_str].User_reactions);
