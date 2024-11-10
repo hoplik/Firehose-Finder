@@ -1662,13 +1662,18 @@ namespace FirehoseFinder
                     {
                         string swtype = "3";
                         string swver = string.Empty;
+                        string nozero_hash = string.Empty;
                         if (!string.IsNullOrEmpty(dataGridView_FInd_Server["SWType", i].Value.ToString())) swtype = dataGridView_FInd_Server["SWType", i].Value.ToString();
                         if (!string.IsNullOrEmpty(dataGridView_FInd_Server["SWVer", i].Value.ToString())) swver = "(" + dataGridView_FInd_Server["SWVer", i].Value.ToString() + ")";
+                        if (!string.IsNullOrEmpty(dataGridView_FInd_Server["HASH_FH", i].Value.ToString()) && dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Length >= 8)
+                        {
+                            nozero_hash = dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Substring(dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Length - 8);
+                        }
                         somerec[1] = dataGridView_FInd_Server["Url", i].Value.ToString();
                         somerec[2] = string.Format("{0}-{1}-{2}-{3}-{4}", dataGridView_FInd_Server["HW_FH", i].Value.ToString(),
                             dataGridView_FInd_Server["OEM_FH", i].Value.ToString(),
                             dataGridView_FInd_Server["MODEL_FH", i].Value.ToString(),
-                            dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Substring(dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Length - 8),
+                            nozero_hash,
                             swtype + swver);
                         string[] id_str = {
                             dataGridView_FInd_Server["HW_FH", i].Value.ToString(),
