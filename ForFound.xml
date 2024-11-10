@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-06T20:03:18">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-10T18:00:29">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1540,6 +1540,26 @@
 <SWType>3</SWType>
 <SWVer>9</SWVer>
 <Model>SM-A528B</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/lanai/prog_Zte_nubia_z60_ultra.elf#</Url>
+<HW_FH>lanai</HW_FH>
+<Model>NX721J</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/netrani/prog_Moto_G_Stylus_XT2315.elf#</Url>
+<HW_FH>netrani</HW_FH>
+<Model>Moto G Stylus 5G (2023)</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/palima/prog_Asus_ZF9.melf#</Url>
+<HW_FH>palima</HW_FH>
+<Model>ASUS_AI2202</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/palima/prog_Huawei_Mate_50.elf#</Url>
+<HW_FH>palima</HW_FH>
+<Model>CET-LX9</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
