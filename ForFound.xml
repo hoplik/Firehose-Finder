@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-10T19:52:14">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-13T21:24:53">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -976,14 +976,6 @@
 <Model>C107-9</Model>
 </ForFound>
 <ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/38CE1496/009470e100310000_2cf7619a278d2607_fhprg_peek.bin#</Url>
-<HW_FH>009470E1</HW_FH>
-<OEM_FH>0031</OEM_FH>
-<MODEL_FH>0000</MODEL_FH>
-<HASH_FH>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASH_FH>
-<Model>H850</Model>
-</ForFound>
-<ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/38CE1496/prog_ufs_firehose_8996_lgeg6.elf#</Url>
 <HW_FH>0005F0E1</HW_FH>
 <OEM_FH>0031</OEM_FH>
@@ -1306,22 +1298,6 @@
 <MODEL_FH>A239</MODEL_FH>
 <HASH_FH>AD38BEB6615BA7FBA38361DAE6BF2DF14AF5E7AC6AF8E78DB46C3ADD435E4174</HASH_FH>
 <Model>ZD553KL</Model>
-</ForFound>
-<ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/54466053/007050e100010001_0b010bcb83a7b520_fhprg_peek.bin#</Url>
-<HW_FH>007050E1</HW_FH>
-<OEM_FH>0001</OEM_FH>
-<MODEL_FH>0001</MODEL_FH>
-<HASH_FH>0B010BCB83A7B520C240A358A00DB87675681FB9C7C703496692AC3154466053</HASH_FH>
-<Model>ZB500KL</Model>
-</ForFound>
-<ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/AA4E1FE1/000a50e100290025_7e5acfff90370967_zs660kl.bin#</Url>
-<HW_FH>000A50E1</HW_FH>
-<OEM_FH>0029</OEM_FH>
-<MODEL_FH>0025</MODEL_FH>
-<HASH_FH>7E5ACFFF90370967EDD2BDF205A9EBC9035ABCA140B3AB9BB7771BD7C27057CBFCF13FBCE7E71D9B35B6A505AA4E1FE1</HASH_FH>
-<Model>ZS660KL</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/B5B02838/prog_emmc_firehose_8916_qpsat.mbn#</Url>
