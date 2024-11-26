@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-26T00:23:18">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-27T00:31:25">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -260,7 +260,7 @@
 <OEM_FH>0031</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASH_FH>
-<Model>G5</Model>
+<Model>H850</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9C83E2B0/prog_ufs_firehose_Sdm845_lge.elf#</Url>
@@ -1561,6 +1561,21 @@
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/kailua/Oneplus_R12_Ace3_prog_firehose_ddr.elf#</Url>
 <HW_FH>kailua</HW_FH>
 <Model>CPH2609</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/kailua/Oneplus_R12_Ace3_prog_firehose_ddr.elf#</Url>
+<HW_FH>kailua</HW_FH>
+<Model>CPH2447</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F29B9AD0/7/s21_FE_G990B2_prog_ddr.bin#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0020</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>988180552ACC8F39E1974C900FE86B17F0F22463983240CCAF839D2E6B9067E6F5B9253D522E78B3D6AC43EEF29B9AD0</HASH_FH>
+<SWType>3</SWType>
+<SWVer>7</SWVer>
+<Model>SM-G990B</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
