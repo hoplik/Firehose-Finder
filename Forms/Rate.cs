@@ -22,8 +22,7 @@ namespace FirehoseFinder.Forms
                 string user_fullstr = $"{rate_str["UserFN"]} {rate_str["UserLN"]} ({rate_str["UserN"]})";
                 int mess = Convert.ToInt32(rate_str["Posts"].ToString(), 10);
                 int react = Convert.ToInt32(rate_str["Reactions"].ToString(), 10);
-                DateTime dt = new DateTime();
-                DateTime.TryParseExact(rate_str["Last_date"].ToString(), "yyyy-MM-ddTHH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out dt);
+                DateTime dt = DateTime.Parse(rate_str["Last_date"].ToString());
                 Users_Rating ur = new Users_Rating(user_fullstr, mess, react, dt);
                 new_sort_rate.Add(ur);
             }

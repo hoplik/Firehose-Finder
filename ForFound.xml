@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-27T00:31:25">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-28T21:09:16">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1575,7 +1575,7 @@
 <HASH_FH>988180552ACC8F39E1974C900FE86B17F0F22463983240CCAF839D2E6B9067E6F5B9253D522E78B3D6AC43EEF29B9AD0</HASH_FH>
 <SWType>3</SWType>
 <SWVer>7</SWVer>
-<Model>SM-G990B</Model>
+<Model>SM-G990B2</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>

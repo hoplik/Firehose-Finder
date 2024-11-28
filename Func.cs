@@ -949,7 +949,7 @@ namespace FirehoseFinder
             }
             return portprops;
         }
-        
+
         /// <summary>
         /// Сортировка массива пользователей по рейтингу активности
         /// </summary>
@@ -960,7 +960,7 @@ namespace FirehoseFinder
             List<Users_Rating> sr = new List<Users_Rating> { unsort_rate[0] };
             foreach (Users_Rating user_rate in unsort_rate)
             {
-                int user_unsort_rate = user_rate.User_mess+user_rate.User_reactions;
+                int user_unsort_rate = user_rate.User_mess + user_rate.User_reactions;
                 for (int curr_rate = 0; curr_rate < sr.Count; curr_rate++)
                 {
                     if (!sr[curr_rate].Equals(user_rate)) //Обрабатываем только несовпадающие строки
