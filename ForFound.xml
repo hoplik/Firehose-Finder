@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-28T21:09:16">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-01T00:14:20">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1576,6 +1576,19 @@
 <SWType>3</SWType>
 <SWVer>7</SWVer>
 <Model>SM-G990B2</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/waipio/ROG%206.melf#</Url>
+<HW_FH>waipio</HW_FH>
+<Model>ASUS_AI2201_A</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/36F69EE2/prog_emmc_ufs_firehose_Sdm636_ddr.elf#</Url>
+<HW_FH>30060000</HW_FH>
+<OEM_FH>0029</OEM_FH>
+<MODEL_FH>0041</MODEL_FH>
+<HASH_FH>CF9BC025662C4EF8278EB591E2F25680FD2B1C51763D8D6DDB5393C40EE51F698E11F9FCE2AD46393C72CF9936F69EE2</HASH_FH>
+<Model>ZE620KL</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
