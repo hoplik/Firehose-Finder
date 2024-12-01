@@ -38,6 +38,32 @@
       https://github.com/hoplik/Firehose-Finder/blob/master/Resources/help_en.pdf
     </td>
   </tr>
+  <tr>
+    <td>
+      Официальный канал с актуальной информацией о программе.
+    </td>
+    <td>
+      The official channel with up-to-date information about the program.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      https://t.me/firehosefinder
+    </td>
+  </tr>
+    <tr>
+    <td>
+      Официальный чат канала с обсуждениями и предложениями от пользователей. То, что не вошло в базовую версию программы.
+    </td>
+    <td>
+      The official chat of the channel with discussions and suggestions from users. Something that was not included in the basic version of the program.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      https://t.me/+Suwc1u6h8PYzM2Qy
+    </td>
+  </tr>
 </tbody>
 <tfoot>
   <tr>
