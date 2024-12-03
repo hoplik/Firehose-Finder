@@ -11,20 +11,11 @@
 </xsd:element>
 <xsd:element name="Users_Rate">
 <xsd:annotation>
-<xsd:appinfo>
-<od:tableProperty name="GUID" type="9" value="jpB0+MPpsU+ckt50cygT5Q==
-"/>
-</xsd:appinfo>
+<xsd:appinfo/>
 </xsd:annotation>
 <xsd:complexType>
 <xsd:sequence>
 <xsd:element name="UserFN" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
-<xsd:annotation>
-<xsd:appinfo>
-<od:fieldProperty name="GUID" type="9" value="+vPH0Ntk50G4hCe3RVz1Xg==
-"/>
-</xsd:appinfo>
-</xsd:annotation>
 <xsd:simpleType>
 <xsd:restriction base="xsd:string">
 <xsd:maxLength value="255"/>
@@ -32,12 +23,6 @@
 </xsd:simpleType>
 </xsd:element>
 <xsd:element name="UserLN" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
-<xsd:annotation>
-<xsd:appinfo>
-<od:fieldProperty name="GUID" type="9" value="imo8yaQNT0ivmycZATZrKw==
-"/>
-</xsd:appinfo>
-</xsd:annotation>
 <xsd:simpleType>
 <xsd:restriction base="xsd:string">
 <xsd:maxLength value="255"/>
@@ -45,55 +30,21 @@
 </xsd:simpleType>
 </xsd:element>
 <xsd:element name="UserN" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
-<xsd:annotation>
-<xsd:appinfo>
-<od:fieldProperty name="GUID" type="9" value="MmsVQW7bokyXl7WhHmmQtQ==
-"/>
-</xsd:appinfo>
-</xsd:annotation>
 <xsd:simpleType>
 <xsd:restriction base="xsd:string">
 <xsd:maxLength value="255"/>
 </xsd:restriction>
 </xsd:simpleType>
 </xsd:element>
-<xsd:element name="Posts" minOccurs="0" od:jetType="longinteger" od:sqlSType="int" type="xsd:int">
-<xsd:annotation>
-<xsd:appinfo>
-<od:fieldProperty name="GUID" type="9" value="505dCL1q7kWDWJ9PfI3lZg==
-"/>
-</xsd:appinfo>
-</xsd:annotation>
-</xsd:element>
-<xsd:element name="Reactions" minOccurs="0" od:jetType="double" od:sqlSType="float" type="xsd:double">
-<xsd:annotation>
-<xsd:appinfo>
-<od:fieldProperty name="GUID" type="9" value="mo+lUcdOpUSDfcVUgNk7vw==
-"/>
-</xsd:appinfo>
-</xsd:annotation>
-</xsd:element>
-<xsd:element name="Activities" minOccurs="0" od:jetType="double" od:sqlSType="float" type="xsd:double">
-<xsd:annotation>
-<xsd:appinfo>
-<od:fieldProperty name="GUID" type="9" value="6MisygITLk+YR95wsVlcmw==
-"/>
-</xsd:appinfo>
-</xsd:annotation>
-</xsd:element>
-<xsd:element name="Last_date" minOccurs="0" od:jetType="datetime" od:sqlSType="datetime" type="xsd:dateTime">
-<xsd:annotation>
-<xsd:appinfo>
-<od:fieldProperty name="GUID" type="9" value="9FHitchYvk2IioolvLqXyg==
-"/>
-</xsd:appinfo>
-</xsd:annotation>
-</xsd:element>
+<xsd:element name="Posts" minOccurs="0" od:jetType="longinteger" od:sqlSType="int" type="xsd:int"/>
+<xsd:element name="Reactions" minOccurs="0" od:jetType="double" od:sqlSType="float" type="xsd:double"/>
+<xsd:element name="Activities" minOccurs="0" od:jetType="double" od:sqlSType="float" type="xsd:double"/>
+<xsd:element name="Last_date" minOccurs="0" od:jetType="datetime" od:sqlSType="datetime" type="xsd:dateTime"/>
 </xsd:sequence>
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-11-30T23:03:17">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-02T23:42:17">
 <Users_Rate>
 <UserFN>Andy</UserFN>
 <UserLN>Dmitriev</UserLN>
@@ -108,8 +59,8 @@
 <UserLN>Monef assolimany</UserLN>
 <UserN>DrAndroid12</UserN>
 <Posts>1</Posts>
-<Reactions>1</Reactions>
-<Activities>2</Activities>
+<Reactions>2</Reactions>
+<Activities>3</Activities>
 <Last_date>2025-05-30T00:00:00</Last_date>
 </Users_Rate>
 <Users_Rate>
