@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-03T19:20:06">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-10T18:10:36">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1536,16 +1536,6 @@
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/palima/prog_Huawei_Mate_50.elf#</Url>
 <HW_FH>palima</HW_FH>
 <Model>CET-LX9</Model>
-</ForFound>
-<ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/palawan/Global_rmx3851_China_rmx3852_prog_firehose_ddr.elf#</Url>
-<HW_FH>palawan</HW_FH>
-<Model>RMX3851</Model>
-</ForFound>
-<ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/palawan/Global_rmx3851_China_rmx3852_prog_firehose_ddr.elf#</Url>
-<HW_FH>palawan</HW_FH>
-<Model>RMX3852</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/FE4CFE54/6/prog_firehose_ufs_ddr.elf#</Url>
