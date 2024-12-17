@@ -334,8 +334,8 @@
     <comment>Внимание, остановка длительной операции!</comment>
   </data>
   <data name="increase_rating" xml:space="preserve">
-    <value>对此消息的反应将增加#Concerned_users_rating</value>
-    <comment>Реакция на это сообщение увеличит #Concerned_users_rating</comment>
+    <value>对此消息的反应将增加#Concernedusersrating@firehosefinder</value>
+    <comment>Реакция на это сообщение увеличит #Concernedusersrating@firehosefinder</comment>
   </data>
   <data name="manuf" xml:space="preserve">
     <value>品牌</value>

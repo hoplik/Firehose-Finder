@@ -689,7 +689,7 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Реакция на это сообщение увеличит #Concerned_users_rating.
+        ///   Ищет локализованную строку, похожую на Реакция на это сообщение увеличит #Concernedusersrating@firehosefinder.
         /// </summary>
         internal static string increase_rating {
             get {

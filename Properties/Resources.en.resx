@@ -334,8 +334,8 @@
     <comment>Внимание, остановка длительной операции!</comment>
   </data>
   <data name="increase_rating" xml:space="preserve">
-    <value>Reaction to this message will increase #Concerned_users_rating</value>
-    <comment>Реакция на это сообщение увеличит #Concerned_users_rating</comment>
+    <value>Reaction to this message will increase #Concernedusersrating@firehosefinder</value>
+    <comment>Реакция на это сообщение увеличит #Concernedusersrating@firehosefinder</comment>
   </data>
   <data name="manuf" xml:space="preserve">
     <value>manufacturer</value>
