@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-17T23:42:26">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2024-12-23T17:25:25">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1598,6 +1598,11 @@
 <HASH_FH>168D0BAD52B5D5CBB882A90C1DAC68F9299D3905816386BA1B1887DDA758CF6D</HASH_FH>
 <SWType>0</SWType>
 <Model>SRQ-K87CA</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/lanai/ZTE_Nubia_Red_Magic_9_Pro_prog_ufs_firehose_sm8650_ddr.elf#</Url>
+<HW_FH>lanai</HW_FH>
+<Model>NX769J</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
