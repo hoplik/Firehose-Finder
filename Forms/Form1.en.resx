@@ -117,193 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="progressBar_phone.ToolTip" xml:space="preserve">
-    <value>If the value is more than 5%, you can try to cancel the long operation.</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="файлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 24</value>
-  </data>
-  <data name="файлToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <data name="выборЯзыкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 26</value>
-  </data>
-  <data name="выборЯзыкаToolStripMenuItem.Text" xml:space="preserve">
-    <value>Change language</value>
-  </data>
-  <data name="автоматическиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 26</value>
-  </data>
-  <data name="автоматическиToolStripMenuItem.Text" xml:space="preserve">
-    <value>Autoselect</value>
-  </data>
-  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 6</value>
-  </data>
-  <data name="chinaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 26</value>
-  </data>
-  <data name="русскийToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 26</value>
-  </data>
-  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 26</value>
-  </data>
-  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 6</value>
-  </data>
-  <data name="предложитьПереводToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 26</value>
-  </data>
-  <data name="предложитьПереводToolStripMenuItem.Text" xml:space="preserve">
-    <value>Offer the translation</value>
-  </data>
-  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 6</value>
-  </data>
-  <data name="rateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 26</value>
-  </data>
-  <data name="rateToolStripMenuItem.Text" xml:space="preserve">
-    <value>Rating</value>
-  </data>
-  <data name="авторизоватьсяЧерезТелеграмToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 26</value>
-  </data>
-  <data name="авторизоватьсяЧерезТелеграмToolStripMenuItem.Text" xml:space="preserve">
-    <value>Log in via Telegram</value>
-  </data>
-  <data name="отменитьАвторизациюToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 26</value>
-  </data>
-  <data name="отменитьАвторизациюToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cancel authorization</value>
-  </data>
-  <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 6</value>
-  </data>
-  <data name="выходToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 26</value>
-  </data>
-  <data name="выходToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
-  <data name="видToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 24</value>
-  </data>
-  <data name="видToolStripMenuItem.Text" xml:space="preserve">
-    <value>View</value>
-  </data>
-  <data name="приветствиеToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 26</value>
-  </data>
-  <data name="приветствиеToolStripMenuItem.Text" xml:space="preserve">
-    <value>Greeting</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 6</value>
-  </data>
-  <data name="работаСУстройствомToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 26</value>
-  </data>
-  <data name="работаСУстройствомToolStripMenuItem.Text" xml:space="preserve">
-    <value>Work with device</value>
-  </data>
-  <data name="CollectionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 26</value>
-  </data>
-  <data name="CollectionToolStripMenuItem.Text" xml:space="preserve">
-    <value>Device collection</value>
-  </data>
-  <data name="реальноПодключённыеУстройстваToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 26</value>
-  </data>
-  <data name="реальноПодключённыеУстройстваToolStripMenuItem.Text" xml:space="preserve">
-    <value>Real connected devices</value>
-  </data>
-  <data name="устройстваСПрограммерамиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 26</value>
-  </data>
-  <data name="устройстваСПрограммерамиToolStripMenuItem.Text" xml:space="preserve">
-    <value>Devices with firehose</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 6</value>
-  </data>
-  <data name="внестиПроизводителяМодельToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 26</value>
-  </data>
-  <data name="внестиПроизводителяМодельToolStripMenuItem.Text" xml:space="preserve">
-    <value>Insert model</value>
-  </data>
-  <data name="отправкаПрограммераToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 26</value>
-  </data>
-  <data name="отправкаПрограммераToolStripMenuItem.Text" xml:space="preserve">
-    <value>Share the programmer</value>
-  </data>
-  <data name="инструментыToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 24</value>
-  </data>
-  <data name="инструментыToolStripMenuItem.Text" xml:space="preserve">
-    <value>Instruments</value>
-  </data>
-  <data name="поискМаскиБайтToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 26</value>
-  </data>
-  <data name="поискМаскиБайтToolStripMenuItem.Text" xml:space="preserve">
-    <value>Binary search</value>
-  </data>
-  <data name="распаковкаОднобиновойПрошивкиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 26</value>
-  </data>
-  <data name="распаковкаОднобиновойПрошивкиToolStripMenuItem.Text" xml:space="preserve">
-    <value>Decode and repack ROM (AGM)</value>
-  </data>
-  <data name="драйвераEDLИADBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 26</value>
-  </data>
-  <data name="драйвераEDLИADBToolStripMenuItem.Text" xml:space="preserve">
-    <value>Drivers for EDL and ADB</value>
-  </data>
-  <data name="ExSertToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 26</value>
-  </data>
-  <data name="ExSertToolStripMenuItem.Text" xml:space="preserve">
-    <value>Extract certificates</value>
-  </data>
-  <data name="справкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 24</value>
-  </data>
-  <data name="справкаToolStripMenuItem.Text" xml:space="preserve">
-    <value>Help</value>
-  </data>
-  <data name="вопросОтветToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 26</value>
-  </data>
-  <data name="вопросОтветToolStripMenuItem.Text" xml:space="preserve">
-    <value>View help</value>
-  </data>
-  <data name="оПрограммеToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 26</value>
-  </data>
-  <data name="оПрограммеToolStripMenuItem.Text" xml:space="preserve">
-    <value>About</value>
-  </data>
-  <data name="tabPage_collection.Text" xml:space="preserve">
-    <value>Reference book of devices</value>
-  </data>
-  <data name="bindingNavigatorCountItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 37</value>
-  </data>
-  <data name="bindingNavigatorCountItem.Text" xml:space="preserve">
-    <value>for {0}</value>
-  </data>
   <data name="bindingNavigatorCountItem.ToolTipText" xml:space="preserve">
     <value>Total number of segments</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bindingNavigatorMoveFirstItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
@@ -404,17 +221,185 @@
   <data name="checkBox_update_db.Text" xml:space="preserve">
     <value>Automatic data update.</value>
   </data>
-  <data name="tabPage_firehose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 627</value>
+  <data name="progressBar_phone.ToolTip" xml:space="preserve">
+    <value>If the value is more than 5%, you can try to cancel the long operation.</value>
+  </data>
+  <data name="файлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 26</value>
+  </data>
+  <data name="файлToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="видToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 26</value>
+  </data>
+  <data name="видToolStripMenuItem.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="инструментыToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 26</value>
+  </data>
+  <data name="инструментыToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="справкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 26</value>
+  </data>
+  <data name="справкаToolStripMenuItem.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="выборЯзыкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 26</value>
+  </data>
+  <data name="выборЯзыкаToolStripMenuItem.Text" xml:space="preserve">
+    <value>Change language</value>
+  </data>
+  <data name="автоматическиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 26</value>
+  </data>
+  <data name="автоматическиToolStripMenuItem.Text" xml:space="preserve">
+    <value>Autoselect</value>
+  </data>
+  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 6</value>
+  </data>
+  <data name="chinaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 26</value>
+  </data>
+  <data name="русскийToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 26</value>
+  </data>
+  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 26</value>
+  </data>
+  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 6</value>
+  </data>
+  <data name="предложитьПереводToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 26</value>
+  </data>
+  <data name="предложитьПереводToolStripMenuItem.Text" xml:space="preserve">
+    <value>Offer the translation</value>
+  </data>
+  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 6</value>
+  </data>
+  <data name="rateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 26</value>
+  </data>
+  <data name="rateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rating</value>
+  </data>
+  <data name="авторизоватьсяЧерезТелеграмToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 26</value>
+  </data>
+  <data name="авторизоватьсяЧерезТелеграмToolStripMenuItem.Text" xml:space="preserve">
+    <value>Log in via Telegram</value>
+  </data>
+  <data name="отменитьАвторизациюToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 26</value>
+  </data>
+  <data name="отменитьАвторизациюToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cancel authorization</value>
+  </data>
+  <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 6</value>
+  </data>
+  <data name="выходToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 26</value>
+  </data>
+  <data name="выходToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="приветствиеToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 26</value>
+  </data>
+  <data name="приветствиеToolStripMenuItem.Text" xml:space="preserve">
+    <value>Greeting</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 6</value>
+  </data>
+  <data name="работаСУстройствомToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 26</value>
+  </data>
+  <data name="работаСУстройствомToolStripMenuItem.Text" xml:space="preserve">
+    <value>Work with device</value>
+  </data>
+  <data name="CollectionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 26</value>
+  </data>
+  <data name="CollectionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Device collection</value>
+  </data>
+  <data name="реальноПодключённыеУстройстваToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 26</value>
+  </data>
+  <data name="реальноПодключённыеУстройстваToolStripMenuItem.Text" xml:space="preserve">
+    <value>Real connected devices</value>
+  </data>
+  <data name="устройстваСПрограммерамиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 26</value>
+  </data>
+  <data name="устройстваСПрограммерамиToolStripMenuItem.Text" xml:space="preserve">
+    <value>Devices with firehose</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 6</value>
+  </data>
+  <data name="внестиПроизводителяМодельToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 26</value>
+  </data>
+  <data name="внестиПроизводителяМодельToolStripMenuItem.Text" xml:space="preserve">
+    <value>Insert model</value>
+  </data>
+  <data name="отправкаПрограммераToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 26</value>
+  </data>
+  <data name="отправкаПрограммераToolStripMenuItem.Text" xml:space="preserve">
+    <value>Share the programmer</value>
+  </data>
+  <data name="поискМаскиБайтToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 26</value>
+  </data>
+  <data name="поискМаскиБайтToolStripMenuItem.Text" xml:space="preserve">
+    <value>Binary search</value>
+  </data>
+  <data name="распаковкаОднобиновойПрошивкиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 26</value>
+  </data>
+  <data name="распаковкаОднобиновойПрошивкиToolStripMenuItem.Text" xml:space="preserve">
+    <value>Decode and repack ROM (AGM)</value>
+  </data>
+  <data name="драйвераEDLИADBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 26</value>
+  </data>
+  <data name="драйвераEDLИADBToolStripMenuItem.Text" xml:space="preserve">
+    <value>EDL and ADB drivers</value>
+  </data>
+  <data name="ExSertToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 26</value>
+  </data>
+  <data name="ExSertToolStripMenuItem.Text" xml:space="preserve">
+    <value>Extract certificates</value>
+  </data>
+  <data name="вопросОтветToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 26</value>
+  </data>
+  <data name="вопросОтветToolStripMenuItem.Text" xml:space="preserve">
+    <value>View help</value>
+  </data>
+  <data name="оПрограммеToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 26</value>
+  </data>
+  <data name="оПрограммеToolStripMenuItem.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="tabPage_collection.Text" xml:space="preserve">
+    <value>Reference book of devices</value>
   </data>
   <data name="tabPage_firehose.Text" xml:space="preserve">
     <value>Work with files</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1355, 419</value>
-  </data>
-  <data name="textBox_main_term.Size" type="System.Drawing.Size, System.Drawing">
-    <value>409, 419</value>
   </data>
   <data name="Column_Sel.HeaderText" xml:space="preserve">
     <value>Select</value>
@@ -437,9 +422,6 @@
   </data>
   <data name="contextMenuStrip_final.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 28</value>
-  </data>
-  <data name="dataGridView_final.Size" type="System.Drawing.Size, System.Drawing">
-    <value>946, 419</value>
   </data>
   <data name="загрузитьССервераToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 24</value>
@@ -514,9 +496,6 @@ if there are none</value>
   <data name="button_useSahara_fhf.Text" xml:space="preserve">
     <value>Check selected programmer</value>
   </data>
-  <data name="statusStrip_firehose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 599</value>
-  </data>
   <data name="toolStripStatusLabel_filescompleted.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 20</value>
   </data>
@@ -529,17 +508,11 @@ if there are none</value>
   <data name="toolStripStatusLabel_dowork.Text" xml:space="preserve">
     <value>Done</value>
   </data>
-  <data name="tabPage_phone.Text" xml:space="preserve">
-    <value>Work with device</value>
-  </data>
   <data name="button_ADB_start.Text" xml:space="preserve">
     <value>Start ADB</value>
   </data>
   <data name="button_ADB_clear.Text" xml:space="preserve">
     <value>Close ADB session</value>
-  </data>
-  <data name="groupBox_adb_commands.Text" xml:space="preserve">
-    <value>ADB commands</value>
   </data>
   <data name="radioButton_reboot_fastboot.Size" type="System.Drawing.Size, System.Drawing">
     <value>335, 20</value>
@@ -565,14 +538,29 @@ if there are none</value>
   <data name="radioButton_reboot_edl.Text" xml:space="preserve">
     <value>Reboot to emergency mode (Emergency Download - EDL - PID#9008)</value>
   </data>
+  <data name="groupBox_adb_commands.Text" xml:space="preserve">
+    <value>ADB commands</value>
+  </data>
+  <data name="button_ADB_comstart.Text" xml:space="preserve">
+    <value>Run command</value>
+  </data>
+  <data name="button_term_clear.Text" xml:space="preserve">
+    <value>Clear the terminal window</value>
+  </data>
+  <data name="button_term_save.Text" xml:space="preserve">
+    <value>Save log</value>
+  </data>
+  <data name="groupBox_term_buttons.Text" xml:space="preserve">
+    <value>Terminal management</value>
+  </data>
+  <data name="tabPage_phone.Text" xml:space="preserve">
+    <value>Work with device</value>
+  </data>
   <data name="columnHeader_ADB_SN.Text" xml:space="preserve">
     <value>Serial number</value>
   </data>
   <data name="columnHeader_ADB_Model.Text" xml:space="preserve">
     <value>Device model</value>
-  </data>
-  <data name="button_ADB_comstart.Text" xml:space="preserve">
-    <value>Run command</value>
   </data>
   <data name="columnHeader_portnum.Text" xml:space="preserve">
     <value>Port</value>
@@ -822,15 +810,6 @@ if there are none</value>
   </data>
   <data name="columnHeader_FB_Model.Text" xml:space="preserve">
     <value>Device model</value>
-  </data>
-  <data name="groupBox_term_buttons.Text" xml:space="preserve">
-    <value>Terminal management</value>
-  </data>
-  <data name="button_term_clear.Text" xml:space="preserve">
-    <value>Clear the terminal window</value>
-  </data>
-  <data name="button_term_save.Text" xml:space="preserve">
-    <value>Save log</value>
   </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>Bin files (*.bin)|*.bin|All files (*.*)|*.*</value>

@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripStatusLabel_search.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 20</value>
+    <value>47, 28</value>
   </data>
   <data name="toolStripStatusLabel_search.Text" xml:space="preserve">
     <value>Alerts</value>
@@ -193,20 +193,17 @@
   <data name="label2.Text" xml:space="preserve">
     <value>at the beginning</value>
   </data>
-  <data name="tabPage_folders.Text" xml:space="preserve">
-    <value>Duplicate files in folders</value>
+  <data name="tabPage_mask.Text" xml:space="preserve">
+    <value>Search by mask in a file</value>
   </data>
   <data name="tabPage_files.Text" xml:space="preserve">
     <value>Differences between two files</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 58</value>
+  <data name="tabPage_folders.Text" xml:space="preserve">
+    <value>Duplicate files in folders</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>It will be added soon</value>
-  </data>
-  <data name="tabPage_mask.Text" xml:space="preserve">
-    <value>Search by mask in a file</value>
+  <data name="tabPage_dd.Text" xml:space="preserve">
+    <value>Disassemble the disk dump</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

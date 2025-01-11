@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripStatusLabel_search.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 20</value>
+    <value>41, 28</value>
   </data>
   <data name="toolStripStatusLabel_search.Text" xml:space="preserve">
     <value>提醒</value>
@@ -154,14 +154,11 @@
   <data name="groupBox_hs.Text" xml:space="preserve">
     <value>搜索范围</value>
   </data>
-  <data name="radioButton_dir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 20</value>
-  </data>
   <data name="radioButton_dir.Text" xml:space="preserve">
     <value>文件夹</value>
   </data>
   <data name="radioButton_file.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
+    <value>58, 20</value>
   </data>
   <data name="radioButton_file.Text" xml:space="preserve">
     <value>文件</value>
@@ -182,31 +179,28 @@
     <value>71, 22</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 16</value>
+    <value>52, 16</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>在结尾</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 16</value>
+    <value>52, 16</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>在开头</value>
   </data>
-  <data name="tabPage_folders.Text" xml:space="preserve">
-    <value>文件夹中存在重复文件</value>
+  <data name="tabPage_mask.Text" xml:space="preserve">
+    <value>在文件中按掩码搜索</value>
   </data>
   <data name="tabPage_files.Text" xml:space="preserve">
     <value>两个文件的差异</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 58</value>
+  <data name="tabPage_folders.Text" xml:space="preserve">
+    <value>文件夹中存在重复文件</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>即将添加</value> <!-- 什么 Coming Soom (草)-->
-  </data>
-  <data name="tabPage_mask.Text" xml:space="preserve">
-    <value>在文件中按掩码搜索</value>
+  <data name="tabPage_dd.Text" xml:space="preserve">
+    <value>拆卸磁盘转储</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

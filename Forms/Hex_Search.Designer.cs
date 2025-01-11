@@ -389,9 +389,7 @@ namespace FirehoseFinder
             // 
             this.comboBox_raw_secsize.FormattingEnabled = true;
             this.comboBox_raw_secsize.Items.AddRange(new object[] {
-            resources.GetString("comboBox_raw_secsize.Items"),
-            resources.GetString("comboBox_raw_secsize.Items1"),
-            resources.GetString("comboBox_raw_secsize.Items2")});
+            resources.GetString("comboBox_raw_secsize.Items")});
             resources.ApplyResources(this.comboBox_raw_secsize, "comboBox_raw_secsize");
             this.comboBox_raw_secsize.Name = "comboBox_raw_secsize";
             // 

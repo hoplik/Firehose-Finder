@@ -2632,10 +2632,10 @@ namespace FirehoseFinder
                         $"[{Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID})" + '\u0020' +
                         LocRes.GetString("thanks_u_data") + '\u0020' +
                         LocRes.GetString("increase_rating");
-                await Guide._botClient.SendTextMessageAsync(
-                    guide.channel,
+                await Guide._botClient.SendMessage(
+                    chatId: guide.channel,
                     mess_to_post,
-                    disableWebPagePreview: true,
+                    linkPreviewOptions: true,
                     parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
                 toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_data_sent");
             }
