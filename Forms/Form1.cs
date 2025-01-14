@@ -912,12 +912,15 @@ namespace FirehoseFinder
                 {
                     string swtype = "3";
                     string swver = string.Empty;
+                    string PK_Hash = "????????";
                     if (!string.IsNullOrEmpty(dataGridView_FInd_Server["SWType", i].Value.ToString())) swtype = dataGridView_FInd_Server["SWType", i].Value.ToString();
-                    if (!string.IsNullOrEmpty(dataGridView_FInd_Server["SWVer", i].Value.ToString())) swver = "(" + dataGridView_FInd_Server["SWVer", i].Value.ToString() + ")";
-                    string somerec = string.Format("{0}-{1}-{2}-{3}-{4}", dataGridView_FInd_Server["HW_FH", i].Value.ToString(),
+                    if (!string.IsNullOrEmpty(dataGridView_FInd_Server["SWVer", i].Value.ToString())) swver = string.Format("({0})", dataGridView_FInd_Server["SWVer", i].Value.ToString());
+                    if (!string.IsNullOrEmpty(dataGridView_FInd_Server["HASH_FH", i].Value.ToString())) PK_Hash = dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Substring(dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Length - 8);
+                    string somerec = string.Format("{0}-{1}-{2}-{3}-{4}", 
+                        dataGridView_FInd_Server["HW_FH", i].Value.ToString(),
                         dataGridView_FInd_Server["OEM_FH", i].Value.ToString(),
                         dataGridView_FInd_Server["MODEL_FH", i].Value.ToString(),
-                        dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Substring(dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Length - 8),
+                        PK_Hash,
                         swtype + swver);
                     serverprogs.Add(somerec);
                 }
@@ -1662,7 +1665,7 @@ namespace FirehoseFinder
                     {
                         string swtype = "3";
                         string swver = string.Empty;
-                        string nozero_hash = string.Empty;
+                        string nozero_hash = "????????";
                         if (!string.IsNullOrEmpty(dataGridView_FInd_Server["SWType", i].Value.ToString())) swtype = dataGridView_FInd_Server["SWType", i].Value.ToString();
                         if (!string.IsNullOrEmpty(dataGridView_FInd_Server["SWVer", i].Value.ToString())) swver = "(" + dataGridView_FInd_Server["SWVer", i].Value.ToString() + ")";
                         if (!string.IsNullOrEmpty(dataGridView_FInd_Server["HASH_FH", i].Value.ToString()) && dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Length >= 8)
@@ -2173,9 +2176,8 @@ namespace FirehoseFinder
         {
             byte gross = 0; //Рейтинг файла
             string sw_type = string.Empty;
-            string oemhash;
-            if (id_str[3].Length < 8) oemhash = id_str[3];
-            else oemhash = id_str[3].Substring(id_str[3].Length - 8);
+            string oemhash = "????????";
+            if (id_str[3].Length >= 8) oemhash = id_str[3].Substring(id_str[3].Length - 8);
             dataGridView_final["Column_id", Currnum].Value = id_str[0] + '\u002D' + id_str[1] + '\u002D' + id_str[2] + '\u002D' + oemhash + '\u002D' + id_str[4] + id_str[5];
             if (guide.SW_ID_type.ContainsKey(id_str[4])) sw_type = guide.SW_ID_type[id_str[4]];
             dataGridView_final["Column_SW_type", Currnum].Value = sw_type;
@@ -3363,7 +3365,11 @@ namespace FirehoseFinder
                                     $"[{Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID})" + '\u0020' +
                                     LocRes.GetString("thanks_u_data") + '\u0020' +
                                     LocRes.GetString("increase_rating");
-                            await Guide._botClient.SendDocumentAsync(guide.channel, onlineFile, null, null, mess_to_post, Telegram.Bot.Types.Enums.ParseMode.Markdown);
+                            await Guide._botClient.SendDocument(
+                                chatId: guide.channel,
+                                onlineFile,
+                                caption: mess_to_post,
+                                parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
                             textBox_soft_term.AppendText(LocRes.GetString("sent") + Environment.NewLine);
                         }
                         catch (Exception ex)
