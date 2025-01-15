@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-01-10T20:06:16">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-01-15T21:15:17">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1654,6 +1654,36 @@
 <SWType>3</SWType>
 <SWVer>4</SWVer>
 <Model>SM-G975W</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCADFE3/1/prog_firehose_ddr_lime.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0072</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>M2010J19SY</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/15CAC997/1/prog_firehose_ddr.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0020</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>4D8F87E4DC8B0FE5DEC56A644A63F00FC8C98F8DC922A383A5A73E4477F58947B37FF293DB6B9260B1AC381315CAC997</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>SM-T500</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/15CAC997/1/prog_firehose_lite.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0020</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>4D8F87E4DC8B0FE5DEC56A644A63F00FC8C98F8DC922A383A5A73E4477F58947B37FF293DB6B9260B1AC381315CAC997</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>SM-T500</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
