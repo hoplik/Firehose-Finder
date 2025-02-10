@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-01-26T22:57:28">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-01-27T21:56:58">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1420,16 +1420,6 @@
 <Model>SM-G781W</Model>
 </ForFound>
 <ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A8C9F746/9/G781U%20Loader%20File.elf#</Url>
-<HW_FH>00000000</HW_FH>
-<OEM_FH>0020</OEM_FH>
-<MODEL_FH>0000</MODEL_FH>
-<HASH_FH>59CD3ADFEEAF8F8713D084F35B7B673BD7C39BD2BBA0B1E88DD84571907F9277821154FB2E15169A9241A8829ACFBEAA</HASH_FH>
-<SWType>3</SWType>
-<SWVer>9</SWVer>
-<Model>SM-G781W</Model>
-</ForFound>
-<ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/81AE61EB/prog_emmc_firehose.mbn#</Url>
 <HW_FH>00000000</HW_FH>
 <OEM_FH>01A4</OEM_FH>
@@ -1518,7 +1508,7 @@
 <Model>SM-A528B</Model>
 </ForFound>
 <ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/lanai/prog_Zte_nubia_z60_ultra.elf#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/lanai/prog_ufs_firehose_sm8650_ddr.elf#</Url>
 <HW_FH>lanai</HW_FH>
 <Model>NX721J</Model>
 </ForFound>
@@ -1600,7 +1590,7 @@
 <Model>SRQ-K87CA</Model>
 </ForFound>
 <ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/lanai/ZTE_Nubia_Red_Magic_9_Pro_prog_ufs_firehose_sm8650_ddr.elf#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/lanai/prog_ufs_firehose_sm8650_ddr.elf#</Url>
 <HW_FH>lanai</HW_FH>
 <Model>NX769J</Model>
 </ForFound>
@@ -1730,6 +1720,73 @@
 <MODEL_FH>0003</MODEL_FH>
 <HASH_FH>A7DF36FFD7AB557C67A6C26675E2795C922CF671308CFD7169BEDB84424C862BC7B646907DD79989578590FB6370A940</HASH_FH>
 <Model>PD2034F_EX</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/2DBD07EC/000A50E100040000_776c7351dc29.bin#</Url>
+<HW_FH>000A50E1</HW_FH>
+<OEM_FH>0004</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>776C7351DC296C9F0ACA048D39247FEA559972CD61E6182BF1BBDD3F98D1E750857929A2A035D28D951615032DBD07EC</HASH_FH>
+<Model>ZTE A10P3251</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/49974F90/0000000002E80000_abbcc86fe393b13d.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>02E8</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>ABBCC86FE393B13D59E2A2EC944AF26DA3FA3D4B2A1CCD2FB383C73E0FFFC30DC1736DCB2752E955A61421C349974F90</HASH_FH>
+<Model>moto E7 Plus</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/49974F90/0000000002E80000_abbcc86fe393b13d%201.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>02E8</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>ABBCC86FE393B13D59E2A2EC944AF26DA3FA3D4B2A1CCD2FB383C73E0FFFC30DC1736DCB2752E955A61421C349974F90</HASH_FH>
+<Model>moto g(9) power</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/49974F90/0000000002E80000_abbcc86fe393b13d%202.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>02E8</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>ABBCC86FE393B13D59E2A2EC944AF26DA3FA3D4B2A1CCD2FB383C73E0FFFC30DC1736DCB2752E955A61421C349974F90</HASH_FH>
+<Model>moto g(9) play</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A98EAFE1/1/0000000002E80000_223641bb5921654e.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>02E8</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>223641BB5921654E1262D4206C3EA4BBD05A84B50962330105801CC4C3560B35189F3FDDC9E2870B9D17B79FA98EAFE1</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>razr 5G</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F543B6A5/009470e101680000_81266d711d66d9fb_fhprg_peek.bin#</Url>
+<HW_FH>009470E1</HW_FH>
+<OEM_FH>0168</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>81266D711D66D9FB2B780911AF0D8950C94CCFB1B6007091A38374DDF543B6A5</HASH_FH>
+<Model>Moto Z Force</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/3468DEEE/0/000460e103680000_ba3906237561c8b3_fhprg_peek.bin#</Url>
+<HW_FH>000460E1</HW_FH>
+<OEM_FH>0368</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>BA3906237561C8B39E65CF354CE65EF7626026F3D69A10E4A3CE54ED3468DEEE</HASH_FH>
+<SWType>0</SWType>
+<Model>Moto Z2 Force</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F77CE67F/009400e102680000_89871effe478385d_fhprg.bin#</Url>
+<HW_FH>009400E1</HW_FH>
+<OEM_FH>0268</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>89871EFFE478385D31E665C547C5A8A0E51107192A67412DA5C4E0C5F77CE67F</HASH_FH>
+<Model>Moto X Force</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
