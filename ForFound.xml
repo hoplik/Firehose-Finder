@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-01-27T21:56:58">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-02-22T00:57:13">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1787,6 +1787,16 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>89871EFFE478385D31E665C547C5A8A0E51107192A67412DA5C4E0C5F77CE67F</HASH_FH>
 <Model>Moto X Force</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/70B332ED/3/a715f.bin#</Url>
+<HW_FH>000E60E1</HW_FH>
+<OEM_FH>0020</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>B696E20250A209DE1EB3BD0D6ECB2CD9A818443BC249C0AEB5DE2B7B4D3DB61525420A0FA2CCD588F7AF297D70B332ED</HASH_FH>
+<SWType>3</SWType>
+<SWVer>3</SWVer>
+<Model>SM-A715FZ</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>

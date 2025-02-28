@@ -96,7 +96,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-01-27T21:56:53">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-02-22T00:57:08">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -367,7 +367,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZB450KL</Model>
 <AltName>ZenFone Go</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/B5B02838/zb450kl_prog_emmc_firehose_8916.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/B5B02838/prog_emmc_firehose_8916_ddr_450.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -378,7 +378,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZB450KL</Model>
 <AltName>ZenFone Go</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/B5B02838/prog_emmc_firehose_8916_ddr_450.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/B5B02838/zb450kl_prog_emmc_firehose_8916.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>008140E1</HWID>
@@ -410,7 +410,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZB552KL</Model>
 <AltName>ZenFone Go</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/B5B02838/prog_emmc_firehose_8916_qpsat.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/B5B02838/prog_emmc_firehose_8916_ddr_552.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -421,7 +421,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZB552KL</Model>
 <AltName>ZenFone Go</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/B5B02838/prog_emmc_firehose_8916_ddr_552.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/B5B02838/prog_emmc_firehose_8916_qpsat.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -452,7 +452,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZC520KL</Model>
 <AltName>ZenFone 4 Max</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F7D5DC1F/prog_emmc_firehose_8917_lite_asus.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F7D5DC1F/prog_emmc_firehose_8917_ddr_asus.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>000560E1</HWID>
@@ -463,7 +463,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZC520KL</Model>
 <AltName>ZenFone 4 Max</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F7D5DC1F/prog_emmc_firehose_8917_ddr_asus.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F7D5DC1F/prog_emmc_firehose_8917_lite_asus.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>007050E1</HWID>
@@ -475,6 +475,28 @@
 <Model>ZC550KL</Model>
 <AltName>ZenFone Max, Z010DA</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D42A380F/z010d_prog_emmc_firehose_8916.mbn#</Url>
+</ForFilter>
+<ForFilter>
+<HWID>000560E1</HWID>
+<FullName>Snapdragon 425</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>49D087CA08C6E2CA3D209C5697971E85D42A2F632592E68230C7D780F7D5DC1F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZC554KL</Model>
+<AltName>ZenFone 4 Max (2/16), X00ID</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F7D5DC1F/000560E100000000_30C7D780F7D5DC1F.mbn#</Url>
+</ForFilter>
+<ForFilter>
+<HWID>0004F0E1</HWID>
+<FullName>Snapdragon 430</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>49D087CA08C6E2CA3D209C5697971E85D42A2F632592E68230C7D780F7D5DC1F</HASHID>
+<Trademark>ASUS</Trademark>
+<Model>ZC554KL</Model>
+<AltName>ZenFone 4 Max (3/32), X00ID</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F7D5DC1F/prog_emmc_firehose_8937_lite_asus1.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>0004F0E1</HWID>
@@ -496,29 +518,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZC554KL</Model>
 <AltName>ZenFone 4 Max (2/16), X00ID</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F7D5DC1F/000560E100000000_30C7D780F7D5DC1F.mbn#</Url>
-</ForFilter>
-<ForFilter>
-<HWID>000560E1</HWID>
-<FullName>Snapdragon 425</FullName>
-<OEMID>0000</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>49D087CA08C6E2CA3D209C5697971E85D42A2F632592E68230C7D780F7D5DC1F</HASHID>
-<Trademark>ASUS</Trademark>
-<Model>ZC554KL</Model>
-<AltName>ZenFone 4 Max (2/16), X00ID</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F7D5DC1F/000560e100000000_49d087ca08c6e2ca_fhprg_peek.bin#</Url>
-</ForFilter>
-<ForFilter>
-<HWID>0004F0E1</HWID>
-<FullName>Snapdragon 430</FullName>
-<OEMID>0000</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>49D087CA08C6E2CA3D209C5697971E85D42A2F632592E68230C7D780F7D5DC1F</HASHID>
-<Trademark>ASUS</Trademark>
-<Model>ZC554KL</Model>
-<AltName>ZenFone 4 Max (3/32), X00ID</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F7D5DC1F/prog_emmc_firehose_8937_lite_asus1.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>0090B0E1</HWID>
@@ -1717,7 +1717,7 @@
 <Trademark>OPPO</Trademark>
 <Model>CPH1701</Model>
 <AltName>A57</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F5B53BBC/OPPO_A57_8937_ddr.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F5B53BBC/prog_emmc_firehose_8940_ddr_oppo.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>0006B0E1</HWID>
@@ -1728,7 +1728,7 @@
 <Trademark>OPPO</Trademark>
 <Model>CPH1701</Model>
 <AltName>A57</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F5B53BBC/prog_emmc_firehose_8940_ddr_oppo.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F5B53BBC/OPPO_A57_8937_ddr.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>0008C0E1</HWID>
@@ -1852,7 +1852,7 @@
 </ForFilter>
 <ForFilter>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0020</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>59CD3ADFEEAF8F8713D084F35B7B673BD7C39BD2BBA0B1E88DD84571907F9277821154FB2E15169A9241A8829ACFBEAA</HASHID>
@@ -1931,16 +1931,6 @@
 <AltName>Aquos Crystal</AltName>
 </ForFilter>
 <ForFilter>
-<HWID>0007E0E1</HWID>
-<FullName>Snapdragon 630</FullName>
-<OEMID>0038</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>07046415532823B0F6E3526FC4501B711E1A42DE51E4FCB68F0B8E62CC08BA2B</HASHID>
-<Trademark>SHARP</Trademark>
-<Model>FS8016</Model>
-<AltName>Aquos S2 (64GB)</AltName>
-</ForFilter>
-<ForFilter>
 <HWID>0008C0E1</HWID>
 <FullName>Snapdragon 660</FullName>
 <OEMID>0038</OEMID>
@@ -1949,6 +1939,16 @@
 <Trademark>SHARP</Trademark>
 <Model>FS8016</Model>
 <AltName>Aquos S2 (128GB)</AltName>
+</ForFilter>
+<ForFilter>
+<HWID>0007E0E1</HWID>
+<FullName>Snapdragon 630</FullName>
+<OEMID>0038</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>07046415532823B0F6E3526FC4501B711E1A42DE51E4FCB68F0B8E62CC08BA2B</HASHID>
+<Trademark>SHARP</Trademark>
+<Model>FS8016</Model>
+<AltName>Aquos S2 (64GB)</AltName>
 </ForFilter>
 <ForFilter>
 <HWID>000AC0E1</HWID>
@@ -2148,7 +2148,7 @@
 </ForFilter>
 <ForFilter>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0072</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
@@ -2703,17 +2703,6 @@
 <Trademark>ZUK</Trademark>
 <Model>ZUK Z2131</Model>
 <AltName>z2_plus</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D7D6A1C7/009470e100000000_cab02552dc28f562_fhprg_lenovo_zuk.bin#</Url>
-</ForFilter>
-<ForFilter>
-<HWID>009470E1</HWID>
-<FullName>Snapdragon 820</FullName>
-<OEMID>0000</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>CAB02552DC28F562E8C5BEFA75BC4A97B90AAB1C91A3C186EC51F3D3D7D6A1C7</HASHID>
-<Trademark>ZUK</Trademark>
-<Model>ZUK Z2131</Model>
-<AltName>z2_plus</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D7D6A1C7/prog_ufs_firehose_8996_ddr_zuk.elf#</Url>
 </ForFilter>
 <ForFilter>
@@ -2726,6 +2715,17 @@
 <Model>ZUK Z2131</Model>
 <AltName>z2_plus</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D7D6A1C7/prog_emmc_firehose_8996_ddr_zuk.elf#</Url>
+</ForFilter>
+<ForFilter>
+<HWID>009470E1</HWID>
+<FullName>Snapdragon 820</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CAB02552DC28F562E8C5BEFA75BC4A97B90AAB1C91A3C186EC51F3D3D7D6A1C7</HASHID>
+<Trademark>ZUK</Trademark>
+<Model>ZUK Z2131</Model>
+<AltName>z2_plus</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D7D6A1C7/009470e100000000_cab02552dc28f562_fhprg_lenovo_zuk.bin#</Url>
 </ForFilter>
 <ForFilter>
 <HWID>000480E1</HWID>
@@ -2829,7 +2829,7 @@
 <Trademark>AGM</Trademark>
 <Model>AGM X3</Model>
 <AltName>T91RU</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/6A752E39/prog_firehose_ddr_60000100.elf#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/6A752E39/prog_firehose_lite_60000100.elf#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>
@@ -2842,7 +2842,7 @@
 <Trademark>AGM</Trademark>
 <Model>AGM X3</Model>
 <AltName>T91RU</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/6A752E39/prog_firehose_lite_60000100.elf#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/6A752E39/prog_firehose_ddr_60000100.elf#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>
@@ -2872,7 +2872,7 @@
 <ForFilter>
 <Trust>full trust</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0144</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>A5D4E2B836A31CE77DB7D5B5FA2F4D8AE8EF1084C4C80BD9E4346647A13C35C6992BD80F456F1B309B8232B7D00B50E2</HASHID>
@@ -2885,7 +2885,7 @@
 <ForFilter>
 <Trust>full trust</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0144</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>A5D4E2B836A31CE77DB7D5B5FA2F4D8AE8EF1084C4C80BD9E4346647A13C35C6992BD80F456F1B309B8232B7D00B50E2</HASHID>
@@ -3132,7 +3132,7 @@
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
 <Trademark>Honeywell</Trademark>
 <Model>EDA51</Model>
-<AltName>EDA51</AltName>
+<AltName>EDA51, EDA51K</AltName>
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>
@@ -3356,7 +3356,7 @@
 <ForFilter>
 <Trust>full trust</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0040</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>8EAC5D78102FAD7D735097C49A09A78C69ED5395FD01A960298F88C1F5A9838351F0731C1403A2CD7326B63D1FE9C50C</HASHID>
@@ -3381,7 +3381,7 @@
 <ForFilter>
 <Trust>full trust</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0040</OEMID>
 <MODELID>0040</MODELID>
 <HASHID>4C95F1D500523CFF8664DD668A9C95B192BB5A79926B37C91E5FB9FD6D23DC9B42301563A0C10CE2C1465162F0C3A09B</HASHID>
@@ -3394,18 +3394,6 @@
 <Trust>full trust</Trust>
 <HWID>001060E1</HWID>
 <FullName>215 Mobile Platform</FullName>
-<OEMID>0031</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
-<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>LGE</Trademark>
-<Model>LM-K200</Model>
-<AltName>dh0lm_usc_us</AltName>
-</ForFilter>
-<ForFilter>
-<Trust>full trust</Trust>
-<HWID>001060E1</HWID>
-<FullName>215 Mobile Platform</FullName>
 <OEMID>1808</OEMID>
 <MODELID>0001</MODELID>
 <HASHID>CB904587B35A050D999CA77F65590E0C66BB85E630AF5172197464F912179A0D</HASHID>
@@ -3413,6 +3401,18 @@
 <Trademark>LGE</Trademark>
 <Model>LM-K200</Model>
 <AltName>dh0lm</AltName>
+</ForFilter>
+<ForFilter>
+<Trust>full trust</Trust>
+<HWID>001060E1</HWID>
+<FullName>215 Mobile Platform</FullName>
+<OEMID>0031</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>LGE</Trademark>
+<Model>LM-K200</Model>
+<AltName>dh0lm_usc_us</AltName>
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>
@@ -3904,7 +3904,7 @@
 <ForFilter>
 <Trust>full trust</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0051</OEMID>
 <MODELID>4D6D</MODELID>
 <HASHID>7C15A98DB4E70963715F51C8DA39C1E66FC1C3334E95F4C6A5627DA6A49C842F06B43E8DE1F589FC36CE1135C7FA5AA2</HASHID>
@@ -3916,7 +3916,7 @@
 <ForFilter>
 <Trust>full trust</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0051</OEMID>
 <MODELID>4D6D</MODELID>
 <HASHID>7C15A98DB4E70963715F51C8DA39C1E66FC1C3334E95F4C6A5627DA6A49C842F06B43E8DE1F589FC36CE1135C7FA5AA2</HASHID>
@@ -3929,7 +3929,7 @@
 <ForFilter>
 <Trust>full trust</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0051</OEMID>
 <MODELID>4D6D</MODELID>
 <HASHID>7C15A98DB4E70963715F51C8DA39C1E66FC1C3334E95F4C6A5627DA6A49C842F06B43E8DE1F589FC36CE1135C7FA5AA2</HASHID>
@@ -4077,7 +4077,7 @@
 <ForFilter>
 <Trust>full trust</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0051</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>2BE76CEEDE8483F5002FA75A77392A891CBC530E8B010DC1C77DCC75F37090FB4F29562BF996BE1193C961DF4B1DE4AF</HASHID>
@@ -4223,7 +4223,7 @@
 <ForFilter>
 <Trust>full trust</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0051</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>2BE76CEEDE8483F5002FA75A77392A891CBC530E8B010DC1C77DCC75F37090FB4F29562BF996BE1193C961DF4B1DE4AF</HASHID>
@@ -4980,6 +4980,17 @@
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>
+<HWID>001560E1</HWID>
+<OEMID>01A8</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>0307B92DB5240FF704A1E5747A621EBF2827BED47CD060DB36A607BE41E73947197B8B7F4F44F84D56A6DBB5CBA29B53</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>VERTU INTERNATIONAL CORPORATION LIMITED</Trademark>
+<Model>ASTER P</Model>
+<AltName>APOLLO</AltName>
+</ForFilter>
+<ForFilter>
+<Trust>full trust</Trust>
 <HWID>0008C0E1</HWID>
 <FullName>Snapdragon 660</FullName>
 <OEMID>0043</OEMID>
@@ -4989,17 +5000,6 @@
 <Trademark>VERTU INTERNATIONAL CORPORATION LIMITED</Trademark>
 <Model>ASTER P</Model>
 <AltName>APOLLO_INTL</AltName>
-</ForFilter>
-<ForFilter>
-<Trust>full trust</Trust>
-<HWID>001560E1</HWID>
-<OEMID>01A8</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>0307B92DB5240FF704A1E5747A621EBF2827BED47CD060DB36A607BE41E73947197B8B7F4F44F84D56A6DBB5CBA29B53</HASHID>
-<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>VERTU INTERNATIONAL CORPORATION LIMITED</Trademark>
-<Model>ASTER P</Model>
-<AltName>APOLLO</AltName>
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>
@@ -5089,7 +5089,7 @@
 <ForFilter>
 <Trust>full trust</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0072</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
@@ -5121,7 +5121,7 @@
 <Trademark>Xiaomi</Trademark>
 <Model>M2010J19SY</Model>
 <AltName>lemon_ru, Redmi 9T, Redmi 9 Power, Redmi Note 9 4G, lime</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCADFE3/1/prog_firehose_patched_jhem_unlimited_life_ddr.elf#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCADFE3/1/prog_firehose_ddr_lime.elf#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>
@@ -5134,7 +5134,7 @@
 <Trademark>Xiaomi</Trademark>
 <Model>M2010J19SY</Model>
 <AltName>lemon_ru, Redmi 9T, Redmi 9 Power, Redmi Note 9 4G, lime</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCADFE3/1/prog_firehose_ddr_lime.elf#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCADFE3/1/prog_firehose_patched_jhem_unlimited_life_ddr.elf#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>full trust</Trust>
@@ -5488,7 +5488,7 @@
 <ForFilter>
 <Trust>full trust</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>D40EEE56F3194665574109A39267724AE7944134CD53CB767E293D3C40497955BC8A4519FF992B031FADC6355015AC87</HASHID>
@@ -5512,7 +5512,7 @@
 <ForFilter>
 <Trust>full trust</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0004</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>776C7351DC296C9F0ACA048D39247FEA559972CD61E6182BF1BBDD3F98D1E750857929A2A035D28D951615032DBD07EC</HASHID>
@@ -5581,7 +5581,7 @@
 <Trademark>Alcatel</Trademark>
 <Model>5044R</Model>
 <AltName>CameoX 4G LTE</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F20DBC58/NPRG70.bin#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F20DBC58/prog_emmc_firehose_8909_alcC.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -5594,7 +5594,7 @@
 <Trademark>Alcatel</Trademark>
 <Model>5044R</Model>
 <AltName>CameoX 4G LTE</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F20DBC58/prog_emmc_firehose_8909_alcC.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F20DBC58/NPRG70.bin#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -5631,7 +5631,7 @@
 <Trademark>Alcatel</Trademark>
 <Model>6045Y</Model>
 <AltName>One Touch Idol 3 (5.5)</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/E0D4B4F0/prog_emmc_firehose_8936_swipe.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/E0D4B4F0/Idol35_5_NPRG7627.bin#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -5644,7 +5644,7 @@
 <Trademark>Alcatel</Trademark>
 <Model>6045Y</Model>
 <AltName>One Touch Idol 3 (5.5)</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/E0D4B4F0/Idol35_5_NPRG7627.bin#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/E0D4B4F0/prog_emmc_firehose_8936_swipe.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -5730,7 +5730,19 @@
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
 <Trademark>Artel</Trademark>
 <Model>U5</Model>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9DE35F4D/VIEW.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9DE35F4D/TOMMY_2_PLUS.mbn#</Url>
+</ForFilter>
+<ForFilter>
+<Trust>real dev</Trust>
+<HWID>000560E1</HWID>
+<FullName>Snapdragon 425</FullName>
+<OEMID>0000</OEMID>
+<MODELID>7705</MODELID>
+<HASHID>ADCB7C0B68663755FD192E25C3158C7B13C234483A91460BF81F98219DE35F4D</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>Artel</Trademark>
+<Model>U5</Model>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9DE35F4D/prog_emmc_firehose_8917_ddr_mmx1.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -5754,19 +5766,7 @@
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
 <Trademark>Artel</Trademark>
 <Model>U5</Model>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9DE35F4D/TOMMY_2_PLUS.mbn#</Url>
-</ForFilter>
-<ForFilter>
-<Trust>real dev</Trust>
-<HWID>000560E1</HWID>
-<FullName>Snapdragon 425</FullName>
-<OEMID>0000</OEMID>
-<MODELID>7705</MODELID>
-<HASHID>ADCB7C0B68663755FD192E25C3158C7B13C234483A91460BF81F98219DE35F4D</HASHID>
-<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>Artel</Trademark>
-<Model>U5</Model>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9DE35F4D/prog_emmc_firehose_8917_ddr_mmx1.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9DE35F4D/VIEW.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -5780,7 +5780,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0029</OEMID>
 <MODELID>0026</MODELID>
 <HASHID>38C9DE55AE9E87F4B86981BF8A22D90015D57B2E9C374742E70B5238547126F56623EB0CAD72F49CA260183E324A62B3</HASHID>
@@ -5898,7 +5898,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZB555KL</Model>
 <AltName>ZenFone Max (M1)</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/230D00F3/0004f0e112340001_fbd4de360136046b_fhprg_peek.bin#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/230D00F3/x00p_zb555kl_emmc_firehose_8937_ddr.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -5911,7 +5911,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZB555KL</Model>
 <AltName>ZenFone Max (M1)</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/230D00F3/x00p_zb555kl_emmc_firehose_8937_ddr.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/230D00F3/0004f0e112340001_fbd4de360136046b_fhprg_peek.bin#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -5999,7 +5999,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZE550KL</Model>
 <AltName>Zenfone 2 Laser</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8916_asus.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -6025,7 +6025,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZE550KL</Model>
 <AltName>Zenfone 2 Laser</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr_550.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -6038,7 +6038,7 @@
 <Trademark>ASUS</Trademark>
 <Model>ZE550KL</Model>
 <AltName>Zenfone 2 Laser</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8916_asus.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr_550.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -6095,20 +6095,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
-<OEMID>0029</OEMID>
-<MODELID>0865</MODELID>
-<HASHID>88538270E8F924BEE0C6231E55A06E84CD997EAE2633AD6FDD1E1FB0995AE6A86C5A5FBE674E5C95C5B847E2164FB294</HASHID>
-<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>ASUS</Trademark>
-<Model>ZS671KS</Model>
-<AltName>ZenFone 7 Pro</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/164FB294/prog_firehose_ddr_Asusx_384.elf#</Url>
-</ForFilter>
-<ForFilter>
-<Trust>real dev</Trust>
-<HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0029</OEMID>
 <MODELID>0865</MODELID>
 <HASHID>88538270E8F924BEE0C6231E55A06E84CD997EAE2633AD6FDD1E1FB0995AE6A86C5A5FBE674E5C95C5B847E2164FB294</HASHID>
@@ -6121,7 +6108,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0029</OEMID>
 <MODELID>0865</MODELID>
 <HASHID>88538270E8F924BEE0C6231E55A06E84CD997EAE2633AD6FDD1E1FB0995AE6A86C5A5FBE674E5C95C5B847E2164FB294</HASHID>
@@ -6130,6 +6117,19 @@
 <Model>ZS671KS</Model>
 <AltName>ZenFone 7 Pro</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/164FB294/zf7_firehose_lite.elf#</Url>
+</ForFilter>
+<ForFilter>
+<Trust>real dev</Trust>
+<HWID>000C30E1</HWID>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
+<OEMID>0029</OEMID>
+<MODELID>0865</MODELID>
+<HASHID>88538270E8F924BEE0C6231E55A06E84CD997EAE2633AD6FDD1E1FB0995AE6A86C5A5FBE674E5C95C5B847E2164FB294</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>ASUS</Trademark>
+<Model>ZS671KS</Model>
+<AltName>ZenFone 7 Pro</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/164FB294/prog_firehose_ddr_Asusx_384.elf#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -7318,7 +7318,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>E69E6369BDA2D2990E75A87BB9F7A21CA84FBF04E7857B19B8B07B0E5462107574746F339790835806A77ED30B657E52</HASHID>
@@ -7336,7 +7336,7 @@
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
 <Trademark>LENOVO</Trademark>
 <Model>s5 k520</Model>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D7D6A1C7/000460e100000000_cab02552dc28f562_fhprg_peek.bin#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D7D6A1C7/prog_emmc_firehose_8953_ddr_lx_s5.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -7348,7 +7348,7 @@
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
 <Trademark>LENOVO</Trademark>
 <Model>s5 k520</Model>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D7D6A1C7/prog_emmc_firehose_8953_ddr_lx_s5.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D7D6A1C7/000460e100000000_cab02552dc28f562_fhprg_peek.bin#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -7365,20 +7365,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
-<OEMID>0040</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>8EAC5D78102FAD7D735097C49A09A78C69ED5395FD01A960298F88C1F5A9838351F0731C1403A2CD7326B63D1FE9C50C</HASHID>
-<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>LENOVO</Trademark>
-<Model>TB-9707F</Model>
-<AltName>Legion Y700, TB-9707N</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/1FE9C50C/prog_firehose_ddr.elf#</Url>
-</ForFilter>
-<ForFilter>
-<Trust>real dev</Trust>
-<HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0040</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>8EAC5D78102FAD7D735097C49A09A78C69ED5395FD01A960298F88C1F5A9838351F0731C1403A2CD7326B63D1FE9C50C</HASHID>
@@ -7387,6 +7374,19 @@
 <Model>TB-9707F</Model>
 <AltName>Legion Y700, TB-9707N</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/1FE9C50C/prog_firehose_lite.elf#</Url>
+</ForFilter>
+<ForFilter>
+<Trust>real dev</Trust>
+<HWID>000C30E1</HWID>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
+<OEMID>0040</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>8EAC5D78102FAD7D735097C49A09A78C69ED5395FD01A960298F88C1F5A9838351F0731C1403A2CD7326B63D1FE9C50C</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>LENOVO</Trademark>
+<Model>TB-9707F</Model>
+<AltName>Legion Y700, TB-9707N</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/1FE9C50C/prog_firehose_ddr.elf#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -7846,9 +7846,9 @@
 <Trust>real dev</Trust>
 <HWID>0008B0E1</HWID>
 <FullName>Snapdragon 845</FullName>
-<OEMID>0000</OEMID>
+<OEMID>0031</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>AFCA69D4235117E5BFC21467068B20DF85E0115D7413D5821883A6D244961581</HASHID>
+<HASHID>1030CD12CE708F29D6914D7529DF75149D8EF91C27DAF0E1F84B90F4B707329A</HASHID>
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
 <Trademark>LGE</Trademark>
 <Model>LM-V400N</Model>
@@ -7859,9 +7859,9 @@
 <Trust>real dev</Trust>
 <HWID>0008B0E1</HWID>
 <FullName>Snapdragon 845</FullName>
-<OEMID>0031</OEMID>
+<OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>1030CD12CE708F29D6914D7529DF75149D8EF91C27DAF0E1F84B90F4B707329A</HASHID>
+<HASHID>AFCA69D4235117E5BFC21467068B20DF85E0115D7413D5821883A6D244961581</HASHID>
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
 <Trademark>LGE</Trademark>
 <Model>LM-V400N</Model>
@@ -7883,7 +7883,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0031</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>E746E34F737403F40212CF29F0C0CAB9F1038AA8BCE6C097E82CC93213020EDBCB967BFE180AE14C9AFB4DAC9C83E2B0</HASHID>
@@ -8478,19 +8478,6 @@
 <Trademark>motorola</Trademark>
 <Model>Moto Z Force</Model>
 <AltName>griffin_verizon, XT1650-01, XT1650-02, XT1650-03, XT1650-05 (Griffin)</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F543B6A5/prog_ufs_firehose_8996_ddr_motogriff.elf#</Url>
-</ForFilter>
-<ForFilter>
-<Trust>real dev</Trust>
-<HWID>009470E1</HWID>
-<FullName>Snapdragon 820</FullName>
-<OEMID>0168</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>81266D711D66D9FB2B780911AF0D8950C94CCFB1B6007091A38374DDF543B6A5</HASHID>
-<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>motorola</Trademark>
-<Model>Moto Z Force</Model>
-<AltName>griffin_verizon, XT1650-01, XT1650-02, XT1650-03, XT1650-05 (Griffin)</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F543B6A5/prog_ufs_firehose_8996_lge.elf#</Url>
 </ForFilter>
 <ForFilter>
@@ -8505,6 +8492,19 @@
 <Model>Moto Z Force</Model>
 <AltName>griffin_verizon, XT1650-01, XT1650-02, XT1650-03, XT1650-05 (Griffin)</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F543B6A5/009470e101680000_81266d711d66d9fb_fhprg_peek.bin#</Url>
+</ForFilter>
+<ForFilter>
+<Trust>real dev</Trust>
+<HWID>009470E1</HWID>
+<FullName>Snapdragon 820</FullName>
+<OEMID>0168</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>81266D711D66D9FB2B780911AF0D8950C94CCFB1B6007091A38374DDF543B6A5</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>motorola</Trademark>
+<Model>Moto Z Force</Model>
+<AltName>griffin_verizon, XT1650-01, XT1650-02, XT1650-03, XT1650-05 (Griffin)</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F543B6A5/prog_ufs_firehose_8996_ddr_motogriff.elf#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -8643,6 +8643,18 @@
 <HWID>000320E1</HWID>
 <FullName>Snapdragon X16 LTE</FullName>
 <OEMID>0000</OEMID>
+<MODELID>A0A8</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>netgear</Trademark>
+<Model>MR1100</Model>
+<AltName>Nighthawk M1 Mobile Router</AltName>
+</ForFilter>
+<ForFilter>
+<Trust>real dev</Trust>
+<HWID>000320E1</HWID>
+<FullName>Snapdragon X16 LTE</FullName>
+<OEMID>0000</OEMID>
 <MODELID>A0E8</MODELID>
 <HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
@@ -8663,19 +8675,6 @@
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
-<HWID>001360E1</HWID>
-<FullName>Snapdragon 460</FullName>
-<OEMID>0000</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>6343DCCCA225D2B3CA208F9775971EC38D3DECF67CD6FFE39158E5A340B2C16E0DBAC21A3AF087471BA86B713CAA5036</HASHID>
-<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>Nokia</Trademark>
-<Model>4.2</Model>
-<AltName>Panther, Panther_sprout</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A75DB643/000bf0e100359571_06917d466c907e9f_fhprg_peek.bin#</Url>
-</ForFilter>
-<ForFilter>
-<Trust>real dev</Trust>
 <HWID>000BF0E1</HWID>
 <FullName>Snapdragon 439</FullName>
 <OEMID>0035</OEMID>
@@ -8689,16 +8688,16 @@
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
-<HWID>008110E1</HWID>
-<FullName>Snapdragon 200</FullName>
+<HWID>001360E1</HWID>
+<FullName>Snapdragon 460</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>857B5151EB81EBA99A88BD187BE50F4E0CBB839E9097971819203A31F337188C</HASHID>
+<HASHID>6343DCCCA225D2B3CA208F9775971EC38D3DECF67CD6FFE39158E5A340B2C16E0DBAC21A3AF087471BA86B713CAA5036</HASHID>
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
 <Trademark>Nokia</Trademark>
-<Model>RM-1013</Model>
-<AltName>X2 Dual Sim</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F337188C/8x10.mbn#</Url>
+<Model>4.2</Model>
+<AltName>Panther, Panther_sprout</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A75DB643/000bf0e100359571_06917d466c907e9f_fhprg_peek.bin#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -8712,6 +8711,19 @@
 <Model>RM-1013</Model>
 <AltName>X2 Dual Sim</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F337188C/MSM8x10.bin#</Url>
+</ForFilter>
+<ForFilter>
+<Trust>real dev</Trust>
+<HWID>008110E1</HWID>
+<FullName>Snapdragon 200</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>857B5151EB81EBA99A88BD187BE50F4E0CBB839E9097971819203A31F337188C</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>Nokia</Trademark>
+<Model>RM-1013</Model>
+<AltName>X2 Dual Sim</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F337188C/8x10.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -8985,6 +8997,30 @@
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
+<HWID>007F40E1</HWID>
+<FullName>Snapdragon X5 LTE Modem</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>Novatel</Trademark>
+<Model>MiFi6620L</Model>
+<AltName>JetPack</AltName>
+</ForFilter>
+<ForFilter>
+<Trust>real dev</Trust>
+<HWID>009500E1</HWID>
+<FullName>Snapdragon LTE Modem</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>Novatel</Trademark>
+<Model>MiFi7730L</Model>
+<AltName>JetPack</AltName>
+</ForFilter>
+<ForFilter>
+<Trust>real dev</Trust>
 <Trademark>Oculus</Trademark>
 <Model>Quest 3S</Model>
 <AltName>panther, VR шлем</AltName>
@@ -9017,7 +9053,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0051</OEMID>
 <MODELID>4D6D</MODELID>
 <HASHID>7C15A98DB4E70963715F51C8DA39C1E66FC1C3334E95F4C6A5627DA6A49C842F06B43E8DE1F589FC36CE1135C7FA5AA2</HASHID>
@@ -9189,7 +9225,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0051</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>2BE76CEEDE8483F5002FA75A77392A891CBC530E8B010DC1C77DCC75F37090FB4F29562BF996BE1193C961DF4B1DE4AF</HASHID>
@@ -9617,7 +9653,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0051</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>2BE76CEEDE8483F5002FA75A77392A891CBC530E8B010DC1C77DCC75F37090FB4F29562BF996BE1193C961DF4B1DE4AF</HASHID>
@@ -9668,7 +9704,7 @@
 <FullName>Snapdragon 410</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>0A89F6A5832A55D32CD3FAC927372439D63B329A1135B0CB72A8E4013EC94E89</HASHID>
+<HASHID>996C7888282743ACED72ACC73D3228DBF4938C291AC05931A79E45BC0BCE268A</HASHID>
 <LASTKNOWNSBLVER>00000001</LASTKNOWNSBLVER>
 <Trademark>Samsung</Trademark>
 <Model>GT-I9192I</Model>
@@ -9680,7 +9716,7 @@
 <FullName>Snapdragon 410</FullName>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>996C7888282743ACED72ACC73D3228DBF4938C291AC05931A79E45BC0BCE268A</HASHID>
+<HASHID>0A89F6A5832A55D32CD3FAC927372439D63B329A1135B0CB72A8E4013EC94E89</HASHID>
 <LASTKNOWNSBLVER>00000001</LASTKNOWNSBLVER>
 <Trademark>Samsung</Trademark>
 <Model>GT-I9192I</Model>
@@ -9721,7 +9757,7 @@
 <Trademark>Samsung</Trademark>
 <Model>SM-A015F</Model>
 <AltName>Galaxy A01</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8AA10082/1/000bf0e100200000_3cc959ac5b3364a4_fhprg.bin#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8AA10082/1/A015F_prog_emmc_firehose_8937_ddr.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -9734,7 +9770,7 @@
 <Trademark>Samsung</Trademark>
 <Model>SM-A015F</Model>
 <AltName>Galaxy A01</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8AA10082/1/A015F_prog_emmc_firehose_8937_ddr.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8AA10082/1/000bf0e100200000_3cc959ac5b3364a4_fhprg.bin#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -9838,7 +9874,7 @@
 <FullName>Snapdragon SDM680 4G</FullName>
 <OEMID>0020</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>63368A10C89DBD9C2193F55CC42F5E85F08877CBA105FF89ACAEB07C7A6A98804F52F26798A10DCDA9B54320EDF38DB2</HASHID>
+<HASHID>1FE17B09F0232623DFEAA5518708DCE5AF6443D4BEABCC532B50668140CDC1483CCB10E5508CD2EBCC54DB30248FD1E0</HASHID>
 <LASTKNOWNSBLVER>00000005</LASTKNOWNSBLVER>
 <Trademark>Samsung</Trademark>
 <Model>SM-A057M</Model>
@@ -9850,7 +9886,7 @@
 <FullName>Snapdragon SDM680 4G</FullName>
 <OEMID>0020</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>1FE17B09F0232623DFEAA5518708DCE5AF6443D4BEABCC532B50668140CDC1483CCB10E5508CD2EBCC54DB30248FD1E0</HASHID>
+<HASHID>63368A10C89DBD9C2193F55CC42F5E85F08877CBA105FF89ACAEB07C7A6A98804F52F26798A10DCDA9B54320EDF38DB2</HASHID>
 <LASTKNOWNSBLVER>00000005</LASTKNOWNSBLVER>
 <Trademark>Samsung</Trademark>
 <Model>SM-A057M</Model>
@@ -9937,8 +9973,8 @@
 <FullName>Snapdragon SDM680 4G</FullName>
 <OEMID>0020</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>CC8F14E97AFA5F36F32D3601D2A7E17615D00ADF52D5BAF93BDF653B77635469268EA7BDF7F724CED2DAA165CC44FD96</HASHID>
-<LASTKNOWNSBLVER>00000005</LASTKNOWNSBLVER>
+<HASHID>7A7236E4CE1570EB42FC94CC07145134F6354DE83C8BE01EE5062D1E4553C34889DA3F936D38B9ED3BACA4B278EF9B2A</HASHID>
+<LASTKNOWNSBLVER>00000004</LASTKNOWNSBLVER>
 <Trademark>Samsung</Trademark>
 <Model>SM-A235F</Model>
 <AltName>Galaxy A23 4G, SM-A235M</AltName>
@@ -9950,8 +9986,8 @@
 <FullName>Snapdragon SDM680 4G</FullName>
 <OEMID>0020</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>7A7236E4CE1570EB42FC94CC07145134F6354DE83C8BE01EE5062D1E4553C34889DA3F936D38B9ED3BACA4B278EF9B2A</HASHID>
-<LASTKNOWNSBLVER>00000004</LASTKNOWNSBLVER>
+<HASHID>CC8F14E97AFA5F36F32D3601D2A7E17615D00ADF52D5BAF93BDF653B77635469268EA7BDF7F724CED2DAA165CC44FD96</HASHID>
+<LASTKNOWNSBLVER>00000005</LASTKNOWNSBLVER>
 <Trademark>Samsung</Trademark>
 <Model>SM-A235F</Model>
 <AltName>Galaxy A23 4G, SM-A235M</AltName>
@@ -10099,10 +10135,11 @@
 <OEMID>0020</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>B696E20250A209DE1EB3BD0D6ECB2CD9A818443BC249C0AEB5DE2B7B4D3DB61525420A0FA2CCD588F7AF297D70B332ED</HASHID>
-<LASTKNOWNSBLVER>0000000A</LASTKNOWNSBLVER>
+<LASTKNOWNSBLVER>0000000B</LASTKNOWNSBLVER>
 <Trademark>Samsung</Trademark>
 <Model>SM-A715FZ</Model>
 <AltName>Galaxy A71</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/70B332ED/3/a715f.bin#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -10122,8 +10159,8 @@
 <FullName>Snapdragon 730</FullName>
 <OEMID>0020</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>4995FD2FEFCC9B14575CF5DF2BF955D866976B000E46EBA86D0A5EE5FCDF540AB87AF9B38AA895B5F978B7AF5AB5695D</HASHID>
-<LASTKNOWNSBLVER>00000002</LASTKNOWNSBLVER>
+<HASHID>94EC9A24B79BCC838C886C26C5FA6366A7A08249043FA0D20371A144AC2D32F4995BB25B1C5A9259A111BC0A18BDF326</HASHID>
+<LASTKNOWNSBLVER>00000006</LASTKNOWNSBLVER>
 <Trademark>Samsung</Trademark>
 <Model>SM-A805F</Model>
 <AltName>Galaxy A80</AltName>
@@ -10135,8 +10172,8 @@
 <FullName>Snapdragon 730</FullName>
 <OEMID>0020</OEMID>
 <MODELID>0000</MODELID>
-<HASHID>94EC9A24B79BCC838C886C26C5FA6366A7A08249043FA0D20371A144AC2D32F4995BB25B1C5A9259A111BC0A18BDF326</HASHID>
-<LASTKNOWNSBLVER>00000006</LASTKNOWNSBLVER>
+<HASHID>4995FD2FEFCC9B14575CF5DF2BF955D866976B000E46EBA86D0A5EE5FCDF540AB87AF9B38AA895B5F978B7AF5AB5695D</HASHID>
+<LASTKNOWNSBLVER>00000002</LASTKNOWNSBLVER>
 <Trademark>Samsung</Trademark>
 <Model>SM-A805F</Model>
 <AltName>Galaxy A80</AltName>
@@ -10266,7 +10303,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0020</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>BA91046801D5CBE5A7C43B15C712B2B8F829E55D07CD4D1A2F7F4558C71699F3CEDA9D1103B3D5003B27C2708E975A49</HASHID>
@@ -10278,7 +10315,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0020</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>477CCD5056815321285E87DA8F41A2BDC09B7DD81E33EEB4F1B35B5F9AA47F023C7BEF884318A8A252D5469ADAE035A7</HASHID>
@@ -10290,7 +10327,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0020</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>ADAB8B3881AFCA98F271B86C6271155C63755043193A880BDEAF9BC423F1F208C3AC85659D90838F7D084DDBA8C9F746</HASHID>
@@ -10413,7 +10450,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0020</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>7CAD0301EDFF35858405D9FEA87C2AF297B068976CC2EDBCD9BE4EF3816D52A942095124981487C42195C46EF6AB294F</HASHID>
@@ -10739,7 +10776,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0072</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
@@ -10855,7 +10892,7 @@
 <Trademark>Samsung</Trademark>
 <Model>SM-T500</Model>
 <AltName>Galaxy Tab A7 10.4 2020</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/15CAC997/1/prog_firehose_lite.elf#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/15CAC997/1/prog_firehose_ddr.elf#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -10868,7 +10905,7 @@
 <Trademark>Samsung</Trademark>
 <Model>SM-T500</Model>
 <AltName>Galaxy Tab A7 10.4 2020</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/15CAC997/1/prog_firehose_ddr.elf#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/15CAC997/1/prog_firehose_lite.elf#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -11179,6 +11216,18 @@
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
+<HWID>001890E1</HWID>
+<FullName>Snapdragon X12-2</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>TCL</Trademark>
+<Model>Linkhub HH63</Model>
+<AltName>HH63v1</AltName>
+</ForFilter>
+<ForFilter>
+<Trust>real dev</Trust>
 <HWID>000CC0E1</HWID>
 <FullName>Snapdragon 630/636</FullName>
 <OEMID>0000</OEMID>
@@ -11296,6 +11345,18 @@
 <Trademark>T-Mobile</Trademark>
 <Model>H345</Model>
 <AltName>LG Leon</AltName>
+</ForFilter>
+<ForFilter>
+<Trust>real dev</Trust>
+<HWID>001B80E1</HWID>
+<FullName>Snapdragon SDM680 4G</FullName>
+<OEMID>0019</OEMID>
+<MODELID>0005</MODELID>
+<HASHID>C9C82CD41B6CA5361BDC1D186779671A9089B9AA14219BFEF23BF9386D1E8E12F463A228D12B73C1E0ECE5BED6F519AF</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>T-Mobile</Trademark>
+<Model>MT-T8B22</Model>
+<AltName>Moxee Tablet 2</AltName>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -11555,7 +11616,7 @@
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
 <Trademark>vivo</Trademark>
 <Model>Y85</Model>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C73C0D43/V7_Plus_prog_emmc_firehose_8953.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C73C0D43/Vivo_V7_8953_ddr_.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -11567,7 +11628,7 @@
 <LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
 <Trademark>vivo</Trademark>
 <Model>Y85</Model>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C73C0D43/Vivo_V7_8953_ddr_.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C73C0D43/V7_Plus_prog_emmc_firehose_8953.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -11619,7 +11680,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0072</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
@@ -11655,20 +11716,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
-<OEMID>0144</OEMID>
-<MODELID>0000</MODELID>
-<HASHID>A5D4E2B836A31CE77DB7D5B5FA2F4D8AE8EF1084C4C80BD9E4346647A13C35C6992BD80F456F1B309B8232B7D00B50E2</HASHID>
-<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
-<Trademark>Xiaomi</Trademark>
-<Model>Black Shark 3 5G</Model>
-<AltName>KLE-A0, 12/256</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D00B50E2/prog_ufs_firehose_sm8250_ddr_lp5.elf#</Url>
-</ForFilter>
-<ForFilter>
-<Trust>real dev</Trust>
-<HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0144</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>A5D4E2B836A31CE77DB7D5B5FA2F4D8AE8EF1084C4C80BD9E4346647A13C35C6992BD80F456F1B309B8232B7D00B50E2</HASHID>
@@ -11677,6 +11725,19 @@
 <Model>Black Shark 3 5G</Model>
 <AltName>KLE-A0, 12/256</AltName>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D00B50E2/prog_ufs_firehose_sm8250_lite_lp5.elf#</Url>
+</ForFilter>
+<ForFilter>
+<Trust>real dev</Trust>
+<HWID>000C30E1</HWID>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
+<OEMID>0144</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>A5D4E2B836A31CE77DB7D5B5FA2F4D8AE8EF1084C4C80BD9E4346647A13C35C6992BD80F456F1B309B8232B7D00B50E2</HASHID>
+<LASTKNOWNSBLVER>00000000</LASTKNOWNSBLVER>
+<Trademark>Xiaomi</Trademark>
+<Model>Black Shark 3 5G</Model>
+<AltName>KLE-A0, 12/256</AltName>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D00B50E2/prog_ufs_firehose_sm8250_ddr_lp5.elf#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -11693,7 +11754,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0072</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>A5D4E2B836A31CE77DB7D5B5FA2F4D8AE8EF1084C4C80BD9E4346647A13C35C6992BD80F456F1B309B8232B7D00B50E2</HASHID>
@@ -11705,7 +11766,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0072</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
@@ -11717,7 +11778,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0072</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
@@ -12027,7 +12088,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0072</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
@@ -12051,7 +12112,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0072</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
@@ -12075,7 +12136,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0072</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
@@ -12087,7 +12148,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0072</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASHID>
@@ -12178,7 +12239,7 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 3</Model>
 <AltName>ido, Redmi 3 Pro</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/prog_emmc_firehose_8936.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/3_emmc_ddr.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -12191,7 +12252,7 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi 3</Model>
 <AltName>ido, Redmi 3 Pro</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/3_emmc_ddr.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/prog_emmc_firehose_8936.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -12451,7 +12512,7 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 3</Model>
 <AltName>aosp_kenzo</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/0/prog_emmc_firehose_8976_ddr.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/0/prog_emmc_firehose_8976_ddr_kenzo.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -12464,7 +12525,7 @@
 <Trademark>Xiaomi</Trademark>
 <Model>Redmi Note 3</Model>
 <AltName>aosp_kenzo</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/0/prog_emmc_firehose_8976_ddr_kenzo.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/0/prog_emmc_firehose_8976_ddr.mbn#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
@@ -12650,6 +12711,18 @@
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>
+<HWID>0009C0E1</HWID>
+<FullName>Snapdragon 660</FullName>
+<OEMID>0000</OEMID>
+<MODELID>0000</MODELID>
+<HASHID>B10D082FBCAC56284C60B03184AA3DBBE3D4781993540E545FFB7005393F1C4A</HASHID>
+<LASTKNOWNSBLVER>00000001</LASTKNOWNSBLVER>
+<Trademark>Zebra Technologies</Trademark>
+<Model>TC52</Model>
+<AltName>TC520</AltName>
+</ForFilter>
+<ForFilter>
+<Trust>real dev</Trust>
 <HWID>001970E1</HWID>
 <OEMID>0000</OEMID>
 <MODELID>0000</MODELID>
@@ -12817,7 +12890,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0004</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>DFF7DDA29C8C49B1241F6220A482825E42E572BC814B3143FEA83C101EB7F9172DDD75A30F741D09276B486D2D3CFE5D</HASHID>
@@ -13053,7 +13126,7 @@
 <ForFilter>
 <Trust>real dev</Trust>
 <HWID>000C30E1</HWID>
-<FullName>Snapdragon 865</FullName>
+<FullName>Snapdragon 865 5G (Kona)</FullName>
 <OEMID>0004</OEMID>
 <MODELID>0000</MODELID>
 <HASHID>D40EEE56F3194665574109A39267724AE7944134CD53CB767E293D3C40497955BC8A4519FF992B031FADC6355015AC87</HASHID>
