@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-02-22T00:57:13">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-03-01T01:23:42">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1683,7 +1683,7 @@
 <HASH_FH>59CD3ADFEEAF8F8713D084F35B7B673BD7C39BD2BBA0B1E88DD84571907F9277821154FB2E15169A9241A8829ACFBEAA</HASH_FH>
 <SWType>3</SWType>
 <SWVer>9</SWVer>
-<Model>SM-G780U</Model>
+<Model>SM-G781U</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCADFE3/1/prog_ufs_firehose_sdm855_ddr_cepheus.elf#</Url>
@@ -1797,6 +1797,34 @@
 <SWType>3</SWType>
 <SWVer>3</SWVer>
 <Model>SM-A715FZ</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/781821C1/1/prog_emmc_firehose_8937_ddr.mbn#</Url>
+<HW_FH>000BF0E1</HW_FH>
+<OEM_FH>0020</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>B9D0DD5F5A3A9494EB7F47A9702F9FB91D7A9FD8125A1CE3A84E3D17781821C1</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>SM-A015M</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/BA502910/1/SDM439_U8_100200000_383799df0e8f55d7_fhprg.bin#</Url>
+<HW_FH>000BF0E1</HW_FH>
+<OEM_FH>0020</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>383799DF0E8F55D7DB1ADF45549103CE9ED78273970B755BC7EF2683BA502910</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>SM-A015T1</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/92002DDF/prog_emmc_firehose_8937_ddr_000bf0e1.mbn#</Url>
+<HW_FH>000BF0E1</HW_FH>
+<OEM_FH>0043</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>7C6DCA9BF5674291AA39DD55760C0D4B65C7A4223097AAB1DB791E2192002DDF</HASH_FH>
+<Model>HLTE216E_10</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F9EC0BF2/prog_emmc_firehose_8939_ddr.mbn#</Url>
@@ -2115,6 +2143,11 @@
 <SWType>3</SWType>
 <SWVer>1</SWVer>
 <Model>MI Pad 5</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/waipio/prog_firehose_Edge30pro.elf#</Url>
+<HW_FH>waipio</HW_FH>
+<Model>Edge 30 Pro</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C7FA5AA2/0000000000514d6d_7c15a98db4e70963_fhprg.bin#</Url>
