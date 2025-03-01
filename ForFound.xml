@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-03-01T01:23:42">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-03-02T00:11:38">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -2150,6 +2150,24 @@
 <Model>Edge 30 Pro</Model>
 </ForFound>
 <ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/88599034/1/prog_emmc_firehose_8953_ddr.mbn#</Url>
+<HW_FH>0009A0E1</HW_FH>
+<OEM_FH>0020</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>C8C8DD565BF1D8407777A58F8A8E580E00207116E0222C9AB19F3E1F88599034</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>SM-A025F</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/46161A1A/Moto_G32.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>02E8</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>00114C19317EAB5156C7A7379FFAFA7FEE1D8FE202A28772CA685F0E61645E304281F08304016D6B9742934546161A1A</HASH_FH>
+<Model>‎XT2235-1</Model>
+</ForFound>
+<ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C7FA5AA2/0000000000514d6d_7c15a98db4e70963_fhprg.bin#</Url>
 <HW_FH>00000000</HW_FH>
 <OEM_FH>0051</OEM_FH>
@@ -2344,6 +2362,38 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>57158EAF1814D78FD2B3105ECE4DB18A817A08AC664A5782A925F3FF8403D39A</HASH_FH>
 <Model>Redmi Note 4</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C70CDFB1/0/Moto_Ginna.mbn#</Url>
+<HW_FH>000BA0E1</HW_FH>
+<OEM_FH>02E8</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>4AAC65A9BE0CF8708C1909C3F7DC7918260AA0B3112511675B3EE481C70CDFB1</HASH_FH>
+<SWType>0</SWType>
+<Model>XT2052</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/56C276BD/1/prog_emmc_firehose_8953_ddr.mbn#</Url>
+<HW_FH>0009A0E1</HW_FH>
+<OEM_FH>0020</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>084E868B048512D828C51A78A9251ECE3C48313FF498FA6F18335E9F56C276BD</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>SM-A115M</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/palima/Z_Flip4_prog_firehose_ddr.elf#</Url>
+<HW_FH>palima</HW_FH>
+<Model>SM-F721B</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A98EAFE1/Moto.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>02E8</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>223641BB5921654E1262D4206C3EA4BBD05A84B50962330105801CC4C3560B35189F3FDDC9E2870B9D17B79FA98EAFE1</HASH_FH>
+<Model>motorola one 5G UW ace</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A2CF981F/0/BCM6153_V1660_PreBoot_20_KN.bin#</Url>
