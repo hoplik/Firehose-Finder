@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-03-02T00:11:38">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-03-03T00:19:41">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1428,7 +1428,7 @@
 <Model>ANY-LX1</Model>
 </ForFound>
 <ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/93C42D7F/8/G991U%20Loader%20File.elf#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/93C42D7F/8/G991U_Loader_File.elf#</Url>
 <HW_FH>00000000</HW_FH>
 <OEM_FH>0020</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
@@ -2394,6 +2394,48 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>223641BB5921654E1262D4206C3EA4BBD05A84B50962330105801CC4C3560B35189F3FDDC9E2870B9D17B79FA98EAFE1</HASH_FH>
 <Model>motorola one 5G UW ace</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/6370A940/PD1832F_prog_firehose_ddr.elf#</Url>
+<HW_FH>000950E1</HW_FH>
+<OEM_FH>0073</OEM_FH>
+<MODEL_FH>0003</MODEL_FH>
+<HASH_FH>A7DF36FFD7AB557C67A6C26675E2795C922CF671308CFD7169BEDB84424C862BC7B646907DD79989578590FB6370A940</HASH_FH>
+<Model>PD1832F</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/6370A940/PD1832F_prog_firehose_lite.elf#</Url>
+<HW_FH>000950E1</HW_FH>
+<OEM_FH>0073</OEM_FH>
+<MODEL_FH>0003</MODEL_FH>
+<HASH_FH>A7DF36FFD7AB557C67A6C26675E2795C922CF671308CFD7169BEDB84424C862BC7B646907DD79989578590FB6370A940</HASH_FH>
+<Model>PD1832F</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F7F81452/Honor_8x_max.bin#</Url>
+<HW_FH>30060000</HW_FH>
+<OEM_FH>0015</OEM_FH>
+<MODEL_FH>0069</MODEL_FH>
+<HASH_FH>B794DF3A7CF2C508622296B27631EF4477536631E0C8EC8BDF20C265C7BB767AEDBDD8502A38EE3A85610302F7F81452</HASH_FH>
+<Model>ARS-L22</Model>
+</ForFound>
+<ForFound>
+<Url>https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCADFE3/1/prog_firehose_ddr_lime.elf#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCADFE3/1/prog_firehose_ddr_lime.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0072</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>M2010J19CG</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/2DBD07EC/Axon_30_5G.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0004</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>776C7351DC296C9F0ACA048D39247FEA559972CD61E6182BF1BBDD3F98D1E750857929A2A035D28D951615032DBD07EC</HASH_FH>
+<Model>ZTE A2322</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A2CF981F/0/BCM6153_V1660_PreBoot_20_KN.bin#</Url>
