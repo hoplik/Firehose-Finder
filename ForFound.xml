@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-03-03T23:22:00">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-03-04T00:38:41">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -2434,6 +2434,16 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASH_FH>
 <Model>X</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCADFE3/1/Poco_F1_prog_ufs_firehose_sdm845_ddr.elf#</Url>
+<HW_FH>60000000</HW_FH>
+<OEM_FH>0072</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Model>POCOPHONE F1</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A2CF981F/0/BCM6153_V1660_PreBoot_20_KN.bin#</Url>
