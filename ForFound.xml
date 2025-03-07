@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-03-04T00:38:41">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-03-05T00:24:12">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -659,7 +659,7 @@
 <OEM_FH>0051</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>22F415BEC935E3CBE982EEB854DD5F3D150D46A5C41060BBFE4600EAF94B981D4A89F94C4CDE16AEC078B7B58E1561B4</HASH_FH>
-<Model>GN2200</Model>
+<Model>CPH2459</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/FC1D0AA5/prog_firehose_ddr.elf#</Url>
@@ -2444,6 +2444,14 @@
 <SWType>3</SWType>
 <SWVer>1</SWVer>
 <Model>POCOPHONE F1</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/AFC698E3/2/prog_emmc_firehose_8992_lite_lge1.mbn#</Url>
+<HW_FH>009690E1</HW_FH>
+<OEM_FH>0031</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>B5BACA995AEC012DB32EB9E49CA340F7D4C26153AAA60C5A82A03F99AFC698E3</HASH_FH>
+<Model>LG-M153</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A2CF981F/0/BCM6153_V1660_PreBoot_20_KN.bin#</Url>
