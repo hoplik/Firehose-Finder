@@ -25,7 +25,7 @@
   </tr>
   <tr>
     <td colspan="2" align="center">
-      http://4pda.ru/forum/index.php?showtopic=643084
+      https://4pda.to/forum/index.php?showtopic=643084
     </td>
   </tr>
   <tr>
@@ -82,7 +82,7 @@
   </tr>
   <tr>
     <td colspan="2" align="center">
-      http://www.temblast.com/ref/loaders.htm
+      https://www.temblast.com/ref/loaders.htm
     </td>
   </tr>
 </tfoot>
