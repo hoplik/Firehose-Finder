@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-03-09T22:51:52">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-03-15T23:20:20">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -2480,6 +2480,13 @@
 <SWType>3</SWType>
 <SWVer>1</SWVer>
 <Model>RMX1931</Model>
+</ForFound>
+<ForFound>
+<HW_FH>0005E0E1</HW_FH>
+<OEM_FH>0031</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASH_FH>
+<Model>H930DS</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A2CF981F/0/BCM6153_V1660_PreBoot_20_KN.bin#</Url>
