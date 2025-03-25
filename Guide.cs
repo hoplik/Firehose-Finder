@@ -203,7 +203,7 @@ namespace FirehoseFinder
         /// <summary>
         /// Бот "Hoplik-Bot"
         /// </summary>
-        internal static ITelegramBotClient _botClient = new TelegramBotClient(Resources.bot);
+        //internal static ITelegramBotClient _botClient = new TelegramBotClient(Resources.bot);
     }
 
     class GPT_Struct

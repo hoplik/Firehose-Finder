@@ -107,7 +107,7 @@ namespace FirehoseFinder
 
         private void LinkLabel_forum_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ProcessStartInfo psinfo = new ProcessStartInfo("http://4pda.ru/forum/index.php?showtopic=643084");
+            ProcessStartInfo psinfo = new ProcessStartInfo("http://4pda.to/forum/index.php?showtopic=643084");
             Process.Start(psinfo);
         }
 
