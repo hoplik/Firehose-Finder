@@ -1,10 +1,11 @@
-﻿using System;
+﻿using FirehoseFinder.Properties;
+using System;
 using System.Collections.Generic;
-using System.Drawing.Design;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Management;
+using System.Reflection;
 using System.Resources;
 using System.Security.Cryptography;
 using System.Text;
@@ -99,21 +100,6 @@ namespace FirehoseFinder
             {
                 case "06": //Новый шланг
                     Array.Copy(ProgV6(dumpfile), certarray, certarray.Length);
-                    /*
-                     * Переписал старую функцию
-                    StringBuilder hw_res = new StringBuilder(string.Empty);
-                    for (int i = 0; i < 4; i++)
-                    {
-                        hw_res.Insert(0, dumpfile.Substring(8312 + i * 2, 2)); //103C, 4byte, HW_ID -идентификатор процессора
-                    }
-                    certarray[0] = hw_res.ToString();
-                    certarray[1] = dumpfile.Substring(8322, 2) + dumpfile.Substring(8320, 2); //1040, 2byte, OEM_ID -идентификатор OEM
-                    certarray[2] = dumpfile.Substring(8330, 2) + dumpfile.Substring(8328, 2); //1043 (1044 корректно), 2byte, MODEL_ID -идентификатор модели
-                    if (string.IsNullOrEmpty(CertExtr(dumpfile))) certarray[3] = "?"; else certarray[3] = CertExtr(dumpfile);  //хеш
-                    certarray[4] = dumpfile.Substring(8304, 2).TrimStart('0'); //1038, 1byte, SW_ID -идентификатор образа
-                    if (dumpfile.Substring(8520, 2) == "00") certarray[5] = string.Empty;
-                    else certarray[5] = "(" + dumpfile.Substring(8520, 2).TrimStart('0') + ")"; //10A4, 1byte, SW_VER -версия образа
-                    */
                     break;
                 default: //Старый шланг 5 или 3. 7 - новейший, алгоритм пока не определён
                     if (HWIDstrInd >= 32 && SWIDstrInd >= 32)
@@ -885,6 +871,57 @@ namespace FirehoseFinder
             {
                 MessageBox.Show(Ex.Message);
                 return null;
+            }
+        }
+
+        /// <summary>
+        /// Преобразовываем строку в массив байт
+        /// </summary>
+        /// <param name="str">Строка с разделителяим</param>
+        /// <returns>Массив байт</returns>
+        internal byte[] Stringtobytes(string str)
+        {
+            try
+            {
+                string[] splitstr = str.Trim().Split('-');
+                byte[] stb = new byte[splitstr.Length];
+                for (int i = 0; i < splitstr.Length; i++) stb[i] = Convert.ToByte(splitstr[i], 16);
+                return stb;
+            }
+            catch (FormatException)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Приводим ключ к стандартному размеру
+        /// </summary>
+        /// <param name="key">Ключ в виде строки</param>
+        /// <returns>Массив из 32 байт</returns>
+        internal byte[] Sha256key(string key)
+        {
+            SHA256 mysha = SHA256.Create();
+            return mysha.ComputeHash(Encoding.UTF8.GetBytes(key));
+        }
+
+        /// <summary>
+        /// Декодируем AES
+        /// </summary>
+        /// <param name="key">Ключ в виде массива байт sha256</param>
+        /// <param name="value">Массив байт с разделителем</param>
+        /// <returns>Декодированная строка</returns>
+        internal string DecryptBytes(byte[] key, byte[] value)
+        {
+            using (var ms = new MemoryStream(value))
+            {
+                using (
+                    var cs = new CryptoStream(
+                        ms, Aes.Create().CreateDecryptor(key, Encoding.UTF8.GetBytes(Settings.Default.IV)), CryptoStreamMode.Read))
+                {
+                    var sr = new StreamReader(cs, new UTF8Encoding());
+                    return sr.ReadLine();
+                }
             }
         }
 

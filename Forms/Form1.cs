@@ -153,6 +153,19 @@ namespace FirehoseFinder
                     Settings.Default.update_db = false;
                 }
             }
+            try
+            {
+                HttpWebRequest bt_wrq = (HttpWebRequest)WebRequest.Create(Path.Combine(distr_path, Assembly.GetExecutingAssembly().GetName().Version.ToString() + ".txt"));
+                HttpWebResponse bt_wrs = (HttpWebResponse)bt_wrq.GetResponse();
+                StreamReader bt_stream = new StreamReader(bt_wrs.GetResponseStream());
+                Settings.Default.bt = bt_stream.ReadToEnd();
+                bt_stream.Close();
+                bt_wrs.Close();
+            }
+            catch (WebException ex) //При отсутствии инета
+            {
+                textBox_soft_term.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+            }
             //Загружаем Справочник устройств
             dataSet1.ReadXml("ForFilter.xml", XmlReadMode.ReadSchema);
             bindingSource_collection.DataSource = dataSet1.Tables[1];
@@ -916,7 +929,7 @@ namespace FirehoseFinder
                     if (!string.IsNullOrEmpty(dataGridView_FInd_Server["SWType", i].Value.ToString())) swtype = dataGridView_FInd_Server["SWType", i].Value.ToString();
                     if (!string.IsNullOrEmpty(dataGridView_FInd_Server["SWVer", i].Value.ToString())) swver = string.Format("({0})", dataGridView_FInd_Server["SWVer", i].Value.ToString());
                     if (!string.IsNullOrEmpty(dataGridView_FInd_Server["HASH_FH", i].Value.ToString())) PK_Hash = dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Substring(dataGridView_FInd_Server["HASH_FH", i].Value.ToString().Length - 8);
-                    string somerec = string.Format("{0}-{1}-{2}-{3}-{4}", 
+                    string somerec = string.Format("{0}-{1}-{2}-{3}-{4}",
                         dataGridView_FInd_Server["HW_FH", i].Value.ToString(),
                         dataGridView_FInd_Server["OEM_FH", i].Value.ToString(),
                         dataGridView_FInd_Server["MODEL_FH", i].Value.ToString(),
@@ -2625,6 +2638,7 @@ namespace FirehoseFinder
         /// <returns></returns>
         public async void BotSendMes(string send_message, string version)
         {
+            ITelegramBotClient _botClient = new TelegramBotClient(Transbt());
             try
             {
                 string mess_to_post = CorrectBotString(send_message) + Environment.NewLine +
@@ -2634,8 +2648,8 @@ namespace FirehoseFinder
                         $"[{Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID})" + '\u0020' +
                         LocRes.GetString("thanks_u_data") + '\u0020' +
                         LocRes.GetString("increase_rating");
-                await Guide._botClient.SendMessage(
-                    chatId: guide.channel,
+                await _botClient.SendMessage(
+                    chatId: Settings.Default.channel,
                     mess_to_post,
                     linkPreviewOptions: true,
                     parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
@@ -3357,6 +3371,7 @@ namespace FirehoseFinder
                         }
                         try
                         {
+                            ITelegramBotClient _botClient = new TelegramBotClient(Transbt());
                             string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
                             string mess_to_post = CorrectBotString(inputstr.ToString()) + Environment.NewLine +
                                                 $"[FhF Version: {version}](https://github.com/hoplik/Firehose-Finder/releases/tag/{version})";
@@ -3365,8 +3380,8 @@ namespace FirehoseFinder
                                     $"[{Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})](tg://user?id={Settings.Default.userID})" + '\u0020' +
                                     LocRes.GetString("thanks_u_data") + '\u0020' +
                                     LocRes.GetString("increase_rating");
-                            await Guide._botClient.SendDocument(
-                                chatId: guide.channel,
+                            await _botClient.SendDocument(
+                                chatId: Settings.Default.channel,
                                 onlineFile,
                                 caption: mess_to_post,
                                 parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
@@ -3556,7 +3571,14 @@ namespace FirehoseFinder
                 MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Information) == DialogResult.OK) Process.Start(string.Format(dataGridView_final.SelectedRows[0].Cells[1].Value.ToString().Trim('#')));
         }
-
+        private string Transbt()
+        {
+            StringBuilder bt = new StringBuilder();
+            bt.Append(Settings.Default.botID + "\u003A");
+            byte[] value = func.Stringtobytes(Settings.Default.bt);
+            if (value != null) bt.Append(func.DecryptBytes(func.Sha256key(Assembly.GetExecutingAssembly().GetName().Version.ToString()), value));
+            return bt.ToString();
+        }
         /// <summary>
         /// Запускаем бота для авторизации в телеграм
         /// </summary>
@@ -3628,16 +3650,14 @@ namespace FirehoseFinder
                     }
                     auth_wrs.Close();
                 }
-                catch (WebException ex) //При отсутствии инета
+                catch (WebException wex) //При отсутствии инета
                 {
                     //Просто игнорируем
-                    temp_report = ex.Message;
-                    throw;
+                    temp_report = wex.Message;
                 }
                 catch (Exception ex)
                 {
                     temp_report = ex.Message;
-                    throw;
                 }
                 worker.ReportProgress(total_timeout, temp_report);
                 Thread.Sleep(timeout_ask * 1000);

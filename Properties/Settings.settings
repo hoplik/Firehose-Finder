@@ -29,5 +29,17 @@
     <Setting Name="update_db" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="botID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1577249282</Value>
+    </Setting>
+    <Setting Name="IV" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0123456789ABCDEF</Value>
+    </Setting>
+    <Setting Name="channel" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">-1001227261414</Value>
+    </Setting>
+    <Setting Name="bt" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>
