@@ -2378,6 +2378,9 @@ namespace FirehoseFinder
                 }
             }
             string[] adbstr = receiver.ToString().Split('\u000A'); //Перевод строки
+            label_tm.Text = "---";
+            label_model.Text = "---";
+            label_altname.Text = "---";
             long chipsn = 0;
             foreach (string item in adbstr)
             {
