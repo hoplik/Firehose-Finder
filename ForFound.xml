@@ -75,7 +75,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-04-10T00:37:07">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-04-11T00:29:52">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -2487,6 +2487,16 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>2CF7619A278D26073F7EEA79BB7F4B7949C221487FEA058EA072CFFE38CE1496</HASH_FH>
 <Model>H930DS</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCADFE3/3/prog_ufs_firehose_sm7150_ddr_AN.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0072</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>1BEBE3863A6781DB4B01086063007334DE9E5CA14971C7C4F4358EC9D79CDA4692CE5E948C6FD409408F4C919FCADFE3</HASH_FH>
+<SWType>3</SWType>
+<SWVer>3</SWVer>
+<Model>M2101K6P</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A2CF981F/0/BCM6153_V1660_PreBoot_20_KN.bin#</Url>
