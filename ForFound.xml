@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-04-22T00:42:57">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-04-24T21:09:43">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1688,7 +1688,7 @@
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/lanai/prog_ufs_firehose_sm8650_ddr.elf#</Url>
 <HW_FH>lanai</HW_FH>
-<Hash_File>248</Hash_File>
+<Hash_File>01e4f38fd9ffff2056baffde8123ebe966feb6279f2be71bf831729ba66954d9</Hash_File>
 <Model>NX721J</Model>
 </ForFound>
 <ForFound>
@@ -1782,7 +1782,7 @@
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/lanai/prog_ufs_firehose_sm8650_ddr.elf#</Url>
 <HW_FH>lanai</HW_FH>
-<Hash_File>262</Hash_File>
+<Hash_File>01e4f38fd9ffff2056baffde8123ebe966feb6279f2be71bf831729ba66954d9</Hash_File>
 <Model>NX769J</Model>
 </ForFound>
 <ForFound>
@@ -2806,6 +2806,17 @@
 <SWVer>1</SWVer>
 <Hash_File>310</Hash_File>
 <Model>Redmi K20 Pro</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D75EE329/1/prog_firehose_ddr.elf#</Url>
+<HW_FH>00000000</HW_FH>
+<OEM_FH>0051</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>49445E14621312DFECCD4389F267E6B71674DDD36B1BC41D1F605AA991D14AD687834378CF2129259DFAF107D75EE329</HASH_FH>
+<SWType>3</SWType>
+<SWVer>1</SWVer>
+<Hash_File>d6f2375a05b7a16fcc2e7a6e253ef549984f3ff1129893810680bb101668cd35</Hash_File>
+<Model>CPH2669</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A2CF981F/0/BCM6153_V1660_PreBoot_20_KN.bin#</Url>
