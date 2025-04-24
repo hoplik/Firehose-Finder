@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-04-24T21:09:43">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2025-04-24T21:35:22">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -2817,6 +2817,24 @@
 <SWVer>1</SWVer>
 <Hash_File>d6f2375a05b7a16fcc2e7a6e253ef549984f3ff1129893810680bb101668cd35</Hash_File>
 <Model>CPH2669</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/91C0A959/MPRG8926.mbn#</Url>
+<HW_FH>008050E1</HW_FH>
+<OEM_FH>0000</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>27F4C0ADE64B6B17ED268994CD252BC9C58A5B7932ABAF8B3C0560B391C0A959</HASH_FH>
+<Hash_File>6db3ac0e26a1de76eb49788248f551459dd0964ddb5dafaf7cc67d6104f76f11</Hash_File>
+<Model>V9180</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D42A380F/lg_V490_loader.hex#</Url>
+<HW_FH>008050E1</HW_FH>
+<OEM_FH>0031</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>CC3153A80293939B90D02D3BF8B23E0292E452FEF662C74998421ADAD42A380F</HASH_FH>
+<Hash_File>aeb08a41215dc57c231724a2ed1c59c85c3e1a771fbb4e1f45b57573ecc50bc2</Hash_File>
+<Model>LG-V490</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A2CF981F/0/BCM6153_V1660_PreBoot_20_KN.bin#</Url>
