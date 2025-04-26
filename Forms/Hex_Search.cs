@@ -1145,6 +1145,21 @@ namespace FirehoseFinder
             }
         }
         #endregion
+
+        private void SavetofileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string filedir = button_orig.Text;
+            string filename = "hash_table.txt";
+            string fullpath = Path.Combine(filedir, filename);
+            using (StreamWriter writer = new StreamWriter(fullpath,false))
+            {
+                foreach (File_Struct item in orig_list)
+                {
+                    writer.WriteLine(item.FullFileName + ";" + item.HashCodeFile.Replace("-","").ToLower());
+                }
+            }
+            MessageBox.Show("Файл сохранён в папке " + filedir);
+        }
     }
 
     /// <summary>

@@ -116,6 +116,7 @@ namespace FirehoseFinder
             this.openFileDialog_of = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog_df = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker_comp = new System.ComponentModel.BackgroundWorker();
+            this.savetofileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip_search.SuspendLayout();
             this.tableLayoutPanel_hs.SuspendLayout();
             this.groupBox_byte_text.SuspendLayout();
@@ -494,7 +495,8 @@ namespace FirehoseFinder
             this.поменятьМестамиОригиналИДубликатToolStripMenuItem,
             this.toolStripSeparator1,
             this.выбратьВсёToolStripMenuItem,
-            this.снятьВесьВыборToolStripMenuItem});
+            this.снятьВесьВыборToolStripMenuItem,
+            this.savetofileToolStripMenuItem});
             this.contextMenuStrip_dubl_files.Name = "contextMenuStrip_dubl_files";
             resources.ApplyResources(this.contextMenuStrip_dubl_files, "contextMenuStrip_dubl_files");
             this.contextMenuStrip_dubl_files.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStrip_dubl_files_Opening);
@@ -741,6 +743,12 @@ namespace FirehoseFinder
             this.backgroundWorker_comp.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_comp_ProgressChanged);
             this.backgroundWorker_comp.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_comp_RunWorkerCompleted);
             // 
+            // savetofileToolStripMenuItem
+            // 
+            this.savetofileToolStripMenuItem.Name = "savetofileToolStripMenuItem";
+            resources.ApplyResources(this.savetofileToolStripMenuItem, "savetofileToolStripMenuItem");
+            this.savetofileToolStripMenuItem.Click += new System.EventHandler(this.SavetofileToolStripMenuItem_Click);
+            // 
             // Hex_Search
             // 
             resources.ApplyResources(this, "$this");
@@ -869,5 +877,6 @@ namespace FirehoseFinder
         private System.Windows.Forms.Button button_comp;
         private System.ComponentModel.BackgroundWorker backgroundWorker_comp;
         private System.Windows.Forms.Label label_newdir;
+        private System.Windows.Forms.ToolStripMenuItem savetofileToolStripMenuItem;
     }
 }
