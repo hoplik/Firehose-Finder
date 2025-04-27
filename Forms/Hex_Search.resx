@@ -1098,6 +1098,9 @@
   <data name="снятьВесьВыборToolStripMenuItem.Text" xml:space="preserve">
     <value>Сбросить весь выбор</value>
   </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>415, 6</value>
+  </data>
   <data name="savetofileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>418, 24</value>
   </data>
@@ -1105,7 +1108,7 @@
     <value>Сохранить оригинальную таблицу хешей в файл</value>
   </data>
   <data name="contextMenuStrip_dubl_files.Size" type="System.Drawing.Size, System.Drawing">
-    <value>419, 134</value>
+    <value>419, 140</value>
   </data>
   <data name="&gt;&gt;contextMenuStrip_dubl_files.Name" xml:space="preserve">
     <value>contextMenuStrip_dubl_files</value>
@@ -4379,6 +4382,12 @@
   <data name="&gt;&gt;снятьВесьВыборToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;savetofileToolStripMenuItem.Name" xml:space="preserve">
+    <value>savetofileToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;savetofileToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;columnHeader_ss.Name" xml:space="preserve">
     <value>columnHeader_ss</value>
   </data>
@@ -4457,11 +4466,11 @@
   <data name="&gt;&gt;backgroundWorker_comp.Type" xml:space="preserve">
     <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;savetofileToolStripMenuItem.Name" xml:space="preserve">
-    <value>savetofileToolStripMenuItem</value>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
   </data>
-  <data name="&gt;&gt;savetofileToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Hex_Search</value>

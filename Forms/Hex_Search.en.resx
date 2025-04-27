@@ -202,6 +202,36 @@
   <data name="tabPage_folders.Text" xml:space="preserve">
     <value>Duplicate files in folders</value>
   </data>
+  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 24</value>
+  </data>
+  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Text" xml:space="preserve">
+    <value>Swap the original and the duplicate</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>313, 6</value>
+  </data>
+  <data name="выбратьВсёToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 24</value>
+  </data>
+  <data name="выбратьВсёToolStripMenuItem.Text" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="снятьВесьВыборToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 24</value>
+  </data>
+  <data name="снятьВесьВыборToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reset the entire selection</value>
+  </data>
+  <data name="savetofileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 24</value>
+  </data>
+  <data name="savetofileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Save the original hash table to a file</value>
+  </data>
+  <data name="contextMenuStrip_dubl_files.Size" type="System.Drawing.Size, System.Drawing">
+    <value>317, 106</value>
+  </data>
   <data name="tabPage_dd.Text" xml:space="preserve">
     <value>Disassemble the disk dump</value>
   </data>

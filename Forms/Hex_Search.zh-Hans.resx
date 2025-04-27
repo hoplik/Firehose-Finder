@@ -133,9 +133,6 @@
   <data name="columnHeader3.Text" xml:space="preserve">
     <value>文件</value>
   </data>
-  <data name="groupBox_byte_text.Text" xml:space="preserve">
-    <value>要搜索的字符集</value>
-  </data>
   <data name="radioButton_search_text.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
   </data>
@@ -148,11 +145,11 @@
   <data name="radioButton_byte_search.Text" xml:space="preserve">
     <value>byte</value>
   </data>
+  <data name="groupBox_byte_text.Text" xml:space="preserve">
+    <value>要搜索的字符集</value>
+  </data>
   <data name="button_start_search.Text" xml:space="preserve">
     <value>搜索路径</value>
-  </data>
-  <data name="groupBox_hs.Text" xml:space="preserve">
-    <value>搜索范围</value>
   </data>
   <data name="radioButton_dir.Text" xml:space="preserve">
     <value>文件夹</value>
@@ -163,8 +160,8 @@
   <data name="radioButton_file.Text" xml:space="preserve">
     <value>文件</value>
   </data>
-  <data name="groupBox_addbytes.Text" xml:space="preserve">
-    <value>增加字节</value>
+  <data name="groupBox_hs.Text" xml:space="preserve">
+    <value>搜索范围</value>
   </data>
   <data name="textBox_addlast.Location" type="System.Drawing.Point, System.Drawing">
     <value>114, 56</value>
@@ -190,11 +187,44 @@
   <data name="label2.Text" xml:space="preserve">
     <value>在开头</value>
   </data>
+  <data name="groupBox_addbytes.Text" xml:space="preserve">
+    <value>增加字节</value>
+  </data>
   <data name="tabPage_mask.Text" xml:space="preserve">
     <value>在文件中按掩码搜索</value>
   </data>
   <data name="tabPage_files.Text" xml:space="preserve">
     <value>两个文件的差异</value>
+  </data>
+  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 24</value>
+  </data>
+  <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Text" xml:space="preserve">
+    <value>交换原件和副本。</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 6</value>
+  </data>
+  <data name="выбратьВсёToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 24</value>
+  </data>
+  <data name="выбратьВсёToolStripMenuItem.Text" xml:space="preserve">
+    <value>选择全部。</value>
+  </data>
+  <data name="снятьВесьВыборToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 24</value>
+  </data>
+  <data name="снятьВесьВыборToolStripMenuItem.Text" xml:space="preserve">
+    <value>重置所有选择。</value>
+  </data>
+  <data name="savetofileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 24</value>
+  </data>
+  <data name="savetofileToolStripMenuItem.Text" xml:space="preserve">
+    <value>将原始哈希表保存到文件中。</value>
+  </data>
+  <data name="contextMenuStrip_dubl_files.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 106</value>
   </data>
   <data name="tabPage_folders.Text" xml:space="preserve">
     <value>文件夹中存在重复文件</value>

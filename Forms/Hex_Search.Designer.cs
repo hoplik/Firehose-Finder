@@ -83,6 +83,7 @@ namespace FirehoseFinder
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.выбратьВсёToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.снятьВесьВыборToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.savetofileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox_dubl = new System.Windows.Forms.GroupBox();
             this.radioButton_dd_yes = new System.Windows.Forms.RadioButton();
             this.radioButton_dd_no = new System.Windows.Forms.RadioButton();
@@ -116,7 +117,7 @@ namespace FirehoseFinder
             this.openFileDialog_of = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog_df = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker_comp = new System.ComponentModel.BackgroundWorker();
-            this.savetofileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip_search.SuspendLayout();
             this.tableLayoutPanel_hs.SuspendLayout();
             this.groupBox_byte_text.SuspendLayout();
@@ -496,6 +497,7 @@ namespace FirehoseFinder
             this.toolStripSeparator1,
             this.выбратьВсёToolStripMenuItem,
             this.снятьВесьВыборToolStripMenuItem,
+            this.toolStripSeparator2,
             this.savetofileToolStripMenuItem});
             this.contextMenuStrip_dubl_files.Name = "contextMenuStrip_dubl_files";
             resources.ApplyResources(this.contextMenuStrip_dubl_files, "contextMenuStrip_dubl_files");
@@ -523,6 +525,12 @@ namespace FirehoseFinder
             this.снятьВесьВыборToolStripMenuItem.Name = "снятьВесьВыборToolStripMenuItem";
             resources.ApplyResources(this.снятьВесьВыборToolStripMenuItem, "снятьВесьВыборToolStripMenuItem");
             this.снятьВесьВыборToolStripMenuItem.Click += new System.EventHandler(this.СнятьВесьВыборToolStripMenuItem_Click);
+            // 
+            // savetofileToolStripMenuItem
+            // 
+            this.savetofileToolStripMenuItem.Name = "savetofileToolStripMenuItem";
+            resources.ApplyResources(this.savetofileToolStripMenuItem, "savetofileToolStripMenuItem");
+            this.savetofileToolStripMenuItem.Click += new System.EventHandler(this.SavetofileToolStripMenuItem_Click);
             // 
             // groupBox_dubl
             // 
@@ -743,11 +751,10 @@ namespace FirehoseFinder
             this.backgroundWorker_comp.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_comp_ProgressChanged);
             this.backgroundWorker_comp.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_comp_RunWorkerCompleted);
             // 
-            // savetofileToolStripMenuItem
+            // toolStripSeparator2
             // 
-            this.savetofileToolStripMenuItem.Name = "savetofileToolStripMenuItem";
-            resources.ApplyResources(this.savetofileToolStripMenuItem, "savetofileToolStripMenuItem");
-            this.savetofileToolStripMenuItem.Click += new System.EventHandler(this.SavetofileToolStripMenuItem_Click);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // Hex_Search
             // 
@@ -878,5 +885,6 @@ namespace FirehoseFinder
         private System.ComponentModel.BackgroundWorker backgroundWorker_comp;
         private System.Windows.Forms.Label label_newdir;
         private System.Windows.Forms.ToolStripMenuItem savetofileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
