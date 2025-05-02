@@ -2204,7 +2204,8 @@ namespace FirehoseFinder
             if (guide.Double_CPU.ContainsKey(id_str[0])) //HWID два или более
             {
                 StringBuilder comp_model = new StringBuilder(string.Empty);
-                byte count = 1;
+                List<string> comp_list = new List<string>(); //Список подходящих моделей
+                byte count = 1; //Счётчик подходящих моделей
                 foreach (string d_cpu_str in DOUBLE_CPU(id_str[0]))
                 {
                     if (d_cpu_str.Equals(textBox_hwid.Text)) //Процессор такой же
@@ -2219,9 +2220,17 @@ namespace FirehoseFinder
                     {
                         foreach (DataGridViewRow comp_row in dataGridView_collection.Rows)
                         {
-                            if (count > 1) comp_model.Append("; ");
-                            comp_model.Append(comp_row.Cells["Model"].Value.ToString());
-                            count++;
+                            string comp_str = comp_row.Cells["Model"].Value.ToString();
+                            if (!comp_list.Contains(comp_str)) comp_list.Add(comp_str); //Добавляем только новые модели
+                        }
+                        if (comp_list.Count > 0)
+                        {
+                            foreach (string model in comp_list)
+                            {
+                                if (count > 1) comp_model.Append("; ");
+                                comp_model.Append(model);
+                                count++;
+                            }
                         }
                     }
                 }
@@ -2249,14 +2258,23 @@ namespace FirehoseFinder
                             id_str[0], id_str[1], id_str[2], id_str[3]);
                         break;
                 }
-                byte count = 1;
+                byte count = 1; //Счётчик подходящих моделей
+                List<string> comp_list = new List<string>(); //Список подходящих моделей
                 if (dataGridView_collection.Rows.Count > 0) //Есть минимум одно устройство с такими идентификаторами
                 {
                     foreach (DataGridViewRow comp_row in dataGridView_collection.Rows)
                     {
-                        if (count > 1) comp_model.Append("; ");
-                        comp_model.Append(comp_row.Cells["Model"].Value.ToString());
-                        count++;
+                        string comp_str = comp_row.Cells["Model"].Value.ToString();
+                        if (!comp_list.Contains(comp_str)) comp_list.Add(comp_str); //Добавляем только новые модели
+                    }
+                    if (comp_list.Count > 0)
+                    {
+                        foreach (string model in comp_list)
+                        {
+                            if (count > 1) comp_model.Append("; ");
+                            comp_model.Append(model);
+                            count++;
+                        }
                     }
                 }
                 dataGridView_final["Column_Comp", Currnum].Value = comp_model;
