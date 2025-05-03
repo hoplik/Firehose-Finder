@@ -133,9 +133,6 @@
     <value>描述</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 52</value>
-  </data>
   <data name="отменитьВыборToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 24</value>
   </data>
@@ -147,6 +144,12 @@
   </data>
   <data name="выбратьВсёToolStripMenuItem.Text" xml:space="preserve">
     <value>选择全部</value>
+  </data>
+  <data name="хешСертификатаToolStripMenuItem.Text" xml:space="preserve">
+    <value>证书哈希</value>
+  </data>
+  <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 52</value>
   </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>File elf|*.elf|File mbn|*.mbn|File bin|*.bin|All files|*.*</value>

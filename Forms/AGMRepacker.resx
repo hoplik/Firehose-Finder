@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>289, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing">
+    <value>289, 17</value>
+  </data>
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 522</value>
   </data>
@@ -132,7 +132,7 @@
     <value>0</value>
   </data>
   <data name="statusStrip1.Text" xml:space="preserve">
-    <value>statusStrip1</value>
+    <value />
   </data>
   <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
     <value>statusStrip1</value>
@@ -157,17 +157,17 @@
   </data>
   <data name="toolStripSplitButton_explorer.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
-        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
-        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
-        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
-        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
-        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
-        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
-        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
-        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
-        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        cwAAEnMBjCK5BwAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
+        RUkUEZ0YRMS+DDI70MkTmzJnDc8iU8QT2mAEItnle90wHwTDyBduXnie5/rd133Q4ZKfAJqHFs9E08A8
+        zD1emDpmYXjqRlnTFIrMk8iuGkNaxWekGEaQrHecBfw+/vPXODw6hj9whN2fh/Bt/8LSRgA3cxr/DeBZ
+        9kvmTNMoHGNbIrYN+3Aj23IxgJkpds0doP3VstgmsNexhutZ9QrAms8T0zYzU5xXM46kcjsmvfvoeL2i
+        AeoUgA07T8yaaZuZKab1rzN74jgys1YB2O2gmBZzH49LODXrrJlnzEzxe9cOLH1ziMioVgCOiuIFX0CE
+        Q+/WYf+yieiCFrRp9tkwxnP7Kt5MbKGm6wfC000KwDlTXNLgEvHMkh+Db32o7fYivtQm1l9+3IBOp5P7
+        yjYPwlKNCsAluWudxgvtknb5t9oWcL/VLU2Mvd2JFq3uqs7vAtE/ceNayiMF4KiYMSjmY2O7B4Ua+NaD
+        YQGEJumRbvyG1IcfBHI12aAAXM8R57aIWTNrLLY4tfNPiCvpR1SeVeu6WWzHFD6THSDwFMDdpmUG62NJ
+        PKM4Or9ZxBxb8H8l7g5CEu8pAOfM3WanSeeS8CFHxW4zM2umbWamOCShXAH+/wNOANABIDUxWnDPAAAA
+        AElFTkSuQmCC
 </value>
   </data>
   <data name="toolStripSplitButton_explorer.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -375,18 +375,6 @@
   <data name="groupBox_controls.Text" xml:space="preserve">
     <value>Управление</value>
   </data>
-  <data name="&gt;&gt;groupBox_controls.Name" xml:space="preserve">
-    <value>groupBox_controls</value>
-  </data>
-  <data name="&gt;&gt;groupBox_controls.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox_controls.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;groupBox_controls.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="comboBox_charsinrow.Items" xml:space="preserve">
     <value>8</value>
   </data>
@@ -411,18 +399,6 @@
   <data name="comboBox_charsinrow.Text" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="&gt;&gt;comboBox_charsinrow.Name" xml:space="preserve">
-    <value>comboBox_charsinrow</value>
-  </data>
-  <data name="&gt;&gt;comboBox_charsinrow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBox_charsinrow.Parent" xml:space="preserve">
-    <value>groupBox_controls</value>
-  </data>
-  <data name="&gt;&gt;comboBox_charsinrow.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -437,18 +413,6 @@
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Количество символов в строке</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>groupBox_controls</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -465,18 +429,6 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Алгоритм шифрования DES-ECB (64 bit/8 байт/16 знаков)</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>groupBox_controls</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="textBox_keycode.Location" type="System.Drawing.Point, System.Drawing">
     <value>475, 56</value>
   </data>
@@ -492,18 +444,6 @@
   <data name="textBox_keycode.Text" xml:space="preserve">
     <value>0123456789ABCDEF</value>
   </data>
-  <data name="&gt;&gt;textBox_keycode.Name" xml:space="preserve">
-    <value>textBox_keycode</value>
-  </data>
-  <data name="&gt;&gt;textBox_keycode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox_keycode.Parent" xml:space="preserve">
-    <value>groupBox_controls</value>
-  </data>
-  <data name="&gt;&gt;textBox_keycode.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="button_decode.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -518,18 +458,6 @@
   </data>
   <data name="button_decode.Text" xml:space="preserve">
     <value>Декодировать</value>
-  </data>
-  <data name="&gt;&gt;button_decode.Name" xml:space="preserve">
-    <value>button_decode</value>
-  </data>
-  <data name="&gt;&gt;button_decode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_decode.Parent" xml:space="preserve">
-    <value>groupBox_controls</value>
-  </data>
-  <data name="&gt;&gt;button_decode.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="button_repack.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -549,18 +477,6 @@
   <data name="button_repack.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;button_repack.Name" xml:space="preserve">
-    <value>button_repack</value>
-  </data>
-  <data name="&gt;&gt;button_repack.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_repack.Parent" xml:space="preserve">
-    <value>groupBox_controls</value>
-  </data>
-  <data name="&gt;&gt;button_repack.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="button_dirrepack.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 161</value>
   </data>
@@ -573,18 +489,6 @@
   <data name="button_dirrepack.Text" xml:space="preserve">
     <value>Директория для распаковки</value>
   </data>
-  <data name="&gt;&gt;button_dirrepack.Name" xml:space="preserve">
-    <value>button_dirrepack</value>
-  </data>
-  <data name="&gt;&gt;button_dirrepack.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_dirrepack.Parent" xml:space="preserve">
-    <value>groupBox_controls</value>
-  </data>
-  <data name="&gt;&gt;button_dirrepack.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="button_rampath.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 22</value>
   </data>
@@ -596,18 +500,6 @@
   </data>
   <data name="button_rampath.Text" xml:space="preserve">
     <value>Путь к файлу прошивки</value>
-  </data>
-  <data name="&gt;&gt;button_rampath.Name" xml:space="preserve">
-    <value>button_rampath</value>
-  </data>
-  <data name="&gt;&gt;button_rampath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_rampath.Parent" xml:space="preserve">
-    <value>groupBox_controls</value>
-  </data>
-  <data name="&gt;&gt;button_rampath.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="&gt;&gt;textBox_orig.Name" xml:space="preserve">
     <value>textBox_orig</value>
@@ -636,18 +528,6 @@
   <data name="groupBox_orig.Text" xml:space="preserve">
     <value>Начало оригинального заголовка файла (BYTES | ASCII)</value>
   </data>
-  <data name="&gt;&gt;groupBox_orig.Name" xml:space="preserve">
-    <value>groupBox_orig</value>
-  </data>
-  <data name="&gt;&gt;groupBox_orig.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox_orig.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;groupBox_orig.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="textBox_orig.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -664,18 +544,6 @@
     <value>627, 295</value>
   </data>
   <data name="textBox_orig.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;textBox_orig.Name" xml:space="preserve">
-    <value>textBox_orig</value>
-  </data>
-  <data name="&gt;&gt;textBox_orig.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox_orig.Parent" xml:space="preserve">
-    <value>groupBox_orig</value>
-  </data>
-  <data name="&gt;&gt;textBox_orig.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;textBox_decode.Name" xml:space="preserve">
@@ -705,18 +573,6 @@
   <data name="groupBox_decode.Text" xml:space="preserve">
     <value>Декодированная часть заголовка файла (BYTES | ASCII)</value>
   </data>
-  <data name="&gt;&gt;groupBox_decode.Name" xml:space="preserve">
-    <value>groupBox_decode</value>
-  </data>
-  <data name="&gt;&gt;groupBox_decode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox_decode.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;groupBox_decode.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="textBox_decode.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -733,18 +589,6 @@
     <value>628, 295</value>
   </data>
   <data name="textBox_decode.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;textBox_decode.Name" xml:space="preserve">
-    <value>textBox_decode</value>
-  </data>
-  <data name="&gt;&gt;textBox_decode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox_decode.Parent" xml:space="preserve">
-    <value>groupBox_decode</value>
-  </data>
-  <data name="&gt;&gt;textBox_decode.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;textBox_parse.Name" xml:space="preserve">
@@ -774,18 +618,6 @@
   <data name="groupBox_parse.Text" xml:space="preserve">
     <value>Парсинг прошивки</value>
   </data>
-  <data name="&gt;&gt;groupBox_parse.Name" xml:space="preserve">
-    <value>groupBox_parse</value>
-  </data>
-  <data name="&gt;&gt;groupBox_parse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox_parse.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;groupBox_parse.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="textBox_parse.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -804,51 +636,39 @@
   <data name="textBox_parse.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;textBox_parse.Name" xml:space="preserve">
-    <value>textBox_parse</value>
-  </data>
-  <data name="&gt;&gt;textBox_parse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox_parse.Parent" xml:space="preserve">
-    <value>groupBox_parse</value>
-  </data>
-  <data name="&gt;&gt;textBox_parse.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>426, 17</value>
-  </metadata>
-  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>630, 17</value>
-  </metadata>
+  </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>Бинарные файлы (*.bin)|*.bin|Все файлы (*.*)|*.*</value>
   </data>
-  <metadata name="backgroundWorker_readheader.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="backgroundWorker_readheader.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="backgroundWorker_decodeheader.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="backgroundWorker_decodeheader.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>797, 17</value>
-  </metadata>
-  <metadata name="backgroundWorker_unpacker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="backgroundWorker_unpacker.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>1090, 17</value>
-  </metadata>
-  <metadata name="toolTip_Dir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="toolTip_Dir.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 60</value>
-  </metadata>
-  <metadata name="saveFileDialog_decode_header.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="saveFileDialog_decode_header.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>148, 60</value>
-  </metadata>
+  </data>
   <data name="saveFileDialog_decode_header.Title" xml:space="preserve">
     <value>Сохранить файл</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
     <value>141</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
   </data>

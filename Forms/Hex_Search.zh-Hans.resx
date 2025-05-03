@@ -125,10 +125,13 @@
     <value>提醒</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>寻找顺序</value>
+    <value>正在寻找序列</value>
   </data>
   <data name="columnHeader1.Text" xml:space="preserve">
     <value>偏移（十六进制，0x）</value>
+  </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>字节 | ASCII</value>
   </data>
   <data name="columnHeader3.Text" xml:space="preserve">
     <value>文件</value>
@@ -137,13 +140,13 @@
     <value>48, 20</value>
   </data>
   <data name="radioButton_search_text.Text" xml:space="preserve">
-    <value>text</value>
+    <value>文本</value>
   </data>
   <data name="radioButton_byte_search.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 20</value>
   </data>
   <data name="radioButton_byte_search.Text" xml:space="preserve">
-    <value>byte</value>
+    <value>字节</value>
   </data>
   <data name="groupBox_byte_text.Text" xml:space="preserve">
     <value>要搜索的字符集</value>
@@ -193,8 +196,44 @@
   <data name="tabPage_mask.Text" xml:space="preserve">
     <value>在文件中按掩码搜索</value>
   </data>
+  <data name="button_comp.Text" xml:space="preserve">
+    <value>比较</value>
+  </data>
+  <data name="label_raw_secsize.Text" xml:space="preserve">
+    <value>扇区大小</value>
+  </data>
+  <data name="label_raw_lun.Text" xml:space="preserve">
+    <value>磁盘编号（LUN）</value>
+  </data>
+  <data name="groupBox_raw.Text" xml:space="preserve">
+    <value>用于 rawprogram.xml 的数据</value>
+  </data>
+  <data name="checkBox_difraw.Text" xml:space="preserve">
+    <value>生成用于批量写入的 rawprogram.xml</value>
+  </data>
+  <data name="checkBox_difbin.Text" xml:space="preserve">
+    <value>以bin格式保存不同的数据</value>
+  </data>
+  <data name="checkBox_diftxt.Text" xml:space="preserve">
+    <value>将不同的数据保存到txt文件</value>
+  </data>
+  <data name="groupBox_dif.Text" xml:space="preserve">
+    <value>针对不同扇区的操作（在以文件名命名的新文件夹中）</value>
+  </data>
+  <data name="button_df.Text" xml:space="preserve">
+    <value>选择要比较的文件</value>
+  </data>
+  <data name="button_of.Text" xml:space="preserve">
+    <value>选择原始文件</value>
+  </data>
   <data name="tabPage_files.Text" xml:space="preserve">
     <value>两个文件的差异</value>
+  </data>
+  <data name="columnHeader_fullpath.Text" xml:space="preserve">
+    <value>文件的完整路径</value>
+  </data>
+  <data name="columnHeader_filelen.Text" xml:space="preserve">
+    <value>文件长度（字节)</value>
   </data>
   <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>281, 24</value>
@@ -226,11 +265,96 @@
   <data name="contextMenuStrip_dubl_files.Size" type="System.Drawing.Size, System.Drawing">
     <value>282, 106</value>
   </data>
+  <data name="radioButton_dd_yes.Text" xml:space="preserve">
+    <value>是的，我们来处理吧。</value>
+  </data>
+  <data name="radioButton_dd_no.Text" xml:space="preserve">
+    <value>不处理</value>
+  </data>
+  <data name="groupBox_dubl.Text" xml:space="preserve">
+    <value>在选定的文件夹中处理重复项</value>
+  </data>
+  <data name="radioButton_od_yes.Text" xml:space="preserve">
+    <value>是的，我们来处理吧。</value>
+  </data>
+  <data name="radioButton_od_no.Text" xml:space="preserve">
+    <value>不处理</value>
+  </data>
+  <data name="groupBox_orig.Text" xml:space="preserve">
+    <value>在选定的文件夹中处理重复项</value>
+  </data>
+  <data name="button_dubl.Text" xml:space="preserve">
+    <value>选择包含重复项的文件夹</value>
+  </data>
+  <data name="button_orig.Text" xml:space="preserve">
+    <value>选择包含原件的文件夹</value>
+  </data>
+  <data name="radioButton_hashonly.Text" xml:space="preserve">
+    <value>仅按哈希值</value>
+  </data>
+  <data name="radioButton_nameandhash.Text" xml:space="preserve">
+    <value>按文件名和哈希值</value>
+  </data>
+  <data name="groupBox_comp.Text" xml:space="preserve">
+    <value>比较原件和重复项</value>
+  </data>
+  <data name="button_exe.Text" xml:space="preserve">
+    <value>查找重复项</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button_del.Dock" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="button_del.Text" xml:space="preserve">
+    <value>删除选定的文件</value>
+  </data>
   <data name="tabPage_folders.Text" xml:space="preserve">
     <value>文件夹中存在重复文件</value>
   </data>
+  <data name="label_path.Text" xml:space="preserve">
+    <value>带分析的文件夹</value>
+  </data>
+  <data name="button_destr.Text" xml:space="preserve">
+    <value>分析转储</value>
+  </data>
+  <data name="groupBox_sector.Text" xml:space="preserve">
+    <value>扇区大小</value>
+  </data>
+  <data name="columnHeader_ss.Text" xml:space="preserve">
+    <value>起始扇区</value>
+  </data>
+  <data name="columnHeader_ls.Text" xml:space="preserve">
+    <value>最后一个扇区</value>
+  </data>
+  <data name="columnHeader_pn.Text" xml:space="preserve">
+    <value>分区名称</value>
+  </data>
+  <data name="columnHeader_pl.Text" xml:space="preserve">
+    <value>占用的扇区（字节）</value>
+  </data>
+  <data name="columnHeader_bl.Text" xml:space="preserve">
+    <value>块</value>
+  </data>
+  <data name="button_dd.Location" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="button_dd.Text" xml:space="preserve">
+    <value>选择磁盘转储</value>
+  </data>
   <data name="tabPage_dd.Text" xml:space="preserve">
     <value>拆卸磁盘转储</value>
+  </data>
+  <data name="openFileDialog_of.Filter" xml:space="preserve">
+    <value>bin文件|*.bin|所有文件|*.*</value>
+  </data>
+  <data name="openFileDialog_of.Title" xml:space="preserve">
+    <value>选择原始文件</value>
+  </data>
+  <data name="openFileDialog_df.Filter" xml:space="preserve">
+    <value>bin文件|*.bin|所有文件|*.*</value>
+  </data>
+  <data name="openFileDialog_df.Title" xml:space="preserve">
+    <value>选择要比较的文件</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

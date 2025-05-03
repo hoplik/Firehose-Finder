@@ -125,16 +125,16 @@
     <value>Alerts</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Looking for a sequence</value>
+    <value>Searching for sequence</value>
   </data>
   <data name="columnHeader1.Text" xml:space="preserve">
     <value>Offset (hex, 0x)</value>
   </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>Bytes | ASCII</value>
+  </data>
   <data name="columnHeader3.Text" xml:space="preserve">
     <value>File</value>
-  </data>
-  <data name="groupBox_byte_text.Text" xml:space="preserve">
-    <value>A set of characters to search for</value>
   </data>
   <data name="radioButton_search_text.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -148,11 +148,11 @@
   <data name="radioButton_byte_search.Text" xml:space="preserve">
     <value>byte</value>
   </data>
+  <data name="groupBox_byte_text.Text" xml:space="preserve">
+    <value>A set of characters to search for</value>
+  </data>
   <data name="button_start_search.Text" xml:space="preserve">
     <value>search path</value>
-  </data>
-  <data name="groupBox_hs.Text" xml:space="preserve">
-    <value>Search area</value>
   </data>
   <data name="radioButton_dir.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 20</value>
@@ -166,8 +166,8 @@
   <data name="radioButton_file.Text" xml:space="preserve">
     <value>File</value>
   </data>
-  <data name="groupBox_addbytes.Text" xml:space="preserve">
-    <value>Add bytes</value>
+  <data name="groupBox_hs.Text" xml:space="preserve">
+    <value>Search area</value>
   </data>
   <data name="textBox_addlast.Location" type="System.Drawing.Point, System.Drawing">
     <value>114, 56</value>
@@ -193,14 +193,50 @@
   <data name="label2.Text" xml:space="preserve">
     <value>at the beginning</value>
   </data>
+  <data name="groupBox_addbytes.Text" xml:space="preserve">
+    <value>Add bytes</value>
+  </data>
   <data name="tabPage_mask.Text" xml:space="preserve">
     <value>Search by mask in a file</value>
+  </data>
+  <data name="button_comp.Text" xml:space="preserve">
+    <value>Compare</value>
+  </data>
+  <data name="label_raw_secsize.Text" xml:space="preserve">
+    <value>Sector size</value>
+  </data>
+  <data name="label_raw_lun.Text" xml:space="preserve">
+    <value>Disk number (LUN)</value>
+  </data>
+  <data name="groupBox_raw.Text" xml:space="preserve">
+    <value>Data for rawprogram.xml</value>
+  </data>
+  <data name="checkBox_difraw.Text" xml:space="preserve">
+    <value>Generate rawprogram.xml for batch writing</value>
+  </data>
+  <data name="checkBox_difbin.Text" xml:space="preserve">
+    <value>Save differing data in bin format</value>
+  </data>
+  <data name="checkBox_diftxt.Text" xml:space="preserve">
+    <value>Save differing data to a txt file</value>
+  </data>
+  <data name="groupBox_dif.Text" xml:space="preserve">
+    <value>Actions for differing sectors (in a new folder named after the file)</value>
+  </data>
+  <data name="button_df.Text" xml:space="preserve">
+    <value>Select a file for comparison</value>
+  </data>
+  <data name="button_of.Text" xml:space="preserve">
+    <value>Select the original file</value>
   </data>
   <data name="tabPage_files.Text" xml:space="preserve">
     <value>Differences between two files</value>
   </data>
-  <data name="tabPage_folders.Text" xml:space="preserve">
-    <value>Duplicate files in folders</value>
+  <data name="columnHeader_fullpath.Text" xml:space="preserve">
+    <value>Full path to the file</value>
+  </data>
+  <data name="columnHeader_filelen.Text" xml:space="preserve">
+    <value>File length (bytes)</value>
   </data>
   <data name="поменятьМестамиОригиналИДубликатToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>316, 24</value>
@@ -232,8 +268,89 @@
   <data name="contextMenuStrip_dubl_files.Size" type="System.Drawing.Size, System.Drawing">
     <value>317, 106</value>
   </data>
+  <data name="radioButton_dd_yes.Text" xml:space="preserve">
+    <value>Yes, let's process it.</value>
+  </data>
+  <data name="radioButton_dd_no.Text" xml:space="preserve">
+    <value>Do not process</value>
+  </data>
+  <data name="groupBox_dubl.Text" xml:space="preserve">
+    <value>Process duplicates in the selected folder</value>
+  </data>
+  <data name="radioButton_od_yes.Text" xml:space="preserve">
+    <value>Yes, let's process it.</value>
+  </data>
+  <data name="radioButton_od_no.Text" xml:space="preserve">
+    <value>Do not process</value>
+  </data>
+  <data name="groupBox_orig.Text" xml:space="preserve">
+    <value>Process duplicates in the selected folder</value>
+  </data>
+  <data name="button_dubl.Text" xml:space="preserve">
+    <value>Select the folder with duplicates</value>
+  </data>
+  <data name="button_orig.Text" xml:space="preserve">
+    <value>Select the folder with originals</value>
+  </data>
+  <data name="radioButton_hashonly.Text" xml:space="preserve">
+    <value>Only by hash sum</value>
+  </data>
+  <data name="radioButton_nameandhash.Text" xml:space="preserve">
+    <value>By file name and hash sum</value>
+  </data>
+  <data name="groupBox_comp.Text" xml:space="preserve">
+    <value>Compare original and duplicates</value>
+  </data>
+  <data name="button_exe.Text" xml:space="preserve">
+    <value>Find duplicates</value>
+  </data>
+  <data name="button_del.Text" xml:space="preserve">
+    <value>Delete selected files</value>
+  </data>
+  <data name="tabPage_folders.Text" xml:space="preserve">
+    <value>Duplicate files in folders</value>
+  </data>
+  <data name="label_path.Text" xml:space="preserve">
+    <value>Folder with analysis</value>
+  </data>
+  <data name="button_destr.Text" xml:space="preserve">
+    <value>Analyze dump</value>
+  </data>
+  <data name="groupBox_sector.Text" xml:space="preserve">
+    <value>Sector size</value>
+  </data>
+  <data name="columnHeader_ss.Text" xml:space="preserve">
+    <value>Starting sector</value>
+  </data>
+  <data name="columnHeader_ls.Text" xml:space="preserve">
+    <value>Last sector</value>
+  </data>
+  <data name="columnHeader_pn.Text" xml:space="preserve">
+    <value>Partition name</value>
+  </data>
+  <data name="columnHeader_pl.Text" xml:space="preserve">
+    <value>Sectors occupied (bytes)</value>
+  </data>
+  <data name="columnHeader_bl.Text" xml:space="preserve">
+    <value>Blocks</value>
+  </data>
+  <data name="button_dd.Text" xml:space="preserve">
+    <value>Select disk dump</value>
+  </data>
   <data name="tabPage_dd.Text" xml:space="preserve">
     <value>Disassemble the disk dump</value>
+  </data>
+  <data name="openFileDialog_of.Filter" xml:space="preserve">
+    <value>bin files|*.bin|All files|*.*</value>
+  </data>
+  <data name="openFileDialog_of.Title" xml:space="preserve">
+    <value>Select the original file</value>
+  </data>
+  <data name="openFileDialog_df.Filter" xml:space="preserve">
+    <value>bin files|*.bin|All files|*.*</value>
+  </data>
+  <data name="openFileDialog_df.Title" xml:space="preserve">
+    <value>Select a file for comparison</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

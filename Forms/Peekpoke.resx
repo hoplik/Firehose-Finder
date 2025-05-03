@@ -409,7 +409,7 @@
     <value>Читаем байты по адресу</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Работаем с памятью процессора</value>
+    <value>Работаем с памятью процессора (IMEM)</value>
   </data>
   <data name="&gt;&gt;label_poke_cb.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -843,16 +843,16 @@
   <data name="$this.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <metadata name="toolTip_pp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="toolTip_pp.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="saveFileDialog_output.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="saveFileDialog_output.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>146, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="$this.Language" type="System.Globalization.CultureInfo, mscorlib">
     <value>en</value>
-  </metadata>
+  </data>
 </root>

@@ -120,14 +120,6 @@
   <data name="button_ok.Text" xml:space="preserve">
     <value>Ok</value>
   </data>
-  <data name="button_cancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="label_comment.Text" xml:space="preserve">
-    <value>To batch write the firmware, you need to select ALL files rawprogram.xml and ALL files patch.xml from the firmware.
-Pay attention to the status of the sparse command in the raw program files.
-It should be "false", which corresponds to writing the split images to the partition by their sectors, without merging them.</value>
-  </data>
   <data name="button_files.Text" xml:space="preserve">
     <value>Select xml firmware files</value>
   </data>
@@ -2576,7 +2568,21 @@ It should be "false", which corresponds to writing the split images to the parti
         AElFTkSuQmCC
 </value>
   </data>
+  <data name="button_cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="openFileDialog_xmlfiles.Title" xml:space="preserve">
+    <value>Select all xml files</value>
+  </data>
+  <data name="openFileDialog_xmlfiles.Filter" xml:space="preserve">
+    <value>XML Files|*.xml|All files|*.*</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Batch firmware recording</value>
+  </data>
+  <data name="label_comment.Text" xml:space="preserve">
+    <value>To batch write the firmware, you need to select ALL files rawprogram.xml and ALL files patch.xml from the firmware.
+Pay attention to the status of the sparse command in the raw program files.
+It should be "false", which corresponds to writing the split images to the partition by their sectors, without merging them.</value>
   </data>
 </root>

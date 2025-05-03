@@ -117,9 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="linkLabel_telega.AutoSize" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="linkLabel_telega.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 69</value>
+  </data>
+  <data name="linkLabel_telega.Text" xml:space="preserve">
+    <value>您有问题、建议或意见吗？
+请在Telegram频道“Firehose - Finder issues”中留言。</value>
+  </data>
+  <data name="logoPictureBox.Dock" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
   <data name="logoPictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>201, 163</value>
@@ -130,11 +141,17 @@
   <data name="labelProductName.Size" type="System.Drawing.Size, System.Drawing">
     <value>532, 21</value>
   </data>
+  <data name="labelProductName.Text" xml:space="preserve">
+    <value>产品名称</value>
+  </data>
   <data name="labelVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>217, 34</value>
   </data>
   <data name="labelVersion.Size" type="System.Drawing.Size, System.Drawing">
     <value>532, 21</value>
+  </data>
+  <data name="labelVersion.Text" xml:space="preserve">
+    <value>版本</value>
   </data>
   <data name="labelCopyright.Location" type="System.Drawing.Point, System.Drawing">
     <value>217, 68</value>
@@ -142,11 +159,17 @@
   <data name="labelCopyright.Size" type="System.Drawing.Size, System.Drawing">
     <value>532, 21</value>
   </data>
+  <data name="labelCopyright.Text" xml:space="preserve">
+    <value>版权</value>
+  </data>
   <data name="textBoxDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>217, 106</value>
   </data>
   <data name="textBoxDescription.Size" type="System.Drawing.Size, System.Drawing">
     <value>532, 61</value>
+  </data>
+  <data name="textBoxDescription.Text" xml:space="preserve">
+    <value>描述</value>
   </data>
   <data name="linkLabel_forum.Location" type="System.Drawing.Point, System.Drawing">
     <value>212, 171</value>
@@ -154,17 +177,29 @@
   <data name="linkLabel_forum.Size" type="System.Drawing.Size, System.Drawing">
     <value>538, 69</value>
   </data>
+  <data name="linkLabel_forum.Text" xml:space="preserve">
+    <value>在4PDA上的主题 "Общие принципы восстановления загрузчиков на Qualcomm | HS - USB QDLoader 9008, HS - USB Diagnostics 9006, QHUSB_DLOAD и т.д."</value>
+  </data>
   <data name="label_donate.Location" type="System.Drawing.Point, System.Drawing">
     <value>212, 325</value>
   </data>
   <data name="label_donate.Size" type="System.Drawing.Size, System.Drawing">
     <value>399, 48</value>
   </data>
+  <data name="label_donate.Text" xml:space="preserve">
+    <value>您想感谢作者的工作吗？请使用捐赠按钮。</value>
+  </data>
   <data name="button_donate_ymoney.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 24</value>
   </data>
+  <data name="button_donate_ymoney.Text" xml:space="preserve">
+    <value>ЮMoney - 谢谢</value>
+  </data>
   <data name="button_donate_pp.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 26</value>
+  </data>
+  <data name="button_donate_pp.Text" xml:space="preserve">
+    <value>PayPal - 非常感谢</value>
   </data>
   <data name="label_thanks.Text" xml:space="preserve">
     <value>致谢:
@@ -172,5 +207,8 @@
 @SashaSeriy - 用于想法，评论和基本信息;
 @Always_Alone_R - 用于在UFS设备上进行测试;
 @@krevedko - 对于固件拆包的提示。</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>关于程序</value>
   </data>
 </root>

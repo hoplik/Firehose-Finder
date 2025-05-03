@@ -117,30 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="button_pp_cancel.Text" xml:space="preserve">
-    <value>取消</value>
-  </data>
-  <data name="groupBox_output.Text" xml:space="preserve">
-    <value>将结果输出到文件</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="textBox_peek_cb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 69</value>
-  </data>
-  <data name="textBox_peek_cb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 22</value>
-  </data>
-  <data name="label_peek_cb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 16</value>
-  </data>
-  <data name="label_peek_cb.Text" xml:space="preserve">
-    <value>字节集（十六进制, 0x）</value>
-  </data>
-  <data name="label_peek_adr.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="label_poke_adr.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 16</value>
   </data>
   <data name="label_peek_adr.Text" xml:space="preserve">
     <value>地址（十六进制, 0x）</value>
+  </data>
+  <data name="saveFileDialog_output.Filter" xml:space="preserve">
+    <value>二进制文件 (*.bin)|*.bin|所有文件 (*.*)|*.*</value>
+  </data>
+  <data name="groupBox_poke.Text" xml:space="preserve">
+    <value>写入</value>
+  </data>
+  <data name="label_poke_cb.Text" xml:space="preserve">
+    <value>字节集（十进制）</value>
+  </data>
+  <data name="radioButton_peek.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 30</value>
+  </data>
+  <data name="radioButton_poke.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 30</value>
+  </data>
+  <data name="radioButton_poke.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 0</value>
+  </data>
+  <data name="label_peek_cb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 16</value>
+  </data>
+  <data name="radioButton_peek.Text" xml:space="preserve">
+    <value>从地址中读取字节集</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>处理器内存的工作 (IMEM）</value>
+  </data>
+  <data name="textBox_peek_cb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 22</value>
+  </data>
+  <data name="label_peek_adr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 16</value>
   </data>
   <data name="groupBox_peek.Text" xml:space="preserve">
     <value>读取</value>
@@ -148,43 +163,31 @@
   <data name="label_poke_cb.Size" type="System.Drawing.Size, System.Drawing">
     <value>139, 16</value>
   </data>
-  <data name="label_poke_cb.Text" xml:space="preserve">
-    <value>字节集（十进制）</value>
-  </data>
-  <data name="label_poke_bytes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 16</value>
-  </data>
-  <data name="label_poke_bytes.Text" xml:space="preserve">
-    <value>要写入的字节集（十六进制，0x）</value>
-  </data>
-  <data name="label_poke_adr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 16</value>
+  <data name="textBox_peek_cb.Location" type="System.Drawing.Point, System.Drawing">
+    <value>171, 69</value>
   </data>
   <data name="label_poke_adr.Text" xml:space="preserve">
     <value>地址（十六进制, 0x）</value>
   </data>
-  <data name="groupBox_poke.Text" xml:space="preserve">
-    <value>写入</value>
+  <data name="label_poke_bytes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 16</value>
   </data>
-  <data name="radioButton_poke.Location" type="System.Drawing.Point, System.Drawing">
-    <value>336, 0</value>
+  <data name="label_peek_cb.Text" xml:space="preserve">
+    <value>字节集（十六进制, 0x）</value>
   </data>
-  <data name="radioButton_poke.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 30</value>
+  <data name="groupBox_output.Text" xml:space="preserve">
+    <value>将结果输出到文件</value>
   </data>
   <data name="radioButton_poke.Text" xml:space="preserve">
     <value>向地址写入字节</value>
   </data>
-  <data name="radioButton_peek.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 30</value>
-  </data>
-  <data name="radioButton_peek.Text" xml:space="preserve">
-    <value>从地址中读取字节集</value>
-  </data>
   <data name="groupBox_fh_aarch.Text" xml:space="preserve">
     <value>选择处理器架构</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Work with IMEM</value> <!-- 什么是 IMEM？ （What is IMEN?） -->
+  <data name="label_poke_bytes.Text" xml:space="preserve">
+    <value>要写入的字节集（十六进制，0x）</value>
+  </data>
+  <data name="button_pp_cancel.Text" xml:space="preserve">
+    <value>取消</value>
   </data>
 </root>

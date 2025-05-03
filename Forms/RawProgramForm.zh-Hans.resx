@@ -120,14 +120,6 @@
   <data name="button_ok.Text" xml:space="preserve">
     <value>确定</value>
   </data>
-  <data name="button_cancel.Text" xml:space="preserve">
-    <value>取消</value>
-  </data>
-  <data name="label_comment.Text" xml:space="preserve">
-    <value>要批量写入固件，需要从固件中选择所有文件 rawprogram.xml 和所有文件 patch.xml。
-注意原始程序文件中 sparse 命令的状态。
-它应为 "false"（假），相当于按扇区将分割镜像写入分区，而不合并它们。</value>
-  </data>
   <data name="button_files.Text" xml:space="preserve">
     <value>选择 XML 固件文件</value>
   </data>
@@ -2576,7 +2568,21 @@
         AElFTkSuQmCC
 </value>
   </data>
+  <data name="button_cancel.Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="openFileDialog_xmlfiles.Title" xml:space="preserve">
+    <value>选择所有xml文件</value>
+  </data>
+  <data name="openFileDialog_xmlfiles.Filter" xml:space="preserve">
+    <value>XML文件|*.xml|所有文件|*.*</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>固件批量记录</value>
+  </data>
+  <data name="label_comment.Text" xml:space="preserve">
+    <value>要批量写入固件，需要从固件中选择所有文件 rawprogram.xml 和所有文件 patch.xml。
+注意原始程序文件中 sparse 命令的状态。
+它应为 "false"（假），相当于按扇区将分割镜像写入分区，而不合并它们。</value>
   </data>
 </root>

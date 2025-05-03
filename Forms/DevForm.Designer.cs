@@ -38,8 +38,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.UniButton = new System.Windows.Forms.ToolStripDropDownButton();
+            this.SendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage_fh7.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -48,16 +48,16 @@
             // 
             // tabControl1
             // 
-            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabPage_fh7);
             this.tabControl1.Controls.Add(this.tabPage_sahara3);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             // 
             // tabPage_fh7
             // 
-            resources.ApplyResources(this.tabPage_fh7, "tabPage_fh7");
             this.tabPage_fh7.Controls.Add(this.tableLayoutPanel1);
+            resources.ApplyResources(this.tabPage_fh7, "tabPage_fh7");
             this.tabPage_fh7.Name = "tabPage_fh7";
             this.tabPage_fh7.UseVisualStyleBackColor = true;
             // 
@@ -78,6 +78,7 @@
             this.richTextBox_comm.AcceptsTab = true;
             resources.ApplyResources(this.richTextBox_comm, "richTextBox_comm");
             this.richTextBox_comm.Name = "richTextBox_comm";
+            this.richTextBox_comm.ReadOnly = true;
             // 
             // tabPage_sahara3
             // 
@@ -87,36 +88,37 @@
             // 
             // statusStrip1
             // 
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripProgressBar1,
-            this.toolStripSplitButton1,
-            this.toolStripDropDownButton1});
+            this.UniButton});
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
-            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            resources.ApplyResources(this.toolStripStatusLabel1, "toolStripStatusLabel1");
             // 
             // toolStripProgressBar1
             // 
-            resources.ApplyResources(this.toolStripProgressBar1, "toolStripProgressBar1");
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            resources.ApplyResources(this.toolStripProgressBar1, "toolStripProgressBar1");
             // 
-            // toolStripSplitButton1
+            // UniButton
             // 
-            resources.ApplyResources(this.toolStripSplitButton1, "toolStripSplitButton1");
-            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
+            this.UniButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.UniButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SendToolStripMenuItem});
+            resources.ApplyResources(this.UniButton, "UniButton");
+            this.UniButton.Name = "UniButton";
             // 
-            // toolStripDropDownButton1
+            // SendToolStripMenuItem
             // 
-            resources.ApplyResources(this.toolStripDropDownButton1, "toolStripDropDownButton1");
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.SendToolStripMenuItem.Name = "SendToolStripMenuItem";
+            resources.ApplyResources(this.SendToolStripMenuItem, "SendToolStripMenuItem");
+            this.SendToolStripMenuItem.Click += new System.EventHandler(this.SendToolStripMenuItem_Click);
             // 
             // DevForm
             // 
@@ -145,10 +147,10 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
-        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label_com;
         private System.Windows.Forms.RichTextBox richTextBox_comm;
+        private System.Windows.Forms.ToolStripDropDownButton UniButton;
+        private System.Windows.Forms.ToolStripMenuItem SendToolStripMenuItem;
     }
 }
