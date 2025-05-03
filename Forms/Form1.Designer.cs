@@ -75,6 +75,7 @@
             this.rateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.авторизоватьсяЧерезТелеграмToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отменитьАвторизациюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DevToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.видToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -551,7 +552,8 @@
             resources.ApplyResources(this.rateToolStripMenuItem, "rateToolStripMenuItem");
             this.rateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.авторизоватьсяЧерезТелеграмToolStripMenuItem,
-            this.отменитьАвторизациюToolStripMenuItem});
+            this.отменитьАвторизациюToolStripMenuItem,
+            this.DevToolStripMenuItem});
             this.rateToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.auth;
             this.rateToolStripMenuItem.Name = "rateToolStripMenuItem";
             this.rateToolStripMenuItem.Click += new System.EventHandler(this.RateToolStripMenuItem_Click);
@@ -569,6 +571,13 @@
             this.отменитьАвторизациюToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.auth_off;
             this.отменитьАвторизациюToolStripMenuItem.Name = "отменитьАвторизациюToolStripMenuItem";
             this.отменитьАвторизациюToolStripMenuItem.Click += new System.EventHandler(this.ОтменитьАвторизациюToolStripMenuItem_Click);
+            // 
+            // DevToolStripMenuItem
+            // 
+            resources.ApplyResources(this.DevToolStripMenuItem, "DevToolStripMenuItem");
+            this.DevToolStripMenuItem.Image = global::FirehoseFinder.Properties.Resources.dev;
+            this.DevToolStripMenuItem.Name = "DevToolStripMenuItem";
+            this.DevToolStripMenuItem.Click += new System.EventHandler(this.DevToolStripMenuItem_Click);
             // 
             // toolStripSeparator8
             // 
@@ -2325,6 +2334,7 @@
         private System.Windows.Forms.CheckBox checkBox_update_db;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.ComponentModel.BackgroundWorker backgroundWorker_auth;
+        private System.Windows.Forms.ToolStripMenuItem DevToolStripMenuItem;
     }
 }
 

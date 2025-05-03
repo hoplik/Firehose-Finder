@@ -228,12 +228,14 @@ namespace FirehoseFinder
             {
                 авторизоватьсяЧерезТелеграмToolStripMenuItem.Visible = true;
                 отменитьАвторизациюToolStripMenuItem.Visible = false;
+                DevToolStripMenuItem.Enabled = false;
                 Text = "Firehose Finder";
             }
             else
             {
                 авторизоватьсяЧерезТелеграмToolStripMenuItem.Visible = false;
                 отменитьАвторизациюToolStripMenuItem.Visible = true;
+                DevToolStripMenuItem.Enabled = true;
                 Text = $"Firehose Finder - {Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})";
             }
             //Закрываем запущенные процессы и чистим файлы (если есть что)
@@ -3724,6 +3726,17 @@ namespace FirehoseFinder
         {
             toolStripStatusLabel_filescompleted.Text = e.UserState.ToString();
             toolStripProgressBar_filescompleted.Value = e.ProgressPercentage;
+        }
+
+        /// <summary>
+        /// Нажали пункт меню "Для разработчиков"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DevToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DevForm devForm = new DevForm();
+            devForm.ShowDialog();
         }
     }
 }

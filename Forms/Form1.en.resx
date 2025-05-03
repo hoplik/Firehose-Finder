@@ -225,31 +225,10 @@
     <value>If the value is more than 5%, you can try to cancel the long operation.</value>
   </data>
   <data name="файлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 26</value>
+    <value>46, 24</value>
   </data>
   <data name="файлToolStripMenuItem.Text" xml:space="preserve">
     <value>File</value>
-  </data>
-  <data name="видToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 26</value>
-  </data>
-  <data name="видToolStripMenuItem.Text" xml:space="preserve">
-    <value>View</value>
-  </data>
-  <data name="инструментыToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 26</value>
-  </data>
-  <data name="инструментыToolStripMenuItem.Text" xml:space="preserve">
-    <value>Tools</value>
-  </data>
-  <data name="справкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 26</value>
-  </data>
-  <data name="справкаToolStripMenuItem.Text" xml:space="preserve">
-    <value>Help</value>
-  </data>
-  <data name="выборЯзыкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 26</value>
   </data>
   <data name="выборЯзыкаToolStripMenuItem.Text" xml:space="preserve">
     <value>Change language</value>
@@ -281,35 +260,35 @@
   <data name="предложитьПереводToolStripMenuItem.Text" xml:space="preserve">
     <value>Offer the translation</value>
   </data>
-  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 6</value>
-  </data>
-  <data name="rateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 26</value>
-  </data>
   <data name="rateToolStripMenuItem.Text" xml:space="preserve">
     <value>Rating</value>
   </data>
   <data name="авторизоватьсяЧерезТелеграмToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 26</value>
+    <value>352, 26</value>
   </data>
   <data name="авторизоватьсяЧерезТелеграмToolStripMenuItem.Text" xml:space="preserve">
     <value>Log in via Telegram</value>
   </data>
   <data name="отменитьАвторизациюToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 26</value>
+    <value>352, 26</value>
   </data>
   <data name="отменитьАвторизациюToolStripMenuItem.Text" xml:space="preserve">
     <value>Cancel authorization</value>
   </data>
-  <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 6</value>
+  <data name="DevToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 26</value>
   </data>
-  <data name="выходToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 26</value>
+  <data name="DevToolStripMenuItem.Text" xml:space="preserve">
+    <value>For developers (authorization required)</value>
   </data>
   <data name="выходToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
+  </data>
+  <data name="видToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 24</value>
+  </data>
+  <data name="видToolStripMenuItem.Text" xml:space="preserve">
+    <value>View</value>
   </data>
   <data name="приветствиеToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 26</value>
@@ -359,6 +338,12 @@
   <data name="отправкаПрограммераToolStripMenuItem.Text" xml:space="preserve">
     <value>Share the programmer</value>
   </data>
+  <data name="инструментыToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 24</value>
+  </data>
+  <data name="инструментыToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tools</value>
+  </data>
   <data name="поискМаскиБайтToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>305, 26</value>
   </data>
@@ -382,6 +367,12 @@
   </data>
   <data name="ExSertToolStripMenuItem.Text" xml:space="preserve">
     <value>Extract certificates</value>
+  </data>
+  <data name="справкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 24</value>
+  </data>
+  <data name="справкаToolStripMenuItem.Text" xml:space="preserve">
+    <value>Help</value>
   </data>
   <data name="вопросОтветToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>157, 26</value>
@@ -508,11 +499,17 @@ if there are none</value>
   <data name="toolStripStatusLabel_dowork.Text" xml:space="preserve">
     <value>Done</value>
   </data>
+  <data name="tabPage_phone.Text" xml:space="preserve">
+    <value>Work with device</value>
+  </data>
   <data name="button_ADB_start.Text" xml:space="preserve">
     <value>Start ADB</value>
   </data>
   <data name="button_ADB_clear.Text" xml:space="preserve">
     <value>Close ADB session</value>
+  </data>
+  <data name="groupBox_adb_commands.Text" xml:space="preserve">
+    <value>ADB commands</value>
   </data>
   <data name="radioButton_reboot_fastboot.Size" type="System.Drawing.Size, System.Drawing">
     <value>335, 20</value>
@@ -538,29 +535,14 @@ if there are none</value>
   <data name="radioButton_reboot_edl.Text" xml:space="preserve">
     <value>Reboot to emergency mode (Emergency Download - EDL - PID#9008)</value>
   </data>
-  <data name="groupBox_adb_commands.Text" xml:space="preserve">
-    <value>ADB commands</value>
-  </data>
-  <data name="button_ADB_comstart.Text" xml:space="preserve">
-    <value>Run command</value>
-  </data>
-  <data name="button_term_clear.Text" xml:space="preserve">
-    <value>Clear the terminal window</value>
-  </data>
-  <data name="button_term_save.Text" xml:space="preserve">
-    <value>Save log</value>
-  </data>
-  <data name="groupBox_term_buttons.Text" xml:space="preserve">
-    <value>Terminal management</value>
-  </data>
-  <data name="tabPage_phone.Text" xml:space="preserve">
-    <value>Work with device</value>
-  </data>
   <data name="columnHeader_ADB_SN.Text" xml:space="preserve">
     <value>Serial number</value>
   </data>
   <data name="columnHeader_ADB_Model.Text" xml:space="preserve">
     <value>Device model</value>
+  </data>
+  <data name="button_ADB_comstart.Text" xml:space="preserve">
+    <value>Run command</value>
   </data>
   <data name="columnHeader_portnum.Text" xml:space="preserve">
     <value>Port</value>
@@ -810,6 +792,15 @@ if there are none</value>
   </data>
   <data name="columnHeader_FB_Model.Text" xml:space="preserve">
     <value>Device model</value>
+  </data>
+  <data name="groupBox_term_buttons.Text" xml:space="preserve">
+    <value>Terminal management</value>
+  </data>
+  <data name="button_term_clear.Text" xml:space="preserve">
+    <value>Clear the terminal window</value>
+  </data>
+  <data name="button_term_save.Text" xml:space="preserve">
+    <value>Save log</value>
   </data>
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>Bin files (*.bin)|*.bin|All files (*.*)|*.*</value>

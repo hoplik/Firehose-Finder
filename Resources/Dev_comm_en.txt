@@ -1,0 +1,5 @@
+	1. When selecting a file, determine if it is an ELF.
+If it is not, inform the user that the file is not an ELF and terminate the algorithm.
+	2. Check if there are 5 occurrences of ELF in it.
+	
+	10. Using the mask "D00DFEED", find the occurrence in the device tree.

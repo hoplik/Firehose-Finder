@@ -201,6 +201,10 @@
     <value>校验码</value>
     <comment>контрольная сумма</comment>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Dev_comm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dev_comm_zh-Hans.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="done" xml:space="preserve">
     <value>完成.</value>
     <comment>Готово.</comment>
@@ -277,7 +281,6 @@
     <value>未找到基本 GPT 文件 - gpt_main0.bin</value>
     <comment>Не найден базовый файл таблицы разметки - gpt_main0.bin</comment>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Greeting_zh-Hans.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>

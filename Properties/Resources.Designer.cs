@@ -320,6 +320,27 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dev {
+            get {
+                object obj = ResourceManager.GetObject("dev", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на     1. При выборе файла определяем, является ли он elf.
+        ///Если не является, то пишем пользователю, что файл не эльф и прекращаем алгоритм.
+        ///    2. Проверяем есть ли в нём 5 вхождений elf..
+        /// </summary>
+        internal static string Dev_comm {
+            get {
+                return ResourceManager.GetString("Dev_comm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Готово..
         /// </summary>
         internal static string done {

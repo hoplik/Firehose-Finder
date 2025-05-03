@@ -14,10 +14,10 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://yggno.de:21/</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\hoplik\OneDrive\Рабочий стол\Publishing\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
+    <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -25,7 +25,6 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://fhf.yggno.de/</InstallUrl>
     <UpdateUrl>https://fhf.yggno.de/</UpdateUrl>
     <SupportUrl>https://github.com/hoplik/Firehose-Finder/</SupportUrl>
     <ErrorReportUrl>https://github.com/hoplik/Firehose-Finder/issues</ErrorReportUrl>
@@ -37,8 +36,8 @@
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>25.5.2.0</ApplicationVersion>
+    <ApplicationRevision>101</ApplicationRevision>
+    <ApplicationVersion>25.5.3.101</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -150,6 +149,12 @@
     <Compile Include="Forms\AGMRepacker.Designer.cs">
       <DependentUpon>AGMRepacker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DevForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DevForm.Designer.cs">
+      <DependentUpon>DevForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dump_Sectors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +245,10 @@
     <Content Include="Resources\about.png" />
     <Content Include="Resources\auth.png" />
     <Content Include="Resources\auth_off.png" />
+    <Content Include="Resources\dev.png" />
+    <None Include="Resources\Dev_comm.txt" />
+    <None Include="Resources\Dev_comm_en.txt" />
+    <None Include="Resources\Dev_comm_zh-Hans.txt" />
     <Content Include="Users_Rate.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -274,6 +283,15 @@
     <EmbeddedResource Include="Forms\AGMRepacker.zh-Hans.resx">
       <DependentUpon>AGMRepacker.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DevForm.en.resx">
+      <DependentUpon>DevForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DevForm.resx">
+      <DependentUpon>DevForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DevForm.zh-Hans.resx">
+      <DependentUpon>DevForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dump_Sectors.zh-Hans.resx">
       <DependentUpon>Dump_Sectors.cs</DependentUpon>
@@ -433,6 +451,7 @@
     <EmbeddedResource Include="Properties\Resources.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.en.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Write_Sectors.en.resx">
       <DependentUpon>Write_Sectors.cs</DependentUpon>
