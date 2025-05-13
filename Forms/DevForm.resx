@@ -183,6 +183,153 @@
   <data name="&gt;&gt;richTextBox_comm.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="button_select_fh.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="button_select_fh.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="button_select_fh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>584, 34</value>
+  </data>
+  <data name="button_select_fh.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="button_select_fh.Text" xml:space="preserve">
+    <value>Выбрать программер для анализа</value>
+  </data>
+  <data name="&gt;&gt;button_select_fh.Name" xml:space="preserve">
+    <value>button_select_fh</value>
+  </data>
+  <data name="&gt;&gt;button_select_fh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_select_fh.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_select_fh.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="button_share_fh.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="button_share_fh.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="button_share_fh.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 501</value>
+  </data>
+  <data name="button_share_fh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>584, 34</value>
+  </data>
+  <data name="button_share_fh.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="button_share_fh.Text" xml:space="preserve">
+    <value>Поделиться программером</value>
+  </data>
+  <data name="&gt;&gt;button_share_fh.Name" xml:space="preserve">
+    <value>button_share_fh</value>
+  </data>
+  <data name="&gt;&gt;button_share_fh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_share_fh.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;button_share_fh.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="textBox_fh_res.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="textBox_fh_res.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 43</value>
+  </data>
+  <data name="textBox_fh_res.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBox_fh_res.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="textBox_fh_res.Size" type="System.Drawing.Size, System.Drawing">
+    <value>584, 223</value>
+  </data>
+  <data name="textBox_fh_res.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;textBox_fh_res.Name" xml:space="preserve">
+    <value>textBox_fh_res</value>
+  </data>
+  <data name="&gt;&gt;textBox_fh_res.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_fh_res.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;textBox_fh_res.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textBox_fh_log.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="textBox_fh_log.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 272</value>
+  </data>
+  <data name="textBox_fh_log.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBox_fh_log.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="textBox_fh_log.Size" type="System.Drawing.Size, System.Drawing">
+    <value>584, 223</value>
+  </data>
+  <data name="textBox_fh_log.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;textBox_fh_log.Name" xml:space="preserve">
+    <value>textBox_fh_log</value>
+  </data>
+  <data name="&gt;&gt;textBox_fh_log.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_fh_log.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;textBox_fh_log.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="textBox_dev_comcom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="textBox_dev_comcom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>673, 272</value>
+  </data>
+  <data name="textBox_dev_comcom.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBox_dev_comcom.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="textBox_dev_comcom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>585, 223</value>
+  </data>
+  <data name="textBox_dev_comcom.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;textBox_dev_comcom.Name" xml:space="preserve">
+    <value>textBox_dev_comcom</value>
+  </data>
+  <data name="&gt;&gt;textBox_dev_comcom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_dev_comcom.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;textBox_dev_comcom.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -211,7 +358,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label_com" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="richTextBox_comm" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Absolute,40,Absolute,40,Percent,50" /&gt;&lt;Rows Styles="Absolute,40,Percent,50,Percent,50,Absolute,40" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label_com" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="richTextBox_comm" Row="1" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="button_select_fh" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_share_fh" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="textBox_fh_res" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="textBox_fh_log" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="textBox_dev_comcom" Row="2" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Absolute,40,Absolute,40,Percent,50" /&gt;&lt;Rows Styles="Absolute,40,Percent,50,Percent,50,Absolute,40" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tabPage_fh7.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 25</value>
@@ -304,10 +451,16 @@
     <value>100, 18</value>
   </data>
   <data name="SendToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 26</value>
+    <value>339, 26</value>
   </data>
   <data name="SendToolStripMenuItem.Text" xml:space="preserve">
-    <value>Отправить текст в канал</value>
+    <value>Отправить комментарий в канал</value>
+  </data>
+  <data name="clearToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>339, 26</value>
+  </data>
+  <data name="clearToolStripMenuItem.Text" xml:space="preserve">
+    <value>Очистить результаты анализа и лог</value>
   </data>
   <data name="UniButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -354,6 +507,18 @@
   <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="openFileDialog_load_fh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>154, 17</value>
+  </metadata>
+  <data name="openFileDialog_load_fh.Filter" xml:space="preserve">
+    <value>MELF|*.melf|ELF|*.elf|MBN|*.mbn|BIN|*.bin|Все файлы|*.*</value>
+  </data>
+  <data name="openFileDialog_load_fh.Title" xml:space="preserve">
+    <value>Выберите программер для анализа</value>
+  </data>
+  <metadata name="backgroundWorker_analyse_fh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>371, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -389,6 +554,24 @@
   </data>
   <data name="&gt;&gt;SendToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clearToolStripMenuItem.Name" xml:space="preserve">
+    <value>clearToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;clearToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog_load_fh.Name" xml:space="preserve">
+    <value>openFileDialog_load_fh</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog_load_fh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker_analyse_fh.Name" xml:space="preserve">
+    <value>backgroundWorker_analyse_fh</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorker_analyse_fh.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>DevForm</value>

@@ -1,4 +1,108 @@
-	1. 在选择文件时，确定它是否为ELF。 如果不是，则通知用户该文件不是ELF，并终止算法。
-	2. 检查其中是否有5个ELF的出现。
-
-	10. 使用掩码"D00DFEED"在设备树中查找出现。
+	1. 在选择文件时，我们确定它是否为 ELF（文件的开头 - 二进制序列 - 7F 45 4C 46 - ELF）。
+如果不是，我们会告知用户该文件不是 ELF，并终止算法（以下所有检查也适用）。我们检查文件中是否有 5 次 ELF 的出现。
+	2. 我们解析零 ELF 的头部。
+类：ELF32
+机器：WE32100（RISC 类型）
+程序头开始：0x1C-2-0x34
+头部大小：0x28-2-0x34（52 字节）
+头部大小：0x2A-2-0x20（32 字节）
+头部数量：0x2C-2-0x02（2 个）
+总头部 + 头部 = 0x74，我们将其跳过。接下来是零的类似部分。
+第一个程序的地址：0x38-4-0x74
+大小：0x48-4-0x20000
+第二个程序的地址：0x58-4-0x20074
+大小：0x68-4-0x280
+文件结束：0x202F4
+	3. 我们解析第一个 ELF 的头部。
+类：ELF32
+机器：RISC-V
+程序头开始：0x1C-2-0x34
+头部大小：0x28-2-0x34（52 字节）
+头部大小：0x2A-2-0x20（32 字节）
+头部数量：0x2C-2-0x0D（13 个）
+总头部 + 头部 = 0x1D4 第一个零程序
+最后一个程序的地址：0x34 + 0x20 * 12 + 4 = 0x1B8-4-0x32000
+非零大小：0x1C8-4-0x2CA0
+文件结束：0x34CA0
+	4. 我们解析第二个 ELF 的头部。
+类：ELF64
+机器：AArch64
+程序头开始：0x20-4-0x40
+头部大小：0x34-2-0x40（64 字节）
+头部大小：0x36-2-0x38（56 字节）
+头部数量：0x38-2-0x9（9 个）
+总头部 + 头部 = 0x238 第一个零程序
+最后一个程序的地址：0x40 + 0x38 * 8 + 8 = 0x208-8-0xD0000
+非零大小：0x220-8-0x2BE0
+文件结束：0xD2BE0
+	5. 我们解析第三个 ELF 的头部。
+类：ELF64
+机器：AArch64
+程序头开始：0x20-4-0x40
+头部大小：0x34-2-0x40（64 字节）
+头部大小：0x36-2-0x38（56 字节）
+头部数量：0x38-2-0x7（7 个）
+总头部 + 头部 = 0x1C8 第一个零程序
+最后一个程序的地址：0x40 + 0x38 * 6 + 8 = 0x198-8-0x5B000
+非零大小：0x1B0-8-0xFF8
+文件结束：0x5BFF8
+	6. 我们解析第四个 ELF 的头部。
+类：ELF64
+机器：WE32100（RISC 类型）
+程序头开始：0x20-4-0x40
+头部大小：0x34-2-0x40（64 字节）
+头部大小：0x36-2-0x38（56 字节）
+头部数量：0x38-2-0x7（7 个）
+总头部 + 头部 = 0x1C8 第一个零程序
+最后一个程序的地址：0x40 + 0x38 * 6 + 8 = 0x198-8-0x1E000
+非零大小：0x1B0-8-0xFF8
+文件结束：0x1EFF8
+	10. 使用掩码 "D00DFEED"，我们在设备树中找到一个出现。
+第一个地址是 0xCAB0（这是头部中的第四个程序），长度为 0x361C（13852）。
+树本身是 0x3619（13849）。
+	11. 复制设备树 Blob。
+dd bs=1 count=13849 skip=51888 if=5.elf of=5.dtb
+	12. 转换为文本。
+dtc -O dts -o 5.dts 5.dtb
+	13. 在第二个 ELF 中找到可用处理器的列表。暂时使用掩码 SM_KAILUA。
+这是第四个程序，从地址 0x94000 开始，大小为 0x10000。
+在地址 0x96210 开始可用处理器的列表（1+24）：
+UNKNOWN
+SM_KAILUA - Snapdragon 8 Gen 1
+SMP_KAILUA - Snapdragon 8 Gen 1（修改版本）
+SXR_AURORA - Snapdragon 7c
+QRU_LASSEN - Snapdragon 8 Gen 2
+QDU_LASSEN - Snapdragon 8 Gen 2（修改版本）
+QDU1010_LASSEN - Snapdragon 8 Gen 2（修改版本）
+QRU1032_LASSEN - Snapdragon 8 Gen 2（修改版本）
+QRU1052_LASSEN - Snapdragon 8 Gen 2（修改版本）
+QRU1062_LASSEN - Snapdragon 8 Gen 2（修改版本）
+SXR_HALLIDAY - Snapdragon 7c Gen 2
+SM_LANAI - Snapdragon 7 Gen 1
+SMP_LANAI - Snapdragon 7 Gen 1（修改版本）
+SCP_HAMOA - Snapdragon 6 Gen 1
+SDX_PINNACLES - Snapdragon X55
+SDX_PINNACLES_M - Snapdragon X55（修改版本）
+SA_PINNACLES - Snapdragon X55（修改版本）
+SA_PINNACLES_L - Snapdragon X55（修改版本）
+SSG_AURORA - Snapdragon 7c
+SM_KAPITI - Snapdragon 8 Gen 1（修改版本）
+SDX_KUNO_SINGLEDIE - Snapdragon X60
+SDX_KUNO_HYBRID - Snapdragon X60（混合版本）
+SSG2_AURORA - Snapdragon 7c Gen 2
+SG_KAILUA - Snapdragon 8 Gen 1
+SGP_KAILUA - Snapdragon 8 Gen 1（修改版本)
+	14. 为了查找命令！在同一个文件和程序中，地址 0x9422B 存放着 JTAG ID、OEM ID 和序列号。需要找出哪些请求可以获取这些数据！
+	15. 我们找到哈希表，并通过它检查程序员数据的完整性。
+对于第二个 ELF，哈希表位于最后一个（第 9 个）程序中（起始地址 0xD0000，大小 0x2BE0）。
+p1 - 0xD0200 - 0x30（头部哈希）
+p2 - 230（全为零）
+p3 - 260
+p4 - 0xD0290 = 0x30（全为零）
+p5 - 0xD02C0 - 0x30（48 字节 - 96 个字符）
+p6 - 0x2F0
+p7 - 320（全为零）
+p8 - 350（全为零）
+p9 - 0xD0380 - 0x30（全为零） - 这里是哈希表 - 到 0xD03B0
+	16. 从 0xD03B0 到证书开始（0xD0418）之间有一些不明的内容（104 字节，0x68）。
+	17. 程序员的版本（7）可能已移动到地址 0xD0004。
