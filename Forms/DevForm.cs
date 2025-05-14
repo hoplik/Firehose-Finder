@@ -1,7 +1,11 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Resources;
+using System.Threading;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace FirehoseFinder.Forms
 {
@@ -51,36 +55,19 @@ namespace FirehoseFinder.Forms
             if (openFileDialog_load_fh.ShowDialog() == DialogResult.OK)
             {
                 button_select_fh.Text = openFileDialog_load_fh.FileName;
-                toolStripStatusLabel1.Text = "Загрузили программер. Начинаем анализ.";
-                textBox_fh_log.AppendText(string.Format("Загрузили программер {0}. Начинаем анализ." + Environment.NewLine, openFileDialog_load_fh.FileName));
-                Analys_Step1();
+                if (!backgroundWorker_analyse_fh.IsBusy)
+                {
+                    Cancel_bgw_ToolStripMenuItem.Enabled = true;
+                    backgroundWorker_analyse_fh.RunWorkerAsync(button_select_fh.Text);
+                    toolStripStatusLabel1.Text = "Загрузили программер. Начинаем анализ.";
+                    textBox_fh_log.AppendText(string.Format("Загрузили программер {0}. Начинаем анализ." + Environment.NewLine, openFileDialog_load_fh.FileName));
+                }
             }
             else
             {
                 button_select_fh.Text = "Выбрать программер для анализа";
+                openFileDialog_load_fh.FileName = string.Empty;
             }
-        }
-
-        /// <summary>
-        /// Первый этап анализа программера
-        /// </summary>
-        private void Analys_Step1()
-        {
-            toolStripStatusLabel1.Text = "Этап #1 - Старт";
-            textBox_fh_log.AppendText("Этап #1 - Старт" + Environment.NewLine);
-            if (true)
-            {
-                textBox_fh_res.AppendText("Этап #1 - OK" + Environment.NewLine);
-                toolStripStatusLabel1.Text = "Этап #1 - ОК";
-                textBox_fh_log.AppendText("Этап #1 - ОК" + Environment.NewLine);
-            }
-            else
-            {
-                textBox_fh_res.AppendText("Этап #1 - Bad" + Environment.NewLine);
-                toolStripStatusLabel1.Text = "Этап #1 - неудачно";
-                textBox_fh_log.AppendText("Этап #1 - неудачно1" + Environment.NewLine);
-            }
-
         }
 
         /// <summary>
@@ -113,5 +100,104 @@ namespace FirehoseFinder.Forms
             }
         }
         #endregion
+
+        /// <summary>
+        /// Запускаем отмену асинхронной операции в параллельном потоке
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Cancel_bgw_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (backgroundWorker_analyse_fh.IsBusy) backgroundWorker_analyse_fh.CancelAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка для кнопки отмены операции");
+            }
+        }
+
+        /// <summary>
+        /// Асинхронная операция в параллельном потоке (несколько проверок)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BackgroundWorker_analyse_fh_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            string file_path = e.Argument.ToString();
+            if (!File.Exists(file_path))
+            {
+                e.Result = false;
+                return;
+            }
+            FileInfo fileInfo = new FileInfo(file_path);
+            long file_bytes = fileInfo.Length; //Количество байт для чтения
+            long bytes_read = 0; //Количество прочтённых байт
+            e.Result = true; //По умолчанию результат удачный
+                             //TODO Все операции проверок
+            while (file_bytes - bytes_read > 0)
+            {
+                if (worker.CancellationPending)
+                {
+                    e.Cancel = true;
+                    e.Result = false;
+                    break;
+                }
+                else
+                {
+                    long repprog = bytes_read * 100 / file_bytes;
+                    worker.ReportProgress((int)repprog, string.Format("Выполнено {0}%", repprog));
+                    bytes_read ++;
+                }
+                Thread.Sleep(1); //Притормозим поток для отрисовки промежуточных данных
+            }
+        }
+
+        /// <summary>
+        /// Отображение промежуточных значений выполнения анализа в параллельном потоке
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BackgroundWorker_analyse_fh_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            toolStripProgressBar1.Value = e.ProgressPercentage;
+            toolStripStatusLabel1.Text = e.UserState.ToString();
+        }
+
+        /// <summary>
+        /// Отображение результата выполнения анализа в параллельном потоке (нескольких проверок)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BackgroundWorker_analyse_fh_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            toolStripProgressBar1.Value = 0;
+            Cancel_bgw_ToolStripMenuItem.Enabled = false;
+            if (e.Cancelled)
+            {
+                toolStripStatusLabel1.Text = "Операция отменена пользователем";
+                textBox_fh_log.AppendText("Операция отменена пользователем" + Environment.NewLine);
+            }
+            else if (e.Error != null)
+            {
+                toolStripStatusLabel1.Text = "Операция завершилась с ошибкой " + e.Error.Message;
+                textBox_fh_log.AppendText("Операция завершилась с ошибкой " + e.Error.Message + Environment.NewLine);
+            }
+            else
+            {
+                if ((bool)e.Result)
+                {
+                    toolStripStatusLabel1.Text = "Операция завершилась удачно";
+                    textBox_fh_log.AppendText("Операция завершилась удачно" + Environment.NewLine);
+                }
+                else
+                {
+                    toolStripStatusLabel1.Text = "Операция завершилась неудачно";
+                    textBox_fh_log.AppendText("Операция завершилась неудачно" + Environment.NewLine);
+                }
+            }
+        }
     }
 }

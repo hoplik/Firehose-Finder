@@ -46,6 +46,7 @@
             this.UniButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.SendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Cancel_bgw_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog_load_fh = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker_analyse_fh = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
@@ -150,13 +151,16 @@
             // 
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
             resources.ApplyResources(this.toolStripProgressBar1, "toolStripProgressBar1");
+            this.toolStripProgressBar1.Step = 1;
+            this.toolStripProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // UniButton
             // 
             this.UniButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.UniButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SendToolStripMenuItem,
-            this.clearToolStripMenuItem});
+            this.clearToolStripMenuItem,
+            this.Cancel_bgw_ToolStripMenuItem});
             resources.ApplyResources(this.UniButton, "UniButton");
             this.UniButton.Name = "UniButton";
             // 
@@ -172,6 +176,12 @@
             resources.ApplyResources(this.clearToolStripMenuItem, "clearToolStripMenuItem");
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.ClearToolStripMenuItem_Click);
             // 
+            // Cancel_bgw_ToolStripMenuItem
+            // 
+            resources.ApplyResources(this.Cancel_bgw_ToolStripMenuItem, "Cancel_bgw_ToolStripMenuItem");
+            this.Cancel_bgw_ToolStripMenuItem.Name = "Cancel_bgw_ToolStripMenuItem";
+            this.Cancel_bgw_ToolStripMenuItem.Click += new System.EventHandler(this.Cancel_bgw_ToolStripMenuItem_Click);
+            // 
             // openFileDialog_load_fh
             // 
             this.openFileDialog_load_fh.DefaultExt = "elf";
@@ -182,6 +192,9 @@
             // 
             this.backgroundWorker_analyse_fh.WorkerReportsProgress = true;
             this.backgroundWorker_analyse_fh.WorkerSupportsCancellation = true;
+            this.backgroundWorker_analyse_fh.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_analyse_fh_DoWork);
+            this.backgroundWorker_analyse_fh.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_analyse_fh_ProgressChanged);
+            this.backgroundWorker_analyse_fh.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_analyse_fh_RunWorkerCompleted);
             // 
             // DevForm
             // 
@@ -223,5 +236,6 @@
         private System.Windows.Forms.TextBox textBox_dev_comcom;
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker_analyse_fh;
+        private System.Windows.Forms.ToolStripMenuItem Cancel_bgw_ToolStripMenuItem;
     }
 }

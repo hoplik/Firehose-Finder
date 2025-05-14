@@ -3736,7 +3736,15 @@ namespace FirehoseFinder
         private void DevToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DevForm devForm = new DevForm();
-            devForm.ShowDialog();
+            try
+            {
+                devForm.ShowDialog();
+            }
+            catch (TargetInvocationException ex)
+            {
+                //Досрочно завершили операцию в параллельном потоке
+                MessageBox.Show(ex.Message,"Ошибка формы \"Для разработчиков\"");
+            }
         }
     }
 }

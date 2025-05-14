@@ -462,6 +462,15 @@
   <data name="clearToolStripMenuItem.Text" xml:space="preserve">
     <value>Очистить результаты анализа и лог</value>
   </data>
+  <data name="Cancel_bgw_ToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="Cancel_bgw_ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>339, 26</value>
+  </data>
+  <data name="Cancel_bgw_ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Отменить длительную операцию</value>
+  </data>
   <data name="UniButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -559,6 +568,12 @@
     <value>clearToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;clearToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Cancel_bgw_ToolStripMenuItem.Name" xml:space="preserve">
+    <value>Cancel_bgw_ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;Cancel_bgw_ToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;openFileDialog_load_fh.Name" xml:space="preserve">
