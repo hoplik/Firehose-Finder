@@ -1,7 +1,5 @@
-﻿using FirehoseFinder.Properties;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using Telegram.Bot;
 
 namespace FirehoseFinder
 {
@@ -139,6 +137,11 @@ namespace FirehoseFinder
             Invalid,
             bit32,
             bit64
+        }
+        internal enum ELF_Class : byte
+        {
+            ELF32 = 0x01,
+            ELF64 = 0x02
         }
         internal enum ELF_Data : byte
         {
