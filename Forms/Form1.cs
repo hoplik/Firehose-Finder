@@ -515,7 +515,21 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button_Sahara_CommandStart_Click(object sender, EventArgs e)
         {
-            StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3));
+            //Проверяем все ли диски хранилища опрошены
+            bool Disks_check = false;
+            while (!Disks_check)
+            {
+                if (button_Sahara_CommandStart.Enabled)
+                {
+                    Exec_commands();
+                    Disks_check = Disks_full();
+                }
+                else break;
+            }
+        }
+        private void Exec_commands()
+        {
+            StringBuilder sahara_command_args = new StringBuilder("-p \\\\.\\" + serialPort1.PortName);
             StringBuilder fh_command_args = new StringBuilder("--port=\\\\.\\" + serialPort1.PortName + " --noprompt");
             bool need_parsing_lun = false; //Необходимо ли парсить данные хранилища
             bool getgpt = false; //Необходимо ли получить таблицу GPT
@@ -530,6 +544,7 @@ namespace FirehoseFinder
                 if (dr == DialogResult.OK) tabControl1.SelectedTab = tabPage_firehose;
                 return;
             }
+            //Выбираем полноту информации (уровень) лога
             switch (comboBox_log.SelectedIndex)
             {
                 case 0:
@@ -739,6 +754,58 @@ namespace FirehoseFinder
                     writer.Write(func.Parse_peek_res(output_FH, bytecontrol));
                 }
             }
+        }
+
+        /// <summary>
+        /// Атоматическое выполнение первых двух команд для всех доступных дисков
+        /// </summary>
+        /// <returns></returns>
+        private bool Disks_full()
+        {
+            bool ret = true;
+            int countchecked = 0; //Проверенные диски
+            //Если хранилище содержит несколько дисков, то проверяем их заполнение и повторяем операцию
+            switch (comboBox_fh_commands.SelectedIndex)
+            {
+                case 0:
+                    for (int i = 0; i < Flash_Params[0].Count_Lun; i++)
+                    {
+                        if (!Flash_Params[i].Count_Lun.Equals(Flash_Params[0].Count_Lun))
+                        {
+                            comboBox_lun_count.SelectedIndex = i;
+                            ret = false;
+                            break;
+                        }
+                        countchecked++;
+                    }
+                    if (countchecked == Flash_Params[0].Count_Lun) //Всё хранилище опрошено. Проверяем формирование таблиц GPT
+                    {
+                        comboBox_fh_commands.SelectedIndex = 1;
+                        ret = false;
+                    }
+                    break;
+                case 1:
+                    for (int i = comboBox_lun_count.Items.Count - 1; i >= 0; i--)
+                    {
+                        if (!File.Exists(string.Format("gpt_main{0}.bin", i)))
+                        {
+                            comboBox_lun_count.SelectedIndex = i;
+                            ret = false;
+                            break;
+                        }
+                        countchecked++;
+                    }
+                    if (countchecked == comboBox_lun_count.Items.Count)
+                    {
+                        comboBox_fh_commands.SelectedIndex = 2;
+                        ret = true;
+                    }
+                    break;
+                default:
+                    ret = true;
+                    break;
+            }
+            return ret;
         }
 
         /// <summary>
@@ -952,8 +1019,9 @@ namespace FirehoseFinder
         private void GetGPT(int lun_number)
         {
             string gptmain = $"gpt_main{lun_number}.bin";
+            label_total_gpt.Text = "0";
             if (listView_GPT.Items.Count > 0) listView_GPT.Items.Clear();
-            if (File.Exists(gptmain))
+            if (File.Exists(gptmain)  && label_block_size.Text != "0")
             {
                 List<GPT_Table> gpt_array = func.Parsing_GPT_main(gptmain, Convert.ToInt32(label_block_size.Text));
                 if (string.IsNullOrEmpty(gpt_array[0].EndLBA)) MessageBox.Show(gpt_array[0].StartLBA, LocRes.GetString("mb_body_er_gpt"));
@@ -971,7 +1039,7 @@ namespace FirehoseFinder
                     label_total_gpt.Text = gpt_array.Count.ToString();
                 }
             }
-            else MessageBox.Show(LocRes.GetString("mb_body_gpt_not_formed"));
+            //else MessageBox.Show(LocRes.GetString("mb_body_gpt_not_formed"));
         }
 
         /// <summary>
@@ -1079,9 +1147,9 @@ namespace FirehoseFinder
             groupBox_LUN.Text = comboBox_lun_count.SelectedItem.ToString();
             label_block_size.Text = Flash_Params[comboBox_lun_count.SelectedIndex].Sector_Size.ToString();
             label_total_blocks.Text = Flash_Params[comboBox_lun_count.SelectedIndex].Total_Sectors.ToString("### ### ### ##0");
-            label_total_gpt.Text = "0";
             label_select_gpt.Text = "0";
-            listView_GPT.Items.Clear();
+            //Тут проверяем есть ли файл таблицы разметки и подтягиваем его
+            GetGPT(comboBox_lun_count.SelectedIndex);
         }
 
         /// <summary>
@@ -3311,11 +3379,8 @@ namespace FirehoseFinder
             ppc = 0;
             progressBar_phone.Value = ppc;
             if (e.Cancelled) textBox_soft_term.AppendText(LocRes.GetString("tb_cancel_user") + Environment.NewLine);
-            else
-            {
-                if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine + e.Error.StackTrace + Environment.NewLine);
-                else textBox_soft_term.AppendText(LocRes.GetString("done") + Environment.NewLine);
-            }
+            else if (e.Error != null) textBox_soft_term.AppendText(e.Error.Message + Environment.NewLine + e.Error.StackTrace + Environment.NewLine);
+            else textBox_soft_term.AppendText(LocRes.GetString("done") + Environment.NewLine);
         }
 
         /// <summary>
@@ -3743,7 +3808,7 @@ namespace FirehoseFinder
             catch (TargetInvocationException ex)
             {
                 //Досрочно завершили операцию в параллельном потоке
-                MessageBox.Show(ex.Message,"Ошибка формы \"Для разработчиков\"");
+                MessageBox.Show(ex.Message, "Ошибка формы \"Для разработчиков\"");
             }
         }
     }
