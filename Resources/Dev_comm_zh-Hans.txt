@@ -92,7 +92,8 @@ SDX_KUNO_HYBRID - Snapdragon X60（混合版本）
 SSG2_AURORA - Snapdragon 7c Gen 2
 SG_KAILUA - Snapdragon 8 Gen 1
 SGP_KAILUA - Snapdragon 8 Gen 1（修改版本)
-	14. 为了查找命令！在同一个文件和程序中，地址 0x9422B 存放着 JTAG ID、OEM ID 和序列号。需要找出哪些请求可以获取这些数据！
+	14. 为了查找命令！在同一个文件和程序中，地址 0x9422B 存放着 JTAG ID、OEM ID 和序列号。需要找出哪些请求可以获取这些数据!
+检查源代码中Sahara命令C01、C02、C03和C07的形成。很可能通过peek向处理器的QFuses发送请求，使用的是固定地址。对于Sahara v3，地址或大小，或者两者都可能已被更改 - 这就是标准命令无法执行的原因！
 	15. 我们找到哈希表，并通过它检查程序员数据的完整性。
 对于第二个 ELF，哈希表位于最后一个（第 9 个）程序中（起始地址 0xD0000，大小 0x2BE0）。
 p1 - 0xD0200 - 0x30（头部哈希）

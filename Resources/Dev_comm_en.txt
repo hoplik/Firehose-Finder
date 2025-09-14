@@ -40,6 +40,7 @@ SSG2_AURORA - Snapdragon 7c Gen 2
 SG_KAILUA - Snapdragon 8 Gen 1
 SGP_KAILUA - Snapdragon 8 Gen 1 (modified version)
 	14. For command searching! At address 0x9422B in the same file and program, the JTAG ID, OEM ID, and Serial Number are located. We need to find out what requests pull the data!
+Check the source code for the formation of the Sahara commands C01, C02, C03, and C07. It is quite likely that a request is being made through peek to the processor's QFuses at fixed addresses. For Sahara v3, either the addresses or the size, or both, could have been changed - this is why the standard commands are not being executed!
 	15. We find the hash table and check the integrity of the programmer's data using it.
 For the second ELF, the hash table is located in the last (9th) program (start 0xD0000, size 0x2BE0).
 p1 - 0xD0200 - 0x30 (header hash)
