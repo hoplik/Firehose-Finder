@@ -488,7 +488,8 @@ namespace FirehoseFinder
                 button_Sahara_CommandStart.Enabled = true;
                 if (waitSahara)
                 {
-                    StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -c 7 -c 3 -c 2 -c 1");
+                    //Для v3 необходимо поменять 02->0x0A, 07->06, 01->0x14
+                    StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -c 7 -c 2 -c 3 -c 1");
                     button_Sahara_Ids.Enabled = false;
                     GetSaharaIDs(sahara_command_args);
                     SendSaharaIDs();
@@ -504,7 +505,8 @@ namespace FirehoseFinder
         /// <param name="e"></param>
         private void Button_Sahara_Ids_Click(object sender, EventArgs e)
         {
-            StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -c 7 -c 3 -c 2 -c 1");
+            //Для v3 необходимо поменять 02->0x0A, 07->06, 01->0x14
+            StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -c 7 -c 2 -c 3 -c 1");
             GetSaharaIDs(sahara_command_args);
         }
 
@@ -581,8 +583,11 @@ namespace FirehoseFinder
                     button_Sahara_CommandStart.Enabled = false;
                     return;
                 }
-                //Если лоадер ещё не загружен в imem, то грузим в параллельном потоке
-                sahara_command_args.Append(" -c 7 -c 3 -c 2 -c 1 -x -s 13:" + label_Sahara_fhf.Text);
+                /*
+                  Если лоадер ещё не загружен в imem, то грузим в параллельном потоке
+                  Для v3 необходимо поменять 02->0x0A, 07->06, 01->0x14
+                */
+                sahara_command_args.Append(" -c 7 -c 2 -c 3 -c 1 -x -s 13:" + label_Sahara_fhf.Text);
                 GetSaharaIDs(sahara_command_args);
                 FHAlreadyLoaded = true;
                 NeedReset = true;
@@ -1388,19 +1393,6 @@ namespace FirehoseFinder
             string newfilename = e.UserState.ToString();
             progressBar_phone.Value = e.ProgressPercentage;
             textBox_soft_term.AppendText(LocRes.GetString("tb_save") + '\u0020' + newfilename + " ... ");
-            /*if (File.Exists(newfilename))
-            {
-                try
-                {
-                    if (File.Exists(folderBrowserDialog1.SelectedPath + "\\" + newfilename)) File.Delete(folderBrowserDialog1.SelectedPath + "\\" + newfilename);
-                    File.Move(newfilename, folderBrowserDialog1.SelectedPath + "\\" + newfilename);
-                }
-                catch (Exception ex)
-                {
-                    textBox_soft_term.AppendText(ex.Message + Environment.NewLine);
-                    SendErrorInChat();
-                }
-            }*/
             textBox_soft_term.AppendText(LocRes.GetString("done") + Environment.NewLine);
         }
 
@@ -1603,7 +1595,8 @@ namespace FirehoseFinder
         {
             if (listView_comport.CheckedItems.Count == 1)
             {
-                StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -c 7 -c 3 -c 2 -c 1");
+                //Для v3 необходимо поменять 02->0x0A, 07->06, 01->0x14
+                StringBuilder sahara_command_args = new StringBuilder("-u " + serialPort1.PortName.Remove(0, 3) + " -c 7 -c 2 -c 3 -c 1");
                 GetSaharaIDs(sahara_command_args);
                 SendSaharaIDs();
                 return;
@@ -2563,7 +2556,10 @@ namespace FirehoseFinder
                 button_Sahara_CommandStart.Enabled = false;
                 return;
             }
-            //Выполняем запрос HWID-OEMID (command01, 02, 03, 07)
+            /*
+              Выполняем запрос HWID-OEMID (command 01, 03, 02, 07)
+              Для v3 необходимо поменять 02->0x0A, 07->06, 01->0x14
+            */
             if (!backgroundWorker_sahara.IsBusy) backgroundWorker_sahara.RunWorkerAsync(sahara_command_args);
             //Притормозим основной поток пока не выполнится асинхрон sahara
             while (backgroundWorker_sahara.IsBusy)
