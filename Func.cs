@@ -486,6 +486,29 @@ namespace FirehoseFinder
         }
 
         /// <summary>
+        /// Парсинг результата работы команды Сахары v3 06
+        /// </summary>
+        /// <returns>Строка идентификатора SW SBL1 в little endian</returns>
+        internal string SaharaCommand6()
+        {
+            if (File.Exists("commandop06.bin"))
+            {
+                StringBuilder SC6 = new StringBuilder();
+                string strbyte = BitConverter.ToString(File.ReadAllBytes("commandop06.bin")).Replace("-", "");
+                byte count = (byte)strbyte.Length;
+                //Читаем с конца в начало
+                while (count > 0)
+                {
+                    SC6.Append(strbyte.Substring(count - 2, 2));
+                    count -= 2;
+                }
+                File.Delete("commandop06.bin");
+                return SC6.ToString();
+            }
+            else return LocRes.GetString("file") + " commandop06.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");
+        }
+
+        /// <summary>
         /// Парсинг результата работы команды Сахары 07
         /// </summary>
         /// <returns>Строка идентификатора SW SBL1 в little endian</returns>
@@ -506,6 +529,52 @@ namespace FirehoseFinder
                 return SC7.ToString();
             }
             else return LocRes.GetString("file") + " commandop07.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");
+        }
+
+        /// <summary>
+        /// Парсинг результата работы команды Сахары v3 0A
+        /// </summary>
+        /// <returns>Строка идентификатора HWID в little endian</returns>
+        internal string SaharaCommandA()
+        {
+            if (File.Exists("commandop0A.bin"))
+            {
+                StringBuilder SCA = new StringBuilder();
+                string strbyte = BitConverter.ToString(File.ReadAllBytes("commandop0A.bin")).Replace("-", "");
+                byte count = (byte)strbyte.Length;
+                //Читаем с конца в начало
+                while (count > 0)
+                {
+                    SCA.Append(strbyte.Substring(count - 2, 2));
+                    count -= 2;
+                }
+                File.Delete("commandop0A.bin");
+                return SCA.ToString();
+            }
+            else return LocRes.GetString("file") + " commandop0A.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");
+        }
+
+        /// <summary>
+        /// Парсинг результата работы команды Сахары v3 14
+        /// </summary>
+        /// <returns>Строка идентификатора серийный номер чипа в little endian</returns>
+        internal string SaharaCommand14()
+        {
+            if (File.Exists("commandop14.bin"))
+            {
+                StringBuilder SC14 = new StringBuilder();
+                string strbyte = BitConverter.ToString(File.ReadAllBytes("commandop14.bin")).Replace("-", "");
+                byte count = (byte)strbyte.Length;
+                //Читаем с конца в начало
+                while (count > 0)
+                {
+                    SC14.Append(strbyte.Substring(count - 2, 2));
+                    count -= 2;
+                }
+                File.Delete("commandop14.bin");
+                return SC14.ToString();
+            }
+            else return LocRes.GetString("file") + " commandop14.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");
         }
 
         /// <summary>
