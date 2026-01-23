@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 585</value>
+    <value>0, 587</value>
   </data>
   <metadata name="bindingNavigator_collection.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 58</value>
@@ -695,7 +695,7 @@
     <value>51</value>
   </data>
   <data name="dataGridView_collection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 585</value>
+    <value>1361, 587</value>
   </data>
   <data name="dataGridView_collection.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -716,7 +716,7 @@
     <value>4, 25</value>
   </data>
   <data name="tabPage_collection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1361, 625</value>
+    <value>1361, 627</value>
   </data>
   <data name="tabPage_collection.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -3120,7 +3120,7 @@ _HASH</value>
     <value>Bottom</value>
   </data>
   <data name="groupBox_LUN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 221</value>
+    <value>3, 223</value>
   </data>
   <data name="groupBox_LUN.Size" type="System.Drawing.Size, System.Drawing">
     <value>929, 339</value>
@@ -3306,7 +3306,7 @@ _HASH</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage_sahara.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 563</value>
+    <value>935, 565</value>
   </data>
   <data name="tabPage_sahara.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3663,7 +3663,7 @@ _HASH</value>
     <value>3, 133</value>
   </data>
   <data name="groupBox_fb_commands.Size" type="System.Drawing.Size, System.Drawing">
-    <value>929, 427</value>
+    <value>929, 429</value>
   </data>
   <data name="groupBox_fb_commands.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3762,7 +3762,7 @@ _HASH</value>
     <value>3</value>
   </data>
   <data name="tableLayoutPanel_fb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 563</value>
+    <value>935, 565</value>
   </data>
   <data name="tableLayoutPanel_fb.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3786,7 +3786,7 @@ _HASH</value>
     <value>4, 25</value>
   </data>
   <data name="tabPage_fb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 563</value>
+    <value>935, 565</value>
   </data>
   <data name="tabPage_fb.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

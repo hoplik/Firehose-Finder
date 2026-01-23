@@ -930,6 +930,7 @@
             this.radioButton_sahara_ver3.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::FirehoseFinder.Properties.Settings.Default, "Sahara_v3", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.radioButton_sahara_ver3.Name = "radioButton_sahara_ver3";
             this.radioButton_sahara_ver3.UseVisualStyleBackColor = true;
+            this.radioButton_sahara_ver3.CheckedChanged += new System.EventHandler(this.RadioButton_sahara_ver3_CheckedChanged);
             // 
             // radioButton_sahara_ver2
             // 

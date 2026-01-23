@@ -3823,5 +3823,10 @@ namespace FirehoseFinder
                 MessageBox.Show(ex.Message, "Ошибка формы \"Для разработчиков\"");
             }
         }
+
+        private void RadioButton_sahara_ver3_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.Sahara_v3 =radioButton_sahara_ver3.Checked;
+        }
     }
 }
