@@ -117,10 +117,1120 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="bindingNavigatorCountItem.ToolTipText" xml:space="preserve">
+    <value>Total number of segments</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bindingNavigatorMoveFirstItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        cQAAEnEB89x6jgAAATFJREFUOE9jYBg0oHDW8/9NC57/z5z4+D+6HAyEtz/AKceQO/PZ/1VH3v/HpSi+
+        +8H/4IZrWOXAIGPK0/8L933Aqii+5+H/pfv///evvoAhBwcJPU/+T9vyHkNRRPt9sObMWf//e5WewG1A
+        ZNej/72rP6AoCm29B9bcuu7/f//Ov/9d8g/gNiCw+eH/uvnv4IqCW+7+X7T3//+Odf//Z8z5+d+u7ud/
+        +4ztuA3wqLr/P3/aGxRFdsW3/6fP+f3fv+vbf53Cd/8tEtbjNsC+9O7/7MmvMRTpp5z/b1L04r9K1qf/
+        xpHLcBtgkXfnf2r/a6yKDJJO/JdN+/pfN3gehhwcGGbd/h/W8hKnIv3Uy/81fKdhlQMDnbQb//2qH+JV
+        pOIxAaccg1Pulf8gBXgVDUoAAPB2wKtYlLYeAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="bindingNavigatorMoveFirstItem.Text" xml:space="preserve">
+    <value>Move to the beginning</value>
+  </data>
+  <data name="bindingNavigatorMovePreviousItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        cQAAEnEB89x6jgAAALtJREFUOE9jYBgyILz9wX90MaJBfPeD/8EN18gzIL7n4f+l+///96++QLoBEe33
+        wZozZ/3/71V6gjQDQlvvgTW3rvv/37/z73+X/APEGxDccvf/or3//3es+/8/Y87P/3Z1P//bZ2wn3gAQ
+        sCu+/T99zu///l3f/usUvvtvkbCeNANAQD/l/H+Tohf/VbI+/TeOXEa6ASBgkHTiv2za1/+6wfPIMwAE
+        9FMv/9fwnUa+ASCg4jGBMgMGLwAA0BRgmCws/7cAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="bindingNavigatorMovePreviousItem.Text" xml:space="preserve">
+    <value>Move back</value>
+  </data>
+  <data name="bindingNavigatorPositionItem.AccessibleName" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="bindingNavigatorPositionItem.ToolTipText" xml:space="preserve">
+    <value>Current position</value>
+  </data>
+  <data name="bindingNavigatorMoveNextItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        cQAAEnEB89x6jgAAAKRJREFUOE9jYBh0oHDW8//oYiSB3JnP/id03yPfkIwpT//P2//7f0LXHfIMSeh5
+        8n/2vl//O7f+/e9Wepl0QyK7Hv2fsu3X/5Klf/8nTP/73yb3LGmGBDY//N+69j1Ys3HJl//S0df+G0cu
+        I94Qj6r7/0vmvoNrVnTpIV4zCNiX3v0f2PKMPM0gYJF3579NwRXyNIOAYdZt8jWDgE7aDfI1D00AAKB+
+        X6Bjq5qXAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="bindingNavigatorMoveNextItem.Text" xml:space="preserve">
+    <value>Move forward</value>
+  </data>
+  <data name="bindingNavigatorMoveLastItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        cQAAEnEB89x6jgAAAStJREFUOE9jYBhUoHDW8//oYjAAkmta8Px/5sTHONUw5M589j+h+x5WBSC5VUfe
+        /w9vf4BVHgwypjz9P2//7/8JXXcwFIHkFu778D+44RqGHBwk9Dz5P3vfr/+dW//+dyu9jKIQJDdty/v/
+        /tUXcBsQ2fXo/5Rtv/6XLP37P2H63/82uWfhikFyvas//PcqPYHbgMDmh/9b174HazYu+fJfOvraf+PI
+        ZWANILm6+e/+u+QfwG2AR9X9/yVz38E1K7r0wBWD5PKnvflvn7EdtwH2pXf/B7Y8w9AMk8ue/Pq/RcJ6
+        3AZY5N35b1NwBUMzTC61/zXcS1iBYdZtrJpBACQX1vLyv27wPKzyYKCTdgOnJEjOr/rhfw3faTjV4AVO
+        uVf+q3hMAGN0uYEFAL7Rv7NmXVYYAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="bindingNavigatorMoveLastItem.Text" xml:space="preserve">
+    <value>Move to the end</value>
+  </data>
+  <data name="toolStripTextBox_find.ToolTipText" xml:space="preserve">
+    <value>Search through all fields</value>
+  </data>
+  <data name="toolStripButton_small_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIFSURBVDhPpZLtS1NhGMbPPxJmmlYSgqHiKzGU1EDxg4iK
+        YKyG2WBogqMYJQOtCEVRFBGdTBCJfRnkS4VaaWNT5sqx1BUxRXxDHYxAJLvkusEeBaPAB+5z4Jzn+t3X
+        /aLhnEfjo8m+dCoa+7/C3O2Hqe0zDC+8KG+cRZHZhdzaaWTVTCLDMIY0vfM04Nfh77/G/sEhwpEDbO3t
+        I7TxE8urEVy99fT/AL5gWDLrTB/hnF4XsW0khCu5ln8DmJliT2AXrcNBsU1gj/MH4nMeKwBrPktM28xM
+        cX79DFKrHHD5d9D26hvicx4pABt2lpg10zYzU0zr7+e3xXGcrkEB2O2TNec9nJFwB3alZn5jZorfeDZh
+        6Q3g8s06BeCoKF4MRURoH1+BY2oNCbeb0TIclIYxOhzf8frTOuo7FxCbbVIAzpni0iceEc8vhzEwGkJD
+        lx83ymxifejdKjRNk/8PWnyIyTQqAJek0jqHwfEVscu31baIu8+90sTE4nY025dQ2/5FIPpnXlzKuK8A
+        HBUzHot52djqQ6HZhfR7IwK4mKpHtvEDMqvfCiQ6zaAAXM8x94aIWTNrLLG4kVUzgaTSPlzLtyJOZxbb
+        1wtfyg4Q+AfA3aZlButjSfxGcUJBk4g5tuP3haQKRKXcUQDOmbvNTpPOJeFFjordZmbWTNvMTHFUcpUC
+        nOccAdABIDXXE1nzAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="toolStripButton_small_font.ToolTipText" xml:space="preserve">
+    <value>Reduce font size</value>
+  </data>
+  <data name="toolStripLabel_font.ToolTipText" xml:space="preserve">
+    <value>Current font size</value>
+  </data>
+  <data name="toolStripButton_large_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIFSURBVDhPpZLtS1NhGMbPPxJmmlYSgqHiKzGU1EDxg4iK
+        YKyG2WBogqMYJQOtCEVRFBGdTBCJfRnkS4VaaWNT5sqx1BUxRXxDHYxAJLvkusEeBaPAB+5z4Jzn+t3X
+        /aLhnEfjo8m+dCoa+7/C3O2Hqe0zDC+8KG+cRZHZhdzaaWTVTCLDMIY0vfM04Nfh77/G/sEhwpEDbO3t
+        I7TxE8urEVy99fT/AL5gWDLrTB/hnF4XsW0khCu5ln8DmJliT2AXrcNBsU1gj/MH4nMeKwBrPktM28xM
+        cX79DFKrHHD5d9D26hvicx4pABt2lpg10zYzU0zr7+e3xXGcrkEB2O2TNec9nJFwB3alZn5jZorfeDZh
+        6Q3g8s06BeCoKF4MRURoH1+BY2oNCbeb0TIclIYxOhzf8frTOuo7FxCbbVIAzpni0iceEc8vhzEwGkJD
+        lx83ymxifejdKjRNk/8PWnyIyTQqAJek0jqHwfEVscu31baIu8+90sTE4nY025dQ2/5FIPpnXlzKuK8A
+        HBUzHot52djqQ6HZhfR7IwK4mKpHtvEDMqvfCiQ6zaAAXM8x94aIWTNrLLG4kVUzgaTSPlzLtyJOZxbb
+        1wtfyg4Q+AfA3aZlButjSfxGcUJBk4g5tuP3haQKRKXcUQDOmbvNTpPOJeFFjordZmbWTNvMTHFUcpUC
+        nOccAdABIDXXE1nzAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="toolStripButton_large_font.ToolTipText" xml:space="preserve">
+    <value>Enlarge the font size</value>
+  </data>
+  <data name="bindingNavigator_collection.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_update_db.Text" xml:space="preserve">
+    <value>Automatic data update.</value>
+  </data>
+  <data name="checkBox_update_db.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="splitContainer1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="progressBar_phone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 604</value>
+  </data>
+  <data name="progressBar_phone.ToolTip" xml:space="preserve">
+    <value>If the value is more than 5%, you can try to cancel the long operation.</value>
+  </data>
+  <data name="автоматическиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 26</value>
+  </data>
+  <data name="автоматическиToolStripMenuItem.Text" xml:space="preserve">
+    <value>Autoselect</value>
+  </data>
+  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 6</value>
+  </data>
+  <data name="chinaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 26</value>
+  </data>
+  <data name="русскийToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 26</value>
+  </data>
+  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 26</value>
+  </data>
+  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 6</value>
+  </data>
+  <data name="предложитьПереводToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 26</value>
+  </data>
+  <data name="предложитьПереводToolStripMenuItem.Text" xml:space="preserve">
+    <value>Offer the translation</value>
+  </data>
+  <data name="выборЯзыкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 26</value>
+  </data>
+  <data name="выборЯзыкаToolStripMenuItem.Text" xml:space="preserve">
+    <value>Change language</value>
+  </data>
+  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 6</value>
+  </data>
+  <data name="авторизоватьсяЧерезТелеграмToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 26</value>
+  </data>
+  <data name="авторизоватьсяЧерезТелеграмToolStripMenuItem.Text" xml:space="preserve">
+    <value>Log in via Telegram</value>
+  </data>
+  <data name="отменитьАвторизациюToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 26</value>
+  </data>
+  <data name="отменитьАвторизациюToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cancel authorization</value>
+  </data>
+  <data name="DevToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 26</value>
+  </data>
+  <data name="DevToolStripMenuItem.Text" xml:space="preserve">
+    <value>For developers (authorization required)</value>
+  </data>
+  <data name="rateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 26</value>
+  </data>
+  <data name="rateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rating</value>
+  </data>
+  <data name="toolStripSeparator8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 6</value>
+  </data>
+  <data name="выходToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 26</value>
+  </data>
+  <data name="выходToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="файлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 24</value>
+  </data>
+  <data name="файлToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="приветствиеToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 26</value>
+  </data>
+  <data name="приветствиеToolStripMenuItem.Text" xml:space="preserve">
+    <value>Greeting</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 6</value>
+  </data>
+  <data name="работаСУстройствомToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 26</value>
+  </data>
+  <data name="работаСУстройствомToolStripMenuItem.Text" xml:space="preserve">
+    <value>Work with device</value>
+  </data>
+  <data name="реальноПодключённыеУстройстваToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 26</value>
+  </data>
+  <data name="реальноПодключённыеУстройстваToolStripMenuItem.Text" xml:space="preserve">
+    <value>Real connected devices</value>
+  </data>
+  <data name="устройстваСПрограммерамиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 26</value>
+  </data>
+  <data name="устройстваСПрограммерамиToolStripMenuItem.Text" xml:space="preserve">
+    <value>Devices with firehose</value>
+  </data>
+  <data name="CollectionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 26</value>
+  </data>
+  <data name="CollectionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Device collection</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 6</value>
+  </data>
+  <data name="внестиПроизводителяМодельToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 26</value>
+  </data>
+  <data name="внестиПроизводителяМодельToolStripMenuItem.Text" xml:space="preserve">
+    <value>Insert model</value>
+  </data>
+  <data name="отправкаПрограммераToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>242, 26</value>
+  </data>
+  <data name="отправкаПрограммераToolStripMenuItem.Text" xml:space="preserve">
+    <value>Share the programmer</value>
+  </data>
+  <data name="видToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 24</value>
+  </data>
+  <data name="видToolStripMenuItem.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="поискМаскиБайтToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 26</value>
+  </data>
+  <data name="поискМаскиБайтToolStripMenuItem.Text" xml:space="preserve">
+    <value>Binary search</value>
+  </data>
+  <data name="распаковкаОднобиновойПрошивкиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 26</value>
+  </data>
+  <data name="распаковкаОднобиновойПрошивкиToolStripMenuItem.Text" xml:space="preserve">
+    <value>Decode and repack ROM (AGM)</value>
+  </data>
+  <data name="драйвераEDLИADBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 26</value>
+  </data>
+  <data name="драйвераEDLИADBToolStripMenuItem.Text" xml:space="preserve">
+    <value>EDL and ADB drivers</value>
+  </data>
+  <data name="ExSertToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 26</value>
+  </data>
+  <data name="ExSertToolStripMenuItem.Text" xml:space="preserve">
+    <value>Extract certificates</value>
+  </data>
+  <data name="инструментыToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 24</value>
+  </data>
+  <data name="инструментыToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="вопросОтветToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 26</value>
+  </data>
+  <data name="вопросОтветToolStripMenuItem.Text" xml:space="preserve">
+    <value>View help</value>
+  </data>
+  <data name="оПрограммеToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 26</value>
+  </data>
+  <data name="оПрограммеToolStripMenuItem.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="справкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 24</value>
+  </data>
+  <data name="справкаToolStripMenuItem.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1369, 28</value>
+  </data>
+  <data name="menuStrip1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dataGridView_collection.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage_collection.Text" xml:space="preserve">
+    <value>Reference book of devices</value>
+  </data>
+  <data name="tabPage_collection.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_main_term.Size" type="System.Drawing.Size, System.Drawing">
+    <value>409, 394</value>
+  </data>
+  <data name="textBox_main_term.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column_Sel.HeaderText" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Column_Sel.Width" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="Column_Name.HeaderText" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Column_rate.HeaderText" xml:space="preserve">
+    <value>Rate (max10)</value>
+  </data>
+  <data name="Column_SW_type.HeaderText" xml:space="preserve">
+    <value>Software type</value>
+  </data>
+  <data name="Column_Comp.HeaderText" xml:space="preserve">
+    <value>Maybe suitable for:</value>
+  </data>
+  <data name="загрузитьССервераToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 24</value>
+  </data>
+  <data name="загрузитьССервераToolStripMenuItem.Text" xml:space="preserve">
+    <value>Download from server</value>
+  </data>
+  <data name="contextMenuStrip_final.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 28</value>
+  </data>
+  <data name="contextMenuStrip_final.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dataGridView_final.Size" type="System.Drawing.Size, System.Drawing">
+    <value>946, 394</value>
+  </data>
+  <data name="dataGridView_final.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1355, 394</value>
+  </data>
+  <data name="panel2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_sahara_ver3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_sahara_ver2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_sahara_ver.Text" xml:space="preserve">
+    <value>Selection of the Sahara version</value>
+  </data>
+  <data name="groupBox_sahara_ver.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_Find_Local.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 20</value>
+  </data>
+  <data name="checkBox_Find_Local.Text" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="checkBox_Find_Local.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_Find_Server.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 20</value>
+  </data>
+  <data name="checkBox_Find_Server.Text" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="checkBox_Find_Server.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_alldir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 20</value>
+  </data>
+  <data name="radioButton_alldir.Text" xml:space="preserve">
+    <value>including nested folders</value>
+  </data>
+  <data name="radioButton_alldir.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_topdir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 20</value>
+  </data>
+  <data name="radioButton_topdir.Text" xml:space="preserve">
+    <value>selected folder only</value>
+  </data>
+  <data name="radioButton_topdir.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_path.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="button_path.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_fh_sel_path.Text" xml:space="preserve">
+    <value>Programmer search</value>
+  </data>
+  <data name="groupBox_fh_sel_path.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_chip_sn.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_model.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_altname.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_tm.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_tm_model.Text" xml:space="preserve">
+    <value>For device</value>
+  </data>
+  <data name="groupBox_tm_model.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_adb_reset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="radioButton_adb_reset.Text" xml:space="preserve">
+    <value>By ADB</value>
+  </data>
+  <data name="radioButton_adb_reset.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_man_reset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 20</value>
+  </data>
+  <data name="radioButton_man_reset.Text" xml:space="preserve">
+    <value>Manually</value>
+  </data>
+  <data name="radioButton_man_reset.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Reboot into emergency mode</value>
+  </data>
+  <data name="groupBox4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_send.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 36</value>
+  </data>
+  <data name="checkBox_send.Text" xml:space="preserve">
+    <value>Send data to the RefBook,
+if there are none</value>
+  </data>
+  <data name="checkBox_send.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_log.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBox_Log.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 20</value>
+  </data>
+  <data name="checkBox_Log.Text" xml:space="preserve">
+    <value>Save IDs and model to a file</value>
+  </data>
+  <data name="checkBox_Log.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_findIDs.Text" xml:space="preserve">
+    <value>Poll the device with a reboot into emergency mode</value>
+  </data>
+  <data name="button_findIDs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_SW_Ver.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_swid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_hwid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_useSahara_fhf.Text" xml:space="preserve">
+    <value>Check selected programmer</value>
+  </data>
+  <data name="button_useSahara_fhf.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_oemid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_modelid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_hwid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_oemid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_oemhash.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_oemhash.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_modelid.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="dataGridView_FInd_Server.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="toolStripStatusLabel_filescompleted.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 20</value>
+  </data>
+  <data name="toolStripStatusLabel_filescompleted.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="toolStripStatusLabel_dowork.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 20</value>
+  </data>
+  <data name="toolStripStatusLabel_dowork.Text" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="statusStrip_firehose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 599</value>
+  </data>
+  <data name="statusStrip_firehose.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage_firehose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1361, 627</value>
+  </data>
+  <data name="tabPage_firehose.Text" xml:space="preserve">
+    <value>Work with files</value>
+  </data>
+  <data name="tabPage_firehose.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_soft_term.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 514</value>
+  </data>
+  <data name="textBox_soft_term.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_terminal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>394, 535</value>
+  </data>
+  <data name="groupBox_terminal.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_ADB_start.Text" xml:space="preserve">
+    <value>Start ADB</value>
+  </data>
+  <data name="button_ADB_start.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_ADB_clear.Text" xml:space="preserve">
+    <value>Close ADB session</value>
+  </data>
+  <data name="button_ADB_clear.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_reboot_fastboot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 20</value>
+  </data>
+  <data name="radioButton_reboot_fastboot.Text" xml:space="preserve">
+    <value>Reboot to bootloader mode (Fastboot - Bootloader)</value>
+  </data>
+  <data name="radioButton_reboot_fastboot.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_adb_com.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 20</value>
+  </data>
+  <data name="radioButton_adb_com.Text" xml:space="preserve">
+    <value>Command line (ADB Shell)</value>
+  </data>
+  <data name="radioButton_adb_com.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_adb_IDs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 20</value>
+  </data>
+  <data name="radioButton_adb_IDs.Text" xml:space="preserve">
+    <value>Get the model of the device</value>
+  </data>
+  <data name="radioButton_adb_IDs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_reboot_edl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>443, 20</value>
+  </data>
+  <data name="radioButton_reboot_edl.Text" xml:space="preserve">
+    <value>Reboot to emergency mode (Emergency Download - EDL - PID#9008)</value>
+  </data>
+  <data name="radioButton_reboot_edl.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_ADB_commandstring.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_adb_commands.Size" type="System.Drawing.Size, System.Drawing">
+    <value>923, 423</value>
+  </data>
+  <data name="groupBox_adb_commands.Text" xml:space="preserve">
+    <value>ADB commands</value>
+  </data>
+  <data name="groupBox_adb_commands.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="columnHeader_ADB_SN.Text" xml:space="preserve">
+    <value>Serial number</value>
+  </data>
+  <data name="columnHeader_ADB_Model.Text" xml:space="preserve">
+    <value>Device model</value>
+  </data>
+  <data name="listView_ADB_devices.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_ADB_comstart.Text" xml:space="preserve">
+    <value>Execute command</value>
+  </data>
+  <data name="button_ADB_comstart.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tableLayoutPanel_adb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>929, 559</value>
+  </data>
+  <data name="tableLayoutPanel_adb.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage_adb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>935, 565</value>
+  </data>
+  <data name="tabPage_adb.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="columnHeader_portnum.Text" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="columnHeader_portname.Text" xml:space="preserve">
+    <value>Device name</value>
+  </data>
+  <data name="listView_comport.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_fh_commands.Items" xml:space="preserve">
+    <value>Storage info</value>
+  </data>
+  <data name="comboBox_fh_commands.Items1" xml:space="preserve">
+    <value>Get partition table (GPT)</value>
+  </data>
+  <data name="comboBox_fh_commands.Items2" xml:space="preserve">
+    <value>Reboot the device into normal mode (reset)</value>
+  </data>
+  <data name="comboBox_fh_commands.Items3" xml:space="preserve">
+    <value>=======Careful, recording!===================</value>
+  </data>
+  <data name="comboBox_fh_commands.Items4" xml:space="preserve">
+    <value>Write file in sectors (load)</value>
+  </data>
+  <data name="comboBox_fh_commands.Items5" xml:space="preserve">
+    <value>Batch recording of firmware according to rawprogram data (qpst format)</value>
+  </data>
+  <data name="comboBox_fh_commands.Items6" xml:space="preserve">
+    <value>Erase all selected disk</value>
+  </data>
+  <data name="comboBox_fh_commands.Items7" xml:space="preserve">
+    <value>Read/Write IMEM (peek&amp;poke)</value>
+  </data>
+  <data name="comboBox_fh_commands.Size" type="System.Drawing.Size, System.Drawing">
+    <value>496, 24</value>
+  </data>
+  <data name="comboBox_fh_commands.Text" xml:space="preserve">
+    <value>Storage info</value>
+  </data>
+  <data name="comboBox_fh_commands.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_Sahara_CommandStart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>508, 17</value>
+  </data>
+  <data name="button_Sahara_CommandStart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 33</value>
+  </data>
+  <data name="button_Sahara_CommandStart.Text" xml:space="preserve">
+    <value>Execute command</value>
+  </data>
+  <data name="button_Sahara_CommandStart.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_fh_commands.Text" xml:space="preserve">
+    <value>Available firehose commands</value>
+  </data>
+  <data name="groupBox_fh_commands.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_lun_count.Items" xml:space="preserve">
+    <value>Disk 0</value>
+  </data>
+  <data name="comboBox_lun_count.Text" xml:space="preserve">
+    <value>Disk 0</value>
+  </data>
+  <data name="comboBox_lun_count.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_lun_count.Text" xml:space="preserve">
+    <value>List of available disks</value>
+  </data>
+  <data name="groupBox_lun_count.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_mem_ufs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_mem_emmc.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_mem_type.Text" xml:space="preserve">
+    <value>Memory type</value>
+  </data>
+  <data name="groupBox_mem_type.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_GPT_bytes.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_select_gpt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_select_gpt.Text" xml:space="preserve">
+    <value>Selected GPT partitions</value>
+  </data>
+  <data name="groupBox_select_gpt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_total_gpt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_total_gpt.Text" xml:space="preserve">
+    <value>Total GPT partitions</value>
+  </data>
+  <data name="groupBox_total_gpt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Block_Name.Text" xml:space="preserve">
+    <value>Partition name</value>
+  </data>
+  <data name="Block_length.Text" xml:space="preserve">
+    <value>Partition size - blocks (byte)</value>
+  </data>
+  <data name="Block_Bytes.Text" xml:space="preserve">
+    <value>Size in bytes</value>
+  </data>
+  <data name="сохранитьВыбранныйРазделToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>350, 26</value>
+  </data>
+  <data name="сохранитьВыбранныйРазделToolStripMenuItem.Text" xml:space="preserve">
+    <value>Save selected partition</value>
+  </data>
+  <data name="записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>350, 26</value>
+  </data>
+  <data name="записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Text" xml:space="preserve">
+    <value>Write file into selected partition (Load)</value>
+  </data>
+  <data name="выбратьРазделToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>386, 24</value>
+  </data>
+  <data name="выбратьРазделToolStripMenuItem.Text" xml:space="preserve">
+    <value>Select partition (single select)</value>
+  </data>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>383, 6</value>
+  </data>
+  <data name="сохранитьТаблицуВФайлmainGPTbinToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>386, 24</value>
+  </data>
+  <data name="сохранитьТаблицуВФайлmainGPTbinToolStripMenuItem.Text" xml:space="preserve">
+    <value>Save table to file (gpt_main.bin)</value>
+  </data>
+  <data name="сохранитьТаблицуВФорматеCsvToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>386, 24</value>
+  </data>
+  <data name="сохранитьТаблицуВФорматеCsvToolStripMenuItem.Text" xml:space="preserve">
+    <value>Save table in xml format</value>
+  </data>
+  <data name="сохранитьСектораПоНомеруdumpSectorNumderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>386, 24</value>
+  </data>
+  <data name="сохранитьСектораПоНомеруdumpSectorNumderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Save sectors by number (dump sector numder)</value>
+  </data>
+  <data name="сохранитьВыбранныеРазделыdumpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>386, 24</value>
+  </data>
+  <data name="сохранитьВыбранныеРазделыdumpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Save selected partitions (dump selected)</value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>383, 6</value>
+  </data>
+  <data name="выбратьВсеРазделыToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>386, 24</value>
+  </data>
+  <data name="выбратьВсеРазделыToolStripMenuItem.Text" xml:space="preserve">
+    <value>Select all partitions</value>
+  </data>
+  <data name="сброситьВыборdeselectAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>386, 24</value>
+  </data>
+  <data name="сброситьВыборdeselectAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Deselecting all</value>
+  </data>
+  <data name="contextMenuStrip_gpt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>387, 184</value>
+  </data>
+  <data name="contextMenuStrip_gpt.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="listView_GPT.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_block_size.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_block_size.Text" xml:space="preserve">
+    <value>Sector size</value>
+  </data>
+  <data name="groupBox_block_size.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_total_blocks.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_total_blocks.Text" xml:space="preserve">
+    <value>Total sectors</value>
+  </data>
+  <data name="groupBox_total_blocks.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_LUN.Text" xml:space="preserve">
+    <value>Disk 0</value>
+  </data>
+  <data name="groupBox_LUN.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBox_log.Items" xml:space="preserve">
+    <value>Standart</value>
+  </data>
+  <data name="comboBox_log.Items1" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="comboBox_log.Items2" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="comboBox_log.Items3" xml:space="preserve">
+    <value>Full</value>
+  </data>
+  <data name="comboBox_log.Text" xml:space="preserve">
+    <value>Standart</value>
+  </data>
+  <data name="comboBox_log.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_logs.Text" xml:space="preserve">
+    <value>Log output to the terminal</value>
+  </data>
+  <data name="groupBox_logs.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 16</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>You don't need a programmer to execute this command</value>
+  </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_Sahara_Ids.Text" xml:space="preserve">
+    <value>Get device IDs</value>
+  </data>
+  <data name="button_Sahara_Ids.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label_Sahara_fhf.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 16</value>
+  </data>
+  <data name="label_Sahara_fhf.Text" xml:space="preserve">
+    <value>Select the programmer on the "Work with files" tab</value>
+  </data>
+  <data name="label_Sahara_fhf.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage_sahara.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="button_fb_check.Text" xml:space="preserve">
     <value>Check the connection</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button_fb_check.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_eraseud.Size" type="System.Drawing.Size, System.Drawing">
+    <value>263, 20</value>
+  </data>
+  <data name="radioButton_fb_eraseud.Text" xml:space="preserve">
+    <value>Wipe userdata (reset to factory settings)</value>
+  </data>
+  <data name="radioButton_fb_eraseud.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_rebootedl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>443, 20</value>
+  </data>
+  <data name="radioButton_fb_rebootedl.Text" xml:space="preserve">
+    <value>Reboot to emergency mode (Emergency Download - EDL - PID#9008)</value>
+  </data>
+  <data name="radioButton_fb_rebootedl.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_getvar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 20</value>
+  </data>
+  <data name="radioButton_fb_getvar.Text" xml:space="preserve">
+    <value>Device information (getvar all)</value>
+  </data>
+  <data name="radioButton_fb_getvar.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBox_fb_commandline.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_commandline.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 20</value>
+  </data>
+  <data name="radioButton_fb_commandline.Text" xml:space="preserve">
+    <value>Command line (fastboot)</value>
+  </data>
+  <data name="radioButton_fb_commandline.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_rebootbootloader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>335, 20</value>
+  </data>
+  <data name="radioButton_fb_rebootbootloader.Text" xml:space="preserve">
+    <value>Reboot to bootloader mode (Fastboot - Bootloader)</value>
+  </data>
+  <data name="radioButton_fb_rebootbootloader.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_unlock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 20</value>
+  </data>
+  <data name="radioButton_fb_unlock.Text" xml:space="preserve">
+    <value>Unlock bootloader (unlock)</value>
+  </data>
+  <data name="radioButton_fb_unlock.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_lock.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 20</value>
+  </data>
+  <data name="radioButton_fb_lock.Text" xml:space="preserve">
+    <value>Lock bootloader (lock)</value>
+  </data>
+  <data name="radioButton_fb_lock.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_devinfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 20</value>
+  </data>
+  <data name="radioButton_fb_devinfo.Text" xml:space="preserve">
+    <value>Check bootloader status (device-info)</value>
+  </data>
+  <data name="radioButton_fb_devinfo.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="radioButton_fb_reboot_normal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 20</value>
+  </data>
+  <data name="radioButton_fb_reboot_normal.Text" xml:space="preserve">
+    <value>Reboot into normal mode</value>
+  </data>
+  <data name="radioButton_fb_reboot_normal.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_fb_commands.Text" xml:space="preserve">
+    <value>Fastboot commands</value>
+  </data>
+  <data name="groupBox_fb_commands.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_fb_com_start.Text" xml:space="preserve">
+    <value>Execute command</value>
+  </data>
+  <data name="button_fb_com_start.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="columnHeader_FB_sernum.Text" xml:space="preserve">
+    <value>Serial number</value>
+  </data>
+  <data name="columnHeader_FB_Model.Text" xml:space="preserve">
+    <value>Device model</value>
+  </data>
+  <data name="listView_fb_devices.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tableLayoutPanel_fb.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage_fb.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabControl_soft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>943, 594</value>
+  </data>
+  <data name="tabControl_soft.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_soft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>949, 615</value>
+  </data>
+  <data name="groupBox_soft.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_term_clear.Text" xml:space="preserve">
+    <value>Clear the terminal window</value>
+  </data>
+  <data name="button_term_clear.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="button_term_save.Text" xml:space="preserve">
+    <value>Save log</value>
+  </data>
+  <data name="button_term_save.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="groupBox_term_buttons.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 544</value>
+  </data>
+  <data name="groupBox_term_buttons.Text" xml:space="preserve">
+    <value>Terminal management</value>
+  </data>
+  <data name="groupBox_term_buttons.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tableLayoutPanel_phone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1355, 621</value>
+  </data>
+  <data name="tableLayoutPanel_phone.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabPage_phone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1361, 627</value>
+  </data>
+  <data name="tabPage_phone.Text" xml:space="preserve">
+    <value>Work with device</value>
+  </data>
+  <data name="tabPage_phone.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 28</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1369, 656</value>
+  </data>
+  <data name="tabControl1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="openFileDialog1.Filter" xml:space="preserve">
+    <value>Bin files (*.bin)|*.bin|All files (*.*)|*.*</value>
+  </data>
+  <data name="openFileDialog1.Title" xml:space="preserve">
+    <value>Select a file for upload</value>
+  </data>
+  <data name="saveFileDialog1.Filter" xml:space="preserve">
+    <value>XML-files (*.xml)|*.xml</value>
+  </data>
+  <data name="saveFileDialog1.Title" xml:space="preserve">
+    <value>Save file</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAQAAEABACXOwIAFgAAAIlQTkcNChoKAAAADUlIRFIAAAKmAAACiggGAAAA7xWZ0gAAIABJ
@@ -2565,703 +3675,7 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="groupBox_total_gpt.Text" xml:space="preserve">
-    <value>Total GPT partitions</value>
-  </data>
-  <data name="драйвераEDLИADBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 26</value>
-  </data>
-  <data name="файлToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 24</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>You don't need a programmer to execute this command</value>
-  </data>
-  <data name="приветствиеToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 26</value>
-  </data>
-  <data name="сброситьВыборdeselectAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>386, 24</value>
-  </data>
-  <data name="groupBox_total_blocks.Text" xml:space="preserve">
-    <value>Total sectors</value>
-  </data>
-  <data name="оПрограммеToolStripMenuItem.Text" xml:space="preserve">
-    <value>About</value>
-  </data>
-  <data name="radioButton_fb_getvar.Text" xml:space="preserve">
-    <value>Device information (getvar all)</value>
-  </data>
-  <data name="bindingNavigatorMoveFirstItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cQAAEnEB89x6jgAAASpJREFUOE9jGDygcNbz/00Lnv/PnPj4P1QIA4S3P8Apx5A789n/VUfe/8elKL77
-        wf/ghmu4DciY8vT/wn0fsCqK73n4f+n+///9qy/gNiCh58n/aVveYyiKaL8P1pw56/9/r9ITuA2I7Hr0
-        v3f1BxRFoa33wJpb1wFt7/z73yX/AG4DApsf/q+b/w6uKLjl7v9Fe///7wBqzpjz879d3c//9hnbcRvg
-        UXX/f/60NyiK7Ipv/0+f8/u/f9e3/zqF7/5bJKzHbYB96d3/2ZNfYyjSTzn/36ToxX+VrE//jSOX4TbA
-        Iu/O/9T+11gVGSSd+C+b9vW/bvA83AYYZt3+H9byEqci/dTL/zV8p+E2QCftxn+/6od4Fal4TMBtgFPu
-        lf8gBXgVDULAwAAA8HbAq6XlmnAAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="radioButton_fb_commandline.Text" xml:space="preserve">
-    <value>Command line (fastboot)</value>
-  </data>
-  <data name="checkBox_Log.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 20</value>
-  </data>
-  <data name="сохранитьТаблицуВФорматеCsvToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>386, 24</value>
-  </data>
-  <data name="Block_Name.Text" xml:space="preserve">
-    <value>Partition name</value>
-  </data>
-  <data name="openFileDialog1.Title" xml:space="preserve">
-    <value>Select a file for upload</value>
-  </data>
-  <data name="bindingNavigatorPositionItem.ToolTipText" xml:space="preserve">
-    <value>Current position</value>
-  </data>
-  <data name="groupBox_logs.Text" xml:space="preserve">
-    <value>Log output to the terminal</value>
-  </data>
-  <data name="сохранитьВыбранныйРазделToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 26</value>
-  </data>
-  <data name="radioButton_fb_unlock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 20</value>
-  </data>
-  <data name="сохранитьВыбранныеРазделыdumpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Save selected partitions (dump selected)</value>
-  </data>
-  <data name="видToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 24</value>
-  </data>
-  <data name="сброситьВыборdeselectAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Deselecting all</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 16</value>
-  </data>
-  <data name="bindingNavigatorMoveNextItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cQAAEnEB89x6jgAAAKNJREFUOE9jGHygcNbz/1AmeSB35rP/Cd33yDckY8rT//P2//6f0HWHPEMSep78
-        n73v1//OrX//u5VeJt2QyK5H/6ds+/W/ZOnf/wnT//63yT1LmiGBzQ//t659D9ZsXPLlv3T0tf/GkcuI
-        N8Sj6v7/krnv4JoVXXpIc4F96d3/gS3PyNMMAhZ5d/7bFFwhTzMIGGbdJl8zCOik3SBf81AEDAwAoH5f
-        oAc0QjgAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="chinaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 26</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 6</value>
-  </data>
-  <data name="реальноПодключённыеУстройстваToolStripMenuItem.Text" xml:space="preserve">
-    <value>Real connected devices</value>
-  </data>
-  <data name="button_term_clear.Text" xml:space="preserve">
-    <value>Clear the terminal window</value>
-  </data>
-  <data name="radioButton_man_reset.Text" xml:space="preserve">
-    <value>Manually</value>
-  </data>
-  <data name="вопросОтветToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 26</value>
-  </data>
-  <data name="radioButton_fb_rebootedl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>443, 20</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Reboot into emergency mode</value>
-  </data>
-  <data name="comboBox_fh_commands.Text" xml:space="preserve">
-    <value>Storage info</value>
-  </data>
-  <data name="toolStripStatusLabel_dowork.Text" xml:space="preserve">
-    <value>Done</value>
-  </data>
-  <data name="radioButton_alldir.Text" xml:space="preserve">
-    <value>including nested folders</value>
-  </data>
-  <data name="groupBox_select_gpt.Text" xml:space="preserve">
-    <value>Selected GPT partitions</value>
-  </data>
-  <data name="устройстваСПрограммерамиToolStripMenuItem.Text" xml:space="preserve">
-    <value>Devices with firehose</value>
-  </data>
-  <data name="label_Sahara_fhf.Text" xml:space="preserve">
-    <value>Select the programmer on the "Work with files" tab</value>
-  </data>
-  <data name="button_path.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="toolStripButton_small_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cwAAEnMBjCK5BwAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
-        RUkUEZ0YRMS+DDI70MkTmzJnDc8iU8QT2mAEItnle90wHwTDyBduXnie5/rd133Q4ZKfAJqHFs9E08A8
-        zD1emDpmYXjqRlnTFIrMk8iuGkNaxWekGEaQrHecBfw+/vPXODw6hj9whN2fh/Bt/8LSRgA3cxr/DeBZ
-        9kvmTNMoHGNbIrYN+3Aj23IxgJkpds0doP3VstgmsNexhutZ9QrAms8T0zYzU5xXM46kcjsmvfvoeL2i
-        AeoUgA07T8yaaZuZKab1rzN74jgys1YB2O2gmBZzH49LODXrrJlnzEzxe9cOLH1ziMioVgCOiuIFX0CE
-        Q+/WYf+yieiCFrRp9tkwxnP7Kt5MbKGm6wfC000KwDlTXNLgEvHMkh+Db32o7fYivtQm1l9+3IBOp5P7
-        yjYPwlKNCsAluWudxgvtknb5t9oWcL/VLU2Mvd2JFq3uqs7vAtE/ceNayiMF4KiYMSjmY2O7B4Ua+NaD
-        YQGEJumRbvyG1IcfBHI12aAAXM8R57aIWTNrLLY4tfNPiCvpR1SeVeu6WWzHFD6THSDwFMDdpmUG62NJ
-        PKM4Or9ZxBxb8H8l7g5CEu8pAOfM3WanSeeS8CFHxW4zM2umbWamOCShXAH+/wNOANABIDUxWnDPAAAA
-        AElFTkSuQmCC
-</value>
-  </data>
-  <data name="button_Sahara_CommandStart.Text" xml:space="preserve">
-    <value>Execute command</value>
-  </data>
-  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 6</value>
-  </data>
-  <data name="tabPage_firehose.Text" xml:space="preserve">
-    <value>Work with files</value>
-  </data>
-  <data name="внестиПроизводителяМодельToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 26</value>
-  </data>
-  <data name="comboBox_fh_commands.Size" type="System.Drawing.Size, System.Drawing">
-    <value>496, 24</value>
-  </data>
-  <data name="выбратьВсеРазделыToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>386, 24</value>
-  </data>
-  <data name="radioButton_fb_commandline.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 20</value>
-  </data>
-  <data name="toolStripButton_large_font.ToolTipText" xml:space="preserve">
-    <value>Enlarge the font size</value>
-  </data>
-  <data name="columnHeader_FB_sernum.Text" xml:space="preserve">
-    <value>Serial number</value>
-  </data>
-  <data name="checkBox_Log.Text" xml:space="preserve">
-    <value>Save IDs and model to a file</value>
-  </data>
-  <data name="rateToolStripMenuItem.Text" xml:space="preserve">
-    <value>Rating</value>
-  </data>
-  <data name="инструментыToolStripMenuItem.Text" xml:space="preserve">
-    <value>Tools</value>
-  </data>
-  <data name="сохранитьТаблицуВФайлmainGPTbinToolStripMenuItem.Text" xml:space="preserve">
-    <value>Save table to file (gpt_main.bin)</value>
-  </data>
-  <data name="saveFileDialog1.Title" xml:space="preserve">
-    <value>Save file</value>
-  </data>
-  <data name="groupBox_mem_type.Text" xml:space="preserve">
-    <value>Memory type</value>
-  </data>
-  <data name="comboBox_log.Items3" xml:space="preserve">
-    <value>Full</value>
-  </data>
-  <data name="comboBox_log.Items2" xml:space="preserve">
-    <value>Detail</value>
-  </data>
-  <data name="comboBox_log.Items1" xml:space="preserve">
-    <value>Min</value>
-  </data>
-  <data name="radioButton_fb_eraseud.Text" xml:space="preserve">
-    <value>Wipe userdata (reset to factory settings)</value>
-  </data>
-  <data name="ExSertToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 26</value>
-  </data>
-  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 26</value>
-  </data>
-  <data name="отменитьАвторизациюToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 26</value>
-  </data>
-  <data name="radioButton_reboot_fastboot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 20</value>
-  </data>
-  <data name="radioButton_fb_lock.Text" xml:space="preserve">
-    <value>Lock bootloader (lock)</value>
-  </data>
-  <data name="radioButton_fb_getvar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 20</value>
-  </data>
-  <data name="авторизоватьсяЧерезТелеграмToolStripMenuItem.Text" xml:space="preserve">
-    <value>Log in via Telegram</value>
-  </data>
-  <data name="Column_Name.HeaderText" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <data name="bindingNavigatorMoveFirstItem.Text" xml:space="preserve">
-    <value>Move to the beginning</value>
-  </data>
-  <data name="Column_SW_type.HeaderText" xml:space="preserve">
-    <value>Software type</value>
-  </data>
-  <data name="записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 26</value>
-  </data>
-  <data name="bindingNavigatorMovePreviousItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cQAAEnEB89x6jgAAALZJREFUOE9jGDogvP3BfyiTdBDf/eB/cMM18gyI73n4f+n+///9qy+QbkBE+32w
-        5sxZ//97lZ4gzYDQ1ntgza3rgLZ3/v3vkn+AeAOCW+7+X7T3//8OoOaMOT//29X9/G+fsZ00F9gV3/6f
-        Puf3f/+ub/91Ct/9t0hYT3oY6Kec/29S9OK/Stan/8aRy0g3AAQMkk78l037+l83eB55BoCAfurl/xq+
-        08g3AARUPCZQZsBgBQwMANAUYJgEulBVAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="tabPage_collection.Text" xml:space="preserve">
-    <value>Reference book of devices</value>
-  </data>
-  <data name="Column_rate.HeaderText" xml:space="preserve">
-    <value>Rate (max10)</value>
-  </data>
-  <data name="Column_Comp.HeaderText" xml:space="preserve">
-    <value>Maybe suitable for:</value>
-  </data>
-  <data name="contextMenuStrip_gpt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>387, 184</value>
-  </data>
-  <data name="выбратьРазделToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>386, 24</value>
-  </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>383, 6</value>
-  </data>
-  <data name="сохранитьВыбранныйРазделToolStripMenuItem.Text" xml:space="preserve">
-    <value>Save selected partition</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Column_Sel.Width" type="System.Int32, mscorlib">
-    <value>51</value>
-  </data>
-  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>383, 6</value>
-  </data>
-  <data name="автоматическиToolStripMenuItem.Text" xml:space="preserve">
-    <value>Autoselect</value>
-  </data>
-  <data name="progressBar_phone.ToolTip" xml:space="preserve">
-    <value>If the value is more than 5%, you can try to cancel the long operation.</value>
-  </data>
-  <data name="checkBox_send.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 36</value>
-  </data>
-  <data name="comboBox_fh_commands.Items1" xml:space="preserve">
-    <value>Get partition table (GPT)</value>
-  </data>
-  <data name="справкаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 24</value>
-  </data>
-  <data name="драйвераEDLИADBToolStripMenuItem.Text" xml:space="preserve">
-    <value>EDL and ADB drivers</value>
-  </data>
-  <data name="radioButton_reboot_fastboot.Text" xml:space="preserve">
-    <value>Reboot to bootloader mode (Fastboot - Bootloader)</value>
-  </data>
-  <data name="оПрограммеToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 26</value>
-  </data>
-  <data name="radioButton_fb_lock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 20</value>
-  </data>
-  <data name="groupBox_adb_commands.Text" xml:space="preserve">
-    <value>ADB commands</value>
-  </data>
-  <data name="Block_Bytes.Text" xml:space="preserve">
-    <value>Size in bytes</value>
-  </data>
-  <data name="bindingNavigatorCountItem.Text" xml:space="preserve">
-    <value>for {0}</value>
-  </data>
-  <data name="bindingNavigatorMoveLastItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cQAAEnEB89x6jgAAASxJREFUOE9jGFygcNbz/1AmBgDJNS14/j9z4mOcahhyZz77n9B9D6sCkNyqI+//
-        h7c/wG1AxpSn/+ft//0/oesOhiKQ3MJ9H/4HN1zDbUBCz5P/s/f9+t+59e9/t9LLKApBctO2vP/vX30B
-        twGRXY/+T9n263/J0r//E6b//W+TexauGCTXu/rDf6/SE7gNCGx++L917XuwZuOSL/+lo6/9N45cBtYA
-        kqub/+6/S/4B3AZ4VN3/XzL3HVyzoksPXDFILn/am//2GdtxG2Bfevd/YMszDM0gAJLLnvz6v0XCetwG
-        WOTd+W9TcAVDMwiA5FL7X8O9hBUYZt3GqhkEQHJhLS//6wbPw22ATtoNnJIgOb/qh/81fKfhNgAfcMq9
-        8l/FYwIYQ4UGBWBgAAC+0b+zuQxOnAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="radioButton_man_reset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 20</value>
-  </data>
-  <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 6</value>
-  </data>
-  <data name="авторизоватьсяЧерезТелеграмToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 26</value>
-  </data>
-  <data name="checkBox_Find_Local.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 20</value>
-  </data>
-  <data name="radioButton_adb_com.Text" xml:space="preserve">
-    <value>Command line (ADB Shell)</value>
-  </data>
-  <data name="bindingNavigatorCountItem.ToolTipText" xml:space="preserve">
-    <value>Total number of segments</value>
-  </data>
-  <data name="checkBox_Find_Server.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 20</value>
-  </data>
-  <data name="comboBox_log.Text" xml:space="preserve">
-    <value>Standart</value>
-  </data>
-  <data name="radioButton_reboot_edl.Text" xml:space="preserve">
-    <value>Reboot to emergency mode (Emergency Download - EDL - PID#9008)</value>
-  </data>
-  <data name="отменитьАвторизациюToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cancel authorization</value>
-  </data>
-  <data name="groupBox_fb_commands.Text" xml:space="preserve">
-    <value>Fastboot commands</value>
-  </data>
-  <data name="columnHeader_portnum.Text" xml:space="preserve">
-    <value>Port</value>
-  </data>
-  <data name="groupBox_block_size.Text" xml:space="preserve">
-    <value>Sector size</value>
-  </data>
-  <data name="распаковкаОднобиновойПрошивкиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 26</value>
-  </data>
-  <data name="button_ADB_start.Text" xml:space="preserve">
-    <value>Start ADB</value>
-  </data>
-  <data name="checkBox_Find_Local.Text" xml:space="preserve">
-    <value>Local</value>
-  </data>
-  <data name="groupBox_tm_model.Text" xml:space="preserve">
-    <value>For device</value>
-  </data>
-  <data name="загрузитьССервераToolStripMenuItem.Text" xml:space="preserve">
-    <value>Download from server</value>
-  </data>
-  <data name="contextMenuStrip_final.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 28</value>
-  </data>
-  <data name="groupBox_lun_count.Text" xml:space="preserve">
-    <value>List of available disks</value>
-  </data>
-  <data name="groupBox_LUN.Text" xml:space="preserve">
-    <value>Disk 0</value>
-  </data>
-  <data name="groupBox_term_buttons.Text" xml:space="preserve">
-    <value>Terminal management</value>
-  </data>
-  <data name="comboBox_fh_commands.Items6" xml:space="preserve">
-    <value>Erase all selected disk</value>
-  </data>
-  <data name="toolStripLabel_font.ToolTipText" xml:space="preserve">
-    <value>Current font size</value>
-  </data>
-  <data name="button_fb_com_start.Text" xml:space="preserve">
-    <value>Execute command</value>
-  </data>
-  <data name="toolStripStatusLabel_dowork.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 20</value>
-  </data>
-  <data name="columnHeader_FB_Model.Text" xml:space="preserve">
-    <value>Device model</value>
-  </data>
-  <data name="bindingNavigatorMovePreviousItem.Text" xml:space="preserve">
-    <value>Move back</value>
-  </data>
-  <data name="radioButton_topdir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 20</value>
-  </data>
-  <data name="Column_Sel.HeaderText" xml:space="preserve">
-    <value>Select</value>
-  </data>
-  <data name="comboBox_fh_commands.Items" xml:space="preserve">
-    <value>Storage info</value>
-  </data>
-  <data name="comboBox_lun_count.Items" xml:space="preserve">
-    <value>Disk 0</value>
-  </data>
-  <data name="видToolStripMenuItem.Text" xml:space="preserve">
-    <value>View</value>
-  </data>
-  <data name="tabPage_phone.Text" xml:space="preserve">
-    <value>Work with device</value>
-  </data>
-  <data name="comboBox_lun_count.Text" xml:space="preserve">
-    <value>Disk 0</value>
-  </data>
-  <data name="radioButton_reboot_edl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>443, 20</value>
-  </data>
-  <data name="устройстваСПрограммерамиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 26</value>
-  </data>
-  <data name="radioButton_adb_IDs.Text" xml:space="preserve">
-    <value>Get the model of the device</value>
-  </data>
-  <data name="openFileDialog1.Filter" xml:space="preserve">
-    <value>Bin files (*.bin)|*.bin|All files (*.*)|*.*</value>
-  </data>
-  <data name="radioButton_adb_reset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
-  </data>
-  <data name="columnHeader_portname.Text" xml:space="preserve">
-    <value>Device name</value>
-  </data>
-  <data name="внестиПроизводителяМодельToolStripMenuItem.Text" xml:space="preserve">
-    <value>Insert model</value>
-  </data>
-  <data name="checkBox_update_db.Text" xml:space="preserve">
-    <value>Automatic data update.</value>
-  </data>
-  <data name="предложитьПереводToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 26</value>
-  </data>
-  <data name="реальноПодключённыеУстройстваToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 26</value>
-  </data>
-  <data name="bindingNavigatorMoveLastItem.Text" xml:space="preserve">
-    <value>Move to the end</value>
-  </data>
-  <data name="button_useSahara_fhf.Text" xml:space="preserve">
-    <value>Check selected programmer</value>
-  </data>
-  <data name="radioButton_fb_rebootbootloader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 20</value>
-  </data>
-  <data name="checkBox_send.Text" xml:space="preserve">
-    <value>Send data to the RefBook,
-if there are none</value>
-  </data>
-  <data name="radioButton_fb_devinfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 20</value>
-  </data>
-  <data name="radioButton_adb_com.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 20</value>
-  </data>
-  <data name="русскийToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 26</value>
-  </data>
-  <data name="справкаToolStripMenuItem.Text" xml:space="preserve">
-    <value>Help</value>
-  </data>
-  <data name="записатьФайлВВыбранныйРазделLoadToolStripMenuItem.Text" xml:space="preserve">
-    <value>Write file into selected partition (Load)</value>
-  </data>
-  <data name="файлToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <data name="поискМаскиБайтToolStripMenuItem.Text" xml:space="preserve">
-    <value>Binary search</value>
-  </data>
-  <data name="DevToolStripMenuItem.Text" xml:space="preserve">
-    <value>For developers (authorization required)</value>
-  </data>
-  <data name="comboBox_fh_commands.Items7" xml:space="preserve">
-    <value>Read/Write IMEM (peek&amp;poke)</value>
-  </data>
-  <data name="инструментыToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 24</value>
-  </data>
-  <data name="comboBox_fh_commands.Items5" xml:space="preserve">
-    <value>Batch recording of firmware according to rawprogram data (qpst format)</value>
-  </data>
-  <data name="comboBox_fh_commands.Items4" xml:space="preserve">
-    <value>Write file in sectors (load)</value>
-  </data>
-  <data name="comboBox_fh_commands.Items3" xml:space="preserve">
-    <value>=======Careful, recording!===================</value>
-  </data>
-  <data name="comboBox_fh_commands.Items2" xml:space="preserve">
-    <value>Reboot the device into normal mode (reset)</value>
-  </data>
-  <data name="выбратьВсеРазделыToolStripMenuItem.Text" xml:space="preserve">
-    <value>Select all partitions</value>
-  </data>
-  <data name="groupBox_fh_sel_path.Text" xml:space="preserve">
-    <value>Programmer search</value>
-  </data>
-  <data name="toolStripStatusLabel_filescompleted.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="toolStripButton_small_font.ToolTipText" xml:space="preserve">
-    <value>Reduce font size</value>
-  </data>
-  <data name="radioButton_fb_reboot_normal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 20</value>
-  </data>
-  <data name="button_Sahara_CommandStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 33</value>
-  </data>
-  <data name="button_term_save.Text" xml:space="preserve">
-    <value>Save log</value>
-  </data>
-  <data name="сохранитьСектораПоНомеруdumpSectorNumderToolStripMenuItem.Text" xml:space="preserve">
-    <value>Save sectors by number (dump sector numder)</value>
-  </data>
-  <data name="comboBox_log.Items" xml:space="preserve">
-    <value>Standart</value>
-  </data>
-  <data name="сохранитьТаблицуВФайлmainGPTbinToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>386, 24</value>
-  </data>
-  <data name="saveFileDialog1.Filter" xml:space="preserve">
-    <value>XML-files (*.xml)|*.xml</value>
-  </data>
-  <data name="работаСУстройствомToolStripMenuItem.Text" xml:space="preserve">
-    <value>Work with device</value>
-  </data>
-  <data name="columnHeader_ADB_Model.Text" xml:space="preserve">
-    <value>Device model</value>
-  </data>
-  <data name="radioButton_topdir.Text" xml:space="preserve">
-    <value>selected folder only</value>
-  </data>
-  <data name="DevToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 26</value>
-  </data>
-  <data name="отправкаПрограммераToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 26</value>
-  </data>
-  <data name="radioButton_adb_reset.Text" xml:space="preserve">
-    <value>By ADB</value>
-  </data>
-  <data name="radioButton_fb_devinfo.Text" xml:space="preserve">
-    <value>Check bootloader status (device-info)</value>
-  </data>
-  <data name="приветствиеToolStripMenuItem.Text" xml:space="preserve">
-    <value>Greeting</value>
-  </data>
-  <data name="button_findIDs.Text" xml:space="preserve">
-    <value>Poll the device with a reboot into emergency mode</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 6</value>
-  </data>
-  <data name="button_ADB_comstart.Text" xml:space="preserve">
-    <value>Execute command</value>
-  </data>
-  <data name="предложитьПереводToolStripMenuItem.Text" xml:space="preserve">
-    <value>Offer the translation</value>
-  </data>
-  <data name="radioButton_fb_rebootbootloader.Text" xml:space="preserve">
-    <value>Reboot to bootloader mode (Fastboot - Bootloader)</value>
-  </data>
-  <data name="CollectionToolStripMenuItem.Text" xml:space="preserve">
-    <value>Device collection</value>
-  </data>
-  <data name="автоматическиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 26</value>
-  </data>
-  <data name="groupBox_fh_commands.Text" xml:space="preserve">
-    <value>Available firehose commands</value>
-  </data>
-  <data name="label_Sahara_fhf.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 16</value>
-  </data>
-  <data name="распаковкаОднобиновойПрошивкиToolStripMenuItem.Text" xml:space="preserve">
-    <value>Decode and repack ROM (AGM)</value>
-  </data>
-  <data name="сохранитьТаблицуВФорматеCsvToolStripMenuItem.Text" xml:space="preserve">
-    <value>Save table in xml format</value>
-  </data>
-  <data name="сохранитьСектораПоНомеруdumpSectorNumderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>386, 24</value>
-  </data>
-  <data name="Block_length.Text" xml:space="preserve">
-    <value>Partition size - blocks (byte)</value>
-  </data>
-  <data name="toolStripTextBox_find.ToolTipText" xml:space="preserve">
-    <value>Search through all fields</value>
-  </data>
-  <data name="button_Sahara_CommandStart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>508, 17</value>
-  </data>
-  <data name="отправкаПрограммераToolStripMenuItem.Text" xml:space="preserve">
-    <value>Share the programmer</value>
-  </data>
-  <data name="toolStripStatusLabel_filescompleted.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 20</value>
-  </data>
-  <data name="button_Sahara_Ids.Text" xml:space="preserve">
-    <value>Get device IDs</value>
-  </data>
-  <data name="CollectionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 26</value>
-  </data>
-  <data name="toolStripButton_large_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cwAAEnMBjCK5BwAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
-        RUkUEZ0YRMS+DDI70MkTmzJnDc8iU8QT2mAEItnle90wHwTDyBduXnie5/rd133Q4ZKfAJqHFs9E08A8
-        zD1emDpmYXjqRlnTFIrMk8iuGkNaxWekGEaQrHecBfw+/vPXODw6hj9whN2fh/Bt/8LSRgA3cxr/DeBZ
-        9kvmTNMoHGNbIrYN+3Aj23IxgJkpds0doP3VstgmsNexhutZ9QrAms8T0zYzU5xXM46kcjsmvfvoeL2i
-        AeoUgA07T8yaaZuZKab1rzN74jgys1YB2O2gmBZzH49LODXrrJlnzEzxe9cOLH1ziMioVgCOiuIFX0CE
-        Q+/WYf+yieiCFrRp9tkwxnP7Kt5MbKGm6wfC000KwDlTXNLgEvHMkh+Db32o7fYivtQm1l9+3IBOp5P7
-        yjYPwlKNCsAluWudxgvtknb5t9oWcL/VLU2Mvd2JFq3uqs7vAtE/ceNayiMF4KiYMSjmY2O7B4Ua+NaD
-        YQGEJumRbvyG1IcfBHI12aAAXM8R57aIWTNrLLY4tfNPiCvpR1SeVeu6WWzHFD6THSDwFMDdpmUG62NJ
-        PKM4Or9ZxBxb8H8l7g5CEu8pAOfM3WanSeeS8CFHxW4zM2umbWamOCShXAH+/wNOANABIDUxWnDPAAAA
-        AElFTkSuQmCC
-</value>
-  </data>
-  <data name="выбратьРазделToolStripMenuItem.Text" xml:space="preserve">
-    <value>Select partition (single select)</value>
-  </data>
-  <data name="выборЯзыкаToolStripMenuItem.Text" xml:space="preserve">
-    <value>Change language</value>
-  </data>
-  <data name="button_ADB_clear.Text" xml:space="preserve">
-    <value>Close ADB session</value>
-  </data>
-  <data name="bindingNavigatorMoveNextItem.Text" xml:space="preserve">
-    <value>Move forward</value>
-  </data>
-  <data name="загрузитьССервераToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 24</value>
-  </data>
-  <data name="выходToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
-  <data name="radioButton_fb_eraseud.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 20</value>
-  </data>
-  <data name="ExSertToolStripMenuItem.Text" xml:space="preserve">
-    <value>Extract certificates</value>
-  </data>
-  <data name="bindingNavigatorPositionItem.AccessibleName" xml:space="preserve">
-    <value>Position</value>
-  </data>
-  <data name="checkBox_Find_Server.Text" xml:space="preserve">
-    <value>Server</value>
-  </data>
-  <data name="вопросОтветToolStripMenuItem.Text" xml:space="preserve">
-    <value>View help</value>
-  </data>
-  <data name="работаСУстройствомToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 26</value>
-  </data>
-  <data name="radioButton_fb_unlock.Text" xml:space="preserve">
-    <value>Unlock bootloader (unlock)</value>
-  </data>
-  <data name="поискМаскиБайтToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 26</value>
-  </data>
-  <data name="columnHeader_ADB_SN.Text" xml:space="preserve">
-    <value>Serial number</value>
-  </data>
-  <data name="radioButton_alldir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 20</value>
-  </data>
-  <data name="radioButton_fb_reboot_normal.Text" xml:space="preserve">
-    <value>Reboot into normal mode</value>
-  </data>
-  <data name="radioButton_adb_IDs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 20</value>
-  </data>
-  <data name="radioButton_fb_rebootedl.Text" xml:space="preserve">
-    <value>Reboot to emergency mode (Emergency Download - EDL - PID#9008)</value>
-  </data>
-  <data name="сохранитьВыбранныеРазделыdumpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>386, 24</value>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>
