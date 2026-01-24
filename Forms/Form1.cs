@@ -238,6 +238,8 @@ namespace FirehoseFinder
                 DevToolStripMenuItem.Enabled = true;
                 Text = $"Firehose Finder - {Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})";
             }
+            //Восстанавливаем выбор пользователя по Сахаре
+            radioButton_sahara_ver3.Checked = Settings.Default.Sahara_v3;
             //Закрываем запущенные процессы и чистим файлы (если есть что)
             CleanFilesProcess();
         }
