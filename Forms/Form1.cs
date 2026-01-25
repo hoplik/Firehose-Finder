@@ -2539,7 +2539,7 @@ namespace FirehoseFinder
         private void GetSaharaIDs(string sahara_port_num, string sahara_another_com)
         {
             int counter_backgroung = 0;
-            string[] sahara_com_args = new string[2] { "-c 7 -c 2 -c 3 -c 1", "-c 0x14 -c 6 -c 0x0A -c 3 -c 1" };
+            string[] sahara_com_args = new string[2] { "-c 7 -c 2 -c 3 -c 1", "-c 7 -c 10 -c 3 -c 1" };
             StringBuilder sahara_args = new StringBuilder("-u " + sahara_port_num);
             waitSahara = false;
             if (NeedReset)
@@ -2552,7 +2552,7 @@ namespace FirehoseFinder
                 return;
             }
             //Выполняем запрос HWID-OEMID (command 01, 03, 02, 07)
-            //Для v3 необходимо поменять 02->0x0A, 07->06, 01->0x14
+            //Для v3 необходимо поменять 02->0x0A (10) и другой обработчик
             sahara_args.Append('\u0020' + sahara_com_args[Settings.Default.Sahara_v3 ? 1 : 0]);
             if (!string.IsNullOrEmpty(sahara_another_com)) sahara_args.Append('\u0020' + sahara_another_com);
             if (!backgroundWorker_sahara.IsBusy) backgroundWorker_sahara.RunWorkerAsync(sahara_args);
@@ -2568,7 +2568,7 @@ namespace FirehoseFinder
             counter_backgroung=0;
             progressBar_phone.Value = counter_backgroung;
             NeedReset = true; //После обращения к Сахаре требуется переподключение устройства
-            //Обрабатываем запросы идентификаторов 1 и 3 (общие для версий Сахары)
+                              //Обрабатываем запрос идентификатора 1
             string chip_sn = func.SaharaCommand1();
             textBox_main_term.AppendText(LocRes.GetString("get") + '\u0020' + "S/N CPU - " + chip_sn + Environment.NewLine);
             textBox_soft_term.AppendText(LocRes.GetString("get") + '\u0020' + "S/N CPU - " + chip_sn + Environment.NewLine);
@@ -2577,15 +2577,15 @@ namespace FirehoseFinder
                 textBox_main_term.AppendText(LocRes.GetString("tb_chip_same") + Environment.NewLine);
                 textBox_soft_term.AppendText(LocRes.GetString("tb_chip_same") + Environment.NewLine);
             }
-            //Обрабатываем запрос идентификатора 3
-            string PK_HASH = func.SaharaCommand3();
-            textBox_oemhash.Text = PK_HASH;
-            textBox_soft_term.AppendText("OEM_PK_HASH (" + PK_HASH.Length.ToString() + ") - " + PK_HASH + Environment.NewLine);
-            textBox_main_term.AppendText("OEM_PK_HASH (" + PK_HASH.Length.ToString() + ") - " + PK_HASH + Environment.NewLine);
             if (Settings.Default.Sahara_v3)
             {
-                //Обрабатываем запрос идентификатора A
-                string HWOEMIDs3 = func.SaharaCommandA();
+                //Обрабатываем запрос идентификатора 3_3
+                string PK_HASH = func.SaharaCommand3_3();
+                textBox_oemhash.Text = PK_HASH;
+                textBox_soft_term.AppendText("Sv3 OEM_PK_HASH (" + PK_HASH.Length.ToString() + ") - " + PK_HASH + Environment.NewLine);
+                textBox_main_term.AppendText("Sv3 OEM_PK_HASH (" + PK_HASH.Length.ToString() + ") - " + PK_HASH + Environment.NewLine);
+                //Обрабатываем запрос идентификатора 3_A
+                string HWOEMIDs3 = func.SaharaCommand3_A();
                 if (HWOEMIDs3.Length == 16)
                 {
                     textBox_hwid.Text = HWOEMIDs3.Substring(0, 8);
@@ -2594,18 +2594,20 @@ namespace FirehoseFinder
                 }
                 textBox_soft_term.AppendText("Sv3 HWID - " + HWOEMIDs3 + Environment.NewLine);
                 textBox_main_term.AppendText("Sv3 HWID - " + HWOEMIDs3 + Environment.NewLine);
-                //Обрабатываем запрос идентификатора 6
-                string SW_VER3 = func.SaharaCommand6();
+                //Обрабатываем запрос идентификатора 3_7
+                string SW_VER3 = func.SaharaCommand3_7();
                 label_SW_Ver.Text = SW_VER3;
                 textBox_soft_term.AppendText("Sv3 SBL SW Ver. - " + SW_VER3 + Environment.NewLine);
                 textBox_main_term.AppendText("Sv3 SBL SW Ver. - " + SW_VER3 + Environment.NewLine);
-                //Обрабатываем запрос идентификатора 14
-                string chip_sn3 = func.SaharaCommand14();
-                textBox_soft_term.AppendText("Sv3 Command 14. - " + chip_sn3 + Environment.NewLine);
-                textBox_main_term.AppendText("Sv3 Command 14. - " + chip_sn3 + Environment.NewLine);
             }
             else
-            {   //Обрабатываем запрос идентификатора 2
+            {
+                //Обрабатываем запрос идентификатора 3
+                string PK_HASH = func.SaharaCommand3();
+                textBox_oemhash.Text = PK_HASH;
+                textBox_soft_term.AppendText("OEM_PK_HASH (" + PK_HASH.Length.ToString() + ") - " + PK_HASH + Environment.NewLine);
+                textBox_main_term.AppendText("OEM_PK_HASH (" + PK_HASH.Length.ToString() + ") - " + PK_HASH + Environment.NewLine);
+                //Обрабатываем запрос идентификатора 2
                 string HWOEMIDs = func.SaharaCommand2();
                 if (HWOEMIDs.Length == 16)
                 {
