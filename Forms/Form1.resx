@@ -1456,7 +1456,7 @@
     <value>NoControl</value>
   </data>
   <data name="label_log.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 97</value>
+    <value>409, 177</value>
   </data>
   <data name="label_log.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 16</value>

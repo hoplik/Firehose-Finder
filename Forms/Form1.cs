@@ -1604,7 +1604,7 @@ namespace FirehoseFinder
                 return;
             }
             if (radioButton_adb_reset.Checked) GetADBIDs(true);
-            if (radioButton_man_reset.Checked)
+            else
             {
                 GetADBIDs(false);
                 if (label_model.Text.StartsWith("---")) MessageBox.Show(LocRes.GetString("mb_body_id_not_res"),
@@ -2455,12 +2455,12 @@ namespace FirehoseFinder
             label_tm.Text = "---";
             label_model.Text = "---";
             label_altname.Text = "---";
-            long chipsn = 0;
+            string chipsn = string.Empty;
             foreach (string item in adbstr)
             {
                 if (!string.IsNullOrEmpty(item))
                 {
-                    if (item.Length<14) chipsn = Convert.ToInt64(item);
+                    if (item.Length<14) chipsn = CheckSN(item);
                     else
                     {
                         int start = item.LastIndexOf('\u005B')+1; //[
@@ -2477,21 +2477,18 @@ namespace FirehoseFinder
                                 label_altname.Text = item.Substring(start, end-start);
                                 break;
                             default:
-                                try
-                                {
-                                    chipsn = Convert.ToInt64(item);
-                                }
-                                catch (FormatException)
-                                {
-                                    chipsn=0;
-                                }
+                                chipsn = CheckSN(item);
                                 break;
                         }
                     }
                 }
             }
-            if (chipsn==0) label_chip_sn.Text = "---";
-            else label_chip_sn.Text = Convert.ToString(chipsn, 16).ToUpper();
+            if (string.IsNullOrEmpty(chipsn)) label_chip_sn.Text = "---";
+            else
+            {
+                label_chip_sn.Text = chipsn.ToUpper();
+                if (chipsn.Length > 8) radioButton_sahara_ver3.Checked = true;//Считаем, что это Sahara v3
+            }
             textBox_soft_term.AppendText(LocRes.GetString("manuf") + '\u003A' + '\u0020' + label_tm.Text + Environment.NewLine +
                 LocRes.GetString("model") + '\u003A' + '\u0020' + label_model.Text + Environment.NewLine +
                 LocRes.GetString("alt_name") + '\u003A' + '\u0020' + label_altname.Text + Environment.NewLine +
@@ -2539,7 +2536,7 @@ namespace FirehoseFinder
         private void GetSaharaIDs(string sahara_port_num, string sahara_another_com)
         {
             int counter_backgroung = 0;
-            string[] sahara_com_args = new string[2] { "-c 7 -c 2 -c 3 -c 1", "-c 7 -c 10 -c 3 -c 1" };
+            string[] sahara_com_args = new string[2] { "-c 7 -c 2 -c 3 -c 1", "-c 10 -c 3 -c 1" };
             StringBuilder sahara_args = new StringBuilder("-u " + sahara_port_num);
             waitSahara = false;
             if (NeedReset)
@@ -2568,7 +2565,7 @@ namespace FirehoseFinder
             counter_backgroung=0;
             progressBar_phone.Value = counter_backgroung;
             NeedReset = true; //После обращения к Сахаре требуется переподключение устройства
-                              //Обрабатываем запрос идентификатора 1
+            //Обрабатываем запрос идентификатора 1
             string chip_sn = func.SaharaCommand1();
             textBox_main_term.AppendText(LocRes.GetString("get") + '\u0020' + "S/N CPU - " + chip_sn + Environment.NewLine);
             textBox_soft_term.AppendText(LocRes.GetString("get") + '\u0020' + "S/N CPU - " + chip_sn + Environment.NewLine);
@@ -2586,19 +2583,26 @@ namespace FirehoseFinder
                 textBox_main_term.AppendText("Sv3 OEM_PK_HASH (" + PK_HASH.Length.ToString() + ") - " + PK_HASH + Environment.NewLine);
                 //Обрабатываем запрос идентификатора 3_A
                 string HWOEMIDs3 = func.SaharaCommand3_A();
-                if (HWOEMIDs3.Length == 16)
+                if (HWOEMIDs3.Length == 20)
                 {
-                    textBox_hwid.Text = HWOEMIDs3.Substring(0, 8);
-                    textBox_oemid.Text = HWOEMIDs3.Substring(8, 4);
-                    textBox_modelid.Text = HWOEMIDs3.Substring(12, 4);
+                    string modelstr = textBox_modelid.Text = HWOEMIDs3.Substring(0, 4);
+                    string oemstr = textBox_oemid.Text = HWOEMIDs3.Substring(4, 4);
+                    string jtagstr = textBox_hwid.Text = HWOEMIDs3.Substring(8, 8);
+                    string sblswverstr = label_SW_Ver.Text = HWOEMIDs3.Substring(16, 4);
+                    textBox_soft_term.AppendText("Sv3 HWID - " + jtagstr + oemstr + modelstr + Environment.NewLine
+                        + "ПРЕДПОЛОЖИТЕЛЬНО! Sv3 SBL SW Ver. - " + sblswverstr + Environment.NewLine);
+                    textBox_main_term.AppendText("Sv3 HWID - " + jtagstr + oemstr + modelstr + Environment.NewLine
+                        + "ПРЕДПОЛОЖИТЕЛЬНО! Sv3 SBL SW Ver. - " + sblswverstr + Environment.NewLine);
                 }
-                textBox_soft_term.AppendText("Sv3 HWID - " + HWOEMIDs3 + Environment.NewLine);
-                textBox_main_term.AppendText("Sv3 HWID - " + HWOEMIDs3 + Environment.NewLine);
-                //Обрабатываем запрос идентификатора 3_7
-                string SW_VER3 = func.SaharaCommand3_7();
-                label_SW_Ver.Text = SW_VER3;
-                textBox_soft_term.AppendText("Sv3 SBL SW Ver. - " + SW_VER3 + Environment.NewLine);
-                textBox_main_term.AppendText("Sv3 SBL SW Ver. - " + SW_VER3 + Environment.NewLine);
+                else
+                {
+                    textBox_modelid.Text = string.Empty;
+                    textBox_oemid.Text = string.Empty;
+                    textBox_hwid.Text = string.Empty;
+                    label_SW_Ver.Text = "00000000";
+                    textBox_soft_term.AppendText("Sv3 HWID & SBL SW Ver. - " + HWOEMIDs3 + Environment.NewLine);
+                    textBox_main_term.AppendText("Sv3 HWID & SBL SW Ver. - " + HWOEMIDs3 + Environment.NewLine);
+                }
             }
             else
             {
@@ -2614,6 +2618,12 @@ namespace FirehoseFinder
                     textBox_hwid.Text = HWOEMIDs.Substring(0, 8);
                     textBox_oemid.Text = HWOEMIDs.Substring(8, 4);
                     textBox_modelid.Text = HWOEMIDs.Substring(12, 4);
+                }
+                else
+                {
+                    textBox_hwid.Text = string.Empty;
+                    textBox_oemid.Text = string.Empty;
+                    textBox_modelid.Text = string.Empty;
                 }
                 textBox_soft_term.AppendText("HWID - " + HWOEMIDs + Environment.NewLine);
                 textBox_main_term.AppendText("HWID - " + HWOEMIDs + Environment.NewLine);
@@ -2669,7 +2679,7 @@ namespace FirehoseFinder
             Global_Share_Prog[0][1] = label_tm.Text;
             Global_Share_Prog[0][2] = label_model.Text;
             Global_Share_Prog[0][3] = label_altname.Text;
-            if (checkBox_Log.Checked)
+            if (checkBox_Log.Checked) //Если требуется сохранить данные в файл
             {
                 try
                 {
@@ -2689,7 +2699,7 @@ namespace FirehoseFinder
                     SendErrorInChat();
                 }
             }
-            if (checkBox_send.Checked)
+            if (checkBox_send.Checked) //Если требуется отправить данные в канал
             {
                 if (string.IsNullOrWhiteSpace(textBox_hwid.Text) && string.IsNullOrWhiteSpace(textBox_oemid.Text) &&
                     string.IsNullOrWhiteSpace(textBox_modelid.Text) && string.IsNullOrWhiteSpace(textBox_oemhash.Text))
@@ -3831,6 +3841,18 @@ namespace FirehoseFinder
         private void RadioButton_sahara_ver3_CheckedChanged(object sender, EventArgs e)
         {
             Settings.Default.Sahara_v3 =radioButton_sahara_ver3.Checked;
+        }
+
+        /// <summary>
+        /// Проверка строки, что она является 16-ричным числом.
+        /// </summary>
+        /// <param name="strtocheck">Строка для проверки</param>
+        /// <returns>Да-возвращает эту же строку, нет-возвращает пустую строку</returns>
+        private string CheckSN(string strtocheck)
+        {
+            bool isValidHex = ulong.TryParse(strtocheck, NumberStyles.HexNumber, null, out _);
+            if (isValidHex) return strtocheck;
+            else return string.Empty;
         }
     }
 }
