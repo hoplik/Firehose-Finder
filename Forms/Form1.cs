@@ -3850,8 +3850,10 @@ namespace FirehoseFinder
         /// <returns>Да-возвращает эту же строку, нет-возвращает пустую строку</returns>
         private string CheckSN(string strtocheck)
         {
+            bool isValidDex = ulong.TryParse(strtocheck, out ulong dexres);
             bool isValidHex = ulong.TryParse(strtocheck, NumberStyles.HexNumber, null, out _);
-            if (isValidHex) return strtocheck;
+            if (isValidDex) return dexres.ToString("X");
+            else if (isValidHex) return strtocheck; 
             else return string.Empty;
         }
     }
