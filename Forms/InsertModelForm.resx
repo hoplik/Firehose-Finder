@@ -117,46 +117,212 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label_altname_insert.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;button_ok_insert.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBox_tm_insert.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;textBox_alt_insert.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button_ok_insert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 118</value>
-  </data>
-  <data name="&gt;&gt;label_model_insert.Name" xml:space="preserve">
-    <value>label_model_insert</value>
-  </data>
-  <data name="&gt;&gt;label_model_insert.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="comboBox_tm_insert.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 12</value>
   </data>
   <data name="comboBox_tm_insert.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 24</value>
   </data>
-  <data name="textBox_alt_insert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="comboBox_tm_insert.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBox_tm_insert.Name" xml:space="preserve">
+    <value>comboBox_tm_insert</value>
   </data>
   <data name="&gt;&gt;comboBox_tm_insert.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;comboBox_tm_insert.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBox_tm_insert.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label_tm_insert.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_tm_insert.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 12</value>
+  </data>
+  <data name="label_tm_insert.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 16</value>
+  </data>
+  <data name="label_tm_insert.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label_tm_insert.Text" xml:space="preserve">
+    <value>Производитель *</value>
+  </data>
+  <data name="&gt;&gt;label_tm_insert.Name" xml:space="preserve">
+    <value>label_tm_insert</value>
+  </data>
+  <data name="&gt;&gt;label_tm_insert.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_tm_insert.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_tm_insert.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="label_model_insert.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label_model_insert.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 42</value>
+  </data>
+  <data name="label_model_insert.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 16</value>
+  </data>
+  <data name="label_model_insert.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label_model_insert.Text" xml:space="preserve">
+    <value>Модель</value>
+  </data>
+  <data name="&gt;&gt;label_model_insert.Name" xml:space="preserve">
+    <value>label_model_insert</value>
+  </data>
+  <data name="&gt;&gt;label_model_insert.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_model_insert.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_model_insert.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label_altname_insert.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_altname_insert.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 72</value>
+  </data>
+  <data name="label_altname_insert.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 32</value>
+  </data>
+  <data name="label_altname_insert.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="label_altname_insert.Text" xml:space="preserve">
+    <value>Альтернативное
+наименование</value>
+  </data>
+  <data name="&gt;&gt;label_altname_insert.Name" xml:space="preserve">
+    <value>label_altname_insert</value>
+  </data>
+  <data name="&gt;&gt;label_altname_insert.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_altname_insert.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_altname_insert.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textBox_alt_insert.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 72</value>
+  </data>
+  <data name="textBox_alt_insert.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 22</value>
+  </data>
+  <data name="textBox_alt_insert.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;textBox_alt_insert.Name" xml:space="preserve">
+    <value>textBox_alt_insert</value>
+  </data>
+  <data name="&gt;&gt;textBox_alt_insert.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_alt_insert.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBox_alt_insert.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="button_ok_insert.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 118</value>
+  </data>
+  <data name="button_ok_insert.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
   <data name="button_ok_insert.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;comboBox_tm_insert.Name" xml:space="preserve">
-    <value>comboBox_tm_insert</value>
+  <data name="button_ok_insert.Text" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="&gt;&gt;button_ok_insert.Name" xml:space="preserve">
+    <value>button_ok_insert</value>
+  </data>
+  <data name="&gt;&gt;button_ok_insert.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_ok_insert.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_ok_insert.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="button_cancel_insert.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 118</value>
+  </data>
+  <data name="button_cancel_insert.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="button_cancel_insert.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="button_cancel_insert.Text" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="&gt;&gt;button_cancel_insert.Name" xml:space="preserve">
+    <value>button_cancel_insert</value>
+  </data>
+  <data name="&gt;&gt;button_cancel_insert.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_cancel_insert.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_cancel_insert.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="textBox_model_insert.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 42</value>
+  </data>
+  <data name="textBox_model_insert.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 22</value>
+  </data>
+  <data name="textBox_model_insert.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;textBox_model_insert.Name" xml:space="preserve">
+    <value>textBox_model_insert</value>
+  </data>
+  <data name="&gt;&gt;textBox_model_insert.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox_model_insert.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBox_model_insert.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>327, 153</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2602,179 +2768,17 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="&gt;&gt;button_cancel_insert.Name" xml:space="preserve">
-    <value>button_cancel_insert</value>
-  </data>
-  <data name="label_altname_insert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 72</value>
-  </data>
-  <data name="&gt;&gt;comboBox_tm_insert.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;button_ok_insert.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label_altname_insert.Name" xml:space="preserve">
-    <value>label_altname_insert</value>
-  </data>
-  <data name="&gt;&gt;label_tm_insert.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label_model_insert.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="label_tm_insert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 12</value>
-  </data>
-  <data name="&gt;&gt;button_ok_insert.Name" xml:space="preserve">
-    <value>button_ok_insert</value>
-  </data>
-  <data name="textBox_model_insert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 42</value>
-  </data>
-  <data name="label_tm_insert.Text" xml:space="preserve">
-    <value>Производитель *</value>
-  </data>
-  <data name="&gt;&gt;label_altname_insert.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox_alt_insert.Name" xml:space="preserve">
-    <value>textBox_alt_insert</value>
-  </data>
-  <data name="button_cancel_insert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 118</value>
-  </data>
-  <data name="&gt;&gt;textBox_model_insert.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="button_ok_insert.Text" xml:space="preserve">
-    <value>ОК</value>
-  </data>
-  <data name="&gt;&gt;textBox_alt_insert.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label_tm_insert.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Внесение модели устройства</value>
   </data>
-  <data name="button_ok_insert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="label_altname_insert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 32</value>
-  </data>
-  <data name="&gt;&gt;button_cancel_insert.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button_cancel_insert.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label_altname_insert.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox_model_insert.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="comboBox_tm_insert.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="button_cancel_insert.Text" xml:space="preserve">
-    <value>Отмена</value>
-  </data>
-  <data name="label_model_insert.Text" xml:space="preserve">
-    <value>Модель</value>
-  </data>
-  <data name="textBox_alt_insert.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;textBox_model_insert.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label_tm_insert.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>327, 153</value>
-  </data>
-  <data name="&gt;&gt;label_model_insert.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label_altname_insert.Text" xml:space="preserve">
-    <value>Альтернативное
-наименование</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
-  </data>
-  <data name="button_cancel_insert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;label_altname_insert.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox_model_insert.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;button_ok_insert.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label_model_insert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 16</value>
-  </data>
-  <data name="&gt;&gt;label_tm_insert.Name" xml:space="preserve">
-    <value>label_tm_insert</value>
-  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>InsertModelForm</value>
   </data>
-  <data name="&gt;&gt;label_model_insert.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="button_cancel_insert.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="textBox_model_insert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
-  </data>
-  <data name="&gt;&gt;button_cancel_insert.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label_tm_insert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 16</value>
-  </data>
-  <data name="label_tm_insert.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="textBox_alt_insert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 72</value>
-  </data>
-  <data name="&gt;&gt;textBox_model_insert.Name" xml:space="preserve">
-    <value>textBox_model_insert</value>
-  </data>
-  <data name="&gt;&gt;label_altname_insert.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;textBox_alt_insert.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label_model_insert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 42</value>
-  </data>
-  <data name="&gt;&gt;label_tm_insert.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="comboBox_tm_insert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 12</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

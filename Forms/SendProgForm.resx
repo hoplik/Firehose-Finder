@@ -2807,6 +2807,9 @@
         AElFTkSuQmCC
 </value>
   </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Поделиться программером</value>
   </data>

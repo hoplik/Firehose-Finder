@@ -83,6 +83,7 @@ namespace FirehoseFinder
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.выбратьВсёToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.снятьВесьВыборToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.savetofileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox_dubl = new System.Windows.Forms.GroupBox();
             this.radioButton_dd_yes = new System.Windows.Forms.RadioButton();
@@ -117,7 +118,6 @@ namespace FirehoseFinder
             this.openFileDialog_of = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog_df = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker_comp = new System.ComponentModel.BackgroundWorker();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip_search.SuspendLayout();
             this.tableLayoutPanel_hs.SuspendLayout();
             this.groupBox_byte_text.SuspendLayout();
@@ -526,6 +526,11 @@ namespace FirehoseFinder
             resources.ApplyResources(this.снятьВесьВыборToolStripMenuItem, "снятьВесьВыборToolStripMenuItem");
             this.снятьВесьВыборToolStripMenuItem.Click += new System.EventHandler(this.СнятьВесьВыборToolStripMenuItem_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            // 
             // savetofileToolStripMenuItem
             // 
             this.savetofileToolStripMenuItem.Name = "savetofileToolStripMenuItem";
@@ -750,11 +755,6 @@ namespace FirehoseFinder
             this.backgroundWorker_comp.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_comp_DoWork);
             this.backgroundWorker_comp.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_comp_ProgressChanged);
             this.backgroundWorker_comp.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_comp_RunWorkerCompleted);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // Hex_Search
             // 

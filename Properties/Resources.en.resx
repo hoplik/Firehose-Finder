@@ -117,125 +117,65 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="about" xml:space="preserve">
-    <value>About</value>
-    <comment>О программе</comment>
-  </data>
-  <data name="about_deck" xml:space="preserve">
-    <value>The program of selection of programmers (firehose) for devices based on processors from Qualcomm.</value>
-    <comment>Программа подбора программеров(firehose) для устройств на базе процессоров от Qualcomm.</comment>
-  </data>
-  <data name="actual_data" xml:space="preserve">
-    <value>Relevant on:</value>
-    <comment>Актуально на:</comment>
-  </data>
   <data name="add_dev" xml:space="preserve">
     <value>Add device</value>
     <comment>Добавить устройство</comment>
   </data>
-  <data name="add_model" xml:space="preserve">
-    <value>Add/Fix a model</value>
-    <comment>Добавить/исправить модель</comment>
+  <data name="get" xml:space="preserve">
+    <value>Received</value>
+    <comment>Получили</comment>
   </data>
-  <data name="alt_name" xml:space="preserve">
-    <value>alternative name</value>
-    <comment>альтернативное наименование</comment>
+  <data name="mb_body_att_spaces" xml:space="preserve">
+    <value>The path contains spaces. Errors are possible when checking it. It is recommended to change the path.</value>
+    <comment>В пути содержатся пробелы. При проверке возможны ошибки. Рекомендуется изменить путь.</comment>
   </data>
-  <data name="app_path" xml:space="preserve">
-    <value>Workdir application</value>
-    <comment>Путь установки программы</comment>
+  <data name="tb_xml_not_gen" xml:space="preserve">
+    <value>The XML file has not been generated for the work</value>
+    <comment>XML-файл для работы не сформирован</comment>
   </data>
-  <data name="auth_body" xml:space="preserve">
-    <value>Authorization is required to use the selected programmer. This program does not support working with programmers who require authorization. Try to find an alternative programmer, or use other software to work.</value>
-    <comment>Для использования выбранного программера требуется авторизация. Эта программа не поддерживает работу с программерами, для которых необходима авторизация. Попробуйте найти альтернативный программер, либо используйте для работы другое ПО.</comment>
+  <data name="repack_parsing_header" xml:space="preserve">
+    <value>Firmware Parameters</value>
+    <comment>Параметры прошивки</comment>
   </data>
-  <data name="auth_title" xml:space="preserve">
-    <value>Authorization is required!</value>
-    <comment>Требуется авторизация!</comment>
+  <data name="tt_data_sent" xml:space="preserve">
+    <value>Data has been sent successfully</value>
+    <comment>Данные успешно отправлены</comment>
   </data>
-  <data name="bot_code_start" xml:space="preserve">
-    <value>If you failed to log in automatically, then you can find the "Hoplik-Bot" bot in the Telegram and try to enter the authorization code after the /start command when the FhF application is running:</value>
-    <comment>Если у вас не получилость автоматически авторизоваться, то вы можете найти в Телеграм бота "Hoplik-Bot" и при запущенном приложении FhF попробовать ввести после команды /start код авторизации:</comment>
+  <data name="message_body_need_fields" xml:space="preserve">
+    <value>Please, select the manufacturer's name from the list or enter a new one, if there is no suitable value.</value>
+    <comment>Пожалуйста, выберите наименование производителя из списка или введите, при отсутствии подходящего значения.</comment>
   </data>
-  <data name="bot_title_start" xml:space="preserve">
-    <value>Alternative authorization option</value>
-    <comment>Альтернативная возможность авторизации</comment>
+  <data name="tt_id_empty" xml:space="preserve">
+    <value>The IDs are empty. There is nothing to send.</value>
+    <comment>Идентификаторы пусты. Нечего отправлять.</comment>
   </data>
-  <data name="button_dirrepack" xml:space="preserve">
-    <value>Dir for unpacking</value>
-    <comment>Директория для распаковки</comment>
+  <data name="mb_body_check_fail" xml:space="preserve">
+    <value>Checking the correctness of working with the device via ADB failed.</value>
+    <comment>Проверка корректности работы с устройством через ADB закончилась неудачно.</comment>
   </data>
-  <data name="button_rampath" xml:space="preserve">
-    <value>The path to the firmware file</value>
-    <comment>Путь к файлу прошивки</comment>
+  <data name="gpt_not_found" xml:space="preserve">
+    <value>The basic GPT file - gpt_main0.bin was not found</value>
+    <comment>Не найден базовый файл таблицы разметки - gpt_main0.bin</comment>
   </data>
-  <data name="button_search" xml:space="preserve">
-    <value>Search</value>
-    <comment>Поиск</comment>
+  <data name="message_body_need_restart" xml:space="preserve">
+    <value>A restart of the application is required for the change of the selected language to take effect. Click "Ok" to restart the application now or "Cancel" for the changes to take effect at the next launch.</value>
+    <comment>Для вступления в силу изменения выбранного языка требуется перезапуск приложения. Нажмите "Ок" для перезагрузки приложения сейчас или "Отмена" для вступления изменений в силу при следующем запуске.</comment>
   </data>
-  <data name="chip" xml:space="preserve">
-    <value>chip</value>
-    <comment>процессор</comment>
+  <data name="sel_prog" xml:space="preserve">
+    <value>Select the programmer on the "Work with files" tab</value>
+    <comment>Выберете программер на вкладке "Работа с файлами"</comment>
   </data>
-  <data name="chip_sn" xml:space="preserve">
-    <value>chip s/n</value>
-    <comment>серийный номер процессора</comment>
+  <data name="gb_disk" xml:space="preserve">
+    <value>Disk</value>
+    <comment>Диск</comment>
   </data>
-  <data name="copy_clip" xml:space="preserve">
-    <value>Copy to clipboard</value>
-    <comment>Скопировано в буфер</comment>
+  <data name="pp_note" xml:space="preserve">
+    <value>If an error appears in the log about an incorrect command value (HANDLE_SEEK_FAILURE), try changing the choice of processor architecture for this programmer.</value>
+    <comment>Если в логе появляется ошибка о некорректном значении команды (HANDLE_PEEK_FAILURE), попробуйте изменить выбор архитектуры процессора для этого программера.</comment>
   </data>
-  <data name="count_bin" xml:space="preserve">
-    <value>Number of firmware bin files</value>
-    <comment>Количество bin файлов прошивки</comment>
-  </data>
-  <data name="count_inside_bin" xml:space="preserve">
-    <value>Number of bin files inside the firmware</value>
-    <comment>Количество bin файлов внутри прошивки</comment>
-  </data>
-  <data name="count_inside_conf" xml:space="preserve">
-    <value>Number of configuration files inside the firmware</value>
-    <comment>Количество конфигурационных файлов внутри прошивки</comment>
-  </data>
-  <data name="crc" xml:space="preserve">
-    <value>CRC</value>
-    <comment>контрольная сумма</comment>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Dev_comm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dev_comm_en.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="done" xml:space="preserve">
-    <value>Done.</value>
-    <comment>Готово.</comment>
-  </data>
-  <data name="dump_select_disc" xml:space="preserve">
-    <value> sectors for </value>
-    <comment> секторов для </comment>
-  </data>
-  <data name="dump_select_sec" xml:space="preserve">
-    <value>You can select no more than </value>
-    <comment>Вы можете выбрать не более</comment>
-  </data>
-  <data name="dump_select_sectors" xml:space="preserve">
-    <value>You can select no more than {0} sectors for Disk {1}</value>
-    <comment>Вы можете выбрать не более {0} секторов для Диск {1}</comment>
-  </data>
-  <data name="encode" xml:space="preserve">
-    <value>encoded</value>
-    <comment>закодирован</comment>
-  </data>
-  <data name="er_func_fhl_params" xml:space="preserve">
-    <value>Failed to execute fh_loader with the specified parameters</value>
-    <comment>Не удалось выполнить fh_loader с указанными параметрами</comment>
-  </data>
-  <data name="er_func_wfiles" xml:space="preserve">
-    <value>Error in the WFiles function</value>
-    <comment>Ошибка в функции WFiles</comment>
-  </data>
-  <data name="er_func_xml" xml:space="preserve">
-    <value>Failed to create xml file for reading/writing sections</value>
-    <comment>Не удалось создать xml-файл чтения/записи разделов</comment>
+  <data name="tip_decode" xml:space="preserve">
+    <value>The decryption system is DES only. The number of characters in the key less than 16 will be supplemented with '0' at the beginning.</value>
+    <comment>Система дешифровки - только DES. Количество знаков в ключе меньше 16 будет дополнено '0' в начале.</comment>
   </data>
   <data name="excert_cert" xml:space="preserve">
     <value>сertificates</value>
@@ -245,80 +185,61 @@
     <value>Certificate of DER format (X.509)</value>
     <comment>Сертификат формата DER (X.509)</comment>
   </data>
-  <data name="excert_found" xml:space="preserve">
-    <value>Found</value>
-    <comment>Найдено</comment>
+  <data name="not_elf" xml:space="preserve">
+    <value>is not an ELF</value>
+    <comment>не является ELF</comment>
   </data>
-  <data name="excert_sel" xml:space="preserve">
-    <value>Selected</value>
-    <comment>Выбрано</comment>
+  <data name="tb_form_comp" xml:space="preserve">
+    <value>The work with the byte read/write form is completed</value>
+    <comment>Работа с формой чтения/записи байт завершена</comment>
   </data>
-  <data name="file" xml:space="preserve">
-    <value>file</value>
-    <comment>файл</comment>
+  <data name="chip" xml:space="preserve">
+    <value>chip</value>
+    <comment>процессор</comment>
   </data>
-  <data name="firmware_signer" xml:space="preserve">
-    <value>Firmware signer</value>
-    <comment>Подписант прошивки</comment>
+  <data name="mb_body_er_gpt" xml:space="preserve">
+    <value>Error processing the GPT table</value>
+    <comment>Ошибка обработки таблицы GPT</comment>
   </data>
-  <data name="firmware_version" xml:space="preserve">
-    <value>Firmware version</value>
-    <comment>Версия прошивки</comment>
+  <data name="tt_find" xml:space="preserve">
+    <value>Connect the device and click to get the IDs</value>
+    <comment>Подключите устройство и нажмите для получения идентификаторов</comment>
   </data>
-  <data name="free_space" xml:space="preserve">
-    <value>Be sure to make sure that the free disk size is larger than the total volume (of all selected partitions) of the stored dump. Otherwise, errors may occur when saving or in the process of further work with saved partitions.</value>
-    <comment>Обязательно убедитесь, что свободный размер диска больше суммарного объёма (всех выбранных разделов) сохраняемого дампа. Иначе возможны ошибки при сохранении или в процесе дальнейшей работы с сохранёнными разделами.</comment>
+  <data name="sectors" xml:space="preserve">
+    <value>sectors</value>
+    <comment>секторов</comment>
   </data>
-  <data name="gb_disk" xml:space="preserve">
-    <value>Disk</value>
-    <comment>Диск</comment>
+  <data name="status_repack_unpacking_complite" xml:space="preserve">
+    <value>The firmware has been successfully unpacked to the specified directory</value>
+    <comment>Прошивка успешно распакована в указанную директорию</comment>
   </data>
-  <data name="get" xml:space="preserve">
-    <value>Received</value>
-    <comment>Получили</comment>
+  <data name="message_title_need_fields" xml:space="preserve">
+    <value>Empty required fields</value>
+    <comment>Пустые обязательные поля</comment>
   </data>
-  <data name="gpt_not_found" xml:space="preserve">
-    <value>The basic GPT file - gpt_main0.bin was not found</value>
-    <comment>Не найден базовый файл таблицы разметки - gpt_main0.bin</comment>
+  <data name="er_func_xml" xml:space="preserve">
+    <value>Failed to create xml file for reading/writing sections</value>
+    <comment>Не удалось создать xml-файл чтения/записи разделов</comment>
   </data>
-  <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Greeting_en.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  <data name="status_repack_start" xml:space="preserve">
+    <value>Select the path to the firmware and the directory to unpack</value>
+    <comment>Выберите путь к прошивке и директорию для распаковки</comment>
   </data>
-  <data name="hash" xml:space="preserve">
-    <value>hash of the root certificate</value>
-    <comment>хеш корневого сертификата</comment>
+  <data name="status_read" xml:space="preserve">
+    <value>Reading ...</value>
+    <comment>Читаем ...</comment>
   </data>
-  <data name="hex_files" xml:space="preserve">
-    <value>files</value>
-    <comment>файлах</comment>
+  <data name="add_model" xml:space="preserve">
+    <value>Add/Fix a model</value>
+    <comment>Добавить/исправить модель</comment>
   </data>
-  <data name="hex_found" xml:space="preserve">
-    <value>found</value>
-    <comment>найдено</comment>
+  <data name="status_repack_parsing_header_complite" xml:space="preserve">
+    <value>Parsing of the firmware header ended successfully.</value>
+    <comment>Парсинг шапки прошивки завершился удачно</comment>
   </data>
-  <data name="hex_from" xml:space="preserve">
-    <value>from</value>
-    <comment>из</comment>
-  </data>
-  <data name="hex_in" xml:space="preserve">
-    <value>in</value>
-    <comment>в</comment>
-  </data>
-  <data name="hex_matches" xml:space="preserve">
-    <value>matches</value>
-    <comment>совпадений</comment>
-  </data>
-  <data name="hex_mess_stopoper" xml:space="preserve">
-    <value>Be careful, you are attempting to stop a lengthy search procedure. By pressing the "Ok" button, you confirm the operation.</value>
-    <comment>Осторожно, вы предпринимаете попытку остановить длительную процедуру поиска. Нажимая кнопку "Ok", вы подтверждаете выполнение операции.</comment>
-  </data>
-  <data name="hex_not" xml:space="preserve">
-    <value>not</value>
-    <comment>не</comment>
-  </data>
-  <data name="hex_note_cancelsearch" xml:space="preserve">
-    <value>The current search was canceled by the user</value>
-    <comment>Текущий поиск отменён пользователем</comment>
+  <data name="about_deck" xml:space="preserve">
+    <value>The program of selection of programmers (firehose) for devices based on processors from Qualcomm.</value>
+    <comment>Программа подбора программеров(firehose) для устройств на базе процессоров от Qualcomm.</comment>
   </data>
   <data name="hex_note_copyoffset" xml:space="preserve">
     <value>The address is copied to the clipboard</value>
@@ -328,213 +249,137 @@
     <value>Request processing ...</value>
     <comment>Обработка запроса ...</comment>
   </data>
-  <data name="hex_processed" xml:space="preserve">
-    <value>processed</value>
-    <comment>обработан</comment>
+  <data name="mb_body_id_res" xml:space="preserve">
+    <value>IDs are partially received. Please reboot the device into emergency download mode manually.</value>
+    <comment>Идентификаторы получены частично. Пожалуйста, перезагрузите устройство в аварийный режим вручную.</comment>
   </data>
   <data name="hex_warn_stopoper" xml:space="preserve">
     <value>Attention, stopping a long operation!</value>
     <comment>Внимание, остановка длительной операции!</comment>
   </data>
-  <data name="increase_rating" xml:space="preserve">
-    <value>Reaction to this message will increase #Concernedusersrating@firehosefinder</value>
-    <comment>Реакция на это сообщение увеличит #Concernedusersrating@firehosefinder</comment>
-  </data>
-  <data name="manuf" xml:space="preserve">
-    <value>manufacturer</value>
-    <comment>производитель</comment>
-  </data>
-  <data name="mb_acc_er" xml:space="preserve">
-    <value>Access error</value>
-    <comment>Ошибка доступа</comment>
-  </data>
-  <data name="mb_body_att_spaces" xml:space="preserve">
-    <value>The path contains spaces. Errors are possible when checking it. It is recommended to change the path.</value>
-    <comment>В пути содержатся пробелы. При проверке возможны ошибки. Рекомендуется изменить путь.</comment>
-  </data>
-  <data name="mb_body_check_fail" xml:space="preserve">
-    <value>Checking the correctness of working with the device via ADB failed.</value>
-    <comment>Проверка корректности работы с устройством через ADB закончилась неудачно.</comment>
-  </data>
-  <data name="mb_body_corr_er" xml:space="preserve">
-    <value>Please correct the errors according to the log data and/or connect the device in 9008 mode after manual reboot.</value>
-    <comment>Пожалуйста, исправьте ошибки по данным лога и/или подключите устройство в режиме 9008 после перезагрузки вручную.</comment>
-  </data>
-  <data name="mb_body_dev_mist" xml:space="preserve">
-    <value>The device was identified with an error</value>
-    <comment>Устройство определено с ошибкой</comment>
-  </data>
-  <data name="mb_body_driver_folder" xml:space="preserve">
-    <value>Open the driver folder?</value>
-    <comment>Открыть папку с драйверами?</comment>
-  </data>
-  <data name="mb_body_er_gpt" xml:space="preserve">
-    <value>Error processing the GPT table</value>
-    <comment>Ошибка обработки таблицы GPT</comment>
-  </data>
-  <data name="mb_body_gpt_not_formed" xml:space="preserve">
-    <value>The GPT table is not formed</value>
-    <comment>Таблица GPT не сформирована</comment>
+  <data name="tb_blm" xml:space="preserve">
+    <value>bootloader mode</value>
+    <comment>режим загрузчика</comment>
   </data>
   <data name="mb_body_id_not_res" xml:space="preserve">
     <value>IDs were not received. Please reboot the device into emergency download mode manually.</value>
     <comment>Идентификаторы не получены. Пожалуйста, перезагрузите устройство в аварийный режим вручную.</comment>
   </data>
-  <data name="mb_body_id_res" xml:space="preserve">
-    <value>IDs are partially received. Please reboot the device into emergency download mode manually.</value>
-    <comment>Идентификаторы получены частично. Пожалуйста, перезагрузите устройство в аварийный режим вручную.</comment>
+  <data name="hex_not" xml:space="preserve">
+    <value>not</value>
+    <comment>не</comment>
   </data>
-  <data name="mb_body_memtype" xml:space="preserve">
-    <value>The memory type is probably incorrectly selected. If the eMMC type is specified, then try changing it to UFS and repeat the request.</value>
-    <comment>Вероятно, неправильно выбран тип памяти. Если указан тип eMMC, то попробуйте изменить на UFS и повторить запрос.</comment>
+  <data name="started_unpacking" xml:space="preserve">
+    <value>Started unpacking ...</value>
+    <comment>Начали распаковку ...</comment>
   </data>
-  <data name="mb_body_port_driver" xml:space="preserve">
-    <value>The drivers for this device are not installed</value>
-    <comment>Драйвера для этого устройства не установлены</comment>
-  </data>
-  <data name="mb_body_record" xml:space="preserve">
-    <value>An attempt is being made to write information to memory partitions. For the convenience of tracking the completion of the recording, you can clear the log window by clicking "Ok", leave the current log in the terminal window - "Cancel". Please wait for the operation to be performed, as it will be written in the log window.</value>
-    <comment>Предпринимается попытка записи информации в разделы памяти. Для удобства отслеживания завершения записи можно очистить окно лога, нажав "Ок", оставить текущий лог в окне терминала - "Отмена". Пожалуйста, дождитесь выполнения операции, о чём будет написано в окне лога.</comment>
-  </data>
-  <data name="mb_body_save_clip" xml:space="preserve">
-    <value>Save data to clipboard?</value>
-    <comment>Сохранить данные в буфер обмена?</comment>
-  </data>
-  <data name="mb_body_send" xml:space="preserve">
-    <value>The phone's response to the storage data request was processed incorrectly. By clicking the "Ok" button, you allow the developers to send the phone response log to the public telegram channel to try to correct this error. The "Cancel" button will simply close this window, without sending data.</value>
-    <comment>Ответ телефона на запрос данных хранилища обработан некорректно. Нажимая кнопку "Ok", вы разрешаете отправить в публичный телеграм-канал разрабтчикам лог ответа телефона для попытки исправления этой ошибки. Кнопка "Отмена" просто закроет это окно, без отправки данных.</comment>
-  </data>
-  <data name="mb_body_server_down" xml:space="preserve">
-    <value>Upon confirmation, the programmer will be downloaded from the server. This does not guarantee that you will succeed with this programmer. It's just that, with a high degree of probability, a file suitable for the model you have chosen.</value>
-    <comment>При подтверждении, с сервера будет загружен программер. Это не гарантирует того, что у вас с этим программером всё получится. Просто это, с высокой долей вероятности, подходящий к выбранной вами модели файл.</comment>
-  </data>
-  <data name="mb_note_dev_recon" xml:space="preserve">
-    <value>To get the IDs, the device must be reconnected!</value>
-    <comment>Для получения идентификаторов устройство должно быть переподключено!</comment>
-  </data>
-  <data name="mb_note_dev_recon2" xml:space="preserve">
-    <value>Please disconnect the device from the computer, reboot into emergency download mode (9008) and reconnect it.</value>
-    <comment>Пожалуйста, отключите устройство от компьютера, перезагрузите в аварийный режим (9008) и подключите повторно.</comment>
-  </data>
-  <data name="mb_note_sel_prog" xml:space="preserve">
-    <value>Select the programmer on the "Work with files" tab</value>
-    <comment>Выберете программер на вкладке "Работа с файлами"</comment>
-  </data>
-  <data name="mb_share_prog" xml:space="preserve">
-    <value>It seems that the program you selected worked successfully and at the same time it is not in the database. If you want to share this programmer by adding it to the database, please go to the window for sending the programmer to the chat now or after completing the current work. In the "Share programmer" window from the "View" menu, it is necessary to fill in all the missing model data manually or automatically for the correct binding of the programmer to the model.</value>
-    <comment>Похоже, что выбранный вами программе отработал успешно и при этом он отсутствует в базе данных. Если есть желание поделиться этим программером, добавив его в базу данных, пожалуйста, перейдите в окно отправки программера в чат сейчас или после завершения текущей работы. В окне "Поделиться программером" из меню "Вид" необходимо заполнить все недостающие данные модели вручную или автоматически для корректной привязки программера к модели.</comment>
-  </data>
-  <data name="mb_title_adb_er" xml:space="preserve">
-    <value>ADB error</value>
-    <comment>Ошибка ADB</comment>
-  </data>
-  <data name="mb_title_att" xml:space="preserve">
-    <value>Pay attention!</value>
-    <comment>Обратите внимание!</comment>
-  </data>
-  <data name="mb_title_dev_recon" xml:space="preserve">
-    <value>Attention!</value>
-    <comment>Внимание!</comment>
-  </data>
-  <data name="mb_title_mis" xml:space="preserve">
-    <value>Attention! Mistake!</value>
-    <comment>Внимание! Ошибка!</comment>
-  </data>
-  <data name="mb_title_reboot" xml:space="preserve">
-    <value>Waiting for a reboot</value>
-    <comment>Ожидание перезагрузки</comment>
-  </data>
-  <data name="mb_title_record" xml:space="preserve">
-    <value>Recording is underway!</value>
-    <comment>Осуществляется запись!</comment>
-  </data>
-  <data name="mb_title_sel_prog" xml:space="preserve">
-    <value>It is required to specify the correct path to the file</value>
-    <comment>Требуется указать корректный путь к файлу</comment>
-  </data>
-  <data name="mb_title_send" xml:space="preserve">
-    <value>Can I send the data?</value>
-    <comment>Можно отправить данные?</comment>
-  </data>
-  <data name="mb_title_server_down" xml:space="preserve">
-    <value>Downloading a file from the server</value>
-    <comment>Загрузка файла с сервера</comment>
-  </data>
-  <data name="message_body_need_fields" xml:space="preserve">
-    <value>Please, select the manufacturer's name from the list or enter a new one, if there is no suitable value.</value>
-    <comment>Пожалуйста, выберите наименование производителя из списка или введите, при отсутствии подходящего значения.</comment>
-  </data>
-  <data name="message_body_need_restart" xml:space="preserve">
-    <value>A restart of the application is required for the change of the selected language to take effect. Click "Ok" to restart the application now or "Cancel" for the changes to take effect at the next launch.</value>
-    <comment>Для вступления в силу изменения выбранного языка требуется перезапуск приложения. Нажмите "Ок" для перезагрузки приложения сейчас или "Отмена" для вступления изменений в силу при следующем запуске.</comment>
-  </data>
-  <data name="message_title_need_fields" xml:space="preserve">
-    <value>Empty required fields</value>
-    <comment>Пустые обязательные поля</comment>
+  <data name="status_repack_complete" xml:space="preserve">
+    <value>The firmware header was read successfully.</value>
+    <comment>Заголовок прошивки считан успешно.</comment>
   </data>
   <data name="message_title_need_restart" xml:space="preserve">
     <value>Application restart required!</value>
     <comment>Требуется перезапуск приложения!</comment>
   </data>
-  <data name="model" xml:space="preserve">
-    <value>model</value>
-    <comment>модель</comment>
+  <data name="copy_clip" xml:space="preserve">
+    <value>Copy to clipboard</value>
+    <comment>Скопировано в буфер</comment>
   </data>
-  <data name="not_elf" xml:space="preserve">
-    <value>is not an ELF</value>
-    <comment>не является ELF</comment>
+  <data name="count_inside_conf" xml:space="preserve">
+    <value>Number of configuration files inside the firmware</value>
+    <comment>Количество конфигурационных файлов внутри прошивки</comment>
   </data>
-  <data name="not_gpt_header" xml:space="preserve">
-    <value>There is no sign of a partition table header</value>
-    <comment>Отсутствует признак хедера таблицы</comment>
+  <data name="tb_dev_con" xml:space="preserve">
+    <value>The device is connected:</value>
+    <comment>Подключено устройство:</comment>
   </data>
-  <data name="not_send" xml:space="preserve">
-    <value>Not all IDs are specified. We are not sending it yet.</value>
-    <comment>Не все идентификаторы указаны. Пока не отправляем.</comment>
+  <data name="tt_id_rec" xml:space="preserve">
+    <value>The IDs have been received, the device can be disconnected and restarted</value>
+    <comment>Идентификаторы получены, устройство можно отключить и перезагрузить</comment>
   </data>
-  <data name="no_part_sel" xml:space="preserve">
-    <value>No partitions have been selected to save.</value>
-    <comment>Не выбрано ни одного раздела для сохранения.</comment>
+  <data name="about" xml:space="preserve">
+    <value>About</value>
+    <comment>О программе</comment>
   </data>
-  <data name="offset" xml:space="preserve">
-    <value>offset</value>
-    <comment>адрес</comment>
+  <data name="mb_title_record" xml:space="preserve">
+    <value>Recording is underway!</value>
+    <comment>Осуществляется запись!</comment>
   </data>
-  <data name="packer_version" xml:space="preserve">
-    <value>Packer version</value>
-    <comment>Версия упаковщика</comment>
+  <data name="tb_body_att_del_mem" xml:space="preserve">
+    <value>Be careful, you are attempting to erase all information from the device's memory. All data on the flash memory, including the markup table and all user-accessible partitions, will be deleted (replaced with 0x00). By pressing the "Ok" button, you confirm the operation. This is the last warning. If you have not made a backup copy of the device, now is the time to cancel the operation and do a backup.</value>
+    <comment>Осторожно, вы предпринимаете попытку стереть всю информацию из памяти устройства. Будут удалены (заменены на 0х00) все данные на флеш-памяти, включая таблицу разметки и все доступные пользователю разделы. Нажимая кнопку "Ok", вы подтверждаете выполнение операции. Это последнее предупреждение. Если вы не сделали резервной копии устройства, то сейчас самое время отменить операцию и заняться бэкапом.</comment>
   </data>
-  <data name="phone_version" xml:space="preserve">
-    <value>Phone version</value>
-    <comment>Версия телефона</comment>
+  <data name="mb_body_dev_mist" xml:space="preserve">
+    <value>The device was identified with an error</value>
+    <comment>Устройство определено с ошибкой</comment>
   </data>
-  <data name="pp_note" xml:space="preserve">
-    <value>If an error appears in the log about an incorrect command value (HANDLE_SEEK_FAILURE), try changing the choice of processor architecture for this programmer.</value>
-    <comment>Если в логе появляется ошибка о некорректном значении команды (HANDLE_PEEK_FAILURE), попробуйте изменить выбор архитектуры процессора для этого программера.</comment>
+  <data name="mb_title_dev_recon" xml:space="preserve">
+    <value>Attention!</value>
+    <comment>Внимание!</comment>
   </data>
-  <data name="repack_parsing_header" xml:space="preserve">
-    <value>Firmware Parameters</value>
-    <comment>Параметры прошивки</comment>
+  <data name="unknown" xml:space="preserve">
+    <value>Something unknown</value>
+    <comment>Что-то непонятное</comment>
   </data>
-  <data name="sectors" xml:space="preserve">
-    <value>sectors</value>
-    <comment>секторов</comment>
+  <data name="tb_share_prog" xml:space="preserve">
+    <value>Share the programmer</value>
+    <comment>Поделиться программером</comment>
   </data>
-  <data name="sel_fold" xml:space="preserve">
-    <value>selected folder</value>
-    <comment>выбранную папку</comment>
+  <data name="write_ts" xml:space="preserve">
+    <value>total sectors</value>
+    <comment>всего секторов</comment>
   </data>
-  <data name="sel_prog" xml:space="preserve">
-    <value>Select the programmer on the "Work with files" tab</value>
-    <comment>Выберете программер на вкладке "Работа с файлами"</comment>
+  <data name="tb_loader_com" xml:space="preserve">
+    <value>The loader command execution has been completed successfully.</value>
+    <comment>Выполнение команды лоадера успешно завершено.</comment>
   </data>
-  <data name="sent" xml:space="preserve">
-    <value>Sent</value>
-    <comment>Отправили</comment>
+  <data name="dump_select_disc" xml:space="preserve">
+    <value> sectors for </value>
+    <comment> секторов для </comment>
   </data>
-  <data name="server_not_found" xml:space="preserve">
-    <value>Not found on the server</value>
-    <comment>На сервере не нашлось</comment>
+  <data name="status_repack_unpacking_cancel" xml:space="preserve">
+    <value>The operation of unpacking firmware files was interrupted by the user</value>
+    <comment>Операция распаковки файлов прошивки прервана пользователем</comment>
+  </data>
+  <data name="tb_reboot_fail" xml:space="preserve">
+    <value>Automatic reboot to emergency mode 9008 from ADB failed. Try it manually.</value>
+    <comment>Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную.</comment>
+  </data>
+  <data name="status_repack_unpacking_complited" xml:space="preserve">
+    <value>Unpacking of firmware files is completed on</value>
+    <comment>Распаковка файлов прошивки выполнена на</comment>
+  </data>
+  <data name="tb_chip_same" xml:space="preserve">
+    <value>The chip numbers from ADB and Sahara are the same</value>
+    <comment>Номера чипов из ADB и Sahara совпадают</comment>
+  </data>
+  <data name="tb_write_cancel" xml:space="preserve">
+    <value>Writing a file to sections was canceled by the user.</value>
+    <comment>Запись файла в разделы отменена пользователем.</comment>
+  </data>
+  <data name="tb_form_close" xml:space="preserve">
+    <value>The byte read/write form is closed without changes</value>
+    <comment>Форма чтения/записи байт закрыта без изменений</comment>
+  </data>
+  <data name="mb_body_memtype" xml:space="preserve">
+    <value>The memory type is probably incorrectly selected. If the eMMC type is specified, then try changing it to UFS and repeat the request.</value>
+    <comment>Вероятно, неправильно выбран тип памяти. Если указан тип eMMC, то попробуйте изменить на UFS и повторить запрос.</comment>
+  </data>
+  <data name="mb_body_driver_folder" xml:space="preserve">
+    <value>Open the driver folder?</value>
+    <comment>Открыть папку с драйверами?</comment>
+  </data>
+  <data name="tb_log" xml:space="preserve">
+    <value>log file</value>
+    <comment>файла лога</comment>
+  </data>
+  <data name="firmware_signer" xml:space="preserve">
+    <value>Firmware signer</value>
+    <comment>Подписант прошивки</comment>
+  </data>
+  <data name="tt_proc" xml:space="preserve">
+    <value>Currently being processed</value>
+    <comment>Сейчас обрабатывается</comment>
   </data>
   <data name="signs" xml:space="preserve">
     <value>signs</value>
@@ -544,205 +389,417 @@
     <value>size</value>
     <comment>размер</comment>
   </data>
-  <data name="started_unpacking" xml:space="preserve">
-    <value>Started unpacking ...</value>
-    <comment>Начали распаковку ...</comment>
+  <data name="under_dev" xml:space="preserve">
+    <value>Under development</value>
+    <comment>В процессе разработки</comment>
   </data>
-  <data name="status_decode" xml:space="preserve">
-    <value>Decoding ...</value>
-    <comment>Декодируем ...</comment>
-  </data>
-  <data name="status_read" xml:space="preserve">
-    <value>Reading ...</value>
-    <comment>Читаем ...</comment>
-  </data>
-  <data name="status_repack_complete" xml:space="preserve">
-    <value>The firmware header was read successfully.</value>
-    <comment>Заголовок прошивки считан успешно.</comment>
-  </data>
-  <data name="status_repack_decoded" xml:space="preserve">
-    <value>The firmware header is decoded.</value>
-    <comment>Заголовок прошивки декодирован.</comment>
-  </data>
-  <data name="status_repack_open_folder" xml:space="preserve">
-    <value>Open a folder in Explorer</value>
-    <comment>Открыть папку в Проводнике</comment>
-  </data>
-  <data name="status_repack_parsing_header_complite" xml:space="preserve">
-    <value>Parsing of the firmware header ended successfully.</value>
-    <comment>Парсинг шапки прошивки завершился удачно</comment>
-  </data>
-  <data name="status_repack_parsing_header_failed" xml:space="preserve">
-    <value>Parsing of the firmware header failed</value>
-    <comment>Парсинг шапки прошивки завершился неудачно</comment>
-  </data>
-  <data name="status_repack_start" xml:space="preserve">
-    <value>Select the path to the firmware and the directory to unpack</value>
-    <comment>Выберите путь к прошивке и директорию для распаковки</comment>
-  </data>
-  <data name="status_repack_unpacked_failed" xml:space="preserve">
-    <value>This firmware cannot be unpacked, as it does not consist of a single file, or it is incorrectly decoded!</value>
-    <comment>Данная прошивка не может быть распакована, так как состоит не из одного файла, либо некорректно декодирована!</comment>
-  </data>
-  <data name="status_repack_unpacking_cancel" xml:space="preserve">
-    <value>The operation of unpacking firmware files was interrupted by the user</value>
-    <comment>Операция распаковки файлов прошивки прервана пользователем</comment>
-  </data>
-  <data name="status_repack_unpacking_complite" xml:space="preserve">
-    <value>The firmware has been successfully unpacked to the specified directory</value>
-    <comment>Прошивка успешно распакована в указанную директорию</comment>
-  </data>
-  <data name="status_repack_unpacking_complited" xml:space="preserve">
-    <value>Unpacking of firmware files is completed on</value>
-    <comment>Распаковка файлов прошивки выполнена на</comment>
-  </data>
-  <data name="sw_ver" xml:space="preserve">
-    <value>software type (version)</value>
-    <comment>тип программы (версия)</comment>
-  </data>
-  <data name="tbs_part_table" xml:space="preserve">
-    <value>Getting partition table</value>
-    <comment>Получаем таблицу разметки</comment>
-  </data>
-  <data name="tbs_stor_dev" xml:space="preserve">
-    <value>Getting information about the storage device</value>
-    <comment>Получаем информацию о запоминающем устройстве</comment>
-  </data>
-  <data name="tb_adb_sess" xml:space="preserve">
-    <value>ADB session</value>
-    <comment>сеанс ADB</comment>
-  </data>
-  <data name="tb_adb_start" xml:space="preserve">
-    <value>Starting the ADB server ...</value>
-    <comment>Запускаем сервер ADB ...</comment>
-  </data>
-  <data name="tb_auth_fall" xml:space="preserve">
-    <value>Authorization failed. Try again.</value>
-    <comment>Авторизация завершилась неудачей. Попробуйте ещё раз.</comment>
-  </data>
-  <data name="tb_batch_record" xml:space="preserve">
-    <value>Batch firmware recording</value>
-    <comment>Пакетная запись прошивки</comment>
-  </data>
-  <data name="tb_blm" xml:space="preserve">
-    <value>bootloader mode</value>
-    <comment>режим загрузчика</comment>
-  </data>
-  <data name="tb_body_att_del_mem" xml:space="preserve">
-    <value>Be careful, you are attempting to erase all information from the device's memory. All data on the flash memory, including the markup table and all user-accessible partitions, will be deleted (replaced with 0x00). By pressing the "Ok" button, you confirm the operation. This is the last warning. If you have not made a backup copy of the device, now is the time to cancel the operation and do a backup.</value>
-    <comment>Осторожно, вы предпринимаете попытку стереть всю информацию из памяти устройства. Будут удалены (заменены на 0х00) все данные на флеш-памяти, включая таблицу разметки и все доступные пользователю разделы. Нажимая кнопку "Ok", вы подтверждаете выполнение операции. Это последнее предупреждение. Если вы не сделали резервной копии устройства, то сейчас самое время отменить операцию и заняться бэкапом.</comment>
-  </data>
-  <data name="tb_cancel_user" xml:space="preserve">
-    <value>canceled by the user</value>
-    <comment>отменено пользователем</comment>
-  </data>
-  <data name="tb_chip_same" xml:space="preserve">
-    <value>The chip numbers from ADB and Sahara are the same</value>
-    <comment>Номера чипов из ADB и Sahara совпадают</comment>
-  </data>
-  <data name="tb_compl" xml:space="preserve">
-    <value>completed</value>
-    <comment>завершён</comment>
-  </data>
-  <data name="tb_compl_fail" xml:space="preserve">
-    <value>Failed completion</value>
-    <comment>Неудачное завершение</comment>
-  </data>
-  <data name="tb_dev_con" xml:space="preserve">
-    <value>The device is connected:</value>
-    <comment>Подключено устройство:</comment>
-  </data>
-  <data name="tb_dev_not_con" xml:space="preserve">
-    <value>No connected devices were found. Please check in the device settings whether "USB Debugging" is allowed in the "System" - "For developers" section.</value>
-    <comment>Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли "Отладка по USB" в разделе "Система" - "Для разработчиков".</comment>
-  </data>
-  <data name="tb_edl" xml:space="preserve">
-    <value>emergency download mode</value>
-    <comment>аварийный режим</comment>
+  <data name="alt_name" xml:space="preserve">
+    <value>alternative name</value>
+    <comment>альтернативное наименование</comment>
   </data>
   <data name="tb_er_mem" xml:space="preserve">
     <value>Erase all memory</value>
     <comment>Стираем всю память</comment>
   </data>
-  <data name="tb_er_write" xml:space="preserve">
-    <value>Error writing</value>
-    <comment>Ошибка записи</comment>
-  </data>
-  <data name="tb_form_close" xml:space="preserve">
-    <value>The byte read/write form is closed without changes</value>
-    <comment>Форма чтения/записи байт закрыта без изменений</comment>
-  </data>
-  <data name="tb_form_comp" xml:space="preserve">
-    <value>The work with the byte read/write form is completed</value>
-    <comment>Работа с формой чтения/записи байт завершена</comment>
-  </data>
-  <data name="tb_gpt_save" xml:space="preserve">
-    <value>Saving the markup table file to the selected folder was successful.</value>
-    <comment>Сохранение файла таблицы разметки в выбранную папку прошло успешно.</comment>
-  </data>
-  <data name="tb_loader_com" xml:space="preserve">
-    <value>The loader command execution has been completed successfully.</value>
-    <comment>Выполнение команды лоадера успешно завершено.</comment>
-  </data>
-  <data name="tb_log" xml:space="preserve">
-    <value>log file</value>
-    <comment>файла лога</comment>
+  <data name="not_gpt_header" xml:space="preserve">
+    <value>There is no sign of a partition table header</value>
+    <comment>Отсутствует признак хедера таблицы</comment>
   </data>
   <data name="tb_nopath" xml:space="preserve">
     <value>The path to the file does not exist</value>
     <comment>Путь к файлу не существует</comment>
   </data>
-  <data name="tb_norm" xml:space="preserve">
-    <value>normal mode</value>
-    <comment>нормальный режим</comment>
+  <data name="tt_id_not_rec" xml:space="preserve">
+    <value>Not all IDs have been received, data sending has been canceled</value>
+    <comment>Не все идентификаторы получены, отправка данных отменена</comment>
   </data>
-  <data name="tb_note_att_del_mem" xml:space="preserve">
-    <value>Attention, deleting all information from memory!</value>
-    <comment>Внимание, удаление всей информации из памяти!</comment>
+  <data name="mb_body_port_driver" xml:space="preserve">
+    <value>The drivers for this device are not installed</value>
+    <comment>Драйвера для этого устройства не установлены</comment>
   </data>
-  <data name="tb_pass_suc" xml:space="preserve">
-    <value>passed successfully</value>
-    <comment>прошло успешно</comment>
+  <data name="hex_mess_stopoper" xml:space="preserve">
+    <value>Be careful, you are attempting to stop a lengthy search procedure. By pressing the "Ok" button, you confirm the operation.</value>
+    <comment>Осторожно, вы предпринимаете попытку остановить длительную процедуру поиска. Нажимая кнопку "Ok", вы подтверждаете выполнение операции.</comment>
+  </data>
+  <data name="free_space" xml:space="preserve">
+    <value>Be sure to make sure that the free disk size is larger than the total volume (of all selected partitions) of the stored dump. Otherwise, errors may occur when saving or in the process of further work with saved partitions.</value>
+    <comment>Обязательно убедитесь, что свободный размер диска больше суммарного объёма (всех выбранных разделов) сохраняемого дампа. Иначе возможны ошибки при сохранении или в процесе дальнейшей работы с сохранёнными разделами.</comment>
+  </data>
+  <data name="server_not_found" xml:space="preserve">
+    <value>Not found on the server</value>
+    <comment>На сервере не нашлось</comment>
+  </data>
+  <data name="warn" xml:space="preserve">
+    <value>Warning!</value>
+    <comment>Предупреждение!</comment>
+  </data>
+  <data name="hex_found" xml:space="preserve">
+    <value>found</value>
+    <comment>найдено</comment>
+  </data>
+  <data name="file" xml:space="preserve">
+    <value>file</value>
+    <comment>файл</comment>
+  </data>
+  <data name="tt_path" xml:space="preserve">
+    <value>Specify the path to the firehose collection</value>
+    <comment>Укажите путь к коллекции firehose</comment>
+  </data>
+  <data name="mb_title_reboot" xml:space="preserve">
+    <value>Waiting for a reboot</value>
+    <comment>Ожидание перезагрузки</comment>
+  </data>
+  <data name="tb_adb_start" xml:space="preserve">
+    <value>Starting the ADB server ...</value>
+    <comment>Запускаем сервер ADB ...</comment>
+  </data>
+  <data name="tb_compl" xml:space="preserve">
+    <value>completed</value>
+    <comment>завершён</comment>
+  </data>
+  <data name="tip_cancel" xml:space="preserve">
+    <value>To reset, press the button and select "Cancel"</value>
+    <comment>Для сброса нажмите кнопку и выберите "Отмена"</comment>
+  </data>
+  <data name="er_func_wfiles" xml:space="preserve">
+    <value>Error in the WFiles function</value>
+    <comment>Ошибка в функции WFiles</comment>
+  </data>
+  <data name="status_decode" xml:space="preserve">
+    <value>Decoding ...</value>
+    <comment>Декодируем ...</comment>
+  </data>
+  <data name="button_rampath" xml:space="preserve">
+    <value>The path to the firmware file</value>
+    <comment>Путь к файлу прошивки</comment>
+  </data>
+  <data name="mb_title_server_down" xml:space="preserve">
+    <value>Downloading a file from the server</value>
+    <comment>Загрузка файла с сервера</comment>
+  </data>
+  <data name="excert_sel" xml:space="preserve">
+    <value>Selected</value>
+    <comment>Выбрано</comment>
   </data>
   <data name="tb_pp" xml:space="preserve">
     <value>Read/Write IMEM (peek&amp;poke)</value>
     <comment>Читаем/пишем байты по определённому адресу (peek&amp;poke)</comment>
   </data>
-  <data name="tb_reboot" xml:space="preserve">
-    <value>Device reboot</value>
-    <comment>Устройство перегружается</comment>
+  <data name="encode" xml:space="preserve">
+    <value>encoded</value>
+    <comment>закодирован</comment>
   </data>
-  <data name="tb_reboot_fail" xml:space="preserve">
-    <value>Automatic reboot to emergency mode 9008 from ADB failed. Try it manually.</value>
-    <comment>Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную.</comment>
+  <data name="hex_from" xml:space="preserve">
+    <value>from</value>
+    <comment>из</comment>
+  </data>
+  <data name="tb_dev_not_con" xml:space="preserve">
+    <value>No connected devices were found. Please check in the device settings whether "USB Debugging" is allowed in the "System" - "For developers" section.</value>
+    <comment>Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли "Отладка по USB" в разделе "Система" - "Для разработчиков".</comment>
+  </data>
+  <data name="tbs_part_table" xml:space="preserve">
+    <value>Getting partition table</value>
+    <comment>Получаем таблицу разметки</comment>
+  </data>
+  <data name="tb_cancel_user" xml:space="preserve">
+    <value>canceled by the user</value>
+    <comment>отменено пользователем</comment>
+  </data>
+  <data name="firmware_version" xml:space="preserve">
+    <value>Firmware version</value>
+    <comment>Версия прошивки</comment>
+  </data>
+  <data name="status_repack_decoded" xml:space="preserve">
+    <value>The firmware header is decoded.</value>
+    <comment>Заголовок прошивки декодирован.</comment>
+  </data>
+  <data name="tb_batch_record" xml:space="preserve">
+    <value>Batch firmware recording</value>
+    <comment>Пакетная запись прошивки</comment>
+  </data>
+  <data name="phone_version" xml:space="preserve">
+    <value>Phone version</value>
+    <comment>Версия телефона</comment>
+  </data>
+  <data name="status_repack_unpacked_failed" xml:space="preserve">
+    <value>This firmware cannot be unpacked, as it does not consist of a single file, or it is incorrectly decoded!</value>
+    <comment>Данная прошивка не может быть распакована, так как состоит не из одного файла, либо некорректно декодирована!</comment>
+  </data>
+  <data name="excert_found" xml:space="preserve">
+    <value>Found</value>
+    <comment>Найдено</comment>
+  </data>
+  <data name="tt_check" xml:space="preserve">
+    <value>Click to check the selected programmer</value>
+    <comment>Нажмите для проверки выбранного программера</comment>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Greeting_en.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="offset" xml:space="preserve">
+    <value>offset</value>
+    <comment>адрес</comment>
+  </data>
+  <data name="er_func_fhl_params" xml:space="preserve">
+    <value>Failed to execute fh_loader with the specified parameters</value>
+    <comment>Не удалось выполнить fh_loader с указанными параметрами</comment>
+  </data>
+  <data name="mb_note_dev_recon" xml:space="preserve">
+    <value>To get the IDs, the device must be reconnected!</value>
+    <comment>Для получения идентификаторов устройство должно быть переподключено!</comment>
+  </data>
+  <data name="tb_adb_sess" xml:space="preserve">
+    <value>ADB session</value>
+    <comment>сеанс ADB</comment>
+  </data>
+  <data name="auth_title" xml:space="preserve">
+    <value>Authorization is required!</value>
+    <comment>Требуется авторизация!</comment>
+  </data>
+  <data name="no_part_sel" xml:space="preserve">
+    <value>No partitions have been selected to save.</value>
+    <comment>Не выбрано ни одного раздела для сохранения.</comment>
+  </data>
+  <data name="hash" xml:space="preserve">
+    <value>hash of the root certificate</value>
+    <comment>хеш корневого сертификата</comment>
   </data>
   <data name="tb_rep_file" xml:space="preserve">
     <value>report file</value>
     <comment>файл отчёта</comment>
   </data>
+  <data name="userstate_show_first" xml:space="preserve">
+    <value>Displaying the block of the first characters ...</value>
+    <comment>Отображаем блок первых символов ...</comment>
+  </data>
+  <data name="sw_ver" xml:space="preserve">
+    <value>software type (version)</value>
+    <comment>тип программы (версия)</comment>
+  </data>
+  <data name="dump_select_sec" xml:space="preserve">
+    <value>You can select no more than </value>
+    <comment>Вы можете выбрать не более</comment>
+  </data>
+  <data name="packer_version" xml:space="preserve">
+    <value>Packer version</value>
+    <comment>Версия упаковщика</comment>
+  </data>
+  <data name="dump_select_sectors" xml:space="preserve">
+    <value>You can select no more than {0} sectors for Disk {1}</value>
+    <comment>Вы можете выбрать не более {0} секторов для Диск {1}</comment>
+  </data>
   <data name="tb_save" xml:space="preserve">
     <value>Saving</value>
     <comment>Сохранение</comment>
   </data>
-  <data name="tb_send_conf" xml:space="preserve">
-    <value>Sending the log has been confirmed by the user.</value>
-    <comment>Отправка лога подтверждена пользователем.</comment>
+  <data name="mb_title_sel_prog" xml:space="preserve">
+    <value>It is required to specify the correct path to the file</value>
+    <comment>Требуется указать корректный путь к файлу</comment>
   </data>
-  <data name="tb_share_prog" xml:space="preserve">
-    <value>Share the programmer</value>
-    <comment>Поделиться программером</comment>
+  <data name="status_repack_parsing_header_failed" xml:space="preserve">
+    <value>Parsing of the firmware header failed</value>
+    <comment>Парсинг шапки прошивки завершился неудачно</comment>
   </data>
-  <data name="tb_write_cancel" xml:space="preserve">
-    <value>Writing a file to sections was canceled by the user.</value>
-    <comment>Запись файла в разделы отменена пользователем.</comment>
+  <data name="hex_files" xml:space="preserve">
+    <value>files</value>
+    <comment>файлах</comment>
+  </data>
+  <data name="chip_sn" xml:space="preserve">
+    <value>chip s/n</value>
+    <comment>серийный номер процессора</comment>
+  </data>
+  <data name="count_bin" xml:space="preserve">
+    <value>Number of firmware bin files</value>
+    <comment>Количество bin файлов прошивки</comment>
+  </data>
+  <data name="mb_body_send" xml:space="preserve">
+    <value>The phone's response to the storage data request was processed incorrectly. By clicking the "Ok" button, you allow the developers to send the phone response log to the public telegram channel to try to correct this error. The "Cancel" button will simply close this window, without sending data.</value>
+    <comment>Ответ телефона на запрос данных хранилища обработан некорректно. Нажимая кнопку "Ok", вы разрешаете отправить в публичный телеграм-канал разрабтчикам лог ответа телефона для попытки исправления этой ошибки. Кнопка "Отмена" просто закроет это окно, без отправки данных.</comment>
+  </data>
+  <data name="mb_acc_er" xml:space="preserve">
+    <value>Access error</value>
+    <comment>Ошибка доступа</comment>
+  </data>
+  <data name="crc" xml:space="preserve">
+    <value>CRC</value>
+    <comment>контрольная сумма</comment>
+  </data>
+  <data name="button_dirrepack" xml:space="preserve">
+    <value>Dir for unpacking</value>
+    <comment>Директория для распаковки</comment>
+  </data>
+  <data name="app_path" xml:space="preserve">
+    <value>Workdir application</value>
+    <comment>Путь установки программы</comment>
+  </data>
+  <data name="tb_reboot" xml:space="preserve">
+    <value>Device reboot</value>
+    <comment>Устройство перегружается</comment>
+  </data>
+  <data name="tb_compl_fail" xml:space="preserve">
+    <value>Failed completion</value>
+    <comment>Неудачное завершение</comment>
+  </data>
+  <data name="sent" xml:space="preserve">
+    <value>Sent</value>
+    <comment>Отправили</comment>
+  </data>
+  <data name="sel_fold" xml:space="preserve">
+    <value>selected folder</value>
+    <comment>выбранную папку</comment>
+  </data>
+  <data name="tb_edl" xml:space="preserve">
+    <value>emergency download mode</value>
+    <comment>аварийный режим</comment>
+  </data>
+  <data name="hex_processed" xml:space="preserve">
+    <value>processed</value>
+    <comment>обработан</comment>
+  </data>
+  <data name="mb_body_record" xml:space="preserve">
+    <value>An attempt is being made to write information to memory partitions. For the convenience of tracking the completion of the recording, you can clear the log window by clicking "Ok", leave the current log in the terminal window - "Cancel". Please wait for the operation to be performed, as it will be written in the log window.</value>
+    <comment>Предпринимается попытка записи информации в разделы памяти. Для удобства отслеживания завершения записи можно очистить окно лога, нажав "Ок", оставить текущий лог в окне терминала - "Отмена". Пожалуйста, дождитесь выполнения операции, о чём будет написано в окне лога.</comment>
+  </data>
+  <data name="mb_body_corr_er" xml:space="preserve">
+    <value>Please correct the errors according to the log data and/or connect the device in 9008 mode after manual reboot.</value>
+    <comment>Пожалуйста, исправьте ошибки по данным лога и/или подключите устройство в режиме 9008 после перезагрузки вручную.</comment>
   </data>
   <data name="tb_write_file_sectors" xml:space="preserve">
     <value>Writing the bin file to the selected sectors</value>
     <comment>Записываем bin-файл в выбранные сектора</comment>
   </data>
-  <data name="tb_xml_not_gen" xml:space="preserve">
-    <value>The XML file has not been generated for the work</value>
-    <comment>XML-файл для работы не сформирован</comment>
+  <data name="hex_in" xml:space="preserve">
+    <value>in</value>
+    <comment>в</comment>
+  </data>
+  <data name="tb_pass_suc" xml:space="preserve">
+    <value>passed successfully</value>
+    <comment>прошло успешно</comment>
+  </data>
+  <data name="tb_norm" xml:space="preserve">
+    <value>normal mode</value>
+    <comment>нормальный режим</comment>
+  </data>
+  <data name="count_inside_bin" xml:space="preserve">
+    <value>Number of bin files inside the firmware</value>
+    <comment>Количество bin файлов внутри прошивки</comment>
+  </data>
+  <data name="status_repack_open_folder" xml:space="preserve">
+    <value>Open a folder in Explorer</value>
+    <comment>Открыть папку в Проводнике</comment>
+  </data>
+  <data name="hex_note_cancelsearch" xml:space="preserve">
+    <value>The current search was canceled by the user</value>
+    <comment>Текущий поиск отменён пользователем</comment>
+  </data>
+  <data name="mb_note_sel_prog" xml:space="preserve">
+    <value>Select the programmer on the "Work with files" tab</value>
+    <comment>Выберете программер на вкладке "Работа с файлами"</comment>
+  </data>
+  <data name="button_search" xml:space="preserve">
+    <value>Search</value>
+    <comment>Поиск</comment>
+  </data>
+  <data name="mb_body_server_down" xml:space="preserve">
+    <value>Upon confirmation, the programmer will be downloaded from the server. This does not guarantee that you will succeed with this programmer. It's just that, with a high degree of probability, a file suitable for the model you have chosen.</value>
+    <comment>При подтверждении, с сервера будет загружен программер. Это не гарантирует того, что у вас с этим программером всё получится. Просто это, с высокой долей вероятности, подходящий к выбранной вами модели файл.</comment>
+  </data>
+  <data name="version" xml:space="preserve">
+    <value>Version</value>
+    <comment>Версия</comment>
+  </data>
+  <data name="mb_title_adb_er" xml:space="preserve">
+    <value>ADB error</value>
+    <comment>Ошибка ADB</comment>
+  </data>
+  <data name="mb_body_save_clip" xml:space="preserve">
+    <value>Save data to clipboard?</value>
+    <comment>Сохранить данные в буфер обмена?</comment>
+  </data>
+  <data name="mb_note_dev_recon2" xml:space="preserve">
+    <value>Please disconnect the device from the computer, reboot into emergency download mode (9008) and reconnect it.</value>
+    <comment>Пожалуйста, отключите устройство от компьютера, перезагрузите в аварийный режим (9008) и подключите повторно.</comment>
+  </data>
+  <data name="mb_title_send" xml:space="preserve">
+    <value>Can I send the data?</value>
+    <comment>Можно отправить данные?</comment>
+  </data>
+  <data name="manuf" xml:space="preserve">
+    <value>manufacturer</value>
+    <comment>производитель</comment>
+  </data>
+  <data name="done" xml:space="preserve">
+    <value>Done.</value>
+    <comment>Готово.</comment>
+  </data>
+  <data name="auth_body" xml:space="preserve">
+    <value>Authorization is required to use the selected programmer. This program does not support working with programmers who require authorization. Try to find an alternative programmer, or use other software to work.</value>
+    <comment>Для использования выбранного программера требуется авторизация. Эта программа не поддерживает работу с программерами, для которых необходима авторизация. Попробуйте найти альтернативный программер, либо используйте для работы другое ПО.</comment>
+  </data>
+  <data name="hex_matches" xml:space="preserve">
+    <value>matches</value>
+    <comment>совпадений</comment>
+  </data>
+  <data name="tt_data_not_sent" xml:space="preserve">
+    <value>No data sent</value>
+    <comment>Данные не отправлены</comment>
+  </data>
+  <data name="not_send" xml:space="preserve">
+    <value>Not all IDs are specified. We are not sending it yet.</value>
+    <comment>Не все идентификаторы указаны. Пока не отправляем.</comment>
+  </data>
+  <data name="model" xml:space="preserve">
+    <value>model</value>
+    <comment>модель</comment>
+  </data>
+  <data name="mb_share_prog" xml:space="preserve">
+    <value>It seems that the program you selected worked successfully and at the same time it is not in the database. If you want to share this programmer by adding it to the database, please go to the window for sending the programmer to the chat now or after completing the current work. In the "Share programmer" window from the "View" menu, it is necessary to fill in all the missing model data manually or automatically for the correct binding of the programmer to the model.</value>
+    <comment>Похоже, что выбранный вами программе отработал успешно и при этом он отсутствует в базе данных. Если есть желание поделиться этим программером, добавив его в базу данных, пожалуйста, перейдите в окно отправки программера в чат сейчас или после завершения текущей работы. В окне "Поделиться программером" из меню "Вид" необходимо заполнить все недостающие данные модели вручную или автоматически для корректной привязки программера к модели.</comment>
+  </data>
+  <data name="tb_er_write" xml:space="preserve">
+    <value>Error writing</value>
+    <comment>Ошибка записи</comment>
+  </data>
+  <data name="mb_title_mis" xml:space="preserve">
+    <value>Attention! Mistake!</value>
+    <comment>Внимание! Ошибка!</comment>
+  </data>
+  <data name="write_ss" xml:space="preserve">
+    <value>Current sector size</value>
+    <comment>Текущий размер сектора</comment>
+  </data>
+  <data name="tb_gpt_save" xml:space="preserve">
+    <value>Saving the markup table file to the selected folder was successful.</value>
+    <comment>Сохранение файла таблицы разметки в выбранную папку прошло успешно.</comment>
+  </data>
+  <data name="tip_row" xml:space="preserve">
+    <value>Select from the list or enter manually</value>
+    <comment>Выберите из списка или введите вручную</comment>
+  </data>
+  <data name="tb_send_conf" xml:space="preserve">
+    <value>Sending the log has been confirmed by the user.</value>
+    <comment>Отправка лога подтверждена пользователем.</comment>
+  </data>
+  <data name="tbs_stor_dev" xml:space="preserve">
+    <value>Getting information about the storage device</value>
+    <comment>Получаем информацию о запоминающем устройстве</comment>
+  </data>
+  <data name="mb_title_att" xml:space="preserve">
+    <value>Pay attention!</value>
+    <comment>Обратите внимание!</comment>
+  </data>
+  <data name="tb_note_att_del_mem" xml:space="preserve">
+    <value>Attention, deleting all information from memory!</value>
+    <comment>Внимание, удаление всей информации из памяти!</comment>
+  </data>
+  <data name="mb_body_gpt_not_formed" xml:space="preserve">
+    <value>The GPT table is not formed</value>
+    <comment>Таблица GPT не сформирована</comment>
+  </data>
+  <data name="increase_rating" xml:space="preserve">
+    <value>Reaction to this message will increase #Concernedusersrating@firehosefinder</value>
+    <comment>Реакция на это сообщение увеличит #Concernedusersrating@firehosefinder</comment>
   </data>
   <data name="thanks_user" xml:space="preserve">
     <value>Thanks to</value>
@@ -752,84 +809,33 @@
     <value>for the data provided.</value>
     <comment>за предоставленные данные.</comment>
   </data>
-  <data name="tip_cancel" xml:space="preserve">
-    <value>To reset, press the button and select "Cancel"</value>
-    <comment>Для сброса нажмите кнопку и выберите "Отмена"</comment>
+  <data name="bot_title_start" xml:space="preserve">
+    <value>Alternative authorization option</value>
+    <comment>Альтернативная возможность авторизации</comment>
   </data>
-  <data name="tip_decode" xml:space="preserve">
-    <value>The decryption system is DES only. The number of characters in the key less than 16 will be supplemented with '0' at the beginning.</value>
-    <comment>Система дешифровки - только DES. Количество знаков в ключе меньше 16 будет дополнено '0' в начале.</comment>
+  <data name="bot_code_start" xml:space="preserve">
+    <value>If you failed to log in automatically, then you can find the "Hoplik-Bot" bot in the Telegram and try to enter the authorization code after the /start command when the FhF application is running:</value>
+    <comment>Если у вас не получилость автоматически авторизоваться, то вы можете найти в Телеграм бота "Hoplik-Bot" и при запущенном приложении FhF попробовать ввести после команды /start код авторизации:</comment>
   </data>
-  <data name="tip_row" xml:space="preserve">
-    <value>Select from the list or enter manually</value>
-    <comment>Выберите из списка или введите вручную</comment>
+  <data name="actual_data" xml:space="preserve">
+    <value>Relevant on:</value>
+    <comment>Актуально на:</comment>
+  </data>
+  <data name="tb_auth_fall" xml:space="preserve">
+    <value>Authorization failed. Try again.</value>
+    <comment>Авторизация завершилась неудачей. Попробуйте ещё раз.</comment>
   </data>
   <data name="ts_auth" xml:space="preserve">
     <value>Authorization</value>
     <comment>Авторизация</comment>
   </data>
-  <data name="tt_check" xml:space="preserve">
-    <value>Click to check the selected programmer</value>
-    <comment>Нажмите для проверки выбранного программера</comment>
+  <data name="Dev_comm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dev_comm_en.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="tt_data_not_sent" xml:space="preserve">
-    <value>No data sent</value>
-    <comment>Данные не отправлены</comment>
+  <data name="ten_sec_title" xml:space="preserve">
+    <value>Suggest to change settings</value>
   </data>
-  <data name="tt_data_sent" xml:space="preserve">
-    <value>Data has been sent successfully</value>
-    <comment>Данные успешно отправлены</comment>
-  </data>
-  <data name="tt_find" xml:space="preserve">
-    <value>Connect the device and click to get the IDs</value>
-    <comment>Подключите устройство и нажмите для получения идентификаторов</comment>
-  </data>
-  <data name="tt_id_empty" xml:space="preserve">
-    <value>The IDs are empty. There is nothing to send.</value>
-    <comment>Идентификаторы пусты. Нечего отправлять.</comment>
-  </data>
-  <data name="tt_id_not_rec" xml:space="preserve">
-    <value>Not all IDs have been received, data sending has been canceled</value>
-    <comment>Не все идентификаторы получены, отправка данных отменена</comment>
-  </data>
-  <data name="tt_id_rec" xml:space="preserve">
-    <value>The IDs have been received, the device can be disconnected and restarted</value>
-    <comment>Идентификаторы получены, устройство можно отключить и перезагрузить</comment>
-  </data>
-  <data name="tt_path" xml:space="preserve">
-    <value>Specify the path to the firehose collection</value>
-    <comment>Укажите путь к коллекции firehose</comment>
-  </data>
-  <data name="tt_proc" xml:space="preserve">
-    <value>Currently being processed</value>
-    <comment>Сейчас обрабатывается</comment>
-  </data>
-  <data name="under_dev" xml:space="preserve">
-    <value>Under development</value>
-    <comment>В процессе разработки</comment>
-  </data>
-  <data name="unknown" xml:space="preserve">
-    <value>Something unknown</value>
-    <comment>Что-то непонятное</comment>
-  </data>
-  <data name="userstate_show_first" xml:space="preserve">
-    <value>Displaying the block of the first characters ...</value>
-    <comment>Отображаем блок первых символов ...</comment>
-  </data>
-  <data name="version" xml:space="preserve">
-    <value>Version</value>
-    <comment>Версия</comment>
-  </data>
-  <data name="warn" xml:space="preserve">
-    <value>Warning!</value>
-    <comment>Предупреждение!</comment>
-  </data>
-  <data name="write_ss" xml:space="preserve">
-    <value>Current sector size</value>
-    <comment>Текущий размер сектора</comment>
-  </data>
-  <data name="write_ts" xml:space="preserve">
-    <value>total sectors</value>
-    <comment>всего секторов</comment>
+  <data name="ten_sec_label" xml:space="preserve">
+    <value>It seems you have a new device, but the selected protocol is old. I suggest you restart the device and try to obtain identifiers using the Sahara v3 protocol. The protocol will change automatically after 15 seconds or by pressing the "OK" key. The "Cancel" key will keep the Sahara v2 protocol.</value>
   </data>
 </root>

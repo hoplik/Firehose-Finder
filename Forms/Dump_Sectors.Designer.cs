@@ -63,12 +63,12 @@ namespace FirehoseFinder
             // 
             // groupBox_dump
             // 
-            resources.ApplyResources(this.groupBox_dump, "groupBox_dump");
             this.groupBox_dump.Controls.Add(this.textBox_count_dump);
             this.groupBox_dump.Controls.Add(this.label_count1);
             this.groupBox_dump.Controls.Add(this.label_count_dump);
             this.groupBox_dump.Controls.Add(this.textBox_start_dump);
             this.groupBox_dump.Controls.Add(this.label_start_dump);
+            resources.ApplyResources(this.groupBox_dump, "groupBox_dump");
             this.groupBox_dump.Name = "groupBox_dump";
             this.groupBox_dump.TabStop = false;
             // 

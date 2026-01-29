@@ -727,4 +727,10 @@
   <data name="Dev_comm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dev_comm.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="ten_sec_title" xml:space="preserve">
+    <value>Предложение изменить настройки</value>
+  </data>
+  <data name="ten_sec_label" xml:space="preserve">
+    <value>Похоже, что у вас новое устройство, а протокол выбран старый. Предлагаю вам перегрузить устройство и попробовать получить идентификаторы по протоколу  Sahara v3. Протокол будет изменён автоматически через 15 секунд или по нажатию клавиши "Ок". Клавиша "Отмена" оставит протокол Sahara v2.</value>
+  </data>
 </root>

@@ -140,6 +140,9 @@
   <data name="groupBox_peek.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 89</value>
   </data>
+  <data name="&gt;&gt;saveFileDialog_output.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;label_poke_adr.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -158,14 +161,8 @@
   <data name="checkBox_output.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;label_peek_adr.Name" xml:space="preserve">
-    <value>label_peek_adr</value>
-  </data>
-  <data name="&gt;&gt;radioButton_peek.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panel_pp_select.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="groupBox_peek.Text" xml:space="preserve">
+    <value>Читаем</value>
   </data>
   <data name="label_poke_adr.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 16</value>
@@ -173,8 +170,8 @@
   <data name="&gt;&gt;label_peek_cb.Parent" xml:space="preserve">
     <value>groupBox_peek</value>
   </data>
-  <data name="button_pp_ok.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 30</value>
+  <data name="&gt;&gt;checkBox_output.Parent" xml:space="preserve">
+    <value>groupBox_output</value>
   </data>
   <data name="&gt;&gt;radioButton_aarch64.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -194,24 +191,18 @@
   <data name="checkBox_output.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 33</value>
   </data>
-  <data name="textBox_peek_adr.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label_peek_cb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 74</value>
+  <data name="&gt;&gt;label_peek_adr.Parent" xml:space="preserve">
+    <value>groupBox_peek</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="radioButton_poke.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <data name="&gt;&gt;groupBox_poke.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label_peek_cb.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="label_peek_adr.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="radioButton_peek.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="label_peek_cb.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 74</value>
   </data>
   <data name="label_poke_adr.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -225,6 +216,9 @@
   <data name="&gt;&gt;textBox_poke_adr.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;label_poke_adr.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="&gt;&gt;radioButton_aarch64.Parent" xml:space="preserve">
     <value>groupBox_fh_aarch</value>
   </data>
@@ -236,9 +230,6 @@
   </data>
   <data name="&gt;&gt;toolTip_pp.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButton_aarch32.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="&gt;&gt;label_poke_bytes.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -255,6 +246,9 @@
   <data name="&gt;&gt;radioButton_aarch64.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="groupBox_poke.Size" type="System.Drawing.Size, System.Drawing">
+    <value>257, 146</value>
+  </data>
   <data name="&gt;&gt;textBox_peek_cb.Parent" xml:space="preserve">
     <value>groupBox_peek</value>
   </data>
@@ -267,14 +261,17 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label_poke_cb.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;radioButton_peek.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="radioButton_peek.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 30</value>
   </data>
   <data name="label_poke_bytes.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 103</value>
+  </data>
+  <data name="&gt;&gt;label_poke_cbytes.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="groupBox_poke.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -297,23 +294,20 @@
   <data name="radioButton_poke.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 30</value>
   </data>
-  <data name="&gt;&gt;checkBox_output.Parent" xml:space="preserve">
-    <value>groupBox_output</value>
-  </data>
   <data name="button_pp_cancel.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="groupBox_fh_aarch.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;textBox_poke_adr.Name" xml:space="preserve">
-    <value>textBox_poke_adr</value>
+  <data name="tableLayoutPanel_PP.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="button_pp_ok" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_pp_cancel" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="groupBox_peek" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="groupBox_poke" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="panel_pp_select" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="groupBox_fh_aarch" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,50,Absolute,36,Percent,100,Absolute,36" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableLayoutPanel_PP.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="textBox_peek_adr.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+  <data name="panel_pp_select.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="label_poke_cbytes.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 16</value>
@@ -327,11 +321,11 @@
   <data name="label_poke_bytes.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="groupBox_poke.ToolTip" xml:space="preserve">
-    <value />
+  <data name="button_pp_ok.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 30</value>
   </data>
-  <data name="&gt;&gt;groupBox_output.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;label_poke_cb.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="textBox_peek_adr.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 22</value>
@@ -354,6 +348,9 @@
   <data name="&gt;&gt;radioButton_aarch64.Name" xml:space="preserve">
     <value>radioButton_aarch64</value>
   </data>
+  <data name="tableLayoutPanel_PP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
   <data name="radioButton_poke.Location" type="System.Drawing.Point, System.Drawing">
     <value>335, 0</value>
   </data>
@@ -371,9 +368,6 @@
   </data>
   <data name="&gt;&gt;groupBox_peek.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label_peek_cb.Name" xml:space="preserve">
-    <value>label_peek_cb</value>
   </data>
   <data name="label_poke_cb.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 74</value>
@@ -396,6 +390,12 @@
   <data name="&gt;&gt;panel_pp_select.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="label_peek_cb.Text" xml:space="preserve">
+    <value>Кол-во байт (hex, 0x)</value>
+  </data>
+  <data name="&gt;&gt;label_poke_bytes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;groupBox_poke.Name" xml:space="preserve">
     <value>groupBox_poke</value>
   </data>
@@ -408,11 +408,11 @@
   <data name="radioButton_peek.Text" xml:space="preserve">
     <value>Читаем байты по адресу</value>
   </data>
+  <data name="&gt;&gt;label_peek_adr.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Работаем с памятью процессора (IMEM)</value>
-  </data>
-  <data name="&gt;&gt;label_poke_cb.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="textBox_poke_bytes.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
@@ -435,8 +435,11 @@
   <data name="radioButton_aarch32.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="textBox_poke_bytes.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="textBox_peek_adr.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;checkBox_output.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label_poke_cb.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -447,14 +450,14 @@
   <data name="textBox_peek_cb.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 22</value>
   </data>
-  <data name="&gt;&gt;groupBox_fh_aarch.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;radioButton_aarch32.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="radioButton_peek.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="label_peek_adr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 16</value>
+  <data name="&gt;&gt;textBox_peek_adr.Parent" xml:space="preserve">
+    <value>groupBox_peek</value>
   </data>
   <data name="label_poke_cb.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -468,32 +471,26 @@
   <data name="&gt;&gt;tableLayoutPanel_PP.Type" xml:space="preserve">
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="tableLayoutPanel_PP.Size" type="System.Drawing.Size, System.Drawing">
     <value>525, 274</value>
+  </data>
+  <data name="&gt;&gt;radioButton_poke.Name" xml:space="preserve">
+    <value>radioButton_poke</value>
   </data>
   <data name="&gt;&gt;button_pp_ok.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label_peek_adr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 36</value>
-  </data>
   <data name="&gt;&gt;textBox_peek_cb.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="groupBox_peek.Text" xml:space="preserve">
-    <value>Читаем</value>
-  </data>
-  <data name="groupBox_fh_aarch.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
   </data>
   <data name="&gt;&gt;groupBox_poke.Parent" xml:space="preserve">
     <value>tableLayoutPanel_PP</value>
   </data>
   <data name="radioButton_poke.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="&gt;&gt;label_poke_cb.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label_peek_adr.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -516,14 +513,14 @@
   <data name="textBox_peek_adr.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="&gt;&gt;groupBox_fh_aarch.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="&gt;&gt;saveFileDialog_output.Name" xml:space="preserve">
     <value>saveFileDialog_output</value>
   </data>
   <data name="textBox_peek_cb.Location" type="System.Drawing.Point, System.Drawing">
     <value>151, 69</value>
-  </data>
-  <data name="&gt;&gt;radioButton_peek.Name" xml:space="preserve">
-    <value>radioButton_peek</value>
   </data>
   <data name="groupBox_output.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 93</value>
@@ -531,14 +528,11 @@
   <data name="&gt;&gt;groupBox_peek.Parent" xml:space="preserve">
     <value>tableLayoutPanel_PP</value>
   </data>
-  <data name="panel_pp_select.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBox_poke_adr.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="groupBox_poke.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 146</value>
+  <data name="groupBox_fh_aarch.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="button_pp_ok.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -546,8 +540,8 @@
   <data name="&gt;&gt;groupBox_output.Parent" xml:space="preserve">
     <value>groupBox_peek</value>
   </data>
-  <data name="groupBox_poke.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="label_peek_adr.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;radioButton_aarch32.Name" xml:space="preserve">
     <value>radioButton_aarch32</value>
@@ -555,14 +549,17 @@
   <data name="panel_pp_select.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="radioButton_aarch32.Text" xml:space="preserve">
+    <value>AArch32</value>
+  </data>
   <data name="label_poke_adr.Text" xml:space="preserve">
     <value>Адрес (hex, 0x)</value>
   </data>
   <data name="&gt;&gt;radioButton_peek.Parent" xml:space="preserve">
     <value>panel_pp_select</value>
   </data>
-  <data name="groupBox_poke.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="&gt;&gt;groupBox_output.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="textBox_peek_adr.Text" xml:space="preserve">
     <value>100000</value>
@@ -570,14 +567,17 @@
   <data name="groupBox_fh_aarch.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="&gt;&gt;panel_pp_select.Name" xml:space="preserve">
+    <value>panel_pp_select</value>
+  </data>
   <data name="&gt;&gt;button_pp_cancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label_poke_bytes.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 16</value>
   </data>
-  <data name="label_peek_cb.Text" xml:space="preserve">
-    <value>Кол-во байт (hex, 0x)</value>
+  <data name="groupBox_poke.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="textBox_poke_adr.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -591,8 +591,8 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>525, 274</value>
   </data>
-  <data name="&gt;&gt;panel_pp_select.Name" xml:space="preserve">
-    <value>panel_pp_select</value>
+  <data name="label_peek_adr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 16</value>
   </data>
   <data name="radioButton_peek.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
@@ -600,26 +600,20 @@
   <data name="checkBox_output.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radioButton_aarch64.AutoSize" type="System.Boolean, mscorlib">
+  <data name="textBox_peek_adr.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="radioButton_peek.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;label_peek_adr.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tableLayoutPanel_PP.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="button_pp_ok" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button_pp_cancel" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="groupBox_peek" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="groupBox_poke" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="panel_pp_select" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="groupBox_fh_aarch" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Absolute,50,Absolute,36,Percent,100,Absolute,36" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="&gt;&gt;button_pp_ok.Parent" xml:space="preserve">
-    <value>tableLayoutPanel_PP</value>
-  </data>
-  <data name="textBox_peek_cb.Text" xml:space="preserve">
-    <value>17FB2</value>
+  <data name="&gt;&gt;radioButton_peek.Name" xml:space="preserve">
+    <value>radioButton_peek</value>
   </data>
   <data name="groupBox_output.Text" xml:space="preserve">
     <value>Вывод результата в файл</value>
   </data>
-  <data name="&gt;&gt;button_pp_cancel.Name" xml:space="preserve">
-    <value>button_pp_cancel</value>
+  <data name="button_pp_ok.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 241</value>
   </data>
   <data name="&gt;&gt;label_poke_cb.Name" xml:space="preserve">
     <value>label_poke_cb</value>
@@ -627,8 +621,8 @@
   <data name="radioButton_aarch32.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;textBox_poke_bytes.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="groupBox_poke.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="&gt;&gt;textBox_peek_adr.Name" xml:space="preserve">
     <value>textBox_peek_adr</value>
@@ -638,9 +632,6 @@
   </data>
   <data name="&gt;&gt;groupBox_peek.Name" xml:space="preserve">
     <value>groupBox_peek</value>
-  </data>
-  <data name="&gt;&gt;radioButton_poke.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="label_poke_cbytes.Location" type="System.Drawing.Point, System.Drawing">
     <value>154, 74</value>
@@ -669,17 +660,20 @@
   <data name="label_peek_adr.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radioButton_aarch64.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;button_pp_cancel.Name" xml:space="preserve">
+    <value>button_pp_cancel</value>
   </data>
   <data name="&gt;&gt;label_poke_cbytes.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;saveFileDialog_output.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;textBox_poke_bytes.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="radioButton_aarch32.Text" xml:space="preserve">
-    <value>AArch32</value>
+  <data name="groupBox_peek.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 146</value>
+  </data>
+  <data name="&gt;&gt;panel_pp_select.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="textBox_poke_bytes.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Right</value>
@@ -690,32 +684,35 @@
   <data name="button_pp_cancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>257, 30</value>
   </data>
-  <data name="&gt;&gt;textBox_peek_adr.Parent" xml:space="preserve">
-    <value>groupBox_peek</value>
+  <data name="&gt;&gt;radioButton_poke.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;label_poke_bytes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="radioButton_aarch64.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;checkBox_output.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="radioButton_aarch64.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 20</value>
+  </data>
   <data name="radioButton_peek.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label_poke_cbytes.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;label_poke_cb.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="groupBox_fh_aarch.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="tableLayoutPanel_PP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="label_poke_cb.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;radioButton_aarch32.Parent" xml:space="preserve">
     <value>groupBox_fh_aarch</value>
   </data>
-  <data name="&gt;&gt;radioButton_poke.Name" xml:space="preserve">
-    <value>radioButton_poke</value>
+  <data name="textBox_poke_bytes.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel_PP.Parent" xml:space="preserve">
     <value>$this</value>
@@ -744,8 +741,14 @@
   <data name="&gt;&gt;textBox_peek_cb.Name" xml:space="preserve">
     <value>textBox_peek_cb</value>
   </data>
-  <data name="groupBox_peek.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 146</value>
+  <data name="label_peek_adr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 36</value>
+  </data>
+  <data name="button_pp_cancel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;groupBox_fh_aarch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tableLayoutPanel_PP.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -765,11 +768,8 @@
   <data name="groupBox_poke.Location" type="System.Drawing.Point, System.Drawing">
     <value>265, 89</value>
   </data>
-  <data name="radioButton_aarch32.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="button_pp_cancel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;label_peek_adr.Name" xml:space="preserve">
+    <value>label_peek_adr</value>
   </data>
   <data name="button_pp_cancel.Text" xml:space="preserve">
     <value>Отмена</value>
@@ -780,8 +780,8 @@
   <data name="textBox_poke_adr.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Right</value>
   </data>
-  <data name="&gt;&gt;label_peek_cb.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;button_pp_ok.Parent" xml:space="preserve">
+    <value>tableLayoutPanel_PP</value>
   </data>
   <data name="&gt;&gt;button_pp_cancel.Parent" xml:space="preserve">
     <value>tableLayoutPanel_PP</value>
@@ -795,8 +795,8 @@
   <data name="&gt;&gt;radioButton_poke.Parent" xml:space="preserve">
     <value>panel_pp_select</value>
   </data>
-  <data name="panel_pp_select.Size" type="System.Drawing.Size, System.Drawing">
-    <value>519, 30</value>
+  <data name="&gt;&gt;groupBox_poke.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="label_poke_adr.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 36</value>
@@ -813,46 +813,46 @@
   <data name="radioButton_aarch64.Text" xml:space="preserve">
     <value>AArch64</value>
   </data>
-  <data name="radioButton_aarch64.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 20</value>
+  <data name="panel_pp_select.Size" type="System.Drawing.Size, System.Drawing">
+    <value>519, 30</value>
   </data>
-  <data name="&gt;&gt;label_poke_adr.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="groupBox_poke.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;groupBox_fh_aarch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;textBox_poke_adr.Name" xml:space="preserve">
+    <value>textBox_poke_adr</value>
   </data>
-  <data name="&gt;&gt;label_peek_adr.Parent" xml:space="preserve">
-    <value>groupBox_peek</value>
+  <data name="radioButton_aarch32.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label_peek_cb.Name" xml:space="preserve">
+    <value>label_peek_cb</value>
   </data>
   <data name="label_poke_cbytes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;checkBox_output.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;button_pp_cancel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="button_pp_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 241</value>
+  <data name="radioButton_aarch64.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="textBox_peek_adr.Location" type="System.Drawing.Point, System.Drawing">
     <value>151, 31</value>
   </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
+  <data name="textBox_peek_cb.Text" xml:space="preserve">
+    <value>17FB2</value>
   </data>
-  <data name="toolTip_pp.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>17, 17</value>
-  </data>
-  <data name="saveFileDialog_output.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="saveFileDialog_output.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>146, 17</value>
-  </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
-  <data name="$this.Language" type="System.Globalization.CultureInfo, mscorlib">
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>en</value>
-  </data>
+  </metadata>
+  <metadata name="toolTip_pp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

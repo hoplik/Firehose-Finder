@@ -2484,11 +2484,7 @@ namespace FirehoseFinder
                 }
             }
             if (string.IsNullOrEmpty(chipsn)) label_chip_sn.Text = "---";
-            else
-            {
-                label_chip_sn.Text = chipsn.ToUpper();
-                if (chipsn.Length > 8) radioButton_sahara_ver3.Checked = true;//Считаем, что это Sahara v3
-            }
+            else label_chip_sn.Text = chipsn.ToUpper();
             textBox_soft_term.AppendText(LocRes.GetString("manuf") + '\u003A' + '\u0020' + label_tm.Text + Environment.NewLine +
                 LocRes.GetString("model") + '\u003A' + '\u0020' + label_model.Text + Environment.NewLine +
                 LocRes.GetString("alt_name") + '\u003A' + '\u0020' + label_altname.Text + Environment.NewLine +
@@ -2637,6 +2633,17 @@ namespace FirehoseFinder
             Global_Share_Prog[1][5] = chip_sn;
             Global_Share_Prog[1][6] = textBox_hwid.Text + '\u002D' + textBox_oemid.Text + '\u002D' + textBox_modelid.Text + '\u002D' +
                 textBox_oemhash.Text.Remove(0, textBox_oemhash.Text.Length - 8) + '\u002D' + label_SW_Ver.Text.TrimStart('0');
+            if (chip_sn.Length > 8 && radioButton_sahara_ver2.Checked)
+            {
+                //Предлагаем изменить выбор протокола, перегрзить устройство и попробовать запросить идентификаторы заново
+                using (Ten_Sec_Form ten_sec_mess = new Ten_Sec_Form())
+                {
+                    ten_sec_mess.Ten_Sec_Form_Text = LocRes.GetString("ten_sec_title");
+                    ten_sec_mess.Ten_Sec_Label_Text = LocRes.GetString("ten_sec_label");
+                    DialogResult res = ten_sec_mess.ShowDialog();
+                    if (res == DialogResult.OK) radioButton_sahara_ver3.Checked = true;
+                }
+            }
         }
 
         /// <summary>
@@ -3844,16 +3851,16 @@ namespace FirehoseFinder
         }
 
         /// <summary>
-        /// Проверка строки, что она является 16-ричным числом.
+        /// Проверка строки, что она является действительным 10 или 16-ричным числом.
         /// </summary>
         /// <param name="strtocheck">Строка для проверки</param>
-        /// <returns>Да-возвращает эту же строку, нет-возвращает пустую строку</returns>
+        /// <returns>Да-возвращает эту же строку в 16-ричном формате, нет-возвращает пустую строку</returns>
         private string CheckSN(string strtocheck)
         {
             bool isValidDex = ulong.TryParse(strtocheck, out ulong dexres);
             bool isValidHex = ulong.TryParse(strtocheck, NumberStyles.HexNumber, null, out _);
             if (isValidDex) return dexres.ToString("X");
-            else if (isValidHex) return strtocheck; 
+            else if (isValidHex) return strtocheck;
             else return string.Empty;
         }
     }

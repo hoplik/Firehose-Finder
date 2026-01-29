@@ -42,8 +42,8 @@ namespace FirehoseFinder
             // 
             // comboBox_tm_insert
             // 
-            resources.ApplyResources(this.comboBox_tm_insert, "comboBox_tm_insert");
             this.comboBox_tm_insert.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox_tm_insert, "comboBox_tm_insert");
             this.comboBox_tm_insert.Name = "comboBox_tm_insert";
             this.comboBox_tm_insert.Sorted = true;
             this.comboBox_tm_insert.TextChanged += new System.EventHandler(this.ComboBox_tm_insert_TextChanged);
@@ -78,8 +78,8 @@ namespace FirehoseFinder
             // 
             // button_cancel_insert
             // 
-            resources.ApplyResources(this.button_cancel_insert, "button_cancel_insert");
             this.button_cancel_insert.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.button_cancel_insert, "button_cancel_insert");
             this.button_cancel_insert.Name = "button_cancel_insert";
             this.button_cancel_insert.UseVisualStyleBackColor = true;
             this.button_cancel_insert.Click += new System.EventHandler(this.Button_cancel_insert_Click);

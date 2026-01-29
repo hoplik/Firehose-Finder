@@ -117,125 +117,65 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="about" xml:space="preserve">
-    <value>关于</value>
-    <comment>О программе</comment>
-  </data>
-  <data name="about_deck" xml:space="preserve">
-    <value>Firehose是基于高通处理器开发</value>
-    <comment>Программа подбора программеров(firehose) для устройств на базе процессоров от Qualcomm.</comment>
-  </data>
-  <data name="actual_data" xml:space="preserve">
-    <value>有关:</value>
-    <comment>Актуально на:</comment>
-  </data>
   <data name="add_dev" xml:space="preserve">
     <value>添加设备</value>
     <comment>Добавить устройство</comment>
   </data>
-  <data name="add_model" xml:space="preserve">
-    <value>添加或修复 机型</value>
-    <comment>Добавить/исправить модель</comment>
+  <data name="get" xml:space="preserve">
+    <value>已收到</value>
+    <comment>Получили</comment>
   </data>
-  <data name="alt_name" xml:space="preserve">
-    <value>别名</value>
-    <comment>альтернативное наименование</comment>
+  <data name="mb_body_att_spaces" xml:space="preserve">
+    <value>路径包含空格符号，验证过程中可能会出错，建议更改路径。</value>
+    <comment>В пути содержатся пробелы. При проверке возможны ошибки. Рекомендуется изменить путь.</comment>
   </data>
-  <data name="app_path" xml:space="preserve">
-    <value>程序安装路径</value>
-    <comment>Путь установки программы</comment>
+  <data name="tb_xml_not_gen" xml:space="preserve">
+    <value>未生成工作的 XML 文件</value>
+    <comment>XML-файл для работы не сформирован</comment>
   </data>
-  <data name="auth_body" xml:space="preserve">
-    <value>使用所选编程器需要授权。本软件不支持使用需要授权的编程器。请尝试寻找其他编程器或使用其他软件。</value>
-    <comment>Для использования выбранного программера требуется авторизация. Эта программа не поддерживает работу с программерами, для которых необходима авторизация. Попробуйте найти альтернативный программер, либо используйте для работы другое ПО.</comment>
+  <data name="repack_parsing_header" xml:space="preserve">
+    <value>固件参数</value>
+    <comment>Параметры прошивки</comment>
   </data>
-  <data name="auth_title" xml:space="preserve">
-    <value>需要授权!</value>
-    <comment>Требуется авторизация!</comment>
+  <data name="tt_data_sent" xml:space="preserve">
+    <value>数据已成功发送</value>
+    <comment>Данные успешно отправлены</comment>
   </data>
-  <data name="bot_code_start" xml:space="preserve">
-    <value>如果您未能自动登录，那么您可以在Telegram中找到"Hoplik-Bot"机器人，并尝试在FhF应用程序运行时在/start命令之后输入授权代码:</value>
-    <comment>Если у вас не получилость автоматически авторизоваться, то вы можете найти в Телеграм бота "Hoplik-Bot" и при запущенном приложении FhF попробовать ввести после команды /start код авторизации:</comment>
+  <data name="message_body_need_fields" xml:space="preserve">
+    <value>请从列表中选择制造商名称，如果没有合适的名称，请输入新名称。</value>
+    <comment>Пожалуйста, выберите наименование производителя из списка или введите, при отсутствии подходящего значения.</comment>
   </data>
-  <data name="bot_title_start" xml:space="preserve">
-    <value>替代授权选项</value>
-    <comment>Альтернативная возможность авторизации</comment>
+  <data name="tt_id_empty" xml:space="preserve">
+    <value>标识符为空。无内容可发送。</value>
+    <comment>Идентификаторы пусты. Нечего отправлять.</comment>
   </data>
-  <data name="button_dirrepack" xml:space="preserve">
-    <value>解压目录</value>
-    <comment>Директория для распаковки</comment>
+  <data name="mb_body_check_fail" xml:space="preserve">
+    <value>检查ADB与设备工作的正确性败北。</value>
+    <comment>Проверка корректности работы с устройством через ADB закончилась неудачно.</comment>
   </data>
-  <data name="button_rampath" xml:space="preserve">
-    <value>固件文件路径</value>
-    <comment>Путь к файлу прошивки</comment>
+  <data name="gpt_not_found" xml:space="preserve">
+    <value>未找到基本 GPT 文件 - gpt_main0.bin</value>
+    <comment>Не найден базовый файл таблицы разметки - gpt_main0.bin</comment>
   </data>
-  <data name="button_search" xml:space="preserve">
-    <value>搜索</value>
-    <comment>Поиск</comment>
+  <data name="message_body_need_restart" xml:space="preserve">
+    <value>要使对所选语言的更改生效，需要重新启动应用程序。单击"确定"重新启动应用程序，或单击"取消"使更改在下次启动应用程序时生效。</value>
+    <comment>Для вступления в силу изменения выбранного языка требуется перезапуск приложения. Нажмите "Ок" для перезагрузки приложения сейчас или "Отмена" для вступления изменений в силу при следующем запуске.</comment>
   </data>
-  <data name="chip" xml:space="preserve">
-    <value>芯片</value>
-    <comment>процессор</comment>
+  <data name="sel_prog" xml:space="preserve">
+    <value>从"文件处理"选项卡中选择编程器</value>
+    <comment>Выберете программер на вкладке "Работа с файлами"</comment>
   </data>
-  <data name="chip_sn" xml:space="preserve">
-    <value>芯片序列号(S/N)</value>
-    <comment>серийный номер процессора</comment>
+  <data name="gb_disk" xml:space="preserve">
+    <value>磁盘</value>
+    <comment>Диск</comment>
   </data>
-  <data name="copy_clip" xml:space="preserve">
-    <value>复制到剪贴板</value>
-    <comment>Скопировано в буфер</comment>
+  <data name="pp_note" xml:space="preserve">
+    <value>如果日志中出现命令值不正确的错误 (HANDLE_PEEK_FAILURE)，请尝试更改该编程器的 CPU 架构选择。</value>
+    <comment>Если в логе появляется ошибка о некорректном значении команды (HANDLE_PEEK_FAILURE), попробуйте изменить выбор архитектуры процессора для этого программера.</comment>
   </data>
-  <data name="count_bin" xml:space="preserve">
-    <value>固件二进制文件数量</value>
-    <comment>Количество bin файлов прошивки</comment>
-  </data>
-  <data name="count_inside_bin" xml:space="preserve">
-    <value>固件中二进制的文件数量</value>
-    <comment>Количество bin файлов внутри прошивки</comment>
-  </data>
-  <data name="count_inside_conf" xml:space="preserve">
-    <value>固件内配置文件的数量</value>
-    <comment>Количество конфигурационных файлов внутри прошивки</comment>
-  </data>
-  <data name="crc" xml:space="preserve">
-    <value>校验码</value>
-    <comment>контрольная сумма</comment>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Dev_comm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dev_comm_zh-Hans.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="done" xml:space="preserve">
-    <value>完成.</value>
-    <comment>Готово.</comment>
-  </data>
-  <data name="dump_select_disc" xml:space="preserve">
-    <value> 扇区为 </value>
-    <comment> секторов для </comment>
-  </data>
-  <data name="dump_select_sec" xml:space="preserve">
-    <value>您最多可选择 </value>
-    <comment>Вы можете выбрать не более</comment>
-  </data>
-  <data name="dump_select_sectors" xml:space="preserve">
-    <value>磁盘 {1} 最多可选择 {0} 个扇区</value>
-    <comment>Вы можете выбрать не более {0} секторов для Диск {1}</comment>
-  </data>
-  <data name="encode" xml:space="preserve">
-    <value>已编码</value>
-    <comment>закодирован</comment>
-  </data>
-  <data name="er_func_fhl_params" xml:space="preserve">
-    <value>使用指定参数执行 fh_loader 失败</value>
-    <comment>Не удалось выполнить fh_loader с указанными параметрами</comment>
-  </data>
-  <data name="er_func_wfiles" xml:space="preserve">
-    <value>在 WFiles 函数中出现错误</value>
-    <comment>Ошибка в функции WFiles</comment>
-  </data>
-  <data name="er_func_xml" xml:space="preserve">
-    <value>创建用于读/写部分的 xml 文件失败</value>
-    <comment>Не удалось создать xml-файл чтения/записи разделов</comment>
+  <data name="tip_decode" xml:space="preserve">
+    <value>解密系统仅为 DES。密钥中的字符数少于 16 个时，将在开头补充 0字符。</value>
+    <comment>Система дешифровки - только DES. Количество знаков в ключе меньше 16 будет дополнено '0' в начале.</comment>
   </data>
   <data name="excert_cert" xml:space="preserve">
     <value>证书</value>
@@ -245,80 +185,61 @@
     <value>DER文件格式的证书 (X.509)</value>
     <comment>Сертификат формата DER (X.509)</comment>
   </data>
-  <data name="excert_found" xml:space="preserve">
-    <value>已找到</value>
-    <comment>Найдено</comment>
+  <data name="not_elf" xml:space="preserve">
+    <value>不是 ELF</value>
+    <comment>не является ELF</comment>
   </data>
-  <data name="excert_sel" xml:space="preserve">
-    <value>已选择</value>
-    <comment>Выбрано</comment>
+  <data name="tb_form_comp" xml:space="preserve">
+    <value>字节读/写表的工作已完成</value>
+    <comment>The work with the byte read/write form is completed</comment>
   </data>
-  <data name="file" xml:space="preserve">
-    <value>文件</value>
-    <comment>файл</comment>
+  <data name="chip" xml:space="preserve">
+    <value>芯片</value>
+    <comment>процессор</comment>
   </data>
-  <data name="firmware_signer" xml:space="preserve">
-    <value>固件签名者</value>
-    <comment>Подписант прошивки</comment>
+  <data name="mb_body_er_gpt" xml:space="preserve">
+    <value>处理 GPT 表出错</value>
+    <comment>Ошибка обработки таблицы GPT</comment>
   </data>
-  <data name="firmware_version" xml:space="preserve">
-    <value>固件版本</value>
-    <comment>Версия прошивки</comment>
+  <data name="tt_find" xml:space="preserve">
+    <value>连接设备并点击按钮 以获取ID</value>
+    <comment>Connect the device and click to get the IDs</comment>
   </data>
-  <data name="free_space" xml:space="preserve">
-    <value>确保可用磁盘大小大于要保存的转储的总大小（所有选定分区的总大小）。否则，在保存或进一步处理已保存分区时可能会出错。</value>
-    <comment>Обязательно убедитесь, что свободный размер диска больше суммарного объёма (всех выбранных разделов) сохраняемого дампа. Иначе возможны ошибки при сохранении или в процесе дальнейшей работы с сохранёнными разделами.</comment>
+  <data name="sectors" xml:space="preserve">
+    <value>扇区</value>
+    <comment>секторов</comment>
   </data>
-  <data name="gb_disk" xml:space="preserve">
-    <value>磁盘</value>
-    <comment>Диск</comment>
+  <data name="status_repack_unpacking_complite" xml:space="preserve">
+    <value>固件已成功解压到指定目录</value>
+    <comment>Прошивка успешно распакована в указанную директорию</comment>
   </data>
-  <data name="get" xml:space="preserve">
-    <value>已收到</value>
-    <comment>Получили</comment>
+  <data name="message_title_need_fields" xml:space="preserve">
+    <value>空的必填字段</value>
+    <comment>Пустые обязательные поля</comment>
   </data>
-  <data name="gpt_not_found" xml:space="preserve">
-    <value>未找到基本 GPT 文件 - gpt_main0.bin</value>
-    <comment>Не найден базовый файл таблицы разметки - gpt_main0.bin</comment>
+  <data name="er_func_xml" xml:space="preserve">
+    <value>创建用于读/写部分的 xml 文件失败</value>
+    <comment>Не удалось создать xml-файл чтения/записи разделов</comment>
   </data>
-  <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Greeting_zh-Hans.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  <data name="status_repack_start" xml:space="preserve">
+    <value>选择固件的路径和要解压的目录</value>
+    <comment>Выберите путь к прошивке и директорию для распаковки</comment>
   </data>
-  <data name="hash" xml:space="preserve">
-    <value>根证书哈希值</value>
-    <comment>хеш корневого сертификата</comment>
+  <data name="status_read" xml:space="preserve">
+    <value>读取中...</value>
+    <comment>Читаем ...</comment>
   </data>
-  <data name="hex_files" xml:space="preserve">
-    <value>文件</value>
-    <comment>файлах</comment>
+  <data name="add_model" xml:space="preserve">
+    <value>添加或修复 机型</value>
+    <comment>Добавить/исправить модель</comment>
   </data>
-  <data name="hex_found" xml:space="preserve">
-    <value>已找到</value>
-    <comment>найдено</comment>
+  <data name="status_repack_parsing_header_complite" xml:space="preserve">
+    <value>固件头部信息解析成功</value>
+    <comment>Парсинг шапки прошивки завершился удачно</comment>
   </data>
-  <data name="hex_from" xml:space="preserve">
-    <value>来自</value>
-    <comment>из</comment>
-  </data>
-  <data name="hex_in" xml:space="preserve">
-    <value>于</value>
-    <comment>в</comment>
-  </data>
-  <data name="hex_matches" xml:space="preserve">
-    <value>匹配</value>
-    <comment>совпадений</comment>
-  </data>
-  <data name="hex_mess_stopoper" xml:space="preserve">
-    <value>请注意，您正在尝试停止冗长的搜索程序。点击 "OK "按钮，即确认操作。</value>
-    <comment>Осторожно, вы предпринимаете попытку остановить длительную процедуру поиска. Нажимая кнопку "Ok", вы подтверждаете выполнение операции.</comment>
-  </data>
-  <data name="hex_not" xml:space="preserve">
-    <value>不是</value>
-    <comment>не</comment>
-  </data>
-  <data name="hex_note_cancelsearch" xml:space="preserve">
-    <value>用户取消了当前搜索</value>
-    <comment>Текущий поиск отменён пользователем</comment>
+  <data name="about_deck" xml:space="preserve">
+    <value>Firehose是基于高通处理器开发</value>
+    <comment>Программа подбора программеров(firehose) для устройств на базе процессоров от Qualcomm.</comment>
   </data>
   <data name="hex_note_copyoffset" xml:space="preserve">
     <value>地址被复制到剪贴板</value>
@@ -328,213 +249,137 @@
     <value>请求处理中...</value>
     <comment>Обработка запроса ...</comment>
   </data>
-  <data name="hex_processed" xml:space="preserve">
-    <value>处理过</value>
-    <comment>обработан</comment>
+  <data name="mb_body_id_res" xml:space="preserve">
+    <value>已收到部分识别码。请手动将设备重启为紧急下载模式（EDL）。</value>
+    <comment>Идентификаторы получены частично. Пожалуйста, перезагрузите устройство в аварийный режим вручную.</comment>
   </data>
   <data name="hex_warn_stopoper" xml:space="preserve">
     <value>请注意，不要长时间操作!</value>
     <comment>Внимание, остановка длительной операции!</comment>
   </data>
-  <data name="increase_rating" xml:space="preserve">
-    <value>对此消息的反应将增加#Concernedusersrating@firehosefinder</value>
-    <comment>Реакция на это сообщение увеличит #Concernedusersrating@firehosefinder</comment>
-  </data>
-  <data name="manuf" xml:space="preserve">
-    <value>品牌</value>
-    <comment>производитель</comment>
-  </data>
-  <data name="mb_acc_er" xml:space="preserve">
-    <value>访问错误</value>
-    <comment>Ошибка доступа</comment>
-  </data>
-  <data name="mb_body_att_spaces" xml:space="preserve">
-    <value>路径包含空格符号，验证过程中可能会出错，建议更改路径。</value>
-    <comment>В пути содержатся пробелы. При проверке возможны ошибки. Рекомендуется изменить путь.</comment>
-  </data>
-  <data name="mb_body_check_fail" xml:space="preserve">
-    <value>检查ADB与设备工作的正确性败北。</value>
-    <comment>Проверка корректности работы с устройством через ADB закончилась неудачно.</comment>
-  </data>
-  <data name="mb_body_corr_er" xml:space="preserve">
-    <value>请更正日志数据中的错误或在手动重启后以 9008 模式连接设备。</value>
-    <comment>Пожалуйста, исправьте ошибки по данным лога и/или подключите устройство в режиме 9008 после перезагрузки вручную.</comment>
-  </data>
-  <data name="mb_body_dev_mist" xml:space="preserve">
-    <value>设备识别错误</value>
-    <comment>Устройство определено с ошибкой</comment>
-  </data>
-  <data name="mb_body_driver_folder" xml:space="preserve">
-    <value>是否打开驱动文件夹?</value>
-    <comment>Открыть папку с драйверами?</comment>
-  </data>
-  <data name="mb_body_er_gpt" xml:space="preserve">
-    <value>处理 GPT 表出错</value>
-    <comment>Ошибка обработки таблицы GPT</comment>
-  </data>
-  <data name="mb_body_gpt_not_formed" xml:space="preserve">
-    <value>该GPT表不符合格式</value>
-    <comment>Таблица GPT не сформирована</comment>
+  <data name="tb_blm" xml:space="preserve">
+    <value>BootLoader模式</value>
+    <comment>режим загрузчика</comment>
   </data>
   <data name="mb_body_id_not_res" xml:space="preserve">
     <value>未收到识别码。请手动将设备重启为紧急下载模式（EDL）。</value>
     <comment>Идентификаторы не получены. Пожалуйста, перезагрузите устройство в аварийный режим вручную.</comment>
   </data>
-  <data name="mb_body_id_res" xml:space="preserve">
-    <value>已收到部分识别码。请手动将设备重启为紧急下载模式（EDL）。</value>
-    <comment>Идентификаторы получены частично. Пожалуйста, перезагрузите устройство в аварийный режим вручную.</comment>
+  <data name="hex_not" xml:space="preserve">
+    <value>不是</value>
+    <comment>не</comment>
   </data>
-  <data name="mb_body_memtype" xml:space="preserve">
-    <value>内存类型可能不正确。如果指定的是 eMMC 类型，请尝试更改为 UFS，然后重新查询。</value>
-    <comment>Вероятно, неправильно выбран тип памяти. Если указан тип eMMC, то попробуйте изменить на UFS и повторить запрос.</comment>
+  <data name="started_unpacking" xml:space="preserve">
+    <value>正在解压中...</value>
+    <comment>Начали распаковку ...</comment>
   </data>
-  <data name="mb_body_port_driver" xml:space="preserve">
-    <value>未安装该设备的驱动程序</value>
-    <comment>Драйвера для этого устройства не установлены</comment>
-  </data>
-  <data name="mb_body_record" xml:space="preserve">
-    <value>尝试将信息写入内存分区。为方便起见，您可以按"确定"清除日志窗口，或按"取消"将当前日志保留在终端窗口中。请等待操作完成，操作完成后会在日志窗口中显示。</value>
-    <comment>Предпринимается попытка записи информации в разделы памяти. Для удобства отслеживания завершения записи можно очистить окно лога, нажав "Ок", оставить текущий лог в окне терминала - "Отмена". Пожалуйста, дождитесь выполнения операции, о чём будет написано в окне лога.</comment>
-  </data>
-  <data name="mb_body_save_clip" xml:space="preserve">
-    <value>是否将数据保存到剪贴板?</value>
-    <comment>Сохранить данные в буфер обмена?</comment>
-  </data>
-  <data name="mb_body_send" xml:space="preserve">
-    <value>存储数据请求的手机响应处理有误。点击"确定"按钮，您就可以在 Telegram 频道 中将手机响应日志发送给开发人员，以尝试修复此错误，"取消"按钮将直接关闭此窗口，而不发送数据。</value>
-    <comment>Ответ телефона на запрос данных хранилища обработан некорректно. Нажимая кнопку "Ok", вы разрешаете отправить в публичный телеграм-канал разрабтчикам лог ответа телефона для попытки исправления этой ошибки. Кнопка "Отмена" просто закроет это окно, без отправки данных.</comment>
-  </data>
-  <data name="mb_body_server_down" xml:space="preserve">
-    <value>确认后，将从服务器下载一个程序包。这并不保证您能成功使用。它只是一个可能适合您所选机型的文件。</value>
-    <comment>При подтверждении, с сервера будет загружен программер. Это не гарантирует того, что у вас с этим программером всё получится. Просто это, с высокой долей вероятности, подходящий к выбранной вами модели файл.</comment>
-  </data>
-  <data name="mb_note_dev_recon" xml:space="preserve">
-    <value>必须重新连接设备才能接收 ID！</value>
-    <comment>Для получения идентификаторов устройство должно быть переподключено!</comment>
-  </data>
-  <data name="mb_note_dev_recon2" xml:space="preserve">
-    <value>请断开设备与计算机的连接，并将该设备进入高通9008模式后，再重新连接。</value>
-    <comment>Пожалуйста, отключите устройство от компьютера, перезагрузите в аварийный режим (9008) и подключите повторно.</comment>
-  </data>
-  <data name="mb_note_sel_prog" xml:space="preserve">
-    <value>从"文件处理"选项卡中选择编程器</value>
-    <comment>Выберете программер на вкладке "Работа с файлами"</comment>
-  </data>
-  <data name="mb_share_prog" xml:space="preserve">
-    <value>您选择的程序似乎已成功工作，但却不在数据库中。如果您想共享该程序并将其添加到数据库中，请立即或在当前工作结束后进入 "发送程序到聊天窗口"。在 "查看 "菜单的 "共享程序 "窗口中，您必须手动或自动填写所有缺失的模型数据，以便正确链接程序和型号。</value>
-    <comment>Похоже, что выбранный вами программе отработал успешно и при этом он отсутствует в базе данных. Если есть желание поделиться этим программером, добавив его в базу данных, пожалуйста, перейдите в окно отправки программера в чат сейчас или после завершения текущей работы. В окне "Поделиться программером" из меню "Вид" необходимо заполнить все недостающие данные модели вручную или автоматически для корректной привязки программера к модели.</comment>
-  </data>
-  <data name="mb_title_adb_er" xml:space="preserve">
-    <value>ADB 错误</value>
-    <comment>Ошибка ADB</comment>
-  </data>
-  <data name="mb_title_att" xml:space="preserve">
-    <value>注意!</value>
-    <comment>Обратите внимание!</comment>
-  </data>
-  <data name="mb_title_dev_recon" xml:space="preserve">
-    <value>请注意!</value>
-    <comment>Внимание!</comment>
-  </data>
-  <data name="mb_title_mis" xml:space="preserve">
-    <value>请注意，有错误！</value>
-    <comment>Внимание! Ошибка!</comment>
-  </data>
-  <data name="mb_title_reboot" xml:space="preserve">
-    <value>等待设备重启</value>
-    <comment>Ожидание перезагрузки</comment>
-  </data>
-  <data name="mb_title_record" xml:space="preserve">
-    <value>正在进行记录!</value>
-    <comment>Осуществляется запись!</comment>
-  </data>
-  <data name="mb_title_sel_prog" xml:space="preserve">
-    <value>需要指定文件的正确路径</value>
-    <comment>Требуется указать корректный путь к файлу</comment>
-  </data>
-  <data name="mb_title_send" xml:space="preserve">
-    <value>我能发送数据吗？</value>
-    <comment>Можно отправить данные?</comment>
-  </data>
-  <data name="mb_title_server_down" xml:space="preserve">
-    <value>正在从服务器下载文件中</value>
-    <comment>Загрузка файла с сервера</comment>
-  </data>
-  <data name="message_body_need_fields" xml:space="preserve">
-    <value>请从列表中选择制造商名称，如果没有合适的名称，请输入新名称。</value>
-    <comment>Пожалуйста, выберите наименование производителя из списка или введите, при отсутствии подходящего значения.</comment>
-  </data>
-  <data name="message_body_need_restart" xml:space="preserve">
-    <value>要使对所选语言的更改生效，需要重新启动应用程序。单击"确定"重新启动应用程序，或单击"取消"使更改在下次启动应用程序时生效。</value>
-    <comment>Для вступления в силу изменения выбранного языка требуется перезапуск приложения. Нажмите "Ок" для перезагрузки приложения сейчас или "Отмена" для вступления изменений в силу при следующем запуске.</comment>
-  </data>
-  <data name="message_title_need_fields" xml:space="preserve">
-    <value>空的必填字段</value>
-    <comment>Пустые обязательные поля</comment>
+  <data name="status_repack_complete" xml:space="preserve">
+    <value>固件头部信息成功读取</value>
+    <comment>Заголовок прошивки считан успешно.</comment>
   </data>
   <data name="message_title_need_restart" xml:space="preserve">
     <value>必须重启应用程序!</value>
     <comment>Требуется перезапуск приложения!</comment>
   </data>
-  <data name="model" xml:space="preserve">
-    <value>机型</value>
-    <comment>модель</comment>
+  <data name="copy_clip" xml:space="preserve">
+    <value>复制到剪贴板</value>
+    <comment>Скопировано в буфер</comment>
   </data>
-  <data name="not_elf" xml:space="preserve">
-    <value>不是 ELF</value>
-    <comment>не является ELF</comment>
+  <data name="count_inside_conf" xml:space="preserve">
+    <value>固件内配置文件的数量</value>
+    <comment>Количество конфигурационных файлов внутри прошивки</comment>
   </data>
-  <data name="not_gpt_header" xml:space="preserve">
-    <value>表头标志丢失</value>
-    <comment>Отсутствует признак хедера таблицы</comment>
+  <data name="tb_dev_con" xml:space="preserve">
+    <value>设备已连接:</value>
+    <comment>Подключено устройство:</comment>
   </data>
-  <data name="not_send" xml:space="preserve">
-    <value>不是所有的ID都被输出，我们还没有发送</value>
-    <comment>Не все идентификаторы указаны. Пока не отправляем.</comment>
+  <data name="tt_id_rec" xml:space="preserve">
+    <value>收到标识符后，可关闭设备并重新启动</value>
+    <comment>Идентификаторы получены, устройство можно отключить и перезагрузить</comment>
   </data>
-  <data name="no_part_sel" xml:space="preserve">
-    <value>未选择要保存的分区。</value>
-    <comment>No partitions have been selected to save.</comment>
+  <data name="about" xml:space="preserve">
+    <value>关于</value>
+    <comment>О программе</comment>
   </data>
-  <data name="offset" xml:space="preserve">
-    <value>地址</value>
-    <comment>offset</comment>
+  <data name="mb_title_record" xml:space="preserve">
+    <value>正在进行记录!</value>
+    <comment>Осуществляется запись!</comment>
   </data>
-  <data name="packer_version" xml:space="preserve">
-    <value>打包机版本</value>
-    <comment>Версия упаковщика</comment>
+  <data name="tb_body_att_del_mem" xml:space="preserve">
+    <value>请注意，您正在尝试删除设备内存中的所有信息。闪存中的所有数据，包括标记表和所有用户可访问的分区，都将被删除（使用0x00填充）。点击"确定"按钮即确认操作。这是最后一次警告。如果您还没有备份设备副本，现在可以取消操作并进行备份。</value>
+    <comment>Осторожно, вы предпринимаете попытку стереть всю информацию из памяти устройства. Будут удалены (заменены на 0х00) все данные на флеш-памяти, включая таблицу разметки и все доступные пользователю разделы. Нажимая кнопку "Ok", вы подтверждаете выполнение операции. Это последнее предупреждение. Если вы не сделали резервной копии устройства, то сейчас самое время отменить операцию и заняться бэкапом.</comment>
   </data>
-  <data name="phone_version" xml:space="preserve">
-    <value>手机版本</value>
-    <comment>Версия телефона</comment>
+  <data name="mb_body_dev_mist" xml:space="preserve">
+    <value>设备识别错误</value>
+    <comment>Устройство определено с ошибкой</comment>
   </data>
-  <data name="pp_note" xml:space="preserve">
-    <value>如果日志中出现命令值不正确的错误 (HANDLE_PEEK_FAILURE)，请尝试更改该编程器的 CPU 架构选择。</value>
-    <comment>Если в логе появляется ошибка о некорректном значении команды (HANDLE_PEEK_FAILURE), попробуйте изменить выбор архитектуры процессора для этого программера.</comment>
+  <data name="mb_title_dev_recon" xml:space="preserve">
+    <value>请注意!</value>
+    <comment>Внимание!</comment>
   </data>
-  <data name="repack_parsing_header" xml:space="preserve">
-    <value>固件参数</value>
-    <comment>Параметры прошивки</comment>
+  <data name="unknown" xml:space="preserve">
+    <value>未知的东西</value>
+    <comment>Что-то непонятное</comment>
   </data>
-  <data name="sectors" xml:space="preserve">
-    <value>扇区</value>
-    <comment>секторов</comment>
+  <data name="tb_share_prog" xml:space="preserve">
+    <value>共享方案</value>
+    <comment>Поделиться программером</comment>
   </data>
-  <data name="sel_fold" xml:space="preserve">
-    <value>选中的文件夹</value>
-    <comment>выбранную папку</comment>
+  <data name="write_ts" xml:space="preserve">
+    <value>扇区总数</value>
+    <comment>всего секторов</comment>
   </data>
-  <data name="sel_prog" xml:space="preserve">
-    <value>从"文件处理"选项卡中选择编程器</value>
-    <comment>Выберете программер на вкладке "Работа с файлами"</comment>
+  <data name="tb_loader_com" xml:space="preserve">
+    <value>加载程序命令已成功执行。</value>
+    <comment>Выполнение команды лоадера успешно завершено.</comment>
   </data>
-  <data name="sent" xml:space="preserve">
-    <value>已发送</value>
-    <comment>Отправили</comment>
+  <data name="dump_select_disc" xml:space="preserve">
+    <value> 扇区为 </value>
+    <comment> секторов для </comment>
   </data>
-  <data name="server_not_found" xml:space="preserve">
-    <value>服务器上没有任何信息</value>
-    <comment>На сервере не нашлось</comment>
+  <data name="status_repack_unpacking_cancel" xml:space="preserve">
+    <value>用户停止了解压固件文件的操作</value>
+    <comment>Операция распаковки файлов прошивки прервана пользователем</comment>
+  </data>
+  <data name="tb_reboot_fail" xml:space="preserve">
+    <value>从 ADB 自动重启到 高通9008 失败。请手动尝试。</value>
+    <comment>Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную.</comment>
+  </data>
+  <data name="status_repack_unpacking_complited" xml:space="preserve">
+    <value>解压的固件文件在:</value>
+    <comment>Распаковка файлов прошивки выполнена на</comment>
+  </data>
+  <data name="tb_chip_same" xml:space="preserve">
+    <value>ADB和Sahara的芯片编号相同</value>
+    <comment>Номера чипов из ADB и Sahara совпадают</comment>
+  </data>
+  <data name="tb_write_cancel" xml:space="preserve">
+    <value>用户可取消向分区写入文件。</value>
+    <comment>Запись файла в разделы отменена пользователем.</comment>
+  </data>
+  <data name="tb_form_close" xml:space="preserve">
+    <value>字节读/写表已关闭，未作任何更改</value>
+    <comment>Форма чтения/записи байт закрыта без изменений</comment>
+  </data>
+  <data name="mb_body_memtype" xml:space="preserve">
+    <value>内存类型可能不正确。如果指定的是 eMMC 类型，请尝试更改为 UFS，然后重新查询。</value>
+    <comment>Вероятно, неправильно выбран тип памяти. Если указан тип eMMC, то попробуйте изменить на UFS и повторить запрос.</comment>
+  </data>
+  <data name="mb_body_driver_folder" xml:space="preserve">
+    <value>是否打开驱动文件夹?</value>
+    <comment>Открыть папку с драйверами?</comment>
+  </data>
+  <data name="tb_log" xml:space="preserve">
+    <value>日志文件</value>
+    <comment>файла лога</comment>
+  </data>
+  <data name="firmware_signer" xml:space="preserve">
+    <value>固件签名者</value>
+    <comment>Подписант прошивки</comment>
+  </data>
+  <data name="tt_proc" xml:space="preserve">
+    <value>目前正在处理中。</value>
+    <comment>Сейчас обрабатывается</comment>
   </data>
   <data name="signs" xml:space="preserve">
     <value>标识</value>
@@ -544,205 +389,417 @@
     <value>大小</value>
     <comment>размер</comment>
   </data>
-  <data name="started_unpacking" xml:space="preserve">
-    <value>正在解压中...</value>
-    <comment>Начали распаковку ...</comment>
+  <data name="under_dev" xml:space="preserve">
+    <value>正在开发中</value>
+    <comment>В процессе разработки</comment>
   </data>
-  <data name="status_decode" xml:space="preserve">
-    <value>解码中...</value>
-    <comment>Декодируем ...</comment>
-  </data>
-  <data name="status_read" xml:space="preserve">
-    <value>读取中...</value>
-    <comment>Читаем ...</comment>
-  </data>
-  <data name="status_repack_complete" xml:space="preserve">
-    <value>固件头部信息成功读取</value>
-    <comment>Заголовок прошивки считан успешно.</comment>
-  </data>
-  <data name="status_repack_decoded" xml:space="preserve">
-    <value>固件头部信息已解码</value>
-    <comment>Заголовок прошивки декодирован.</comment>
-  </data>
-  <data name="status_repack_open_folder" xml:space="preserve">
-    <value>以"资源管理器"打开文件夹</value>
-    <comment>Открыть папку в Проводнике</comment>
-  </data>
-  <data name="status_repack_parsing_header_complite" xml:space="preserve">
-    <value>固件头部信息解析成功</value>
-    <comment>Парсинг шапки прошивки завершился удачно</comment>
-  </data>
-  <data name="status_repack_parsing_header_failed" xml:space="preserve">
-    <value>固件头部信息解析失败</value>
-    <comment>Парсинг шапки прошивки завершился неудачно</comment>
-  </data>
-  <data name="status_repack_start" xml:space="preserve">
-    <value>选择固件的路径和要解压的目录</value>
-    <comment>Выберите путь к прошивке и директорию для распаковки</comment>
-  </data>
-  <data name="status_repack_unpacked_failed" xml:space="preserve">
-    <value>该固件无法解包，因为它不是由单个文件组成，或者解码错误。（可以使用文件拼接工具来解决该问题）</value>
-    <comment>Данная прошивка не может быть распакована, так как состоит не из одного файла, либо некорректно декодирована!</comment>
-  </data>
-  <data name="status_repack_unpacking_cancel" xml:space="preserve">
-    <value>用户停止了解压固件文件的操作</value>
-    <comment>Операция распаковки файлов прошивки прервана пользователем</comment>
-  </data>
-  <data name="status_repack_unpacking_complite" xml:space="preserve">
-    <value>固件已成功解压到指定目录</value>
-    <comment>Прошивка успешно распакована в указанную директорию</comment>
-  </data>
-  <data name="status_repack_unpacking_complited" xml:space="preserve">
-    <value>解压的固件文件在:</value>
-    <comment>Распаковка файлов прошивки выполнена на</comment>
-  </data>
-  <data name="sw_ver" xml:space="preserve">
-    <value>软件类型（版本）</value>
-    <comment>тип программы (версия)</comment>
-  </data>
-  <data name="tbs_part_table" xml:space="preserve">
-    <value>正在获取分区表</value>
-    <comment>Получаем таблицу разметки</comment>
-  </data>
-  <data name="tbs_stor_dev" xml:space="preserve">
-    <value>正在获取存储设备信息</value>
-    <comment>Получаем информацию о запоминающем устройстве</comment>
-  </data>
-  <data name="tb_adb_sess" xml:space="preserve">
-    <value>ADB 会话</value>
-    <comment>сеанс ADB</comment>
-  </data>
-  <data name="tb_adb_start" xml:space="preserve">
-    <value>正在启动ADB服务器中...</value>
-    <comment>Запускаем сервер ADB ...</comment>
-  </data>
-  <data name="tb_auth_fall" xml:space="preserve">
-    <value>授权失败。 再试一次。</value>
-    <comment>Авторизация завершилась неудачей. Попробуйте ещё раз.</comment>
-  </data>
-  <data name="tb_batch_record" xml:space="preserve">
-    <value>固件批量记录</value>
-    <comment>Пакетная запись прошивки</comment>
-  </data>
-  <data name="tb_blm" xml:space="preserve">
-    <value>BootLoader模式</value>
-    <comment>режим загрузчика</comment>
-  </data>
-  <data name="tb_body_att_del_mem" xml:space="preserve">
-    <value>请注意，您正在尝试删除设备内存中的所有信息。闪存中的所有数据，包括标记表和所有用户可访问的分区，都将被删除（使用0x00填充）。点击"确定"按钮即确认操作。这是最后一次警告。如果您还没有备份设备副本，现在可以取消操作并进行备份。</value>
-    <comment>Осторожно, вы предпринимаете попытку стереть всю информацию из памяти устройства. Будут удалены (заменены на 0х00) все данные на флеш-памяти, включая таблицу разметки и все доступные пользователю разделы. Нажимая кнопку "Ok", вы подтверждаете выполнение операции. Это последнее предупреждение. Если вы не сделали резервной копии устройства, то сейчас самое время отменить операцию и заняться бэкапом.</comment>
-  </data>
-  <data name="tb_cancel_user" xml:space="preserve">
-    <value>用户取消操作</value>
-    <comment>отменено пользователем</comment>
-  </data>
-  <data name="tb_chip_same" xml:space="preserve">
-    <value>ADB和Sahara的芯片编号相同</value>
-    <comment>Номера чипов из ADB и Sahara совпадают</comment>
-  </data>
-  <data name="tb_compl" xml:space="preserve">
-    <value>已完成</value>
-    <comment>завершён</comment>
-  </data>
-  <data name="tb_compl_fail" xml:space="preserve">
-    <value>未完成</value>
-    <comment>Неудачное завершение</comment>
-  </data>
-  <data name="tb_dev_con" xml:space="preserve">
-    <value>设备已连接:</value>
-    <comment>Подключено устройство:</comment>
-  </data>
-  <data name="tb_dev_not_con" xml:space="preserve">
-    <value>未找到已连接的设备。请在手机设置内检查"系统"-"开发者选项"下是否启用了"USB 调试"。（如果您使用的是中国品牌的手机，请参考对应手机品牌的开启教程）。</value>
-    <comment>Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли "Отладка по USB" в разделе "Система" - "Для разработчиков".</comment>
-  </data>
-  <data name="tb_edl" xml:space="preserve">
-    <value>应急下载模式（EDL）</value>
-    <comment>аварийный режим</comment>
+  <data name="alt_name" xml:space="preserve">
+    <value>别名</value>
+    <comment>альтернативное наименование</comment>
   </data>
   <data name="tb_er_mem" xml:space="preserve">
     <value>擦除所有内存</value>
     <comment>Стираем всю память</comment>
   </data>
-  <data name="tb_er_write" xml:space="preserve">
-    <value>写入错误</value>
-    <comment>Ошибка записи</comment>
-  </data>
-  <data name="tb_form_close" xml:space="preserve">
-    <value>字节读/写表已关闭，未作任何更改</value>
-    <comment>Форма чтения/записи байт закрыта без изменений</comment>
-  </data>
-  <data name="tb_form_comp" xml:space="preserve">
-    <value>字节读/写表的工作已完成</value>
-    <comment>The work with the byte read/write form is completed</comment>
-  </data>
-  <data name="tb_gpt_save" xml:space="preserve">
-    <value>已成功将标记表文件保存到所选文件夹。</value>
-    <comment>Сохранение файла таблицы разметки в выбранную папку прошло успешно.</comment>
-  </data>
-  <data name="tb_loader_com" xml:space="preserve">
-    <value>加载程序命令已成功执行。</value>
-    <comment>Выполнение команды лоадера успешно завершено.</comment>
-  </data>
-  <data name="tb_log" xml:space="preserve">
-    <value>日志文件</value>
-    <comment>файла лога</comment>
+  <data name="not_gpt_header" xml:space="preserve">
+    <value>表头标志丢失</value>
+    <comment>Отсутствует признак хедера таблицы</comment>
   </data>
   <data name="tb_nopath" xml:space="preserve">
     <value>文件路径不存在</value>
     <comment>Путь к файлу не существует</comment>
   </data>
-  <data name="tb_norm" xml:space="preserve">
-    <value>正常模式</value>
-    <comment>нормальный режим</comment>
+  <data name="tt_id_not_rec" xml:space="preserve">
+    <value>未收到全部标识符，数据发送被取消</value>
+    <comment>Не все идентификаторы получены, отправка данных отменена</comment>
   </data>
-  <data name="tb_note_att_del_mem" xml:space="preserve">
-    <value>注意，删除内存中的所有信息！</value>
-    <comment>Внимание, удаление всей информации из памяти!</comment>
+  <data name="mb_body_port_driver" xml:space="preserve">
+    <value>未安装该设备的驱动程序</value>
+    <comment>Драйвера для этого устройства не установлены</comment>
   </data>
-  <data name="tb_pass_suc" xml:space="preserve">
-    <value>成功通过</value>
-    <comment>прошло успешно</comment>
+  <data name="hex_mess_stopoper" xml:space="preserve">
+    <value>请注意，您正在尝试停止冗长的搜索程序。点击 "OK "按钮，即确认操作。</value>
+    <comment>Осторожно, вы предпринимаете попытку остановить длительную процедуру поиска. Нажимая кнопку "Ok", вы подтверждаете выполнение операции.</comment>
+  </data>
+  <data name="free_space" xml:space="preserve">
+    <value>确保可用磁盘大小大于要保存的转储的总大小（所有选定分区的总大小）。否则，在保存或进一步处理已保存分区时可能会出错。</value>
+    <comment>Обязательно убедитесь, что свободный размер диска больше суммарного объёма (всех выбранных разделов) сохраняемого дампа. Иначе возможны ошибки при сохранении или в процесе дальнейшей работы с сохранёнными разделами.</comment>
+  </data>
+  <data name="server_not_found" xml:space="preserve">
+    <value>服务器上没有任何信息</value>
+    <comment>На сервере не нашлось</comment>
+  </data>
+  <data name="warn" xml:space="preserve">
+    <value>警告!</value>
+    <comment>Предупреждение!</comment>
+  </data>
+  <data name="hex_found" xml:space="preserve">
+    <value>已找到</value>
+    <comment>найдено</comment>
+  </data>
+  <data name="file" xml:space="preserve">
+    <value>文件</value>
+    <comment>файл</comment>
+  </data>
+  <data name="tt_path" xml:space="preserve">
+    <value>指定 FireHouse 文件集的路径</value>
+    <comment>Укажите путь к коллекции firehose</comment>
+  </data>
+  <data name="mb_title_reboot" xml:space="preserve">
+    <value>等待设备重启</value>
+    <comment>Ожидание перезагрузки</comment>
+  </data>
+  <data name="tb_adb_start" xml:space="preserve">
+    <value>正在启动ADB服务器中...</value>
+    <comment>Запускаем сервер ADB ...</comment>
+  </data>
+  <data name="tb_compl" xml:space="preserve">
+    <value>已完成</value>
+    <comment>завершён</comment>
+  </data>
+  <data name="tip_cancel" xml:space="preserve">
+    <value>要重置，请点击按钮并选择"取消"。</value>
+    <comment>Для сброса нажмите кнопку и выберите "Отмена"</comment>
+  </data>
+  <data name="er_func_wfiles" xml:space="preserve">
+    <value>在 WFiles 函数中出现错误</value>
+    <comment>Ошибка в функции WFiles</comment>
+  </data>
+  <data name="status_decode" xml:space="preserve">
+    <value>解码中...</value>
+    <comment>Декодируем ...</comment>
+  </data>
+  <data name="button_rampath" xml:space="preserve">
+    <value>固件文件路径</value>
+    <comment>Путь к файлу прошивки</comment>
+  </data>
+  <data name="mb_title_server_down" xml:space="preserve">
+    <value>正在从服务器下载文件中</value>
+    <comment>Загрузка файла с сервера</comment>
+  </data>
+  <data name="excert_sel" xml:space="preserve">
+    <value>已选择</value>
+    <comment>Выбрано</comment>
   </data>
   <data name="tb_pp" xml:space="preserve">
     <value>读/写字节到特定地址（peek&amp;poke）</value>
     <comment>Читаем/пишем байты по определённому адресу (peek&amp;poke)</comment>
   </data>
-  <data name="tb_reboot" xml:space="preserve">
-    <value>重启设备</value>
-    <comment>Устройство перегружается</comment>
+  <data name="encode" xml:space="preserve">
+    <value>已编码</value>
+    <comment>закодирован</comment>
   </data>
-  <data name="tb_reboot_fail" xml:space="preserve">
-    <value>从 ADB 自动重启到 高通9008 失败。请手动尝试。</value>
-    <comment>Автоматическая перезагрузка в аварийный режим 9008 из ADB закончилась неудачно. Попробуйте вручную.</comment>
+  <data name="hex_from" xml:space="preserve">
+    <value>来自</value>
+    <comment>из</comment>
+  </data>
+  <data name="tb_dev_not_con" xml:space="preserve">
+    <value>未找到已连接的设备。请在手机设置内检查"系统"-"开发者选项"下是否启用了"USB 调试"。（如果您使用的是中国品牌的手机，请参考对应手机品牌的开启教程）。</value>
+    <comment>Подключённых устройств не найдено. Пожалуйста, проверьте в настройках устройства разрешена ли "Отладка по USB" в разделе "Система" - "Для разработчиков".</comment>
+  </data>
+  <data name="tbs_part_table" xml:space="preserve">
+    <value>正在获取分区表</value>
+    <comment>Получаем таблицу разметки</comment>
+  </data>
+  <data name="tb_cancel_user" xml:space="preserve">
+    <value>用户取消操作</value>
+    <comment>отменено пользователем</comment>
+  </data>
+  <data name="firmware_version" xml:space="preserve">
+    <value>固件版本</value>
+    <comment>Версия прошивки</comment>
+  </data>
+  <data name="status_repack_decoded" xml:space="preserve">
+    <value>固件头部信息已解码</value>
+    <comment>Заголовок прошивки декодирован.</comment>
+  </data>
+  <data name="tb_batch_record" xml:space="preserve">
+    <value>固件批量记录</value>
+    <comment>Пакетная запись прошивки</comment>
+  </data>
+  <data name="phone_version" xml:space="preserve">
+    <value>手机版本</value>
+    <comment>Версия телефона</comment>
+  </data>
+  <data name="status_repack_unpacked_failed" xml:space="preserve">
+    <value>该固件无法解包，因为它不是由单个文件组成，或者解码错误。（可以使用文件拼接工具来解决该问题）</value>
+    <comment>Данная прошивка не может быть распакована, так как состоит не из одного файла, либо некорректно декодирована!</comment>
+  </data>
+  <data name="excert_found" xml:space="preserve">
+    <value>已找到</value>
+    <comment>Найдено</comment>
+  </data>
+  <data name="tt_check" xml:space="preserve">
+    <value>点击以检查所选编程器</value>
+    <comment>Нажмите для проверки выбранного программера</comment>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Greeting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Greeting_zh-Hans.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="offset" xml:space="preserve">
+    <value>地址</value>
+    <comment>offset</comment>
+  </data>
+  <data name="er_func_fhl_params" xml:space="preserve">
+    <value>使用指定参数执行 fh_loader 失败</value>
+    <comment>Не удалось выполнить fh_loader с указанными параметрами</comment>
+  </data>
+  <data name="mb_note_dev_recon" xml:space="preserve">
+    <value>必须重新连接设备才能接收 ID！</value>
+    <comment>Для получения идентификаторов устройство должно быть переподключено!</comment>
+  </data>
+  <data name="tb_adb_sess" xml:space="preserve">
+    <value>ADB 会话</value>
+    <comment>сеанс ADB</comment>
+  </data>
+  <data name="auth_title" xml:space="preserve">
+    <value>需要授权!</value>
+    <comment>Требуется авторизация!</comment>
+  </data>
+  <data name="no_part_sel" xml:space="preserve">
+    <value>未选择要保存的分区。</value>
+    <comment>No partitions have been selected to save.</comment>
+  </data>
+  <data name="hash" xml:space="preserve">
+    <value>根证书哈希值</value>
+    <comment>хеш корневого сертификата</comment>
   </data>
   <data name="tb_rep_file" xml:space="preserve">
     <value>报告文件</value>
     <comment>файл отчёта</comment>
   </data>
+  <data name="userstate_show_first" xml:space="preserve">
+    <value>正在显示第一个字符块中...</value>
+    <comment>Отображаем блок первых символов ...</comment>
+  </data>
+  <data name="sw_ver" xml:space="preserve">
+    <value>软件类型（版本）</value>
+    <comment>тип программы (версия)</comment>
+  </data>
+  <data name="dump_select_sec" xml:space="preserve">
+    <value>您最多可选择 </value>
+    <comment>Вы можете выбрать не более</comment>
+  </data>
+  <data name="packer_version" xml:space="preserve">
+    <value>打包机版本</value>
+    <comment>Версия упаковщика</comment>
+  </data>
+  <data name="dump_select_sectors" xml:space="preserve">
+    <value>磁盘 {1} 最多可选择 {0} 个扇区</value>
+    <comment>Вы можете выбрать не более {0} секторов для Диск {1}</comment>
+  </data>
   <data name="tb_save" xml:space="preserve">
     <value>保存中</value>
     <comment>Сохранение</comment>
   </data>
-  <data name="tb_send_conf" xml:space="preserve">
-    <value>用户已确认发送日志</value>
-    <comment>Отправка лога подтверждена пользователем.</comment>
+  <data name="mb_title_sel_prog" xml:space="preserve">
+    <value>需要指定文件的正确路径</value>
+    <comment>Требуется указать корректный путь к файлу</comment>
   </data>
-  <data name="tb_share_prog" xml:space="preserve">
-    <value>共享方案</value>
-    <comment>Поделиться программером</comment>
+  <data name="status_repack_parsing_header_failed" xml:space="preserve">
+    <value>固件头部信息解析失败</value>
+    <comment>Парсинг шапки прошивки завершился неудачно</comment>
   </data>
-  <data name="tb_write_cancel" xml:space="preserve">
-    <value>用户可取消向分区写入文件。</value>
-    <comment>Запись файла в разделы отменена пользователем.</comment>
+  <data name="hex_files" xml:space="preserve">
+    <value>文件</value>
+    <comment>файлах</comment>
+  </data>
+  <data name="chip_sn" xml:space="preserve">
+    <value>芯片序列号(S/N)</value>
+    <comment>серийный номер процессора</comment>
+  </data>
+  <data name="count_bin" xml:space="preserve">
+    <value>固件二进制文件数量</value>
+    <comment>Количество bin файлов прошивки</comment>
+  </data>
+  <data name="mb_body_send" xml:space="preserve">
+    <value>存储数据请求的手机响应处理有误。点击"确定"按钮，您就可以在 Telegram 频道 中将手机响应日志发送给开发人员，以尝试修复此错误，"取消"按钮将直接关闭此窗口，而不发送数据。</value>
+    <comment>Ответ телефона на запрос данных хранилища обработан некорректно. Нажимая кнопку "Ok", вы разрешаете отправить в публичный телеграм-канал разрабтчикам лог ответа телефона для попытки исправления этой ошибки. Кнопка "Отмена" просто закроет это окно, без отправки данных.</comment>
+  </data>
+  <data name="mb_acc_er" xml:space="preserve">
+    <value>访问错误</value>
+    <comment>Ошибка доступа</comment>
+  </data>
+  <data name="crc" xml:space="preserve">
+    <value>校验码</value>
+    <comment>контрольная сумма</comment>
+  </data>
+  <data name="button_dirrepack" xml:space="preserve">
+    <value>解压目录</value>
+    <comment>Директория для распаковки</comment>
+  </data>
+  <data name="app_path" xml:space="preserve">
+    <value>程序安装路径</value>
+    <comment>Путь установки программы</comment>
+  </data>
+  <data name="tb_reboot" xml:space="preserve">
+    <value>重启设备</value>
+    <comment>Устройство перегружается</comment>
+  </data>
+  <data name="tb_compl_fail" xml:space="preserve">
+    <value>未完成</value>
+    <comment>Неудачное завершение</comment>
+  </data>
+  <data name="sent" xml:space="preserve">
+    <value>已发送</value>
+    <comment>Отправили</comment>
+  </data>
+  <data name="sel_fold" xml:space="preserve">
+    <value>选中的文件夹</value>
+    <comment>выбранную папку</comment>
+  </data>
+  <data name="tb_edl" xml:space="preserve">
+    <value>应急下载模式（EDL）</value>
+    <comment>аварийный режим</comment>
+  </data>
+  <data name="hex_processed" xml:space="preserve">
+    <value>处理过</value>
+    <comment>обработан</comment>
+  </data>
+  <data name="mb_body_record" xml:space="preserve">
+    <value>尝试将信息写入内存分区。为方便起见，您可以按"确定"清除日志窗口，或按"取消"将当前日志保留在终端窗口中。请等待操作完成，操作完成后会在日志窗口中显示。</value>
+    <comment>Предпринимается попытка записи информации в разделы памяти. Для удобства отслеживания завершения записи можно очистить окно лога, нажав "Ок", оставить текущий лог в окне терминала - "Отмена". Пожалуйста, дождитесь выполнения операции, о чём будет написано в окне лога.</comment>
+  </data>
+  <data name="mb_body_corr_er" xml:space="preserve">
+    <value>请更正日志数据中的错误或在手动重启后以 9008 模式连接设备。</value>
+    <comment>Пожалуйста, исправьте ошибки по данным лога и/или подключите устройство в режиме 9008 после перезагрузки вручную.</comment>
   </data>
   <data name="tb_write_file_sectors" xml:space="preserve">
     <value>将二进制文件写入选定的扇区</value>
     <comment>Записываем bin-файл в выбранные сектора</comment>
   </data>
-  <data name="tb_xml_not_gen" xml:space="preserve">
-    <value>未生成工作的 XML 文件</value>
-    <comment>XML-файл для работы не сформирован</comment>
+  <data name="hex_in" xml:space="preserve">
+    <value>于</value>
+    <comment>в</comment>
+  </data>
+  <data name="tb_pass_suc" xml:space="preserve">
+    <value>成功通过</value>
+    <comment>прошло успешно</comment>
+  </data>
+  <data name="tb_norm" xml:space="preserve">
+    <value>正常模式</value>
+    <comment>нормальный режим</comment>
+  </data>
+  <data name="count_inside_bin" xml:space="preserve">
+    <value>固件中二进制的文件数量</value>
+    <comment>Количество bin файлов внутри прошивки</comment>
+  </data>
+  <data name="status_repack_open_folder" xml:space="preserve">
+    <value>以"资源管理器"打开文件夹</value>
+    <comment>Открыть папку в Проводнике</comment>
+  </data>
+  <data name="hex_note_cancelsearch" xml:space="preserve">
+    <value>用户取消了当前搜索</value>
+    <comment>Текущий поиск отменён пользователем</comment>
+  </data>
+  <data name="mb_note_sel_prog" xml:space="preserve">
+    <value>从"文件处理"选项卡中选择编程器</value>
+    <comment>Выберете программер на вкладке "Работа с файлами"</comment>
+  </data>
+  <data name="button_search" xml:space="preserve">
+    <value>搜索</value>
+    <comment>Поиск</comment>
+  </data>
+  <data name="mb_body_server_down" xml:space="preserve">
+    <value>确认后，将从服务器下载一个程序包。这并不保证您能成功使用。它只是一个可能适合您所选机型的文件。</value>
+    <comment>При подтверждении, с сервера будет загружен программер. Это не гарантирует того, что у вас с этим программером всё получится. Просто это, с высокой долей вероятности, подходящий к выбранной вами модели файл.</comment>
+  </data>
+  <data name="version" xml:space="preserve">
+    <value>版本</value>
+    <comment>Версия</comment>
+  </data>
+  <data name="mb_title_adb_er" xml:space="preserve">
+    <value>ADB 错误</value>
+    <comment>Ошибка ADB</comment>
+  </data>
+  <data name="mb_body_save_clip" xml:space="preserve">
+    <value>是否将数据保存到剪贴板?</value>
+    <comment>Сохранить данные в буфер обмена?</comment>
+  </data>
+  <data name="mb_note_dev_recon2" xml:space="preserve">
+    <value>请断开设备与计算机的连接，并将该设备进入高通9008模式后，再重新连接。</value>
+    <comment>Пожалуйста, отключите устройство от компьютера, перезагрузите в аварийный режим (9008) и подключите повторно.</comment>
+  </data>
+  <data name="mb_title_send" xml:space="preserve">
+    <value>我能发送数据吗？</value>
+    <comment>Можно отправить данные?</comment>
+  </data>
+  <data name="manuf" xml:space="preserve">
+    <value>品牌</value>
+    <comment>производитель</comment>
+  </data>
+  <data name="done" xml:space="preserve">
+    <value>完成.</value>
+    <comment>Готово.</comment>
+  </data>
+  <data name="auth_body" xml:space="preserve">
+    <value>使用所选编程器需要授权。本软件不支持使用需要授权的编程器。请尝试寻找其他编程器或使用其他软件。</value>
+    <comment>Для использования выбранного программера требуется авторизация. Эта программа не поддерживает работу с программерами, для которых необходима авторизация. Попробуйте найти альтернативный программер, либо используйте для работы другое ПО.</comment>
+  </data>
+  <data name="hex_matches" xml:space="preserve">
+    <value>匹配</value>
+    <comment>совпадений</comment>
+  </data>
+  <data name="tt_data_not_sent" xml:space="preserve">
+    <value>尚未发送数据</value>
+    <comment>Данные не отправлены</comment>
+  </data>
+  <data name="not_send" xml:space="preserve">
+    <value>不是所有的ID都被输出，我们还没有发送</value>
+    <comment>Не все идентификаторы указаны. Пока не отправляем.</comment>
+  </data>
+  <data name="model" xml:space="preserve">
+    <value>机型</value>
+    <comment>модель</comment>
+  </data>
+  <data name="mb_share_prog" xml:space="preserve">
+    <value>您选择的程序似乎已成功工作，但却不在数据库中。如果您想共享该程序并将其添加到数据库中，请立即或在当前工作结束后进入 "发送程序到聊天窗口"。在 "查看 "菜单的 "共享程序 "窗口中，您必须手动或自动填写所有缺失的模型数据，以便正确链接程序和型号。</value>
+    <comment>Похоже, что выбранный вами программе отработал успешно и при этом он отсутствует в базе данных. Если есть желание поделиться этим программером, добавив его в базу данных, пожалуйста, перейдите в окно отправки программера в чат сейчас или после завершения текущей работы. В окне "Поделиться программером" из меню "Вид" необходимо заполнить все недостающие данные модели вручную или автоматически для корректной привязки программера к модели.</comment>
+  </data>
+  <data name="tb_er_write" xml:space="preserve">
+    <value>写入错误</value>
+    <comment>Ошибка записи</comment>
+  </data>
+  <data name="mb_title_mis" xml:space="preserve">
+    <value>请注意，有错误！</value>
+    <comment>Внимание! Ошибка!</comment>
+  </data>
+  <data name="write_ss" xml:space="preserve">
+    <value>当前环节大小</value>
+    <comment>Текущий размер сектора</comment>
+  </data>
+  <data name="tb_gpt_save" xml:space="preserve">
+    <value>已成功将标记表文件保存到所选文件夹。</value>
+    <comment>Сохранение файла таблицы разметки в выбранную папку прошло успешно.</comment>
+  </data>
+  <data name="tip_row" xml:space="preserve">
+    <value>从列表中选择或手动输入</value>
+    <comment>Выберите из списка или введите вручную</comment>
+  </data>
+  <data name="tb_send_conf" xml:space="preserve">
+    <value>用户已确认发送日志</value>
+    <comment>Отправка лога подтверждена пользователем.</comment>
+  </data>
+  <data name="tbs_stor_dev" xml:space="preserve">
+    <value>正在获取存储设备信息</value>
+    <comment>Получаем информацию о запоминающем устройстве</comment>
+  </data>
+  <data name="mb_title_att" xml:space="preserve">
+    <value>注意!</value>
+    <comment>Обратите внимание!</comment>
+  </data>
+  <data name="tb_note_att_del_mem" xml:space="preserve">
+    <value>注意，删除内存中的所有信息！</value>
+    <comment>Внимание, удаление всей информации из памяти!</comment>
+  </data>
+  <data name="mb_body_gpt_not_formed" xml:space="preserve">
+    <value>该GPT表不符合格式</value>
+    <comment>Таблица GPT не сформирована</comment>
+  </data>
+  <data name="increase_rating" xml:space="preserve">
+    <value>对此消息的反应将增加#Concernedusersrating@firehosefinder</value>
+    <comment>Реакция на это сообщение увеличит #Concernedusersrating@firehosefinder</comment>
   </data>
   <data name="thanks_user" xml:space="preserve">
     <value>感谢用户</value>
@@ -752,84 +809,33 @@
     <value>供的数据。</value>
     <comment>за предоставленные данные.</comment>
   </data>
-  <data name="tip_cancel" xml:space="preserve">
-    <value>要重置，请点击按钮并选择"取消"。</value>
-    <comment>Для сброса нажмите кнопку и выберите "Отмена"</comment>
+  <data name="bot_title_start" xml:space="preserve">
+    <value>替代授权选项</value>
+    <comment>Альтернативная возможность авторизации</comment>
   </data>
-  <data name="tip_decode" xml:space="preserve">
-    <value>解密系统仅为 DES。密钥中的字符数少于 16 个时，将在开头补充 0字符。</value>
-    <comment>Система дешифровки - только DES. Количество знаков в ключе меньше 16 будет дополнено '0' в начале.</comment>
+  <data name="bot_code_start" xml:space="preserve">
+    <value>如果您未能自动登录，那么您可以在Telegram中找到"Hoplik-Bot"机器人，并尝试在FhF应用程序运行时在/start命令之后输入授权代码:</value>
+    <comment>Если у вас не получилость автоматически авторизоваться, то вы можете найти в Телеграм бота "Hoplik-Bot" и при запущенном приложении FhF попробовать ввести после команды /start код авторизации:</comment>
   </data>
-  <data name="tip_row" xml:space="preserve">
-    <value>从列表中选择或手动输入</value>
-    <comment>Выберите из списка или введите вручную</comment>
+  <data name="actual_data" xml:space="preserve">
+    <value>有关:</value>
+    <comment>Актуально на:</comment>
+  </data>
+  <data name="tb_auth_fall" xml:space="preserve">
+    <value>授权失败。 再试一次。</value>
+    <comment>Авторизация завершилась неудачей. Попробуйте ещё раз.</comment>
   </data>
   <data name="ts_auth" xml:space="preserve">
     <value>授权书</value>
     <comment>Авторизация</comment>
   </data>
-  <data name="tt_check" xml:space="preserve">
-    <value>点击以检查所选编程器</value>
-    <comment>Нажмите для проверки выбранного программера</comment>
+  <data name="Dev_comm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dev_comm_zh-Hans.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="tt_data_not_sent" xml:space="preserve">
-    <value>尚未发送数据</value>
-    <comment>Данные не отправлены</comment>
+  <data name="ten_sec_title" xml:space="preserve">
+    <value>建议更改设置</value>
   </data>
-  <data name="tt_data_sent" xml:space="preserve">
-    <value>数据已成功发送</value>
-    <comment>Данные успешно отправлены</comment>
-  </data>
-  <data name="tt_find" xml:space="preserve">
-    <value>连接设备并点击按钮 以获取ID</value>
-    <comment>Connect the device and click to get the IDs</comment>
-  </data>
-  <data name="tt_id_empty" xml:space="preserve">
-    <value>标识符为空。无内容可发送。</value>
-    <comment>Идентификаторы пусты. Нечего отправлять.</comment>
-  </data>
-  <data name="tt_id_not_rec" xml:space="preserve">
-    <value>未收到全部标识符，数据发送被取消</value>
-    <comment>Не все идентификаторы получены, отправка данных отменена</comment>
-  </data>
-  <data name="tt_id_rec" xml:space="preserve">
-    <value>收到标识符后，可关闭设备并重新启动</value>
-    <comment>Идентификаторы получены, устройство можно отключить и перезагрузить</comment>
-  </data>
-  <data name="tt_path" xml:space="preserve">
-    <value>指定 FireHouse 文件集的路径</value>
-    <comment>Укажите путь к коллекции firehose</comment>
-  </data>
-  <data name="tt_proc" xml:space="preserve">
-    <value>目前正在处理中。</value>
-    <comment>Сейчас обрабатывается</comment>
-  </data>
-  <data name="under_dev" xml:space="preserve">
-    <value>正在开发中</value>
-    <comment>В процессе разработки</comment>
-  </data>
-  <data name="unknown" xml:space="preserve">
-    <value>未知的东西</value>
-    <comment>Что-то непонятное</comment>
-  </data>
-  <data name="userstate_show_first" xml:space="preserve">
-    <value>正在显示第一个字符块中...</value>
-    <comment>Отображаем блок первых символов ...</comment>
-  </data>
-  <data name="version" xml:space="preserve">
-    <value>版本</value>
-    <comment>Версия</comment>
-  </data>
-  <data name="warn" xml:space="preserve">
-    <value>警告!</value>
-    <comment>Предупреждение!</comment>
-  </data>
-  <data name="write_ss" xml:space="preserve">
-    <value>当前环节大小</value>
-    <comment>Текущий размер сектора</comment>
-  </data>
-  <data name="write_ts" xml:space="preserve">
-    <value>扇区总数</value>
-    <comment>всего секторов</comment>
+  <data name="ten_sec_label" xml:space="preserve">
+    <value>似乎您有新的设备，但选择的协议是旧的。我建议您重启设备，并尝试通过 Sahara v3 协议获取标识符。协议将在 15 秒后自动更改，或者按下“确定”键。按“取消”键将保留 Sahara v2 协议。</value>
   </data>
 </root>

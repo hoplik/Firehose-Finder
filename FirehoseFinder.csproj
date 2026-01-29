@@ -14,10 +14,10 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\hoplik\OneDrive\Рабочий стол\Publishing\</PublishUrl>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>ftp://yggno.de:21/</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
+    <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -25,6 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://fhf.yggno.de/</InstallUrl>
     <UpdateUrl>https://fhf.yggno.de/</UpdateUrl>
     <SupportUrl>https://github.com/hoplik/Firehose-Finder/</SupportUrl>
     <ErrorReportUrl>https://github.com/hoplik/Firehose-Finder/issues</ErrorReportUrl>
@@ -179,6 +180,12 @@
     <Compile Include="Forms\Rate.Designer.cs">
       <DependentUpon>Rate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Ten_Sec_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ten_Sec_Form.Designer.cs">
+      <DependentUpon>Ten_Sec_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Func.cs" />
     <Compile Include="Forms\Greeting.cs">
       <SubType>Form</SubType>
@@ -331,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SendProgForm.zh-Hans.resx">
       <DependentUpon>SendProgForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ten_Sec_Form.resx">
+      <DependentUpon>Ten_Sec_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Write_Sectors.zh-Hans.resx">
       <DependentUpon>Write_Sectors.cs</DependentUpon>

@@ -34,7 +34,6 @@
             this.button_send = new System.Windows.Forms.Button();
             this.button_cancel = new System.Windows.Forms.Button();
             this.dataGridView_shareprog = new System.Windows.Forms.DataGridView();
-            this.label_title = new System.Windows.Forms.Label();
             this.Column_manuf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_model = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_altname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +41,7 @@
             this.Column_chipnum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_path = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label_title = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_shareprog)).BeginInit();
             this.SuspendLayout();
@@ -99,12 +99,6 @@
             this.dataGridView_shareprog.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView_shareprog.RowTemplate.Height = 24;
             // 
-            // label_title
-            // 
-            resources.ApplyResources(this.label_title, "label_title");
-            this.tableLayoutPanel1.SetColumnSpan(this.label_title, 3);
-            this.label_title.Name = "label_title";
-            // 
             // Column_manuf
             // 
             resources.ApplyResources(this.Column_manuf, "Column_manuf");
@@ -146,6 +140,12 @@
             resources.ApplyResources(this.Column_path, "Column_path");
             this.Column_path.Name = "Column_path";
             this.Column_path.ReadOnly = true;
+            // 
+            // label_title
+            // 
+            resources.ApplyResources(this.label_title, "label_title");
+            this.tableLayoutPanel1.SetColumnSpan(this.label_title, 3);
+            this.label_title.Name = "label_title";
             // 
             // SendProgForm
             // 
