@@ -2677,11 +2677,13 @@ namespace FirehoseFinder
                     }
                 }
             }
+            string sbl_or_hz = "SBL SW Version: ";
+            if (label_SW_Ver.Text.StartsWith("A0")) sbl_or_hz = "HZ_ID: ";
             string logstr = label_tm.Text + "\u261F" + label_model.Text + "\u261F" + label_altname.Text + "\u261F"+ label_chip_sn.Text + Environment.NewLine +
                 string.Format("Chip s/n: {0}", Global_Share_Prog[1][5]) + Environment.NewLine +
                 string.Format("HWID: {0}{1}{2}", textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text) + Environment.NewLine +
                 string.Format("OEM PK Hash ({0}): {1}", textBox_oemhash.TextLength, textBox_oemhash.Text) + Environment.NewLine +
-                string.Format("SBL SW Version: {0}", label_SW_Ver.Text);
+                sbl_or_hz + label_SW_Ver.Text;
             //Записываем данные в глобальный массив
             Global_Share_Prog[0][1] = label_tm.Text;
             Global_Share_Prog[0][2] = label_model.Text;
