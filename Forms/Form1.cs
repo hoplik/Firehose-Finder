@@ -3696,9 +3696,9 @@ namespace FirehoseFinder
                 {
                     Process.Start(string.Format(dataGridView_final.SelectedRows[0].Cells[1].Value.ToString().Trim('#')));
                 }
-                catch (Exception) //Обработка Application not found
+                catch (Win32Exception ex) //Обработка Application not found
                 {
-
+                    MessageBox.Show(ex.Message);
                 }
                 catch (Exception ex)
                 {

@@ -44,16 +44,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2026-01-30T23:38:08">
-<Users_Rate>
-<UserFN>Hamster</UserFN>
-<UserLN>Técnico</UserLN>
-<UserN>boinker117</UserN>
-<Posts>1</Posts>
-<Reactions>1</Reactions>
-<Activities>2</Activities>
-<Last_date>2026-02-03T00:00:00</Last_date>
-</Users_Rate>
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2026-02-06T00:37:21">
 <Users_Rate>
 <UserFN>hdk2d</UserFN>
 <UserLN>(device vermeer)</UserLN>
@@ -62,6 +53,15 @@
 <Reactions>1</Reactions>
 <Activities>2</Activities>
 <Last_date>2026-03-12T00:00:00</Last_date>
+</Users_Rate>
+<Users_Rate>
+<UserFN>Ilya</UserFN>
+<UserLN>Nikitin</UserLN>
+<UserN>f1uctus</UserN>
+<Posts>2</Posts>
+<Reactions>4</Reactions>
+<Activities>6</Activities>
+<Last_date>2026-08-01T00:00:00</Last_date>
 </Users_Rate>
 <Users_Rate>
 <UserFN>Ost268</UserFN>
@@ -87,14 +87,6 @@
 <Reactions>3</Reactions>
 <Activities>4</Activities>
 <Last_date>2026-03-19T00:00:00</Last_date>
-</Users_Rate>
-<Users_Rate>
-<UserFN>Владимир</UserFN>
-<UserN>Hypervawe</UserN>
-<Posts>1</Posts>
-<Reactions>2</Reactions>
-<Activities>3</Activities>
-<Last_date>2026-01-31T00:00:00</Last_date>
 </Users_Rate>
 </dataroot>
 </root>
