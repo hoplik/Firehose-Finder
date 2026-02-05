@@ -3690,7 +3690,21 @@ namespace FirehoseFinder
             if (MessageBox.Show(LocRes.GetString("mb_body_server_down"),
                 LocRes.GetString("mb_title_server_down"),
                 MessageBoxButtons.OKCancel,
-                MessageBoxIcon.Information) == DialogResult.OK) Process.Start(string.Format(dataGridView_final.SelectedRows[0].Cells[1].Value.ToString().Trim('#')));
+                MessageBoxIcon.Information) == DialogResult.OK)
+            {
+                try
+                {
+                    Process.Start(string.Format(dataGridView_final.SelectedRows[0].Cells[1].Value.ToString().Trim('#')));
+                }
+                catch (Exception) //Обработка Application not found
+                {
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
         private string Transbt()
         {

@@ -14,10 +14,10 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://yggno.de:21/</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\hoplik\OneDrive\Рабочий стол\Publishing\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
+    <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -25,7 +25,6 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://fhf.yggno.de/</InstallUrl>
     <UpdateUrl>https://fhf.yggno.de/</UpdateUrl>
     <SupportUrl>https://github.com/hoplik/Firehose-Finder/</SupportUrl>
     <ErrorReportUrl>https://github.com/hoplik/Firehose-Finder/issues</ErrorReportUrl>
@@ -37,8 +36,8 @@
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>10</ApplicationRevision>
-    <ApplicationVersion>26.1.26.10</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>26.1.30.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
