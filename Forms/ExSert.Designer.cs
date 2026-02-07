@@ -171,6 +171,7 @@
             // openFileDialog1
             // 
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
+            this.openFileDialog1.RestoreDirectory = true;
             // 
             // backgroundWorker1
             // 

@@ -285,27 +285,6 @@
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>724, 17</value>
   </metadata>
-  <data name="отменитьВыборToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 24</value>
-  </data>
-  <data name="отменитьВыборToolStripMenuItem.Text" xml:space="preserve">
-    <value>Отменить выбор</value>
-  </data>
-  <data name="выбратьВсёToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 24</value>
-  </data>
-  <data name="выбратьВсёToolStripMenuItem.Text" xml:space="preserve">
-    <value>Выбрать всё</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 6</value>
-  </data>
-  <data name="хешСертификатаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 24</value>
-  </data>
-  <data name="хешСертификатаToolStripMenuItem.Text" xml:space="preserve">
-    <value>Хеш сертификата</value>
-  </data>
   <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 82</value>
   </data>
@@ -369,11 +348,32 @@
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="button1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="button2" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="listView1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,100,Absolute,40,Absolute,30,Absolute,40,Absolute,30" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
+  <data name="отменитьВыборToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 24</value>
+  </data>
+  <data name="отменитьВыборToolStripMenuItem.Text" xml:space="preserve">
+    <value>Отменить выбор</value>
+  </data>
+  <data name="выбратьВсёToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 24</value>
+  </data>
+  <data name="выбратьВсёToolStripMenuItem.Text" xml:space="preserve">
+    <value>Выбрать всё</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 6</value>
+  </data>
+  <data name="хешСертификатаToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 24</value>
+  </data>
+  <data name="хешСертификатаToolStripMenuItem.Text" xml:space="preserve">
+    <value>Хеш сертификата</value>
+  </data>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>154, 17</value>
   </metadata>
   <data name="openFileDialog1.Filter" xml:space="preserve">
-    <value>Файл elf|*.elf|Файл mbn|*.mbn|Файл bin|*.bin|Все файлы|*.*</value>
+    <value>Файл elf|*.elf|Файл melf|*.melf|Файл img|*.img|Файл mbn|*.mbn|Файл bin|*.bin|Все файлы|*.*</value>
   </data>
   <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>324, 17</value>

@@ -62,8 +62,9 @@ namespace FirehoseFinder.Forms
                 foreach (ListViewItem item in listView1.CheckedItems)
                 {
                     int startadress = Convert.ToInt32(item.Text);
+                    string file_name = Path.GetFileNameWithoutExtension(label1.Text); //Получили имя файла сертификатов
                     int sertlen = Convert.ToInt32(item.SubItems[1].Text);
-                    string newfilename = startadress.ToString() + "-" + (startadress + 4 + sertlen).ToString() + ".der";
+                    string newfilename = file_name + "_" + startadress.ToString() + "_" + (startadress + 4 + sertlen).ToString() + ".der";
                     string newsert = filestring.Substring(startadress * 2, (4 * 2) + (sertlen * 2));
                     using (var stream = File.OpenWrite(label2.Text + "\\" + newfilename))
                     {

@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2026-01-15T20:50:57">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2026-02-08T00:47:37">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1705,13 +1705,13 @@
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/lanai/prog_ufs_firehose_sm8650_ddr.elf#</Url>
 <HW_FH>lanai</HW_FH>
 <Hash_File>01e4f38fd9ffff2056baffde8123ebe966feb6279f2be71bf831729ba66954d9</Hash_File>
-<Model>NX721J</Model>
+<Model>NX769J</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/lanai/prog_ufs_firehose_sm8650_ddr.elf#</Url>
 <HW_FH>lanai</HW_FH>
 <Hash_File>01e4f38fd9ffff2056baffde8123ebe966feb6279f2be71bf831729ba66954d9</Hash_File>
-<Model>NX769J</Model>
+<Model>NX721J</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/netrani/prog_Moto_G_Stylus_XT2315.elf#</Url>
@@ -1789,7 +1789,7 @@
 <SWType>3</SWType>
 <SWVer>1</SWVer>
 <Hash_File>209f1047dfc503bdd813ffebcb5c61b26ff4ab7a51b7eb79769684ebc16a5f16</Hash_File>
-<Model>Mi 9T Pro</Model>
+<Model>Redmi K20 Pro</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCADFE3/1/prog_ufs_firehose_sdm855_ddr.elf#</Url>
@@ -1800,7 +1800,7 @@
 <SWType>3</SWType>
 <SWVer>1</SWVer>
 <Hash_File>209f1047dfc503bdd813ffebcb5c61b26ff4ab7a51b7eb79769684ebc16a5f16</Hash_File>
-<Model>Redmi K20 Pro</Model>
+<Model>Mi 9T Pro</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A758CF6D/0/prog_emmc_firehose_QM215.mbn#</Url>
@@ -2752,7 +2752,7 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>B5BACA995AEC012DB32EB9E49CA340F7D4C26153AAA60C5A82A03F99AFC698E3</HASH_FH>
 <Hash_File>73c51de96b5f6f0ee44e40eebc671322071bc00d705eebdd7c60705a1ad11248</Hash_File>
-<Model>H818</Model>
+<Model>LG-M153</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/AFC698E3/2/prog_emmc_firehose_8992_lite_lge1.mbn#</Url>
@@ -2761,7 +2761,7 @@
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>B5BACA995AEC012DB32EB9E49CA340F7D4C26153AAA60C5A82A03F99AFC698E3</HASH_FH>
 <Hash_File>73c51de96b5f6f0ee44e40eebc671322071bc00d705eebdd7c60705a1ad11248</Hash_File>
-<Model>LG-M153</Model>
+<Model>H818</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/9FCADFE3/1/redmi_note_13_4G_firehose.elf#</Url>
@@ -3141,7 +3141,7 @@
 <MODEL_FH>5198</MODEL_FH>
 <HASH_FH>2354228EEBCBC2039106DDA001EEBB9B88D06DC03C30E532AA887FBCAD148AF10CEC9DAC2A46D714DB075FD1F6CF8FAB</HASH_FH>
 <Hash_File>6558f49c3a55d0eb7fdd7bb326c9bb22b29f4b6b6316937e847e8b76e11f6ec0</Hash_File>
-<Model>BE2029</Model>
+<Model>BE2028</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/F6CF8FAB/0000000000515198_2354228eebcbc203_fhprg_op_n10.bin#</Url>
@@ -3150,7 +3150,7 @@
 <MODEL_FH>5198</MODEL_FH>
 <HASH_FH>2354228EEBCBC2039106DDA001EEBB9B88D06DC03C30E532AA887FBCAD148AF10CEC9DAC2A46D714DB075FD1F6CF8FAB</HASH_FH>
 <Hash_File>6558f49c3a55d0eb7fdd7bb326c9bb22b29f4b6b6316937e847e8b76e11f6ec0</Hash_File>
-<Model>BE2028</Model>
+<Model>BE2029</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D49D14D4/prog_ufs_firehose_8996_lite_on3t.elf#</Url>
@@ -3337,7 +3337,7 @@
 <MODEL_FH>000B</MODEL_FH>
 <HASH_FH>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASH_FH>
 <Hash_File>8a83a5ba7ea5aba8af43a6ddb798e787c1cbc30f764f0d2cf34fea419e809b3e</Hash_File>
-<Model>K-Touch Tou ch3</Model>
+<Model>6036Y</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/E0D4B4F0/Miata_NPRG7627_1.bin#</Url>
@@ -3346,7 +3346,7 @@
 <MODEL_FH>000B</MODEL_FH>
 <HASH_FH>625801C51EEE90D7F0E0EDB1606BB07E05871BD24F69F3FADFD17FDCE0D4B4F0</HASH_FH>
 <Hash_File>8a83a5ba7ea5aba8af43a6ddb798e787c1cbc30f764f0d2cf34fea419e809b3e</Hash_File>
-<Model>6036Y</Model>
+<Model>K-Touch Tou ch3</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/1FDADC68/prog_emmc_firehose_8909.mbn#</Url>
@@ -3432,17 +3432,7 @@
 <HASH_FH>404D181E75AF65A806B01DCF394B82B8A645FB0DE76E3C386FE42092D33500D6</HASH_FH>
 <SWType>0</SWType>
 <Hash_File>2ba44888af1dc1c5332c6e7f637a411b29c35828fef1c662d492542e34af2521</Hash_File>
-<Model>NX608J</Model>
-</ForFound>
-<ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D33500D6/0/prog_emmc_firehose_8953_ddr.mbn#</Url>
-<HW_FH>000460E1</HW_FH>
-<OEM_FH>0004</OEM_FH>
-<MODEL_FH>0000</MODEL_FH>
-<HASH_FH>404D181E75AF65A806B01DCF394B82B8A645FB0DE76E3C386FE42092D33500D6</HASH_FH>
-<SWType>0</SWType>
-<Hash_File>2ba44888af1dc1c5332c6e7f637a411b29c35828fef1c662d492542e34af2521</Hash_File>
-<Model>NX612J</Model>
+<Model>NX549J</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D33500D6/0/prog_emmc_firehose_8953_ddr.mbn#</Url>
@@ -3462,7 +3452,27 @@
 <HASH_FH>404D181E75AF65A806B01DCF394B82B8A645FB0DE76E3C386FE42092D33500D6</HASH_FH>
 <SWType>0</SWType>
 <Hash_File>2ba44888af1dc1c5332c6e7f637a411b29c35828fef1c662d492542e34af2521</Hash_File>
-<Model>NX549J</Model>
+<Model>NX608J</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D33500D6/0/prog_emmc_firehose_8953_ddr.mbn#</Url>
+<HW_FH>000460E1</HW_FH>
+<OEM_FH>0004</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>404D181E75AF65A806B01DCF394B82B8A645FB0DE76E3C386FE42092D33500D6</HASH_FH>
+<SWType>0</SWType>
+<Hash_File>2ba44888af1dc1c5332c6e7f637a411b29c35828fef1c662d492542e34af2521</Hash_File>
+<Model>NX612J</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D33500D6/0/prog_emmc_firehose_8953_ddr_1.mbn#</Url>
+<HW_FH>000460E1</HW_FH>
+<OEM_FH>0004</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>404D181E75AF65A806B01DCF394B82B8A645FB0DE76E3C386FE42092D33500D6</HASH_FH>
+<SWType>0</SWType>
+<Hash_File>a9fdeabb9dfd58ff993703636b91d5ee0f82377c72e19e85cedc6ffaa40adf93</Hash_File>
+<Model>NX608J</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D33500D6/0/prog_emmc_firehose_8953_ddr_1.mbn#</Url>
@@ -3495,16 +3505,6 @@
 <Model>NX612J</Model>
 </ForFound>
 <ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D33500D6/0/prog_emmc_firehose_8953_ddr_1.mbn#</Url>
-<HW_FH>000460E1</HW_FH>
-<OEM_FH>0004</OEM_FH>
-<MODEL_FH>0000</MODEL_FH>
-<HASH_FH>404D181E75AF65A806B01DCF394B82B8A645FB0DE76E3C386FE42092D33500D6</HASH_FH>
-<SWType>0</SWType>
-<Hash_File>a9fdeabb9dfd58ff993703636b91d5ee0f82377c72e19e85cedc6ffaa40adf93</Hash_File>
-<Model>NX608J</Model>
-</ForFound>
-<ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D33500D6/0/prog_emmc_firehose_8953_lite.mbn#</Url>
 <HW_FH>000460E1</HW_FH>
 <OEM_FH>0004</OEM_FH>
@@ -3513,16 +3513,6 @@
 <SWType>0</SWType>
 <Hash_File>1e6edc5f9b5132143ae2d516b79653f0fcf2ad6a4e814f61ca7f03f66ac817f3</Hash_File>
 <Model>NX549J</Model>
-</ForFound>
-<ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D33500D6/0/prog_emmc_firehose_8953_lite.mbn#</Url>
-<HW_FH>000460E1</HW_FH>
-<OEM_FH>0004</OEM_FH>
-<MODEL_FH>0000</MODEL_FH>
-<HASH_FH>404D181E75AF65A806B01DCF394B82B8A645FB0DE76E3C386FE42092D33500D6</HASH_FH>
-<SWType>0</SWType>
-<Hash_File>1e6edc5f9b5132143ae2d516b79653f0fcf2ad6a4e814f61ca7f03f66ac817f3</Hash_File>
-<Model>NX551J</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D33500D6/0/prog_emmc_firehose_8953_lite.mbn#</Url>
@@ -3545,24 +3535,14 @@
 <Model>NX608J</Model>
 </ForFound>
 <ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D33500D6/0/prog_emmc_firehose_8953_lite_1.mbn#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D33500D6/0/prog_emmc_firehose_8953_lite.mbn#</Url>
 <HW_FH>000460E1</HW_FH>
 <OEM_FH>0004</OEM_FH>
 <MODEL_FH>0000</MODEL_FH>
 <HASH_FH>404D181E75AF65A806B01DCF394B82B8A645FB0DE76E3C386FE42092D33500D6</HASH_FH>
 <SWType>0</SWType>
-<Hash_File>814564b9ac7370525fb52ec7ee9ca28643c2a2d5c31b78918470659396544949</Hash_File>
-<Model>NX612J</Model>
-</ForFound>
-<ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D33500D6/0/prog_emmc_firehose_8953_lite_1.mbn#</Url>
-<HW_FH>000460E1</HW_FH>
-<OEM_FH>0004</OEM_FH>
-<MODEL_FH>0000</MODEL_FH>
-<HASH_FH>404D181E75AF65A806B01DCF394B82B8A645FB0DE76E3C386FE42092D33500D6</HASH_FH>
-<SWType>0</SWType>
-<Hash_File>814564b9ac7370525fb52ec7ee9ca28643c2a2d5c31b78918470659396544949</Hash_File>
-<Model>NX549J</Model>
+<Hash_File>1e6edc5f9b5132143ae2d516b79653f0fcf2ad6a4e814f61ca7f03f66ac817f3</Hash_File>
+<Model>NX551J</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D33500D6/0/prog_emmc_firehose_8953_lite_1.mbn#</Url>
@@ -3583,6 +3563,26 @@
 <SWType>0</SWType>
 <Hash_File>814564b9ac7370525fb52ec7ee9ca28643c2a2d5c31b78918470659396544949</Hash_File>
 <Model>NX608J</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D33500D6/0/prog_emmc_firehose_8953_lite_1.mbn#</Url>
+<HW_FH>000460E1</HW_FH>
+<OEM_FH>0004</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>404D181E75AF65A806B01DCF394B82B8A645FB0DE76E3C386FE42092D33500D6</HASH_FH>
+<SWType>0</SWType>
+<Hash_File>814564b9ac7370525fb52ec7ee9ca28643c2a2d5c31b78918470659396544949</Hash_File>
+<Model>NX549J</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/D33500D6/0/prog_emmc_firehose_8953_lite_1.mbn#</Url>
+<HW_FH>000460E1</HW_FH>
+<OEM_FH>0004</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>404D181E75AF65A806B01DCF394B82B8A645FB0DE76E3C386FE42092D33500D6</HASH_FH>
+<SWType>0</SWType>
+<Hash_File>814564b9ac7370525fb52ec7ee9ca28643c2a2d5c31b78918470659396544949</Hash_File>
+<Model>NX612J</Model>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/A22902B4/0/moto_XT1254.bin#</Url>
@@ -3673,12 +3673,12 @@
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/pakala/rm10.melf#</Url>
-<HW_FH>pakala</HW_FH>
+<HW_FH>0028C0E1</HW_FH>
 <Hash_File>0aab3f764c8ffa28ae84dee5bafb26f8ad21d6ee626adb375b1a1b483316783c</Hash_File>
 </ForFound>
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/pakala/rm10.melf#</Url>
-<HW_FH>pakala</HW_FH>
+<HW_FH>0028C0E1</HW_FH>
 <Hash_File>0aab3f764c8ffa28ae84dee5bafb26f8ad21d6ee626adb375b1a1b483316783c</Hash_File>
 </ForFound>
 <ForFound>
@@ -3721,6 +3721,15 @@
 <HASH_FH>6E8D4870D9E89104A79568C1285E4672C5DF7A52FE0B67FA554DA8DA910FA1EF168A258CDCB3E5DBC745899EEE327A90</HASH_FH>
 <Hash_File>4cf138a77a668e30148a804885245b3a5195053793ccca0a06fdcb905c53b8df</Hash_File>
 <Model>Moto G 5G 2023</Model>
+</ForFound>
+<ForFound>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/492B47A8/0090b0e100040000_eadae385d54ec66b_fhprg_peek.bin#</Url>
+<HW_FH>0090B0E1</HW_FH>
+<OEM_FH>0004</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>EADAE385D54EC66B830F9F9937E085CDFD92B2C01339C98BCD2F512D492B47A8</HASH_FH>
+<Hash_File>166db93d8e3c7a0cd3e7ae2f3c5474a83a151e06989ac8c3740c0428d75aad39</Hash_File>
+<Model>Blade S6</Model>
 </ForFound>
 </dataroot>
 </root>
