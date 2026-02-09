@@ -1833,29 +1833,31 @@ namespace FirehoseFinder
         private void BackgroundWorker_Read_File_DoWork(object sender, DoWorkEventArgs e)
         {
             KeyValuePair<string, long> FileToRead = (KeyValuePair<string, long>)e.Argument;
-            StringBuilder dumptext = new StringBuilder(string.Empty);
-            if (FileToRead.Value > 4 && FileToRead.Value < 2000000000)
+            StringBuilder dumptext = new StringBuilder();
+            int min_byte_read = 4;
+            if (FileToRead.Value > min_byte_read && FileToRead.Value < 2000000000)
             {
-                int len = Convert.ToInt32(FileToRead.Value);
-                byte[] chunk = new byte[len];
                 try
                 {
+                    byte[] chunk = new byte[min_byte_read];
                     using (var stream = File.OpenRead(FileToRead.Key))
                     {
-                        int byteschunk = stream.Read(chunk, 0, 4);
-                        for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, string.Format("{0:X2}", (int)chunk[i]));
-                        if (Enum.IsDefined(typeof(Guide.FH_magic_numbers), Convert.ToUInt32(dumptext.ToString(), 16)))
+                        stream.Read(chunk, 0, min_byte_read);
+                        Array.Reverse(chunk);
+                        if (Enum.IsDefined(typeof(Guide.FH_magic_numbers), BitConverter.ToUInt32(chunk, 0)))
                         {
                             dumptext.Clear();
-                            stream.Position = 0;
-                            byteschunk = stream.Read(chunk, 0, len);
-                            for (int i = 0; i < byteschunk; i++) dumptext.Insert(i * 2, string.Format("{0:X2}", (int)chunk[i]));
+                            Array.Resize(ref chunk, (int)FileToRead.Value);
+                            stream.Seek(0, SeekOrigin.Begin);
+                            stream.Read(chunk, 0, chunk.Length);
+                            dumptext.Append(BitConverter.ToString(chunk).Replace("-", string.Empty));
                         }
                     }
                 }
                 catch (IOException ex)
                 {
                     e.Result = ex;
+                    return;
                 }
             }
             e.Result = dumptext.ToString();
