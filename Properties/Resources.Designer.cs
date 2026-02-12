@@ -320,37 +320,6 @@ namespace FirehoseFinder.Properties {
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap dev {
-            get {
-                object obj = ResourceManager.GetObject("dev", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на 	1. При выборе файла определяем, является ли он elf (начало файла - бинарная последовательность - 7F 45 4C 46 - ELF).
-        ///Обычно в контейнере 5 вхождений elf.
-        ///	2. Разбираем шапки всех эльфов.
-        ///Class (32/64): 5 байт
-        ///Data (Little/Big): 6 байт
-        ///Старт программных заголовков: 4(8) байт, сдвиг 22(26)
-        ///Размер заголовков: 2 байта, сдвиг 10(14)
-        ///Количество заголовков: 2 байта
-        ///
-        ///Итого шапка+заголовки = 0х74, которые пропускаем. Аналог нуля далее.
-        ///Адрес первой программы 0х38-4-0х74
-        ///Размер 0х48-4-0х20000
-        ///Адрес втор [остаток строки не уместился]&quot;;.
-        /// </summary>
-        internal static string Dev_comm {
-            get {
-                return ResourceManager.GetString("Dev_comm", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на Готово..
         /// </summary>
         internal static string done {

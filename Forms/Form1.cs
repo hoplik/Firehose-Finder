@@ -228,14 +228,12 @@ namespace FirehoseFinder
             {
                 авторизоватьсяЧерезТелеграмToolStripMenuItem.Visible = true;
                 отменитьАвторизациюToolStripMenuItem.Visible = false;
-                DevToolStripMenuItem.Enabled = false;
                 Text = "Firehose Finder";
             }
             else
             {
                 авторизоватьсяЧерезТелеграмToolStripMenuItem.Visible = false;
                 отменитьАвторизациюToolStripMenuItem.Visible = true;
-                DevToolStripMenuItem.Enabled = true;
                 Text = $"Firehose Finder - {Settings.Default.userFN} {Settings.Default.userLN} ({Settings.Default.userN})";
             }
             //Восстанавливаем выбор пользователя по Сахаре
@@ -2588,9 +2586,9 @@ namespace FirehoseFinder
                     string jtagstr = textBox_hwid.Text = HWOEMIDs3.Substring(8, 8);
                     string sblswverstr = label_SW_Ver.Text = HWOEMIDs3.Substring(16, 4);
                     textBox_soft_term.AppendText("Sv3 HWID - " + jtagstr + oemstr + modelstr + Environment.NewLine
-                        + "ПРЕДПОЛОЖИТЕЛЬНО! Sv3 SBL SW Ver. - " + sblswverstr + Environment.NewLine);
+                        + "ПРЕДПОЛОЖИТЕЛЬНО! Sv3 ARB - " + sblswverstr + Environment.NewLine);
                     textBox_main_term.AppendText("Sv3 HWID - " + jtagstr + oemstr + modelstr + Environment.NewLine
-                        + "ПРЕДПОЛОЖИТЕЛЬНО! Sv3 SBL SW Ver. - " + sblswverstr + Environment.NewLine);
+                        + "ПРЕДПОЛОЖИТЕЛЬНО! Sv3 ARB - " + sblswverstr + Environment.NewLine);
                 }
                 else
                 {
@@ -3842,25 +3840,6 @@ namespace FirehoseFinder
         {
             toolStripStatusLabel_filescompleted.Text = e.UserState.ToString();
             toolStripProgressBar_filescompleted.Value = e.ProgressPercentage;
-        }
-
-        /// <summary>
-        /// Нажали пункт меню "Для разработчиков"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DevToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DevForm devForm = new DevForm();
-            try
-            {
-                devForm.ShowDialog();
-            }
-            catch (TargetInvocationException ex)
-            {
-                //Досрочно завершили операцию в параллельном потоке
-                MessageBox.Show(ex.Message, "Ошибка формы \"Для разработчиков\"");
-            }
         }
 
         private void RadioButton_sahara_ver3_CheckedChanged(object sender, EventArgs e)

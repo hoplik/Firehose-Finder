@@ -93,14 +93,23 @@ namespace FirehoseFinder
             string HWID = "3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F"; // Для неопределённого HWID ставим ??
             string SWID = "3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F3F"; // Для неопределённого SWID ставим ??
             string fh_type = "old";
-            //Выбираем новый или старый способ поиска идентификаторов
-            if (dumpfile.Length > 8600) fh_type = dumpfile.Substring(8200, 2); //Новый способ
+            //Выбираем способ поиска идентификаторов
+            //TODO Надо сделать нормальную обработку хедера эльфа!
+            int count_elf = Regex.Matches(dumpfile, Guide.FH_magic_numbers.ELF.ToString("X")).Count;
+            if (dumpfile.Length > 8600)
+            {
+                if (count_elf > 2) fh_type = "melf";
+                else fh_type = dumpfile.Substring(8200, 2);
+            }
             switch (fh_type) //Адрес 0х1004
             {
+                case "melf": //Мультиэльф. 7 - новейший
+                    Array.Copy(MELF(dumpfile), certarray, certarray.Length);
+                    break;
                 case "06": //Новый шланг
                     Array.Copy(ProgV6(dumpfile), certarray, certarray.Length);
                     break;
-                default: //Старый шланг 5 или 3. 7 - новейший, алгоритм пока не определён
+                default: //Старый шланг 5 или 3. 
                     if (HWIDstrInd >= 32 && SWIDstrInd >= 32)
                     {
                         HWID = dumpfile.Substring(HWIDstrInd - 32, 32);
@@ -305,15 +314,65 @@ namespace FirehoseFinder
                 if (string.IsNullOrEmpty(ANTIROLLBACK.ToString().TrimStart('0'))) ids_strings[5] = string.Empty;
                 else ids_strings[5] = "(" + ANTIROLLBACK.ToString().TrimStart('0') + ")";
             }
-            if (JTAG_ID.ToString().Equals("00000000") && dump_str.Substring(pr_offset * 2).Contains("7F454C46") && first_sign)
+            if (JTAG_ID.ToString().Equals("00000000") && dump_str.Substring(pr_offset * 2).Contains(Guide.FH_magic_numbers.ELF.ToString("X")) && first_sign)
             {
-                offset_elf = dump_str.LastIndexOf("7F454C46"); //Ищем во второй подписи эльфа
+                offset_elf = dump_str.LastIndexOf(Guide.FH_magic_numbers.ELF.ToString("X")); //Ищем во второй подписи эльфа
                 first_sign = false;
                 goto Double_sign;
             }
             ids_strings[0] = JTAG_ID.ToString();
             if (string.IsNullOrEmpty(CertExtr(dump_str))) ids_strings[3] = "?"; else ids_strings[3] = CertExtr(dump_str);  //OEM_PK_HASH
             return ids_strings;
+        }
+
+        /// <summary>
+        /// Разбор мультиэльфа на значения для подбора устройства. 
+        /// Пока больше 2 эльфов. 
+        /// В 6 версии их 1-2, в 7 - 5
+        /// </summary>
+        /// <param name="dump_str">Полный дамп</param>
+        /// <returns>Шесть значений - JTAG_ID-OEM_ID-MODEL_ID-OEM_PK_HASH-SW_ID-AntiRollBack</returns>
+        internal string[] MELF(string dump_str)
+        {
+            string elf_magic_num = Guide.FH_magic_numbers.ELF.ToString("X");
+            int count_elf = Regex.Matches(dump_str, elf_magic_num).Count;
+            string[] ids_str = new string[6] { count_elf.ToString(), count_elf.ToString(), count_elf.ToString(), "---", "---", "---" };
+            /*Готовим многомерный массив с данными для каждого эльфа
+             *Элементы массива - это данные для каждого эльфа (обычно это 5 эльфов, т.е. 0-4)
+             *Первый элемент массива (0) - адрес сдвига
+             *
+            */
+            string[][] elf_data = new string[count_elf][]; //Инициализация мультимассива
+            //Заполняем первый элемент - адреса эльфов в дампе (*2 от байт, т.к. уже в стринг)
+            for (int i = 0; i < count_elf; i++)
+            {
+                elf_data[i] = new string[1]; // Инициализация подмассива для каждого эльфа
+                int strt_elf = 0; //Стартовый адрес признака эльфа
+                if (i > 0) strt_elf = dump_str.IndexOf(elf_magic_num, int.Parse(elf_data[i - 1][0]) + 1);
+                else strt_elf = dump_str.IndexOf(elf_magic_num);
+                elf_data[i][0] = strt_elf.ToString();
+            }
+            //Проверяем, в каком эльфе лежит дерево устройств
+
+            string last_elf = dump_str.Substring(dump_str.LastIndexOf(elf_magic_num)); //Отрезали все предыдущие эльфы. Остался последний - 5.
+                                                                                       //Разбираем шапку последнего эльфа
+
+            /*
+             * Тестировщик многомерного массива
+             */
+            StringBuilder str_test = new StringBuilder();
+            for (int i = 0; i < count_elf; i++)
+            {
+                for (int k = 0; k < elf_data[i].Length; k++)
+                {
+                    str_test.Append(elf_data[i][k] + "-");
+                }
+                str_test.Length--;
+                str_test.Append(Environment.NewLine);
+            }
+            MessageBox.Show(str_test.ToString());
+
+            return ids_str;
         }
 
         /// <summary>
@@ -421,15 +480,14 @@ namespace FirehoseFinder
         /// <returns></returns>
         internal string SaharaCommand1()
         {
-            if (File.Exists("commandop01.bin"))
+            string comop1 = "commandop01.bin";
+            if (File.Exists(comop1))
             {
-                StringBuilder SC1 = new StringBuilder();
-                byte[] comfilebytes = File.ReadAllBytes("commandop01.bin");
-                string backstr = BitConverter.ToString(comfilebytes).Replace("-", "");
-                //Читаем с конца  в начало
-                for (int i = backstr.Length - 1; i > 0; i -= 2) SC1.Append(backstr.Substring(i - 1, 2));
-                File.Delete("commandop01.bin");
-                return SC1.ToString().TrimStart('0');
+                byte[] comfilebytes = File.ReadAllBytes(comop1);
+                Array.Reverse(comfilebytes); //Little endian
+                string SC1 = BitConverter.ToString(comfilebytes).Replace("-", "").TrimStart('0');
+                File.Delete(comop1);
+                return SC1;
             }
             else return LocRes.GetString("file") + " commandop01.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");
         }
@@ -440,47 +498,42 @@ namespace FirehoseFinder
         /// <returns>Проверенная строка идентификаторов HWID_OEMID_MODELID</returns>
         internal string SaharaCommand2()
         {
-            if (File.Exists("commandop02.bin"))
+            string comop2 = "commandop02.bin";
+            if (File.Exists(comop2))
             {
-                StringBuilder SC2 = new StringBuilder();
-                string[] compareresult = { string.Empty, string.Empty, string.Empty };
-                byte[] comfilebytes = File.ReadAllBytes("commandop02.bin");
-                string backstr = BitConverter.ToString(comfilebytes).Replace("-", "");
-                //Читаем с конца в начало
-                for (int i = backstr.Length - 1; i > 0; i -= 2)
-                {
-                    SC2.Append(backstr.Substring(i - 1, 2));
-                }
-                int strlen = SC2.Length / 3; //Базово должно быть 16 знаков
-                for (int i = 0; i < 3; i++) compareresult[i] = SC2.ToString().Substring(i * strlen, strlen); //Заполняем строковым значением
-                File.Delete("commandop02.bin");
+                string[] compareresult = new string [3]{ string.Empty, string.Empty, string.Empty };
+                byte[] comfilebytes = File.ReadAllBytes(comop2);
+                Array.Reverse(comfilebytes); //Читаем с конца в начало
+                string backstr = BitConverter.ToString(comfilebytes).Replace("-", string.Empty);
+                int strlen = backstr.Length / 3; //Базово должно быть 16 знаков
+                for (int i = 0; i < 3; i++) compareresult[i] = backstr.Substring(i * strlen, strlen); //Заполняем строковым значением
+                File.Delete(comop2);
                 if (compareresult[2].Equals(compareresult[0]) || compareresult[0].Equals("0000000000000000"))
                 {
                     if (compareresult[2].Equals(compareresult[1]) || compareresult[1].Equals("0000000000000000")) return compareresult[2];
-                    else return SC2.ToString();
+                    else return backstr;
                 }
-                else return SC2.ToString();
+                else return backstr;
             }
             else return LocRes.GetString("file") + " commandop02.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");
         }
 
         /// <summary>
         /// Парсинг результата работы команды Сахары 03
+        /// NOTE From revision 2.4, PK Hash returns three hashes for APPS, MBA, and MSS code segments for B - family chips.
         /// </summary>
         /// <returns>Проверенная строка идентификатора OEM_HASH</returns>
         internal string SaharaCommand3()
         {
-            if (File.Exists("commandop03.bin"))
+            string comop3 = "commandop03.bin";
+            if (File.Exists(comop3))
             {
-                StringBuilder SC3 = new StringBuilder();
-                string[] compareresult = { string.Empty, string.Empty, string.Empty };
-                SC3.Append(BitConverter.ToString(File.ReadAllBytes("commandop03.bin")).Replace("-", ""));
-                //Читаем с начала до конца
+                string[] compareresult = new string[3] { string.Empty, string.Empty, string.Empty };
+                string SC3 = BitConverter.ToString(File.ReadAllBytes(comop3)).Replace("-", string.Empty);
                 int strlen = SC3.Length / 3;
-                for (int i = 0; i < 3; i++) compareresult[i] = SC3.ToString().Substring(i * strlen, strlen);
-                File.Delete("commandop03.bin");
+                for (int i = 0; i < 3; i++) compareresult[i] = SC3.Substring(i * strlen, strlen);
+                File.Delete(comop3);
                 return compareresult[0];
-                //NOTE From revision 2.4, PK Hash returns three hashes for APPS, MBA, and MSS code segments for B - family chips.
             }
             else return LocRes.GetString("file") + " commandop03.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");
         }
@@ -491,29 +544,15 @@ namespace FirehoseFinder
         /// <returns>Строка идентификатора Sv3 OEM_HASH</returns>
         internal string SaharaCommand3_3()
         {
-            if (File.Exists("commandop03.bin"))
+            string comop3 = "commandop03.bin";
+            if (File.Exists(comop3))
             {
-                StringBuilder SC3 = new StringBuilder(BitConverter.ToString(File.ReadAllBytes("commandop03.bin")).Replace("-", ""));
-                File.Delete("commandop03.bin");
-                return SC3.ToString();
+                string SC3 = BitConverter.ToString(File.ReadAllBytes(comop3)).Replace("-", string.Empty);
+                File.Delete(comop3);
+                return SC3;
             }
             else return LocRes.GetString("file") + " commandop03.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");
         }
-
-        ///// <summary>
-        ///// Парсинг результата работы команды Сахары 06
-        ///// </summary>
-        ///// <returns>Дамп PBL</returns>
-        //internal string SaharaCommand6()
-        //{
-        //    if (File.Exists("commandop06.bin"))
-        //    {
-        //        StringBuilder SC6 = new StringBuilder(BitConverter.ToString(File.ReadAllBytes("commandop06.bin")).Replace("-", ""));
-        //        File.Delete("commandop06.bin");
-        //        return SC6.ToString();
-        //    }
-        //    else return LocRes.GetString("file") + " commandop06.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");
-        //}
 
         /// <summary>
         /// Парсинг результата работы команды Сахары 07
@@ -521,19 +560,14 @@ namespace FirehoseFinder
         /// <returns>Строка идентификатора SW SBL1 в little endian</returns>
         internal string SaharaCommand7()
         {
-            if (File.Exists("commandop07.bin"))
+            string comop7 = "commandop07.bin";
+            if (File.Exists(comop7))
             {
-                StringBuilder SC7 = new StringBuilder();
-                string strbyte = BitConverter.ToString(File.ReadAllBytes("commandop07.bin")).Replace("-", "");
-                byte count = (byte)strbyte.Length;
-                //Читаем с конца в начало
-                while (count > 0)
-                {
-                    SC7.Append(strbyte.Substring(count - 2, 2));
-                    count -= 2;
-                }
-                File.Delete("commandop07.bin");
-                return SC7.ToString();
+                byte[] comopbytes = File.ReadAllBytes(comop7);
+                Array.Reverse(comopbytes); //Little endian
+                string SC7 = BitConverter.ToString(comopbytes).Replace("-", string.Empty);
+                File.Delete(comop7);
+                return SC7;
             }
             else return LocRes.GetString("file") + " commandop07.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");
         }
@@ -544,20 +578,19 @@ namespace FirehoseFinder
         /// <returns>Строка идентификатора HWID в little endian</returns>
         internal string SaharaCommand3_A()
         {
-            if (File.Exists("commandop10.bin"))
+            string comop10 = "commandop10.bin";
+            if (File.Exists(comop10))
             {
                 byte[] bytes = new byte[10]; // Размер от 0x22 до 0x2B
-                using (FileStream fs = new FileStream("commandop10.bin", FileMode.Open, FileAccess.Read))
+                using (FileStream fs = new FileStream(comop10, FileMode.Open, FileAccess.Read))
                 {
                     fs.Seek(0x22, SeekOrigin.Begin); // Позиция 0x22
                     fs.Read(bytes, 0, bytes.Length); // Чтение 10 байтов
                 }
-                // Переворачиваем массив для Little Endian
-                Array.Reverse(bytes);
-                // Преобразование байтов в строку
-                StringBuilder SCA = new StringBuilder(BitConverter.ToString(bytes).Replace("-", ""));
-                File.Delete("commandop10.bin");
-                return SCA.ToString();
+                Array.Reverse(bytes); //Переворачиваем массив для Little Endian
+                string SCA = BitConverter.ToString(bytes).Replace("-", string.Empty);
+                File.Delete(comop10);
+                return SCA;
             }
             else return LocRes.GetString("file") + " commandop10.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");
         }
