@@ -68,13 +68,13 @@
 <tfoot>
   <tr>
     <td>
-      Вот справочная таблица загрузчиков, доступных на двух сайтах.
+      Вот справочная таблица загрузчиков, доступных на нескольких сайтах.
       Вы можете выполнить поиск по хэшу PK или файлу MD5, чтобы найти загрузчик.
       Эта таблица защищена авторским правом.
       Будет регулярно обновляться.
     </td>
     <td>
-      Here is a reference table of Firehose loaders available on two sites.
+      Here is a reference table of Firehose loaders available on some sites.
       You can search by PK hash or file MD5 to locate a loader.
       This table is copyright.
       It should be updated regularly.
