@@ -1,6 +1,7 @@
 ﻿using FirehoseFinder.Properties;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -334,28 +335,53 @@ namespace FirehoseFinder
         /// <returns>Шесть значений - JTAG_ID-OEM_ID-MODEL_ID-OEM_PK_HASH-SW_ID-AntiRollBack</returns>
         internal string[] MELF(string dump_str)
         {
-            string elf_magic_num = Guide.FH_magic_numbers.ELF.ToString("X");
+            string elf_magic_num = Guide.FH_magic_numbers.ELF.ToString("X"); //Признак эльфа
+            string dtb_magic_num = Guide.FH_magic_numbers.DTB.ToString("X"); //Признак дерева устройств
             int count_elf = Regex.Matches(dump_str, elf_magic_num).Count;
             string[] ids_str = new string[6] { count_elf.ToString(), count_elf.ToString(), count_elf.ToString(), "---", "---", "---" };
             /*Готовим многомерный массив с данными для каждого эльфа
              *Элементы массива - это данные для каждого эльфа (обычно это 5 эльфов, т.е. 0-4)
-             *Первый элемент массива (0) - адрес сдвига
-             *
+             *Первый элемент массива (0) - адрес начала эльфа
+             *Второй элемент массива (1) - адрес начала дерева устройств
             */
             string[][] elf_data = new string[count_elf][]; //Инициализация мультимассива
             //Заполняем первый элемент - адреса эльфов в дампе (*2 от байт, т.к. уже в стринг)
+            List<int> elf_addrs = Find_all_matches(dump_str, elf_magic_num);
             for (int i = 0; i < count_elf; i++)
             {
-                elf_data[i] = new string[1]; // Инициализация подмассива для каждого эльфа
-                int strt_elf = 0; //Стартовый адрес признака эльфа
-                if (i > 0) strt_elf = dump_str.IndexOf(elf_magic_num, int.Parse(elf_data[i - 1][0]) + 1);
-                else strt_elf = dump_str.IndexOf(elf_magic_num);
-                elf_data[i][0] = strt_elf.ToString();
+                elf_data[i] = new string[2]; // Инициализация подмассива для каждого эльфа
+                elf_data[i][0] = elf_addrs[i].ToString();
             }
             //Проверяем, в каком эльфе лежит дерево устройств
+            for (int i = 0; i < count_elf; i++)
+            {
+                int elf_strt = Convert.ToInt32(elf_data[i][0]); //Стартовый адрес эльфа
+                string dtb_strt = string.Empty; //Стартовый адрес дерева устройств
+                List<int> matches;
+                if (i == count_elf - 1) //Последняя запись. Тут только стартовый адрес, без длины
+                {
+                    matches = Find_all_matches(dump_str.Substring(elf_strt), dtb_magic_num);
+                }
+                else //Тут смотрим и адрес и длину
+                {
+                    int elf_len = Convert.ToInt32(elf_data[i + 1][0]) - elf_strt;
+                    matches = Find_all_matches(dump_str.Substring(elf_strt, elf_len), dtb_magic_num);
+                }
+                switch (matches.Count)
+                {
+                    case 0: //Вхождений нет. Пустая строка
+                        break;
+                    case 1: //Одно вхождение
+                        dtb_strt = matches[0].ToString();
+                        break;
+                    default: //Несколько вхождений. Пишем через запятую.
+                        dtb_strt = string.Join(", ", matches);
+                        break;
+                }
+                elf_data[i][1] = dtb_strt;
+            }
 
-            string last_elf = dump_str.Substring(dump_str.LastIndexOf(elf_magic_num)); //Отрезали все предыдущие эльфы. Остался последний - 5.
-                                                                                       //Разбираем шапку последнего эльфа
+            //Разбираем шапку последнего эльфа
 
             /*
              * Тестировщик многомерного массива
@@ -375,6 +401,23 @@ namespace FirehoseFinder
             return ids_str;
         }
 
+        /// <summary>
+        /// Поиск всех адресов вхождений одной строки в другую
+        /// </summary>
+        /// <param name="text">Оригинальный текст</param>
+        /// <param name="tofind">Текст для поиска</param>
+        /// <returns>Цифровой список адресов вхождений</returns>
+        private List<int> Find_all_matches(string text, string tofind)
+        {
+            List<int> indices = new List<int>();
+            int index = text.IndexOf(tofind, StringComparison.OrdinalIgnoreCase);
+            while (index != -1)
+            {
+                indices.Add(index);
+                index = text.IndexOf(tofind, index + tofind.Length, StringComparison.OrdinalIgnoreCase);
+            }
+            return indices;
+        }
         /// <summary>
         /// Рассчитываем хеш корневого сертификата
         /// </summary>
@@ -396,7 +439,7 @@ namespace FirehoseFinder
             {
                 foreach (Match match in matchs)
                 {
-                    int cslen = Convert.ToInt32(match.Groups[1].Value, 16); //Получили длину сертификата
+                    int cslen = int.Parse(match.Groups[1].Value, NumberStyles.HexNumber); //Получили длину сертификата
                     if (cslen > 128 && cslen < 2048) //Условно считаем, что сертификат должен быть длиннее 128 байт и короче 2 кб.
                     {
                         certs.Insert(countcert, match.Value + SFDump.Substring(match.Index + 12, cslen * 2 - 4));
@@ -415,6 +458,9 @@ namespace FirehoseFinder
                     break;
                 case 2:
                     rootcert = 2;
+                    break;
+                case 6:
+                    rootcert = 6;
                     break;
                 default:
                     rootcert = 3;
@@ -501,7 +547,7 @@ namespace FirehoseFinder
             string comop2 = "commandop02.bin";
             if (File.Exists(comop2))
             {
-                string[] compareresult = new string [3]{ string.Empty, string.Empty, string.Empty };
+                string[] compareresult = new string[3] { string.Empty, string.Empty, string.Empty };
                 byte[] comfilebytes = File.ReadAllBytes(comop2);
                 Array.Reverse(comfilebytes); //Читаем с конца в начало
                 string backstr = BitConverter.ToString(comfilebytes).Replace("-", string.Empty);

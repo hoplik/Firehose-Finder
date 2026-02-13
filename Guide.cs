@@ -113,20 +113,21 @@ namespace FirehoseFinder
         /// </summary>
         internal enum FH_magic_numbers : uint
         {
-            ELF = 2135247942, //7F454C46 - ELF
-            ELE = 2135247941, //7F454C45 - ELE
-            OLD = 3520875396, //D1DC4B84 - Старый программер
-            PATCHEDOLD = 1442835967, //55FFEDFF - Паченый старый программер
-            ZTEEncode = 3973917226, //ECDD2A2A - ZTE программер зашифрованный
-            ARMPRG = 117440512, //07000000 - самый старый программер
-            ARM9 = 218103808, //0D000000 - ARMPRG 9
-            ARM412 = 2484117477, //94109FE5 - ARMPRG 0412
-            ARM12 = 4094730213, //F4109FE5 - ARMPRG 120001
-            ARM14 = 83886080, //05000000 - ARMPRG 140000
-            UFSEncoding = 1684108385, //64617461 - Закодированный UFS программер
-            XiUFSEnc = 2358991973, //8C9B5C65 - Xiaomi закодированный UFS программер
-            OLDasus = 930790575, //377ABCAF - Старый Асус программер
-            OLDESTasus = 1347093252 //504B0304 - Ещё один старый Асус программер
+            ELF = 2135247942, //7F45 4C46 - ELF
+            ELE = 2135247941, //7F45 4C45 - ELE
+            OLD = 3520875396, //D1DC 4B84 - Старый программер
+            PATCHEDOLD = 1442835967, //55FF EDFF - Паченый старый программер
+            ZTEEncode = 3973917226, //ECDD 2A2A - ZTE программер зашифрованный
+            ARMPRG = 117440512, //0700 0000 - самый старый программер
+            ARM9 = 218103808, //0D00 0000 - ARMPRG 9
+            ARM412 = 2484117477, //9410 9FE5 - ARMPRG 0412
+            ARM12 = 4094730213, //F410 9FE5 - ARMPRG 120001
+            ARM14 = 83886080, //0500 0000 - ARMPRG 140000
+            UFSEncoding = 1684108385, //6461 7461 - Закодированный UFS программер
+            XiUFSEnc = 2358991973, //8C9B 5C65 - Xiaomi закодированный UFS программер
+            OLDasus = 930790575, //377A BCAF - Старый Асус программер
+            OLDESTasus = 1347093252, //504B 0304 - Ещё один старый Асус программер
+            DTB = 3490578157 //D00D FEED Device Tree - дерево устройств
         }
 
         /// <summary>
@@ -164,12 +165,13 @@ namespace FirehoseFinder
         /// <summary>
         /// Список файлов, которые нужно удалить после закрытия программы
         /// </summary>
-        internal readonly List<string> FilesToClean = new List<string>(19)
+        internal readonly List<string> FilesToClean = new List<string>(20)
         {
             {"commandop01.bin" },
             {"commandop02.bin" },
             {"commandop03.bin" },
             {"commandop07.bin" },
+            {"commandop10.bin" },
             {"work.xml" },
             {"p_r.xml" },
             {"port_trace.txt" },
