@@ -109,6 +109,24 @@ namespace FirehoseFinder
         };
 
         /// <summary>
+        /// Список соответствия цифровых кодов процессора строковым кодам
+        /// </summary>
+        internal readonly Dictionary<string, string> CPU_By_Name = new Dictionary<string, string>(11)
+        {
+            { "000C30E1", "kona" },
+            { "0011E0E1", "saipan" },
+            { "001350E1", "lahaina" },
+            { "001920E1", "kodiak" },
+            { "001A90E1", "strait" },
+            { "001DB0E1", "netrani" },
+            { "001FD0E1", "panther" },
+            { "0026F0E1", "halliday" },
+            { "002750E1", "palawan" },
+            { "0028C0E1", "pakala" },
+            { "002BB0E1", "hamoa" }
+        };
+
+        /// <summary>
         /// Список признаков отношения файла к шлангу
         /// </summary>
         internal enum FH_magic_numbers : uint

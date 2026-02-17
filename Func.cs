@@ -1,5 +1,7 @@
 ﻿using FirehoseFinder.Properties;
+using NuGet.Packaging;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Globalization;
@@ -337,87 +339,194 @@ namespace FirehoseFinder
         {
             string elf_magic_num = Guide.FH_magic_numbers.ELF.ToString("X"); //Признак эльфа
             string dtb_magic_num = Guide.FH_magic_numbers.DTB.ToString("X"); //Признак дерева устройств
-            int count_elf = Regex.Matches(dump_str, elf_magic_num).Count;
-            string[] ids_str = new string[6] { count_elf.ToString(), count_elf.ToString(), count_elf.ToString(), "---", "---", "---" };
-            /*Готовим многомерный массив с данными для каждого эльфа
-             *Элементы массива - это данные для каждого эльфа (обычно это 5 эльфов, т.е. 0-4)
-             *Первый элемент массива (0) - адрес начала эльфа
-             *Второй элемент массива (1) - адрес начала дерева устройств
-            */
-            string[][] elf_data = new string[count_elf][]; //Инициализация мультимассива
-            //Заполняем первый элемент - адреса эльфов в дампе (*2 от байт, т.к. уже в стринг)
-            List<int> elf_addrs = Find_all_matches(dump_str, elf_magic_num);
-            for (int i = 0; i < count_elf; i++)
-            {
-                elf_data[i] = new string[2]; // Инициализация подмассива для каждого эльфа
-                elf_data[i][0] = elf_addrs[i].ToString();
-            }
+            string[] ids_str = new string[6] { string.Empty, "?OEM_ID?", "?MODEL_ID?", string.Empty, "?SW_ID?", "?ARB?" };
+            string[] prog_extr = new string[4];
+            Dictionary<int, int> elf_addrs = Find_all_matches(dump_str, elf_magic_num);
             //Проверяем, в каком эльфе лежит дерево устройств
-            for (int i = 0; i < count_elf; i++)
+            foreach (KeyValuePair<int, int> elf_adr in elf_addrs)
             {
-                int elf_strt = Convert.ToInt32(elf_data[i][0]); //Стартовый адрес эльфа
-                string dtb_strt = string.Empty; //Стартовый адрес дерева устройств
-                List<int> matches;
-                if (i == count_elf - 1) //Последняя запись. Тут только стартовый адрес, без длины
+                if (Regex.Matches(dump_str.Substring(elf_adr.Key, elf_adr.Value), dtb_magic_num).Count > 0)
                 {
-                    matches = Find_all_matches(dump_str.Substring(elf_strt), dtb_magic_num);
+                    prog_extr = Prog_Extr(dump_str.Substring(elf_adr.Key, elf_adr.Value));
+                    ids_str[0] = DTB_Extr(dump_str.Substring(elf_adr.Key, elf_adr.Value));
+                    ids_str[1] = prog_extr[0];
+                    ids_str[2] = prog_extr[1];
+                    ids_str[3] = CertExtr(dump_str.Substring(elf_adr.Key, elf_adr.Value));
+                    ids_str[4] = prog_extr[2];
+                    ids_str[5] = prog_extr[3];
                 }
-                else //Тут смотрим и адрес и длину
-                {
-                    int elf_len = Convert.ToInt32(elf_data[i + 1][0]) - elf_strt;
-                    matches = Find_all_matches(dump_str.Substring(elf_strt, elf_len), dtb_magic_num);
-                }
-                switch (matches.Count)
-                {
-                    case 0: //Вхождений нет. Пустая строка
-                        break;
-                    case 1: //Одно вхождение
-                        dtb_strt = matches[0].ToString();
-                        break;
-                    default: //Несколько вхождений. Пишем через запятую.
-                        dtb_strt = string.Join(", ", matches);
-                        break;
-                }
-                elf_data[i][1] = dtb_strt;
             }
-
-            //Разбираем шапку последнего эльфа
-
-            /*
-             * Тестировщик многомерного массива
-             */
-            StringBuilder str_test = new StringBuilder();
-            for (int i = 0; i < count_elf; i++)
+            //Если прошлись по всем эльфам и не нашли дерева устройств, то проц - ???, а остальные - из последнего эльфа
+            if (string.IsNullOrEmpty(ids_str[0]))
             {
-                for (int k = 0; k < elf_data[i].Length; k++)
+                KeyValuePair<int, int> maxEntry = elf_addrs.OrderByDescending(kvp => kvp.Key).FirstOrDefault(); //Сортируем по убыванию
+                if (maxEntry.Key != 0 || elf_addrs.ContainsKey(0)) // Проверка на пустоту словаря
                 {
-                    str_test.Append(elf_data[i][k] + "-");
+                    prog_extr = Prog_Extr(dump_str.Substring(maxEntry.Key, maxEntry.Value));
+                    ids_str[1] = prog_extr[0];
+                    ids_str[2] = prog_extr[1];
+                    ids_str[3] = CertExtr(dump_str.Substring(maxEntry.Key, maxEntry.Value));
+                    ids_str[4] = prog_extr[2];
+                    ids_str[5] = prog_extr[3];
                 }
-                str_test.Length--;
-                str_test.Append(Environment.NewLine);
             }
-            MessageBox.Show(str_test.ToString());
-
             return ids_str;
         }
 
         /// <summary>
-        /// Поиск всех адресов вхождений одной строки в другую
+        /// Поиск всех адресов и длины вхождений одной строки в другую
         /// </summary>
         /// <param name="text">Оригинальный текст</param>
         /// <param name="tofind">Текст для поиска</param>
-        /// <returns>Цифровой список адресов вхождений</returns>
-        private List<int> Find_all_matches(string text, string tofind)
+        /// <returns>Цифровой список адресов вхождений и длины</returns>
+        private Dictionary<int, int> Find_all_matches(string base_text, string tofind)
         {
-            List<int> indices = new List<int>();
-            int index = text.IndexOf(tofind, StringComparison.OrdinalIgnoreCase);
+            Dictionary<int, int> indices = new Dictionary<int, int>();
+            int index = base_text.LastIndexOf(tofind, StringComparison.OrdinalIgnoreCase);
+            string cutting_str = base_text;
             while (index != -1)
             {
-                indices.Add(index);
-                index = text.IndexOf(tofind, index + tofind.Length, StringComparison.OrdinalIgnoreCase);
+                indices.Add(index, cutting_str.Length - index);
+                cutting_str = base_text.Substring(0, index);
+                if (string.IsNullOrEmpty(cutting_str)) index = -1;
+                else index = cutting_str.LastIndexOf(tofind, StringComparison.OrdinalIgnoreCase);
             }
             return indices;
         }
+
+        /// <summary>
+        /// Из исходной строки эльфа с деревом устройств извлекаем модель процессора и его подмодель
+        /// </summary>
+        /// <param name="inputstr">Строка дампа эльфа с деревом устройств</param>
+        /// <returns>Строка наименования процессора и его модели</returns>
+        internal string DTB_Extr(string inputstr)
+        {
+            string resultstr = string.Empty;
+            //В эльфе может быть несколько деревьев. Извлекаем все.
+            Dictionary<int, int> Dtbs = Find_all_matches(inputstr, Guide.FH_magic_numbers.DTB.ToString("X"));
+            List<string> models_cpu = new List<string>();
+            //Разбираем шапку каждого DTB
+            foreach (KeyValuePair<int, int> Dtb in Dtbs)
+            {
+                int dtb_h_size = Convert.ToInt32(inputstr.Substring(Dtb.Key + (0x8 * 2), 4 * 2), 16); //Размер шапки 4 байта со сдвигом 0x08
+                int len_str_com = Convert.ToInt32(inputstr.Substring(Dtb.Key + ((dtb_h_size + 12) * 2), 4 * 2), 16); //Длина строки модели
+                string compare_str = Encoding.UTF8.GetString(StringToByteArray(
+                    inputstr.Substring(Dtb.Key + ((dtb_h_size + 20) * 2), len_str_com * 2))); //Сопоставимо (модель)
+                int len_str_mod = Convert.ToInt32(
+                    inputstr.Substring(Dtb.Key + ((dtb_h_size + 20 + RoundUpToNext4(len_str_com) + 4) * 2), 4 * 2), 16); //Длина строки подмодели
+                string model_str = Encoding.UTF8.GetString(StringToByteArray(
+                    inputstr.Substring(Dtb.Key + ((dtb_h_size + 20 + RoundUpToNext4(len_str_com) + 12) * 2), len_str_mod * 2))); //Модель (подмодель)
+                //Обрабатываем строки
+                char[] splitter = new char[] { ',', '\0' };
+                List<string> split_str = new List<string>(compare_str.Split(splitter, StringSplitOptions.RemoveEmptyEntries));
+                split_str.AddRange(model_str.Split(splitter, StringSplitOptions.RemoveEmptyEntries));
+                string[] cleanedArray = split_str
+                    .Where(s => !string.IsNullOrEmpty(s) && s != "qcom")
+                    .ToArray();
+                List<string> result = RemoveSubstrings(cleanedArray);
+
+                resultstr = string.Join("&", result);
+            }
+            return resultstr;
+        }
+
+        /// <summary>
+        /// Удаляем элементы, которые содеожатся внутри других элементов
+        /// </summary>
+        /// <param name="array">Исходный массив</param>
+        /// <returns>Список очищенных элементов</returns>
+        public static List<string> RemoveSubstrings(string[] array)
+        {
+            List<string> result = new List<string>(array); // Начинаем с копии исходного массива
+            for (int i = 0; i < result.Count; i++)
+            {
+                for (int j = 0; j < result.Count; j++)
+                {
+                    // Если это разные элементы и один содержится в другом
+                    if (i != j && result[j].Contains(result[i]))
+                    {
+                        result.RemoveAt(i);
+                        i--; // Уменьшаем индекс, чтобы не пропустить следующий элемент
+                        break; // Выходим из внутреннего цикла после удаления
+                    }
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Увеличиваем число до ближайшего, кратного 4
+        /// </summary>
+        /// <param name="num">int исходное</param>
+        /// <returns>int кратное 4</returns>
+        private static int RoundUpToNext4(int num)
+        {
+            return (num + 3) / 4 * 4;
+        }
+
+        /// <summary>
+        /// Из эльфа 7 версии извлекаем массив OEM, MODEL, SW TYPE, ARB
+        /// </summary>
+        /// <param name="inputstr">Строка дампа эльфа</param>
+        /// <returns>Строковый массив из четырёх значений</returns>
+        internal static string[] Prog_Extr(string inputstr)
+        {
+            string[] result_prog = new string[4];
+            //Разбираем шапку эльфа в little-endian
+            //string Elf_Class = inputstr.Substring(8, 2);//Класс 5 байт 32-64. Пока не используется.
+            byte Elf_Data = Convert.ToByte(inputstr.Substring(10, 2), 16);//Дата 6 байт L-B
+            int h_size = BitConverter.ToInt16(StringToByteArray(inputstr.Substring(0x34 * 2, 2 * 2)), 0);//Размер шапки 0x34
+            int ph_size = BitConverter.ToInt16(StringToByteArray(inputstr.Substring(0x36 * 2, 2 * 2)), 0);//Размер программного заголовка 0x36
+            int ph_count = BitConverter.ToInt16(StringToByteArray(inputstr.Substring(0x38 * 2, 2 * 2)), 0); //Количество программных заголовков 0x38
+            List<ulong> table_addr = new List<ulong>();
+            for (int i = 0; i < ph_count; i++)
+            {
+                //Считываем тип программного заголовка и если он равен нулю, а сдвиг нулю не равен, то добавляем его в лист
+                int ph_start = (h_size * 2) + (i * ph_size * 2);//Старт программного заголовка
+                string null_type_str = inputstr.Substring(ph_start, 4 * 2);
+                byte[] table_offset = StringToByteArray(inputstr.Substring(ph_start + 16, 8 * 2));
+                if ((Guide.ELF_Data)Elf_Data == Guide.ELF_Data.Big_endian) Array.Reverse(table_offset); //Переворачиваем массив, если в биг эндиан
+                ulong tab_off = BitConverter.ToUInt64(table_offset, 0);
+                //Для типа ноль ищем сдвиг не равный нулю
+                if (null_type_str.Equals("00000000") && tab_off != 0) table_addr.Add(tab_off);
+            }
+            switch (table_addr.Count)
+            {
+                case 0: //Нет таблицы
+                    result_prog[0] = "-";
+                    result_prog[1] = "-";
+                    result_prog[2] = "-";
+                    result_prog[3] = "-";
+                    break;
+                case 1: //Одна таблица. Норм
+                    byte[] Elf_Version = StringToByteArray(inputstr.Substring(((int)table_addr[0] + 0x04) * 2, 2 * 2)); //Версия программера 2 байта со сдвигом 0x4
+                    byte[] Sw_type = StringToByteArray(inputstr.Substring(((int)table_addr[0] + 0x38) * 2, 2 * 2)); //Тип программного обеспечения 2 байта со сдвигом 0x38
+                    byte[] Oem_id = StringToByteArray(inputstr.Substring(((int)table_addr[0] + 0xc8) * 2, 2 * 2)); //Код OEM производителя 2 байта со сдвигом 0xC8
+                    byte[] Model_id = StringToByteArray(inputstr.Substring(((int)table_addr[0] + 0xca) * 2, 2 * 2)); //Код модели 2 байта со сдвигом 0xCA
+                    byte[] Arb = StringToByteArray(inputstr.Substring(((int)table_addr[0] + 0x50) * 2, 2 * 2)); //ARB 2 байта со здвигом 0x50
+                    if ((Guide.ELF_Data)Elf_Data == Guide.ELF_Data.Little_endian) //Переворачиваем массивы, если в литл эндиан
+                    {
+                        Array.Reverse(Elf_Version);
+                        Array.Reverse(Sw_type);
+                        Array.Reverse(Oem_id);
+                        Array.Reverse(Model_id);
+                        Array.Reverse(Arb);
+                    }
+                    result_prog[0] = BitConverter.ToString(Oem_id).Replace("-", string.Empty); //OEM_ID
+                    result_prog[1] = BitConverter.ToString(Model_id).Replace("-", string.Empty); //MODEL_ID
+                    result_prog[2] = BitConverter.ToString(Sw_type).Replace("-", string.Empty).TrimStart('0'); //SW TYPE
+                    result_prog[3] = string.Format("({0})", BitConverter.ToString(Arb).Replace("-", string.Empty)); //ARB
+                    break;
+                default: //Несколько таблиц. ???
+                    result_prog[0] = "?";
+                    result_prog[1] = "?";
+                    result_prog[2] = "?";
+                    result_prog[3] = "?";
+                    break;
+            }
+            return result_prog;
+        }
+
         /// <summary>
         /// Рассчитываем хеш корневого сертификата
         /// </summary>
@@ -651,15 +760,15 @@ namespace FirehoseFinder
         {
             List<GPT_Table> GPT = new List<GPT_Table>();
             GPT_Struct magic_number = new GPT_Struct(0x00, 8, string.Empty); //0x00    8 байт  45 46 49 20 50 41 52 54 Сигнатура заголовка.Используется для идентификации всех EFI - совместимых GPT - заголовков.Должно содержать значение 45 46 49 20 50 41 52 54, что в виде текста расшифровывается как "EFI PART".
-            //GPT_Struct format_version = new GPT_Struct(0x08, 4, string.Empty); //0x08	4 байта 00 00 01 00	Версия формата заголовка (не спецификации UEFI). Сейчас используется версия заголовка 1.0
-            //GPT_Struct header_length = new GPT_Struct(0x0C, 4, string.Empty); //0x0C	4 байта	5C 00 00 00	Размер заголовка GPT в байтах.Имеет значение 0x5C (92 байта)
-            //GPT_Struct header_crc32 = new GPT_Struct(0x10, 4, string.Empty); //0x10	4 байта	27 6D 9F C9 Контрольная сумма GPT-заголовка(по адресам от 0x00 до 0x5C). Алгоритм контрольной суммы — CRC32.При подсчёте контрольной суммы начальное значение этого поля принимается равным нулю.
-            //GPT_Struct reserved1 = new GPT_Struct(0x14, 4, string.Empty); //0x14	4 байта	00 00 00 00	Зарезервировано.Должно иметь значение 0
-            //GPT_Struct header_adress = new GPT_Struct(0x18, 8, string.Empty); //0x18	8 байт	01 00 00 00 00 00 00 00	Адрес сектора, содержащего первичный GPT-заголовок.Всегда имеет значение LBA 1.
-            //GPT_Struct bak_header_adress = new GPT_Struct(0x20, 8, string.Empty); //0x20	8 байт	37 C8 11 01 00 00 00 00	Адрес сектора, содержащего копию GPT-заголовка.Всегда имеет значение адреса последнего сектора на диске.
-            //GPT_Struct data_startadress = new GPT_Struct(0x28, 8, string.Empty); //0x28	8 байт	22 00 00 00 00 00 00 00	Адрес сектора с которого начинаются разделы на диске.Иными словами — адрес первого раздела диска
-            //GPT_Struct data_endadress = new GPT_Struct(0x30, 8, string.Empty); //0x30	8 байт  17 C8 11 01 00 00 00 00	Адрес последнего сектора диска, отведенного под разделы
-            //GPT_Struct disk_id = new GPT_Struct(0x38, 16, string.Empty); //0x38	16 байт 00 A2 DA 98 9F 79 C0 01 A1 F4 04 62 2F D5 EC 6D	GUID диска. Содержит уникальный идентификатор, выданный диску и GPT-заголовку при разметке
+                                                                             //GPT_Struct format_version = new GPT_Struct(0x08, 4, string.Empty); //0x08	4 байта 00 00 01 00	Версия формата заголовка (не спецификации UEFI). Сейчас используется версия заголовка 1.0
+                                                                             //GPT_Struct header_length = new GPT_Struct(0x0C, 4, string.Empty); //0x0C	4 байта	5C 00 00 00	Размер заголовка GPT в байтах.Имеет значение 0x5C (92 байта)
+                                                                             //GPT_Struct header_crc32 = new GPT_Struct(0x10, 4, string.Empty); //0x10	4 байта	27 6D 9F C9 Контрольная сумма GPT-заголовка(по адресам от 0x00 до 0x5C). Алгоритм контрольной суммы — CRC32.При подсчёте контрольной суммы начальное значение этого поля принимается равным нулю.
+                                                                             //GPT_Struct reserved1 = new GPT_Struct(0x14, 4, string.Empty); //0x14	4 байта	00 00 00 00	Зарезервировано.Должно иметь значение 0
+                                                                             //GPT_Struct header_adress = new GPT_Struct(0x18, 8, string.Empty); //0x18	8 байт	01 00 00 00 00 00 00 00	Адрес сектора, содержащего первичный GPT-заголовок.Всегда имеет значение LBA 1.
+                                                                             //GPT_Struct bak_header_adress = new GPT_Struct(0x20, 8, string.Empty); //0x20	8 байт	37 C8 11 01 00 00 00 00	Адрес сектора, содержащего копию GPT-заголовка.Всегда имеет значение адреса последнего сектора на диске.
+                                                                             //GPT_Struct data_startadress = new GPT_Struct(0x28, 8, string.Empty); //0x28	8 байт	22 00 00 00 00 00 00 00	Адрес сектора с которого начинаются разделы на диске.Иными словами — адрес первого раздела диска
+                                                                             //GPT_Struct data_endadress = new GPT_Struct(0x30, 8, string.Empty); //0x30	8 байт  17 C8 11 01 00 00 00 00	Адрес последнего сектора диска, отведенного под разделы
+                                                                             //GPT_Struct disk_id = new GPT_Struct(0x38, 16, string.Empty); //0x38	16 байт 00 A2 DA 98 9F 79 C0 01 A1 F4 04 62 2F D5 EC 6D	GUID диска. Содержит уникальный идентификатор, выданный диску и GPT-заголовку при разметке
             GPT_Struct gpt_startadress = new GPT_Struct(0x48, 8, string.Empty); //0x48	8 байт  02 00 00 00 00 00 00 00	Адрес начала таблицы разделов
             GPT_Struct max_gpt_blocks = new GPT_Struct(0x50, 4, string.Empty); //0x50	4 байта 80 00 00 00	Максимальное число разделов, которое может содержать таблица
             GPT_Struct record_length = new GPT_Struct(0x54, 4, string.Empty); //0x54	4 байта 80 00 00 00	Размер записи для раздела
@@ -667,7 +776,7 @@ namespace FirehoseFinder
                                                                               //GPT_Struct reserved2 = new GPT_Struct(0x5C, 420, string.Empty); //0x5C	420 байт    0	Зарезервировано.Должно быть заполнено нулями
             string Full_GPT = BitConverter.ToString(File.ReadAllBytes(GPT_File)).Replace("-", ""); //Сначала считываем весь файл
             string GPT_Header = Full_GPT.Remove(0, block_size * 2); //Удалили MBR
-            //Обрабатываем заголовок
+                                                                    //Обрабатываем заголовок
             string gpt_header = GPT_Header.Remove(block_size * 2); //Удалили хвост
             magic_number.ValueString = gpt_header.Substring(magic_number.StartAdress * 2, magic_number.Length * 2);
             //Если не хедер, прекращаем обработку таблицы
@@ -707,13 +816,13 @@ namespace FirehoseFinder
             int rlint = Convert.ToInt32(rl, 16);
             //Обрабатываем данные самой таблицы
             string GPT_Values = Full_GPT.Remove(0, block_size * 2 * Convert.ToInt32(gsa, 16)); //Удалили MBR и хедер
-            //GPT_Struct block_idtype = new GPT_Struct(0x00, 16, string.Empty); //0x00    16 байт 28 73 2A C1 1F F8 D2 11 BA 4B 00 A0 C9 3E C9 3B GUID типа раздела. В примере приведен тип раздела "EFI System partition".Список всех типов можно посмотреть https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs
-            //GPT_Struct block_id = new GPT_Struct(0x10, 16, string.Empty); //0x10    16 байт C0 94 77 FC 43 86 C0 01 92 E0 3C 77 2E 43 AC 40 Уникальный GUID раздела.Генерируется при создании раздела
+                                                                                               //GPT_Struct block_idtype = new GPT_Struct(0x00, 16, string.Empty); //0x00    16 байт 28 73 2A C1 1F F8 D2 11 BA 4B 00 A0 C9 3E C9 3B GUID типа раздела. В примере приведен тип раздела "EFI System partition".Список всех типов можно посмотреть https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs
+                                                                                               //GPT_Struct block_id = new GPT_Struct(0x10, 16, string.Empty); //0x10    16 байт C0 94 77 FC 43 86 C0 01 92 E0 3C 77 2E 43 AC 40 Уникальный GUID раздела.Генерируется при создании раздела
             GPT_Struct block_startadress = new GPT_Struct(0x20, 8, string.Empty); //0x20    8 байт  3F 00 00 00 00 00 00 00 Начальный LBA-адрес раздела
             GPT_Struct block_endadress = new GPT_Struct(0x28, 8, string.Empty); //0x28    8 байт CC 2F 03 00 00 00 00 00 Последний LBA-адрес раздела
-            //GPT_Struct block_attr = new GPT_Struct(0x30, 8, string.Empty); //0x30    8 байт  00 00 00 00 00 00 00 00 Атрибуты раздела в виде битовой маски
+                                                                                //GPT_Struct block_attr = new GPT_Struct(0x30, 8, string.Empty); //0x30    8 байт  00 00 00 00 00 00 00 00 Атрибуты раздела в виде битовой маски
             GPT_Struct block_name = new GPT_Struct(0x38, 72, string.Empty); //0x38    72 байта EFI system partition    Название раздела. Unicode - строка длиной 36 - символов
-            //Анализируем каждый блок из 128 и при ненулевом значении добавляем в список
+                                                                            //Анализируем каждый блок из 128 и при ненулевом значении добавляем в список
             string[] blocks_array = new string[Convert.ToInt32(mgb, 16)];
             for (int i = 0; i < blocks_array.Length; i++)
             {

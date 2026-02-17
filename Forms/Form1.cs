@@ -1,5 +1,6 @@
 ﻿using FirehoseFinder.Forms;
 using FirehoseFinder.Properties;
+using Newtonsoft.Json.Linq;
 using SharpAdbClient;
 using System;
 using System.Collections.Generic;
@@ -2294,8 +2295,11 @@ namespace FirehoseFinder
             }
             else //HWID единственный
             {
-                StringBuilder comp_model = new StringBuilder(string.Empty);
-                switch (id_str[0])
+                string cpu_code;
+                string comp_model = string.Empty;
+                var pair = guide.CPU_By_Name.FirstOrDefault(kvp => kvp.Value == id_str[0]);
+                cpu_code = pair.Equals(default(KeyValuePair<int, string>)) ? id_str[0] : pair.Key;
+                switch (cpu_code)
                 {
                     case "00000000":
                         //Добавляем из справочника возможные модели для данного шланга "Может подойти для ..."
@@ -2304,17 +2308,17 @@ namespace FirehoseFinder
 
                         break;
                     default:
-                        if (textBox_hwid.Text.Equals(id_str[0])) //Процессор такой же
+                        if (textBox_hwid.Text.Equals(id_str[0], StringComparison.OrdinalIgnoreCase) || 
+                            textBox_hwid.Text.Equals(cpu_code, StringComparison.OrdinalIgnoreCase)) //Процессор такой же
                         {
                             textBox_hwid.BackColor = Color.LawnGreen;
                             gross++;
                         }
                         //Добавляем из справочника возможные модели для данного шланга "Может подойти для ..."
                         bindingSource_collection.Filter = string.Format("HWID = '{0}' AND OEMID = '{1}' AND MODELID = '{2}' AND HASHID = '{3}'",
-                            id_str[0], id_str[1], id_str[2], id_str[3]);
+                            cpu_code, id_str[1], id_str[2], id_str[3]);
                         break;
                 }
-                byte count = 1; //Счётчик подходящих моделей
                 List<string> comp_list = new List<string>(); //Список подходящих моделей
                 if (dataGridView_collection.Rows.Count > 0) //Есть минимум одно устройство с такими идентификаторами
                 {
@@ -2323,15 +2327,7 @@ namespace FirehoseFinder
                         string comp_str = comp_row.Cells["Model"].Value.ToString();
                         if (!comp_list.Contains(comp_str)) comp_list.Add(comp_str); //Добавляем только новые модели
                     }
-                    if (comp_list.Count > 0)
-                    {
-                        foreach (string model in comp_list)
-                        {
-                            if (count > 1) comp_model.Append("; ");
-                            comp_model.Append(model);
-                            count++;
-                        }
-                    }
+                    comp_model = string.Join("; ", comp_list);
                 }
                 dataGridView_final["Column_Comp", Currnum].Value = comp_model;
             }
