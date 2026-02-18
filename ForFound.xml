@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2026-02-18T01:32:47">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2026-02-18T18:24:09">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -3677,13 +3677,23 @@
 <Model>KeyOne</Model>
 </ForFound>
 <ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/pakala/rm10.melf#</Url>
-<HW_FH>0028C0E1</HW_FH>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C2A3B7BE/A012/rm10.melf#</Url>
+<HW_FH>pakala</HW_FH>
+<OEM_FH>0004</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>61A4A4C4098C65EDC3820C0F51DD7566E41E924F965772B4B8548CAAB04981B971379157039478DB78A1B6CBC2A3B7BE</HASH_FH>
+<SWType>3</SWType>
+<SWVer>A012</SWVer>
 <Hash_File>0aab3f764c8ffa28ae84dee5bafb26f8ad21d6ee626adb375b1a1b483316783c</Hash_File>
 </ForFound>
 <ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/pakala/rm10.melf#</Url>
-<HW_FH>0028C0E1</HW_FH>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/C2A3B7BE/A012/rm10.melf#</Url>
+<HW_FH>pakala</HW_FH>
+<OEM_FH>0004</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>61A4A4C4098C65EDC3820C0F51DD7566E41E924F965772B4B8548CAAB04981B971379157039478DB78A1B6CBC2A3B7BE</HASH_FH>
+<SWType>3</SWType>
+<SWVer>A012</SWVer>
 <Hash_File>0aab3f764c8ffa28ae84dee5bafb26f8ad21d6ee626adb375b1a1b483316783c</Hash_File>
 </ForFound>
 <ForFound>

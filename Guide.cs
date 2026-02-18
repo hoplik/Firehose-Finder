@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace FirehoseFinder
 {
@@ -111,15 +112,18 @@ namespace FirehoseFinder
         /// <summary>
         /// Список соответствия цифровых кодов процессора строковым кодам
         /// </summary>
-        internal readonly Dictionary<string, string> CPU_By_Name = new Dictionary<string, string>(11)
+        internal readonly Dictionary<string, string> CPU_By_Name = new Dictionary<string, string>(14)
         {
             { "000C30E1", "kona" },
             { "0011E0E1", "saipan" },
             { "001350E1", "lahaina" },
             { "001920E1", "kodiak" },
             { "001A90E1", "strait" },
+            { "001CA0E1", "kailua" },
+            { "001CB0E1", "kalama" },
             { "001DB0E1", "netrani" },
             { "001FD0E1", "panther" },
+            { "002270E1", "lanai" },
             { "0026F0E1", "halliday" },
             { "002750E1", "palawan" },
             { "0028C0E1", "pakala" },
