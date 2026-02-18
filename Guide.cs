@@ -112,7 +112,7 @@ namespace FirehoseFinder
         /// <summary>
         /// Список соответствия цифровых кодов процессора строковым кодам
         /// </summary>
-        internal readonly Dictionary<string, string> CPU_By_Name = new Dictionary<string, string>(14)
+        internal readonly Dictionary<string, string> CPU_By_Name = new Dictionary<string, string>(15)
         {
             { "000C30E1", "kona" },
             { "0011E0E1", "saipan" },
@@ -127,6 +127,7 @@ namespace FirehoseFinder
             { "0026F0E1", "halliday" },
             { "002750E1", "palawan" },
             { "0028C0E1", "pakala" },
+            { "0028D0E1", "oryon" },
             { "002BB0E1", "hamoa" }
         };
 
