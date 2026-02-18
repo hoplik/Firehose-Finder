@@ -96,7 +96,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2026-02-09T01:53:16">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2026-02-18T01:32:42">
 <ForFilter>
 <HWID>009600E1</HWID>
 <FullName>Snapdragon 210</FullName>
@@ -9857,7 +9857,7 @@
 <Trademark>motorola</Trademark>
 <Model>Moto G Stylus 5G (2023)</Model>
 <AltName>XT2315</AltName>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/netrani/prog_Moto_G_Stylus_XT2315.elf#</Url>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/EC4979A1/A005/prog_Moto_G_Stylus_XT2315.elf#</Url>
 </ForFilter>
 <ForFilter>
 <Trust>real dev</Trust>

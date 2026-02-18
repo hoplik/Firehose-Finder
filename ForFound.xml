@@ -82,7 +82,7 @@
 </xsd:complexType>
 </xsd:element>
 </xsd:schema>
-<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2026-02-09T01:53:21">
+<dataroot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" generated="2026-02-18T01:32:47">
 <ForFound>
 <Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/8403D39A/Go_prog_emmc_firehose_8917_ddr.mbn#</Url>
 <HW_FH>000560E1</HW_FH>
@@ -1714,8 +1714,13 @@
 <Model>NX769J</Model>
 </ForFound>
 <ForFound>
-<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/netrani/prog_Moto_G_Stylus_XT2315.elf#</Url>
-<HW_FH>001DB0E1</HW_FH>
+<Url>#https://github.com/hoplik/Firehose-Finder/blob/master/fh_collection/EC4979A1/A005/prog_Moto_G_Stylus_XT2315.elf#</Url>
+<HW_FH>netrani</HW_FH>
+<OEM_FH>02E8</OEM_FH>
+<MODEL_FH>0000</MODEL_FH>
+<HASH_FH>E0C1C297268B59072835A738F56061BA013FD868482F2A3390DA950ABE79A30EF4101094B38A8F1EC3EEA221EC4979A1</HASH_FH>
+<SWType>3</SWType>
+<SWVer>A005</SWVer>
 <Hash_File>35f3f0e1d583fd7b8556903a2ba77cd8ef2cea8f604305ff8e96789a3a0bda25</Hash_File>
 <Model>Moto G Stylus 5G (2023)</Model>
 </ForFound>

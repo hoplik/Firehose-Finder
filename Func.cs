@@ -409,23 +409,26 @@ namespace FirehoseFinder
             foreach (KeyValuePair<int, int> Dtb in Dtbs)
             {
                 int dtb_h_size = Convert.ToInt32(inputstr.Substring(Dtb.Key + (0x8 * 2), 4 * 2), 16); //Размер шапки 4 байта со сдвигом 0x08
-                int len_str_com = Convert.ToInt32(inputstr.Substring(Dtb.Key + ((dtb_h_size + 12) * 2), 4 * 2), 16); //Длина строки модели
-                string compare_str = Encoding.UTF8.GetString(StringToByteArray(
-                    inputstr.Substring(Dtb.Key + ((dtb_h_size + 20) * 2), len_str_com * 2))); //Сопоставимо (модель)
-                int len_str_mod = Convert.ToInt32(
-                    inputstr.Substring(Dtb.Key + ((dtb_h_size + 20 + RoundUpToNext4(len_str_com) + 4) * 2), 4 * 2), 16); //Длина строки подмодели
-                string model_str = Encoding.UTF8.GetString(StringToByteArray(
-                    inputstr.Substring(Dtb.Key + ((dtb_h_size + 20 + RoundUpToNext4(len_str_com) + 12) * 2), len_str_mod * 2))); //Модель (подмодель)
-                //Обрабатываем строки
-                char[] splitter = new char[] { ',', '\0' };
-                List<string> split_str = new List<string>(compare_str.Split(splitter, StringSplitOptions.RemoveEmptyEntries));
-                split_str.AddRange(model_str.Split(splitter, StringSplitOptions.RemoveEmptyEntries));
-                string[] cleanedArray = split_str
-                    .Where(s => !string.IsNullOrEmpty(s) && s != "qcom")
-                    .ToArray();
-                List<string> result = RemoveSubstrings(cleanedArray);
+                if (inputstr.Substring(Dtb.Key + ((dtb_h_size + 8) * 2), 4 * 2).Equals("00000003"))
+                {
+                    int len_str_com = Convert.ToInt32(inputstr.Substring(Dtb.Key + ((dtb_h_size + 12) * 2), 4 * 2), 16); //Длина строки модели
+                    string compare_str = Encoding.UTF8.GetString(StringToByteArray(
+                        inputstr.Substring(Dtb.Key + ((dtb_h_size + 20) * 2), len_str_com * 2))); //Сопоставимо (модель)
+                    int len_str_mod = Convert.ToInt32(
+                        inputstr.Substring(Dtb.Key + ((dtb_h_size + 20 + RoundUpToNext4(len_str_com) + 4) * 2), 4 * 2), 16); //Длина строки подмодели
+                    string model_str = Encoding.UTF8.GetString(StringToByteArray(
+                        inputstr.Substring(Dtb.Key + ((dtb_h_size + 20 + RoundUpToNext4(len_str_com) + 12) * 2), len_str_mod * 2))); //Модель (подмодель)
+                                                                                                                                     //Обрабатываем строки
+                    char[] splitter = new char[] { ',', '\0' };
+                    List<string> split_str = new List<string>(compare_str.Split(splitter, StringSplitOptions.RemoveEmptyEntries));
+                    split_str.AddRange(model_str.Split(splitter, StringSplitOptions.RemoveEmptyEntries));
+                    string[] cleanedArray = split_str
+                        .Where(s => !string.IsNullOrEmpty(s) && s != "qcom")
+                        .ToArray();
+                    List<string> result = RemoveSubstrings(cleanedArray);
 
-                resultstr = string.Join("&", result);
+                    resultstr = string.Join("&", result);
+                }
             }
             return resultstr;
         }
