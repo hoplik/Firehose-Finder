@@ -129,6 +129,8 @@ namespace FirehoseFinder
             { "0028C0E1", "pakala" },
             { "0028D0E1", "oryon" },
             { "002BB0E1", "hamoa" }
+            //{ "palima", "" },
+            //{ "waipio", "" },
         };
 
         /// <summary>
