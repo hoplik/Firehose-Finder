@@ -2308,7 +2308,7 @@ namespace FirehoseFinder
 
                         break;
                     default:
-                        if (textBox_hwid.Text.Equals(id_str[0], StringComparison.OrdinalIgnoreCase) || 
+                        if (textBox_hwid.Text.Equals(id_str[0], StringComparison.OrdinalIgnoreCase) ||
                             textBox_hwid.Text.Equals(cpu_code, StringComparison.OrdinalIgnoreCase)) //Процессор такой же
                         {
                             textBox_hwid.BackColor = Color.LawnGreen;
@@ -2558,10 +2558,10 @@ namespace FirehoseFinder
             progressBar_phone.Value = counter_backgroung;
             NeedReset = true; //После обращения к Сахаре требуется переподключение устройства
             //Обрабатываем запрос идентификатора 1
-            string chip_sn = func.SaharaCommand1();
-            textBox_main_term.AppendText(LocRes.GetString("get") + '\u0020' + "S/N CPU - " + chip_sn + Environment.NewLine);
-            textBox_soft_term.AppendText(LocRes.GetString("get") + '\u0020' + "S/N CPU - " + chip_sn + Environment.NewLine);
-            if (chip_sn.Contains(label_chip_sn.Text))
+            string chip_ID_sn = func.SaharaCommand1();
+            textBox_main_term.AppendText(LocRes.GetString("get") + '\u0020' + "CPU id - sn" + chip_ID_sn + Environment.NewLine);
+            textBox_soft_term.AppendText(LocRes.GetString("get") + '\u0020' + "CPU id - sn" + chip_ID_sn + Environment.NewLine);
+            if (chip_ID_sn.Contains(label_chip_sn.Text))
             {
                 textBox_main_term.AppendText(LocRes.GetString("tb_chip_same") + Environment.NewLine);
                 textBox_soft_term.AppendText(LocRes.GetString("tb_chip_same") + Environment.NewLine);
@@ -2626,10 +2626,10 @@ namespace FirehoseFinder
                 textBox_main_term.AppendText("SBL SW Ver. - " + SW_VER + Environment.NewLine);
             }
             toolStripStatusLabel_filescompleted.Text = LocRes.GetString("tt_id_rec");
-            Global_Share_Prog[1][5] = chip_sn;
+            Global_Share_Prog[1][5] = chip_ID_sn;
             Global_Share_Prog[1][6] = textBox_hwid.Text + '\u002D' + textBox_oemid.Text + '\u002D' + textBox_modelid.Text + '\u002D' +
                 textBox_oemhash.Text.Remove(0, textBox_oemhash.Text.Length - 8) + '\u002D' + label_SW_Ver.Text.TrimStart('0');
-            if (chip_sn.Length > 8 && radioButton_sahara_ver2.Checked)
+            if (chip_ID_sn.Length > 8 && radioButton_sahara_ver2.Checked)
             {
                 //Предлагаем изменить выбор протокола, перегрзить устройство и попробовать запросить идентификаторы заново
                 using (Ten_Sec_Form ten_sec_mess = new Ten_Sec_Form())
@@ -2675,8 +2675,19 @@ namespace FirehoseFinder
             }
             string sbl_or_hz = "SBL SW Version: ";
             if (label_SW_Ver.Text.StartsWith("A0")) sbl_or_hz = "HZ_ID: ";
+            string chippy = Global_Share_Prog[1][5];
+            string chip_res;
+            if (chippy.Length > 8)
+            {
+                string ch_sn = chippy.Substring(chippy.Length - 8);
+                string ch_id = chippy.Substring(0, chippy.Length - 8);
+                chip_res =
+                    ($"Chip s/n: {ch_sn}" + Environment.NewLine +
+                    $"Chip ID: {ch_id}" + Environment.NewLine);
+            }
+            else chip_res = "Chip s/n: " + chippy;
             string logstr = label_tm.Text + "\u261F" + label_model.Text + "\u261F" + label_altname.Text + "\u261F"+ label_chip_sn.Text + Environment.NewLine +
-                string.Format("Chip s/n: {0}", Global_Share_Prog[1][5]) + Environment.NewLine +
+                chip_res + Environment.NewLine +
                 string.Format("HWID: {0}{1}{2}", textBox_hwid.Text, textBox_oemid.Text, textBox_modelid.Text) + Environment.NewLine +
                 string.Format("OEM PK Hash ({0}): {1}", textBox_oemhash.TextLength, textBox_oemhash.Text) + Environment.NewLine +
                 sbl_or_hz + label_SW_Ver.Text;

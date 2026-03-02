@@ -645,6 +645,7 @@ namespace FirehoseFinder
                 Array.Reverse(comfilebytes); //Little endian
                 string SC1 = BitConverter.ToString(comfilebytes).Replace("-", "").TrimStart('0');
                 File.Delete(comop1);
+                if (SC1.Length > 8) SC1.Insert(SC1.Length - 8, " - ");
                 return SC1;
             }
             else return LocRes.GetString("file") + " commandop01.bin " + LocRes.GetString("hex_not") + '\u0020' + LocRes.GetString("hex_processed");

@@ -865,6 +865,13 @@ namespace FirehoseFinder
             if (folderBrowserDialog_orig.ShowDialog() == DialogResult.OK)
             {
                 button_orig.Text = folderBrowserDialog_orig.SelectedPath;
+                if (button_orig.Text.Equals(folderBrowserDialog_dubl.SelectedPath)) //Выбрана та же папка, что и дубликат
+                {
+                    dubl_list.Clear();
+                    button_dubl.Text = "Выберите папку с дубликатами";
+                    folderBrowserDialog_dubl.SelectedPath = string.Empty;
+                    radioButton_od_yes.Checked = true;
+                }
                 IEnumerable<FileInfo> workF = new DirectoryInfo(folderBrowserDialog_orig.SelectedPath).EnumerateFiles("*.*", SearchOption.AllDirectories);
                 if (!backgroundWorker_orig.IsBusy)
                 {
@@ -876,7 +883,7 @@ namespace FirehoseFinder
             }
             else
             {
-                button_orig.Text = "Выберите папку-оригинал";
+                button_orig.Text = "Выберите папку с оригиналами";
                 folderBrowserDialog_orig.SelectedPath = string.Empty;
             }
         }
@@ -887,6 +894,13 @@ namespace FirehoseFinder
             if (folderBrowserDialog_dubl.ShowDialog() == DialogResult.OK)
             {
                 button_dubl.Text = folderBrowserDialog_dubl.SelectedPath;
+                if (button_dubl.Text.Equals(folderBrowserDialog_orig.SelectedPath))
+                {
+                    orig_list.Clear();
+                    button_orig.Text = "Выберите папку с оригиналами";
+                    folderBrowserDialog_orig.SelectedPath = string.Empty;
+                    radioButton_dd_yes.Checked = true;
+                }
                 IEnumerable<FileInfo> workF = new DirectoryInfo(folderBrowserDialog_dubl.SelectedPath).EnumerateFiles("*.*", SearchOption.AllDirectories);
                 if (!backgroundWorker_dubl.IsBusy)
                 {
@@ -898,7 +912,7 @@ namespace FirehoseFinder
             }
             else
             {
-                button_dubl.Text = "Выберите папку-дубликаты";
+                button_dubl.Text = "Выберите папку с дубликатами";
                 folderBrowserDialog_dubl.SelectedPath = string.Empty;
             }
         }
