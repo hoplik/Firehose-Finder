@@ -2674,7 +2674,7 @@ namespace FirehoseFinder
                 }
             }
             string sbl_or_hz = "SBL SW Version: ";
-            if (label_SW_Ver.Text.StartsWith("A0")) sbl_or_hz = "HZ_ID: ";
+            if (label_SW_Ver.Text.Length < 8) sbl_or_hz = "HZ_ID: ";
             string chippy = Global_Share_Prog[1][5];
             string chip_res;
             if (chippy.Length > 8)
@@ -2682,8 +2682,7 @@ namespace FirehoseFinder
                 string ch_sn = chippy.Substring(chippy.Length - 8);
                 string ch_id = chippy.Substring(0, chippy.Length - 8);
                 chip_res =
-                    ($"Chip s/n: {ch_sn}" + Environment.NewLine +
-                    $"Chip ID: {ch_id}" + Environment.NewLine);
+                    ("Chip s/n: " + ch_sn + Environment.NewLine + "Chip ID: " + ch_id);
             }
             else chip_res = "Chip s/n: " + chippy;
             string logstr = label_tm.Text + "\u261F" + label_model.Text + "\u261F" + label_altname.Text + "\u261F"+ label_chip_sn.Text + Environment.NewLine +
