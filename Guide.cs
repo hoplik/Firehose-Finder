@@ -112,15 +112,17 @@ namespace FirehoseFinder
         /// <summary>
         /// Список соответствия цифровых кодов процессора строковым кодам
         /// </summary>
-        internal readonly Dictionary<string, string> CPU_By_Name = new Dictionary<string, string>(15)
+        internal readonly Dictionary<string, string> CPU_By_Name = new Dictionary<string, string>(17)
         {
             { "000C30E1", "kona" },
             { "0011E0E1", "saipan" },
             { "001350E1", "lahaina" },
+            { "001870E1", "waipio" },
             { "001920E1", "kodiak" },
             { "001A90E1", "strait" },
             { "001CA0E1", "kailua" },
             { "001CB0E1", "kalama" },
+            { "001D90E1", "palima" },
             { "001DB0E1", "netrani" },
             { "001FD0E1", "panther" },
             { "002270E1", "lanai" },
@@ -129,8 +131,6 @@ namespace FirehoseFinder
             { "0028C0E1", "pakala" },
             { "0028D0E1", "oryon" },
             { "002BB0E1", "hamoa" }
-            //{ "palima", "" },
-            //{ "waipio", "" },
         };
 
         /// <summary>
