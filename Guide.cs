@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using System.Drawing;
 
 namespace FirehoseFinder
 {
@@ -57,7 +57,7 @@ namespace FirehoseFinder
         /// <summary>
         /// Дубликаты CPU
         /// </summary>
-        internal readonly Dictionary<string, string> Double_CPU = new Dictionary<string, string>(48)
+        internal readonly Dictionary<string, string> Double_CPU = new Dictionary<string, string>(49)
         {
             { "009F00E1", "APQ8056" },
             { "009710E1", "APQ8056" },
@@ -102,21 +102,27 @@ namespace FirehoseFinder
             { "30060000", "SDM660" },
             { "0008C0E1", "SDM660" },
             { "0009C0E1", "SDM660" },
-            { "0007D0E1", "SDM660" },
             { "001080E1", "SDM712" },
             { "60040000", "SDM712" },
             { "60000000", "SDM845" },
-            { "0008B0E1", "SDM845" }
+            { "0008B0E1", "SDM845" },
+            { "001A30E1", "SM_FILLMORE"},
+            { "001D30E1", "SM_FILLMORE"}
         };
 
         /// <summary>
         /// Список соответствия цифровых кодов процессора строковым кодам
         /// </summary>
-        internal readonly Dictionary<string, string> CPU_By_Name = new Dictionary<string, string>(17)
+        internal readonly Dictionary<string, string> CPU_By_Name = new Dictionary<string, string>(23)
         {
             { "000C30E1", "kona" },
             { "0011E0E1", "saipan" },
             { "001350E1", "lahaina" },
+            { "0013F0E1", "bitra" },
+            { "001430E1", "saipan" },
+            { "001490E1", "rennell" },
+            { "001590E1", "cedros" },
+            { "001610E1", "mannar" },
             { "001870E1", "waipio" },
             { "001920E1", "kodiak" },
             { "001A90E1", "strait" },
@@ -126,6 +132,7 @@ namespace FirehoseFinder
             { "001DB0E1", "netrani" },
             { "001FD0E1", "panther" },
             { "002270E1", "lanai" },
+            { "0026B0E1", "camano" },
             { "0026F0E1", "halliday" },
             { "002750E1", "palawan" },
             { "0028C0E1", "pakala" },
